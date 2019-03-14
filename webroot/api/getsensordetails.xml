@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensordata>
+	<prtg-version><#system type="version"></prtg-version>
+	<name>
+		<![CDATA[<#objectproperty name="Name" show="textraw" utfencode="true">]]>
+	</name>
+	<sensortype>
+		<![CDATA[<#objectstatus name="type" show="textraw" utfencode="true">]]>
+	</sensortype>
+	<interval>
+		<![CDATA[<#objectstatus name="interval" show="textraw" utfencode="true">]]>
+	</interval>
+	<probename>
+		<![CDATA[<#objectstatus name="probe" show="textraw" utfencode="true">]]>
+	</probename>
+	<parentgroupname>
+		<![CDATA[<#objectproperty name="ParentGroup" show="textraw" utfencode="true">]]>
+	</parentgroupname>
+	<parentdevicename>
+		<![CDATA[<#objectproperty name="ParentDevice" show="text" utfencode="true">]]>
+	</parentdevicename>
+	<parentdeviceid>  
+		<![CDATA[<#objectstatus name="parentid" show="text" utfencode="true">]]>
+	</parentdeviceid>
+	<lastvalue>
+		<![CDATA[<#objectstatus name="lastvalue" show="text" utfencode="true">]]>
+	</lastvalue>
+	<lastmessage>
+		<![CDATA[<#objectstatus name="message" show="text" utfencode="true">]]>
+	</lastmessage>
+	<favorite>
+		<![CDATA[<#objectstatus name="favorite" show="text" utfencode="true">]]>
+	</favorite>
+	<statustext>
+		<![CDATA[<#objectstatus name="status" show="text" utfencode="true">]]>
+	</statustext>
+	<statusid>
+		<![CDATA[<#objectstatus name="status" show="textraw" utfencode="true">]]>
+	</statusid>
+	<lastup>
+		<![CDATA[<#objectstatus name="lastup" show="textraw" utfencode="true">]]>
+	</lastup>
+	<lastdown>
+		<![CDATA[<#objectstatus name="lastdown" show="textraw" utfencode="true">]]>
+	</lastdown>
+	<lastcheck>
+		<![CDATA[<#objectstatus name="lastcheck" show="textraw" utfencode="true">]]>
+	</lastcheck>
+	<uptime>
+		<![CDATA[<#objectstatus name="uptime" show="textraw" utfencode="true">]]>
+	</uptime>
+	<uptimetime>
+		<![CDATA[<#objectstatus name="uptimetime" show="textraw" utfencode="true">]]>
+	</uptimetime>
+	<downtime>
+		<![CDATA[<#objectstatus name="downtime" show="textraw" utfencode="true">]]>
+	</downtime>
+	<downtimetime>
+		<![CDATA[<#objectstatus name="downtimetime" show="textraw" utfencode="true">]]>
+	</downtimetime>
+	<updowntotal>
+		<![CDATA[<#objectstatus name="knowntime" show="textraw" utfencode="true">]]>
+	</updowntotal>
+	<updownsince>
+		<![CDATA[<#objectstatus name="cumsince" show="textraw" utfencode="true">]]>
+	</updownsince>
+</sensordata>

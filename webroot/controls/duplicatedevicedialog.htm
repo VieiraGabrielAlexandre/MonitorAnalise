@@ -1,0 +1,28 @@
+﻿<#system type="denyreadonlyusers">
+<div id="content" class="ui-dialog-content">
+	<form id="duplicateobjectform" action="duplicateobject.htm" method="GET"  class="prtg-form prtg-plugin" data-plugin="prtg-form" title="<#lang key="html.js.sensortree.clonedevicetitle" default="Clone Device">">
+		<fieldset>
+			<legend></legend>
+			<div class="control-group">
+				<label for="" class="control-label no_help"><#lang key="html.js.sensortree.clonedeviceselected" default="Selected Device"></label>
+				<div class="controls">
+				<#objectproperty name="Name" show="link">
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="duplicatedevicename" class="control-label has_help"><#lang key="html.js.sensortree.clonedevicename" default="New Device name"></label>
+				<div class="controls" title="<#lang key="html.js.sensortree.nameemptyerror" default="Please enter a device name!">">
+					<input id="duplicatedevicename" class="text fieldrequired" type="text" autocomplete="off" name="name" placeholder="<#objectproperty name="Name" show="text">">
+				</div>
+				
+				<label for="duplicatedevicehost" class="control-label has_help"><#lang key="html.js.sensortree.clonedeviceip" default="New Ip Address/ DNS name"></label>
+				<div class="controls" title="<#lang key="html.js.sensortree.hostemptyerror" default="Please enter a Ip Address or DNS name!">">
+					<input id="duplicatedevicehost" class="text fieldrequired" type="text" autocomplete="off" name="host" placeholder="<#objectproperty name="host" show="text">">
+				</div>
+			</div>
+		</fieldset>
+		<input type="hidden" name="id" value="<#objectid>">
+		<input type="hidden" name="giveid" value="1">
+	</form>
+</div>
+

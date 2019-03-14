@@ -1,0 +1,630 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Custom Sensors</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p class="<#hidefornonpod asclass='true'>">
+            <b>PRTG hosted by Paessler only supports custom EXE/Script, Python script, SSH script, and REST Custom sensors on remote probes. You cannot add sensors of this type to
+                devices on your hosted probe.</b>
+        </p>
+        <p class="<#hidefornonpod asclass='true'>">
+            <b>Please store your scripts in the PRTG program directory of the computer that runs the remote probe and add your EXE, Python, SSH script, and REST Custom sensors to
+                devices on this remote probe.</b>
+        </p>
+        <p>Custom sensors allow a number of monitoring tasks that go far beyond the standard sensor set to be performed. Apart from parameterized versions of
+            SNMP, packet sniffer, and NetFlow sensors, you can create your own sensors using WQL (WMI Query Language) or Python, by compiling an EXE file,
+            using any Windows software development tool, and you can request any REST API the returns JSON or XML and map the results to sensor channels.</p>
+        <p>The following documentation describes custom EXE/Script, Python Script, and SSH Script sensors. The defined XML and JSON formats for the advanced sensors are also used
+            for advanced HTTP data sensors and the REST Custom sensor.
+            For more information about custom sensors based on SNMP, WMI, Packet Sniffing, and xFlow please see the respective custom sensor types in the
+            <a class="arrow" href="/help/available_sensor_types.htm#custom" target="_blank">PRTG manual</a>.</p>
+        <p>For each sensor interval PRTG can run an external process. The process can be a Windows EXE file, or a DLL, BAT, CMD, VBS, or PowerShell file, as well as a Python or SSH
+            script.</p>
+
+        <h2>Standard and Advanced EXE/Script Sensor</h2>
+        <p>You must create the sensor as a file and place it in a specific folder on the system running the PRTG probe
+            (this means that if you are using remote probes the files must be copied to the remote system; in a PRTG cluster setup on each cluster node):</p>
+        <p>Place executables (.EXE, .DLL), batchfiles (.CMD, .BAT), VBS scripts (.VBS), or PowerShell scripts (.PS1) into a sub folder of the
+            <a class="arrow"  href="/help/data_storage.htm"  target="_blank">PRTG program directory</a>. For the standard "EXE/Script Sensor", this is the following subfolder of your PRTG program directory:</p>
+        <pre>Custom Sensors\EXE</pre>
+
+        <p>If your executable or script returns XML or JSON, you will use it with the "EXE/Script Advanced Sensor". In this case, please store your file into the following
+            subfolder of your PRTG program directory:</p>
+        <pre>Custom Sensors\EXEXML</pre>
+
+        <p>You will find a sample set of demo sensors in these folders, too. As soon as a file is placed into the folders mentioned above,
+            you can create your own custom EXE sensor and select the new file from the list of files.</p>
+        <p>The probe will then execute the file on the probe system using the account configured for the "PRTG Probe Service" ("system"
+            is the default). The local probe will run the file on the local PRTG Core Server system. But for remote probes, the file will actually
+            run on the remote system. If your custom sensor code relies on other files (for example, DLLs, .NET framework,
+            Windows PowerShell) you must copy/install these files on the probe machine manually!</p>
+        <p><i>Note:</i> EXE sensors will fail if they attempt to open any graphical user interface windows using the Win32 APIs (this is not allowed for processes that are started
+            by a system service).</p>
+
+        <h2>Standard and Advanced SSH Script Sensor</h2>
+        <p>You must create the sensor as an SSH script and place it in a specific folder on the target system running your Linux/Unix installation where the script will be
+            executed.</p>
+        <p>Place your SSH script files for the standard SSH Script sensor into the following directory of the target system:</p>
+        <pre>/var/prtg/scripts</pre>
+
+        <p>If your SSH script returns XML or JSON, you will use it with the "SSH Script Advanced Sensor". In this case, please store your file into the following directory of the
+            target system:</p>
+        <pre>/var/prtg/scriptsxml</pre>
+
+        <p>As soon as a file is placed into the folder mentioned above,
+            you can create your own SSH script sensor and select the new script file from the list of scripts.</p>
+        <p>With each scanning interval, PRTG will execute the script on the target system and receive the result as a sensor result.</p>
+
+        <h2>Interface Definition for EXE/BAT/CMD/VBS/PowerShell/SSH Sensors</h2>
+        <p>Every time the sensor is run, the selected file is executed. The string entered in the "parameter" field of the sensor's settings is used as command line (you can use
+            placeholders, see below).
+            The executable file must send the results to the Standard OUT. For the format of returned data please see below.
+        <p>If the EXE does not return control to the PRTG process, it is killed as soon as the timeout value set for this sensor is reached.</p>
+        <p>You can test the EXE file you want to use for the sensor very easily on the command line (cmd.exe). Simply start the EXE file and pipe the results into a file, for
+            example:</p>
+        <pre>sensorexe&nbsp;parameter&nbsp;&gt;&nbsp;result.txt</pre>
+        <p>The results are written into the file result.txt and you can check the results with notepad or any other text editor.</p>
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>For PowerShell scripts, make sure that they may be executed by either signing the files or changing the security policy for Powershell.exe accordingly.</li>
+            <li>In SSH scripts, you can use alphanumeric characters and the special characters ".", "_", "-", "=", and "/" outside of quoted strings in the "parameter" field of the
+                sensor's settings.
+            </li>
+            <li>The API interface for custom EXE sensors is compatible to the custom EXE sensors provided by IPCheck Server Monitor 5.</li>
+        </ul>
+
+        <h2>Return Values for EXE/BAT/CMD/VBS/PowerShell/SSH Sensors</h2>
+        <p>The expected return values are different, depending on the type of EXE/Script sensor used. The standard sensor needs a simple <i>value:message</i> pair; the advanced
+            sensor processes an XML or JSON return value. When using the standard SSH Script sensor, it will expect <i>returncode:value:message</i> as result. See details below.
+        </p>
+        <h2>Standard EXE/Script Sensor</h2>
+        <p>The returned data for standard EXE/Script sensors must be in the following format:</p>
+        <pre>value:message</pre>
+        <p>Value has to be a 64-bit integer or float. It will be used as the resulting value for this sensor (for example, bytes, milliseconds) and stored in the database.
+            The message can be any string (maximum length: 2000 characters).</p>
+        <p>The exit code of the EXE has to be one of the following values:</p>
+
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Value</b></th>
+            <th><b>Description</b></th>
+            </thead>
+            <tr class="odd">
+                <td>0</td>
+                <td>OK</td>
+            </tr>
+            <tr class="even">
+                <td>1</td>
+                <td>WARNING</td>
+            </tr>
+            <tr class="odd">
+                <td>2</td>
+                <td>System Error (e.g. a network/socket error)</td>
+            </tr>
+            <tr class="even">
+                <td>3</td>
+                <td>Protocol Error (e.g. web server returns a 404)</td>
+            </tr>
+            <tr class="odd">
+                <td>4</td>
+                <td>Content Error (e.g. a web page does not contain a required word)</td>
+            </tr>
+        </table>
+
+        <h2>Standard SSH Script Sensor</h2>
+        <p>The returned data for standard SSH Script sensors must be in the following format:</p>
+        <pre>returncode:value:message</pre>
+        <p>Value has to be a 64-bit integer or float. It will be used as the resulting value for this sensor (for example, bytes, milliseconds) and stored in the database.
+            The message can be any string (maximum length: 2000 characters).</p>
+        <p>The SSH script "returncode" has to be one of the following values:</p>
+
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Value</b></th>
+            <th><b>Description</b></th>
+            </thead>
+            <tr class="odd">
+                <td>0</td>
+                <td>OK</td>
+            </tr>
+            <tr class="even">
+                <td>1</td>
+                <td>WARNING</td>
+            </tr>
+            <tr class="odd">
+                <td>2</td>
+                <td>System Error (e.g. a network/socket error)</td>
+            </tr>
+            <tr class="even">
+                <td>3</td>
+                <td>Protocol Error (e.g. web server returns a 404)</td>
+            </tr>
+            <tr class="odd">
+                <td>4</td>
+                <td>Content Error (e.g. a web page does not contain a required word)</td>
+            </tr>
+        </table>
+
+        <h2>Advanced Script, HTTP Data, and REST Custom Sensors</h2>
+        <p>The returned data for the EXE/Script Advanced, Python Script Advanced, SSH Script Advanced, HTTP Push Data Advanced, and HTTP Data Advanced sensors must be in XML or
+            JSON format,
+            the REST configuration file for the REST Custom sensor must be available as JSON template.
+            Most parameters have a default value and are not required. The following <b>minimum examples</b> leave most parameters to their default values and return two static
+            channel values.</p>
+
+        <h3>XML Return Format: Minimum Example</h3>
+        <pre>
+            &lt;prtg&gt;
+            &lt;result&gt;
+            &lt;channel&gt;First channel&lt;/channel&gt;
+            &lt;value&gt;10&lt;/value&gt;
+            &lt;/result&gt;
+            &lt;result&gt;
+            &lt;channel&gt;Second channel&lt;/channel&gt;
+            &lt;value&gt;20&lt;/value&gt;
+            &lt;/result&gt;
+            &lt;/prtg&gt;</pre>
+        <p>To return an error, the XML format is:</p>
+        <pre>
+              &lt;prtg&gt;
+              &lt;error&gt;1&lt;/error&gt;
+              &lt;text&gt;Your error message&lt;/text&gt;
+              &lt;/prtg&gt;</pre>
+
+        <h3>—JSON Return Format: Minimum Example</h3>
+        <pre>
+		{
+		 &quot;prtg&quot;: {
+		  &quot;result&quot;: [
+		   {
+		    &quot;channel&quot;: &quot;First channel&quot;,
+		    &quot;value&quot;: &quot;10&quot;
+		   },
+		   {
+		    &quot;channel&quot;: &quot;Second channel&quot;,
+		    &quot;value&quot;: &quot;20&quot;
+		   }
+		  ]
+		 }
+		}
+		  </pre>
+        <p>To return an error, the JSON format is:</p>
+        <pre>
+		{
+		 &quot;prtg&quot;: {
+		  &quot;error&quot;: &quot;1&quot;,
+		  &quot;text&quot;: &quot;Your error message&quot;
+		 }
+		}
+		  </pre>
+
+        <p><i>Note:</i> Find a more detailed demo script for the EXE/Script Advanced sensor in the <i>Custom Sensors\EXEXML</i> sub folder of your PRTG installation. You will find
+            demo files for other sensors in the <i>Custom Sensors</i> folder as well.</p>
+
+        <h3>—Advanced Script, HTTP Data, and REST Custom Sensors: Elements</h3>
+        <p>You can optionally define the encoding of your XML file at the beginning of the document. For example, to define UTF-8, you would use:</p>
+        <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</pre>
+
+        <p>The following elements can be used in the section between <i>&lt;result&gt;</i> and <i>&lt;/result&gt;</i>. In each section you can return one sensor channel. You may
+            define a max. of 50 sensor channels.</p>
+        <p><i>Note:</i> If you exceed this limit PRTG will try to display all sensor channels. However, please be aware that this is an unsupported procedure and you will
+            experience limited usability and performance.</p>
+        <p><i>Note:</i> The tag names are not case sensitive. For example, "VALUE" and "value" can both be used.</p>
+
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Tag (Case Insensitive)</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Content</b></th>
+            </thead>
+            <tr class="odd">
+                <td>&lt;Channel&gt;</td>
+                <td>X</td>
+                <td>Name of the channel as displayed in user interfaces. This parameter is required and must be unique for the sensor.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>&lt;Value&gt;</td>
+                <td>X</td>
+                <td>The value as integer or float. Please make sure the &lt;Float&gt; setting matches the kind of value provided. Otherwise PRTG will show <b>0</b> values.</td>
+                <td>Integer or float value</td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;Unit&gt;</td>
+                <td>—</td>
+                <td>The unit of the value. Default is <b>Custom</b>. Useful for PRTG to be able to convert volumes and times.</td>
+                <td>
+                    BytesBandwidth<br>
+                    BytesMemory<br>
+                    BytesDisk<br>
+                    Temperature<br>
+                    Percent<br>
+                    TimeResponse<br>
+                    TimeSeconds<br>
+                    Custom<br>
+                    Count<br>
+                    CPU (*)<br>
+                    BytesFile<br>
+                    SpeedDisk<br>
+                    SpeedNet<br>
+                    TimeHours
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;CustomUnit&gt;</td>
+                <td>—</td>
+                <td>If <b>Custom</b> is used as unit this is the text displayed behind the value.</td>
+                <td>Any string (keep it short)</td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;SpeedSize&gt;<br>&lt;VolumeSize&gt;</td>
+                <td>—</td>
+                <td>Size used for the display value. For example, if you have a value of 50000 and use <b>Kilo</b> as size the display is <i>50 kilo #</i>. Default is <b>One</b>
+                    (value used as returned). For the Bytes and Speed units this is overridden by the setting in the user interface.
+                </td>
+                <td>
+                    One<br>
+                    Kilo<br>
+                    Mega<br>
+                    Giga<br>
+                    Tera<br>
+                    Byte<br>
+                    KiloByte<br>
+                    MegaByte<br>
+                    GigaByte<br>
+                    TeraByte<br>
+                    Bit<br>
+                    KiloBit<br>
+                    MegaBit<br>
+                    GigaBit<br>
+                    TeraBit
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;SpeedTime&gt;</td>
+                <td>—</td>
+                <td>See above, used when displaying the speed. Default is <b>Second</b>.</td>
+                <td>
+                    Second<br>
+                    Minute<br>
+                    Hour<br>
+                    Day
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;Mode&gt;</td>
+                <td>—</td>
+                <td>Selects if the value is a absolute value or counter. Default is <b>Absolute</b>.</td>
+                <td>
+                    Absolute<br>
+                    Difference
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;Float&gt;</td>
+                <td>—</td>
+                <td>Define if the value is a float. Default is <b>0</b> (no). If set to <i>1</i> (yes), use a dot as decimal separator in values. <i>Note:</i> Define decimal places
+                    with the &lt;DecimalMode&gt; element.
+                </td>
+                <td>
+                    0 (= no, integer)<br>
+                    1 (= yes, float)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;DecimalMode&gt;</td>
+                <td>—</td>
+                <td>Init value for the <i>Decimal Places</i> option. If <b>0</b> is used in the &lt;Float&gt; element (i.e. use integer), the default is <b>Auto</b>; otherwise
+                    (i.e. for float) default is <b>All</b>. <i>Note:</i> You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    Auto<br>
+                    All
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;Warning&gt;</td>
+                <td>—</td>
+                <td>If enabled for at least one channel, the entire sensor is set to warning status. Default is <b>0</b> (no).</td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;ShowChart&gt;</td>
+                <td>—</td>
+                <td>Init value for the <i>Show in Graph</i> option. Default is <b>1</b> (yes). <i>Note:</i> The values defined with this element will be considered <i>only</i> on
+                    the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting
+                    later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;ShowTable&gt;</td>
+                <td>—</td>
+                <td>Init value for the <i>Show in Table</i> option. Default is <b>1</b> (yes). <i>Note:</i> The values defined with this element will be considered <i>only</i> on
+                    the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting
+                    later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;LimitMaxError&gt;</td>
+                <td>—</td>
+                <td>Define an upper error limit for the channel. If enabled, the sensor will be set to a "Down" status if this value is overrun and the LimitMode is activated. <i>Note:</i>
+                    Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section. While a sensor shows a "Down"
+                    status triggered by a limit, it will still receive data in its channels. The values defined with this element will be considered <i>only</i> on the first sensor
+                    scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i>
+                    settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>&lt;LimitMaxWarning&gt;</td>
+                <td>—</td>
+                <td>Define an upper warning limit for the channel. If enabled, the sensor will be set to a "Warning" status if this value is overrun and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section. The values defined
+                    with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and
+                    may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;LimitMinWarning&gt;</td>
+                <td>—</td>
+                <td>Define a lower warning limit for the channel. If enabled, the sensor will be set to a "Warning" status if this value is undercut and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section. The values defined
+                    with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and
+                    may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>&lt;LimitMinError&gt;</td>
+                <td>—</td>
+                <td>Define a lower error limit for the channel. If enabled, the sensor will be set to a "Down" status if this value is undercut and the LimitMode is activated. <i>Note:</i>
+                    Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section. While a sensor shows a "Down"
+                    status triggered by a limit, it will still receive data in its channels. The values defined with this element will be considered <i>only</i> on the first sensor
+                    scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i>
+                    settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;LimitErrorMsg&gt;</td>
+                <td>—</td>
+                <td>Define an additional message. It will be added to the sensor's message when entering a "Down" status that is triggered by a limit. <i>Note:</i> The values
+                    defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further sensor
+                    scans (and may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>&lt;LimitWarningMsg&gt;</td>
+                <td>—</td>
+                <td>Define an additional message. It will be added to the sensor's message when entering a "Warning" status that is triggered by a limit. <i>Note:</i> The values
+                    defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further sensor
+                    scans (and may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;LimitMode&gt;</td>
+                <td>—</td>
+                <td>Define if the limit settings defined above will be active. Default is <b>0</b> (no; limits inactive). If <b>0</b> is used the limits will be written to the
+                    sensor channel settings as predefined values, but limits will be disabled. <i>Note:</i> This setting will be considered <i>only</i> on the first sensor scan,
+                    when the channel is newly created; it is ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the
+                    <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="even">
+                <td>&lt;ValueLookup&gt;</td>
+                <td>—</td>
+                <td>Define if you want to use a lookup file (e.g. to view integer values as status texts). Please enter the ID of the lookup file you want to use, or omit this
+                    element to not use lookups. <i>Note:</i> This setting will be considered <i>only</i> on the first sensor scan, when the channel is newly created; it is ignored
+                    on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    Any string
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>&lt;NotifyChanged&gt;</td>
+                <td>—</td>
+                <td>If a returned channel contains this tag, it will trigger a change notification that you can use with the <b>Change Trigger</b> to send a notification.</td>
+                <td>No content required</td>
+            </tr>
+        </table>
+
+        <p>(*) This is a % unit which is accounted to the CPU load in index graphs.</p>
+
+        <p>The following elements can be used in the section between <i>&lt;prtg&gt;</i> and <i>&lt;/prtg&gt;</i>, outside the <i>&lt;result&gt;</i> section.</p>
+        <p><i>Note:</i> The tag names are not case sensitive. For example, "TEXT" and "text" can both be used.</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Tag (Case Insensitive)</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Content</b></th>
+            </thead>
+            <tr class="odd">
+                <td>&lt;Text&gt;</td>
+                <td>—</td>
+                <td>Text the sensor returns in the <b>Message</b> field with every scanning interval. There can be one message per sensor, regardless of the number of channels.
+                    Default is <b>OK</b>. <i>Note:</i> This element has to be provided outside of the &lt;result&gt; element.
+                </td>
+                <td>Any string;
+                    <br><i>Max. length: 2000 characters</i></td>
+            </tr>
+            <tr class="even">
+                <td>&lt;Error&gt;</td>
+                <td>—</td>
+                <td>If enabled, the sensor will return an error status. This element can be combined with the &lt;Text&gt; element in order to show an error message. Default is <b>0</b>.
+                    <i>Note:</i> This element has to be provided outside of the &lt;result&gt; element. A sensor in this error status cannot return any data in its channels; if
+                    used, all channel values in the &lt;result&gt; section will be ignored.
+                </td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes, set sensor to error; ignore &lt;result&gt; section)
+                </td>
+            </tr>
+        </table>
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>Each run (sensor scan) may return either any number of channels (&lt;result&gt;...&lt;/result&gt;) <i>or</i> one error response. It is not possible to mix result
+                and error entries.
+            </li>
+            <li>You can either write the XML output to standard OUT line by line, or give back the entire expression in one line without breaks.</li>
+        </ul>
+
+        <h2>Interface Definition for DLL Sensors</h2>
+        <p>Every time the sensor is to be checked, a function in the selected DLL file is called. The DLL must export one function:</p>
+        <pre>function&nbsp;perform(para,msg:pchar):integer;&nbsp;stdcall;</pre>
+        <p>para and msg are zero terminated strings. The allocated buffer for msg is 255 bytes, the DLL must make sure that fewer bytes are returned. Msg must be in the following
+            format:</p>
+        <pre>value:message</pre>
+        <p>Value has to be an 32-bit integer and will be used as the resulting value for this sensor (for example, bytes, milliseconds, etc.), message can be any string and will be
+            stored in the database. </p>
+        <p>The integer return value of the perform function has to conform to the same rules as the EXE exit code mentioned above.</p>
+
+        <p>Warning: If the function call in the DLL does not return control it could block the whole PRTG system. Make sure to handle your own timeouts and build in a reliable
+            error
+            management. For this reason EXE sensors are recommended.</p>
+
+
+        <h2>Command Line Parameters</h2>
+        <p>In the "parameter" field you can use the following placeholders:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Placeholder</b></th>
+            <th><b>Description</b></th>
+            </thead>
+            <tr class="odd">
+                <td>%sensorid</td>
+                <td>The ID of the EXE/Script sensor</td>
+            </tr>
+            <tr class="even">
+                <td>%deviceid</td>
+                <td>The ID of the device the sensor is created on</td>
+            </tr>
+            <tr class="odd">
+                <td>%groupid</td>
+                <td>The ID of the group the sensor is created in</td>
+            </tr>
+            <tr class="even">
+                <td>%probeid</td>
+                <td>The ID of the probe the sensor is created on</td>
+            </tr>
+            <tr class="odd">
+                <td>%host</td>
+                <td>The IP address/DNS name entry of the device the sensor is created on</td>
+            </tr>
+            <tr class="even">
+                <td>%device</td>
+                <td>The name of the device the sensor is created on</td>
+            </tr>
+            <tr class="odd">
+                <td>%group</td>
+                <td>The name of the group the sensor is created in</td>
+            </tr>
+            <tr class="even">
+                <td>%probe</td>
+                <td>The name of the probe the sensor is created on</td>
+            </tr>
+            <tr class="odd">
+                <td>%name <i>or</i> %sensor</td>
+                <td>The name of the EXE/Script sensor</td>
+            </tr>
+            <tr class="even">
+                <td>%windowsdomain</td>
+                <td>The domain for Windows access (may be inherited from parent)</td>
+            </tr>
+            <tr class="odd">
+                <td>%windowsuser</td>
+                <td>The user name for Windows access (may be inherited from parent)</td>
+            </tr>
+            <tr class="even">
+                <td>%windowspassword</td>
+                <td>The password for Windows access (may be inherited from parent)</td>
+            </tr>
+            <tr class="odd">
+                <td>%linuxuser</td>
+                <td>The user name for Linux access (may be inherited from parent)</td>
+            </tr>
+            <tr class="even">
+                <td>%linuxpassword</td>
+                <td>The password for Linux access (may be inherited from parent)</td>
+            </tr>
+            <tr class="odd">
+                <td>%snmpcommunity</td>
+                <td>The community string for SNMP v1 or v2 (may be inherited from parent)</td>
+            </tr>
+        </table>
+        <p>Make sure you write placeholders in quotes to ensure that they are working properly if their values contain whitespaces and correctly escape special characters. For SSH scripts, you can use alphanumeric characters and the special characters ".", "_", "-", "=", and "/"
+            outside of quoted strings in the "parameter" field of the sensor's settings. For details, see the <b>Escape Special Characters and Whitespaces in Parameters</b> manual section for custom sensors and notifications.</p>
+
+        <h2>Environment Values</h2>
+        <p>If the <i>Set placeholders as environment values</i> option is enabled in the sensor's
+            <a class="arrow" href="/help/exe_script_sensor.htm" target="_blank">settings</a>, the values of all placeholders available for command line parameters
+            (see table above) are additionally provided as "Environment Variables" during runtime, so you can use them in your executable or script file.
+            The variables' names are the same as for placeholders mentioned above, with a "prtg_" prefix and without the % character. For example, refer to the sensor's own name by
+            using the variable <i>prtg_name</i>.</p>
+        <p>Additionally, the following variables are available:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Variable</b></th>
+            <th><b>Description</b></th>
+            </thead>
+            <tr class="odd">
+                <td>prtg_version</td>
+                <td>The version number of your PRTG installation</td>
+            </tr>
+            <tr class="even">
+                <td>prtg_url</td>
+                <td>The IP address/DNS name of your PRTG installation</td>
+            </tr>
+            <tr class="odd">
+                <td>prtg_primarychannel</td>
+                <td>The ID of the sensor's current primary channel (<b>1</b> if not set)</td>
+            </tr>
+        </table>
+
+        <h2>PRTG Script World</h2>
+        <p>Find useful scripts for custom sensors in the PRTG Script World, written by dedicated PRTG customers around the world and Paessler!</p>
+        <ul>
+            <li><a class="arrow" href="https://www.paessler.com/script-world?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank">PRTG Script World</a>
+            </li>
+        </ul>
+
+        <h2>More Links</h2>
+        <p>You can find sample projects for these custom sensors and more information about custom scripts here:</p>
+        <ul>
+            <li>In the "PRTG Network Monitor\custom sensors\EXE" subfolder of your PRTG installation.</li>
+            <li>In the Knowledge Base on the Paessler website at <a class="arrow"
+                                                                    href="https://kb.paessler.com/en/tags/custom-script-exe?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage"
+                                                                    target="_blank">https://kb.paessler.com
+                (tag custom-script-exe)</a></li>
+            <li>This Knowledge Base article will help you setting up your PowerShell sensors: <a class="arrow"
+                                                                                                 href="https://kb.paessler.com/en/topic/71356?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage"
+                                                                                                 target="_blank">Guide for PowerShell Based Custom
+                Sensors</a></li>
+        </ul>
+
+    </div>
+</div>

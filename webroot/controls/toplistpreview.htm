@@ -1,0 +1,38 @@
+﻿<div class="sensoroverviewtoplist"
+	data-id="<#objectid>"
+	data-subid="<@subid>"
+	data-topnumber="live"
+	style="<#toplisttabstyle>">
+	<a href="/toplist.htm?id=<#objectid>&subid=<@subid>&topnumber=live">
+		<div class="name"><#objectproperty type="toplistname" subid='<@subid>'></div>
+		<div class="toplistcontainer">
+			<div class="prtg-plugin toplistgraph <@zoomable>"
+				data-width=40
+				data-height=40
+				data-plugin="toplist"
+				data-objectid="<#objectid>"
+				data-subid="<@subid>"
+				data-topnumber="live"
+				data-preview="true">
+<!--
+			{"objects":<#table
+				count='*'
+				usecaption='true'
+				noraw='1'
+				subid='<@subid>'
+				_topnumber='live'
+				output='json'
+				content='topdata'
+				columns='position=oftTextRaw,value_=treejson'
+				sortby='-value_2V'>
+			}
+-->
+			</div>
+		</div>
+	</a>
+	<span class='toplistsettings' data-id="<#objectid>" data-subid="<@subid>">
+		<i title='<#langjs key="html.toplists.editsettings" default="Edit Toplist Settings" >' class='icon-gear icon-dark editsetting' style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>"></i>
+		<i title="<#langjs key="common.strings.delete" default="Delete" >" class='icon-trash icon-dark delete' style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>"></i>
+		<a href="toplist.htm?id=<#objectid>&subid=<@subid>&topnumber=live"><i title="<#objectproperty type="toplistname" subid='<@subid>'>" class='icon-newwin icon-dark zoom'></i></a>
+	</span>
+</div>

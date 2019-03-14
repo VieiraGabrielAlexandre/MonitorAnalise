@@ -1,0 +1,13 @@
+﻿<!--Cluster: Status table -->
+
+<div class="map_object map_table <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+	<#mapobject type="objectgrip" mode="<@editmode>">
+	<#mapobject type="htmlbefore" subid="<@subid>">
+	<#checkobjecttype objecttype="probenode,group" nicemessage="true" id="<@objectid>">
+	<div class="refreshable" refreshurl="/controls/clustervisuallist.htm" style="width:420px"  class="top10listcontainer">
+			<#include file="/controls/clustervisuallist.htm">
+	</div>
+	<#mapobject type="htmlafter" subid="<@subid>">
+</div>
+
+

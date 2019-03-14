@@ -1,0 +1,165 @@
+﻿<!--View and Run Reports-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>View and Run Reports</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: View and Run Reports</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">In the PRTG web interface, click <span class="f_BoldCustom">Reports</span> in the main menu bar to show the reports main screen. Click a report's name to select it. Use the various report tabs to access all functionalities and settings for the selected report.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:574px"><a href="report-tabs2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Report Tabs" title="Report Tabs" style="width:574px;height:18px;border:none" src="report-tabs2_zoom50.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Report Tabs</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click <span class="f_BoldCustom">Go to all reports</span> at the bottom of the page to return to the list of all <span style="font-weight: bold;">Reports</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="run" class="hmanchor"></a><span class="f_InTopicHeading">Run Now</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Run Now</span> tab, you can execute a report immediately with the settings configured. Please mind the <span class="f_BoldCustom"><a href="reports_view_and_run.htm#remarks" class="topiclink">Remarks for Reports</a></span>.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Run Report &quot;</span><span class="f_ItalicCustom">[Name]</span><span class="f_BoldCustom">&quot;</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report for</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time span covered by the report. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Current Period</span><span class="f_ListBulleted">: Use monitoring data of the current period. The actual time span depends on the report period type defined in the report's <a href="reports_settings.htm#settings" class="topiclink">settings</a>. It can be today, this week, this month, or this year.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Previous Period</span><span class="f_ListBulleted">: Use monitoring data of the last period. The actual time span depends on the report period type defined in the report's <a href="reports_settings.htm#settings" class="topiclink">settings</a>. It can be yesterday, last week, last month, or last year.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select a Period</span><span class="f_ListBulleted">: Use monitoring data of a period other than current or previous. Select below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select Date Range Manually</span><span class="f_ListBulleted">: Define a custom time span for the monitoring data that will be used. Set start and end date below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Date Range</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This selection is only visible if you enable the period option above. From the list, select a data range for which PRTG will generate the report. The shown time spans depend on the available monitoring data and on the report period type defined in the report's <a href="reports_settings.htm#settings" class="topiclink">settings</a>. It can be days, weeks, months, or years.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Start Date</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This selection is only visible if you enable the date range option above. Define the begin of the time span for which PRTG will generate the report. Use the date time picker to enter the date and time. Make sure you define a valid period.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">End Date</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This selection is only visible if you enable the date range option above. Define the end of the time span for which PRTG will generate the report. Use the date time picker to enter the date and time. Make sure you define a valid period.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Quick Range</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This selection is only visible if you enable the date range option above. Choose between different pre-defined ranges by simply clicking the desired range. Each click changes the </span><span class="f_BoldCustom">Start </span><span class="f_ListBulleted">and </span><span class="f_BoldCustom">End Date</span><span class="f_ListBulleted"> fields above accordingly.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Processing Options</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">File Format and Delivery</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how you want to view the report. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">View Report as HTML</span><span class="f_ListBulleted">: Directly view the report in your web browser. PRTG loads it in a new browser window or tab.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Create and store PDF and data files (available for templates with data tables)</span><span class="f_ListBulleted">: Create a PDF file and, depending on the </span><span class="f_ListBulleted" style="font-weight: bold;">Data Files</span><span class="f_ListBulleted"> <a href="reports_settings.htm" class="topiclink">settings</a> of the report, CSV and XML files of the report and store them. Once finished, you will find it in the </span><span class="f_BoldCustom">Stored Reports</span><span class="f_ListBulleted"> tab and a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> will be created. By default, PRTG sends out a notification email to the administrator in this case.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Create PDF and data files (available for templates with data tables), store them, and send by email</span><span class="f_ListBulleted">: Create a PDF file and CSV and XML files of the report, store the files, and send them via email once finished.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">CSV and XML data files are only generated for report templates that include data tables. </span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">To create PDF files, ensure the print spooler service is running on the system with your PRTG server.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Certain special characters, for example, 4-byte unicode characters, may not be displayed correctly in PDF reports. As workaround, generate an HTML report and save it as PDF.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted"> </span>When generating reports with Internet Explorer 11, we recommend that you use one of the PDF options for optimal results.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Target Email Address</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if you define above to send the report by email. Enter a valid email address to which PRTG will send the report.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">You can change the configuration for outgoing emails in the </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListBulleted"> settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Compression</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if you define above to send the report by email. Define if you want to compress the attached report files before sending. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Send files uncompressed</span><span class="f_ListBulleted">: PRTG will not compress the report files before they are sent by email but will send the files in their original size.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Send all in one ZIP file</span><span class="f_ListBulleted">: PRTG will compress the report files to a ZIP file before they are sent by email.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Run Report</span> button to start report generation. Depending on the number of selected sensors, this may take a while. If you experience a long waiting time when generating HTML reports for immediate view, please consider using one of the PDF options. You can then view the report as soon as it has finished.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks for Reports</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Any sensor graph in your report will only show channels that are enabled via the </span><span class="f_BoldCustom">Show in Graphs</span><span class="f_ListBulleted"> option in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted">. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Reports show statistics for uptime (</span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> in percent) and requests (</span><span class="f_BoldCustom">Good</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">Failed</span><span class="f_ListBulleted"> in percent). Values between </span><span class="f_ItalicCustom">5%</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">95%</span><span class="f_ListBulleted">, as well as </span><span class="f_ItalicCustom">100%</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">0%</span><span class="f_ListBulleted">, are rounded to whole numbers without decimal places. Other values are shown with 3 decimal places.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Due to rounding, the statistics in section </span><span class="f_BoldCustom">Sensor Status History</span><span class="f_ListBulleted"> of the report might differ in a few seconds from the values in section </span><span class="f_BoldCustom">Uptime Stats</span><span class="f_ListBulleted">. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Data reporting is limited to 5 requests per minute.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Reports cannot show uptime or downtime data for the </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm" class="topiclink">Sensor Factory Sensor</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create reports that include an appropriate amount of data. Reports may not work as expected if too many sensors with short scanning intervals have to be processed. Adjust your report size and time span that the report covers if necessary.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="stored" class="hmanchor"></a><span class="f_InTopicHeading">Stored Reports</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">Stored Reports</span> tab, you can view all PDF reports and data files created in the past. Click a name to open the report. Reports are stored until they are deleted according to the data purging settings of your PRTG configuration. You can set data purging limits for reports in the <span class="f_BoldCustom"><a href="probes_settings.htm#purging" class="topiclink">System Administration—Core &amp; Probes</a></span> settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="other" class="hmanchor"></a><span class="f_InTopicHeading">Other Tabs</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For all other tabs, see the <span class="f_BoldCustom"><a href="reports_settings.htm" class="topiclink">Report Settings</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: Why is there missing data in historical data reports?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/61382" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61382</a></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Reports—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_step_by_step.htm" class="topiclink">Reports Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_view_and_run.htm" class="topiclink">View and Run Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_settings.htm" class="topiclink">Report Settings</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

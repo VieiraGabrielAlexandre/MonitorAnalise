@@ -1,0 +1,53 @@
+﻿<#loadlimit>
+<#checkobjecttype objecttype="sensor">
+<#inserturlparam parameter="hide" var="hidechannels">
+<#include file="includes\printhead.htm">
+<#droplive>
+
+<div class="onereport">
+	<#include file="includes\printheading.htm">
+
+	<h1><#lang key="html.reporttemplates.reportfor" default="Report for"> <b><#objectproperty name="name"></b></h1>
+
+	<table cellspacing=0 class="overview table">
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.reporttimespan" default="Report Time Span">:</td>
+			<td colspan=6><#startdate> - <#enddate></td>
+		</tr>
+		<tr class=even>
+			<td class=title><#lang key="html.reporttemplates.sensortype" default="Sensor Type">:</td>
+			<td colspan=6><#objectstatus name="type"> (<#objectstatus name="interval"> <#lang key="html.reporttemplates.interval" default="Interval">)</td>
+		</tr>
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.probegroupdevice" default="Probe, Group, Device">:</td>
+			<td colspan=6><#objectstatus name="probe" show="textshort"> &gt; <#objectproperty name="ParentGroup" show="text"> &gt; <#objectproperty name="ParentDevice" show="text"></td>
+		</tr>
+		<#loop file="includes\histloop.htm">
+		<tr class=even style="<#checkshow param="pctshow" offvalue="false">">
+			<td class=title><#lang key="html.reporttemplates.percentile" default="Percentile"></td>
+			<td colspan=6><#objectproperty type="percentile" usetz="1"></td>
+		</tr>
+	</table>
+
+	<div class="reportgraph">
+	<div><#object type="histgraph" width="850" height="270" graphstyling="baseFontSize='11' showLegend='0' tooltexts='1'" refreshable="true" hide="@hidechannels" varexpand="hide"></div>
+    <div style="width:850px"><#object type="legend" width="850"></div>
+	</div>
+	<br>
+	<div><#table tableid="histdatatable" content="histdata" columns="datetime,value_,coverage" count="*" sortby="datetime" refreshable="false" sortable="false" links="false" infoheader="false"></div>
+
+	<div>
+		<h2 style="<#clusterdependent hidefor='clustertreeobject'>"><#lang key="html.reporttemplates.statushistory" default="Sensor Status History"></h2>
+		<h2 style="<#clusterdependent showfor='clustertreeobject'>">
+			 <#lang key="html.reporttemplates.statushistory" default="Sensor Status History">
+			 (<#lang key="html.reporttemplates.statushistoryby" default="Observed by Cluster Node ">
+			 "<#cluster type="name">")</h2>
+	<#table count="1000" tableid="statereporttable" content="statehistory" columns="status,datetime" usetz="1" count="*" sortby="datetime" refreshable="false" sortable="false" links="false" infoheader="false">
+	</div>
+		<#include file="includes\printfooter.htm">
+</div>
+	<#include file="includes\printfoot.htm">
+<#cropmsg>
+
+</body>
+</html>

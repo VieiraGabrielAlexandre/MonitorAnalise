@@ -1,0 +1,42 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.multiedit.title" default="Edit Multiple Objects" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="objectname">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+		<#countobj var="objectcount">
+		<#domultiedit>
+<#lang key="html.editobject.head" default="Edit Object @objectname" var="singleobject">
+<#lang key="html.multiedit.headnew" default="Editing @objectcount Objects" var="multiobject">
+
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1 style=''>
+		<b>
+			<#countobj varexpand="outputformultiobject" outputformultiobject="@multiobject">
+			<#countobj varexpand="outputforsingleobject" outputforsingleobject="@singleobject">
+		</b>
+	</h1>
+	<div id="content" class="multiedit inline">
+		<div class="multieditform pseudoform">
+			<wingui-hidden>
+				<p id="objlistshort" style='<#countobj outputformultiobject="display:block;"><#countobj outputforsingleobject="display:none;">'><#lang key="html.multiedit.intro" default="You are editing @objectcount objects"> (<a href="#" onclick="$('#objlist').show();$('#objlistshort').hide();return false;"><#lang key="html.multiedit.showalllink" default="Show all objects"></a>):</p>
+				<p id="objlist" style="display:none;margin-bottom:9px;max-height:60px;"><#lang key="html.multiedit.intro" default="You are editing @objectcount objects">:<br><br><#listobj></p>
+			</wingui-hidden>  
+				<div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs" data-no-history="true">
+				<ul class="nav-tabs" style="display:none;<#inserthtml showtagonlyfortype="sensor" html="display:flex;">">
+				<li tabid="1" class="tab-active tab-dark"><a href="/controls/multitab.htm?id=<#objectid>"><i class="icon-white icon-wrench"></i><#lang key="html.global.multiedittab1" default="Settings"></a></li>
+				<li tabid="2" class="tab-channels tab-dark" style="<#inserthtml showtagonlyfortype="sensor" html="display:inline-block;">"><a href="/controls/multieditchannels.htm?id=<#objectid>"><i class="icon-white icon-signal-diag"></i><#lang key="html.global.multiedittab2" default="Channel Settings"></a></li>
+			</ul>
+			<div class="tab-container"></div>
+		</div>
+	</div>
+  </div>
+<#lang key="html.multiedit.help.title" default="Edit Multiple Objects" var="helptitle">
+<#lang key="html.multiedit.help.text" default="This page allows to edit one or more settings for a selection of objects (groups, devices, sensors, etc.). First enable the checkbox in the first column for each setting that you want to change for all selected objects. Then enter/select your new value." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#countobj outputforsingleobject="true" var="singelobjecthelp">
+<#help varexpand="title,text,show,target,hide" hide="@singelobjecthelp" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

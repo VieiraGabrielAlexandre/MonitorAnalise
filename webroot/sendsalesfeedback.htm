@@ -1,0 +1,16 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.sendsalesfeedback.title1" default="Contact Sales" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>">
+  <h1><#lang key="html.sendsalesfeedback.head" default="Contact Paessler Customer Service / Send Your Feedback to Paessler"></h1>
+  <div id="content">
+    <div id="reportit" class="tabs-container">
+     <#include file="controls\salesticketform.htm">
+    </div>
+ </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

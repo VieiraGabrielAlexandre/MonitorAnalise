@@ -1,0 +1,227 @@
+﻿<!--Tickets-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="logs.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="working_with_lists.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Tickets</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Tickets</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">PRTG Network Monitor includes its own ticket system. With tickets you can manage and maintain various issues that may appear while monitoring a network. A ticket in PRTG contains information about recent events in your PRTG installation that need a closer look by the administrator or another responsible person. You can see each ticket as a task for a particular PRTG user.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Each monitoring-related task has a lifecycle in the ticket system. PRTG itself can create tickets, for example, when <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span> has finished, and PRTG users can create tickets as well for every kind of issue. In addition, you can set up notifications that open a ticket when something uncommon occurs in your network. The task comes to life when a ticket is created. Responsible PRTG users then take care of this issue. Once the issue has been resolved, the ticket can be closed and the lifecycle of the task ends.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Every ticket has a unique ID, a priority, and a status, and you can take several actions on each ticket. You should view every ticket and take a corresponding action. This way, you always keep an overview about each task and its history in your PRTG installation.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG can also send an email to you whenever a ticket is assigned to you or if one of your tickets has been changed. See section <span class="f_BoldCustom"><a href="tickets.htm#emails" class="topiclink">Tickets as Emails</a></span> for details and how to turn off emails about tickets.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:566px"><a href="tickets_list.png"><img id="TOGGLE0186A1" class="image-toggle" alt="List of Tickets" title="List of Tickets" style="width:566px;height:228px;border:none" src="tickets_list_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">List of Tickets</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can turn off the tickets system for particular user groups in <span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span> except for the PRTG Administrators group. The users in the admin group will not receive new ToDo tickets (and notifications about changes) by default, only the PRTG System Administrator user. You cannot change this behavior. However, you can <a href="tickets.htm#emails" class="topiclink">turn off ticket emails</a> for every user account.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="types" class="hmanchor"></a><span class="f_InTopicHeading">Types of Tickets</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">New tickets are created in the following cases:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">New devices or sensors have been created by the auto-discovery process.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">In the corresponding ticket, only device templates will be listed that PRTG used to create sensors.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A new probe connects to the core and must be acknowledged.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A new cluster node connects to the cluster and must be acknowledged.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A new version of the software is available.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A new report is ready for review.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In a few other situations, such as when the system runs out of disk space, for licensing issues, when an error occurs, etc.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A <a href="notifications.htm" class="topiclink">notification</a> opened a ticket if set in the notification settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A user opened a ticket.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Overall, there are three types of tickets:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">User Tickets</span><span class="f_ListBulleted">: Tickets created by PRTG users, for example, to assign monitoring-related tasks to a particular PRTG user (or user group) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">ToDo Tickets</span><span class="f_ListBulleted">: Tickets created by PRTG to show important system information and in case of specific system events. They are assigned to the PRTG System Administrator user and cannot be turned off.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The </span><span class="f_BoldCustom">Related Object</span><span class="f_ListBulleted"> of ToDo tickets is </span><span class="f_BoldCustom">System</span><span class="f_ListBulleted">. </span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Notification Tickets</span><span class="f_ListBulleted">: Tickets created via </span><span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span><span class="f_ListBulleted"> in case of monitoring alerts</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="states" class="hmanchor"></a><span class="f_InTopicHeading">States of Tickets</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Tickets can have three different states depending on the working process regarding the corresponding issue:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:66px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Symbol</span></p>
+</th>
+<th style="vertical-align:top; width:87px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">State</span></p>
+</th>
+<th style="vertical-align:top; width:1055px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Description</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:66px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="ticket_open_symbol" width="16" height="16" style="margin:0;width:16px;height:16px;border:none" src="ticket_open_symbol.png"/></p>
+</td>
+<td style="vertical-align:top; width:87px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Open</span></p>
+</td>
+<td style="vertical-align:top; width:1055px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">New tickets will be open as long as the corresponding issue exists as described in the ticket.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:66px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="ticket_resolved_symbol" width="16" height="14" style="margin:0;width:16px;height:14px;border:none" src="ticket_resolved_symbol.png"/></p>
+</td>
+<td style="vertical-align:top; width:87px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Resolved</span></p>
+</td>
+<td style="vertical-align:top; width:1055px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The issue as described in the ticket does not persist any longer. Someone took care of it.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:66px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="ticket_closed_symbol" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="ticket_closed_symbol.png"/></p>
+</td>
+<td style="vertical-align:top; width:87px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Closed</span></p>
+</td>
+<td style="vertical-align:top; width:1055px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Usually, the ticket has been resolved before, the solution to the issue has been checked for correctness, and the ticket does not require any other action.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tickets" class="hmanchor"></a><span class="f_InTopicHeading">Tickets (Main Menu)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This option is only shown in the main menu bar if the user group of the current user is allowed to use the ticket system. You can turn off tickets for particular user groups in <span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span>. Users with <span class="f_BoldCustom">read-only</span> rights are always excluded from the ticket system and cannot see the tickets entry in the main menu bar.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You have several options to display a list of tickets that is filtered to your needs. In the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a>, <span class="f_ItalicCustom">hover</span> over <span class="f_BoldCustom">Tickets</span> to show all available filter options or <span class="f_ItalicCustom">click</span> directly to show all open tickets assigned to the current user. You can also create a new ticket via the main menu. Available options are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">My Tickets</span><br />
+<span class="f_ItalicCustom">Click</span><span class="f_ListBulleted"> to show all open tickets that are assigned to the current user. </span><span class="f_ItalicCustom">Hover</span><span class="f_ListBulleted"> over </span><span class="f_BoldCustom">My Tickets</span><span class="f_ListBulleted"> show other menu items for filtering these tickets depending on their status:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Open</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Resolved</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Closed</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All</span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All Tickets</span><br />
+<span class="f_ItalicCustom">Click</span><span class="f_ListBulleted"> to show all open tickets of all PRTG users. </span><span class="f_ItalicCustom">Hover</span><span class="f_ListBulleted"> over </span><span class="f_BoldCustom">All Tickets</span><span class="f_ListBulleted"> to show other menu items for filtering these tickets depending on their status:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Open</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Resolved</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Closed</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All</span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">ToDo Tickets</span><br />
+<span class="f_ItalicCustom">Click</span><span class="f_ListBulleted"> to show all open tickets from the <a href="tickets.htm#types" class="topiclink">type</a> </span><span class="f_ItalicCustom">ToDo</span><span class="f_ListBulleted">. </span><span class="f_ItalicCustom">Hover</span><span class="f_ListBulleted"> over </span><span class="f_BoldCustom">ToDo Tickets</span><span class="f_ListBulleted"> to show other menu items for filtering these tickets depending on their status:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Open</span><br />
+<span class="f_ItalicCustom">Click</span><span class="f_ListBulleted"> to show all open ToDo tickets. </span><span class="f_ItalicCustom">Hover</span><span class="f_ListBulleted"> over </span><span class="f_BoldCustom">Open</span><span class="f_ListBulleted"> to show other menu items for filtering these tickets depending on their event type:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Report Related</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Auto-Discovery Related</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Probe Related</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">System Errors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">New Software Version</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Resolved</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Closed</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All</span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a id="open" class="hmanchor"></a><span class="f_BoldCustom">Open Ticket</span><br />
+<span class="f_ListBulleted">Hover over </span><img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">and select </span><span class="f_BoldCustom">Add Ticket</span><span class="f_ListBulleted"> from the menu. This will open the </span><span class="f_BoldCustom">Add Ticket</span><span class="f_ListBulleted"> dialog. In the first step, select the object on which you want to focus in the ticket via the </span><span class="f_BoldCustom"><a href="object_selector.htm" class="topiclink">Object Selector</a></span><span class="f_ListBulleted">. Click </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted">.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can leave this step out when using the <a href="context_menus.htm" class="topiclink">context menu</a> of this object in the device tree to open the ticket. </span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<span class="f_ListBulleted">In step 2, provide the following information and confirm by clicking on </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted"> to create a </span><span class="f_ItalicCustom">User Ticket</span><span class="f_ListBulleted">:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Subject</span><span class="f_ListBulleted">: Enter a meaningful title for the ticket that indicates the topic of the issue.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Assigned to</span><span class="f_ListBulleted">: Select a user (or user group) who will be responsible for this issue from the dropdown list.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Priority</span><span class="f_ListBulleted">: Define a <a href="priority_and_favorites.htm" class="topiclink">priority</a> from one to five stars.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Comments</span><span class="f_ListBulleted">: Enter a text message. This message should describe the issue in detail. </span></li>
+</ul></ul>
+<p class="p_Normal" style="page-break-inside: avoid;">After selecting the desired filter or opening a new user ticket, a corresponding list of tickets will appear. In this table list, you can re-sort the items by using the <a href="working_with_lists.htm" class="topiclink">respective options</a>. Additionally, you have several search options using the inline filter directly above the table. The following filters are available: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ticket status</span><span class="f_ListBulleted">: all, open, resolved, closed </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ticket type</span><span class="f_ListBulleted">: User, ToDo, Notification</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Concerned user(s)</span><span class="f_ListBulleted">: Show only tickets that are assigned to a specific user or user group. There are the following types: </span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">anyone</span><span class="f_ListBulleted">: no user filter is applied so all tickets on this PRTG server are shown </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">me</span><span class="f_ListBulleted">: show tickets that are assigned to you (the user who is currently logged in) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Groups</span><span class="f_ListBulleted">: show tickets that are assigned to a specific user group only</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Users</span><span class="f_ListBulleted">: show tickets that are assigned to a specific user only </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disallowed</span><span class="f_ListBulleted">: users or user groups that do not have access rights to the selected object are displayed under </span><span class="f_ItalicCustom">Disallowed</span><span class="f_ListBulleted">. This for your information only; you cannot select them! </span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Relationship</span><span class="f_ListBulleted"> to a monitoring object: Choose groups, probes, devices, or sensors with the </span><span class="f_BoldCustom"><a href="object_selector.htm" class="topiclink">Object Selector</a></span><span class="f_ListBulleted">.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">ToDo tickets are related to </span><span class="f_BoldCustom">System</span><span class="f_ListBulleted">. </span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Time span</span><span class="f_ListBulleted"> to view tickets by last edit of a ticket: Use the date time picker to enter the date and time.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Click on the subject of a ticket to open the ticket's detail page. There you can find all related information, as well as conduct several actions. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:598px"><a href="ticket.png"><img id="TOGGLE0186A2" class="image-toggle" alt="An Open ToDo Ticket with Instructions" title="An Open ToDo Ticket with Instructions" style="width:598px;height:167px;border:none" src="ticket_zoom58.png"/></a><p style="text-align:center"><span class="f_ImageCaption">An Open ToDo Ticket with Instructions</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="actions" class="hmanchor"></a><span class="f_InTopicHeading">Actions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For best experience with PRTG, check every ticket and select appropriate actions.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Only members of user groups that have the corresponding <a href="user_access_rights.htm#overview" class="topiclink">access rights</a> can view and edit tickets that are related to a certain monitoring object.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following actions are available when viewing the tickets list or a specific ticket:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Edit</span><span class="f_ListBulleted">: Opens a dialog where you can change the subject and the priority of the ticket, as well as assign the ticket to another user. Furthermore, you can add a text message to this ticket. Confirm your changes by clicking </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Assign</span><span class="f_ListBulleted">: Opens a dialog where you can give the ticket to another user. Select a user (or user group) via the dropdown menu. Furthermore, you can add a text message to this ticket. Confirm your assignment by clicking </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Resolve</span><span class="f_ListBulleted">: Opens a dialog where you can resolve the ticket by clicking </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted">. The status </span><span class="f_ItalicCustom">resolved</span><span class="f_ListBulleted"> indicates that the issue as described in this ticket does not persist. Furthermore, you can add a text message to this ticket that indicates, for example, what has been done concerning the issue. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Close</span><span class="f_ListBulleted">: Opens a dialog where you can close the ticket by clicking </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted">. Usually, this ticket has been resolved before and the correct solution of the issue has been checked. Furthermore, you can add a text message to this ticket.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Reopen</span><span class="f_ListBulleted">: Opens a dialog where you can reopen a ticket after it has been resolved or closed. Do so, for example, if the solution of the issue turned out to be incorrect. Furthermore, you can add a text message to this ticket that indicates, for example, why you have opened the ticket again. Confirm reopening and assignment by clicking </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="emails" class="hmanchor"></a><span class="f_InTopicHeading">Tickets as Emails</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can receive all tickets that are assigned to you or to your user group as emails. You will also be notified via email each time this ticket is edited. This way, you will always be informed about new notifications (if set), important system information (if PRTG System Administrator), or within the communication with other PRTG users. You can turn off the setting <span class="f_BoldCustom">Tickets as Emails</span> in <span class="f_BoldCustom"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span>. If you disable emails for tickets for a user account, this particular user will not receive any ticket emails anymore. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you have defined to get tickets as emails and you are PRTG System Administrator, you will receive emails for ToDo tickets as well, although ToDo tickets are considered to be opened by the PRTG System Administrator. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler Blog: A New Feature Was Assigned to You in PRTG: Ticket System Keeps Track of Network Monitoring Issues</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/blog/2014/02/03/prtg/ticket-system-keeps-track-of-network-monitoring-issues" target="_blank" class="weblink">https://www.paessler.com/blog/2014/02/03/prtg/ticket-system-keeps-track-of-network-monitoring-issues</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="logs.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="working_with_lists.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

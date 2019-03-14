@@ -1,0 +1,32 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.supportbundle_send.title" default="Sending Support Bundle" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.supportbundle.head2a" default="Support Bundle"></h1>
+  <div id="content">
+    <div id="reportit" class="tabs-container">
+      <div id="feedbackform">
+        <form action="/home" method="get" class="prtg-plugin prtg-form validateForm" data-plugin="prtg-form">
+         <fieldset>
+           <legend class="prtg-header"><#lang key="html.supportbundle_send.customerinformation2" default="Sending Support Bundle to Paessler"></legend>
+           <div class="control-group">
+             <div class="controls-info">
+                <#system type="supportbundle">
+              </div>
+          </div>
+        </fieldset>
+      <div class="submitbuttonboxanchor">
+       <div class="submitbuttonbox">
+         <input value="<#lang key="html.supportbundle_send.home" default="Home">"  class="actionbutton" type="submit" id="submitticketformsubmit" onsubmit="!!window.__ga && window.__ga('send', 'event', 'supportbundle', 'send'); return true;">
+       </div>
+      </div>
+      </form>
+      </div>
+   </div>
+ </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

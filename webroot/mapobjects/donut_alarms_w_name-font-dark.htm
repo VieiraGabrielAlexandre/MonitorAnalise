@@ -1,0 +1,10 @@
+﻿<!--Status Donuts:Alarms with name (dark text)-->
+<div class="map_object map_donutobj hasname" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+    <#mapobject type="objectgrip" mode="<@editmode>">
+    <#mapobject type="htmlbefore" subid="<@subid>">
+    <div class="map_donutwrapper">
+        <#include file="includes\donut_alarms_only.htm" id="<@objectid>">
+    </div>
+    <p class="objname"><b><#objectproperty name="Name" id="<@objectid>"></b></p>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

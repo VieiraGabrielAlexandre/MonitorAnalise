@@ -1,0 +1,15 @@
+﻿
+<div id="comments" class="box comments-content">
+	<div style="<#system type='displaydependingonrights' right='write' hideobjectif='true'>">
+		<pre><#objectproperty name="comments" show="text"></pre>
+	</div>
+	<div style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+	<form action="/editsettings" method="post" target="_top"  class="validateForm prtg-plugin prtg-form" data-plugin="prtg-form">
+		<input type="hidden" name="id" value="<#objectid>">
+		<#objectproperty name="comments" show="edit">
+		<#include file="includes\submitbutton.htm">
+	</form>
+	</div>
+</div>
+
+ 

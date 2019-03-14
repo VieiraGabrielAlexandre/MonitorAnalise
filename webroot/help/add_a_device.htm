@@ -1,0 +1,651 @@
+﻿<!--Add a Device-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="add_a_group.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="add_a_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Add a Device</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Add a Device</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are several ways to add a device manually:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Select </span><span class="f_BoldCustom">Devices</span><span class="f_ListBulleted"> | </span><span class="f_BoldCustom">Add Device</span><span class="f_ListBulleted"> from the main menu. An assistant will appear, leading you through two steps.</span></li>
+<li style="text-align: left; line-height: 1.38; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Hover over </span><img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">and select </span><span class="f_BoldCustom">Add Device</span><span class="f_ListBulleted"> from the menu. </span><span class="f_ListBulleted">An assistant will appear, leading you through two steps. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">For faster setup, you can select </span><span class="f_BoldCustom">Add Device...</span><span class="f_ListBulleted"> in the <a href="context_menus.htm" class="topiclink">context menu</a> of a group to which you want to add the new device. This will skip step 1 and lead you directly to step 2.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Step 1</span><br />
+<span class="f_ListBulleted">Choose a group you want to add the new device to. Click </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:440px"><a href="add_device2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Add Device Assistant Step 2" title="Add Device Assistant Step 2" style="width:440px;height:530px;border:none" src="add_device2_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Add Device Assistant Step 2</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Step 2</span><br />
+<span class="f_ListBulleted">Add device settings as described below.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Add Device Settings</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Device Name and Address</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Device Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the device. The name will be shown by default in the device tree and in all alarms.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">IP Version</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which IP protocol PRTG will use to connect to this device. The setting is valid for all sensors created on this device. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Connect using IPv4</span><span class="f_ListBulleted">: Use IP version 4 for all requests to this device.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Connect using IPv6</span><span class="f_ListBulleted">: Use IP version 6 for all requests to this device.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">IP Address/DNS Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the IP address (either v4 or v6, depending on your selection above) or DNS name for the device. Most sensors created on this device will inherit this setting and they will try to connect to this address for monitoring.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">There are some sensor types that still have their own setting for IP address/DNS name. Those sensors will use their own settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more tags; confirm each tag by hitting the space, comma, or enter key. You can use tags to group sensors and use tag-filtered views later on. Tags are not case sensitive. Tags are automatically <a href="tags.htm" class="topiclink">inherited</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Device Icon</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose a device icon from the list. It will be shown in the device tree.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="discoverytypegroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Device Type</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Management</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select which type of auto-discovery you would like to perform for this device. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Manual (no auto-discovery)</span><span class="f_ListBulleted">: Select this if you want to only create sensors manually.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic device identification (standard, recommended)</span><span class="f_ListBulleted">: Use a small set of auto-discovery templates. This will scan your LAN and usually create a set of standard sensors on your device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic device identification (detailed, may create many sensors)</span><span class="f_ListBulleted">: Use an extended set of auto-discovery templates. This will scan your LAN and usually create many sensors on your device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic sensor creation using specific device template(s)</span><span class="f_ListBulleted">: Use specific auto-discovery templates only. Please select templates below. This will scan your LAN and add sensors defined in the template.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Discovery Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This option is only visible if you select one of the auto-discovery options above. Define when the auto-discovery will run. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once</span><span class="f_ListBulleted">: Perform auto-discovery only once. For existing devices, this will initiate a one-time sensor update for the current device. If you select this option, you have to <a href="auto_discovery.htm#run" class="topiclink">start the auto-discovery manually</a>, it will not run automatically.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hourly</span><span class="f_ListBulleted">: Perform auto-discovery for new sensors every hour.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Daily</span><span class="f_ListBulleted">: Perform auto-discovery for new sensors every day.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Weekly</span><span class="f_ListBulleted">: Perform auto-discovery for new sensors every week.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Device Template(s)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This option is only visible if using specific device templates (last option) is enabled above. Choose one or more templates by adding a check mark in front of the respective template name. You can also select and deselect all items by using the check box in the table head. These will be used for auto-discovery on the current device. </span><span class="f_ListBulleted">Choose from:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">ADSL</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Amazon Cloudwatch</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Buffalo TeraStation NAS</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cisco ASA VPN</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cisco Device (Generic)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Dell EqualLogic</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Dell MDI Disk</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DNS Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Environment Jacarta</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Environment Poseidon</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">FTP Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Generic Device (PING only)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Generic Device (SNMP-enabled)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Generic Device (SNMP-enabled, Detailed)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP Web Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hyper V Host Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">IPMI enabled devices</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Juniper NS Device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Linux/UNIX Device (SNMP or SSH enabled)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Mail Server (Generic)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Mail Server (MS Exchange)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Microsoft SharePoint 2010</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NAS LenovoEMC</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NAS QNAP</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NAS Synology</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NTP Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Printer (HP)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Printer Generic</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">RDP Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">RMON compatible device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Server (Compaq/HP agents)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Server (Dell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Server Cisco UCS</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Server IBM</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SonicWall</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SSL Security Check</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Switch (Cisco Catalyst)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Switch (Cisco IOS Based)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Switch (HP Procurve)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">UNIX/Linux Device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">UPS Health (APC)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">UPS Health (Generic)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">UPS Health (Liebert)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">VMware ESX / vCenter Server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Webserver</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows (Detailed via WMI)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows (via Remote PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows (via WMI)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows IIS (via SNMP)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">XEN Hosts</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">XEN Virtual Machines</span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Once the auto-discovery is finished, PRTG will create a new <a href="tickets.htm" class="topiclink">ticket</a> and list the device templates that were actually used to create new sensors. Templates that were not applied will not be shown in the ticket.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="windowsconnection" class="hmanchor"></a><a id="windows_credentials" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Windows Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Domain or Computer Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the authority for Windows access. This is used for Windows Management Instrumentation (WMI) and other Windows sensors. If you want to use a Windows local user account on the target device, enter the computer name here. If you want to use a Windows domain user account (recommended), enter the (Active Directory) domain name here. If not explicitly defined, PRTG will automatically add a prefix in order to use the NT LAN Manager (NTLM) protocol. Do </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> leave this field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the username for Windows access. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the password for Windows access. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="linuxconnection" class="hmanchor"></a><a id="cred_linux" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Linux/Solaris/Mac OS (SSH/WBEM) Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a login name for the access via SSH and WBEM. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Login</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the authentication method to use for login. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Login via Password</span><span class="f_ListBulleted">: Provide a password for login. Enter below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Login via Private Key</span><span class="f_ListBulleted">: Provide a private key for authentication. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">PRTG can only handle keys in OpenSSH format that are </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> encrypted. You cannot use password-protected keys here. In the text field, paste the entire private key, including the &quot;BEGIN&quot; and &quot;END&quot; lines. Please make sure the according public key is provided on the target machine. For details, see </span><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select password login above. Enter a password for the Linux access via SSH and WBEM. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Private Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select private key login above. Paste a private key into the field (OpenSSH format, unencrypted). Usually, you will use credentials with administrator privileges. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If you do not insert a private key for the first time, but </span><span class="f_ItalicCustom">change</span><span class="f_ListBulleted"> the private key, you need to <a href="administrative_tools_settings.htm#core" class="topiclink">restart your PRTG core server service</a> in order for the private key change to take effect! For details, see </span><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For WBEM Use Protocol</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the protocol to use for WBEM. This setting is only relevant if you use WBEM sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP</span><span class="f_ListBulleted">: Use an unencrypted connection for WBEM.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTPS</span><span class="f_ListBulleted">: Use an SSL-encrypted connection for WBEM.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For WBEM Use Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the port to use for WBEM. This setting is only relevant if you use WBEM sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set automatically (port 5988 or 5989)</span><span class="f_ListBulleted">: Use one of the standard ports, depending on whether you choose unencrypted or encrypted connection above.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set manually</span><span class="f_ListBulleted">: Use a custom port. Define below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">WBEM Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you enable manual port selection above. Enter the WBEM port number.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port number to use for SSH connections. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">By default, PRTG uses this setting automatically for all <a href="available_sensor_types.htm#linux" class="topiclink">SSH sensors</a>, unless you define a different port number in the sensor settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Rights Elevation</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the rights that you want to use to execute the command on the target system. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as the user connecting (default)</span><span class="f_ListBulleted">: Use the rights of the user who establishes the SSH connection, as defined above.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'sudo' (with password)</span><span class="f_ListBulleted">: Use the rights of another user with a password required for </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> to run commands on the target device, for example, as root user.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'sudo' (without password)</span><span class="f_ListBulleted">: Use the rights of another user without a password required for </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> to run commands on the target device, for example, as root user.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'su'</span><span class="f_ListBulleted">: Use the rights of another user with </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> to run commands on the target device.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Target User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you choose </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> above. Enter a username to run the specified command as a user other than </span><span class="f_ItalicCustom">root</span><span class="f_ListBulleted">. If you leave this field empty, you will run the command as </span><span class="f_ItalicCustom">root</span><span class="f_ListBulleted">. Ensure you set the Linux password even if you use a public or private key for authentication. This is not necessary if the user is allowed to execute the command without a password.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password Target User </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you choose to run the commands using </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> with password above. Enter the password for the specified target user.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Engine</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the method you want to use to <a href="ssh_monitoring.htm" class="topiclink">access data with SSH sensors</a>. We strongly recommend that you keep the default engine! For now, you still can use the legacy mode to ensure compatibility with your target systems. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default (recommended)</span><span class="f_ListBulleted">: This is the default monitoring method for SSH sensors. It provides best performance and security.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Compatibility Mode (deprecated)</span><span class="f_ListBulleted">: Try this legacy method only if the default mode does not work on a target device. The compatibility mode is the SSH engine that PRTG used in previous versions and is deprecated. We will remove this legacy option soon, so please try to get your SSH sensors running with the default SSH engine.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted"> You can also individually select the SSH engine for each SSH sensor in the sensor settings.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="vmwareconnection" class="hmanchor"></a><a id="cred_vmware" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for VMware/XenServer</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a login name for access to VMware and Xen servers. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a password for access to VMware and Xen servers. Usually, you will use credentials with administrator privileges.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Single Sign-On (SSO) passwords for vSphere do not support special characters. See the manual sections for VMware sensors for details.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">VMware Protocol</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the protocol used for the connection to VMware and XenServer. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTPS (recommended)</span><span class="f_ListBulleted">: Use an SSL-encrypted connection to VMware and XenServers.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP</span><span class="f_ListBulleted">: Use an unencrypted connection to VMware and XenServers.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Session Pool</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use session pooling for VMware sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Reuse session for for multiple scans (recommended)</span><span class="f_ListBulleted">: Select this option to use session pooling. With session pooling, a VMware sensor uses the same session as created in advance to query data and needs not to log in and out for each sensor scan. We recommend that you choose this option because it reduces network load and log entries on the target device, resulting in better performance.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Create a new session for each scan</span><span class="f_ListBulleted">: If you select this option and disable session pooling, a VMware sensor has to log in and out for each sensor scan. We recommend that you use the session pooling option above for better performance. &nbsp;</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="snmpversiongroup" class="hmanchor"></a><a id="cred_snmp" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for SNMP Devices</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Version</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the SNMP version for the device connection. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v1</span><span class="f_ListBulleted">: Use the simple v1 protocol for SNMP connections. This protocol only offers clear-text data transmission, but it is usually supported by all devices.</span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">SNMP v1 does not support 64-bit counters.</span><br />
+<span class="f_ListBulleted">This may result in invalid data when monitoring traffic via SNMP.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v2c (recommended)</span><span class="f_ListBulleted">: Use the more advanced v2c protocol for SNMP connections. This is the most common SNMP version. Data is still transferred as clear-text, but it supports 64-bit counters.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v3</span><span class="f_ListBulleted">: Use the v3 protocol for SNMP connections. It provides secure authentication and data encryption.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>When using SNMP v3<span class="f_ListBulleted"> you can only monitor a limited number of sensors per second due to internal limitations. The limit is somewhere between 1 and 50 sensors per second (depending on the SNMP latency of your network). This means that using an interval of 60 seconds limits you to between 60 and 3000 SNMP v3 sensors for each probe. If you experience an increased </span><span class="f_ItalicCustom">Interval Delay</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Open Requests</span><span class="f_ListBulleted"> with the </span><span class="f_BoldCustom"><a href="probe_health_sensor.htm" class="topiclink">Probe Health Sensor</a></span><span class="f_ListBulleted">, distribute the load over <a href="remote_probes_and_multiple_probes.htm" class="topiclink">multiple probes</a>. SNMP v1 and v2 do not have this limitation.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Community String</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v1 </span><span class="f_ListBulleted">or </span><span class="f_BoldCustom">v2c </span><span class="f_ListBulleted">above. Enter the community string of your devices. This is a kind of &quot;clear-text password&quot; for simple authentication. We recommend that you use the default value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">MD5</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Message-Digest Algorithm 5 </span><span class="f_ListBulleted">(MD5) for authentication.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SHA</span><span class="f_ListBulleted">: </span>Use<span class="f_ItalicCustom"> Secure Hash Algorithm</span><span class="f_ListBulleted"> (SHA) for authentication.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The type you choose must match the authentication type of your device.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you do not want to use authentication, but you need SNMP v3, for example, because your device requires context, you can leave the field </span><span class="f_BoldCustom">Password</span><span class="f_ItalicCustom"> </span><span class="f_ListBulleted">empty. In this case, </span><span class="f_ItalicCustom">SNMP_SEC_LEVEL_NOAUTH</span><span class="f_ListBulleted"> is used and authentication deactivated entirely.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a username for secure authentication. This value must match the username of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a password for secure authentication. This value must match the password of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Encryption Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Select an encryption type. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DES</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Data Encryption Standard</span><span class="f_ListBulleted"> (DES) as encryption algorithm. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">AES</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Advanced Encryption Standard </span><span class="f_ListBulleted">(AES) as encryption algorithm.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">AES 192 and AES 256 are not supported by Net-SNMP.</span><br />
+<span class="f_ListBulleted">They lack RFC specification.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The type that you choose must match the encryption type of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data Encryption Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter an encryption key here. If you provide a key in this field, SNMP data packets are encrypted using the encryption algorithm selected above, which provides increased security. The key that you enter here must match the encryption key of your device. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If the key you enter in this field does not match the key configured on the target SNMP device, you will not get an error message about this! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Context Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a context name only if it is required by the configuration of the device. Context is a collection of management information accessible by an SNMP device. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port for the SNMP communication. </span><span class="f_ListBulleted">We recommend that you use the default value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Timeout (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a timeout in seconds for the request. Please enter an integer value. If the reply takes longer than the value you enter here, the request is aborted and an error message triggered. The maximum timeout value is </span><span class="f_ItalicCustom">300</span><span class="f_ListBulleted"> seconds (5 minutes).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="dbcredentials" class="hmanchor"></a><a id="credentials_database" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Database Management Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The settings you define in this section apply to the following sensor types:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ado_sql_v2_sensor.htm" class="topiclink">ADO SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="microsoft_sql_v2_sensor.htm" class="topiclink">Microsoft SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="mysql_v2_sensor.htm" class="topiclink">MySQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="oracle_sql_v2_sensor.htm" class="topiclink">Oracle SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="postgresql_sensor.htm" class="topiclink">PostgreSQL Sensor</a></span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port for Databases</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which ports PRTG will use for connections to the monitored databases. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set automatically (default port, recommended)</span><span class="f_ListBulleted">: PRTG automatically determines the type of the monitored database and uses the corresponding default port to connect. See below for a list of default ports.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Define one custom port valid for all database sensors</span><span class="f_ListBulleted">: Choose this option if your database management systems do not use the default ports. Define the port for database connections manually below. If you choose this option, PRTG will use the custom port for all database sensors.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you choose the automatic port selection, PRTG uses the following default ports:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">Microsoft SQL</span><span class="f_ListBulleted">: 1433</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">MySQL</span><span class="f_ListBulleted">: 3306</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">Oracle SQL</span><span class="f_ListBulleted">: 1521</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">PostgreSQL</span><span class="f_ListBulleted">: 5432</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom Database Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the number of the port that PRTG will use for database connections. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">All database sensors on this device will use this port to connect.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select the authentication method for the connection to the SQL database. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows authentication with impersonation</span><span class="f_Comment">: If you select this option, PRTG uses the Windows credentials as defined in the particular <a href="device_settings.htm#windows_credentials" class="topiclink">device settings</a> for the database connection. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_Comment">The user whose credentials are used needs to have permissions to log on to the system on which the PRTG probe with a database sensor runs. This is required for the impersonation. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SQL server authentication</span><span class="f_Comment">: Choose this option if you want to use explicit credentials for database connections.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you select SQL server authentication above. Enter the username for the database connection.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you select SQL server authentication above. Enter the password for the database connection.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timeout (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a timeout in seconds for the request. Please enter an integer value. If the reply takes longer than this value defines, the sensor cancels the request and triggers an error message. The maximum timeout value is </span><span class="f_ItalicCustom">300</span><span class="f_ListBulleted"> seconds (5 minutes).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="cloudcredentials" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Amazon CloudWatch</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your Amazon Web Services (AWS) access key. Please see the corresponding <a href="available_sensor_types.htm#virtual" class="topiclink">Amazon CloudWatch sensor</a> documentation to learn more about the rights that are required for querying AWS CloudWatch metrics.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Secret Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your Amazon Web Services (AWS) secret key. Please see the corresponding <a href="available_sensor_types.htm#virtual" class="topiclink">Amazon CloudWatch sensor</a> documentation to learn more about the rights that are required for querying AWS CloudWatch metrics.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you leave the current page, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Device and Sensor Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_objects_manually.htm" class="topiclink">Create Objects Manually</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probe_settings.htm" class="topiclink">Probe Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="group_settings.htm" class="topiclink">Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="device_settings.htm" class="topiclink">Device Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a>—<a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Add,Add Device,Device,Device add</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="add_a_group.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="add_a_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addsensor4.title" default="Add Sensor (Step 2 of 2)" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+    <form id="addobjectdialogform" action="addsensor5.htm" method="POST" enctype="multipart/form-data" class="prtg-form prtg-plugin formchanged" data-plugin="prtg-form" data-ajaxsubmit="true">
+      <h1>
+        <#lang key="html.addsensor4.head2a" default="<b>Add Sensor</b> to Device">
+        <span data-id="<#objectid>" class="to-device <#sensor type="menuclassofstate">"><#objectproperty name="name"> [<#objectproperty name="host" show="text">]</span>
+        <span class="steps"><#lang key="html.addsensor4.head2b" default="(Step 2 of 2)"></span>
+      </h1>
+			<div class="eye-catcher"></div>
+			<div class="cancel-action">
+			  <a onClick="history.back();return(false)" class="btn cancel" type="reset">
+				  <#lang key="html.global.cancel" default="Cancel"/>
+				</a>
+			</div>
+      <#session type="tempnode" step="2">
+      <input type="hidden" id="tmpid" name="tmpid" value="<#system type='tmpid'>">
+      <#include file="includes\submitbutton.htm">
+    </form>
+  </div>
+
+  <#manuallink var="manuallink">
+  <#system type='showhelp' tct="theater" page="help-addsensor4"  isreadonly="false" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+
+  <#lang key="html.addsensor4.help.title" default="Specifying sensor settings" var="helptitle">
+  <#lang key="html.addsensor4.help.text2" default="Please specify the settings for the new sensor." var="helptext">
+  <#lang key="html.addsensor4.help.link" default="<a href='@manuallink#settings' target='_blank'><b>Help: Sensor Settings</b></a>" var="helplink">
+  <#system type='showhelp' var='showhelp'>
+  <#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+  <#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#system type="paesslerqasensortypelink">
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

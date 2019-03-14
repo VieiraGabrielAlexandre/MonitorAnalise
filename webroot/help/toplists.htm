@@ -1,0 +1,187 @@
+﻿<!--Toplists-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ajax_gui_advanced.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="arrange_objects.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Toplists</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Toplists</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Packet Sniffer</span> and <span class="f_ItalicCustom">xFlow</span> (NetFlow, jFlow, sFlow, IPFIX) sensor types can not only measure the total bandwidth usage, they can also break down the traffic by IP address, port, protocol, and other parameters. The results are shown in so-called <span class="f_BoldCustom">Toplists</span>. This way PRTG is able to tell which IP address, connection, or protocol uses the most bandwidth. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG looks at all network packets (or streams) and collects the bandwidth information for all IPs, ports, and protocols. At the end of the toplist period, PRTG only stores the top entries of each list in its database.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="top_entries" class="hmanchor"></a><span class="f_InTopicHeading">Only Top Entries are Stored</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Storing all available analysis data in a database during the analysis process would create a huge amount of data, which would be very slow to transfer between probe and core and also retrieving data would be too slow. By storing only the top 100 entries for short periods of time, it is possible to reduce the amount of data to a minimum while still being able to identify devices with huge bandwidth usage.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="toplists" class="hmanchor"></a><span class="f_InTopicHeading">Toplists Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Toplists</span> are available for <a href="available_sensor_types.htm#bandwidth" class="topiclink">xFlow, IPFIX, and Packet Sniffer sensors</a> only. Toplist graphs are displayed on the sensor's <span class="f_BoldCustom">Overview</span> tab. By default, there are three different Toplists predefined for each sensor:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Connections</span>: Shows bandwidth usage by connection.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Protocols</span>: Shows bandwidth usage by protocol.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Talkers</span>: Shows bandwidth usage by IP address.<br />
+&nbsp;</li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="hmfile_hash_af41a262.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Toplist Top Protocols for a Packet Sniffer Sensor" title="Toplist Top Protocols for a Packet Sniffer Sensor" style="width:600px;height:429px;border:none" src="hmfile_hash_83c84336.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Toplist Top Protocols for a Packet Sniffer Sensor</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click one of these items to view a distribution chart and a list of source and destination IP and port, protocols, or kind of traffic in different channels, for example. What kind of information is available depends on the list selected. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click an entry in the Toplist periods list on the left side to view data for a certain time span. By default, a time span of 15 minutes is set. You can also manually define the start and end time of the Toplist period you want to view. Use the date time picker to enter the date and time. Additionally, several <a href="working_with_lists.htm" class="topiclink">table list options</a> are available.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To print a Toplist, click the </span><span class="f_BoldCustom">Print This Toplist</span><span class="f_ListBulleted"> button to view a printer-friendly version. Use the print option of your browser to send it to your printer. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">With </span><span class="f_BoldCustom">Sensor Overview</span><span class="f_ListBulleted"> you can return to the current sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_ListBulleted"> tab. For a quick selection of other Toplists of the current sensor, click one of the Toplist icons at the top of the page.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You can add or delete new Toplists, or edit existing ones on the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_ListBulleted"> tab.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Add Toplist</span> button in the sensor overview to create a new Toplist. The available options are the same as for <a href="toplists.htm#edit" class="topiclink">editing</a> a list.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="edit" class="hmanchor"></a><span class="f_InTopicHeading">Edit</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the small <span class="f_ItalicCustom">gear icon</span> of a Toplist tile in the sensor overview to modify it.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Toplist</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the Toplist.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Talkers (Which IPs use the most bandwidth?)</span>: Shows bandwidth usage by IP address.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Connections (Which connections use the most bandwidth?)</span>: Shows bandwidth usage by connection.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top Protocols (Which protocols use the most bandwidth?)</span>: Shows bandwidth usage by protocol.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom (Create your own Toplist)</span><span class="f_ListBulleted">: Create your own Toplist by selecting criteria below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Toplist Fields</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if you select a custom type above. Select the fields you want to add to the Toplist by adding a check mark in front of the respective field name. The available options depend on the type of sensor used. They are different for Packet Sniffer, NetFlow v5, v9 (and IPFIX), and sFlow.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For performance reasons, only select the fields you really want to monitor.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, see </span><span class="f_BoldCustom"><a href="toplists.htm#performance" class="topiclink">Performance Considerations</a></span><span class="f_ListBulleted"> section below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Period (Minutes)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the interval for the Toplist in minutes. Please enter an integer value. Toplists always cover a certain time span. Once a time span has passed, the top results are stored and a new Toplist is started. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To avoid load problems on your probe system, please do not set this interval too long. Default setting is </span><span class="f_BoldCustom">15</span><span class="f_ListBulleted"> minutes.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, see </span><span class="f_BoldCustom"><a href="toplists.htm#performance" class="topiclink">Performance Considerations</a></span><span class="f_ListBulleted"> section below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Top Count</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the length of your Toplist. Only this number of entries will be stored for each period. Please enter an integer value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To avoid load problems on your probe system, please set this value as low as possible. Default setting is </span><span class="f_BoldCustom">100</span><span class="f_ListBulleted"> to store the top 100 entries for each period.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, s</span>ee <span class="f_BoldCustom"><a href="toplists.htm#performance" class="topiclink">Performance Considerations</a></span> section below.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; height:74px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Reverse DNS</span></p>
+</td>
+<td style="vertical-align:top; width:324px; height:74px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to do a reverse Domain Name Service (DNS) lookup for IP addresses stored in the Toplist. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Reverse DNS lookup for IPs</span><span class="f_ListBulleted">: Determine the domain name associated with an IP address and show it in the Toplist.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No reverse DNS lookup (faster)</span><span class="f_ListBulleted">: Show IP addresses only. Choose this option to increase performance. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe/Core Data Transfer</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how the probe sends the Toplist data set to the core server. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">According to sensor interval (default)</span><span class="f_ListBulleted">: Send data in the interval defined in the settings of the sensor for which you create this Toplist. This can create a lot of bandwidth and CPU load with many sniffer sensors, complex traffic, or long Toplists.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Wait until Toplist period ends (less CPU and bandwidth usage)</span><span class="f_ListBulleted">: Send data once a Toplist period has finished. This will create less bandwidth usage and CPU load, but you cannot see the </span><span class="f_ItalicCustom">current</span><span class="f_ListBulleted"> Toplist in the web interface, only Toplists with finished periods.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, see </span><span class="f_BoldCustom"><a href="toplists.htm#performance" class="topiclink">Performance Considerations</a></span><span class="f_ListBulleted"> section below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Memory Limit (MB)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the maximal amount of memory in MB that the probe will use for collecting the different connection information. Every Toplist adds its amount to the probe's memory consumption. Increase this value if the number of captured connections is not sufficient. Please enter an integer value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="delete" class="hmanchor"></a><span class="f_InTopicHeading">Delete</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the small <span class="f_ItalicCustom">trashcan icon</span> of a Toplist tile in the sensor overview to delete it. Confirm with <span class="f_BoldCustom">Delete</span> to delete the Toplist.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="details" class="hmanchor"></a><span class="f_InTopicHeading">Details</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click on the <span class="f_ItalicCustom">windows symbol</span> to show details of a Toplist.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="performance" class="hmanchor"></a><span class="f_InTopicHeading">Performance Considerations</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you create Toplists for data lines with considerable usage (for example, steady bandwidth over 10 Mbit/s) or if the traffic is very diverse (for example, many IPs or ports with only little traffic each) please consider the following aspects:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The probe gathers all information needed for the Toplist in RAM during each period. Only the top 100 entries are transferred to the core. Depending on the Toplist type and traffic patterns, the required memory can grow into many megabytes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Choose periods that are as short as possible (especially important when traffic has a high level of diversity) to minimize memory usage.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Memory requirements can grow almost exponentially with each field used in the Toplist definition (depending on traffic pattern). Avoid complex Toplists for high and diverse traffic. For example, </span><span class="f_BoldCustom">Top Connections</span><span class="f_ListBulleted"> (5 fields) needs a lot more memory than </span><span class="f_BoldCustom">Top Talkers</span><span class="f_ListBulleted"> (1 field).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you experience high bandwidth usage between core and probe, try to choose the </span><span class="f_BoldCustom">Wait until Toplist period ends</span> option in the <a href="toplists.htm#edit" class="topiclink">Toplist settings</a>.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you experience </span><span class="f_ItalicCustom">Data incomplete, memory limit was exceeded</span><span class="f_ListBulleted"> messages, try to increase the memory limit in the Toplist settings but keep an eye on the memory usage of the probe process.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To increase the performance of a Toplist, disable the reverse DNS lookup. &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notes" class="hmanchor"></a><span class="f_InTopicHeading">Notes</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">When working with Toplists, be aware that privacy issues can come up for certain configurations of this feature. Using Toplists you can track all single connections of an individual PC to the outside world and you, as the administrator, must make sure it is legal for you to configure PRTG like this. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Keep in mind that Toplists can be viewed through the web interface. You may not want to show lists of domains used in your network to others, so restrict <a href="user_access_rights.htm" class="topiclink">access rights</a> to sensor types that have Toplists. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Note that diagrams, for example for top connections, are not meant to be used for detailed analysis. Rather they should indicate if there is an uncommon, bigger change in this Toplist.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="flow_monitoring.htm" class="topiclink">Monitoring Bandwidth via Flows</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="packet_sniffer_monitoring.htm" class="topiclink">Monitoring Bandwidth via Packet Sniffing</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Flow,Flow Toplists,Packet Sniffing,Packet Sniffing Toplists,Toplists</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ajax_gui_advanced.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="arrange_objects.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+﻿<#lang key="html.usergroupssettings.help.title" default="Edit Group" var="helptitle">
+<#lang key="html.usergroupssettings.help.text" default="Here you can edit user groups settings. For example, you can give the user group a new name, change the default homepage, and add or remove members from the group.<br><br><a href='/help/user_groups_settings.htm' target='_blank'><b>Help: User Groups Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#hideforpod asclass='true' var='hideforpod'>
+<#if value='@hideforpod' is='hide' then='' else='@helptitle1' varexpand='value,else' var='helptitle'>
+<#if value='@hideforpod' is='hide' then='' else='@helptext1' varexpand='value,else' var='helptext'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="usergroup">
+<form id="editusergroupform"  action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+  <wingui-hidden>
+  <div class="quick-links">
+    <a class="printbutton" href="/config_report_object.htm?id=<#objectid>" target="_blank" style="<#hidefornonadmins>" data-placement="top"
+       title='<#lang key="html.objectdata.configreport" default="Prepare Configuration Report for Printout">'><i class="icon-print icon-dark"></i></a>
+  </div>
+  </wingui-hidden>
+  <#object type="settings" objecttype="usergroup">
+  <#hiddenid>
+  <input type="hidden" name="targeturl" value="/systemsetup.htm?tabid=6">
+  <wingui-hidden>
+			<#include file="includes\submitbutton.htm">
+  </wingui-hidden>
+  <wingui>
+    <div class="quick-action-wrapper" style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+      <button class="submit button quick-action-button" type="submit">
+        <#lang key="html.global.save" default="Save">
+      </button>
+      <button type="submit" class="ui-icon quick-action-badge"></button>
+    </div>
+  </wingui>
+</form>

@@ -1,0 +1,21 @@
+﻿<#lang key="html.dashboard.mapdashboard" default="Dashboard" var="pagetitle">
+<#objectproperty name="id" var="mapid">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main">
+	<h1><#objectproperty name="name"></h1>
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+	<div id="content">
+    	<div id="mapdashboard" class="mapdashboard loaded-content" mapurl="controls/mapview.htm?id=<#objectid>">
+			<#include file="controls\mapview.htm">
+    	</div>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+

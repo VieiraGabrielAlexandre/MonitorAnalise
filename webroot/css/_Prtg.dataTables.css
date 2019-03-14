@@ -1,0 +1,78 @@
+﻿/* _Prtg.dataTables.css */
+.dataTables_filter {
+  position: relative;
+  background: <#colorcode color="tableheaders1">;
+  height: 19px;
+  line-height: 19px;
+  top: 0;
+  padding-left: 3px;
+}
+
+.datatables th {
+  height: 20px;
+}
+
+.dataTables_filter label {
+  position: relative;
+  width: 100px;
+  height: 17px;
+  float: right;
+  display: inline-block;
+  background-color: white;
+  margin-right: 1px !important;
+  margin-top: 1px;
+}
+
+.dataTables_filter label[disabled] i {
+  background-color: <#colorcode color="tableheaders1">;
+}
+
+.dataTables_filter label i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.prtg-form > fieldset .dataTables_filter input {
+  width: 80px;
+  height: 15px;
+  line-height: 15px;
+  border: 1px solid transparent;
+  color: #000;
+  padding: 0 0 0 18px;
+  background: none;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+.dataTable .sorting, .datatables .sorting {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  text-indent: 14px;
+  background-position: 1px 2px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAABnRSTlMA/wD/AP83WBt9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAUElEQVR4nKWRyw0AIAhDK3E1GJrl6sGLETQYObaPhk8jiVpJkftGzayETi6lJXKnbLl4m9Lqx+qXVADungywqqkiJy92gqFUNYokH9Z6eOwAZIZCL6H4qbkAAAAASUVORK5CYII=);
+}
+
+.dataTable .sorting_asc, .datatables .sorting_asc {
+  cursor: pointer;
+  text-indent: 14px;
+  background-repeat: no-repeat;
+  background-position: 1px 2px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAABnRSTlMA/wD/AP83WBt9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVR4nGP8//8/A3GAiUh1g1Spm5sbUUoh6rCqZsJUh8tsJjxyaCKMwzMKADTyC9OjbJAHAAAAAElFTkSuQmCC);
+}
+
+.dataTable .sorting_desc, .datatables .sorting_desc {
+  cursor: pointer;
+  text-indent: 14px;
+  background-repeat: no-repeat;
+  background-position: 1px 2px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAABnRSTlMA/wD/AP83WBt9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPElEQVR4nGP8//8/A3GAiUh1Q0wpC5zl5uaGKb1r1y4spiKLYhVhwiWHqZPhPwZwdXXFFPz//z/jEIotAKmIOXVRblT4AAAAAElFTkSuQmCC);
+}
+
+.datatables tr {
+  cursor: pointer;
+}
+
+.datatables tr.connected td{
+  font-weight: bold;
+}

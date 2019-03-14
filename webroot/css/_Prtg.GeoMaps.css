@@ -1,0 +1,323 @@
+﻿/*_Prtg.GeoMaps.css*/
+body.screenshot div.olControlZoom{
+  display: none;
+}
+div.olControlZoom {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+div.olControlZoom a {
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    height: 18px;
+    width: 18px;
+    line-height: 14px;
+    text-shadow: 0 0 3px rgba(0,0,0,0.8);
+    background: #666666; /* fallback for IE - IE6 requires background shorthand*/
+    background: rgba(0, 0, 0, 0.3);
+}
+a.olButton{
+  cursor: pointer;
+}
+a.olControlZoomIn {
+    border-radius: 4px 4px 0 0;
+}
+a.olControlZoomOut {
+    border-radius: 0 0 4px 4px;
+}
+div.olControlZoom a:hover {
+    background: #444444; /* fallback for IE */
+    background: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+@media only screen and (max-width: 600px) {
+    div.olControlZoom a:hover {
+        background: rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+    }
+}
+div.olMapViewport {
+    z-index: 0;
+    opacity: 0.9;
+}
+#report div.olLayerDiv.boxes div,
+div.olLayerDiv.boxes div.timelabel{
+  overflow:visible!important;
+  border: none!important;
+  background: none!important;
+  font-size: 9px;
+}
+#report div.olLayerDiv.boxes div span,
+div.olLayerDiv.boxes div.timelabel span  {
+  color:black;
+  background-color: white;
+  visibility: hidden;
+}
+#report div.olLayerDiv.boxes div:nth-child(4n) span,
+div.olLayerDiv.boxes div.timelabel:nth-child(4n) span{
+  visibility: visible;
+}
+.map-marker
+{
+    background-color:#fff;
+    border-radius: 3px;
+		box-shadow: 0px 0px 2px 1px #000000;
+    border: 2px solid #fff;
+}
+.map-marker-small{
+	border:none;
+	border-radius: 10px;
+		box-shadow: 0px 0px 4px 2px #fff;
+}
+.map-marker:hover
+{
+    z-index:99;
+}
+.map-marker a
+{
+    position: absolute!important;
+    left:0;
+    top: 0;
+    background-position: center;
+    width: 100%!important;
+    height: 100%!important;
+    padding: 0;
+    margin: 0;
+}
+.map-marker-small a{
+
+}
+.map-marker.down
+{
+  z-index:9;
+	background-color:<#colorcode color="statusdown">;
+}
+.map-marker.down a /*correction for padding above*/
+{
+/*    margin:-3px;*/
+}
+
+.map-marker.downack
+{
+  z-index:8;
+	background-color:<#colorcode color="statusdownack">;
+}
+.map-marker.warn
+{
+  z-index:5;
+  background-color:<#colorcode color="statuswarning">;
+}
+.map-marker.unusual
+{
+  z-index:4;
+  background-color:<#colorcode color="statusunusual">;
+}
+.map-marker.up
+{
+  z-index:3;
+  background-color: <#colorcode color="statusup">;
+}
+.map-marker.unknown
+{
+  z-index:2;
+  border-color: #707172;
+  background-color: <#colorcode color="statusunknown">;
+  border: 1px solid #fff;
+/*  padding: 0px;
+*/}
+.map-marker.paused
+{
+  z-index:1;
+  border-color: #6294C8;
+  background-color: <#colorcode color="statuspaused">;
+  border: 1px solid #fff;
+/*  padding: 0px;
+*/}
+.map-marker.unknown a,
+.map-marker.paused a{
+/*	margin:1px;
+*/}
+table.table .geomappopout
+{
+    position: absolute;
+    right:16px;
+}
+
+table.table .geomappopout .ui-icon
+{
+    background-image: url("images/ui-icons_ebebeb_256x240.png");
+}
+table.table .geomappopout:hover .ui-icon
+{
+    background-image: url("images/ui-icons_222222_256x240.png");
+}
+
+div.olLayerGooglePoweredBy.olLayerGoogleV3{
+    opacity: 0;
+}
+
+div#geomap_probeoverview,
+div#geomap_groupoverview,
+div#geomap_deviceoverview{
+  width:325px;
+  height:128px;
+  background-color:#CDE9FC;
+}
+
+div#geomap_control,
+div#geomap-mobile-group,
+div#geomap-mobile-device
+{
+  width:256px;
+  height:128px;
+  margin-left:20px;
+	background-color:#CDE9FC;
+} 
+
+div#geomap_deviceoverview{
+  margin:0;
+  width:100%;
+}
+/*.responsiveobjectoverview_panelC div#geomap_deviceoverview
+{
+  width:600px;
+  height:205px;
+  background-color:#CDE9FC;
+} 
+*/div#geomap_control.google,
+div#geomap-mobile-group.google,
+div#geomap-mobile-device.google,
+div#geomap_probeoverview.showinfo,
+div#geomap_groupoverview.showinfo,
+div#geomap_deviceoverview.showinfo,
+div#geomap_control.showinfo,
+div#geomap-mobile-group.showinfo,
+div#geomap-mobile-device.showinfo
+{
+    width:auto;
+    height:auto;
+    min-width:256px;
+    min-height:130px;
+    margin: auto;
+    background-color: transparent;
+} 
+
+
+div#geomap_grouptooltip,
+div#geomap_devicetooltip,
+div#geommap-wingui
+{
+    width:445px;
+    height:225px;
+	background-color:#CDE9FC;
+} 
+div#geomap-mobile,
+div#geomap_window.geomap-active
+{
+    width:1000px;
+    height:800px;
+	background-color:#CDE9FC;
+}
+div#geomap_window.google .chartlegend{
+  float: right;
+  width:200px!important;
+}
+div#geomap_window.google img{
+  width:75%!important;
+  height:auto!important;
+}
+div#geomap_screenshot .chartlegend{
+  display: none;
+}
+
+div#map-geomap-box.google .chartlegend{
+  width:90%!important;
+  max-width:none!important;
+}
+
+div#map-geomap-box.google img{
+  width:90%!important;
+  height:auto!important;  
+}
+
+
+div#geomap-mobile-group,
+div#geomap-mobile-device
+{
+    margin: auto;
+}
+div#geomap-edit
+{
+  height:128px;
+}
+div#map-geomap-box
+{
+    width:100%;
+    height:100%;
+}
+.olControlAttribution{
+    bottom: 0;
+    right:0;
+}
+
+#geomapsparkline {
+  /*font-size: 6px;*/
+}
+#geomapsparkline path.data.area{
+  stroke:transparent;
+  fill: none;
+  fill-opacity:0.5;
+}
+
+#geomapsparkline path.data.line{
+  fill: none;
+  stroke: none;
+  stroke-width:0.5px;
+  /*opacity:0.5;*/
+}
+
+#geomapsparkline .axis path,
+#geomapsparkline .axis line {
+  fill: none;
+  stroke: #000;
+  /*stroke-width:0.5px;*/
+  /*opacity:0.5;*/
+  shape-rendering: crispEdges;
+}
+#geomapsparkline .axis.ticksonly text{
+  display:none;
+}
+#geomapsparkline .brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+#location_ + img.googlesample{
+    margin-top: 10px;
+}
+#geomapsparkline path.data.line.Distance,
+#geomapsparkline path.data.line.Accuracy{
+  stroke: <#colorcode color="graph3">;
+}
+#geomapsparkline path.data.area.Altitude,
+#geomapsparkline path.data.area.Speed{
+  fill: <#colorcode color="graph5">;
+}
+#geomapsparkline text.y-label.Accuracy,
+#geomapsparkline text.y-label.Distance{
+  fill: <#colorcode color="graph3">;
+}
+#geomapsparkline text.y-label.Altitude,
+#geomapsparkline text.y-label.Speed{
+  fill: <#colorcode color="graph5">;
+}

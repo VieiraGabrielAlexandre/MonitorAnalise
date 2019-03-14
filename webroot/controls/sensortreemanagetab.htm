@@ -1,0 +1,37 @@
+﻿<#lang key="html.sensorstree.help.title" default="Manage Device Tree" var="helptitle">
+<#lang key="html.sensorstree.help.text" default="Drag a <i>sensor</i> and drop it within the same device to move it, or drop it on another device to clone the sensor. Drag&drop a <i>group</i> or a <i>device</i> to change its position, or to move it to another group or probe.<br><br><a href='/help/manage_device_tree.htm' target='_blank'><b>Help: Manage</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+<div id="group-managment" class="panel col-panel loading" >
+	<div id="layout" class="panel row-panel">
+		<div class="panel col-panel stretch-panel tree-panel">
+			<div class="tree-wrapper">
+				<div class="add-menu-wrapper">
+					<div class="add-menu" style='<#system type="hideforreadonlyusers">'>
+						<a class="actionbutton add-menu-item" onclick="_Prtg.objectTools.addRemoteProbe(0, 'remoteprobeinstall.htm', 0);return false;" style="<#hidefornonadmins>" href="#"><#lang key="html.global.addremoteprobe" default="Add Remote Probe"></a>
+						<a class="actionbutton add-menu-item" onclick="var me=this;_Prtg.Dialogs.defaultDialog('/addgroup0.htm',{preselect:<#objectid>}).done(function(result,action){_Prtg.objectTools.addObject.apply(me,[result.id,'group',{}]);});return false;" href="#"><#lang key="html.global.addgroup" default="Add Group"></a>
+						<a class="actionbutton add-menu-item podlocalprobeis<#isonpodlocalprobe>" onclick="var me=this;_Prtg.Dialogs.defaultDialog('/addautodiscovery0.htm',{preselect:<#objectid>}).done(function(result,action){_Prtg.objectTools.addObject.apply(me,[result.id,'autodiscovery',{}]);});return false;" href="#"><#lang key="html.global.addautogroup" default="Add Auto-Discovery Group"></a>
+						<a class="actionbutton add-menu-item" onclick="var me=this;_Prtg.Dialogs.defaultDialog('/adddevice0.htm',{preselect:<#objectid>}).done(function(result,action){_Prtg.objectTools.addObject.apply(me,[result.id,'device',{redirect:'/device.htm'}]);});return false;" href="#"><#lang key="html.global.adddevice" default="Add Device"></a>
+						<a class="actionbutton add-menu-item" href="/addsensor0.htm"><#lang key="html.global.addsensor" default="Add Sensor"></a>
+					</div>
+				</div>
+				<div id="objecttreecontainer" class="panel row-panel refresh-on-actionbutton treeiseditable treeissmall" style="flex:1 0 auto;">
+					<#include file="\controls\sensortree.htm" displaymode='managed'>
+				</div>
+				<div id="sensortreelinks" class="sensortree-action">
+					<div class='add-menu-badge <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'></div>
+				</div>
+			</div>
+		</div>
+		<div class="panel col-panel multiedit fix-panel" style="min-width:410px;max-width:410px">
+			<div class="multieditscrollcontainer">
+				<div id="rightpanel_titel" class="js-rightPanel_title">
+					<#lang key="html.footer.helpheader" default="Help">
+				</div>
+				<div class="editsettings inline" style="overflow-x:hidden">
+					<div class="propertiesHint ui-layout-content"><#lang key="html.propertiesscheet.hint" default="<p><b>Drag&Drop</b></p> <p>Within the same device, drag any sensor and drop it to the place where you want to have it. The future position is highlighted. When dropping, the sensor will be moved to this position and existing sensors will be lined up after it. This is a very easy way to reposition your sensors.</p> <p>Drag a sensor from one device and drop it to another to clone a sensor.</p> <p>Drag and drop groups or devices to change their position or to move them into (other) groups.</p><p><b>Multi-Edit</b></p> <p>You can use <a href='/help/multi_edit_lists.htm' target='_blank'>Multi-Edit</a> for object settings. Hold down the <i>Ctrl</i> key and select multiple groups, devices, or sensors (of the same type).</p> <p>In the appearing dialog, select the settings you would like to edit, change the according values and click <b>Save</b>. The changes will be applied to all selected objects.</p><p><img src='/images/property-help.png' /></p>"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,153 @@
+﻿                /****** EMAIL CLIENT BUG FIXES - BEST NOT TO CHANGE THESE ********/
+
+                        .ExternalClass {width:100%;} /* Forces Outlook.com to display emails at full width */
+
+                        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                            line-height: 100%;
+                            }  /* Forces Outlook.com to display normal line spacing*/
+
+                        body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;} /* Prevents Webkit and Windows Mobile
+                        platforms from changing default font sizes. */
+
+                        body {margin:0; padding:0;} /* Resets all body margins and padding to 0 for good measure */
+
+                        table td {border-collapse:collapse;}
+                        /* This resolves the Outlook 07, 10, and Gmail td padding issue.*/
+
+                /****** END BUG FIXES ********/
+
+                /****** RESETTING DEFAULTS, IT IS BEST TO OVERWRITE THESE STYLES INLINE ********/
+
+                        p {margin:0; padding:0; margin-bottom:0;}
+                                /* This sets a clean slate for all clients EXCEPT Gmail.
+                               From there it forces you to do all of your spacing inline during the development process.
+                               Be sure to stick to margins because paragraph padding is not supported by Outlook 2007/2010
+                               Remember: Outlook.com does not support "margin" nor the "margin-top" properties.
+                               Stick to "margin-bottom", "margin-left", "margin-right" in order to control spacing
+                               It also doesn't hurt to set the inline top-margin to "0" for consistency in Gmail for every instance of a
+                               paragraph tag (see our paragraph example within the body of this boilerplate)
+
+                               Another option:  Use double BRs instead of paragraphs */
+
+                       h1, h2, h3, h4, h5, h6 {
+                           color: black;
+                           line-height: 100%;
+                           }  /* This CSS will overwrite Outlook.com/Outlook.com's default CSS and make your headings appear consistent with Gmail.
+                           From there, you can overwrite your styles inline if needed.  */
+
+                       a, a:link {
+                           color:#00235D;
+                           text-decoration: none;
+                           }  /* This is the embedded CSS link color for Gmail.  This will overwrite Outlook.com and Yahoo Beta's
+                           embedded link colors and make it consistent with Gmail.  You must overwrite this color inline. */
+
+               /****** END RESETTING DEFAULTS ********/
+
+               /****** EDITABLE STYLES        ********/
+
+                    body, #body_style {
+                        background:#fff;
+                        min-height:1000px;
+                        color:#000;
+                        font-family:Arial, Helvetica, sans-serif;
+                        font-size:12px;
+                        } /*The "body" is defined here for Yahoo Beta because it does not support your body tag. Instead, it will create a
+                        wrapper div around your email and that div will inherit your embedded body styles.
+
+                        The "#body_style" is defined for AOL because it does not support your embedded body definition nor your body
+                        tag, we will use this class in our wrapper div.
+
+                        The "min-height" attribute is used for AOL so that your background does not get cut off if your email is short.
+                        We are using universal styles for Outlook 2007, including them in the wrapper will not affect nested tables*/
+
+                      /*Optional:*/
+                      a:visited { color: #3c96e2; text-decoration: none}
+                      a:focus   { color: #3c96e2; text-decoration: underline}
+                      a:hover   { color: #3c96e2; text-decoration: underline}
+                        /* There is no way to set these inline so you have the option of adding pseudo class definitions here. They won't
+                        work for Gmail nor older versions of Lotus Notes but it's a nice addition for all other clients. */
+
+                        /* Optimizing for mobile devices - (optional) */
+                        @media only screen and (max-device-width: 480px) {
+                               /* Here you can include rules for the Android and iPhone native email clients.
+                               Device viewport dimensions are as follows:
+
+                               iPhone:  320px X 480px - portrait, 480px X 320px - landscape
+
+                               Android:   350px X 480px - portrait, 480 X 350 - landscape
+                              (These are average dimensions, the Android OS runs on several different devices) */
+
+                               body[yahoo] #container1 {display:block !important}  /* example style */
+                               body[yahoo] p {font-size: 10px} /* example style */
+                               /* You must use attribute selectors in your media queries to prevent Yahoo from rendering these styles.
+                               We added a yahoo attribute in the body tag to complete this fix.*/
+
+                        }
+
+                        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px)  {
+                           /* Here you can include rules for the iPad native email client.
+
+                           Device viewport dimensions in pixels:
+                                703 x 1024 - portrait
+                                1024 x 703 - landscape
+                            */
+
+                               body[yahoo] #container1 {display:block !important} /*example style*/
+                               body[yahoo] p {font-size: 12px} /*example style*/
+
+                        }
+
+               /*** END EDITABLE STYLES ***/
+
+                img {
+  max-width: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  width: 100% !important;
+  height: 100%;
+  line-height: 120%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+  h1 {
+    font-size: 18px !important;
+  }
+  h2 {
+    font-size: 16px !important;
+  }
+  h3 {
+    font-size: 14px !important;
+  }
+
+@media only screen and (max-width: 640px) {
+  body {
+    padding: 0 !important;
+  }
+  h1 {
+    font-weight: bold !important; margin: 20px 0 5px !important;
+  }
+  h2 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h3 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h4 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  .container {
+    padding: 0 !important; width: 100% !important;
+  }
+  .content {
+    padding: 0 !important;
+  }
+  .content-wrap {
+    padding: 10px !important;
+  }
+}
+
+

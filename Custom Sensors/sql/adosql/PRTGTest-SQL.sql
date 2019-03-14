@@ -1,0 +1,1 @@
+select  CAST(DONE AS float) / CAST(TODO AS float)* 100 from USERID.POMS WHERE LOT = 1

@@ -1,0 +1,7 @@
+<#inserturlparam parameter="parentid" var="objid">
+    <#table output="json"
+      content="objects"
+      columns="objid,name,tags,icon=treejson,basetype"
+      filter_parentid="@objid"
+      noraw="1"
+      varexpand="content,filter_parentid">

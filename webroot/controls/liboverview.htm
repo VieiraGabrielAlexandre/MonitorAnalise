@@ -1,0 +1,18 @@
+﻿<#checkobjecttype objecttype="library">
+<#lang key="html.libover.help.title" default="" var="helptitle">
+<#lang key="html.libover.help.text" default="<br><br><a href='/help/libraries_settings.htm' target='_blank'><b>Help: Libraries and Node Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#inserturlparam parameter="wingui" var="wingui">
+<#lang key="html.sensortree.searchtitle" default="Press Enter to search" var="searchtitle">
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+<div class="panel col-panel">
+	<div id="layout" class="focussearch panel row-panel">
+		<div class="panel col-panel stretch-panel tree-wrapper">
+			<#include file="/controls/liboverview_treetoolbar.htm" displaymode='overview'>
+
+      <div id="objecttreecontainer">
+		    <#include file="/controls/libtree.htm" displaymode='overview'>
+      </div>
+		</div>
+	</div>
+</div>

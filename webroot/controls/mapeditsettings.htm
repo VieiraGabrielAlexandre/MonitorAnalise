@@ -1,0 +1,50 @@
+﻿<#system type="denyreadonlyusers">
+<form id="mapeditsettingsform" title="Edit Map Object">
+<table>
+	<tr>
+		<td><#lang key="html.mapeditsettings.object1" default="Object:"></td>
+		<td>
+			<div class="sensorlookupnew" selid="<#system type="selid">" inputname="objectid" rootid="0" sensors="1" devices="1" groups="1" probes="1" allownone="0" allowself="0"  reloadmapobjects="1">
+			<input type="hidden" value="<#system type='selid'>" name="objectid"></div>
+		</td>
+		<td>
+		<table>		
+			<tr>
+				<td><#lang key="html.mapeditsettings.htmlbefore" default="HTML Before"></td>
+				<td>
+				<input class="value" name="htmlbefore_" value="<#mapobject type="htmlbefore" show="edit">">
+				</td>
+			</tr>
+			<tr>
+				<td><#lang key="html.mapeditsettings.htmlafter" default="HTML After"></td>
+				<td>
+				<input class="value" name="htmlafter_" value="<#mapobject type="htmlafter" show="edit">">
+				</td>
+			</tr>
+			<tr>
+				<td><#lang key="html.mapeditsettings.htmltop" default="Top"></td>
+				<td>
+				<input style="width:50px" class="value" name="top" value="<#mapobject type="top" show="edit">">
+				<#lang key="html.mapeditsettings.htmlleft" default="Left"> <input style="width:50px" class="value" name="left" value="<#mapobject type="left" show="edit">">
+				<#lang key="html.mapeditsettings.htmlheight" default="Height"> <input style="width:50px" class="value" name="height" value="<#mapobject type="height" show="edit">">
+				<#lang key="html.mapeditsettings.htmlwidth" default="Width"> <input style="width:50px" class="value" name="width" value="<#mapobject type="width" show="edit">">
+				</td>
+			</tr>
+			<tr style="display:none">
+					<td></td>
+					<td><#system type="mapobjects" size="20"></td>
+			</tr>
+		</table>
+		
+		</td>
+	</tr>
+	<tr>
+	<td colspan="3">
+		<div id="mapobjectpreview">
+		  		<div id="minitabs" class="minitabs ui-tabs ui-widget ui-widget-content detailpage cleartabswhentabbed">
+    		       	<ul id="mapobjecttabs" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header"></ul>
+			  	</div>
+		</div>
+	</td>
+</table>
+</form>

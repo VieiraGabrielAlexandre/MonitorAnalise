@@ -1,0 +1,375 @@
+﻿
+<div class="tab-container refreshable top10-wrapper" refreshurl="/controls/top10listcontent.htm?id=<#objectid>">
+				<!--  %% is still needed in the source file, though. -->
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.bestavailability2" default="Best Uptime (%% Availability)" comment="only one %% anymore!" var="title">
+				<#table tableid="sensortable"
+							 content="sensors"
+							 columns="uptime,sensor,device"
+							 sortby="uptime"
+							 sortable="false"
+							 filter_uptime="@above(0)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=uptime&columns=group,device,sensor,status,message,lastvalue,uptime,downtime"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+               count="10"
+               refreshable="true"
+							 >
+				</div>
+				<!--  %% is still needed in the source file, though. -->
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.worstavailability2" default="Worst Downtime (%% Availability)" comment="only one %% anymore!" var="title">
+				<#table tableid="sensortable2"
+							 content="sensors"
+							 columns="downtime,sensor,device"
+							 sortby="downtime"
+							 sortable="false"
+							 filter_downtime="@above(0)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=downtime&columns=group,device,sensor,status,message,lastvalue,uptime,downtime"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.fastestping" default="Fastest Ping" var="title">
+				 <#table tableid="sensortable3"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+							 filter_tags="@tag(pingsensor)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(pingsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true" >
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.slowestping" default="Slowest Ping" var="title">
+				<#table tableid="sensortable4"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(pingsensor)"
+							 filter_lastvalue="@above(0)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(pingsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.lowestbandwidthusg" default="Lowest Bandwidth Usage" var="title">
+				<#table tableid="sensortable5"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(bandwidthsensor)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(bandwidthsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.hihgestbandwidthusg" default="Highest Bandwidth Usage" var="title">
+				<#table tableid="sensortable6"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(bandwidthsensor)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(bandwidthsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.fastestweb" default="Fastest Website" var="title">
+				<#table tableid="sensortable7"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+							 filter_tags="@tag(httpsensor)"
+							 filter_lastvalue="@above(0)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(httpsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.slowestweb" default="Slowest Website" var="title">
+				<#table tableid="sensortable8"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+							 filter_tags="@tag(httpsensor)"
+							 filter_status="3"
+							 filter_status="13"
+							 filter_status="14"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(httpsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.leastusedcpu" default="Least Used CPU" var="title">
+				<#table tableid="sensortable9"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(cpuloadsensor)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(cpuloadsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.mostusedcpu" default="Most Used CPU" var="title">
+				<#table tableid="sensortableA"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(cpuloadsensor)"
+							 filter_lastvalue="@above(0)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(cpuloadsensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.mostavaidiskspc" default="Most Available Disk Space" var="title">
+				<#table tableid="sensortableB"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(diskspacesensor)"
+							 filter_lastvalue="@below(10100)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(diskspacesensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.leastavaidiskspc" default="Least Available Disk Space" var="title">
+				<#table tableid="sensortableC"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+
+							 filter_lastvalue="@below(10100)"
+							 filter_tags="@tag(diskspacesensor)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(diskspacesensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.mostavaimem" default="Most Available Memory" var="title">
+				<#table tableid="sensortableD"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(memorysensor)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 filter_lastvalue="@below(10100)"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(memorysensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.leastavaimem" default="Least Available Memory" var="title">
+				<#table tableid="sensortableE"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+
+							 filter_tags="@tag(memorysensor)"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 filter_lastvalue="@below(10100)"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(memorysensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.uptimelong1" default="Longest System Uptime" var="title">
+				<#table tableid="sensortableF"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="-lastvalue"
+							 sortable="false"
+
+							 filter_type="wmiuptime"
+							 filter_type="snmpuptime"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=-lastvalue&filter_tags=@tag(memorysensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+				<div class="top10listcontainer prtg-plugin" data-plugin="prtg-table">
+				<#lang key="html.dashboardtop19content.uptimeshort1" default="Shortest System Uptime" var="title">
+				<#table tableid="sensortableG"
+							 content="sensors"
+							 columns="lastvalue,sensor,device"
+							 sortby="lastvalue"
+							 sortable="false"
+
+							 filter_type="wmiuptime"
+							 filter_type="snmpuptime"
+							 filter_status="3"
+							 filter_status="14"
+							 filter_status="13"
+							 filter_status="4"
+							 filter_status="5"
+							 filter_status="10"
+							 infoheader="false"
+							 links="true"
+							 tabletitlelink="sensors.htm?sortby=lastvalue&filter_tags=@tag(memorysensor)"
+							 tabletitle="@title"
+							 varexpand="tabletitle"
+							 count="10"
+               refreshable="true">
+				</div>
+</div>

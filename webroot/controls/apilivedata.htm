@@ -1,0 +1,992 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Accessing Live Object Data and Live Status Data</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <h2>Getting One Single Property or Status of an Object</h2>
+        <p>
+            You can get properties/settings of an object (name, hostname, url) as well as status information of an object (lastvalue, downtime) using the following API calls:
+        </p>
+        <ul class="apicalls">
+            <li>
+                Get object property/setting (for propertyname look at the "name" of the INPUT fields while editing an object):
+                <pre><b>/api/getobjectproperty.htm</b>?id=objectid&name=propertyname&show=text</pre>
+            </li>
+            <li>
+                Get object status (for columnname refer to the "Supported Output Columns" table below):
+                <pre><b>/api/getobjectstatus.htm</b>?id=objectid&name=columnname&show=text</pre>
+                <p>The XML result looks like this:</p>
+                <pre>
+    &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+    &lt;prtg&gt;
+        &lt;version&gt;<#system type="version">&lt;/version&gt;
+        &lt;result&gt;True&lt;/result&gt;
+    &lt;/prtg&gt;</pre>
+            </li>
+            <li>
+                Get details about a sensor in XML:
+                <pre><b>/api/getsensordetails.xml</b>?id=sensorid </pre>
+                Get details about a sensor in JSON:
+                <pre><b>/api/getsensordetails.json</b>?id=sensorid </pre>
+
+                <p>The XML result looks like this:</p>
+
+                <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;sensordata&gt;
+        &lt;prtg-version&gt;<#system type="version">&lt;/prtg-version&gt;
+        &lt;name&gt;
+            &lt;![CDATA[Probe Health]]&gt;
+        &lt;/name&gt;
+        &lt;sensortype&gt;
+            &lt;![CDATA[Probe]]&gt;
+        &lt;/sensortype&gt;
+        &lt;interval&gt;
+            &lt;![CDATA[60 s]]&gt;
+        &lt;/interval&gt;
+        &lt;probename&gt;
+            &lt;![CDATA[PRTG]]&gt;
+        &lt;/probename&gt;
+        &lt;parentgroupname&gt;
+            &lt;![CDATA[PRTG]]&gt;
+        &lt;/parentgroupname&gt;
+        &lt;parentdevicename&gt;
+            &lt;![CDATA[Probe.Device.]]&gt;
+        &lt;/parentdevicename&gt;
+        &lt;parentdeviceid&gt;
+            &lt;![CDATA[40]]&gt;
+        &lt;/parentdeviceid&gt;
+        &lt;lastvalue&gt;
+            &lt;![CDATA[99 %]]&gt;
+        &lt;/lastvalue&gt;
+        &lt;lastmessage&gt;
+            &lt;![CDATA[OK]]&gt;
+        &lt;/lastmessage&gt;
+        &lt;favorite&gt;
+            &lt;![CDATA[]]&gt;
+        &lt;/favorite&gt;
+        &lt;statustext&gt;
+            &lt;![CDATA[Up]]&gt;
+        &lt;/statustext&gt;
+        &lt;statusid&gt;
+            &lt;![CDATA[3]]&gt;
+        &lt;/statusid&gt;
+        &lt;lastup&gt;
+            &lt;![CDATA[40511.5501967593[20 s ago]]]&gt;
+        &lt;/lastup&gt;
+        &lt;lastdown&gt;
+            &lt;![CDATA[40511.5407662153[13 m 55 s ago]]]&gt;
+        &lt;/lastdown&gt;
+        &lt;lastcheck&gt;
+            &lt;![CDATA[40511.5501967593[20 s ago]]]&gt;
+        &lt;/lastcheck&gt;
+        &lt;uptime&gt;
+            &lt;![CDATA[99.9639%]]&gt;
+        &lt;/uptime&gt;
+        &lt;uptimetime&gt;
+            &lt;![CDATA[283 d 14 h]]&gt;
+        &lt;/uptimetime&gt;
+        &lt;downtime&gt;
+            &lt;![CDATA[0.0361%]]&gt;
+        &lt;/downtime&gt;
+        &lt;downtimetime&gt;
+            &lt;![CDATA[2 h 27 m 31 s]]&gt;
+        &lt;/downtimetime&gt;
+        &lt;updowntotal&gt;
+            &lt;![CDATA[283 d 16 h [=63% coverage]]]&gt;
+        &lt;/updowntotal&gt;
+        &lt;updownsince&gt;
+            &lt;![CDATA[40059.3436475810[452 d 4 h ago]]]&gt;
+        &lt;/updownsince&gt;
+    &lt;/sensordata&gt;
+      </pre>
+            </li>
+        </ul>
+
+        <h2>Getting Property or Status of Multiple Objects</h2>
+
+        <p>
+            Most data that you can request from the API is available in data tables in XML and CSV format (using XML format is recommended).			
+        </p>
+        <p>
+            The API function
+            <b>/api/table.xml</b>
+            is used to access data in tables. Here are some sample calls (URLs are shown without authentication parameters to improve readability):
+        </p>
+        <ul class="apicalls">
+            <li>
+                A hierarchical list of all groups, devices, and sensors with their current state information:
+                <pre><b>/api/table.xml</b>?content=sensortree</pre>
+				<b>Note:</b> <i>sensortree</i> does not support JSON output.
+            </li>
+            <li>
+                All sensors (with current status information):
+                <pre><b>/api/table.xml</b>?content=sensors&columns=objid,group,device,sensor,status,message,lastvalue,priority,favorite</pre>
+            </li>
+            <li>
+                All recent log entries:
+                <br>
+                <pre><b>/api/table.xml</b>?content=messages&columns=objid,datetime,parent,type,name,status,message</pre>
+            </li>
+        </ul>
+        <p>
+            You will have the easiest start if you either use the query builder below or click the <i class="glyph-xml"></i> icon
+            that most tables with data have in the PRTG web interface.
+            Simply navigate to the information that you want to use, click the XML icon, and you will be taken to a URL
+            that renders the content of the table in XML format. You can now use the URL as it is or change various parameters (see parameter description below) to suit your
+            needs.
+        </p>
+        <p>
+            Note: URLs only show the XML URLs, please use API function /api/table.csv or the "output" parameter to select CSV format.
+        </p>
+		<p>
+			For more information on possible raw message status values returned by table-based API calls, see the Knowledge Base article <a href="https://kb.paessler.com/en/topic/76501" target="_blank">Is there a list of log status values for the PRTG API?</a>
+		</p>	
+        <h1>PRTG HTTP API: XML Table Query Builder</h1>
+        <p>
+            You can use the following query builder tool to experiment with the API and to fine tune your queries. Please consult the information below for details:
+        </p>
+        <form id="queryform">
+            <div class="wizhead">XML Table Query Builder</div>
+            <div class="wizhelp">Please choose from the available contents for tables</div>
+
+            <div class="wizard">
+                <div class="wiz_row">
+                    <div class="wiz_block">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Table Content</div>
+                        <div class="wiz3">
+                            <select id="columnselector" size="9" name="content">
+                                <option selected="selected" value="sensortree">
+                                    sensortree: A tree-like structure of groups, devices and sensors
+                                </option>
+                                <option value="groups">groups: List of all groups</option>
+                                <option value="devices">devices: List of all devices</option>
+                                <option value="sensors">sensors: List of all sensors</option>
+                                <option value="values">
+                                    values: List of most recent results of a sensor (sensor ID required)
+                                </option>
+                                <option value="channels">
+                                    channels: List of the channels of a sensor (sensor ID required)
+                                </option>
+                                <option value="reports">reports: List of reports</option>
+                                <option value="storedreports">
+                                    storedreports: List of most recent PDF reports (report ID required)
+                                </option>
+                                <option value="tickets">tickets: List of most recent tickets</option>
+                                <option value="messages">messages: List of most recent log entries</option>
+                                <option value="maps">maps: List of maps</option>
+                                <option value="history">history: Recent configuration changes of an object</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="wiz_block">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Table Type</div>
+                        <div class="wiz3">
+                            <select name="output" size="5" id="outputselection">
+                                <option selected="selected" value="xml">xml: most suitable for further processing (recommended)</option>
+                                <option value="json">json: lightweight javascript object notation</option>
+                                <option value="xmltable">
+                                    xmltable: structured like an HTML table (easier to convert into a table)
+                                </option>
+                                <option value="csvtable">csv: comma separated output</option>
+                                <option value="html">html: pure HTML</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="wiz_row">
+                    <div class="wiz_block-input">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Columns</div>
+                        <div class="wiz3">
+                            <input id="columnsinput" name="columns"></div>
+                        <div class="wizhelp">
+                            Comma delimited list of columns per record. Please see columnslist below for details
+                        </div>
+                    </div>
+                    <div class="wiz_block-input">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Count</div>
+                        <div class="wiz3">
+                            <input id="count" name="count" value=""></div>
+                        <div class="wizhelp">Maximum number of items (default 500)</div>
+                    </div>
+                    <div class="wiz_block-input">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Start</div>
+                        <div class="wiz3">
+                            <input id="start" name="start" value=""></div>
+                        <div class="wizhelp">
+                            Start with this entry number (can be used with "count" to request the data page-by-page)
+                        </div>
+                    </div>
+                    <div class="wiz_block-input">
+                        <div class="wiz1"></div>
+                        <div class="wiz2 wizsubhead">Object ID</div>
+                        <div class="wiz3">
+                            <input id="id" name="id" value=""></div>
+                        <div class="wizhelp">
+                            The table will only contain information for this object id and its child objects (all objects will be used if this parameter is omitted)
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </form>
+        <button id="runxml">Run query and preview output</button>
+        <br>
+        <p id="myurl"></p>
+        <textarea id="output" style="display:none;width:800px;height:500px;font-family:courier;font-size:9px"></textarea>
+        <h1>Output Data Format</h1>
+        <p>
+            XML data from the PRTG API interface contains the fields that you have requested in the "columns" parameter.
+            In most cases numerical values will be included twice: One field contains the value in human readable format and an additional "RAW" field contains
+            the value as a number, which is better suited for further processing and calculations. Look at the fields in the following sample:
+        </p>
+
+        <pre>
+        &lt;status&gt;Up&lt;/status&gt;
+        &lt;status_RAW&gt;3&lt;/status_RAW&gt;
+        &lt;lastvalue&gt;98 %&lt;/lastvalue&gt;
+        &lt;lastvalue_RAW&gt;97.7583&lt;/lastvalue_RAW&gt;
+        &lt;message&gt;Created.&#x3C;br/&#x3E;18.3.43.1360&lt;/message&gt;
+	&lt;message_RAW&gt;Created. 18.3.43.1360&lt;/message_RAW&gt;</pre>
+        <ul>
+            <li>
+                The "status" field shows the value "Up" (the according RAW value is "3")
+            </li>
+            <li>
+                The "lastvalue" field shows the value "98%" (the according RAW value is "97.7583")
+            </li>
+            <li>The "message" field shows the text "Created.&#x3C;br/&#x3E;18.3.43.1360" (the according RAW value is "Created. 18.3.43.1360")</li>
+        </ul>
+
+        <h1>RAW Date/Time Format</h1>
+        <p>
+            For columns with date/time value, the RAW value is defined as follows: The integral part of a value is the number of days that have
+            passed since Dec 30th 1899. The fractional part of a value is fraction of a 24-hour day that has elapsed. To find the fractional number
+            of days between two dates, simply subtract the two values. Similarly, to increment a date and time value by a certain fractional number of
+            days, add the fractional number to the date and time value. Here are some examples of date/time RAW values
+            and their corresponding dates and times:
+        </p>
+
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>RAW Date/Time Value</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>0</td>
+                <td>12/30/1899 00h00m (12:00 midnight)</td>
+            </tr>
+            <tr class="even">
+                <td>2.75</td>
+                <td>1/1/1900 18h00m (6:00 pm)</td>
+            </tr>
+            <tr class="odd">
+                <td>35065</td>
+                <td>1/1/1996 00h00m (12:00 midnight)</td>
+            </tr>
+        </table>
+
+        <h1>Common Data Table Parameters</h1>
+        <p>
+            The following parameters are common to all data table API calls:
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Parameter</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            <th>
+                <b>Possible Values</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>content</td>
+                <td>Selects what objects you want to have in your table</td>
+                <td>
+                    sensortree (JSON output not supported), devices, sensors, tickets, ticketdata, messages, values, channels, reports, storedreports, toplists<br><br>
+				</td>
+            </tr>
+            <tr class="even">
+                <td >columns</td>
+                <td>Comma separated list of columns per record</td>
+                <td>see list below</td>
+            </tr>
+            <tr class="odd" nowrap="1">
+                <td >output</td>
+                <td>Controls the output format</td>
+                <td>
+                    "xml": default format (recommended)
+                    <br>
+                    "xmltable": a HTML table in XML format
+                    <br>
+                    "csvtable": comma separated format
+                    <br>"html": HTML table
+                </td>
+            </tr>
+            <tr class="even">
+                <td>count</td>
+                <td>Maximum number of items (default 500)</td>
+                <td>1-50000</td>
+            </tr>
+            <tr class="odd">
+                <td>start</td>
+                <td>
+                    Start with this entry number (can be used with "count" to request the data page-by-page)
+                </td>
+                <td>any</td>
+            </tr>
+        </table>
+        <h1>Filtering by Object ID</h1>
+        <p>
+            Add an ID parameter (for example, <i>id=1</i>) to the API URL to select a subset of items for the data table (for example, to reduce the amount of data transferred for
+            each data table API call).
+            The data table will only contain information for this object ID and its child objects. Some table types require an ID. If you omit the ID parameter or it has the value
+            zero (0), all available objects will be used.
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Table Type</b>
+            </th>
+            <th>
+                <b>ID Required or Optional</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            <th>
+                <b>Object Types Allowed for the ID</b>
+            </th>
+            </thead>
+            <tr class="even">
+                <td>content="sensortree"</td>
+                <td>optional</td>
+                <td>
+                    You will only get a part of the tree (the object with the given ID and all child objects below it). JSON output is not supported.
+                </td>
+                <td>Probe or group</td>
+            </tr>
+            <tr class="odd">
+                <td>content="sensors" or content="devices"</td>
+                <td>optional</td>
+                <td>
+                    You will only get the object with the given ID and all child objects below it.
+                </td>
+                <td>Probe, group, or device</td>
+            </tr>
+            <tr class="even">
+                <td>content="tickets" or content="messages"</td>
+                <td>optional</td>
+                <td>
+                    You will only get tickets or logfile entries that are related to the object with the given ID or any child objects below it.
+                </td>
+                <td>Any object</td>
+            </tr>
+            <tr class="odd">
+                <td>content="values" or content="channels"</td>
+                <td>required</td>
+                <td>
+                    You will get the data values (or channels, respectively) of the sensor selected by the ID.
+                </td>
+                <td>Sensor</td>
+            </tr>
+            <tr class="even">
+                <td>content="reports"</td>
+                <td>not used</td>
+                <td>This data table will always include all reports.</td>
+                <td>n/a</td>
+            </tr>
+            <tr class="odd">
+                <td>content="storedreports"</td>
+                <td>required</td>
+                <td>
+                    You will get a list of stored PDF files of the report selected by the ID.
+                </td>
+                <td>Report</td>
+            </tr>
+            <tr class="even">
+                <td>content="ticketdata"</td>
+                <td>required</td>
+                <td>
+                    You will get the history of the ticket selected by the ID.
+                </td>
+                <td>Ticket</td>
+            </tr>
+        </table>
+        <h1>Sorting and Advanced Filtering</h1>
+        <p>
+            There are various options to further filter the data and to sort the data for each data table API call:
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Parameter</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            <th>
+                <b>Possible Values</b>
+            </th>
+            </thead>
+            <tr class="even">
+                <td>filter_drel</td>
+                <td>
+                    Only include records younger than this setting (for content="messages" and content="tickets" only)
+                </td>
+                <td>today, yesterday, 7days, 30days, 12months, 6months</td>
+            </tr>
+            <tr class="odd">
+                <td>filter_status</td>
+                <td>
+                    Only include sensors with a specific status (for content="sensors" only). Using multiple filter_status fields performs a logical OR.
+                </td>
+                <td>
+                    Unknown=1, Collecting=2, Up=3, Warning=4, Down=5, NoProbe=6, PausedbyUser=7, PausedbyDependency=8, PausedbySchedule=9, Unusual=10, PausedbyLicense=11,
+                    PausedUntil=12, DownAcknowledged=13, DownPartial=14
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>filter_tags</td>
+                <td>
+                    Only include sensors with a specific tag (for content="sensors" only). Using multiple filter_tag fields performs a logical OR.
+                </td>
+                <td>@tag(tagname)</td>
+            </tr>
+            <tr class="even">
+                <td>filter_xyz</td>
+                <td>
+                    Filters the data. (Samples: filter_type=ping, filter_favorite=1). Using multiple filter_xyz fields performs a logical OR. <br><br>
+                    <b>Note:</b> Filtering using columns is only possible for tree objects. You cannot use columns to filter objects like messages or tickets, for example.
+                    For content="tickets", you can use the special filter terms <i>filter_status</i>, <i>filter_user</i>, and <i>filter_type</i> (this corresponds to column <i>tickettype</i>).
+                    Like for messages, you can also use <i>filter_drel</i> (see above), <i>filter_dstart</i>, <i>filter_dend</i>. Multiple filters are not available for tickets.
+                </td>
+                <td>
+                    filter_xyz where xyz is any column name used in the columns parameter;
+                    Substrings: use filter_xyz=@sub(substring1,substring2); Values not equal/above/below: use filter_xyz=@neq(value), filter_xyz=@above(value),
+                    filter_xyz=@below(value)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>sortby</td>
+                <td>
+                    Sorts the data. If this parameter is omitted, the table will be sorted based on the first column. Add a leading "-" to reverse sort order. (Samples:
+                    sortby=name, sortby=lastvalue, sortby=-lastvalue, sortby=uptime)
+                    <br></td>
+                <td>
+                    Any column name used in the columns parameter. <b>Note:</b> Log tables with content="messages" are always sorted by descending date.
+                </td>
+            </tr>
+        </table>
+        <p>Here are some samples for filtered API calls:</p>
+        <ul class="apicalls">
+            <li>
+                All sensors that are not up (with their current state and downtime information):
+                <pre><b>/api/table.xml</b>?content=sensors&columns=objid,downtimesince,device,sensor,lastvalue,status,message,priority&filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14&sortby=priority</pre>
+            </li>
+            <li>
+                Fastest PING sensors:
+                <pre><b>/api/table.xml</b>?content=sensors&columns=objid,sensor,lastvalue,status,message&sortby=lastvalue&filter_type=ping</pre>
+            </li>
+            <li>
+                Log entries of the last 7 days for object id 2003:
+                <pre><b>/api/table.xml</b>?content=messages&id=2003&start=0&filter_drel=7days&columns=objid,datetime,type,name,status,message</pre>
+            </li>
+        </ul>
+        <h1>Supported Output Columns ("columns=" Parameter)</h1>
+        <p>
+            You can use the following column names for the "columns" parameter (separated by comma, for example, "columns=objid,name,type").
+        </p>
+        <table cellspacing="1" class="table hoverable smallfonts">
+            <thead class="headersnolink">
+            <th>
+                <b>Column Name</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            <th>
+                <b>Can be Used for</b>
+            </th>
+            </thead>
+            <tr class="even">
+                <td>objid</td>
+                <td>ID of the current object</td>
+                <td>all object tables</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>
+                    Displays the object type (group, device, report, etc.), or the sensor type (ping, http, etc.), or event type for tickets (relevant for ToDo tickets)
+                </td>
+                <td>all object tables</td>
+            </tr>
+            <tr class="even">
+                <td>name</td>
+                <td>
+                    Name of the object or channel, or for log messages/tickets the name of the related object, or for stored reports the name of the report file
+                </td>
+                <td>all object tables, channels, messages, storedreports, toplists, tickets</td>
+            </tr>
+            <tr>
+                <td>tags</td>
+                <td>
+                    List of all tags (for tickets: tags for the related object). This includes tags from the object itself plus those inherited from parent objects.
+                </td>
+                <td>all object tables</td>
+            </tr>
+            <tr class="even">
+                <td>active</td>
+                <td>
+                    Displays true/false depending whether an object is set to paused by a user (for tickets: related object). For notifications that are paused by schedule, it
+                    also displays the end of the schedule.
+                </td>
+                <td>all object tables</td>
+            </tr>
+            <tr>
+                <td>downtime</td>
+                <td>
+                    Cumulated downtime of a sensor (displayed as percentage of uptime+downtime)
+                </td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>downtimetime</td>
+                <td>Cumulated downtime of a sensor (in minutes/hours)</td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>downtimesince</td>
+                <td>Elapsed time since last UP of a sensor</td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>uptime</td>
+                <td>
+                    Cumulated uptime of a sensor (displayed as percentage of uptime+downtime)
+                </td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>uptimetime</td>
+                <td>Cumulated uptime of a sensor (in minutes/hours)</td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>uptimesince</td>
+                <td>Elapsed time since last DOWN of a sensor</td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>knowntime</td>
+                <td>Sum of cumulated uptime and downtime of a sensor</td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>cumsince</td>
+                <td>Timestamp when accumulation of uptimes/downtimes began</td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>sensor</td>
+                <td>Name of the sensor</td>
+                <td>sensors, toplists</td>
+            </tr>
+            <tr class="even">
+                <td>interval</td>
+                <td>This displays the effective interval setting for a sensor</td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>lastcheck</td>
+                <td>Timestamp of the last sensor result</td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>lastup</td>
+                <td>Timestamp of the most recent UP status</td>
+                <td>sensors</td>
+            </tr>
+            <tr>
+                <td>lastdown</td>
+                <td>Timestamp of the most recent DOWN status</td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>device</td>
+                <td>Name of the associated device</td>
+                <td>sensors, devices</td>
+            </tr>
+            <tr>
+                <td>group</td>
+                <td>Name of the associated group</td>
+                <td>sensors, devices, groups</td>
+            </tr>
+            <tr class="even">
+                <td>probe</td>
+                <td>Name of the associated probe</td>
+                <td>sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>grpdev</td>
+                <td>Name of associated device and group seperated by slash</td>
+                <td>sensors, devices</td>
+            </tr>
+            <tr class="even">
+                <td>notifiesx</td>
+                <td>
+                    Number of each trigger type defined for this sensor tree object
+                </td>
+                <td>probes, groups, devices, sensors</td>
+            </tr>
+            <tr>
+                <td>intervalx</td>
+                <td>
+                    Displays either 'inherited' or the current interval setting of that object
+                </td>
+                <td>probes, groups, devices, sensors</td>
+            </tr>
+            <tr class="even">
+                <td>access</td>
+                <td>
+                    Displays the access rights of the current user for a sensor tree object
+                </td>
+                <td>probes, groups, devices, sensors</td>
+            </tr>
+            <tr>
+                <td>dependency</td>
+                <td>Displays the name of an associated dependency or 'parent'</td>
+                <td>probes, groups, devices, sensors</td>
+            </tr>
+            <tr class="even">
+                <td>probegroupdevice</td>
+                <td>
+                    Complete object hierarchy with names of associated device, group, and probe separated by slash. If more than one group is in the object hierarchy, these are
+                    displayed with '..'
+                </td>
+                <td>sensor, device, group, probe</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>
+                    For sensor tree objects: status of the object (1=Unknown, 2=Scanning, 3=Up, 4=Warning, 5=Down, 6=No Probe, 7=Paused by User, 8=Paused by Dependency, 9=Paused by
+                    Schedule,
+                    10=Unusual, 11=Not Licensed, 12=Paused Until, 13=Down Acknowledged, 14=Down Partial);
+                    for messages: category of the log message;
+                    for tickets: status of ticket (open, resolved, closed)
+                </td>
+                <td>sensors, devices, groups, probes, messages, tickets</td>
+            </tr>
+            <tr class="even">
+                <td>message</td>
+                <td>
+                    Detailed message of a sensor tree object (for example, last error of a sensor) or a history entry, log entry, ticket subject
+                </td>
+                <td>sensors, devices, groups, probes, messages, tickets, ticketdata, history</td>
+            </tr>
+            <tr>
+                <td>priority</td>
+                <td>
+                    Displays the priority setting of a sensor tree object or the priority of a log entry/ticket
+                </td>
+                <td>sensors, devices, groups, probes, messages, tickets</td>
+            </tr>
+            <tr class="even">
+                <td>lastvalue</td>
+                <td>
+                    Last sensor result value or channel values. When used with channels the 'lastvalue_' has to be used to automatically display volumes and speed
+                </td>
+                <td>sensors, channels</td>
+            </tr>
+            <tr>
+                <td>upsens</td>
+                <td>
+                    Number of sensors currently in UP state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr class="even">
+                <td>downsens</td>
+                <td>
+                    Number of sensors currently in DOWN state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>downacksens</td>
+                <td>
+                    Number of sensors currently in DOWN Acknowledged state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr class="even">
+                <td>partialdownsens</td>
+                <td>
+                    Number of sensors currently in Partial Down state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>warnsens</td>
+                <td>
+                    Number of sensors currently in WARNING state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr class="even">
+                <td>pausedsens</td>
+                <td>
+                    Number of sensors currently in a PAUSED state. This includes all PAUSED states (paused by user', 'paused by dependency, 'paused by schedule', etc.)
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>unusualsens</td>
+                <td>
+                    Number of sensors currently in UNUSUAL state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr class="even">
+                <td>undefinedsens</td>
+                <td>
+                    Number of sensors currently in UNDEFINED state. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>totalsens</td>
+                <td>
+                    Number of sensors. Only the sensor itself or sensors in the hierarchy below the displayed object are counted
+                </td>
+                <td>all sensors, devices, groups, probes</td>
+            </tr>
+            <tr class="even">
+                <td>value</td>
+                <td>
+                    Should only be used as 'value_', because then it will be expanded for all visible channels/toplist columns. Displays a channel value or a toplist value
+                </td>
+                <td>values, topdata</td>
+            </tr>
+            <tr>
+                <td>coverage</td>
+                <td>Displays the sensor coverage of a time span in a value table</td>
+                <td>values</td>
+            </tr>
+            <tr class="even">
+                <td>favorite</td>
+                <td>
+                    Displays an exclamation mark when the sensor tree object is marked as favorite
+                </td>
+                <td>sensors, devices, groups, probes</td>
+            </tr>
+            <tr>
+                <td>user</td>
+                <td>Displays the user responsible for a history entry or the user (or user group) a ticket is assigned to</td>
+                <td>history, tickets, ticketdata</td>
+            </tr>
+            <tr class="even">
+                <td>parent</td>
+                <td>
+                    Name of the parent object of the associated object of a log message
+                </td>
+                <td>messages</td>
+            </tr>
+            <tr>
+                <td>datetime</td>
+                <td>Timestamp or timespan of an object (for tickets: last modification)</td>
+                <td>messages, tickets, ticketdata, values, history, storedreports, topidx</td>
+            </tr>
+            <tr class="even">
+                <td>dateonly</td>
+                <td>Like 'datetime' but only the date part</td>
+                <td>messages, tickets, history, values</td>
+            </tr>
+            <tr>
+                <td>timeonly</td>
+                <td>Like 'datetime' but only the time part</td>
+                <td>messages, tickets, history, values</td>
+            </tr>
+            <tr class="even">
+                <td>schedule</td>
+                <td>
+                    For sensor tree objects, this displays the name of an associated schedule, for reports it displays the report generation schedule
+                </td>
+                <td>probes, groups, devices, sensors, reports</td>
+            </tr>
+            <tr>
+                <td>period</td>
+                <td>Displays the period of a report (day, week etc.)</td>
+                <td>reports</td>
+            </tr>
+            <tr class="even">
+                <td>email</td>
+                <td>Displays the email address of a report</td>
+                <td>reports</td>
+            </tr>
+            <tr>
+                <td>template</td>
+                <td>Displays the template used by a report</td>
+                <td>reports</td>
+            </tr>
+            <tr class="even">
+                <td>lastrun</td>
+                <td>Timestamp of the last generation of a report</td>
+                <td>reports</td>
+            </tr>
+            <tr>
+                <td>nextrun</td>
+                <td>Timestamp of the next generation of a report</td>
+                <td>reports</td>
+            </tr>
+            <tr class="even">
+                <td>size</td>
+                <td>Size of a stored report</td>
+                <td>storedreports</td>
+            </tr>
+            <tr>
+                <td>minigraph</td>
+                <td>
+                    Numerical data for the minigraphs. Numbers are 5 minute averages for the last 24 hours (must be scaled to the maximum of the series). There are two datasets:
+                    "|" separates measured value series and error series.
+                </td>
+                <td>sensors</td>
+            </tr>
+            <tr class="even">
+                <td>deviceicon</td>
+                <td>Device Icon</td>
+                <td>devices</td>
+            </tr>
+            <tr class="odd">
+                <td>comments</td>
+                <td>Object comments (for tickets: related object)</td>
+                <td>all objects</td>
+            </tr>
+            <tr class="even">
+                <td>host</td>
+                <td>Hostname or IP address</td>
+                <td>devices</td>
+            </tr>
+            <tr class="odd">
+                <td>condition</td>
+                <td>Probe status for probes (0=Disconnected, 1=Unauthorized, 2=Connected, 3=Banned, 4=Init), auto-discovery status for groups</td>
+                <td>probes, groups</td>
+            </tr>
+            <tr class="even">
+                <td>basetype</td>
+                <td>Object type (string)</td>
+                <td>all tree objects</td>
+            </tr>
+            <tr class="odd">
+                <td>baselink</td>
+                <td>URL of the object</td>
+                <td>all tree objects</td>
+            </tr>
+            <tr class="even">
+                <td>icon</td>
+                <td>URL of the device icon</td>
+                <td>devices</td>
+            </tr>
+            <tr class="odd">
+                <td>parentid</td>
+                <td>ID of the parent object or ID of a ticket</td>
+                <td>all tree objects, tickets</td>
+            </tr>
+            <tr class="even">
+                <td>location</td>
+                <td>Location property (used in Geo Maps)</td>
+                <td>devices</td>
+            </tr>
+            <tr class="odd">
+                <td>fold</td>
+                <td>Sub-objects are folded up (true) or down (false); tickets: user (or user group) to which ticket is assigned read it since last change</td>
+                <td>probes, groups, tickets</td>
+            </tr>
+            <tr class="even">
+                <td>groupnum, devicenum</td>
+                <td>Number of groups/devices in a probe/group node</td>
+                <td>probes, groups</td>
+            </tr>
+            <tr class="odd">
+                <td>tickettype</td>
+                <td>Type of the ticket: user, notification, todo</td>
+                <td>tickets</td>
+            </tr>
+            <tr class="even">
+                <td>modifiedby</td>
+                <td>User who edited the ticket most recently</td>
+                <td>tickets, ticketdata</td>
+            </tr>
+            <tr class="odd">
+                <td>actions</td>
+                <td>Types of all ticket edits</td>
+                <td>ticketdata</td>
+            </tr>
+            <tr class="even">
+                <td>content</td>
+                <td>The text of the ticket that was added with the last edit</td>
+                <td>ticketdata</td>
+            </tr>
+        </table>
+        <h2>Requesting Current System Status</h2>
+        <p>
+            The following API call is a lightweight option to get status data like number of alarms, messages, etc.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Current system status in XML format:
+                <pre><b>/api/getstatus.xml?id=0</b></pre>
+            </li>
+            <li>
+                Current system status in JSON format:
+                <pre><b>/api/getstatus.htm?id=0</b></pre>
+            </li>
+        </ul>
+        <p>
+            The following API call returns a list of all sensor types that are currently used in JSON format.
+        </p>
+        <ul class="apicalls">
+            <li>
+                All currently used sensor types in JSON format:
+                <pre><b>/api/sensortypesinuse.json</b></pre>
+            </li>
+        </ul>
+        <p>
+            The following API call returns a list with the current number of all sensor states.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Current number of all sensor states:
+                <pre><b>/api/gettreenodestats.xml</b></pre>
+            </li>
+        </ul>
+        <h2>Ticket Status and Message</h2>
+        <p>
+            The following API calls return status and message of a ticket.
+        </p>
+        <ul class="apicalls">
+            <li>
+                The status of a ticket:
+                <pre><b>/api/getticketstatus.htm?id=ticketid</b></pre>
+            </li>
+            <li>
+                The subject and assignee of a ticket:
+                <pre><b>/api/getticketmessage.htm?id=ticketid</b></pre>
+            </li>
+        </ul>
+    </div>
+</div>

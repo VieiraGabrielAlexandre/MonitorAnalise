@@ -1,0 +1,29 @@
+﻿<#system type="denyreadonlyusers">
+<#countobj var="objectcount">
+<div id="content" class="ui-dialog-content">
+	<form onsubmit="return false" class="prtg-form prtg-plugin" data-plugin="prtg-form"  title='<#lang key="html.pauseuntilwithcomment.head" default="Pause Objects until">'>
+		<fieldset>
+			<legend></legend>
+			<div class="control-group">
+				<label for="" class="control-label no_help"><#lang key="html.objects.selected" default="Selected Objects"></label>
+				<div class="controls">
+		    	<div>
+						<p id="objlist">
+							<#listobj>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="message" class="control-label has_help"><#lang key="html.pausewithcomment.message" default="Message"></label>
+				<div class="controls"data-placement="right" title="<#lang key="html.pausewithcomment.messagehelp" default="Please enter a message to display until object is resumed.">">
+					<input id="message" class="text" type="text" autocomplete="off" name="message" value="">
+				</div>
+				<label for="untiltime" class="control-label has_help"><#lang key="html.pausewithcomment.until" default="Until"></label>
+				<div class="controls"data-placement="right" title="<#lang key="html.pausewithcomment.untilhelp" default="Please select a date in the future!">">
+	        <input class="text prtg-plugin" type="text" id="untiltime" name="untiltime" autocomplete="off" value="" data-plugin="prtg-datetimepicker" data-timepicker="true" data-min-date="+0" data-max-date="+10y">
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

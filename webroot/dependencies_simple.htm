@@ -1,0 +1,36 @@
+﻿<#lang key="html.dependenciessimple.title" default="Dependencies" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="sensorname">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+		<h1><#lang key="html.dependenciessimple.head" default="<i>@pagetitle</i> @sensorname"></h1>
+  <div id="content">
+		<a class="button btngrey" href="/<#objectproperty type="nodename">.htm?id=<#objectid>"><#lang key="html.dependencies.backtogroup" default="Group View"></a>
+		<a class="button btngrey" href="/dependencies.htm?id=<#objectid>"><#lang key="html.dependencies.graph" default="Dependencies Graph"></a>
+	<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+	 	  <div class="prtg-plugin" data-plugin="prtg-table">
+			<#table tableid="sensortable"
+				content="treenodes"
+				columns="name,dependency=textraw,status,message,lastvalue,minigraph,checkbox"
+				filter_dependency="@above(-2)"
+				tools="edit,pause,fave,prio,scan,delete"
+				sortby="probegroupdevice"
+				sortable="true"
+				refreshable="true"
+				count="100"
+				tabletitle="AUTO">
+		</div>
+  </div>
+<#lang key="html.dependenciessimple.help.title" default="Dependencies" var="helptitle">
+<#lang key="html.dependenciessimple.help.text" default="This page shows a list of all dependencies between your sensors." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+

@@ -1,0 +1,14 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+    <div class="systemstatus loading-box refreshable" refreshurl="/controls/systemstatus.htm">
+        <div class="content-list prtg-plugin" data-plugin="content-list">
+            <h2 class="main-headline"><#lang key="html.menu.Setup.SystemStatus2" default="System Status"/></h2>
+
+            <div class="anchor-box">
+                <ul class="js-contentList"> </ul>
+            </div>
+            <div class="column-box">
+                <#include file="includes\statusdata1.htm">
+                    <#include file="includes\statusdata2.htm" skiptagfornonadmins='true'>
+            </div>
+        </div>
+    </div>

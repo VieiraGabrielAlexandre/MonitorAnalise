@@ -1,0 +1,175 @@
+﻿<#sysinfoentered>
+
+<#checkobjecttype objecttype="device">
+
+<#lang key="html.device.sysinfo.refresh.icon.title" default="Click to refresh" var="title">
+<#lang key="html.device.sysinfo.refresh.disabled.icon.title" default="Sorry probe is not connected!" var="titledisabled">
+
+<div class="device-sysinfo" >
+<h2 class="main-headline"><#lang key="html.device.sysinfo.title" default="System Information"></h2>
+
+<div id='hidden_no_probe_text' style='display:none;'><#lang key="html.global.ProbeOffline" default="Probe Offline"></div>
+
+  <div class="anchor-box">
+    <ul>
+    <li><a href="#device_sysinfo_system"><#lang key="html.device.sysinfo.system" default="System"></a></li>
+      <li><a href="#device_sysinfo_hardware"><#lang key="html.device.sysinfo.hardware" default="Hardware"></a></li>
+      <li><a href="#device_sysinfo_software"><#lang key="html.device.sysinfo.software" default="Software"></a></li>
+      <li><a href="#device_sysinfo_users"> <#lang key="html.device.sysinfo.users" default="Users"></a></li>
+      <li><a href="#device_sysinfo_services"><#lang key="html.device.sysinfo.services" default="Services"></a></li>
+      <li><a href="#device_sysinfo_processes"><#lang key="html.device.sysinfo.processes" default="Processes"></a></li>
+    </ul>
+  </div>
+
+<div class="panel panel-grid wrap-panel sysinfo-panel">
+  <div id="device_sysinfo_system" class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="system">' data-kind="system" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.system" default="System">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="system"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='system' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="system" customtitle="&#040;System&#041;" sortby="_displayname" sortable="true" refreshable="true" columns="_key,_value" headers="Name,Value">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='system' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='system' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+
+  <div id="device_sysinfo_hardware" class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="hardware">' data-kind="hardware" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.hardware" default="Hardware">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="hardware"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='hardware' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="hardware" customtitle="&#040;Hardware&#041;" sortby="_displayname" sortable="true" refreshable="true" columns="_displayname,_class,_caption,_*=showonhover" headers="Name,Class,Caption,Properties">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='hardware' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='hardware' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+  <div id="device_sysinfo_software" class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="software">' data-kind="software" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.software" default="Software">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="software"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='software' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="software" customtitle="&#040;Software&#041;" sortby="Displayname" sortable="true" refreshable="true" columns="_displayname,_version,_*=showonhover" headers="Name,Version,Properties">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='software' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='software' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+  <div id="device_sysinfo_users" class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="loggedonusers">' data-kind="loggedonusers" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.users" default="Users">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="loggedonusers"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='loggedonusers' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="loggedonusers" customtitle="&#040;Users&#041;" sortby="Displayname" sortable="true" refreshable="true" columns="_user,_domain" headers="Name,Domain">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='loggedonusers' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='loggedonusers' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+  <div id="device_sysinfo_services"  class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="services">' data-kind="services" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.services" default="Services">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="services"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='services' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="services" customtitle="&#040;Services&#041;" sortby="Displayname" refreshable="true" columns="_displayname,_state,_startmode,_*=showonhover" headers="Name,State,Startmode,Properties">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='services' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='services' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+  <div  id="device_sysinfo_processes"  class="panel-card">
+    <div class="card prtg-sysinfo prtg-plugin" data-plugin="prtg-sysinfo" data-accessright="<#accessright>" data-sysinfoinit='<#sysinfo kind="processes">' data-kind="processes" data-objid="<#inserturlparam parameter="id">" >
+      <h3>
+        <#lang key="html.device.sysinfo.processes" default="Processes">
+        <a href="#" class="checknow <#deviceproberunning insertiftrue=' ' insertiffalse='no_probe'> icon-dark glyph-arrows-cw"
+          title="<#lang key="html.global.CheckNow" default="Scan Now">">
+        </a>
+        <small><#sysinforeceivetime kind="processes"></small>
+      </h3>
+      <div class="prtg-table prtg-plugin <#sysinfoerror kind='processes' insertiftrue='hidden' insertiffalse=' '>" data-plugin="prtg-table">
+        <#table content="sysinfo" category="processes" customtitle="&#040;Processes&#041;" sortby="Displayname" refreshable="true" columns="_displayname,_creationdate,_processid" headers="Name,Start&nbsp;Time,Process&nbsp;ID">
+      </div>
+      <div class="loading-overlay invisible" title="<#lang key="html.device.sysinfo.loading" default="Refresh In Progress">"></div>
+      <error class="<#sysinfoerror kind='processes' insertiftrue=' ' insertiffalse='hidden'>">
+        <img src='/images/no_data.svg'>
+        <div class='no_data'><#lang key="common.strings.nodataavailable" default="No Data Available"></div>
+        <message><#sysinfoerror kind='processes' return='message'></message>
+      </error>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="oskhelpbox">
+  <div class="helpheader"><b><#lang key="html..deviceoverview.helprecommendedsensors" default="What is this?"></b></div>
+  <div>
+    <#lang key="html.sysinfo.description" default="
+    PRTG requests various system information from your device using standard protocols - WMI and SNMP - and shows the results here. You get system information for Windows devices, running Windows Vista or later, and for Linux, Unix, or other devices that provide SNMP access. Please note that this feature does not fully support all device types. The completeness of your data depends on your system and on the protocols you use.
+    <br><br>
+    The following prerequisites are necessary:
+    <br>
+    <ul>
+    	<li><b>Credentials</b> for the target system in the <b>Parent</b> or <b>Device Settings</b></li>
+    	<li><b>WMI</b> enabled on probe and target computer for Windows systems</li>
+    	<li><b>SNMP</b> enabled on the target device</li>
+    	<li><b>Remote Registry</b> Windows service enabled on the target computer</li>
+    	<li><b>Remote Procedure Call (RPC)</b> Windows service enabled on the target computer</li>
+    </ul>
+    Do you need more help? Please see our Knowledge Base: <a target='_blank' href='https://kb.paessler.com/en/topic/67824'>How can PRTG get data for System Information tables?</a>">
+    <br><br>
+  </div>
+</div>
+  </div>
+  </div>

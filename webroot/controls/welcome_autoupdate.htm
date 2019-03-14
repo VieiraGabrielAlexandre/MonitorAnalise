@@ -1,0 +1,15 @@
+﻿<#system type="denyfornonadmins">
+<div class="welcomeautoupdatebox">
+  <h2><#lang key="html.welcome.updateavailable.headline" default="Update Available"></h2>
+  <div class="versioninfo current-version-box">
+    <p><#lang key="html.autoupdatedata.currentlyinstalledversion" default="Installed Version"></p>
+    <p><#system type="version"> <#system type="installedupdatechannel"></p>
+  </div>
+  <div class="versioninfo available-version-box">
+    <p><#lang key="html.autoupdatedata.latestfrompaessler" default="Latest Version Available from Paessler"></p>
+    <p><#system type="autoupdate" insert="autoupdatelatestversionfrompaessler"> <span class="newbadge"><#lang key="html.autoupdatedata.available2" default="NEW"></span></p>
+  </div>
+  <div class="updatelink">
+    <a href="/autoupdate.htm?tabid=1" class="actionbutton"><#lang key="html.welcome.autoupdate.button.update" default="Install Update"></a>
+  </div>
+</div>

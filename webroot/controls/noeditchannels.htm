@@ -1,0 +1,27 @@
+﻿<div id="sslnagscreen" class="nagscreen-box">
+    <h2>
+      <#lang key="html.channeltabtip.text1" default="The 'Channels' tab has been removed from PRTG!">
+    </h2>
+    <p class="nagscreen-cell nagscreen-text">
+      <span>
+        <#lang key="html.channeltabtip.text2b" default="Please note that the former channels tab is not available anymore. ">
+      </span>
+	  <span><center><img src="/images/editchannelshere.png" style="padding:20px;margin:30px;background:#fff;"></center></span>
+      <span>
+        <#lang key="html.channeltabtip.text3a" default="Go to the Overview tab instead and click on the gear icon at the bottom right of a channel tile to edit the channel!">
+      </span>
+    </p>
+	<wingui-hidden>
+		<p class="nagscreen-cell nagscreen-action">
+			<a class="actionbutton" href="#" onclick="_Prtg.objectTools.hidechanneltabtip();return false;"><#lang key="html.channeltabtip.donttell" default="Don't Tell Me Again"></a>
+			<a href="sensor.htm?id=<#objectid>&tabid=1" class="button btngrey"><#lang key="html.channeltabtip.gotooverview" default="Go to Overview Tab"></a>
+		</p>
+	</wingui-hidden>
+	<wingui>
+		<p class="nagscreen-cell nagscreen-action">
+			<a class="actionbutton" href="sensor.htm?id=<#objectid>&hidechannel=1" onclick="_Prtg.objectTools.hidechanneltabtip();"><#lang key="html.channeltabtip.donttell" default="Don't Tell Me Again"></a>
+			<a href="sensor.htm?id=<#objectid>&tabid=1" class="button btngrey"><#lang key="html.channeltabtip.gotooverview" default="Go to Overview Tab"></a>
+		</p>
+	</wingui>	
+</div>
+

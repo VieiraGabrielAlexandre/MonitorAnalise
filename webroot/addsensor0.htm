@@ -1,0 +1,84 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.globals.addsensor" default="Add Sensor" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" class="step-1" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+    <form id="addobjectdialogform" action="addsensor.htm" method="GET" enctype="multipart/form-data" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+      <h1><#lang key="html.globals.addsensor" default="Add Sensor"></h1>
+      <div class="eye-catcher"></div>
+      <div class="cancel-action">
+        <a onClick="history.back();return(false)" class="btn cancel" type="reset">
+          <#lang key="html.global.cancel" default="Cancel"/>
+        </a>
+      </div> 
+      <fieldset>
+        <legend class="prtg-header"><#lang key="html.addsensor0.choosedevice" default="Choose a Device to Add the New Sensor to"></legend>
+        <div class="control-group">
+          <div class="controls">
+            <div class="radio-control">
+              <input type="radio" class="hidden radio GroupShowHide" name="selection" value="1" id="UseNew" checked>
+              <label for="UseNew" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.addsensor0.createnewdevice" default="Create a new device"></label>
+              <input type="radio"  class="hidden radio GroupShowHide" name="selection" value="0" id="UseExisting"  checked>
+              <label for="UseExisting" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.addsensor0.addtoexisting" default="Add sensor to an existing device"></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="tree-fieldset ShowUseExisting HideUseNew">
+        <legend class="prtg-header"><#lang key="html.addsensor0.selectdevice" default="Select a Group from the List"></legend>
+        <div class="control-group">
+          <div class="controls fillwidth">
+            <p class="controls-info">
+              <span class="readonlyproperty">
+                <#lang key="html.addsensor0.wizhelp1" default="Select a device from the list. Tip: You can create new sensors much faster by right clicking a device and choosing <b>Add Sensor</b> from the context menu.">
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="control-group">
+          <!-- <label class="control-label no_help" for="objtreesearch"><#lang key="html.global.search2" default="Search..."></label> -->
+          <div class="controls fillwidth">
+            <div class="searchbox-wrapper">
+              <div class="searchbox">
+                <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+                <input id="objtreesearch" data-placement="top" type="text" class="searchstring" title="<#langjs key=" html.jstree.searchtree" default="Search Name in Device Tree ">" name="searchtext" placeholder="<#lang key=" html.global.search2 " default="Search...">">
+              </div>
+            </div>
+            <div class="prtg-plugin objectselector" style="height:400px" id="objectSelectorTree" data-plugin="objectselector" data-allowone="1">
+              <!--
+              {
+                "tree": <#selectionlist content='groupsanddevices_as_json'
+                  id='0'
+                  groups='0'
+                  devices='1'
+                  probes='0'
+                  allowroot='0'
+                  altformat='1'>
+              }
+              -->
+            </div>
+            <input data-validate-related="#objectSelectorTree" class="fieldrequired {required:true} invisible" id="groupdevid" name="id" type="text">
+          </div>
+        </div>
+      </fieldset>
+        <div class="quick-action-wrapper ShowUseExisting HideUseNew">
+          <button style='<#system type="hideforreadonlyusers">' class="submit btngrey button quick-action-button" type="submit"><#lang key="html.global.continue" default="Continue"></button>
+          <button type="submit" class='ui-icon quick-action-badge quick-continue <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'></button>
+        </div>
+        <div class="quick-action-wrapper HideUseExisting ShowUseNew InitialDisplayNone">
+          <button style='<#system type="hideforreadonlyusers">' class='submit btngrey button quick-action-button' type="submit" onClick="_Prtg.Hjax.loadLink('/adddevice0.htm');return false;"><#lang key="html.global.continue" default="Continue"></button>
+          <button type="submit" class='ui-icon quick-action-badge quick-continue <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'></button>
+        </div>
+    </form>
+  </div>
+
+    <#lang key="html.addsensor0.help.title" default="Adding Sensors" var="helptitle">
+    <#lang key="html.addsensor0.help.text" default="Monitoring is performed by <b>sensors</b> in PRTG. Sensors use various settings (for example, the IP address) from their parent devices. This means that before you can create sensors you must first create a device to hold the new sensors.<br><br><a href='/help/add_a_sensor.htm' target='_blank'><b>Help: Add a Sensor</b></a>" var="helptext">
+    <#system type='showhelp' var='showhelp'>
+    <#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

@@ -1,0 +1,139 @@
+﻿<#hideforpod var="ispod">
+<#system type="probecount" var="probecount">
+<div id="statusadmintools" class="removeforreadonly" style='<#hidefornonadmins>'>
+
+  <div class="adminToolsBox">
+    <div class="adminToolsBox_heading">
+      <h2><#lang key="html.systemstatus.admintoolA" default="Core Administrative Tools"/></h2>
+    </div>
+    <div class="adminToolsBox_row" style="<#hideforpod>">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.snapshot" default="Create Configuration Snapshot"></b></p>
+        <p><#lang key="html.systemstatus.admintool1" default="Saves current configuration as ZIP file in the 'Configuration Auto-Backups' folder."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent" onclick="_Prtg.objectTools.createDatabaseSnapshot.call(this, this);return false;">
+        <#lang key="html.systemstatus.go" default="Go!"/>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row" style="<#hideforpod>">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.writecorestatusfile" default="Write Core Status File"></b></p>
+        <p><#lang key="html.systemstatus.admintool3" default="Creates a debug file on the core system."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="writecorestatus" onclick="_Prtg.objectTools.writeCoreStatus.call(this);return false;">
+          <#lang key="html.systemstatus.go" default="Go!">
+        </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row" style="<#hideforpod>">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.clearcaches1" default="Clear Caches"></b></p>
+        <p><#lang key="html.systemstatus.clearcaches2" default="Clears the web server's internal caches for Geo Maps, the Active Directory integration, and the Active Directory group list."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="clearcaches" onclick="_Prtg.objectTools.clearCaches.call(this, this);return false;">
+          <#lang key="html.systemstatus.go" default="Go!">
+        </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row" style="<#hideforpod>">
+      <div class="adminToolsBox_text">
+        <p>
+          <b><#lang key="html.systemstatus.loadlookupsandfilelists" default="Load Lookups and File Lists"></b>
+        </p>
+        <p>
+          <#lang key="html.systemstatus.loadlookupsandfilelists2" default="Reloads the lookup files from the 'lookups\custom' folder and other file lists that are displayed in the web interface, for example, SNMP libraries, device icons, and report templates.">
+        </p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="loadlookups" href="#" onclick="_Prtg.objectTools.loadLookups.call(this);_Prtg.objectTools.reloadFileLists.call(this,this);return false;">
+          <#lang key="html.systemstatus.go" default="Go!">
+        </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.recalccache1" default="Recalculate PRTG Graph Data Cache"></b></p>
+        <p><#lang key="html.systemstatus.rcalccache2" default="Note: due to the recalculation the PRTG Core Server Service will be restarted."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="clearcaches" onclick="_Prtg.objectTools.recalcCache.call(this, this);return false;">
+        <#lang key="html.systemstatus.go" default="Go!">
+          </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row"  style="<#hideforpod>">
+      <div class="adminToolsBox_text">
+          <p><b><#lang key="html.systemstatus.restartserver1" default="Restart Core Server"></b></p>
+          <p><#lang key="html.systemstatus.restartserver2" default="Restarts the PRTG Core Server Service."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="clearcaches" onclick="_Prtg.objectTools.restartServer.call(this, true);return false;">
+            <#lang key="html.systemstatus.go" default="Go!">
+        </button>
+      </div>
+    </div>
+
+    <div class="adminToolsBox_row"  style="<#hidefornonsvs>">
+      <div class="adminToolsBox_text">
+          <p><b><#lang key="html.systemstatus.reloadloggingconfig1" default="Reload Logging Configuration"></b></p>
+          <p><#lang key="html.systemstatus.reloadloggingconfig2" default="Apply changes of the Logging Configuration to all PRTG Modules."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+        <button class="button btntransparent " id="clearcaches" onclick="_Prtg.objectTools.reconfigureLogging.call(this, this);return false">
+            <#lang key="html.systemstatus.go" default="Go!">
+        </button>
+      </div>
+    </div>
+
+    <div class="oskhelpbox" style="<#hideforpod>">
+      <p>
+        <#lang key="html.systemstatus.scheduledcorerestarthint" default="Want to schedule a regular restart of the core server? Please go to the device tree and open the <b>Settings</b> of the Local Probe. In the <b>Scheduled Restart Settings</b>, edit the <b>Restart Options</b>.">
+      </p>
+    </div>
+  </div>
+
+  <div class="adminToolsBox">
+    <div class="adminToolsBox_heading">
+      <h2><#lang key="html.systemstatus.probes2" default="Probe Administrative Tools"/></h2>
+    </div>
+    <div class="adminToolsBox_row-probes">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.writeprobestatus" default="Write Probe Status Files"></b></p>
+        <p><#lang key="html.systemstatus.admintool2" default="Creates a set of debug files on all probe systems."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+          <button class="button btntransparent " id="writeprobestatus" onclick="_Prtg.objectTools.writeProbeStatus.call(this,this);return false;">
+            <#lang key="html.systemstatus.go" default="Go!">
+          </button>
+      </div>
+    </div>
+    <div class="adminToolsBox_row-probes">
+      <div class="adminToolsBox_text">
+        <p><b><#lang key="html.systemstatus.restartprobes" default="Restart All Probes"></b></p>
+        <p><#lang key="html.systemstatus.admintool4" default="Restarts all probe services. For disconnected probes, please use the PRTG Administration Tool on the respective probe system to start the probe service."></p>
+      </div>
+      <div class="adminToolsBox_btn">
+          <button class="button btntransparent " id="restartprobes" onclick="_Prtg.objectTools.restartProbes.call(this,this);return false;">
+            <#lang key="html.systemstatus.go" default="Go!">
+          </button>
+      </div>
+      </div>
+      <div class="adminToolsBox_row-probes">
+        <#system type="probes" skiptagfornonadmins='true' withlinks="yes">
+      </div>
+        <div class="oskhelpbox">
+          <p>
+            <#lang key="html.systemstatus.scheduledremoteproberestarthint" default="Want to schedule a regular restart of a remote probe? Please go to the device tree and open the <b>Settings</b> of the respective remote probe. In the <b>Scheduled Restart Settings</b>, edit the <b>Restart Options</b>.">
+          </p>
+        </div>
+  </div>
+</div>

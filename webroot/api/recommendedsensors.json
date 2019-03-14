@@ -1,0 +1,2 @@
+﻿<#checkobjecttype objecttype="device">
+<#showsuggest skiptagforreadonly="true" json="true">

@@ -1,0 +1,27 @@
+﻿<#checkobjecttype objecttype="sensor">
+<#lang key="html.syslogmessage.title" default="Syslog Messages" var="syslogtitle">
+<#lang key="html.trapmessage.title" default="Trap Messages" var="traptitle">
+<#udpsensor trap="@traptitle" syslog="@syslogtitle" varexpand="trap,syslog" var="title">
+<div>
+  <#udpsensor syslog="syslog" trap="trap" var="udptype">
+  <#inserturlparam parameter="udptype" var="udptype">
+  <#udpsensor trap="datetime,source,host,message,value,msgid,name,knowntime,condition" syslog="datetime,source,message,host,knowntime,condition,tags,location,name,procid,msgid,value" var="columns">
+  <div class="prtg-plugin udpmessages" data-plugin="prtg-udpmessages" data-objid="<#inserturlparam parameter="id">" data-udptype="<#inserthtml html="@udptype" varexpand="html">" data-columns="<#inserthtml html="@columns" varexpand="html">">
+    <div class="udpmessages-output table-wrapper">
+      <h2>
+        <#udpsensor trap="@traptitle" syslog="@syslogtitle" varexpand="trap,syslog">
+      </h2>
+      <#table output="html" udpmsgid="-1" links="true" content="udpmessage" showfilter="true" hideemptycol="true" columns="@columns" infoheader="true" datepicker="true" udptype="@udptype" varexpand="columns,udptype" extraclass="messagetable">
+    </div>
+    <div class="udpmessages-filter-dialog" style="display:none;">
+      <textarea class="udpmessages-advanced-filter" rows="7"></textarea>
+      <form class="prtg-form">
+        <fieldset>
+          <div class="control-group">
+          <#object type="layoutfield" group="filter" field="info">
+        </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

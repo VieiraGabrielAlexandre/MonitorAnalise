@@ -1,0 +1,18 @@
+﻿<!--Top 100 Highest and lowest (Data Files Not Available): Highest and lowest 5 minute averages-->
+<!--500000-->
+
+<#include file="includes\printhead.htm">
+<div class="export">
+	<#include file="includes\printheading.htm">
+	<#objectproperty name="reportheader">
+
+	<h1><b><#objectproperty name="name"></b> (<#report type="startdate"> - <#report type="enddate"> <#report type="reporthours">)</h1>
+
+	<#report type="clusterloop" file="details\Stats Loop HiLo 5.htm">
+
+	<#cropmsg>
+
+	<#objectproperty name="reportfooter">
+	<#include file="includes\printfooter.htm">
+</div>
+<#include file="includes\printfoot.htm">

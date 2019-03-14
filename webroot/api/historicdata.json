@@ -1,0 +1,1 @@
+<#loadlimit><#checkobjecttype objecttype="sensor"><#droplive><#table tableid="histdatatable" content="histdata" columns="datetime,value_,coverage" count="*" sortby="datetime" refreshable="false" sortable="false" links="false" infoheader="false" output="json">

@@ -1,0 +1,13 @@
+<#system type="searchtext" var="searchtext">
+{ 
+  "objid":
+  <#table output="json" content="sensorxref"  maxcount=1 columns="name,basetype,objid,icon=treejson,tags" noraw="1" nonefound="null" id="@searchtext" varexpand="id">,   
+  "probenodes":
+  <#search output="json" searchtype="probenode" maxcount=1000 columns="name,basetype,objid,icon=treejson,tags" noraw="1" nonefound="null">, 
+  "groups":
+  <#search output="json" searchtype="group" maxcount=1000 columns="name,basetype,objid,icon=treejson,tags" noraw="1" nonefound="null">, 
+  "devices":
+  <#search output="json" searchtype="device" maxcount=1000 columns="name,basetype,objid,icon=treejson,tags" noraw="1" nonefound="null">,
+  "sensors":
+  <#search output="json" searchtype="sensor" maxcount=1000 columns="name,basetype,objid,icon=treejson,tags" noraw="1" nonefound="null">
+}

@@ -1,0 +1,1178 @@
+﻿<!--Live Data-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="http_api.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="live_graphs.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Live Data</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Live Data</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can access live data and live status data of objects using the PRTG Application Programming Interface (API).</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Authentication with username and <a href="my_account_settings.htm#basic" class="topiclink">passhash</a> (or username and password) must always be included in each PRTG API request. See section <span class="f_BoldCustom"><a href="http_api.htm#authentication" class="topiclink">Authentication</a></span> for more information.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Here are quick links for ease of use.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#single_object" class="topiclink">Property/Setting of an Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#channel_properties" class="topiclink">Property of a Channel</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#object_status" class="topiclink">Status of an Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#multiple_objects" class="topiclink">Property or Status of Multiple Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#query_builder" class="topiclink">XML Table Query Builder</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#output_format" class="topiclink">Output Data Format</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#raw_format" class="topiclink">RAW Date/Time Format</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#common_parameters" class="topiclink">Common Data Table Parameters</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#filtering" class="topiclink">Filtering by Object ID</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#advanced_filtering" class="topiclink">Sorting and Advanced Filtering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#supported_output" class="topiclink">Supported Output Columns (&quot;columns=&quot; Parameter)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#system_status" class="topiclink">Current System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm#ticket_status" class="topiclink">Current Ticket Status and Message</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="single_object" class="hmanchor"></a><span class="f_InTopicHeading">Property/Setting of an Object</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can get the properties or settings of an object (name, hostname, url) using the following API calls.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Because properties may contain HTML content, we recommend that you include <span class="f_ItalicCustom">&amp;show=nohtmlencode</span> in all <span class="f_BoldCustom">getobjectproperty</span> API calls.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Get an object property/setting:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getobjectproperty.htm?id=objectid&amp;name=propertyname&amp;show=nohtmlencode</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For </span><span class="f_BoldCustom">propertyname</span><span class="f_ListBulleted">, look at the name of the INPUT fields while editing an object. The </span><span class="f_BoldCustom">propertyname</span><span class="f_ListBulleted"> parameter can be discerned by opening the </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> page of an object and looking at the HTML source of the INPUT fields. For example, the INPUT field for the tags of an object has the name </span><span class="f_BoldCustom">tags_</span><span class="f_ListBulleted">. Leave away the </span><span class="f_BoldCustom">_</span><span class="f_ListBulleted"> and use the rest (</span><span class="f_BoldCustom">tags</span><span class="f_ListBulleted">) as a value for the </span><span class="f_BoldCustom">propertyname</span><span class="f_ListBulleted"> parameter.</span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<span class="f_ListBulleted">Get a list of all tags for object id 1003</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getobjectproperty.htm?id=1003&amp;name=tags&amp;show=nohtmlencode</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The XML result looks like this:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;prtg&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;18.3.45.1224+&lt;/version&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;result&gt;probehealthsensor&lt;/result&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/prtg&gt;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">getobjectproperty.htm</span> supports the following object types:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">probe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">group</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">sensor</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">channel</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">library</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">map</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">notification</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">report</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">schedule</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">user account</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">getobjectproperty.htm</span> does not support the object types <span class="f_ItalicCustom">ticket</span> and <span class="f_ItalicCustom">user group</span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channel_properties" class="hmanchor"></a><span class="f_InTopicHeading">Property of a Channel</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">With this API call, you can get a sensor's <a href="sensor_channels_settings.htm" class="topiclink">channels settings</a>, for example channel limits. In general, this works like getting properties of any other object. To get channel properties via the API, you need to provide</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the ID of a sensor (parameter id)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">a subtype (</span><span class="f_ItalicCustom">channel</span><span class="f_ListBulleted"> for channels), and</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">a subid (ID of the channel you want to edit)</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Because properties may contain HTML content, we recommend that you include <span class="f_ItalicCustom">&amp;show=nohtmlencode</span> in all <span class="f_BoldCustom">getobjectproperty</span> API calls.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Get a channel limit</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getobjectproperty.htm?id=sensorid&amp;subtype=channel&amp;subid=channelid&amp;name=limitname&amp;show=nohtmlencode</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, the following API call gets the upper warning limit of a channel with the ID 0 of a sensor with the ID 1003</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getobjectproperty.htm?id=1003&amp;subtype=channel&amp;subid=0&amp;name=limitmaxwarning&amp;show=nohtmlencode</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The XML result looks like this:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;prtg&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;18.3.45.1224+&lt;/version&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;result&gt;25&lt;/result&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/prtg&gt;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="available_parameters" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Channels: Available Parameters</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Name of INPUT field</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Settings Name (as displayed in the web Interface)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitmode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Limit disabled or enabled (0 or 1)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitmaxerror</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Upper Error Limit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitmaxwarning</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Upper Warning Limit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitminwarning</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Lower Warning Limit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitminerror</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Lower Error Limit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limiterrormsg</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Error Limit Message</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">limitwarningmsg</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Warning Limit Message</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="object_status" class="hmanchor"></a><span class="f_InTopicHeading">Status of an Object</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can get the status information (lastvalue, downtime) of an object using the following API calls:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Get object status:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getobjectstatus.htm?id=objectid&amp;name=columnname</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For </span><span class="f_BoldCustom">columnname</span><span class="f_ListBulleted">, see section </span><span class="f_BoldCustom"><a href="live_data.htm#supported_output" class="topiclink">Supported Output Columns (&quot;columns=&quot; Parameter)</a></span><span class="f_ListBulleted">.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The XML result looks like this:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;prtg&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;18.1.37.10127+&lt;/version&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;result&gt;True&lt;/result&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/prtg&gt;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Sensor Details</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You need the sensor ID to get details about a sensor. You can find the ID on the sensor's <a href="review_monitoring_data.htm#overview" class="topiclink">overview</a> tab or by hovering over a sensor in the device tree, for example.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Get details about a sensor in XML:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getsensordetails.xml?id=sensorid</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Get details about a sensor in JSON:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getsensordetails.json?id=sensorid</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="multiple_objects" class="hmanchor"></a><span class="f_InTopicHeading">Property or Status of Multiple Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Most data that you can request from the API is available in data tables in XML, JSON, and CSV format (using XML format is recommended). The API function <span class="f_BoldCustom">/api/table.xml</span> is used to access data in tables. Here are some sample calls (URLs are shown without authentication parameters to improve readability).</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The example<span class="f_ImageCaption"> </span>URLs only show the XML URLs. Use the API function <span class="f_BoldCustom">/api/table.csv</span> or the <span class="f_BoldCustom">output=csvtable</span> parameter to select CSV format, or <span class="f_BoldCustom">/api/table.json</span> to return JSON format.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A hierarchical list of all groups, devices, and sensors with their current status information:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=sensortree</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All sensors (with current status information):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=sensors&amp;columns=objid,group,device,sensor,status,message,lastvalue,priority,favorite</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All recent log entries:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=messages&amp;columns=objid,datetime,parent,type,name,status,message</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_BoldCustom">sensortree</span> does not support JSON output.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">You will have the easiest start if you use the <a href="live_data.htm#query_builder" class="topiclink">XML table query builder</a> or click the XML icon that most data tables have in the PRTG web interface. Simply navigate to the information that you want to use, click the XML icon, and you will be taken to a URL that renders the content of the table in XML format. You can now use the URL as it is or change various parameters to suit your needs.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information on possible raw message status values returned by table-based API calls, see the Knowledge Base article <a href="https://kb.paessler.com/en/topic/76501" target="_blank" class="weblink">Is there a list of log status values for the PRTG API?</a></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="query_builder" class="hmanchor"></a><span class="f_InTopicHeading">XML Table Query Builder</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use the query builder tool to experiment with the API and to fine-tune your queries. You can find it in the web interface under <span class="f_BoldCustom">Setup</span> | <span class="f_BoldCustom">PRTG API</span>, section <span class="f_BoldCustom">Live Data</span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="output_format" class="hmanchor"></a><span class="f_InTopicHeading">Output Data Format</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">XML data from the PRTG API contains the fields that you have requested in the <span class="f_BoldCustom">columns</span> parameter. In most cases, numerical values will be included twice: One field contains the value in human-readable format and an additional &quot;RAW&quot; field contains the value as a number, which is better suited for further processing and calculations.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;status&gt;Up&lt;/status&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;status_RAW&gt;3&lt;/status_RAW&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;lastvalue&gt;98&nbsp;%&lt;/lastvalue&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;lastvalue_RAW&gt;97.7583&lt;/lastvalue_RAW&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Created.&lt;br/&gt;18.3.43.1360&lt;/message&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;message_RAW&gt;Created.&nbsp;18.3.43.1360&lt;/message_RAW&gt;</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">status</span><span class="f_ListBulleted"> field shows the value </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> (the according RAW value is </span><span class="f_BoldCustom">3</span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">lastvalue</span><span class="f_ListBulleted"> field shows the value </span><span class="f_BoldCustom">98%</span><span class="f_ListBulleted"> (the according RAW value is </span><span class="f_BoldCustom">97.7583</span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">message</span><span class="f_ListBulleted"> field shows the text </span><span class="f_BoldCustom">Created.&lt;br/&gt;18.3.43.1360</span><span class="f_ListBulleted"> (the according RAW value is </span><span class="f_BoldCustom">Created. 18.3.43.1360</span><span class="f_ListBulleted">).</span></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="raw_format" class="hmanchor"></a><span class="f_InTopicHeading">RAW Date/Time Format</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For columns with date/time value, the RAW value is defined as follows: The integral part of a value is the number of days that have passed since Dec 30th, 1899. The fractional part of a value is a fraction of a 24-hour day that has elapsed. To find the fractional number of days between two dates, simply subtract the two values. Similarly, to increment a date and time value by a certain fractional number of days, add the fractional number to the date and time value.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Here are some examples of date/time RAW values and their corresponding dates and times:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">RAW Date/Time Value</span></p>
+</th>
+<th style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">12/30/1899 00h00m (12:00 midnight)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2.75</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1/1/1900 18h00m (6:00 pm)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">35065</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1/1/1996 00h00m (12:00 midnight)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="common_parameters" class="hmanchor"></a><span class="f_InTopicHeading">Common Data Table Parameters</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following parameters are common to all data table API calls:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Parameter</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Values</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">content</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Selects what objects you want to have in your table</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensortree (JSON output not supported), devices, sensors, tickets, ticketdata, messages, values, channels, reports, storedreports, toplists</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">columns</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Comma-separated list of columns per record</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">see </span><span class="f_BoldCustom"><a href="live_data.htm#supported_output" class="topiclink">Supported Output Columns (&quot;columns=&quot; Parameter)</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">output</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Controls the output format</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">xml: default format (recommended)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">xmltable: an HTML table in XML format </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">csvtable: comma-separated format </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">html: HTML table</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">json: JSON format</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">jsontable: a table in JSON format</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">count</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maximum number of items (default 500)</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1-50000</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">start</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Start with this entry number (can be used with &quot;count&quot; to request the data page-by-page)</span></p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">any</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="filtering" class="hmanchor"></a><span class="f_InTopicHeading">Filtering by Object ID</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Add an ID parameter (for example, <span class="f_BoldCustom">id=1</span>) to the API URL to select a subset of items for the data table, for example, to reduce the amount of data transferred for each data table API call). The data table will only contain information for this object ID and its child objects.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Some table types require an ID. If you omit the ID parameter or it has the value zero (0), all available objects will be used.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Table Type</span><br />
+<span class="f_SettingsTableHeader">(content=)</span></p>
+</th>
+<th style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">ID Required or Optional</span></p>
+</th>
+<th style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Object Types Allowed for the ID</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensortree</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">optional</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will only get a part of the tree (the object with the given ID and all child objects below it).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">JSON output is not supported.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe or group</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span><br />
+<span class="f_ListBulleted">devices</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">optional</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will only get the object with the given ID and all child objects below it.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe, group, or device</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tickets</span><br />
+<span class="f_ListBulleted">messages</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">optional</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will only get tickets or logfile entries that are related to the object with the given ID or any child objects below it.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any object</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">values</span><br />
+<span class="f_ListBulleted">channels</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">required</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will get the data values (or channels) of the sensor with the given ID.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">not used</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This data table will always include all reports.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">n/a</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">storedreports</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">required</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will get a list of stored PDF files of the report selected by the ID.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:198px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ticketdata</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">required</span></p>
+</td>
+<td style="vertical-align:top; width:623px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You will get the history of the ticket selected by the ID.</span></p>
+</td>
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Ticket</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="advanced_filtering" class="hmanchor"></a><span class="f_InTopicHeading">Sorting and Advanced Filtering</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are various options to further filter and to sort the data for each data table API call:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Parameter</span></p>
+</th>
+<th style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Values</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">filter_drel</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only include records younger than this setting</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">For </span><span class="f_BoldCustom">content=messages</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">content=tickets</span><span class="f_ListBulleted"> only.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">today, yesterday, 7days, 30days, 12months, 6months</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">filter_status</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only include sensors with a specific status. Using multiple filter_status fields performs a logical OR.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">For </span><span class="f_BoldCustom">content=sensors</span><span class="f_ListBulleted"> only.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unknown=1, Collecting=2, Up=3, Warning=4, Down=5, NoProbe=6, PausedbyUser=7, PausedbyDependency=8, PausedbySchedule=9, Unusual=10, PausedbyLicense=11, PausedUntil=12, DownAcknowledged=13, DownPartial=14</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">filter_tags</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only include sensors with a specific tag. Using multiple filter_tag fields performs a logical OR.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">For </span><span class="f_BoldCustom">content=sensors</span><span class="f_ListBulleted"> only.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">@tag(tagname)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">filter_xyz</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Filters the data. (Samples: filter_type=ping, filter_favorite=1). Using multiple filter_xyz fields performs a logical OR.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Filtering using columns is only possible for tree objects. You cannot use columns to filter objects like messages or tickets, for example. For </span><span class="f_BoldCustom">content=tickets</span><span class="f_ListBulleted">, you can use the special filter terms</span><br />
+<span class="f_ListBulleted">filter_status</span><br />
+<span class="f_ListBulleted">filter_user, and</span><br />
+<span class="f_ListBulleted">filter_type (this corresponds to column tickettype).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Like for messages, you can also use</span><br />
+<span class="f_ListBulleted">filter_drel,</span><br />
+<span class="f_ListBulleted">filter_dstart,</span><br />
+<span class="f_ListBulleted">and filter_dend.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Multiple filters are not available for tickets.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">filter_xyz where xyz is any column name used in the columns parameter</span><br />
+<span class="f_ListBulleted">Substrings: use filter_xyz=@sub(substring1,substring2)</span><br />
+<span class="f_ListBulleted">Values not equal/above/below: use filter_xyz=@neq(value), filter_xyz=@above(value), filter_xyz=@below(value)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sortby</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sorts the data. If this parameter is omitted, the table will be sorted based on the first column. Add a leading &quot;-&quot; to reverse sort order. (Samples: sortby=name, sortby=lastvalue, sortby=-lastvalue, sortby=uptime)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any column name used in the columns parameter.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Log tables with </span><span class="f_BoldCustom">content=messages</span><span class="f_ListBulleted"> are always sorted by descending date.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Here are some samples for filtered API calls:</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All sensors that are not up (with their current state and downtime information):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=sensors&amp;columns=objid,downtimesince,device,sensor,lastvalue,status,message,priority&amp;filter_status=5&amp;filter_status=4&amp;filter_status=10&amp;filter_status=13&amp;filter_status=14&amp;sortby=priority</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Fastest Ping sensors:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=sensors&amp;columns=objid,sensor,lastvalue,status,message&amp;sortby=lastvalue&amp;filter_type=ping</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Log entries of the last 7 days for object id 2003:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/table.xml?content=messages&amp;id=2003&amp;start=0&amp;filter_drel=7days&amp;columns=objid,datetime,type,name,status,message</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="supported_output" class="hmanchor"></a><span class="f_InTopicHeading">Supported Output Columns (&quot;columns=&quot; Parameter)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use the following column names for the <span class="f_BoldCustom">columns</span> parameter (separated by comma, for example, <span class="f_BoldCustom">columns=objid,name,type</span>).</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Column Name</span></p>
+</th>
+<th style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Can be Used for</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">objid</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ID of the current object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all object tables</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">type</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the object type (group, device, report, etc.), or the sensor type (ping, http, etc.), or event type for tickets (relevant for ToDo tickets)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all object tables</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the object or channel.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For log messages/tickets: the name of the related object.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For stored reports: the name of the report file.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all object tables, channels, messages, storedreports, toplists, tickets</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tags</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">List of all tags (for tickets: tags for the related object). This includes tags from the object itself plus those inherited from parent objects.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all object tables (except for user)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">active</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays true/false depending on whether an object is set to paused by a user (for tickets: related object). For notifications that are paused by schedule, it also displays the end of the schedule.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all object tables</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">downtime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cumulated downtime of a sensor (displayed as percentage of uptime+downtime)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">downtimetime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cumulated downtime of a sensor (in minutes/hours)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">downtimesince</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Elapsed time since last UP of a sensor</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">uptime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cumulated uptime of a sensor (displayed as percentage of uptime+downtime)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">uptimetime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cumulated uptime of a sensor (in minutes/hours)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">uptimesince</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Elapsed time since last DOWN of a sensor</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">knowntime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sum of cumulated uptime and downtime of a sensor</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">cumsince</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp when accumulation of uptimes/downtimes began</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensor</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the sensor</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, toplists</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">interval</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This displays the effective interval setting for a sensor</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">lastcheck</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp of the last sensor result</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">lastup</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp of the most recent UP status</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">lastdown</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp of the most recent DOWN status</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">device</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the associated device</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">group</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the associated group</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probe</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the associated probe</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">grpdev</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of associated device and group separated by slash</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">notifiesx</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of each trigger type defined for this sensor tree object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups, devices, sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">intervalx</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays either 'inherited' or the current interval setting of that object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups, devices, sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">accessrights</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the access rights of the current user for a sensor tree object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all objects (except for user), for example, probes, groups, devices, sensors </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">dependency</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the name of an associated dependency or 'parent'</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups, devices, sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probegroupdevice</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Complete object hierarchy with names of associated device, group, and probe separated by slash. If more than one group is in the object hierarchy, these are displayed with '..'</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensor, device, group, probe</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">status</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For sensor tree objects: status of the object (1=Unknown, 2=Scanning, 3=Up, 4=Warning, 5=Down, 6=No Probe, 7=Paused by User, 8=Paused by Dependency, 9=Paused by Schedule, 10=Unusual, 11=Not Licensed, 12=Paused Until, 13=Down Acknowledged, 14=Down Partial)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For messages: category of the log message</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For tickets: status of ticket (open, resolved, closed)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups, probes, messages, tickets</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">message</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Detailed message of a sensor tree object (for example, last error of a sensor) or a history entry, log entry, ticket subject</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups, probes, messages, tickets, ticketdata, history</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">priority</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the priority setting of a sensor tree object or the priority of a log entry/ticket</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups, probes, messages, tickets (not supported: schedule, notification, user)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">lastvalue</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Last sensor result value or channel values.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When used with channels, the 'lastvalue_' has to be used to automatically display volumes and speed</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, channels</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">upsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in UP state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">downsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in DOWN state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">downacksens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in DOWN (ACKNOWLEDGED) state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">partialdownsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in PARTIAL DOWN state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">warnsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in WARNING state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">pausedsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in a PAUSED state. This includes all PAUSED states (paused by user', 'paused by dependency, 'paused by schedule', etc.)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">unusualsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in UNUSUAL state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">undefinedsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors currently in UNDEFINED state.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">totalsens</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of sensors.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only the sensor itself or sensors in the hierarchy below the displayed object are counted</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">value</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays a channel value or a toplist value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Should only be used as 'value_', because then it will be expanded for all visible channels/toplist columns</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">values, topdata</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">coverage</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the sensor coverage of a time span in a value table</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">values</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">favorite</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays an exclamation mark when the sensor tree object is marked as favorite</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors, devices, groups, probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">user</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the user responsible for a history entry or the user (or user group) a ticket is assigned to</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">history, tickets, ticketdata</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">parent</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of the parent object of the associated object of a log message</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">messages</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">datetime</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp or timespan of an object (for tickets: last modification)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">messages, tickets, ticketdata, values, history, storedreports, topidx</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">dateonly</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Like </span><span class="f_BoldCustom">datetime</span><span class="f_ListBulleted"> but only the date part</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">messages, tickets, history, values</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">timeonly</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Like </span><span class="f_BoldCustom">datetime</span><span class="f_ListBulleted"> but only the time part</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">messages, tickets, history, values</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">schedule</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For sensor tree objects: displays the name of an associated schedule</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For reports: displays the report generation schedule</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups, devices, sensors, reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">period</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the period of a report (day, week, etc.)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">email</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the email address of a report</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">template</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays the template used by a report</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">lastrun</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp of the last generation of a report</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">nextrun</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timestamp of the next generation of a report</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">reports</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">size</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Size of a stored report</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">size of a stored report</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">minigraph</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Numerical data for the minigraphs. Numbers are 5-minute averages for the last 24 hours (must be scaled to the maximum of the series). There are two datasets: &quot;|&quot; separates measured value series and error series.</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">deviceicon</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Device icon</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">comments</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Object comments</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For tickets: related object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all objects</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">host</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Hostname or IP address</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">devices</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For probes: probe status (0=Disconnected, 1=Unauthorized, 2=Connected, 3=Banned, 4=Init)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For groups: auto-discovery status</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">basetype</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Object type (string)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all tree objects</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">baselink</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">URL of the object</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all tree objects</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">icon</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">URL of the device icon</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">parentid</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ID of the parent object or ID of a ticket</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all tree objects, tickets</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">location</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Location property (used in Geo Maps)</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">devices</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">fold</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sub-objects are folded up (true) or down (false)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For tickets: user (or user group) to which a ticket is assigned read it since last change</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups, tickets</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">groupnum</span><br />
+<span class="f_ListBulleted">devicenum</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of groups/devices in a probe/group node</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">probes, groups</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tickettype</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Type of the ticket: user, notification, todo</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tickets</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">modifiedby</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User who edited the ticket most recently</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tickets, ticketdata</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">actions</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Types of all ticket edits</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ticketdata</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">content</span></p>
+</td>
+<td style="vertical-align:top; width:524px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The text of the ticket that was added with the last edit</span></p>
+</td>
+<td style="vertical-align:top; width:735px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ticketdata</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="system_status" class="hmanchor"></a><span class="f_InTopicHeading">Current System Status</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following API calls are lightweight options to get status data like number of alarms or messages.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Current system status in XML format:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getstatus.xml?id=0</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Current system status in JSON format:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getstatus.htm?id=0</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All currently used sensor types in JSON format:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/sensortypesinuse.json</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Current number of all sensor states:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/gettreenodestats.xml</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="ticket_status" class="hmanchor"></a><span class="f_InTopicHeading">Current Ticket Status and Message</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following API calls return status and message of a ticket.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The status of a ticket:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getticketstatus.htm?id=ticketid</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The subject and assignee of a ticket:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/getticketmessage.htm?id=ticketid</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use the PRTG Application Programming Interface (API)?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/593" target="_blank" class="weblink">https://kb.paessler.com/en/topic/593</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Application Programming Interface (API) Definition—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http_api.htm" class="topiclink">HTTP API</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm" class="topiclink">Live Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_graphs.htm" class="topiclink">Live Graphs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data.htm" class="topiclink">Historic Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_notifications.htm" class="topiclink">Custom Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="http_api.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="live_graphs.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

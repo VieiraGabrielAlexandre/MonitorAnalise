@@ -1,0 +1,84 @@
+﻿<#lang key="html.downloads.help.title" default="Downloads and Tools" var="helptitle">
+<#lang key="html.downloads.help.text" default="Here you can download additional software or optional network tools for PRTG that will improve your network monitoring capabilities.<br><br><a href='/help/downloads.htm' target='_blank'><b>Help: Downloads and Tools</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<div class="download-items">
+	<div class="download-item box">
+		<h2><#lang key="html.global.iprtg3b" default="PRTG for iOS"></h2>
+		<div class="download-item-text">
+			<p>
+				<#lang key="html.downloads.iprtg.text1aNEW" default="Get a PRTG app that runs on iPhone, iPad, and iPod touch!
+				<br><br>
+				Save time and check your network while on the go! Review monitoring data, check your devices and sensors, get informed via push notifications, and much more!">
+			</p>
+			<p>
+				<a  class="arrow" href="https://www.paessler.com/apps/iosapp?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-iprtg" target="_blank">
+					<#lang key="html.downloads.iprtg.text4a" default="Get More Information about PRTG for iOS"/>
+				</a>
+				<br/>
+				<a class="prtg-plugin qrcode downloadsqr arrow" data-plugin="prtgqrcode" data-placement="left" data-zoom="1"
+				   data-myaccountqr="1" data-sitename='<#system type="sitename">' data-url='/group.htm?id=0&tabid=1&username=<#objectproperty name="login">'
+				   data-name='Mobile App Login' data-host="" data-qrwidth="300" data-qrheight="335">
+					<#lang key="html.qrcode.tooltip.user" default="Show QR Code for Mobile App Login"/>
+				</a>
+			</p>
+			<p class="downloadlinks">
+				<span class="qr-badge-container">
+					<img class="qr-image" src="/images/iosapp_qr.png">
+					<a title="Download PRTG for iOS" href="https://itunes.apple.com/app/prtg/id326306472" target="_blank">
+						<img src="/images/ios-app-button-2.png">
+					</a>
+				</span>
+			</p>
+		</div>
+		<div class="download-item-image">
+			<img src="/images/ios-01.png">
+			<img src="/images/ios-02.png">
+			<img src="/images/ios-03.png">
+			<img src="/images/ios-04.png">
+		</div>
+	</div>
+
+	<div class="download-item box">
+		<h2><#lang key="html.global.prtgdroid" default="PRTG for Android"></h2>
+		<div class="download-item-text">
+			<p>
+				<#lang key="html.downloads.prtgdroid.text1aNEW" default="Runs on all Android based smartphones and tablets, and on Kindle Fire HD.
+				<br><br>
+				Let PRTG for Android show you your network in a mobile friendly way! Carry out your everyday monitoring tasks wherever you are. You can also use additional tools even without connecting to a PRTG core server.">
+			</p>
+			<p>
+				<a  class="arrow" href="https://www.paessler.com/androidapp?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-prtgdroid" target="_blank">
+					<#lang key="html.downloads.prtgdroid.text4a" default="Get More Information about PRTG for Android">
+				</a>
+				<br/>
+				<a class="prtg-plugin qrcode downloadsqr arrow" data-plugin="prtgqrcode" data-placement="left" data-zoom="1"
+				   data-myaccountqr="1" data-sitename='<#system type="sitename">' data-url='/group.htm?id=0&tabid=1&username=<#objectproperty name="login">'
+				   data-name='Mobile App Login' data-host="" data-qrwidth="300" data-qrheight="335">
+					<#lang key="html.qrcode.tooltip.user" default="Show QR Code for Mobile App Login"/>
+				</a>
+			</p>
+			<p class="downloadlinks">
+				<span class="qr-badge-container">
+					<img class="qr-image"  src="/images/googleplay-qr-code.png">
+					<a title="Download PRTG for Android on Google Play" href="https://play.google.com/store/apps/details?id=com.paessler.prtgandroid" target="_blank">
+						<img src="/images/google-play-badge.png">
+					</a>
+				</span>
+				<span class="qr-badge-container">
+					<img class="qr-image"  src="/images/amazon-qr-code.png">
+					<a title="Download PRTG for Android on Amazon App Store" href="http://www.amazon.com/Paessler-AG-PRTG/dp/B00D43E52Y" target="_blank">
+						<img src="/images/amazon-app-button-2.png">
+					</a>
+				</span>
+			</p>
+		</div>
+		<div class="download-item-image android">
+			<img src="/images/android-01.png">
+			<img src="/images/android-02.png">
+			<img src="/images/android-03.png">
+			<img src="/images/android-04.png">
+		</div>
+	</div>
+
+</div>

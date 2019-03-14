@@ -1,0 +1,105 @@
+﻿<#system type="errormessage" var="errmsg">
+<#system type="errorurl" var="errurl">
+
+<div id="feedbackform" class="prtg-form">
+  <form action="salesbundle_send.htm" method="post" accept-charset="utf-8" class="prtg-plugin prtg-form validateForm" data-plugin="prtg-form feedback">
+    <fieldset>
+      <legend class="prtg-header" style="max-width:100%"><#lang key="html.salesbundle.legend1" default="Ask a Question or Give Us Your Feedback"></legend>
+      <div class="control-group">
+        <label class="control-label has_help" for="name"><#lang key="html.salesbundle.name" default="Your Name"></label>
+        <div class="controls">
+          <input id="name" class="text" required="true" type="text"  size="80" name="name" maxlength="50" value="">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="email"><#lang key="html.salesbundle.customermail" default="Your Email Address"></label>
+        <div class="controls">
+          <input id="email" class="text" required="true" type="text" size="80" name="email" maxlength="50" value="<#system type="useremail">">
+        </div>
+      </div>
+      <div class="control-group">
+        <label label-for="country-selector" class="control-label"><#lang key="html.salesbundle.country" default="Your Country"></label>
+        <div class="controls">
+          <input id="country-name" name="country-name" type="hidden">
+          <select name="country" id="country-selector" autocomplete="on" class="prtg-plugin" data-plugin="country-select" data-country="<#countrycode>" data-phone-field-id="phone" data-country-name-id="country-name">
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" label-for="phone"><#lang key="html.salesbundle.phone" default="Your Phone Number"></label>
+        <div class="controls">
+          <input id="phone" name="phone" type="text" class="text" size="80" maxlength="50">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help">
+          <#lang key="html.salesbundle.aboutlabel" default="How can we help?">
+        </label>
+        <div class="controls">
+          <div class="radio-control">
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundleabout" value="Information on licensing" id="about1" checked="checked">
+            <label for="about1" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.salesbundle.about1" default="Information on licensing">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundleabout" value="Need a quote" id="about2">
+            <label for="about2" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.salesbundle.about2" default="Need a quote">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundleabout" value="Need contact to a Technical Presales Engineer" id="about3">
+            <label for="about3" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.salesbundle.about3" default="Need contact to a Technical Presales Engineer">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundleabout" value="Need contact to a partner/reseller in my country" id="about4">
+            <label for="about4" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.salesbundle.about4" default="Need contact to a partner/reseller in my country">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundleabout" value="Other" id="about5">
+            <label for="about5" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.salesbundle.about5" default="Other">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="emotionalstate" class="control-label"><#lang key="html.supportbundle.EmotionLabel" default="Emotional State"></label>
+        <div class="controls">
+          <select id="emotionalstate" name="emotionalstate">
+            <option value=""><#lang key="html.supportbundle.EmotionOption1" default="OK"></option>
+            <option value="Excited"><#lang key="html.supportbundle.EmotionOption2" default="Excited"></option>
+            <option value="Confused"><#lang key="html.supportbundle.EmotionOption3" default="Confused"></option>
+            <option value="Worried"><#lang key="html.supportbundle.EmotionOption4" default="Worried"></option>
+            <option value="Upset"><#lang key="html.supportbundle.EmotionOption5" default="Upset"></option>
+            <option value="Panicked"><#lang key="html.supportbundle.EmotionOption6" default="Panicked"></option>
+            <option value="Angry"><#lang key="html.supportbundle.EmotionOption7" default="Angry"></option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help" for="sdate"><#lang key="html.salesbundle.problemdescr1" default="Do you have any further comments?"></label>
+        <div class="controls">
+          <!-- die nächsteb 3 Zeilen sehen sch... aus müssen aber genau so da stehen -->
+          <textarea id="textarea2" required="true" name="comment" style="height:80px"></textarea>
+        </div>
+      </div>
+    </fieldset>
+    <div class="submitbuttonboxanchor">
+      <div class="submitbuttonbox">
+        <input value="<#lang key="html.errorreport.submit22" default="Submit">"  class="actionbutton" type="submit" id="submitticketformsubmit">
+        <input class="cancel btngrey button" type="button" value="<#lang key="html.global.cancel" default="Cancel">" onClick="window.history.back();return false;">
+      </div>
+    </div>
+    <input type="hidden" name="mytopic" value="<#system type="errormessage"> <#system type="editiondependedhtml" freeversiononly="Freeware" trialversiononly="Trial" fullversiononly="Commercial"> M=<#system type="maintenanceshort" skiptagfornonadmins='true'> V=<#system type="version"> <#system type="installedupdatechannel"> <#system type="errorurl">">
+    <input type="hidden" name="bundletopic" value="Trial User wishes to be contacted">
+  </form>
+</div>

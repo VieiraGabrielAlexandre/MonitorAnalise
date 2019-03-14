@@ -1,0 +1,25 @@
+﻿<#objectstatus name="objid" show="text" var="objid">
+    <div status="objectstatus,class,tree-toolbar " class="tree-toolbar overviewsmalldatastatus<#objectstatus name="status" show="textraw"> overviewsmalldatastatus<#objectstatus name="condition" show="textraw">">
+
+    <div class="overview-block overview-sensors">
+        <span class="overview-data">
+            <span class="sensors-summary">
+                <#include file="/controls/treesensorswitches.htm">&nbsp;
+            </span>
+            <span class="sensors-total">
+                (<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens' status="totalsens"><#objectstatus name="totalsens"></span>)
+            </span>
+        </span>
+    </div>
+
+    <div class="overview-block"><#include file="/controls/treeswitches.htm"></div>
+
+    <div class="overview-block size-switch <#system type='groupviewsize' overwriteifnottree='show'>">
+        <span class="overview-title "><#lang key="html.devicedata.sizeby" default="Size by">:</span>
+        <span class="overview-data size-by-switch control <#system type='groupviewsize' overwriteifnottree='prtg-plugin'>" data-plugin="groupviewsize"></span>
+    </div>
+
+    <div class="overview-block searchblock">
+        <div class="treesearchbox"><input tabindex="1" id="treesearch" class="searchstring" data-trigger="manual" titleX="<#langjs key="html.sensortree.searchtitle" default="Press Enter to search">" type="text" placeholder="<#lang key="html.global.search2" default="Search...">" name="searchtext"><label for="treesearch" class="ui-icon ui-icon-search ui-icon-gray searchlogo"></label></div>
+    </div>
+</div>

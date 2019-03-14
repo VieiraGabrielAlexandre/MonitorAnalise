@@ -1,0 +1,428 @@
+﻿<!--System Administration—User Interface-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="schedules_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>System Administration—User Interface</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: System Administration—User Interface</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">To open system administration, select <span class="f_BoldCustom">Setup</span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| System Administration </span>from the main menu. Click on the tabs to change the different settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:571px"><a href="hmfile_hash_b8f90ca4.png"><img id="TOGGLE0186A1" class="image-toggle" alt="System Administration Bar" title="System Administration Bar" style="width:571px;height:19px;border:none" src="hmfile_hash_82a8b0e5.png"/></a><p style="text-align:center"><span class="f_ImageCaption">System Administration Bar</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can define the following aspects of your PRTG system setup:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="system_website_settings.htm#settings" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="notification_delivery_settings.htm#settings" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="probes_settings.htm#settings" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="cluster_settings.htm#settings" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="user_accounts_settings.htm#settings" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="user_groups_settings.htm#settings" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">In the user interface settings you can define global values regarding the PRTG website appearance, PRTG web server settings and performance, Geo Maps, and graph settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-premises" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-premises.png"/>If you use PRTG on premises and open the system administration page from another administration page, PRTG will ask you to enter your credentials again for security reasons if 15 minutes (900 seconds) have passed since your last credential-based login. A dialog box will appear. Enter your <span class="f_BoldCustom">Login Name</span> and <span class="f_BoldCustom">Password</span> for PRTG in the corresponding fields and confirm to continue.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">User Interface Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="webserveradmin2" class="hmanchor"></a><a id="interface" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Website</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG Site Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When using the web interface, the site name is shown in the title bar of your browser window. It is also used by default in notification emails. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">DNS Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If your PRTG web interface is (additionally) reachable via a DNS name, enter it here. It is used, for example, by default in notification emails to generate links. Please enter a string.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The special characters </span><span class="f_BoldCustom">&quot;</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">\</span><span class="f_ListBulleted"> are not allowed in the DNS Name.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Website Language</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose the system language from the dropdown list. Default is </span><span class="f_BoldCustom">English</span><span class="f_ListBulleted">. Depending on your installation, you may be able to choose other languages here. This setting defines the language of the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a>, as well as of the </span><span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select how graphs will be displayed throughout the web interface and in <a href="reports.htm" class="topiclink">reports</a>.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use area graphs (recommended)</span><span class="f_Comment">: Display filled graphs.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use line graphs</span><span class="f_Comment">: Display graphs using single lines only.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use area charts, as they're better to read.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Graphs containing data from more than one cluster node will always be displayed with line graphs automatically.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Automatic Logout</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if a user who is inactive for a certain period of time will be logged out from the PRTG interface automatically for security reasons. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Keep user logged in, even for a longer period of inactivity.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Log out user automatically after a certain period of inactivity.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Automatic Logout after Minutes</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select the logout option above. Specify in minutes after which time of inactivity a user will be logged out automatically. Please enter an integer value. PRTG will redirect to the login page once this time has expired. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the value you enter here is greater than 1 minute, a logout countdown will appear 1 minute before you are logged out. If the value is 1 minute, you will see the logout countdown 30 seconds before you are logged out. Click into the browser to stop the countdown and stay logged in.</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:273px"><a href="logout_countdown.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Logout Countdown" title="Logout Countdown" style="width:273px;height:278px;border:none" src="logout_countdown_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Logout Countdown</span></p></div></div>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Google Analytics Tracking ID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can track the usage of PRTG web pages with Google Analytics by entering your </span><span class="f_ItalicCustom">Google Universal Analytics Tracking ID</span><span class="f_ListBulleted"> into this field. You need a Google Analytics account for this feature. Create a tracking ID within the Google Analytics portal and provide it here. PRTG will then dynamically integrate it into the website.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Please enter a string or leave the field empty. The string will look like this: </span><span class="f_BoldCustom">UA-xxxxxx-xx</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For details, see this </span>Knowledge Base article: <a href="https://kb.paessler.com/en/topic/61406" target="_blank" class="weblink">How can I integrate Google Analytics in PRTG?</a><br />
+&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="googlemapconfig" class="hmanchor"></a><a id="geo-maps" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Geo Maps</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Map Service Provider</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select if and how you want to integrate the Geo Maps feature into the web interface. If enabled, PRTG uses the first line of the location <a href="object_settings.htm" class="topiclink">setting of an object</a> to show it on a geographical map. Choose a map provider:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not show maps (disables Geo Maps integration)</span><span class="f_Comment">: Disable Geo Maps integration and do not show geographical maps in the web interface.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default (recommended)</span><span class="f_Comment">: The recommended default option currently reroutes the map requests to Nokia Maps. See this blog article for details: </span><span class="f_Comment" style="font-weight: bold;"><a href="https://www.paessler.com/blog/2016/07/12/all-about-prtg/geo-maps-requires-a-change-of-map-service-provider" target="_blank" class="weblink">Geo Maps Requires a Change of Map Service Provider</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HERE Maps</span><span class="f_Comment">: Use HERE Maps to show geographical maps.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">CloudMade (API key required)</span><span class="f_Comment">: Use CloudMade to show geographical maps. Please sign up for an API key on their developer website to use this service.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Google Static Maps (API key required)</span><span class="f_Comment">: Use Google Static Maps to show geographical maps. Please sign up for a Google Maps </span><span class="f_Comment" style="font-weight: bold;">API v3 key</span><span class="f_Comment"> to use this service as of PRTG version 13!</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_Comment">For more information about the different map providers, see this </span><span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/34603" target="_blank" class="weblink">Which provider should I use for PRTG's &quot;Geo Maps&quot; feature?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Map Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This setting is only visible for some map providers. Depending on the chosen provider, several options are shown. Each will show map tiles in a different appearance. Choose a map type from the list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">API Key (required)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you selected a provider that requires an API key. Obtain your personal key and paste it here.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_Comment">For more information on how to get a Google API key, see this </span><span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/32363" target="_blank" class="weblink">How do I get a Google Maps API key for use in PRTG?</a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="webserversettingsconfig" class="hmanchor"></a><a id="webserver" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Web Server</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Performance Strategy</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select if you want to enable performance improvements for the web interface.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All Features: Show all features and live data (recommended)</span><span class="f_Comment">: Provide full functionality and show all menu items.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">More Speed: Limit features and delay display (experimental)</span><span class="f_Comment">: Improve reaction time and speed of the web interface by delaying display of monitoring data and hiding some features.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For more information on how to speed up the web interface, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/2733" target="_blank" class="weblink">How can I speed up PRTG—especially for large installations?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">IP Address for Web Server</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG is running a web server in order to provide access via the web and Windows interface. Please specify the IP address this web server will run on. Later, you can log in to PRTG by simply pointing your browser to the specified IP address.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Localhost, 127.0.0.1 (PRTG will not be accessible from other computers)</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">127.0.0.1</span><span class="f_ListBulleted"> only. The PRTG web interface and the Enterprise Console will only be accessible from the computer PRTG is installed on. Either the selected port </span><span class="f_ListBulleted">or</span><span class="f_ListBulleted"> at least one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8089</span><span class="f_ListBulleted"> has to be available on </span><span class="f_ItalicCustom">127.0.0.1</span><span class="f_ListBulleted">. </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>If you run PRTG on localhost, please do not use the DNS name <span class="f_ItalicCustom">http://localhost</span> to log in to the web server, as this may considerably slow down the PRTG web interface. Please use your local IP address or <span class="f_ItalicCustom">http://127.0.0.1</span> instead.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All IPs available on this computer</span><span class="f_ListBulleted">: Use all IP addresses available on this computer and enable access to the web server for all of these addresses. The TCP port selected below must be free on every available IP address.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Specify IPs</span><span class="f_ListBulleted">: Select specific IP addresses on which the PRTG Web server will run. A list specific to your system is shown. Add a check mark in front of every IP address you want the PRTG web server to be available at. You can also select and deselect all addresses by clicking on the check box in the table header. Either the selected port or at least one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8089</span><span class="f_ListBulleted"> has to be available on the specified IP address.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Regardless of the selected setting above, one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8180</span><span class="f_ListBulleted"> has to be available on the specified IP address so PRTG can create reports. The report engine will try to connect to the core server on one of these ports.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If PRTG does not find a network card on startup it will switch the IP setting to </span><span class="f_BoldCustom">Localhost</span><span class="f_ListBulleted">. This setting will remain, even if a network card is available later on. If you disabled or removed the network card on the machine running the PRTG core server, please re-check this setting.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TCP Port for Web Server</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG runs a web server in order to provide access via the web interface and the Enterprise Console. Please specify on which port this web server will run. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Secure HTTPS server (recommended, mandatory for internet access)</span><span class="f_ListBulleted">: We recommend this setting and you need it to access the PRTG server via the internet. Use a secure HTTPS connection that is encrypted via SSL on port 443.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Although the connection is secure, you will see an </span><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span><span class="f_ListBulleted"> in your browser when logging in to the PRTG web interface, because the default certificate is unknown to your browser. You can install another SSL certificate for PRTG later. Please see </span><span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span><span class="f_ListBulleted">. </span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If port 80 is free, PRTG will reserve it as well. If port 80 is not available, PRTG will try port 8080 as fallback. If this port is also not available, PRTG searches from port 8081 upwards for a free port. PRTG will send a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to 80 as soon as it is available again. When users try to connect on port 80 via HTTP, they will then be redirected to port 443 via HTTPS. You can change this behavior by using a registry setting. If port 443 is not available, PRTG will try port 8443 as fallback. If this port is also not available, PRTG searches from port 8444 upwards for a free port. PRTG will send a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to 443 as soon as it is available again.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Insecure HTTP server (standard port 80, not recommended)</span><span class="f_ListBulleted">: Use a standard web server without SSL encryption on port 80. This setting is not recommended for WAN connections.</span><br />
+<img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you use an insecure web server on the internet, attackers could potentially spy on credentials you enter into PRTG. We strongly recommend that you use this option in a LAN only.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Expert configuration</span><span class="f_ListBulleted">: This setting allows you to specify a custom web server port and the security of the connection. This option is intended for systems with an existing web server on the standard port. Define port and encryption below.</span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If PRTG always uses a fallback port after a server restart, check for other programs that use the same port as PRTG. For example, the Microsoft IIS web server also uses the port 80 (443 for SSL) by default and blocks it. Please disable such programs and services on startup.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Web Server Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">You will see this setting only if you select </span><span class="f_BoldCustom">Expert configuration</span><span class="f_Comment"> above. </span><span class="f_ListBulleted">Enter the TCP port number you want the PRTG web server to run on. Please enter an integer value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you use a secure connection and port 80 is free, PRTG will reserve it as well. When users try to connect on port 80 via HTTP, they will be redirected to the custom port via HTTPS. You can change this behavior by using a registry setting.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If the defined port for a secure connection is not available, PRTG will try port 8443 as fallback. If this port is also not available, PRTG searches from port 8444 upwards for a free port. PRTG sends a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to the original port as soon as it is available again.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Web Server Security</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">You will see this setting only if you select </span><span class="f_BoldCustom">Expert configuration</span><span class="f_Comment"> above. Specify if you want to use an SSL encryption. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use SSL encryption (HTTPS)</span><span class="f_Comment">: </span><span class="f_ListBulleted">Use a secure HTTPS connection that is encrypted via SSL on a custom port as defined above. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Although the connection is secure, you will see an </span><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span><span class="f_ListBulleted"> in your browser when you log in to the PRTG web interface, because the default certificate is unknown to your browser. You can install another SSL certificate for PRTG later. Please see </span><span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Don't use encryption (not recommended)</span><span class="f_ListBulleted">: This setting is not recommended for WAN connections. Use a standard web server without SSL encryption on a custom port as defined above.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you use a web server without encryption on the internet, attackers could potentially spy on credentials you enter into PRTG. We strongly recommend that you use this option in a LAN only.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Connection Security</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Specify the security level that will be used for connections from and to the PRTG web server. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">High security (TLS 1.1, TLS 1.2)</span><span class="f_ListBulleted">: The web server will only accept high security connections from clients like </span><span class="f_Comment">web browsers, <a href="smartphone_apps.htm" class="topiclink">apps</a>, the </span><span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span><span class="f_Comment">, or API clients. These clients must be able to support modern ciphers that support authentication and encryption of </span><span class="f_ItalicCustom">256 bits</span><span class="f_Comment"> or stronger and </span><span class="f_ItalicCustom">forward secrecy </span><span class="f_ListBulleted">(key exchange based on </span><span class="f_ItalicCustom">ECDH(E)</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">DH(E)</span><span class="f_ListBulleted">)</span><span class="f_Comment">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default security (TLS 1.0, TLS 1.1, TLS 1.2) (recommended)</span><span class="f_Comment">: The web server will additionally accept TLS 1.0–secured connections from clients. These clients must be able to support modern ciphers that support authentication and encryption of </span><span class="f_ItalicCustom">128 bits</span><span class="f_Comment"> or stronger and </span><span class="f_ItalicCustom">forward secrecy</span><span class="f_Comment">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Weakened security (SSL V3, TLS 1.0, TLS 1.1, TLS 1.2)</span><span class="f_Comment">: If you have clients that do not support the high or default security setting, you can choose this security level to connect (for example, older browsers, browsers running on Windows XP, some default browsers on Android systems). Weakened security supports SSL V3 connections and AES and 3DES encryption.</span><br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_Comment">We strongly recommend that you update your clients in this case.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>If you have set a registry key in previous PRTG versions to override the SSL version and cipher of PRTG web server connections, the <span class="f_BoldCustom">High security</span> setting will override the registry key setting and only TLS 1.1 and TLS 1.2 will be allowed. If you select the <span class="f_BoldCustom">Default security</span> setting, the <span class="f_ItalicCustom">registry key will override the default security</span> setting and the connection security that you have defined in the registry will apply.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Currently Active IP Address/Port Combination(s)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows all currently active combinations of IP addresses and ports on which the PRTG server listens for web requests. This setting is shown for your information only and cannot be changed here.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG internally uses port 8085 for report generation.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="graphbasic" class="hmanchor"></a><a id="graph" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Graph Settings: Select for how many days historic data remains accessible</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG shows several graphs in the <a href="review_monitoring_data.htm" class="topiclink">objects' detail pages</a> in the web interface. These are kept in RAM for fast display without causing extra CPU load or disk usage. The longer the time frames and the shorter the intervals are, the more memory will be used for this. You can adapt the details for all four graphs. This setting will also change the caption of the objects' tabs in the <a href="ajax_gui_basic.htm" class="topiclink">web interface</a> and <a href="enterprise_console.htm" class="topiclink">Enterprise Console</a>.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>If you change this setting, PRTG needs to restart the core server to apply your changes. After clicking the <span class="f_BoldCustom">Save</span> button, a dialog box appears that asks you to confirm the required core server restart. Click <span class="f_BoldCustom">OK</span> to trigger the restart and follow the instructions on the screen. During the restart, all the users of the PRTG web interface, of the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or of <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span> will be disconnected and reconnected.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Live Graph</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The live graph is available for sensors only. For the live graph, no fixed time span is given, but you can define how many values will be displayed. The actual time span covered by the live graph depends on the scanning interval set for the sensor you're viewing and is calculated automatically. By default, </span><span class="f_BoldCustom">120 Values</span><span class="f_ListBulleted"> is set, which results in a graph covering a time span of two hours, if a scanning interval of 60 seconds is set for the sensor. Other scanning intervals will result in graphs covering different time spans. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">60 Values</span><span class="f_ListBulleted">: This corresponds to a live graph covering a time span of one hour if a 1 minute scanning interval is set. </span>Uses least RAM memory. We recommend this setting for installations with 10,000 sensors or more.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">120 Values</span><span class="f_ListBulleted">: This corresponds to a live graph covering a time span of two hours if a 1 minute scanning interval is set.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">240 Values</span><span class="f_ListBulleted">: This corresponds to a live graph covering a time span of four hours if a 1 minute scanning interval is set.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">480 Values</span><span class="f_ListBulleted">: This corresponds to a live graph covering a time span of eight hours if a 1 minute scanning interval is set.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">960 Values</span><span class="f_ListBulleted">: This corresponds to a live graph covering a time span of 16 hours if a 1 minute scanning interval is set. </span>Uses most RAM memory.</li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph 1</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">By default, this is the </span><span class="f_BoldCustom">2 days</span><span class="f_ListBulleted"> graph in the web interface. You can change it to more or less detail by choosing a time span and a monitoring interval average associated with it. Monitoring results will be averaged regardless of the actual scanning interval set for the sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">1 day with 1 minute averages</span>: Results in 1440 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">1 day with 5 minutes averages</span><span class="f_ListBulleted">: </span>Results in 288 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">1 day with 15 minutes averages</span><span class="f_ListBulleted">: </span>Results in 96 values. Uses least RAM memory. We recommend this setting for installations with 10,000 sensors or more.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">2 days with 1 minute averages</span><span class="f_ListBulleted">: </span>Results in 2880 values. Uses most RAM memory.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">2 days with 5 minutes averages</span><span class="f_ListBulleted">: </span>Results in 576 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">2 days with 15 minutes averages</span><span class="f_ListBulleted">: </span>Results in 192 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">4 days with 1 hour averages</span>: Results in 96 values. Uses least RAM memory. We recommend this setting for installations with 10,000 sensors or more.</li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph 2</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">By default, this is the </span><span class="f_BoldCustom">30 days</span><span class="f_ListBulleted"> graph in the web interface. You can change it to more or less detail by choosing a time span covered and a monitoring interval average associated with it. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">10 days with 1 hour averages</span>: Results in 240 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">20 days with 1 hour averages</span>: Results in 480 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">30 days with 1 hour averages</span>: Results in 720 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">30 days with 6 hour averages</span>: Results in 120 values. Uses least RAM memory. We recommend this setting for installations with 10,000 sensors or more.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">40 days with 1 hour averages</span>: Results in 960 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">40 days with 6 hour averages</span>: Results in 160 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">60 days with 1 hour averages</span>: Results in 1440 values. Uses most RAM memory.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">60 days with 6 hour averages</span>: Results in 240 values.<br />
+&nbsp;</li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph 3</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">By default, this is the </span><span class="f_BoldCustom">365 days</span><span class="f_ListBulleted"> graph in the web interface. You can change it to more or less detail by choosing a time span covered and a monitoring interval average associated with it. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">100 days with 1 day averages</span>: Results in 100 values. Uses least RAM memory. We recommend this setting for installations with 10,000 sensors or more.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">200 days with 1 day averages</span>: Results in 200 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">365 days with 1 day averages</span>: Results in 365 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">400 days with 1 day averages</span>: Results in 400 values.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">750 days with 1 day averages</span>: Results in 750 values. Uses most RAM memory.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What placeholders can I use with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/373" target="_blank" class="weblink">https://kb.paessler.com/en/topic/373</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I speed up PRTG—especially for large installations?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/2733" target="_blank" class="weblink">https://kb.paessler.com/en/topic/2733</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which provider should I use for PRTG's &quot;Geo Maps&quot; feature?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/34603" target="_blank" class="weblink">https://kb.paessler.com/en/topic/34603</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which domains and ports does the GeoMaps feature use?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/35823" target="_blank" class="weblink">https://kb.paessler.com/en/topic/35823</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do I get a Google Maps API key for use in PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/32363" target="_blank" class="weblink">https://kb.paessler.com/en/topic/32363</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: </span><span class="f_ListBulleted">Which limitations apply when using the Google Maps API in PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/7913" target="_blank" class="weblink">https://kb.paessler.com/en/topic/7913</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How and where does PRTG store its data?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/463" target="_blank" class="weblink">https://kb.paessler.com/en/topic/463</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: How can I integrate Google Analytics in PRTG?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/61406" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61406</a></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Paessler Blog: Geo Maps Requires a Change of Map Service Provider</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://www.paessler.com/blog/2016/07/12/all-about-prtg/geo-maps-requires-a-change-of-map-service-provider" target="_blank" class="weblink">https://www.paessler.com/blog/2016/07/12/all-about-prtg/geo-maps-requires-a-change-of-map-service-provider</a> </li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="downloads.htm" class="topiclink">Downloads and Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_help_and_support_center.htm" class="topiclink">Support—Help and Support Center</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, see the sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Configure,Configure System,Configure Website,Data Purging,Email Templates,Geo Map Type,Graph,Graph Settings,Graph Type,Intervals,Performance Strategy,Session Expiry,Ticket Email Address,Unusual Detection,Uptime Threshold,Web Server,Web Server IP Address,Web Server Port</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="schedules_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

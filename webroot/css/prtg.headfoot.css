@@ -1,0 +1,460 @@
+﻿/* prtg.headfoot.css */
+header {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 100000;
+  min-width: 893px;
+  background: #fff;
+}
+
+#paesslerlogo {
+  background-image: url(/images/paessler.png);
+  background-repeat: no-repeat;
+  width: 103px;
+  display: inline-block;
+  margin: 0;
+  height: 13px;
+}
+
+#header_menu {
+  background-color: #fff;
+  height: 22px;
+  line-height: 16px;
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  position: relative;
+  width: 1000px;
+  padding-left: 1px; /* for screenshots */
+}
+
+#mainmenu2 {
+  float: left;
+  height: 18px;
+}
+
+#quickbar {
+  height: 20px;
+  margin: 0;
+  padding: 0 1px 0 15px;
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+}
+
+#quickbar ul {
+  margin: 0;
+  padding: 2px 0 0 0;
+  float: left;
+}
+
+#quickbar li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  height: 18px;
+  padding: 3px 3px 0 3px;
+  margin: 0;
+  z-index: 9999999999999;
+}
+
+#quickbar li a {
+  cursor: pointer;
+  background-image: url(images/ui-icons_prtg_256x240.png);
+}
+
+#quickbar li:hover {
+  background: <#colorcode color="actioncolor">;
+}
+
+#quickbar li:hover a {
+  background-image: url(images/ui-icons_ffffff_256x240.png);
+}
+#quickbar li.inactivitylogout{
+  cursor: default;
+  font-weight: bold;
+}
+#quickbar li.inactivitylogout:hover{
+  background:transparent;
+}
+
+#searchform {
+  display: inline-block;
+  margin-left: 13px;
+  position: relative;
+  padding-top: 1px;
+}
+
+#searchicon {
+  margin: 3px 3px 1px 1px;
+  height: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#searchtext, .searchtext {
+  font-size: 10px;
+  width: 73px;
+  color: #000;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0 17px 0 3px;
+  background: <#colorcode color="lightgray">;
+  height: 20px;
+  transition: .1s;
+}
+
+#searchtext:focus {
+  font-size: 12px;
+  width: 300px;
+  color: #000;
+  transition: .1s;
+}
+
+#crumblersensorstats:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  background-color: white;
+}
+
+#crumblersensorstats {
+  right: 1px;
+  margin-top: 45px;
+  padding: 3px 0 6px 6px;
+  position: absolute;
+  top: 0;
+  font-size: 11px;
+  z-index: 0;
+}
+#crumblersensorstats div.alert {
+  background-color: <#colorcode color="statusdown">;
+}
+
+#crumblersensorstats div.message {
+  background-color: <#colorcode color="darkgray">;
+}
+
+#crumblersensorstats div.newtickets {
+  background-color: <#colorcode color="lightgray">;
+  color: #000 !important;
+}
+
+#crumblersensorstats div.downsens {
+  background-color: <#colorcode color="statusdown">;
+}
+
+#crumblersensorstats div.upsens {
+  background-color: <#colorcode color="statusup">;
+}
+
+#crumblersensorstats div.pausedsens {
+  background-color: <#colorcode color="statuspaused">;
+}
+
+#crumblersensorstats div.partialdownsens {
+  background-color: <#colorcode color="statuspartialdown">;
+  padding: 0 2px 0 0;
+}
+
+#crumblersensorstats div.downacksens {
+  background-color: <#colorcode color="statusdownack">;
+}
+
+#crumblersensorstats div.warnsens {
+  background-color: <#colorcode color="statuswarning">;
+}
+
+#crumblersensorstats div.unusualsens {
+  background-color: <#colorcode color="statusunusual">;
+}
+
+#crumblersensorstats div.undefinedsens {
+  background-color: <#colorcode color="statusunknown">;
+}
+
+#crumblersensorstats .spacing {
+  display: inline-block;
+  float: left;
+  box-shadow: none;
+}
+
+#crumblersensorstats .spacing:hover {
+  box-shadow: none;
+}
+
+#crumblersensorstats .statusinfo {
+  display: inline-block;
+  float: right;
+  margin: 0 2px;
+  padding: 0 2px;
+  height: 24px;
+}
+
+#crumblersensorstats .statusinfo:hover {
+  text-decoration: none;
+}
+
+#crumblersensorstats .display0 {
+  display: none;
+}
+
+#crumblersensorstats a,
+#crumblersensorstats a:hover {
+  text-decoration: none;
+}
+
+#crumblersensorstats .text {
+  padding: 2px 5px;
+  color: #fff;
+}
+
+#crumblersensorstats div.newtickets .text {
+  color: #000;
+}
+
+#crumblersensorstats .icon {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: left;
+  width: 14px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+#crumblersensorstats div .counter {
+  color: #fff;
+  display: inline-block;
+  padding: 1px 2px;
+  margin: 3px 2px 3px 0;
+  text-align: center;
+}
+
+#crumblersensorstats div.statusinfo.newtickets .counter {
+  color: #000;
+}
+
+#crumblersensorstats div:hover .counter {
+  color: #000;
+  background-color: #fff;
+  text-shadow: none;
+}
+
+#container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  background: #fff;
+}
+
+#content {
+  display: block;
+  height: auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#content.multiedit {
+  overflow: hidden;
+}
+
+#content.limitedcontentwidth {
+  max-width: 800px;
+}
+
+#content.limitedcontentwidth .prtg-box {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  height: 22px;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  z-index: 100000;
+}
+
+footer .footer {
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  color: #444;
+  font-size: 10px;
+  background: <#colorcode color="midgray">;
+  z-index: 1;
+}
+
+footer a,
+footer a:link,
+footer a:active,
+footer a:visited,
+footer a:hover {
+  color: #444;
+}
+
+footer .footer > span {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 16%;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 1rem;
+}
+
+#footerrefresh > span {
+  display: inline-block;
+  float: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+#footerrefresh > .refreshinglable {
+  display: none;
+}
+
+#footerrefresh a.toggle-autorefresh {
+  position: absolute;
+  top: 6px;
+  margin-left: -13px;
+  height: 14px;
+}
+
+#footerrefresh a.toggle-autorefresh:hover i {
+  background-color: #888;
+}
+
+footer.hidebuttons:hover #sendfeedbackbox {
+  bottom: 22px;
+  -webkit-transition:  all .1s;
+  transition: all .1s;
+}
+footer.hidebuttons #sendfeedbackbox {
+  bottom: 8px;
+  -webkit-transition:  all .1s;
+  transition: all .1s;
+}
+
+#sendfeedbackbox {
+  position: absolute;
+  right: 8px;
+  bottom: 22px;
+  height: 19px;
+  left: 0;
+  max-width: 100%;
+  z-index: 0;
+}
+
+#sendfeedbackbox.fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+#feedbackbuttons {
+  float: right;
+}
+
+#feedbackbuttons>a {
+  z-index: 100;
+  display: inline-block;
+  position: relative;
+}
+
+body.tablewithstyles #sendfeedbackbox {
+  display: none;
+}
+
+#feedbackbuttons>a {
+  cursor: pointer;
+  padding: 2px 5px;
+  color: #000;
+  background-color: <#colorcode color="helpbackground">;
+  -webkit-transition:  all .1s;
+  transition: all .1s;
+  margin: 0 0 0 5px;
+}
+
+#feedbackbuttons>a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: <#colorcode color="actioncolor">;
+  -webkit-transition:  all .1s;
+  transition: all .1s;
+}
+#feedbackbuttons>a i {
+  margin: -3px 0 -4px;
+}
+
+#togglehelp div.hideonhover {
+  display: inline-block;
+}
+
+#feedbackbuttons>a:hover .hideonhover {
+  display: none;
+}
+
+#sendfeedbackbox a>.showonhover {
+  display: none;
+}
+
+#feedbackbuttons>a:hover .showonhover {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#pagegenerationtime {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  display: block;
+  min-width: 5px;
+  white-space: nowrap;
+  background: #4DFBE9;
+  padding: 1px;
+  border: 1px solid black;
+  color: #000;
+  font-size: 9px;
+  z-index: 1000;
+  margin: 0;
+}
+
+#pagegenerationtime div {
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 75px;
+  border: 1px solid #fff;
+  background: #4DFBE9;
+  box-shadow: 0px 0px 100px #000;
+}
+
+#pagegenerationtime:hover div {
+  display: inline;
+}

@@ -1,0 +1,119 @@
+﻿<!--Enterprise Console-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="support_contact_support.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="first_start_enterprise_console.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Enterprise Console</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Enterprise Console</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Enterprise Console (in old PRTG versions called &quot;Windows GUI&quot;) is one alternative <a href="architecture.htm" class="topiclink">interface</a> that you can use to connect to the PRTG core server to configure your setup, view monitoring results, and keep an eye on your network. It is a native Windows application for fast access to data and monitoring management.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The Enterprise Console (EC) provides extended pop-up window functionalities, as well as a seamless link to the <a href="ajax_gui_basic.htm" class="topiclink">Ajax web interface</a> where you can change your monitoring configuration and access further functionalities such as <a href="reports_enterprise_console.htm" class="topiclink">reporting</a>, <a href="maps_enterprise_console.htm" class="topiclink">maps</a>, <a href="setup_enterprise_console.htm" class="topiclink">system setup</a>, <a href="tickets_ec.htm" class="topiclink">tickets</a>, and <a href="libraries_enterprise_console.htm" class="topiclink">libraries</a>. The EC shows most of the functions with an embedded webkit browser, for a few options the EC opens an external browser window (using your default browser).</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>There are some known issues with the Enterprise Console. Because we are currently developing a new PRTG desktop client, we will not patch the following issues anymore.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The Enterprise Console runs under all <a href="detailed_system_requirements.htm#os" class="topiclink">supported Windows versions</a>, but it is not fully compatible with Windows 10. Running the EC on Windows 10 results in several issues, so please use another operating system. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The Enterprise Console does not support </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="system_information.htm" class="topiclink">System Information</a></span><span class="f_ListBulleted"> and does not show this tab on devices. Please use the PRTG web interface to access system information of a device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Starting the auto-discovery from the <a href="context_menus_enterprise_console.htm" class="topiclink">context menu</a> via </span><span class="f_BoldCustom">Auto Discovery | Run Auto-Discovery</span><span class="f_ListBulleted"> does not work. Please use the PRTG web interface to instantly run an <a href="auto_update.htm" class="topiclink">auto-discovery</a>.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>PRTG hosted by Paessler does not support connections from the Enterprise Console. If you want to use it, please connect the Enterprise Console to a PRTG on premises instance.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="enterprise" class="hmanchor"></a><span class="f_InTopicHeading">Access Several Core Servers in One Console</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">As an additional functionality, you can configure access to several PRTG core servers in the Enterprise Console. It can show data of all your independent core server installations at a glance (for example, the <a href="devices_enterprise_console.htm" class="topiclink">device tree</a> and <a href="alarms_enterprise_console.htm" class="topiclink">alarms list</a>), so you can manage your monitoring centrally, also when it is spread across different servers.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Getting Started</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Every installation of PRTG Network Monitor includes the Enterprise Console and installs it automatically on the computer running the PRTG core server. If you want to use the Enterprise Console on another computer, please <a href="downloads.htm#enterprise_console" class="topiclink">download</a> and install it there. For details, see the <span class="f_BoldCustom"><a href="install_the_enterprise_console.htm" class="topiclink">Install the Enterprise Console</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>The Enterprise Console is mainly designed to review and manage an existing installation of PRTG that you have already set up. If you just start monitoring, we recommend that you first run through the <span class="f_BoldCustom"><a href="smart_setup.htm" class="topiclink">Smart Setup</a></span> in the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a> and add your network devices there.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed instructions, see section <span class="f_BoldCustom"><a href="quick_start_guide.htm" class="topiclink">Quick Start Guide</a></span>. Once finished, you can seamlessly switch to the Enterprise Console.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="requirements" class="hmanchor"></a><span class="f_InTopicHeading">Requirements for Connections to PRTG Web Server(s)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To show monitoring data of your PRTG setup, the Enterprise Console must be able to establish a connection to your PRTG web server(s). For this purpose, please ensure the following.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The following server settings in the Enterprise Console have to match the following settings in the </span><span class="f_BoldCustom"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool</a></span><span class="f_ListBulleted">.</span><br />
+<img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">See section </span><span class="f_BoldCustom"><a href="prtg_servers_enterprise_console.htm" class="topiclink">PRTG Servers</a></span><span class="f_ListBulleted"> for details.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Enterprise Console Server Settings</span></p>
+</th>
+<th style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">PRTG Administrator Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Server IP / DNS name</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">IP address for PRTG's Web Server</span><span class="f_ListBulleted"> on the </span><span class="f_ListBulleted" style="font-weight: bold;">Web Server</span><span class="f_ListBulleted"> tab</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">TCP Port for PRTG's Web Server</span><span class="f_ListBulleted"> on the </span><span class="f_ListBulleted" style="font-weight: bold;">Web Server</span><span class="f_ListBulleted"> tab</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">PRTG switches to port </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> as a fallback after a restart when port 80 is already used, and to port </span><span class="f_BoldCustom">8443</span><span class="f_ListBulleted"> if port 443 is not available. PRTG keeps the SSL connection in this case. If this port is also not available, PRTG tries from port 8444 on until it finds an available port. Because the EC cannot recognize these ports (8080, 8443, 8444+) automatically, enter the currently used port manually here in the </span><span class="f_BoldCustom">Port</span><span class="f_ListBulleted" style="font-weight: bold;"> </span><span class="f_ListBulleted">setting. If you do not get a connection to the PRTG web server, check the currently used port in the </span><span class="f_BoldCustom">Web Server</span><span class="f_ListBulleted"> settings under </span><span class="f_BoldCustom"><a href="system_website_settings.htm#webserver" class="topiclink">System Administration—User Interface</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Login Name</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Login Name</span><span class="f_ListBulleted"> on the </span><span class="f_ListBulleted" style="font-weight: bold;">Administrator</span><span class="f_ListBulleted"> tab</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Password</span><span class="f_ListBulleted"> on the </span><span class="f_ListBulleted" style="font-weight: bold;">Administrator</span><span class="f_ListBulleted"> tab</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">No local software firewall blocks the connection.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">No local virus protection program blocks the connection.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The specified port is not used by another application.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">No (hardware) firewall blocks the connection when connecting through a network (LAN or WAN).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The software versions of the Enterprise Console and the PRTG web server have to match at least in the third number (for example, <a href="general_layout_enterprise_console.htm#status" class="topiclink">EC version</a> 15.3.18.3590 can connect to <a href="general_layout.htm#tree" class="topiclink">server version</a> 15.3.18.3796).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For common issues with the Enterprise Console and their solutions, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/60091" target="_blank" class="weblink">Problems with the Enterprise Console: What can I do?</a></span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Problems with the Enterprise Console: What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60091" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60091</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Enterprise Console—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="first_start_enterprise_console.htm" class="topiclink">First Start</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout_enterprise_console.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="menu_tabs_enterprise_console.htm" class="topiclink">Menu Tabs and Page Content</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_servers_enterprise_console.htm" class="topiclink">PRTG Servers</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="options_enterprise_console.htm" class="topiclink">Options</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="windows_menu_structure_enterprise_console.htm" class="topiclink">Windows Menu Structure</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus_enterprise_console.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="shortcuts_overview_enterprise_console.htm" class="topiclink">Shortcuts Overview</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Enterprise Console,Windows GUI</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="support_contact_support.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="first_start_enterprise_console.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

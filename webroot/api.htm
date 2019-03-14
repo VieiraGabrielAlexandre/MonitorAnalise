@@ -1,0 +1,120 @@
+﻿<#lang key="html.api.title" default="API" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><b>PRTG API</b> (Application Programming Interface)</h1>
+  <div class="buttonbox ">
+    <#include file="includes\linkpagebutton.htm">
+  </div>
+  <div id="content" class="apidocs">
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+      <ul class="nav-tabs">
+        <li tabid="1" class="tab-active"><a href="/controls/apioverview.htm">
+          <i class="glyph-gauge"></i>
+          <span class="text"><#lang key="html.global.overview" default="Overview"/></span></a></li>
+        <li tabid="2"><a href="/controls/apihttp.htm">
+          <i class="glyph-code"></i>
+          <span class="text">HTTP API</span></a></li>
+        <li tabid="3"><a href="/controls/apilivedata.htm">
+          <i class="glyph-feed"></i>
+          <span class="text">Live Data</span></a></li>
+        <li tabid="4"><a href="/controls/apilivegraphs.htm">
+          <i class="glyph-chart-area"></i>
+          <span class="text">Live Graphs</span></a></li>
+        <li tabid="5"><a href="/controls/apihistoricdata.htm">
+          <i class="glyph-document-history"></i>
+          <span class="text">Historic Data</span></a></li>
+        <li tabid="6"><a href="/controls/apiobjectmanipulation.htm">
+          <i class="glyph-object-group"></i>
+          <span class="text">Object Manipulation</span></a></li>
+        <li tabid="7"><a href="/controls/apicustomsensors.htm">
+          <i class="glyph-sensor"></i>
+          <span class="text">Custom Sensors</span></a></li>
+        <li tabid="8"><a href="/controls/apicustomnotifications.htm">
+          <i class="glyph-bell2"></i>
+          <span class="text">Custom Notifications</span></a></li>
+        <li class="<#hideforpod asclass='true'>" tabid="9"><a href="/controls/apiminiprobe.htm">
+          <i class="glyph-file-text"></i>
+          <span class="text">Mini Probe API</span></a></li>
+
+        <!--ToDo: re-add the Website styling info when updated-->
+		<!--<li class="<#hideforpod asclass='true'>" tabid="10"><a href="/controls/apiwebsitestyling.htm">-->
+          <!--<i class="glyph-magic"></i>-->
+          <!--<span class="text">Website Styling</span></a></li>-->
+      </ul>
+      <div class="tab-container"></div>
+    </div>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+<script>
+(function($){
+  $('#main').on('click','#runxml',function(){
+    var myurl;
+    myurl = ($("#outputselection").val() === "json") ? "/api/table.json?" : "/api/table.xml?";
+    $("#queryform").find("input,select").each(function (i) {
+      if ($(this).val() != "") {
+        if (i > 0) { myurl = myurl + '&' };
+        myurl = myurl + $(this).serialize();
+      }
+    });
+
+  	myurl=myurl.replace(/%2C/g,",");
+
+  	$("#myurl").html("<h3>Your Query URL</h3><pre>"+myurl+"</pre><h3>Query Results</h3>");
+  	$("#output").show().val("Working...");
+
+		$.ajax({
+		  url: myurl,
+			data:"",
+			type: "get",
+			dataType: "text",
+			success:function(resultdata) {$("#output").val(resultdata) },
+			error:function(xhr) {$("#output").val('*** Request failed with http error code '+xhr.status+' ***\n\n'+xhr.responseText) }
+		});
+  });
+
+  $('#main').on('click change','#columnselector', function(){
+    var $form = $(this).parents('form');
+  	var value=$(this).val();
+  	var suggestedcolumns="";
+
+  	if (value=="sensortree") { suggestedcolumns=""};
+  	if (value=="devices") {  suggestedcolumns="objid,probe,group,device,host,downsens,partialdownsens,downacksens,upsens,warnsens,pausedsens,unusualsens,undefinedsens"};
+  	if (value=="groups") {  suggestedcolumns="objid,probe,group,name,downsens,partialdownsens,downacksens,upsens,warnsens,pausedsens,unusualsens,undefinedsens"};
+  	if (value=="sensors") {  suggestedcolumns="objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite"};
+  	if (value=="tickets") {
+      if(!$form.find('input[name="filter_user"]').length) {
+        $form.append('<input type="hidden" name="filter_user" value="<#userid>">');
+      }
+      suggestedcolumns="objid,datetime,priority,parentid,message,user,status,name,type"
+    };
+
+    if (value=="messages") {  suggestedcolumns="objid,datetime,parent,type,name,status,message"};
+  	if (value=="values") {
+      // NOTE: PRTG-889 Incorrect API response because of missing additional parameters
+      if(!$form.find('input[name="noraw"]').length) {
+        $form.append('<input type="hidden" name="noraw" value="1">');
+      }
+
+      if(!$form.find('input[name="usecaption"]').length) {
+        $form.append('<input type="hidden" name="usecaption" value="true">');
+      }
+
+      suggestedcolumns="datetime,value_,coverage";
+    };
+  	if (value=="channels") {  suggestedcolumns="name,lastvalue_"};
+  	if (value=="reports") {  suggestedcolumns="objid,name,template,period,schedule,email,lastrun,nextrun"};
+  	if (value=="maps") {  suggestedcolumns="objid,name"};
+  	if (value=="storedreports") {  suggestedcolumns="name,datetime,size"};
+  	if (value=="history") {  suggestedcolumns="dateonly,timeonly,user,message"};
+
+  	$("#columnsinput").val(suggestedcolumns);
+
+  });
+})(jQuery);
+</script>

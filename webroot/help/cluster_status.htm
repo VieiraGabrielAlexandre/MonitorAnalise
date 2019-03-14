@@ -1,0 +1,94 @@
+﻿<!--PRTG Status—Cluster Status-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="auto_update.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="activation_status.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>PRTG Status—Cluster Status</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: PRTG Status—Cluster Status</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">To view the status of your PRTG installation, select <span class="f_BoldCustom">Setup </span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| PRTG Status </span>from main menu. Click on the tabs to change the different settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:437px"><a href="hmfile_hash_b166103e.png"><img id="TOGGLE0186A1" class="image-toggle" alt="PRTG Status Tabs" title="PRTG Status Tabs" style="width:437px;height:31px;border:none" src="hmfile_hash_1c3c6a1b.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Status Tabs</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can view the following aspects of the PRTG status:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Cluster Status</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Cluster Status</span> tab to view all nodes connected to the cluster. This tab is only available if you run PRTG in <a href="clustering.htm" class="topiclink">cluster mode</a>. The following information is available:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cluster Status</span><span class="f_ListBulleted"> with all connected nodes as table and graphic</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cluster Log</span><span class="f_ListBulleted"> with all log entries for cluster connections</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="cluster_status2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Example of a PRTG Cluster Status View" title="Example of a PRTG Cluster Status View" style="width:600px;height:390px;border:none" src="cluster_status2_zoom42.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Example of a PRTG Cluster Status View</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Start Maintenance Mode</span> link to put a cluster node in maintenance mode. A node in this mode is still connected to the cluster, but its monitoring results are discarded until you click the <span class="f_BoldCustom">Stop Maintenance Mode</span> link. You can use this functionality to explicitly exclude a node from monitoring if you know that the monitoring values will not be accurate, for example, because you reconfigure the failover server. During maintenance, a cluster node is displayed with a transparent color in the overview graphic.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>On this page, you will not see if your <a href="failover_cluster_configuration.htm#remote_probes_cluster" class="topiclink">remote probes are connected to failover nodes</a>. Please connect to your failover nodes and check explicitly if remote probes are connected (for example, in the device tree of the PRTG web interface on a cluster node). </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information about cluster settings, see section <span class="f_BoldCustom"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This feature is not available in PRTG hosted by Paessler.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="downloads.htm" class="topiclink">Downloads and Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_help_and_support_center.htm" class="topiclink">Support—Help and Support Center</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, see the sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="auto_update.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="activation_status.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

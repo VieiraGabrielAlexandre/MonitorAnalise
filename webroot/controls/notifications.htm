@@ -1,0 +1,39 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.notifications.help.title" default="Notification Templates" var="helptitle">
+<#lang key="html.notifications.help.titlesmall" default="notifications&nbsp;templates&nbsp;" var="titlefilter">
+<#lang key="html.globals.notioffrvarmethaft" default="Here you can edit and define different notification methods for the current PRTG user. Notifications can be triggered for specific sensor states and values. You can configure triggers for groups, devices, and sensors.<br><br>
+[b]Note:[/b] We recommend that you always set up at least two notifications with different delivery methods for a notification trigger. This way PRTG can still notify you if one delivery method fails. <a href='/help/notifications_settings.htm' target='_blank'><b>Help: Notifications Settings</b></a>" var="helptext">
+<#lang key="html.triggersandnotifications.help.text" default="Define triggers that will initiate notifications whenever PRTG discovers a defined state, such as slow or failing sensors, or when thresholds are reached. It is recommended to define triggers for notifications on a group or device level.<br><br> <b>Note:</b> Notifications are defined in your <a href='/myaccount.htm?tabid=2'>Account Settings</a>.<br><br><a href='/help/sensor_notifications_settings.htm#settings' target='_blank'><b>Help: Notification Trigger Settings</b></a>" var="helptextnotused">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<#lang key="html.global.notificationtemplates" default="Notification Templates" var="title">
+<div class="inner-wrapper">
+    <div class="inner-aside-left"></div>
+    <div class="inner-content">
+        <div class="add-menu-wrapper">
+                <div class="add-menu add-menu-fixed" style='<#system type="hideforreadonlyusers">'>
+                    <a class="actionbutton" href="/editnotification.htm?id=new"><#lang key="html.notifications.addnew" default="Add Notification Template"></a>
+                </div>
+            </div>
+        <div class="table-wrapper">
+            <div class="prtg-plugin" data-plugin="prtg-table">
+                <#table tableid="notificationtable"
+                content="notifications"
+                userid="<#userid>"
+                tools="delete,edit,pause,clone"
+                columns="name,active,checkbox"
+                sortby="name"
+                sortable="true"
+                tabletitle="@title"
+                filters="words!@titlefilter,tags"
+                varexpand="tabletitle,filters"
+                links="true"
+                refreshable="true">
+            </div>
+        </div>
+    </div>
+    <div class="inner-aside-right">
+        <div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+    </div>
+</div>

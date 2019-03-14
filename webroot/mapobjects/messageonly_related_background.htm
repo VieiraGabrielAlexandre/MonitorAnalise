@@ -1,0 +1,11 @@
+﻿<!--Status Icons: Sensor (message only, status-related background)-->
+<div class="map_object map_icon2 map_icon_large <#sensor type="colorclassofstate" prefix="map_iconcolor_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+	<#mapobject type="objectgrip" mode="<@editmode>">
+	<#mapobject type="htmlbefore" subid="<@subid>">
+  <#checkobjecttype objecttype="sensor" nicemessage="true" id="<@objectid>">
+
+  <span class="label"><#objectproperty name="Name" id="<@objectid>"></span>
+  <div style="clear: both;"><#objectstatus name="message" show="textraw" id="<@objectid>"></div>
+
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>

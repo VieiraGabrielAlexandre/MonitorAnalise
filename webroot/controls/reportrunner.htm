@@ -1,0 +1,102 @@
+﻿<form action="/generatereport.htm" method="get" id="reportrunnerform" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-reenable="true">
+	<#objectproperty name="name" var="name">
+	<#lang key="html.pagetitel.dummy" default="<dummy>@name</dummy>" comment="do not translate" var="reportname">
+	<input type="hidden" name="id" value="<#objectid>">
+	<fieldset>
+		<legend class="prtg-header"><#lang key="html.reportrunner.run2" default="Run Report &quot;@reportname&quot;"></legend>
+
+		<div class="control-group">
+			<label for="" class="control-label has_help"><#lang key="html.reportrunner.reportfor" default="Report for"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.reportrunner.choose" default="Choose a period of time for which you want to run the report.">">
+				<div class="radio-control">
+					<input  class="radio GroupShowHide hidden" type="radio" name="report_period" value="current" id="report_current_period">
+					<label for="report_current_period" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.currentperiod" default="Current Period">: <#report type="currentperiod"></label>
+					<input class="radio GroupShowHide hidden" type="radio" name="report_period" value="previous" id="report_previous_period">
+					<label for="report_previous_period" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.previousperiod" default="Previous Period">: <#report type="previousperiod"></label>
+					<input class="radio GroupShowHide hidden" type="radio" name="report_period" value="selected" id="report_selected_period">
+					<label for="report_selected_period" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.quickselect2" default="Select a Period"></label>
+					<input checked="checked" class="radio GroupShowHide hidden" type="radio" name="report_period" value="manual" id="report_manual_period">
+					<label for="report_manual_period" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.manuakselect2" default="Select Date Range Manually"></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="control-group InitialDisplayNone Showreport_selected_period Hidereport_manual_period Hidereport_previous_period Hidereport_current_period">
+			<label for="specific_period" class="control-label no_help"><#lang key="html.reportrunner.daterange" default="Date Range"></label>
+			<div class="controls">
+				<#report type="periodselector">
+			</div>
+		</div>
+
+		<div class="control-group Showreport_manual_period Hidereport_selected_period Hidereport_previous_period Hidereport_current_period">
+			<label for="sdate" class="control-label has_help"><#lang key="html.reportrunner.startdate" default="Start Date"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.historicsensordata.wizhelprange" default="Select a date range for a faster selection of start and end time that the report data will cover.">">
+				<input class="text prtg-plugin" data-plugin="prtg-datetimepicker" data-datetimepicker-period="start" type="text" name="manual_period_start" value="<#datetimepickervalue value="-7d">" id="sdate" data-endpicker="#edate">
+			</div>
+			<label for="edate" class="control-label no_help"><#lang key="html.reportrunner.enddate" default="End Date"></label>
+			<div class="controls">
+				<input class="text prtg-plugin" data-plugin="prtg-datetimepicker" data-datetimepicker-period="end" type="text" name="manual_period_end" value="<#datetimepickervalue value="now">" id="edate">
+			</div>
+
+			<label for="edate" class="control-label no_help"><#lang key="html.historicsensordata.wiz2quickrange" default="Quick Range"></label>
+			<div class="controls">
+				<div class="historicrangeselectors prtg-plugin" data-plugin="prtg-datetimequickrange" data-sfield="sdate" data-endfield="edate">
+					<ul>
+						<li><a href="" range="0a"><#lang key="html.historicsensordata.todayrange" default="Today"></a></li>
+						<li><a href="" range="1a"><#lang key="html.historicsensordata.yesterdayrange" default="Yesterday"></a></li>
+						<li><a href="" range="0w"><#lang key="html.historicsensordata.lastweekmorange" default="Last Week (Mo-Su)"></a></li>
+						<li><a href="" range="1w"><#lang key="html.historicsensordata.lastweeksorange" default="Last Week (Su-Sa)"></a></li>
+					</ul>
+					<ul>
+						<li><a href="" range="1l"><#lang key="html.historicsensordata.lastmonthrange" default="Last Month"></a></li>
+						<li><a href="" range="2l"><#lang key="html.historicsensordata.last2monthrange" default="2 Months"></a></li>
+						<li><a href="" range="6l"><#lang key="html.historicsensordata.last6monthrange" default="6 Months"></a></li>
+						<li><a href="" range="12l"><#lang key="html.historicsensordata.last12monthrange" default="12 Months"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset style="<#system type='hideforreadonlyusers'>">
+		<legend class="prtg-header"><#lang key="html.reportrunner.processingoptions" default="Processing Options"></legend>
+			<div class="control-group">
+				<label class="control-label has_help"><#lang key="html.reportrunner.delivery" default="File Format and Delivery"></label>
+				<div class="controls" data-placement="right" data-helptext="<#lang key="html.reportrunner.choosetarget" default="Choose the target file format and a delivery method for this report. CSV and XML data files are only available for report templates with data tables.
+				Additionally you have to choose an include data files option on the report settings tab to generate CSV or XML files for this report.">">
+					<div class="radio-control">
+						<input checked="checked" class="radio GroupShowHide hidden" type="radio" name="report_processing" value="report_html" id="report_html">
+						<label for="report_html" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.viewreport" default="View Report as HTML"></label>
+						<input class="radio GroupShowHide hidden" type="radio" name="report_processing" value="report_pdf" id="report_pdf">
+						<label for="report_pdf" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.createandstore2" default="Create and store PDF and data files (available for templates with data tables)"></label>
+						<input class="radio GroupShowHide hidden" type="radio" name="report_processing" value="report_pdfandmail" id="report_pdfandmail">
+						<label for="report_pdfandmail" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.createpdf" default="Create PDF and data files (available for templates with data tables), store them, and send by email"></label>
+					</div>
+				</div>
+			</div>
+			<div class="control-group InitialDisplayNone Showreport_pdfandmail Hidereport_html Hidereport_pdf">
+
+				<!-- <#session type="layoutgroup" name="toplistgroup" source="report"> -->
+				<!--#session type="layoutgroup" name="datafilegroup" source="report" -->
+
+				<label for="report_emailaddress" class="control-label has_help"><#lang key="html.reportrunner.targetemail" default="Target Email Address"></label>
+				<div class="controls" data-placement="right" title="<#lang key="html.reportrunner.targetemail.help" default="Enter one or more comma separated email addresses.">">
+					<input type="text" autocomplete="off" name="report_emailaddress" id="report_emailaddress" class="text fieldrequired {required:'input[@id=report_pdfandmail]:checked'}" value="<#report type="targetemail">">
+				</div>
+				<label for="report_compressing" class="control-label no_help"><#lang key="html.reportrunner.compressattachment" default="Compression"></label>
+				<div class="controls" data-placement="right" data-helptext="<#lang key="html.reportrunner.compressionhelp" default="Specify if the attached report files should be compressed prior to sending.">">
+					<div class="radio-control">
+						<input checked="checked" class="radio GroupShowHide hidden" type="radio" name="report_compressing" value="report_uncompressed" id="report_uncompressed1">
+						<label for="report_uncompressed1" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.reportuncompressedfiles" default="Send files uncompressed"></label>
+						<input class="radio GroupShowHide hidden" type="radio" name="report_compressing" value="report_compressed" id="report_compressed2">
+						<label for="report_compressed2" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.reportrunner.reportcompressedfiles" default="Send all in one ZIP file"></label>
+					</div>
+				</div>
+			</div>
+	</fieldset>
+	<div class="quick-action-wrapper">
+		<button type="submit" id="runreportbutton" class='quick-action-button submit actionbutton force-visible ' value='<#lang key="html.controls.reportrunner.runreport" default="Run Report">'>
+		    <#lang key="html.controls.reportrunner.runreport" default="Run Report"></button>
+		<button type="submit" class='quick-action-badge quick-continue'></button>
+	</div>
+</form>

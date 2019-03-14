@@ -1,0 +1,44 @@
+﻿<#lang key="html.healtherrors.title" default="Health Errors" var="title">
+<#lang key="html.healtherrors.titlesmall" default="health errors" var="titlesmall">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="table-wrapper">
+    <div class="buttonbox normalpage">
+      <#include file="includes\linkpagebutton.htm">
+    </div>
+    <div class="prtg-plugin" data-plugin="prtg-table">
+      <#table tableid="sensortable"
+         content="sensors"
+         columns="downtimesince,probegroupdevice=text,sensor=htmllong,status,message,checkbox"
+         tools="pause,acknowledge,scan,edit"
+         sortby="probegroupdevice"
+         sortable="true"
+         refreshable="true"
+         tabletitle="@title"
+         filter_status="5"
+         filter_status="14"
+         filter_type="clusterstate"
+         filter_type="corestate"
+         filter_type="probestate"
+         filter_type="systemstate"
+         filter_type="probe" 
+         varexpand="tabletitle">
+    </div>
+    <div class="nagscreen-box">
+      <h2 class="nagscreen-head"><#lang key="html.healtherrors.text1" default="IMPORTANT: There are fundamental problems in your PRTG installation!"> </h2>
+        <ul class="nagscreen-cell">
+          <li><#lang key="html.healtherrors.text2a" default="Monitoring may be incomplete or inaccurate because one or more parts of PRTG are not working properly!"></li>
+          <li><#lang key="html.healtherrors.text3a" default="Please check the list of health sensors above for hints on what is going wrong."></li>
+          <li><#lang key="html.healtherrors.text4a" default="You can ignore health sensors in error state by acknowledging the alarms."></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

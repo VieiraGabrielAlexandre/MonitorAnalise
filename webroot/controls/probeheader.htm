@@ -1,0 +1,17 @@
+﻿<#objectproperty type="nodename" var="nodename">
+<#lang key="html.probenode.title" default="Probe Details" var="title">
+<h1 class="sitecaption">
+  <i><#lang key="html.probenode.head1" default="Probe"></i>
+  <dummy data-id="<#objectid>" status="name;menuclass,class" class="<#sensor type="menuclassofstate">"><#objectproperty name="Name" show="text"></dummy>
+  <div id="objectpriority" title="<#lang key="html.sensorstatusdata.setprio" default="Click to set priority and/or favorite status">">
+    <dummy status="priority"><#objectstatus  name="priority"></dummy>
+  </div>
+</h1>
+<div class="buttonbox">
+  <dummy status="paused"><#object type="pause"></dummy>
+  <#include file="includes\linkpagebutton.htm">
+  <a onclick="_Prtg.objectTools.checkObjectNow.call(this,<#objectid>);return false;" style="<#system type='hideforreadonlyusers'>" href="#" data-placement="bottom" title="<#lang key="html.global.CheckNow" default="Scan Now">"><i class="icon-dark glyph-arrows-cw"></i></a>
+  <a onclick="_Prtg.objectTools.addObject.call(this,<#objectid>,'device');return false;" data-id="<#objectidorzero>" class='hideforreadonly' href="#" data-placement="bottom" title="<#lang key="html.group.adddev" default="Add Device">"><i class="icon-dark icon-plus"></i></a>
+  <a data-id="<#objectidorzero>" href="#" status="menuclass,class,menulink systemmenu menuleft nopopup hideforreadonly " class="menulink systemmenu menuleft nopopup hideforreadonly <#sensor type="menuclassofstate">"><i class="icon-dark icon-triangle-1-s"></i></a>
+</div>
+

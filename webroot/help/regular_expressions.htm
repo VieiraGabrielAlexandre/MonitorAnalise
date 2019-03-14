@@ -1,0 +1,84 @@
+﻿<!--Regular Expressions-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="define_lookups.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="calculating_percentiles.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Regular Expressions</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Regular Expressions</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">For some sensors (for example, some <a href="available_sensor_types.htm#web" class="topiclink">HTTP sensors</a> and <a href="available_sensor_types.htm#mail" class="topiclink">email sensors</a>), you can use regular expressions to match a search pattern. PRTG supports <span class="f_ItalicCustom">Perl Compatible Regular Expressions (PCRE)</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-forbidden-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-forbidden-red.png"/>PRTG does not support regex options or regex flags like, for example, <span class="f_ItalicCustom">/g</span> (global), or <span class="f_ItalicCustom">/s</span> (single line), or <span class="f_ItalicCustom">/gs</span>, and will not correctly search for the target string if you try to set options. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">See below for examples with the most <a href="regular_expressions.htm#common" class="topiclink">common patterns</a> and an <a href="regular_expressions.htm#example" class="topiclink">example</a> for possible matches.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="common" class="hmanchor"></a><span class="f_InTopicHeading">Common Search Patterns</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find matches containing the word <span class="f_BoldCustom">error </span><span class="f_ItalicCustom">or</span> <span class="f_BoldCustom">alarm</span>:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">\b(error|alarm)\b</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find matches containing the words <span class="f_BoldCustom">error </span><span class="f_ItalicCustom">and</span> <span class="f_BoldCustom">alarm </span>in any order:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">(?=.*\berror\b)(?=.*\balarm\b).*</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find matches containing all of the words <span class="f_BoldCustom">tree</span>, <span class="f_BoldCustom">flower</span>, <span class="f_BoldCustom">leaf</span>, <span class="f_ItalicCustom">and</span> <span class="f_BoldCustom">bug</span>, in any order:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">(?=.*\btree\b)(?=.*\bflower\b)(?=.*\bleaf\b)(?=.*\bbug\b).*</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;<br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>It is not possible to match an empty string using the PRTG regex search with sensors.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="example" class="hmanchor"></a><span class="f_InTopicHeading">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The search pattern </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">(?=.*\berror\b)(?=.*\balarm\b).*</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">will match the following expressions:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">alarm error</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">error alarm</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">I am an error and I evoke an alarm</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">I am an alarm and I indicate an error</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">An alarm combined with an error indeed!</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">An error combined with an alarm, too!</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Regex101: Test and debug your regular expressions</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://regex101.com/" target="_blank" class="weblink">https://regex101.com/</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Regex Tester: Test Regular expressions interactively</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http://regexpal.com" target="_blank" class="weblink">http://regexpal.com</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Wikipedia: Regular expression</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http://en.wikipedia.org/wiki/Regular_expression" target="_blank" class="weblink">http://en.wikipedia.org/wiki/Regular_expression</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="define_lookups.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="calculating_percentiles.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

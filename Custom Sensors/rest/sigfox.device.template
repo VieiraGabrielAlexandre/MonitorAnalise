@@ -1,0 +1,29 @@
+{
+	"prtg": {
+		"result": [{
+				"channel": "Average Signal",
+				"CustomUnit": "dB",
+				"Float": 1,
+				"value": $.averageSignal
+			},
+			{
+				"channel": "Average SNR",
+				"CustomUnit": "dB",
+				"Float": 1,
+				"value": $.averageSnr
+			},
+			{
+				"channel": "Average RSSI",
+				"CustomUnit": "dBm",
+				"Float": 1,
+				"value": $.averageRssi
+			},
+			{
+				"channel": "State",
+				"ValueLookup": "sigfox.device.state",
+				"value": $.state
+			}
+			
+		]
+	}
+}

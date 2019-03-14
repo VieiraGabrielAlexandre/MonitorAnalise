@@ -1,0 +1,50 @@
+﻿<!--Dependencies-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="scheduling.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Dependencies</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Dependencies</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can use dependencies to make PRTG pause sensor monitoring based on the <a href="sensor_states.htm" class="topiclink">status</a> of another (master) sensor to avoid false alarms and incorrect downtime recording. A dependency stops the monitoring of one sensor or a set of sensors as soon as a specific sensor is in <span class="f_BoldCustom">Down</span> status or in <span class="f_BoldCustom">Paused</span> status caused by another dependency. This means, for example, that you can stop monitoring remote network services when the corresponding firewall is down due to connection problems.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">When using the <a href="auto_discovery.htm" class="topiclink">auto-discovery</a> function, the <span class="f_BoldCustom"><a href="ping_sensor.htm" class="topiclink">Ping Sensor</a></span> on a device is by default set as the <span class="f_ItalicCustom">master</span> object for this device. This means that monitoring for the entire device is paused if the Ping sensor is in <span class="f_BoldCustom">Down</span> status or in <span class="f_BoldCustom">Paused</span> status caused by another dependency. Usually, it makes little sense to monitor any other parameters while the <span class="f_BoldCustom">Ping </span>sensor indicates that the device can't even be reached.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You do not trigger a status change by dependency if you manually pause a master object or if you pause it by <a href="scheduling.htm" class="topiclink">schedule</a>. See also this Knowledge Base article <a href="https://kb.paessler.com/en/topic/76351" target="_blank" class="weblink">Why will dependent objects not go into paused status automatically when I pause the master object?</a></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To view the list of dependencies, choose <span class="f_BoldCustom">Devices | Dependencies</span> and the corresponding dependencies path from the <a href="main_menu_structure.htm#devices" class="topiclink">main menu</a>. From there you can also access the <span class="f_BoldCustom"><a href="show_dependencies.htm#graph" class="topiclink">Dependencies Graph</a></span> that visualizes all dependencies within your network. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="dependenciesgraph1.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Dependencies Graph" title="Dependencies Graph" style="width:600px;height:146px;border:none" src="dependenciesgraph1_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Dependencies Graph</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information about the dependency settings, see the <a href="object_settings.htm" class="topiclink">settings of the object</a> you want to set a dependency for, section <span style="font-weight: bold;"><a href="device_settings.htm#schedules" class="topiclink">Schedules, Dependencies, and Maintenance Window</a></span> respectively.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Dependencies,Dependencies</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="scheduling.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

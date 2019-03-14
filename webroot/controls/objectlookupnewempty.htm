@@ -1,0 +1,15 @@
+﻿<#inserturlparam parameter='required' var="required">
+<div id="objectSelector" class="objectlookup">
+	<#lang key="html.objectlookupnewempty.help" default="Click to select an object!">
+	<i class="ui-icon icon-search resetable"></i>
+</div>
+
+<input
+  id="input<#inserturlparam parameter='domid'>"
+  class=" <#inserturlparam parameter='radioclass'> <#if value="@required" is="" then="" else="@required" varexpand="value,else"> invisible"
+  name="<#inserturlparam parameter='inputname'>"
+  value="<#objectid>"
+  type="text"
+  data-validate-related="#objectSelector"
+  data-rule-showrequired="true"
+  >

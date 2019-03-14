@@ -1,0 +1,237 @@
+﻿/*prtg.sensorstats.css*/
+#sensorstatscell {
+  width: 1%;
+}
+
+.newalerts {
+  width: auto;
+  width: 1%;
+  white-space: nowrap;
+}
+
+#sensorstats {
+  display: block;
+  float: right;
+  margin-left: 5px;
+  width: auto;
+  padding: 7px;
+}
+
+#sensorstats a div {
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 2px;
+  padding-right: 2px;
+  padding-top: 3px;
+}
+
+#sensorstats a div.sensx {
+  background-image: url(/icons/led_grey_tall.png);
+}
+
+#sensorstats a div.sensg {
+  background-image: url(/icons/led_green_tall.png);
+}
+
+.newalerts a,
+.newalerts a:link,
+.newalerts a:hover,
+.newalerts a:visited,
+.newalerts a:active,
+#sensorstats a,
+#sensorstats a:link,
+#sensorstats a:hover,
+#sensorstats a:visited,
+#sensorstats a:active {
+  color: white!important;
+  height: 14px;
+  padding: 3px 5px 4px 5px;
+  <#system type="browserdependent" browsertype="MSIE" aboveversion="1" browsercontent="padding: 3px 5px 6px 5px;">
+  font-size: 11px;
+  box-shadow: 1px 1px 1px #444444;
+  margin: 4px 1px 4px 4px;
+  border-radius: 3px;
+}
+
+#sensorstats a,
+#sensorstats a:link,
+#sensorstats a:hover,
+#sensorstats a:visited,
+#sensorstats a:active {
+  padding: 4px 3px 4px 14px;
+}
+
+.newalerts a {
+  display: none;
+}
+
+#sensorstats a div,
+.newalerts a span {
+  background: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #444444 inset;
+  color: #000000;
+  display: inline-block;
+  padding: 1px 3px 0px 6px;
+  text-align: center;
+  margin-left: 2px;
+  background-image: none!important;
+  opacity: 0.8;
+}
+
+.newalerts a:hover,
+#sensorstats a:hover {
+  text-decoration: none!important;
+  box-shadow: 2px 2px 2px #000;
+}
+
+#sensorstats a:hover div,
+.newalerts a:hover span {
+  background: <#colorcode color="midgray">;
+}
+
+#alertalarms {
+  background-color: #D21925;
+}
+
+#alertmsgs {
+  background-color: #808285;
+}
+
+#alerttodos {
+  background-color: #A4A5A9;
+}
+
+#sensorstats.sensg {
+  background-image: none;
+  width: auto;
+  height: auto;
+}
+
+#sensorstats .sensy {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_yellow.png);*/
+}
+
+#sensorstats .sensr {
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -1101px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensq {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_red_green.png);*/
+}
+
+#sensorstats .senso {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_redok.png);*/
+}
+
+#sensorstats .sensb {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_blue.png);*/
+}
+
+#sensorstats .sensp {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_orange.png);*/
+}
+
+#sensorstats .sensx {
+  background-image: none;
+  width: auto;
+  height: auto;
+/*  background-image: url(/icons/led_grey.png); */
+}
+
+#sensorstats .sensorlinkred {
+  background-color: #D21925;
+}
+
+#sensorstats .sensorlinkgreen {
+  background-color: #98BD1D;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -265px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkpaused {
+  background-color: #6294C8;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 0;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkpartialred {
+  background-color: #D21925;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -1240px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkack {
+  background-color: #E89574;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -1525px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkwarn {
+  background-color: #EECE00;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -1735px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkunusual {
+  background-color: #EE9804;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -895px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#sensorstats .sensorlinkblack {
+  background-color: #707172;
+  background-image: url(/icons/statussprite.png);
+  background-position: 0 -475px;
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+#table_channeltable {
+  width: auto;
+}
+
+#table_channeltable tbody tr td:first-child {
+  padding-right: 20px;
+}
+
+#table_channeltable tbody tr td:last-child {
+  padding-left: 20px;
+}
+

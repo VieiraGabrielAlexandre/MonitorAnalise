@@ -1,0 +1,37 @@
+﻿<#system type="denyfornonadmins">
+<#lang key="html.objecthistory.title" default="Object History" var="pagetitle">
+<#setpagetitle pagetitle="@pagetitle" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div class="object-history-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+  <h1 class="sitecaption"><#lang key="html.objecthistory.head2" default="Object History"></h1>
+
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/history.htm?id=<#userid>"><i class="glyph-user2"></i><span class="text"><#lang key="html.global.myaccount" default="My Account"></span></a></li>
+      <li tabid="2"><a href="/controls/history.htm?id=810"><i class="glyph-cogs"></i><span class="text"><#lang key="html.objecthistory.SystemAdministration" default="System Administration"></span></a></li>
+      <li tabid="3"><a href="/controls/history.htm?id=-3"><i class="glyph-bell-alt"></i><span class="text"><#lang key="html.global.notificationtemplates" default="Notification Templates" var="notifications"></span></a></li>
+      <li tabid="4"><a href="/controls/history.htm?id=-7"><i class="glyph-calendar"></i><span class="text"><#lang key="html.global.schedules" default="Schedules"></span></a></li>
+      <li tabid="5"><a href="/controls/history.htm?id=-1"><i class="glyph-id-card-o "></i><span class="text"><#lang key="html.users.useraccounts" default="User Accounts"></span></a></li>
+      <li tabid="6"><a href="/controls/history.htm?id=-2"><i class="glyph-users2"></i><span class="text"><#lang key="html.users.usergroups" default="User Groups"></span></a></li>
+      <li tabid="7"><a href="/controls/history.htm?id=-4"><i class="glyph-clipboard"></i><span class="text"><#lang key="html.global.reports" default="Reports"></span></a></li>
+      <li tabid="8"><a href="/controls/history.htm?id=-6"><img src="/icons/library.png"><span class="text"><#lang key="html.users.libraries" default="Libraries"></span></a></li>
+      <li tabid="9"><a href="/controls/history.htm?id=-5"><img src="/icons/map.png"><span class="text"><#lang key="html.users.maps" default="Maps"></span></a></li>
+    </ul>
+    <div class="tab-container"></div>
+</div>
+
+
+
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+
+
+
+
+

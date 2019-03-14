@@ -1,0 +1,248 @@
+﻿/*NOTE: body min-width breaks the media queries breakpoints*/
+body.full-width {
+  min-width: auto !important;
+}
+
+
+#helpcenter {
+	width:100%;
+}
+
+/* @media (max-width: 680px) {
+  #helpcenter {
+    width:100%;
+    position:absolute;
+  }
+}
+
+
+@media (min-width: 680px) {
+  #helpcenter {
+    width:680px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+} */
+
+@media (min-width: 1280px) {
+  #helpcenter {
+    width:1280px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+}
+
+#helpcenter .titlebox {
+  margin-left: 5px;
+  font-weight: normal;
+  color: #00235D;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#helpcenter-container {
+  display: flex;
+  flex-flow: row wrap;
+  overflow:hidden;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.helpcenterbox {
+ /*   flex: 1 1 320px; */
+  
+  /*min-height: 320px;
+  
+  height: 320px; */
+  
+  width: 320px;
+  height:auto;
+    
+  position: relative;
+  background-color: #F3F2F2;
+  margin: 5px;
+}
+
+/* @media (min-width: 680px){
+  .helpcenterbox {
+	min-height: 340px;
+  }
+}
+*/
+
+@media (max-width: 1150px) {
+  .helpcenterbox {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 845px) {
+  .helpcenterbox {
+    width: calc(100% - 30px);
+  }
+}
+
+
+.helpcenterbox:hover {
+  background-color: #FAFAFA;
+}
+
+.helpcenterbox-header {
+  display: flex;
+}
+
+.helpcenterbox-header .left-half {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+  /* word-spacing: 200px; */
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.helpcenterbox-header .right-half {
+  flex: 1;
+  padding: 1rem;
+  text-align: right;
+}
+
+.helpcenterbox-body {
+  padding: 5px 15px;
+  font-size: 13px;
+}
+
+.helpcenterbox-body span{
+	position:relative;
+	display:block;
+	overflow:hidden;
+	max-height: 230px;
+}
+
+div.helpcenterbox-body:after {
+  content: "";
+  height: 50px;
+  display:block;
+}
+
+.helpcenterbox-body span:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: -22px;
+  right: 0px;
+  width: 70%;
+  height: 22px;
+  background: linear-gradient(to right, rgba(243, 242, 242, 0), rgba(243, 242, 242, 1) 50%);
+}
+
+.helpcenterbox:hover span:after {
+  background: linear-gradient(to right, rgba(250, 250, 250, 0), rgba(250, 250, 250, 1) 50%);
+}
+
+.helpcenterbox ul{
+	margin:17px;
+}
+
+.helpcenterbox{
+	line-height:17px;
+}
+
+
+/* Fix for different Segoe UI height */
+@-moz-document url-prefix() {
+  .helpcenterbox-body {
+    font-size: 12.5px;
+  }
+}
+
+.helpcenterbox-body a.btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  line-height: 22px;
+  color: #fff;
+  display: inline-block;
+  /* width: 128px; */
+  min-width: 128px;
+  max-width: 90%;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.helpcenterbox-body a.btn:after {
+  content: " \00bb";
+}
+
+.helpcenterbox-body a.btn:hover {
+  text-decoration: none;
+}
+
+.helpcenterbox-body a.btn.btn-orange:before {
+  background: #CC8016;
+}
+
+.helpcenterbox-body a.btn.btn-cyan:before {
+  background: #49A09C;
+}
+
+.helpcenterbox-body a.btn.btn-lightblue:before {
+  background: #82A9CE;
+}
+
+.helpcenterbox-body a.btn.btn-blue:before {
+  background: #4670B5;
+}
+
+.helpcenterbox-body a.btn.btn-limette:before {
+  background: #9CB230;
+}
+
+.helpcenterbox-body a.btn.btn-magenta:before {
+  background: #CC0054;
+}
+
+/* Colors */
+.orange { color: <#colorcode color="statusunusual">; }
+.cyan { color: <#colorcode color="graph2">; }
+.lightblue { color: #90BCE6; }
+.blue { color: <#colorcode color="linkcolor">; }
+.limette { color: <#colorcode color="statusup">; }
+.magenta { color: #E6005F; }
+
+/* Button colors */
+.helpcenterbox-body a.btn-orange {
+  background-color: <#colorcode color="statusunusual">;
+}
+
+.helpcenterbox-body a.btn-cyan {
+  background-color: <#colorcode color="graph2">;;
+}
+
+.helpcenterbox-body a.btn-lightblue {
+  background-color: #90BCE6;
+}
+
+.helpcenterbox-body a.btn-blue {
+  background-color: <#colorcode color="linkcolor">;
+}
+
+.helpcenterbox-body a.btn-limette {
+  background-color: <#colorcode color="statusup">;
+}
+
+.helpcenterbox-body a.btn-magenta {
+  background-color: #E6005F;
+}
+
+.prtg-plugin .same-square-height,
+.prtg-plugin .square-height,
+.prtg-plugin .same-square-width,
+.prtg-plugin .square-width{
+  visibility:hidden;
+}
+
+
+
+

@@ -1,0 +1,76 @@
+﻿</div>
+<#comment fuer div id=container in pageheader.htm>
+    <#system type="showhelp" tct="action" page="facelift-update" var="tctfile"  daysi_gt='0'  />
+    <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role"/>
+
+    <footer class="hidebuttons">
+        <div id='alarmsound'></div>
+        <div id="prtg_growls" class="growls"></div>
+        <div id='helpcontainer' class="prtg-plugin footer_help hidden" data-plugin="contexthelp">
+            <div class="footer_help-box">
+                <div class="helptitle">
+                    <span class="glyph-help-circled"></span>
+                    <#lang key="html.footer.helpheader" default="Help"><i id="closehelp" class="flr glyph-cancel-1"></i>
+                </div>
+                <div class="lasthelpitem contexthelpbox">
+                    <div class="helpmorehelp">
+                        <a href='/help.htm'><#lang key="html.footer.gohelpcenter4b" default="Get more help in the Help Center"/>!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="footer_logo" href="https://www.paessler.com" target="_blank" id="paesslerlogo" title="Paessler AG - The Network Monitoring Company"></a>
+            <span class="footer_version"><#system type="version"> <#system type="installedupdatechannel"> <#system type="expiry"></span>
+
+            <span class="footer_user"><#system type="username"></span>
+
+            <span class="js-servertime servertimebox" title='<#system type="date"> <#system type="time"> (<#system type="timezone">)' data-placement="top" data-timezone='<#system type="timezone">'>
+                <i class="glyph-clock"></i>
+                <span class="serverclock"><#system type="time"></span>
+            </span>
+
+            <span id='footerrefresh' class="prtg-plugin footer_datetime" data-plugin="prtg-toggle-autorefresh">
+                <span class="refreshclock"><a class="toggle-autorefresh" href="#"><i class="icon-pause icon-dark"></i></a></span>
+                <span class="refreshclock"><#lang key="html.main.refreshin" default="Refresh in"></span>
+                <span class="refreshclock" id="footerrefreshclock"><#system type="autorefreshinterval"></span>
+                <span class="refreshclock"><#lang key="html.main.sec" default="sec"></span>
+                <span class="refreshinglable"><#lang key="html.main.refreshingtext" default="Refreshing..."></span>
+            </span>
+
+        </div>
+
+        <div id="sendfeedbackbox" class="footerButtons">
+
+            <#include skiptagfornoncluster="true" file="controls\clusterstateforpagetop.htm">
+            <a id="updatevailablebox" class="footerButtons-update" onclick="window.top.location.href = '/autoupdate.htm';return false;"
+               style='<#hidefornonadmins> <#hideforpod> <#system type="autoupdateavailable" insertifyes="" insertifno="display:none">'>
+                <i class="icon-gear icon-dark"></i> <#lang key="html.footer.updatevailable" default="Update Available">
+            </a>
+
+            <a href="#" class="js-livechat_button" onclick="showLiveChat()"> <i class="glyph-bubbles3"></i>Live Chat</a>
+
+            <a id="sendfeedback" class="hidefeedbackbutton" style="<#hidefeedbacklink>"
+               onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname,'');return false;">
+                <i class="icon-mail-closed icon-dark"></i><#lang key="html.footer.feedback" default="Contact Support">
+            </a>
+
+            <a id="togglehelp">
+                <i class="icon-help icon-dark"></i>
+                    <#lang key="html.footer.help" default="Help">
+
+                <span class="helpactive" style="display: inline-block;"></span>
+            </a>
+        </div>
+    </footer>
+
+
+<noscript>
+  <div class="ui-widget-overlay ui-front"></div>
+  <div id="nojavascripterror">
+    <#lang key="html.footer.noscript0" default="<b>Sorry, the AJAX Web Interface of PRTG can not work properly without Javascript.</b><br><br><i>Javascript seems to be disabled or this browser does not support Javascript.</i><br><br>Please enable Javascript">
+  </div>
+</noscript>
+    <#system type="LiveChatEnabled" var="enablelivechat">
+    <#if value="@enablelivechat" is="true" then="javascript\lib\livechatinc.htm" else="" var="livechatfile" varexpand="value">
+    <#javascriptinclude file="@livechatfile" varexpand="file">

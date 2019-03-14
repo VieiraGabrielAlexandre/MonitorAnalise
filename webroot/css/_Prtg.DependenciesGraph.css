@@ -1,0 +1,157 @@
+﻿#main.dependencies .buttonbox{
+  top:96px;
+}
+.dependenciesGraph {
+  width: 100%;
+  height: 800px;
+}
+
+#dependencygraph .node{
+  z-index:100;
+}
+#dependencygraphlegend .link,
+#dependencygraph .link {
+  fill: none;
+  stroke: #999;
+  stroke-width:1;
+}
+#dependencygraph marker#Parentp{
+  opacity: 0.25;  
+}
+.link.Parent{
+  /*opacity: 0.25;*/
+}
+
+#dependencygraph marker#Master{
+  fill:<#colorcode color="graph7">;
+}
+#dependencygraph .link.Master{
+  stroke: <#colorcode color="graph7">;
+  fill:none;
+}
+#dependencygraph marker#Select{
+  fill:<#colorcode color="graph4">;
+  stroke-width:1;
+}
+#dependencygraph .link.Select{
+  stroke: <#colorcode color="graph4">;
+  fill:none;
+}
+#dependencygraph marker#Extern{
+  fill:<#colorcode color="graph3">;
+  stroke-width:1;
+}
+#dependencygraph .link.Extern{
+  stroke: <#colorcode color="graph3">;
+  fill:none;
+}
+#dependencygraph .link.Broken{
+  stroke: <#colorcode color="graph1">;
+}
+#dependencygraph .link.hidden{
+  /*display: none;*/
+}
+
+.node.probe text,
+.node.root text,
+.node.bold text{
+  font-weight: bold;
+}
+#dependencygraphlegend .node.Broken text,
+#dependencygraph .node.Broken text,
+#dependencygraph .node.SensorBroken text{
+  fill: <#colorcode color="graph1">;
+  font-weight: bold;
+ }
+#dependencygraph .node.Broken.sensor text{
+  fill: white;
+}
+
+#dependencygraph .nodehide {
+  display: none;
+}
+#dependencygraph text {
+  fill:black;
+  font-size: 9px;
+}
+
+#dependencygraph .node.bold text{
+  font-weight: bold;
+}  
+
+#dependencygraph g.bolded .link,
+#dependencygraph g.bolded .node{
+  opacity: 0.6;
+}
+
+#dependencygraph g.bolded .link.bold,
+#dependencygraph g.bolded .node.bold{
+  opacity: 1;
+}
+#dependencygraph .link.bold{
+  stroke-width:2px;
+}
+#dependencygraph .node a{
+  background-color: white;
+}
+#dependencygraphlegend {
+  font-size: 9px;
+}
+
+#dependencygraphlegend line{
+  stroke-width: 4px;
+}
+#dependencygraphlegend input{
+  margin-top: 3px;
+}
+#dependencygraph div.olControlZoom{
+  top:30px;
+}
+
+#dependencygraph .node.sensor rect{
+  fill: <#colorcode color="midgray">;
+}
+#dependencygraph .node.Broken.sensor rect{
+  fill: <#colorcode color="graph1">;
+}
+
+#dependencygraph .node.sensor .zoom.icon{
+  cursor: pointer;
+  fill: url(#zoomiconpattern);
+}
+#dependencygraphlegend{
+  height:50px;
+  padding-top: 16px;
+  padding-left:60px;
+  margin-top:4px;
+  background-color: <#colorcode color="lightgray">;
+  border-top: 1px solid #c1c2c3;
+  min-width:100%;
+}
+#dependencygraphlegend #Zoom_Sunburst{
+  top:5px;
+}
+#dependencygraphlegend .legend{
+  display: inline-block;
+  width:20px;
+  height:2px;
+  margin: 0 5px 0 30px;
+  vertical-align: middle;
+}
+#dependencygraphlegend .Parent{
+  background-color: #999;  
+}
+#dependencygraphlegend .Master{
+  background-color: <#colorcode color="graph7">;  
+}
+#dependencygraphlegend .Select{
+  background-color: <#colorcode color="graph4">;
+}
+#dependencygraphlegend .Broken{
+  background-color: <#colorcode color="graph1">;
+}
+#dependencygraphlegend span.Broken{
+  color: <#colorcode color="graph1">;
+  background-color: transparent;
+  font-weight: bold;
+}

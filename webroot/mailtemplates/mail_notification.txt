@@ -1,0 +1,78 @@
+﻿
+=============================================================================
+
+<#lang key="common.strings.sensor" default="Sensor">: %name %priority
+%home/sensor.htm?id=%sensorid
+
+<#lang key="common.strings.newstatus" default="New Status">: %status %down
+
+=============================================================================
+<#lang key="common.strings.datetime" default="Date/Time">: %datetime (%timezone)
+<#lang key="common.strings.lastresult" default="Last Result">: %lastvalue
+<#lang key="common.strings.lastmessage" default="Last Message">: %message
+=============================================================================
+<#lang key="common.strings.probe" default="Probe">: %probe
+%home/probenode.htm?id=%probeid
+<#lang key="common.strings.group" default="Group">: %group
+%home/group.htm?id=%groupid
+<#lang key="common.strings.device" default="Device">: %device (%host)
+%home/device.htm?id=%deviceid
+=============================================================================
+<#lang key="common.strings.lastscan" default="Last Scan">: %lastcheck
+<#lang key="common.strings.lastup" default="Last Up">: %lastup
+<#lang key="common.strings.lastdown" default="Last Down">: %lastdown
+<#lang key="common.strings.uptime" default="Uptime">: %uptime
+<#lang key="common.strings.downtime" default="Downtime">: %downtime
+<#lang key="common.strings.cumulatedsince" default="Cumulated since">: %cumsince
+<#lang key="common.strings.settings" default="Settings">: %settings
+=============================================================================
+<#lang key="common.strings.location" default="Location">:
+%location
+=============================================================================
+%history
+%commentssensor
+%commentsdevice
+%commentsgroup
+%syslogwarnings%trapwarnings
+%syslogerrors%traperrors
+=============================================================================
+Links:
+
+<#lang key="js.contextmenus.CheckNow" default="Scan Now">:
+%home/scannow.htm?id=%sensorid&action=0&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.AcknowledgeAlarm" default="Acknowledge Alarm...">:
+%home/acknowledgealarm.htm?id=%sensorid&ackmsg=Acknowledged+via+email&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.Pause" default="Pause">:
+%home/pause.htm?id=%sensorid&action=0&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.Pause.PauseFor5Minutes" default="Pause for 5 minutes">:
+%home/pauseobjectfor.htm?id=%sensorid&duration=5&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.Pause.PauseFor60Minutes" default="Pause for 60 minutes">:
+%home/pauseobjectfor.htm?id=%sensorid&duration=60&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.Pause.PauseFor24Hours" default="Pause for 24 hours">:
+%home/pauseobjectfor.htm?id=%sensorid&duration=1440&targeturl=/sensor.htm?id=%sensorid
+
+<#lang key="js.contextmenus.Pause.Resume" default="Resume">:
+%home/pause.htm?id=%sensorid&action=1&targeturl=/sensor.htm?id=%sensorid
+=============================================================================
+
+<#lang key="mail.ticket.notification.clickheretoedit" default="Don't want to receive this email?"><
+
+<#lang key="mail.ticket.notification.clickheretoedit1a" default="Please edit the"> <#lang key="mail.ticket.notification.clickheretoedit1b" default="triggers of this sensor">
+%home/sensor.htm?id=%SensorId&tabid=9
+
+<#lang key="mail.ticket.notification.clickheretoedit1c" default="or edit your"> <#lang key="mail.ticket.notification.clickheretoedit1d" default="notification settings">!
+%home/editnotification.htm?id=%notification
+
+
+=============================================================================
+<#lang key="html.mailtemplatehtmlfooter.emailsentto" default="E-mail sent to">: %toaddress
+<#lang key="html.mailtemplatehtmlfooter.emailsentat" default="E-mail sent at">: %systemdatetime
+<#lang key="html.mailtemplatehtmlfooter.emailsentby" default="E-mail sent by">: %sitename %nodename (%home/===========================================================================
+%programname %programversion %company
+https://www.paessler.com/prtg
+=============================================================================

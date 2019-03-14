@@ -1,0 +1,732 @@
+﻿<!--HTTP Advanced Sensor-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="http_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="http_apache_modstatus_perfstats_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>HTTP Advanced Sensor</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: HTTP Advanced Sensor</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The HTTP Advanced sensor monitors the source code of a web page using Hypertext Transfer Protocol (HTTP). It supports authentication, content checks, and other advanced parameters. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The sensor can show the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Loading time </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Bytes received </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Download bandwidth (speed)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Time to first byte</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The monitored content size is uncompressed.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="http_advanced.png"><img id="TOGGLE0186A1" class="image-toggle" alt="HTTP Advanced Sensor" title="HTTP Advanced Sensor" style="width:600px;height:380px;border:none" src="http_advanced_zoom67.png"/></a><p style="text-align:center"><span class="f_ImageCaption">HTTP Advanced Sensor</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="lang" class="hmanchor"></a><span class="f_InTopicHeading">Sensor in Other Languages</span></p>
+<p style="page-break-inside: auto; margin: 0px 0px 13px 0px;">Dutch: <span style="font-weight: bold;">HTTP Geavanceerd</span>, French: <span style="font-weight: bold;">HTTP (avancé)</span>, German: <span style="font-weight: bold;">HTTP (Erweitert)</span>, Japanese: <span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">HTTP アドバンスト</span>, Portuguese:<span style="font-size: 11pt;"> </span><span style="font-weight: bold;">HTTP avançado</span>, Russian: <span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">HTTP (Расширенный)</span>, Simplified Chinese: <span style="font-family: 'Microsoft JhengHei'; font-weight: bold;">HTTP 高级</span>, Spanish: <span style="font-weight: bold;">HTTP Avanzado</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Supports <a href="http_advanced_sensor.htm#smart" class="topiclink">Smart URL Replacement</a>.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: <a href="http://kb.paessler.com/en/topic/30593" target="_blank" class="weblink">Which user agent should I use in the HTTP Advanced sensor's settings?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: <a href="http://kb.paessler.com/en/topic/67398" target="_blank" class="weblink">My HTTP sensors fail to monitor websites which use SNI. What can I do?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: <a href="http://kb.paessler.com/en/topic/65731" target="_blank" class="weblink">Which HTTP status code leads to which HTTP sensor status?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">This sensor type does not support Secure Remote Password (SRP) ciphers.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">If you need to use SRP ciphers, please choose the </span><span class="f_BoldCustom">Alternate/Compatibility Mode</span><span class="f_Remarks"> in the sensor settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Bandwidth monitoring of fast internet connections may be inaccurate.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Add Sensor</span> dialog appears when you <a href="add_a_sensor.htm" class="topiclink">manually</a> add a new sensor to a device. It only shows the setting fields that are required for creating the sensor. Therefore, you will not see all setting fields in this dialog. You can change (nearly) all settings in the sensor's <span class="f_BoldCustom">Settings</span> tab later.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the details page of a sensor, click the <span class="f_BoldCustom">Settings </span>tab to change its settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Usually, a sensor connects to the <span class="f_BoldCustom">IP Address </span>or <span class="f_BoldCustom">DNS Name </span>of the parent device where you created this sensor. See the <span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span> for details. For some sensor types, you can define the monitoring target explicitly in the sensor settings. Please see below for details on available settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Sensor Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the sensor. By default, PRTG shows this name in the <a href="general_layout.htm#tree" class="topiclink">device tree</a>, as well as in <a href="alarms.htm" class="topiclink">alarms</a>, <a href="logs.htm" class="topiclink">logs</a>, <a href="notifications.htm" class="topiclink">notifications</a>, <a href="reports.htm" class="topiclink">reports</a>, <a href="maps.htm" class="topiclink">maps</a>, <a href="libraries.htm" class="topiclink">libraries</a>, and <a href="tickets.htm" class="topiclink">tickets</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Parent Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> that this sensor <a href="tags.htm#tags_inherited" class="topiclink">inherits</a> from its <a href="object_hierarchy.htm" class="topiclink">parent device, group, and probe</a>. This setting is shown for your information only and cannot be changed here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted">, separated by spaces or commas. You can use tags to group sensors and use tag–filtered views later on. Tags are not case sensitive. We recommend that you use the default value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can add additional tags to the sensor if you like. Other tags are automatically <a href="tags.htm#tags_inherited" class="topiclink">inherited</a> from objects further up in the device tree. These are visible above as </span><span class="f_BoldCustom">Parent Tags</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a priority for the sensor. This setting determines where the sensor is placed in sensor lists. Top priority is at the top of a list. Choose from one star (low priority) to five stars (top priority).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="httpspecific" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">HTTP Specific</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timeout (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a timeout in seconds for the request. If the reply takes longer than this value defines, the sensor will cancel the request and show a corresponding error message. Please enter an integer value. The maximum value is </span><span class="f_BoldCustom">900</span><span class="f_ListBulleted"> seconds (15 minutes).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">URL</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the URL the sensor connects to. It has to be </span><span class="f_ItalicCustom">URL encoded</span><span class="f_ListBulleted">! </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you enter an absolute URL, the sensor uses this address independently from the </span><span class="f_BoldCustom">IP Address/DNS Name</span><span class="f_ListBulleted"> setting of the device on which you create this sensor. You can enter an URL leading to a webpage (to measure the page source code's loading time), or enter the URL of an image or of another page asset to measure this element's availability and loading time. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG uses a smart URL replacement that allows you to use the parent device's IP address/DNS name setting as part of the URL. For more information, please see section </span><span class="f_BoldCustom">Smart URL Replacement</span><span class="f_ListBulleted"> below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Request Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose an HTTP request method to determine how the sensor will request the given URL.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">GET</span><span class="f_ListBulleted">:</span><span class="f_ListBulleted"> Request the website directly, like browsing the web. We recommend that you use this setting for a simple check of a web page.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">POST</span><span class="f_ListBulleted">:</span><span class="f_ListBulleted"> Send post form data to the URL. If this setting is chosen, you must enter the data that will be sent in the </span><span class="f_BoldCustom">Postdata </span><span class="f_ListBulleted">field below. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HEAD</span><span class="f_ListBulleted">: O</span><span class="f_ListBulleted">nly request the HTTP header from the server without the actual web page. Although this saves bandwidth since less data is transferred, it is not recommended because the measured request time is not the one experienced by your users and you might not be notified for slow results or timeouts.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Postdata</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible when you select the POST </span><span class="f_BoldCustom">Request Method </span><span class="f_ListBulleted">setting above. Enter the data part for the POST request here. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">No XML is allowed here!</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Content Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible when you select the POST </span><span class="f_BoldCustom">Request Method</span><span class="f_ListBulleted"> setting above. Define the content type of a POST request. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default (application/x-www-form-urlencoded)</span><span class="f_ListBulleted">: This is the default content type used to encode the form data set for submission to the server.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom</span><span class="f_ListBulleted">: If you need another content type than default, enter this content type below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom Content Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible when you select </span><span class="f_BoldCustom">Custom</span><span class="f_ListBulleted"> above. Define the content type that is needed, for example, XML, JSON, HTTP.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Server Name Indication</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the Server Name Identification (SNI) that the sensor automatically determined from the host address of the <a href="device_settings.htm#basic" class="topiclink">parent device</a> or the target URL of the sensor. SNI has to be a </span><span class="f_ItalicCustom">Fully Qualified Domain Name (FQDN)</span><span class="f_ListBulleted">. Please ensure it matches the configuration of the target server. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For details, see the Knowledge Base article <a href="https://kb.paessler.com/en/topic/67398" target="_blank" class="weblink">My HTTP sensors fail to monitor websites which use SNI. What can I do?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNI Inheritance</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to inherit the Server Name Identification (SNI) from the parent device. See the </span><span class="f_BoldCustom">Server Name Indication</span><span class="f_ListBulleted"> setting above which SNI is determined. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherit SNI from parent device</span><span class="f_ListBulleted">: The sensor determines the SNI from the host address of the parent device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not inherit SNI from parent device</span><span class="f_ListBulleted">: The sensor determines the SNI from the target </span><span class="f_BoldCustom">URL</span><span class="f_ListBulleted"> as defined in the settings of this sensor.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="httphybrid" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">HTTP Engine</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Monitoring Engine</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you encounter unexpected errors with the standard method that is used to monitor a URL, try to use the compatibility mode, which is based on </span><span class="f_ItalicCustom">.NET</span><span class="f_ListBulleted">. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default/High Performance (recommended)</span><span class="f_ListBulleted">: This is the default monitoring method for this sensor type.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Alternate/Compatibility Mode</span><span class="f_ListBulleted">: Try this method as an alternative for websites that do not work with the default approach. Using the compatibility mode, this sensor executes an external </span><span class="f_ItalicCustom">exe</span><span class="f_ListBulleted">. Because of this, this method needs more resources, but it can be helpful in particular cases. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you select the compatibility mode, the options for the SSL method will be slightly different. You can also check for trusted certificates. Please see below.</span><br />
+<img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">When using the Compatibility Mode, </span><span class="f_BoldCustom">Smart URL Replacement</span><span class="f_ListBulleted"> will not work, so this sensor will </span><span class="f_ItalicCustom">not </span><span class="f_ListBulleted">use the </span><span class="f_BoldCustom">IP Address/DNS value</span><span class="f_ListBulleted"> of the parent device automatically then.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">SSL Specific (when using Compatibility Mode)</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSL Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">When using the compatibility mode, the SSL specific settings are a bit different to the default (automatically used) SSL settings. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SSL 3.0</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">TLS 1.0, TLS 1.1, TLS 1.2</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SSL 3.0, TLS 1.0, TLS 1.1, TLS 1.2</span><span class="f_ListBulleted"> This is the default setting.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Check SSL Certificates</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify if the sensor will check the certificate of the monitored URL. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not check used certificates</span><span class="f_ListBulleted">: Do not consider the certificates of the monitored web pages. This the default setting.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Check if the used certificates are trusted</span><span class="f_ListBulleted">: Inspect the certificates. If the certificate of the server is not trusted, the sensor shows a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status and displays a corresponding message.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This sensor type implicitly supports Server Name Identification (SNI), an extension to the TLS protocol.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="httpadvanced" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Advanced Sensor Data</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Protocol Version</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the HTTP protocol version that the sensor will use when connecting to the target URL. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP 1.0</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP 1.1</span><span class="f_ListBulleted">: This is the default setting.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Agent</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose which user agent string the sensor will send when connecting to the target URL. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use PRTG's default string</span><span class="f_ListBulleted">: Do not enter a specific user agent, use the default setting. Usually, this is: </span><span class="f_ItalicCustom">Mozilla/5.0 (compatible; PRTG Network Monitor (www.paessler.com); Windows)</span><span class="f_ListBulleted"> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use a custom string</span><span class="f_ListBulleted">: Use a custom user agent. Define below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom User Agent</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable custom user agent above. Enter a string to be used as user agent when connecting to the URL specified above.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Use Custom HTTP Headers</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to send custom HTTP headers to the target URL. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not use custom HTTP headers</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use custom HTTP headers</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom HTTP Headers</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only available if you select using custom headers above. Enter a list of custom HTTP headers with theirs respective values that you want to transmit to the URL you define above, each pair in one line. The syntax of a header-value pair is </span><span class="f_ItalicCustom">header1:value1</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">The sensor does not support the header field names </span><span class="f_ItalicCustom">user-agent</span><span class="f_ListBulleted">, </span><span class="f_ItalicCustom">content-length</span><span class="f_ListBulleted">, </span><span class="f_ItalicCustom">host</span><span class="f_ListBulleted">.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">Ensure the HTTP header statement is valid! Otherwise, the sensor request will not be successful.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Content Changes</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define what the sensor will do if the content of the monitored web page (element) changes. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ignore changes</span><span class="f_ListBulleted">: No action will be taken on change.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Trigger 'change' notification</span><span class="f_ListBulleted">: The sensor will send an internal message indicating that the web page content has changed. In combination with a </span><span class="f_BoldCustom">Change Trigger</span><span class="f_ListBulleted">, you can use this mechanism to <a href="sensor_notifications_settings.htm" class="topiclink">trigger a notification</a> whenever the web page content changes.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Require Keyword</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if the sensor will check the result at the configured URL for keywords. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not check for keyword (default)</span><span class="f_ListBulleted">: Do not search for keywords in the result returned at the URL.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning if keyword is missing</span><span class="f_ListBulleted">: Check if a keyword exists in the result and set the sensor to a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a> if yes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to error if keyword is missing</span><span class="f_ListBulleted">: Check if a keyword exists in the result and set the sensor to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a> if yes.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">The content check is only intended for HTML websites and might not work with other target URLs. For example, binary files are not supported.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Response Must Include</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable keyword checking above (include). Define which string must be part of the source code at the given URL. You can either enter plain text or a </span><span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expression</a></span><span class="f_ListBulleted">. Specify below. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the data does not include the search pattern, the sensor will show the status defined above. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Check Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the format of the search expression in the field above.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">String search (default)</span><span class="f_ListBulleted">: Search for the string as plain text. The characters </span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">?</span><span class="f_ListBulleted"> work here as placeholder, whereas </span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted"> stands for no or any number of characters and </span><span class="f_ItalicCustom">?</span><span class="f_ListBulleted"> stands for exactly one character (as known from Windows search). This behavior cannot be disabled, so the literal search for these characters is not possible with plain text search. You can also search for HTML tags.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Regular Expression</span><span class="f_ListBulleted">: Use the search pattern as a </span><span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expression</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>PRTG supports <span class="f_ItalicCustom">PCRE </span>regex. You cannot use regex options or flags. For more details, see manual section <span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span>.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Exclude Keyword</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if the sensor will check the result at the configured URL for keywords. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not check for keyword (default)</span><span class="f_ListBulleted">: Do not search for keywords in the result returned at the URL.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning if keyword is found</span><span class="f_ListBulleted">: Check if a keyword exists in the result and set the sensor to a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a> if yes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to error if keyword is found</span><span class="f_ListBulleted">: Check if a keyword exists in the result and set the sensor to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a> if yes.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">The content check is only intended for HTML websites and might not work with other target URLs. For example, binary files are not supported.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Response Must Not include</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable keyword checking (exclude) above. Define which string must </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> be part of the source code at the given URL. You can either enter plain text or a </span><span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expression</a></span><span class="f_ListBulleted">. If the data </span><span class="f_ItalicCustom">does</span><span class="f_ListBulleted"> include this string, the sensor will show the status defined above. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Check Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define in which format you have entered the search expression in the field above.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">String Search (default)</span><span class="f_ListBulleted">: Search for the string as plain text. The characters asterisk (</span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted">) and question mark (</span><span class="f_ItalicCustom">?</span><span class="f_ListBulleted">) work here as placeholder, whereas </span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted"> stands for no or any number of characters and </span><span class="f_ItalicCustom">?</span><span class="f_ListBulleted"> stands for exactly one character (as known from Windows search). This behavior cannot be disabled, so the literal search for these characters is not possible with plain text search. You can also search for HTML tags.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Regular Expression</span><span class="f_ListBulleted">: Use the search pattern as a </span><span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expression</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>PRTG supports <span class="f_ItalicCustom">PCRE </span>regex. You cannot use regex options or flags. For more details, see manual section <span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span>.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Limit Download (kb)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a maximum amount of data that the sensor can transfer per every single request. If you set content checks, please be aware that only the content downloaded up to this limit can be checked for search expressions.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Result Handling</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define what the sensor will do with the data loaded at the given URL. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Discard HTML result</span><span class="f_ListBulleted">: Do not store the requested data.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Store latest HTML result</span><span class="f_ListBulleted">: Store the last result of the requested data to the </span><span class="f_BoldCustom">Logs (Sensors)</span><span class="f_ListBulleted"> directory in the PRTG data folder on the probe system the sensor is running on (on the Master node if in a cluster). File name: </span><span class="f_ItalicCustom">Result of Sensor [ID].txt</span><span class="f_ListBulleted">. This is for debugging purposes, especially in combination with content checks. The file will be overridden with each scanning interval. </span><br />
+<img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For information on how to find the folder used for storage, see section </span><span class="f_BoldCustom"><a href="data_storage.htm" class="topiclink">Data Storage</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available when the sensor runs on the <span class="f_BoldCustom">Hosted Probe</span> of a PRTG hosted by Paessler instance.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>This sensor loads the source code at the given URL. If you set up a content check, only this source code is checked for the keywords. The code is not necessarily identical to the one used to display the page when opening the same URL in a web browser, as there may be a reload configured or certain information may be inserted after loading, for example, via JavaScript.</p>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>PRTG does not follow links to embedded objects nor does it execute scripts. Only the first page at the given URL is loaded and checked against the expressions configured. </p>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>For debugging, please use the <span class="f_BoldCustom">Result Handling</span> option to write the source code file to disk and look up what exactly PRTG gets when calling the URL. If the URL configured does not point to a web page, but to a binary file, for example, to an image, you usually will not check for content.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="httpauthenticationgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Authentication</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if the web page at the configured URL needs authentication. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No authentication needed</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Web page needs authentication</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable authentication above. Enter a username. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable authentication above. Enter a password. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if enable authentication above. Select the authentication method the given URL is protected with. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Basic access authentication (HTTP)</span><span class="f_ListBulleted">: Use simple HTTP authentication. This is the default setting and suitable for most cases. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This authentication method transmits credentials as plain text.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows NT LAN Manager (NTLM)</span><span class="f_ListBulleted">: Use the Microsoft NTLM protocol for authentication. This is sometimes used in intranets for single sign-on.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Digest Access Authentication</span><span class="f_ListBulleted">: Use digest access authentication that applies a hash function to the password, which is safer than basic access authentication. </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="channelgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor Display</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Primary Channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select a channel from the list to define it as the primary channel. In the device tree, the last value of the primary channel will always be displayed below the sensor's name. The available options depend on what channels are available for this sensor. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">You can set another primary channel later by clicking the pin symbol of a channel in the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_Comment"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how different channels will be shown for this sensor.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show channels independently (default)</span><span class="f_ListBulleted">: Show an own graph for each channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Stack channels on top of each other</span><span class="f_ListBulleted">: Stack channels on top of each other to create a multi-channel graph. This will generate an easy-to-read graph that visualizes the different components of your total traffic. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This option cannot be used in combination with manual </span><span class="f_ItalicCustom">Vertical Axis Scaling</span><span class="f_ListBulleted"> (available in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted"> settings).</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Stack Unit</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if stacked graphs are selected above. Choose a unit from the list. All channels with this unit will be stacked on top of each other. By default, you cannot exclude single channels from stacking if they use the selected unit. However, there is an advanced procedure to do so.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inherited" class="hmanchor"></a><span class="f_InTopicHeading">Inherited Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, all following settings are inherited from objects higher in the hierarchy and should be changed there, if necessary. Often, best practice is to change them centrally in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span>group's settings, see section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information. To change a setting only for this object, disable inheritance by clicking the button next to <span class="f_ItalicCustom">inherit from</span> under the corresponding setting name. You will then see the options described below. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="httpproxy" class="hmanchor"></a><a id="proxy" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Proxy Settings for HTTP Sensors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">HTTP Proxy Settings</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The proxy settings determine how a sensor connects to a given URL. You can enter data for an HTTP proxy server that sensors will use when connecting via HTTP or HTTPS. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This setting affects monitoring only and determines the behavior of HTTP sensors. To change proxy settings for the core server, see </span><span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_Comment">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="ssl_certificate_sensor.htm" class="topiclink">SSL Certificate Sensor</a></span><span class="f_ListBulleted"> and the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="ssl_security_check_sensor.htm" class="topiclink">SSL Security Check Sensor</a></span><span class="f_ListBulleted"> do not support HTTP proxies, but you can configure connections via SOCKS proxies in their sensor settings.</span><span class="f_Comment"> &nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the IP address or DNS name of the proxy server to use. If you leave this field empty, no proxy will be used.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port number of the proxy. Often, port 8080 is used. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the proxy requires authentication, enter the username for the proxy login. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Only basic authentication is available! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the proxy requires authentication, enter the password for the proxy login. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Only basic authentication is available! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="intervalgroup" class="hmanchor"></a><a id="scanning" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scanning Interval</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a scanning interval (seconds, minutes, or hours) from the list. The scanning interval determines the time the sensor waits between two scans. You can change the available intervals in the <a href="monitoring_settings.htm#scanning-intervals" class="topiclink">system administration</a> on PRTG on premises installations.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Query Fails</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the number of scanning intervals that a sensor has time to reach and check a device again in case a sensor query fails. The sensor can try to re-reach and check a device several times, depending on the option you select here, before it will be set to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. This helps you avoid false alarms if the monitored device has only temporary issues. For previous scanning intervals with failed requests, the sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to down immediately</span><span class="f_ListBulleted">: The sensor will show an error immediately after the first failed request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 1 interval, then set to down (recommended)</span><span class="f_ListBulleted">: After the first failed request, the sensor will show a yellow warning status. If the following request also fails, the sensor will show an error.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 2 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after three consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 3 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after four consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 4 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after five consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 5 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after six consecutively failed requests.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensors that monitor via Windows Management Instrumentation (WMI) always wait at least one scanning interval until they show an error. It is not possible to set a WMI sensor to </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> immediately, so the first option will not apply to these sensor types. All other options can apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a sensor has defined error limits for channels, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; option will apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a channel uses <a href="define_lookups.htm" class="topiclink">lookup</a> values, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; options will apply.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="scheduledependency" class="hmanchor"></a><a id="schedules" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Schedules, Dependencies, and Maintenance Window</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Inheritance for schedules, dependencies, and maintenance windows cannot be interrupted. The corresponding settings from the parent objects will always be active. However, you can define additional settings here. They will be active at the same time as the parent objects' settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a schedule from the list. Schedules can be used to monitor for a certain time span (days, hours) every week. With the period list option it is also possible to pause monitoring for a specific time span. You can create new schedules and edit existing ones in the <a href="notifications_settings.htm" class="topiclink">account settings</a>. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Schedules are generally inherited. New schedules will be added to existing ones, so all schedules are active at the same time.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Window</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Specify if you want to set up a one-time maintenance window. During a &quot;maintenance window&quot; period, this object and all child objects will not be monitored. They will be in a paused state instead. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not set (monitor continuously)</span><span class="f_ListBulleted">: No maintenance window will be set and monitoring will always be active.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set up a one-time maintenance window</span><span class="f_ListBulleted">: Pause monitoring within a maintenance window. You can define a time span for a monitoring pause below and change it even for a currently running maintenance window.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To terminate a current maintenance window before the defined end date, change the time entry in </span><span class="f_ListBulleted" style="font-weight: bold;">Maintenance Ends</span><span class="f_ListBulleted"> field to a date in the past.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Begins</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the start date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Ends </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the end date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a dependency type. Dependencies can be used to pause monitoring for an object depending on the status of another. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use parent</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Additionally, pause the current sensor if a specific other object in the device tree is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Select below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">: Make this sensor the master object for its parent device. The sensor will influence the behavior of the device, where it is created on: If the sensor is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, the device will be paused. For example, it is a good idea to make a Ping sensor the master object for its parent device to pause monitoring for all other sensors on the device in case the device cannot even be pinged. Additionally, the sensor will be paused if the parent group of its parent device is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or if it is paused by another dependency.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Testing your dependencies is easy! Simply choose </span><span class="f_BoldCustom">Simulate Error Status</span><span class="f_ListBulleted"> from the context menu of an object that other objects depend on. A few seconds later all dependent objects should be paused. You can <a href="show_dependencies.htm" class="topiclink">check all dependencies</a> in your PRTG installation by selecting </span><span class="f_BoldCustom">Devices | Dependencies</span><span class="f_ListBulleted"> from the main menu bar.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if the </span><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted"> option is enabled above. Click on the reading-glasses and use the <a href="object_selector.htm" class="topiclink">object selector</a> to choose an object on which the current sensor will depend.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Delay (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a time span in seconds for a dependency delay. After the master object for this dependency goes back to </span><span class="f_BoldCustom">Up </span><span class="f_ListBulleted">status, PRTG will start monitoring the depending objects after this extra delayed. This can help to avoid false alarms, for example, after a server restart, by giving systems more time for all services to start up. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This setting is not available if you choose this sensor to </span><span class="f_ListBulleted" style="font-weight: bold;">Use parent</span><span class="f_ListBulleted"> or to be the </span><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">. In this case, please define delays in the parent </span><span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span><span class="f_ListBulleted"> or in the superior </span><span class="f_BoldCustom"><a href="group_settings.htm" class="topiclink">Group Settings</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="unitconfiggroup" class="hmanchor"></a><a id="channel" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Channel Unit Configuration</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Unit Types</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">For each type of sensor channel, define the unit in which data is displayed. If defined on probe, group, or device level, these settings can be inherited to all sensors underneath. You can set units for the following channel types (if available):</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Bandwidth</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Memory</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disk</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">File</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">Custom channel types can be set on sensor level only.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="smart" class="hmanchor"></a><span class="f_InTopicHeading">Smart URL Replacement</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Instead of entering a complete address in the URL field of an HTTP sensor, you can merely enter the protocol followed by colon and three slashes (that means you can enter either <span class="f_ItalicCustom">http:///</span> or <span class="f_ItalicCustom">https:///</span> or even a simple slash <span class="f_ItalicCustom">/</span> as equivalent for <span class="f_ItalicCustom">http:///</span>). PRTG will fill in the parent device's <span class="f_BoldCustom">IP address </span>or<span style="font-family: 'Trade Gothic LT Std';"> </span><span class="f_BoldCustom">DNS name </span>in front of the third slash automatically. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Whether this results in a valid URL or not depends on the </span>IP address or DNS name of the device<span class="f_ListBulleted"> where this HTTP sensor is created on. In combination with cloning devices, the smart URL replacement makes it easy to create many like devices. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, if you create a device with</span> <span class="f_BoldCustom">DNS name</span> <span class="f_ItalicCustom">www.example.com</span><span class="f_ListBulleted"> and you add an HTTP sensor to it, you can provide values the following ways: </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Providing the value </span><span class="f_ItalicCustom">https:///</span><span class="f_ListBulleted"> in the URL field, PRTG will automatically create the URL </span><span class="f_ItalicCustom">https://www.example.com/</span><span class="f_ListBulleted"> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Using the value </span><span class="f_ItalicCustom">/help</span><span class="f_ListBulleted"> in the URL field, PRTG will automatically create and monitor the URL </span><span class="f_ItalicCustom">http://www.example.com/help </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">It is also possible to provide a port number in the URL field, which will be taken over by the device's DNS name and internally added, for example, </span><span class="f_ItalicCustom">http://:8080/</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Smart URL replacement does not work for sensors running on the </span><span class="f_BoldCustom">Probe Device</span><span class="f_ListBulleted">.</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which HTTP status code leads to which HTTP sensor status?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/65731" target="_blank" class="weblink">https://kb.paessler.com/en/topic/65731</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which user agent should I use in the HTTP Advanced sensor's settings?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/30593" target="_blank" class="weblink">https://kb.paessler.com/en/topic/30593</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Is it possible to test a WSDL or SOAP service with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/66680" target="_blank" class="weblink">https://kb.paessler.com/en/topic/66680</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My HTTP sensors fail to monitor websites which use SNI. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/67398" target="_blank" class="weblink">https://kb.paessler.com/en/topic/67398</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Why do my HTTP Advanced sensors differ in the bytes received value?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/78778" target="_blank" class="weblink">https://kb.paessler.com/en/topic/78778</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channels" class="hmanchor"></a><span class="f_InTopicHeading">Edit Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change display settings, spike filter, and limits, switch to the sensor's <span class="f_BoldCustom">Overview</span> tab and click the gear icon of a specific channel. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Notification Triggers</span> tab to change notification triggers. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For more general information about settings, see the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+<span class="f_InTopicHeading">&nbsp;</span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="http_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="http_apache_modstatus_perfstats_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

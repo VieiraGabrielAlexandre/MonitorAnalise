@@ -1,0 +1,196 @@
+﻿<!--Sensor States-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="general_layout.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="review_monitoring_data.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Sensor States</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Sensor States</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">In the PRTG device tree you usually create several sensors for each <a href="device_settings.htm" class="topiclink">device</a>. With sensors, you can monitor different aspects of your devices. Using a simple color code, they always show you what is going on in your network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The color of a sensor always shows its current status. In the below table, you will find a list of states a sensor can show. This list also reflects the hierarchy of states whenever summarized sensor states are shown (in the<span style="font-size: 11pt; font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif;"> <a href="general_layout.htm#tree" class="topiclink">device tree</a>, or on <a href="geo_maps.htm" class="topiclink">geo maps</a>)</span>: the higher a status is in the hierarchy, the higher will be its priority in displaying sensor states. For example, if all the sensors of a specific device are <span class="f_BoldCustom">Up</span>, but one of its sensors reaches a <span class="f_BoldCustom">Down</span> status, then the overall status of this device will be <span class="f_BoldCustom">Down</span> as well (for example, displayed red in the <a href="general_layout.htm#view" class="topiclink">Tree Map View</a>), because this status is higher up in the hierarchy. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_BoldCustom">Down</span> and <span class="f_BoldCustom">Down (Partial)</span> states are equal in the status hierarchy.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Sensor</span></p>
+</th>
+<th style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Color</span></p>
+</th>
+<th style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Status Name</span></p>
+</th>
+<th style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Meaning</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_red_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_red_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Red</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Down</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG is unable to reach the device, or the sensor has changed to the error state. See the </span><span class="f_BoldCustom"><a href="sensor_states.htm#behavior" class="topiclink">Sensor Warning and Down Behavior</a></span><span class="f_ListBulleted"> below for more information. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">By design, a sensor does not record any data in its channels while it shows this status. </span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Another reason for this status can be an error </span>limit that is set in the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted">, or an error status due to a sensor </span><span class="f_BoldCustom"><a href="define_lookups.htm" class="topiclink">Lookup</a></span><span class="f_ListBulleted">.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">In this case, the sensor continues to record data in all sensor channels although the sensor shows an error.</span></li>
+</ol>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon_green-red" width="19" height="19" style="margin:0;width:19px;height:19px;border:none" src="icon_green-red.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Green/Red</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Down (Partial)</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">In a cluster, at least one node reports this sensor as </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, while at least one other node reports the same sensor as </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This status is not available for sensors on remote probes in a <a href="clustering.htm" class="topiclink">failover cluster</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_redok_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_redok_big.png"/><span class="f_ListBulleted"> </span></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Bright-Red</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Down (Acknowledged)</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor is </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> and the status was acknowledged by a PRTG user, applying the </span><span class="f_BoldCustom">Acknowledge Alarm</span><span class="f_ListBulleted"> function. This can be helpful to mark that an alarm has already been brought to attention. For acknowledged alarms no further <a href="notifications.htm" class="topiclink">notifications</a> are sent. To set this sensor status, right-click the sensor in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status and from the <a href="context_menus.htm" class="topiclink">context menu</a>, select </span><span class="f_BoldCustom">Acknowledge Alarm...</span><span class="f_ListBulleted">. Then enter a comment and click </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_yellow_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_yellow_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yellow</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Warning</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor gives an error reading, but PRTG will try again. The sensor may soon change to a down status. See the </span><span class="f_BoldCustom"><a href="sensor_states.htm#behavior" class="topiclink">Sensor Warning and Down Behavior</a></span><span class="f_ListBulleted"> below for more information. Another reason for this status can be a warning </span>limit set in a sensor's <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_orange_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_orange_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Orange</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Unusual</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor reports unusual values for this weekday and time of day. The unusual detection is based on the historic average data and can be configured or disabled in the <a href="monitoring_settings.htm#unusual" class="topiclink">system administration</a>. You can also disable unusual detection for certain groups only (see </span><span class="f_BoldCustom"><a href="group_settings.htm#analysis" class="topiclink">Group Settings</a></span><span class="f_ListBulleted">).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_green_big" width="19" height="19" style="margin:0;width:19px;height:19px;border:none" src="led_green_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Green</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Up</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The last scan was okay and the sensor currently receives data.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_blue_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_blue_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Blue</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Paused</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor is currently paused (for a certain timespan, indefinitely, or triggered by a <a href="dependencies.htm" class="topiclink">dependency</a>).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:50px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_grey_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_grey_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:71px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Black (Gray)</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Unknown</span></p>
+</td>
+<td style="vertical-align:top; width:840px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor has not received any data yet or there is an error in (network) communication, likely on the probe system. If sensors show this status persistently, a PRTG restart may be necessary. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For extended troubleshooting, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/25643" target="_blank" class="weblink">What to check if sensors are black (gray)?</a> </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="behavior" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Warning and Down Behavior</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Down</span> status symbolizes that something is wrong with a monitored device. There can be various reasons for a down status, for example, an interruption in the physical connection to the device, an internet connection outage, or a crashed server.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">After a failed request, PRTG tries to re-contact the device before setting a sensor to <span class="f_BoldCustom">Down</span> status (this is true for almost all types of sensors):</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">If a request to a device fails for the first time, the sensor will change to </span><span class="f_BoldCustom">Warning</span><span class="f_ListNumbered" style="font-family: 'Trade Gothic LT Std Bold';"> </span><span class="f_ListNumbered">status. PRTG repeats the request and attempts to re-scan the device immediately.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">If the second request also fails, the sensor changes to </span><span class="f_BoldCustom">Down</span><span class="f_ListNumbered"> status by default until the device is reachable again. You can change this behavior in the </span><span class="f_ListNumbered" style="font-weight: bold;"><a href="root_group_settings.htm#scanning" class="topiclink">Scanning Interval</a></span> settings of any monitoring object<span class="f_ListNumbered">. PRTG tries to reach the device with every scanning interval.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;">This procedure gives devices and services the chance to recover from a momentary overload and prevents false alarms. Still, you are informed promptly about any network issues.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>The behavior described above does <span class="f_ItalicCustom">not</span> apply to <span class="f_BoldCustom">Warning</span> or <span class="f_BoldCustom">Down</span> states that are activated due to a warning or error limit set in the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span> or to channels using <a href="define_lookups.htm" class="topiclink">lookups</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: The PRTG Sensor States</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/sensor-states" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/sensor-states</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What to check if sensors are black (gray)?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/25643" target="_blank" class="weblink">https://kb.paessler.com/en/topic/25643</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Down,Down (Acknowledged),Down (Partial),None,OK,Paused,Sensor,Sensor Behavior,Sensor Status,Unknown,Unusual,Warning</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="general_layout.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="review_monitoring_data.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

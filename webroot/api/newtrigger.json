@@ -1,0 +1,2 @@
+<#system type="denyreadonlyusers">
+<#newtrigger json="1">

@@ -1,0 +1,67 @@
+﻿<!--Monitoring via SSH-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="wmi_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="packet_sniffer_monitoring.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring via SSH</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring via SSH</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Monitoring via Secure Shell (SSH) enables you to gather performance and system data from many Linux and Unix distributions, as well as from certain Mac OS X systems. If your system is supported, this monitoring technology will work without any additional software on the target systems.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="how" class="hmanchor"></a><span class="f_InTopicHeading">How Monitoring via SSH Works</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor remote machines via SSH, PRTG needs the credentials (preferably root access) of the devices. If you use SSH sensors with PRTG, you can enter the necessary credentials in PRTG for the parent device or group, or in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a></span> group, in the <span class="f_ItalicCustom">Credentials for Linux/Solaris/Mac OS (SSH/WBEM) Systems</span> section on the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Settings</a></span> tab. The sensors then inherit these settings by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">With each scanning interval, PRTG logs in to your devices and queries data by executing specific commands.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For an overview and details about all SSH sensors, see the <span class="f_BoldCustom"><a href="available_sensor_types.htm#linux" class="topiclink">List of Available Sensor Types</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limitations" class="hmanchor"></a><span class="f_InTopicHeading">Limitations When Using SSH Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Due to the plurality of Linux/Unix derivatives, SSH sensors cannot support all distributions on the market. Also, only certain Mac OS systems are supported. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For a list of successfully tested distributions, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/6733" target="_blank" class="weblink">Which Linux or Mac OS distributions are supported by the Linux/Unix sensors (SSH, SNMP)?</a></span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="authentication" class="hmanchor"></a><span class="f_InTopicHeading">Authentication via SSH Private Key</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG supports authentication via password or via private key.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">When you use a private key, please ensure the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Provide the key in </span><span class="f_ItalicCustom">OpenSSH</span><span class="f_ListBulleted"> RSA format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The key may </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> be encrypted! PRTG does </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> support password-protected keys.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The key must be provided as an </span><span class="f_ItalicCustom">RSA</span><span class="f_ListBulleted"> key, you cannot use </span><span class="f_ItalicCustom">DSA</span><span class="f_ListBulleted"> keys with PRTG!</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">When you provide an unencrypted RSA private key in OpenSSH RSA format, please copy the entire key, including the</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-----BEGIN&nbsp;RSA&nbsp;PRIVATE&nbsp;KEY-----</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">and</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-----END&nbsp;RSA&nbsp;PRIVATE&nbsp;KEY-----</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">lines, into the designated text field in PRTG and <span class="f_BoldCustom">Save</span> your settings. Once you have pasted in and saved the private key, PRTG shows it as</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">***************************</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;<br />
+Please make sure a corresponding public key exists on the target device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For a detailed description on how to convert and use an existing SSH key, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/32883" target="_blank" class="weblink">How can I use private keys for my SSH sensors with PRTG?</a></span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which Linux or Mac OS distributions are supported by the Linux/Unix sensors (SSH, SNMP)?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/6733" target="_blank" class="weblink">https://kb.paessler.com/en/topic/6733</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use private keys for my SSH sensors with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/32883" target="_blank" class="weblink">https://kb.paessler.com/en/topic/32883</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do I enable SSH on my Mac OS X system?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/33113" target="_blank" class="weblink">https://kb.paessler.com/en/topic/33113</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="wmi_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="packet_sniffer_monitoring.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

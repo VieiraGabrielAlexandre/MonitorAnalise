@@ -1,0 +1,1874 @@
+﻿/* _Prtg.SensorTree.css */
+#layout {
+  /*min-height: 600px;*/
+  flex: 1 0 auto;
+  min-width: 700px;
+}
+
+#layout.ui-layout-container .ui-layout-resizer {
+  display: none !important;
+}
+
+#layout .ui-layout-pane {
+  background: none;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+#layout .ui-layout-pane-east {
+  padding-left: 5px;
+}
+
+.slick-row {
+  position: relative;
+  width: 100%;
+}
+
+.grid-canvas:focus {
+  outline: none;
+}
+
+.grid-canvas .moreicon,
+.grid-canvas div.moreicon {
+  display: none;
+}
+
+.slick-row.ui-widget-content,
+.slick-row.ui-state-active {
+  position: relative;
+  display: block;
+  height: auto;
+}
+
+.hidden-row {
+  display: none;
+}
+
+.detailpageoverview td.col1 {
+  padding-right: 0;
+}
+
+
+.slick-header {
+  height: 0;
+  border: none;
+}
+
+.slick-headerrow-column {
+  float: left;
+  border: none;
+  padding-left: 2px;
+}
+
+.slick-top-panel {
+  display: none;
+  overflow: hidden;
+  padding-top: 4px;
+  padding-bottom: 6px;
+}
+
+.slickTree {
+  width: 100%;
+  /*height: 100%;*/
+  padding: 0;
+  overflow-y: auto;
+}
+
+#layout.fullsize #objecttreecontainer {
+  min-height: 100%;
+}
+
+#treeblocker {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #222;
+  opacity: 0.5;
+  z-index: 1000;
+  cursor: progress;
+}
+
+.cursor-progress * {
+  cursor: progress;
+}
+
+.cursor-notallowed * {
+  cursor: not-allowed;
+}
+
+.cursor--none * {
+  cursor: none;
+}
+
+#dropTarget.cursor-copy,
+.cursor-copy * {
+  cursor: copy;
+}
+
+row {
+  position: relative;
+}
+
+.valueColumn {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.valueColumn .smallprobe.disconnected {
+  opacity: 0.5;
+}
+
+.treeColumn {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.treeItem {
+  position: absolute;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.indent {
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.treeItem > level {
+  display: inline-block;
+}
+
+sensor,
+icon {
+  display: inline-block;
+  vertical-align: top;
+}
+
+probe,
+group,
+device,
+library,
+level,
+toggler,
+row div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+device {
+  width: 85%;
+  height: 100%
+}
+
+row,
+message,
+favorit {
+  display: block;
+}
+
+row {
+  position: relative;
+  height: 100%;
+  bottom: 0;
+}
+
+name {
+  display: inline;
+}
+
+.treeItem>level:first-child {
+  display: none;
+}
+
+
+/* .indent {
+  overflow: hidden;
+  right: 0;
+  height: 100%;
+}
+
+toggler {
+  position: relative;
+  bottom: 0;
+  background-color: #fff;
+  height: 100%;
+}
+
+*/
+.slick-row.odd row,
+.slick-row.odd .valueColumn,
+.slick-row.odd div.device .indent,
+.slick-row.odd div.device toggler,
+.slick-row.odd div level.device,
+.slick-row.odd div.device.collapsed toggler,
+.slick-row.odd div.group.collapsed toggler,
+.slick-row.odd div.group.collapsed,
+.slick-row.odd div.group.collapsed div.indent level.group,
+.slick-row.odd div.node.collapsed toggler,
+.slick-row.odd div.node.collapsed,
+.slick-row.odd div.node.collapsed div.indent level,
+.slick-row.odd div.probe.collapsed toggler,
+.slick-row.odd div.probe.collapsed,
+.slick-row.odd div.probe.collapsed div.indent level.probe,
+.slick-row.odd div.library[type="filter"] .indent,
+.slick-row.odd div.library[type="filter"] toggler,
+.slick-row.odd div.library[type="filter"] div level,
+.slick-row.odd div.library.collapsed[type="linked"] .indent,
+.slick-row.odd div.library.collapsed[type="linked"] toggler,
+.slick-row.odd div.library.collapsed[type="linked"] div level,
+.slick-row.odd div.library.collapsed[type="node"] .indent,
+.slick-row.odd div.library.collapsed[type="node"] toggler,
+.slick-row.odd div.library.collapsed[type="node"] div level,
+.slick-row.odd div.sensortree.collapsed toggler,
+.slick-row.odd div.sensortree.collapsed,
+.slick-row.odd div.sensortree.collapsed div.indent level {
+  background-color: <#colorcode color="midgray">;
+}
+
+.slick-row.even row,
+.slick-row.even .valueColumn,
+.slick-row.even div.device .indent,
+.slick-row.even div.device toggler,
+.slick-row.even div level.device,
+.slick-row.even div.device.collapsed toggler,
+.slick-row.even div.group.collapsed toggler,
+.slick-row.even div.group.collapsed,
+.slick-row.even div.group.collapsed div.indent level.group,
+.slick-row.even div.node.collapsed toggler,
+.slick-row.even div.node.collapsed,
+.slick-row.even div.node.collapsed div.indent level,
+.slick-row.even div.probe.collapsed toggler,
+.slick-row.even div.probe.collapsed,
+.slick-row.even div.probe.collapsed div.indent level.probe,
+.slick-row.even div.library[type="filter"] .indent,
+.slick-row.even div.library[type="filter"] toggler,
+.slick-row.even div.library[type="filter"] div level,
+.slick-row.even div.library.collapsed[type="linked"] .indent,
+.slick-row.even div.library.collapsed[type="linked"] toggler,
+.slick-row.even div.library.collapsed[type="linked"] div level,
+.slick-row.even div.library.collapsed[type="node"] .indent,
+.slick-row.even div.library.collapsed[type="node"] toggler,
+.slick-row.even div.library.collapsed[type="node"] div level,
+.slick-row.even div.sensortree.collapsed toggler,
+.slick-row.even div.sensortree.collapsed,
+.slick-row.even div.sensortree.collapsed div.indent level {
+  background-color: <#colorcode color="lightgray">;
+}
+/*library loading*/
+.slick-row.odd[estim="undefined"],
+.slick-row.even[estim="undefined"]{
+  background-color: transparent;
+}
+
+.slick-header-column .column-header {
+  float: left;
+  vertical-align: baseline;
+}
+
+.slick-cell {
+  height: 100%;
+}
+
+.indent>level {
+  border-radius: 0 0 0 4px;
+}
+
+.indent>level.device {
+  background-image: none;
+}
+
+level.collapsed {
+  background-color: #fff;
+}
+
+row>div>div>level,
+row>div>div>div>level[last="false"] {
+  background: url(/css/images/tv-item.png) repeat-y  scroll -3px 0 transparent;
+  background-color: #fff;
+  height: 100%;
+}
+
+.library-libObjects level {
+  background-image: none;
+}
+
+level[last='true'],
+level[last='true'] level,
+level[lastx='true'] level,
+.collapsed>.indent>level {
+  background-image: none;
+}
+
+level[lastx='true'] {
+  background-repeat: no-repeat;
+}
+
+toggler {
+  height: 16px;
+  /*padding-left: 2px;*/
+  /*margin-right: -1px;*/
+  background: url(/css/images/tv-collapse-gray.png) no-repeat scroll 3px 3px;
+  border-radius: 4px 0 0px 4px;
+  /*border-top: 1px solid #fff;*/
+}
+
+.tiny .device toggler,
+.tiny .library[type="filter"] toggler {
+  height: 9px;
+  border-radius: 4px 0 0 4px;
+  background-image: none;
+}
+
+div.collapsed toggler {
+  background: url(/css/images/tv-foldout-gray.png) no-repeat scroll 3px 3px;
+}
+
+.treeItem > level > level.group,
+.treeItem > level > level.probe,
+.treeItem > level > level.library {
+  background: url(/css/images/tv-item-open.png) repeat-x scroll -3px 0 transparent;
+}
+/*
+.treeItem > level > level.group:first-child,
+.treeItem > level > level.library:first-child {
+  background-image: none;
+}
+*/
+.treeItem.expanded.group,
+.treeItem.expanded.probe,
+.treeItem.expanded.library {
+  width: 100%;
+  display: block;
+  min-height: 0;
+}
+
+.treeItem.expanded > level > level.group,
+.treeItem.expanded > level > level.probe,
+.treeItem.expanded > level > level.library,
+.treeItem.collapsed > level > level.group,
+.treeItem.collapsed > level > level.probe,
+.treeItem.collapsed > level > level.library {
+  background: none;
+}
+
+.sensorItem {
+  height: auto;
+  border: none;
+}
+
+.sensorItem > div {
+  float: none;
+  display: block;
+}
+
+.treeItem.group.expanded .indent.level1 {
+  height: 100%;
+}
+group + p {
+  float: none;
+  height: 17px;
+  display: block;
+}
+
+.sensorItem > span {
+  float: none;
+  height: 25px;
+  display: block;
+}
+
+div.sensorItem > span a.treeminilink {
+  height: 100%;
+}
+
+.sensorItem.group,
+.sensorItem.probe {
+  border-left: none;
+  background: none;
+}
+
+.sensorItem * {
+  float: left;
+}
+
+.sensorItem.cell-inner {
+  padding: 1px 0;
+}
+.groupItem,
+.probeItem {
+  background: #fff;
+}
+
+.deviceItem .indent,
+.groupItem.collapsed .indent,
+.probeItem.collapsed .indent {
+  border-radius: 0 0 0 4px;
+}
+
+
+level > icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.groupItem.expanded level > icon,
+.probeItem.expanded level > icon {
+  background-color: #fff;
+}
+probe,
+group,
+device,
+library {
+  white-space: pre-wrap;
+  overflow: hidden;
+  font-size: 11px;
+  width: 81%;
+  height: 100%;
+}
+
+library {
+  min-width: 50px;
+  min-height: 11px;
+  font-weight: bold;
+}
+
+probe name,
+group name,
+div.node name {
+  font-weight: normal;
+  font-size:14px;
+}
+probe message,
+group message {
+  margin-top: -5px;
+  font-size: 10px;
+}
+
+device condition,
+device status,
+device message {
+  color: #555;
+  font-size: 10px;
+}
+
+condition,
+message {
+  font-style: italic;
+}
+
+probe condition,
+group condition {
+  font-size: 10px;
+  padding-top: 3px;
+  margin-left: 2ex;
+}
+
+.tiny probe condition,
+.tiny group condition,
+.treeissmall probe condition,
+.treeissmall group condition,
+div.collapsed probe condition,
+div.collapsed group condition {
+  padding-top: 0;
+}
+
+probe condition:empty,
+group condition:empty,
+device condition:empty,
+device status:empty,
+device message:empty {
+  display: none;
+}
+
+div.expanded probe,
+div.expanded group {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  background: none;
+  border: none;
+  padding-left: 0;
+}
+
+div.expanded probe name,
+div.expanded group name {
+  line-height: 18px;
+  display: inline;
+}
+
+sensor {
+  background-color: #fff;
+  display: inline-block;
+  font-size: 9px;
+  margin: 2px 2px 1px 1px;
+  padding: 0 2px 0 0;
+  border: none;
+  color: #000;
+  vertical-align: middle;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 2px #888;
+  position: relative;
+}
+
+probe name {
+  margin-right: 3px;
+}
+
+#objecttreecontainer.treeisnoteditable sensor:hover name[goto] {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* .offline name {
+  color: #666;
+}
+
+*/
+condition {
+  margin-left: 1px;
+}
+
+favorit {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.slick-row.even device favorit {
+  background-color: <#colorcode color="lightgray">;
+}
+
+.slick-row.odd device favorit {
+  background-color: <#colorcode color="midgray">;
+}
+
+sensor favorit {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+sensor.status5 favorit {
+  background-color: #FDD5D7;
+}
+
+.treeissmall sensor.status7 *,
+.treeissmall sensor.status8 *,
+.treeissmall sensor.status9 *,
+.treeissmall sensor.status11 *,
+.treeissmall sensor.status12 *,
+.treeissmall sensor.status7,
+.treeissmall sensor.status8,
+.treeissmall sensor.status9,
+.treeissmall sensor.status11,
+.treeissmall sensor.status12 {
+  background-color: #C3D2E9;
+}
+
+.ui-mobile-viewport sensor favorit span.ui-icon {
+  background: none;
+  background-image: url("images/ui-icons_888888_256x240.png");
+  height: 14px;
+  background-position: -14px -115px;
+}
+
+.ui-mobile-viewport sensor favorit span.ui-icon.objectisfavorite {
+  background-image: url("images/ui-icons_454545_256x240.png");
+}
+
+probe.offline {
+  color: #D21925;
+}
+
+sensor name,
+sensor value {
+  padding-left: 2px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+sensor value {
+  color: #888;
+}
+
+div.noaccess toggler {
+  background: url(/css/images/tv-item-group.png) no-repeat scroll -3px -3px transparent;
+}
+/*.managelibraryleft{
+  padding-right: 7px;
+}
+.managelibraryright{
+  padding-left: 7px;
+}
+*/.managelibraryright probe,
+.managelibraryright group,
+.managelibraryright device,
+.treeiseditable probe,
+.treeiseditable group,
+.treeiseditable device {
+  cursor: pointer!important;
+}
+
+.managelibraryright device status,
+.managelibraryright device condition,
+.managelibraryright device message,
+.treeiseditable device status,
+.treeiseditable device condition,
+.treeiseditable device message {
+  display: none;
+}
+
+.treeissmall * {
+  font-size: 11px;
+}
+
+.tiny * {
+  font-size: 10px;
+}
+
+.tiny name {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tiny sensor {
+  height: 15px;
+  width: 78px;
+}
+
+.tiny sensor name {
+  width: 60px;
+}
+
+.tiny sensor value {
+  display: none;
+}
+
+.tiny device {
+  height: auto
+}
+
+.c1 {
+  min-height: 16px;
+}
+
+.r1 {
+  height: 100%;
+}
+
+.r1.children00 {
+  height: 50px;
+}
+
+/*.tiny .r1 {
+  height: 19px
+}
+*/
+.tiny .r1.children00 {
+  height: 50px;
+}
+
+/*.small .r1 {
+  height: 27px;
+}
+*/
+.small .r1.children00 {
+  height: 50px;
+}
+.sensorTree[data-display-mode="managed"] .small .r1.children00,
+.sensorTree[data-display-mode="managed"] .r1.children00{
+  height: 100%;
+}
+div.probe.collapsed sensor,
+div.goup.collapsed sensor,
+.small sensor.group {
+  height: 16px;
+  /*margin-bottom: 1px;*/
+  overflow: hidden;
+}
+
+.small sensor {
+  height: 24px;
+  width: 78px;
+}
+
+.small sensor name {
+  width: 62px;
+}
+
+.small div.collapsed.group sensor name,
+.small div.collapsed.probe sensor name {
+  padding-top: 2px;
+}
+div.collapsed sensor.group favorit{
+  bottom: auto;
+}
+.small sensor value {
+  width: 60px;
+}
+
+.medium sensor {
+  height: 24px;
+  width: 155px;
+}
+
+.medium sensor name {
+  width: 136px;
+  overflow: hidden;
+}
+
+.medium sensor value {
+  width: 136px;
+  overflow: hidden;
+}
+
+.treeissmall sensor value {
+  display: none;
+}
+
+.treeissmall sensor {
+  height: 12px!important;
+  margin: 1px;
+  border-radius: 0;
+  box-shadow: 0 0 1px #222;
+}
+
+.treeissmall sensor name {
+  padding: 0 1px!important;
+  width: 77px;
+  line-height: 12px;
+}
+
+.treeissmall sensor icon {
+  display: none;
+}
+
+.treeissmall sensor favorit {
+  top: -2px;
+}
+
+.treeissmall favorit .objectisnotfavorite,
+.treeissmall sensor favorit .objectisnotfavorite {
+  opacity: 0.3;
+}
+
+.large sensor {
+  height: 16px; /* overwritten by javascript */
+  width:98%;
+  width: calc(100% - 5px);
+}
+
+.large sensor name {
+  width: auto;
+  max-width: 80%;
+  margin-top: 1px;
+}
+
+.large .collapsed sensor name {
+  max-width: none;
+}
+
+.large sensor value {
+  width: auto;
+  max-width: 15%;
+  position:absolute;
+  right: 20px;
+  top: 1px;
+}
+
+.large .collapsed sensor value {
+  display: none;
+}
+
+sensor icon {
+  width: 14px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left top;
+}
+
+
+/* Unknown grey */
+sensor.status0  icon,
+sensor.status1  icon,
+sensor.status6  icon {
+  background-image: url(/icons/icon_unknown.svg);
+}
+
+
+/* Up green */
+sensor.status3  icon {
+  background-image: url(/icons/icon_up.svg);
+}
+
+
+/* Warning yellow */
+sensor.status4  icon {
+  background-image: url(/icons/icon_warning.svg);
+}
+
+
+/* Down red */
+sensor.status5  icon {
+  background-image: url(/icons/icon_down.svg);
+}
+
+sensor.status5 {
+  background-color: #FDD5D7;
+  box-shadow: 0 0 2px #D21925;
+}
+
+
+/* Down Ack redok */
+sensor.status13  icon {
+  background-image: url(/icons/icon_downack.svg);
+}
+
+
+/* Down Partial red-green */
+sensor.status14  icon {
+   background-image: url(/icons/icon_partdown.svg);
+}
+
+
+/* Paused blue */
+sensor.status7  icon,
+sensor.status8  icon,
+sensor.status9  icon,
+sensor.status11 icon,
+sensor.status12 icon {
+  background-image: url(/icons/icon_paused.svg);
+}
+
+
+/* Unusual orange */
+sensor.status10 icon {
+  background-image: url(/icons/icon_unusual.svg);
+}
+
+.hideundefined sensor.status1,
+.hideup sensor.status3,
+.hidewarn sensor.status4,
+.hidedown sensor.status5,
+.hidepartialdown sensor.status14,
+.hidedownack sensor.status13,
+.hidepaused sensor.status7,
+.hidepaused sensor.status8,
+.hidepaused sensor.status9,
+.hidepaused sensor.status11,
+.hidepaused sensor.status12,
+.hideunusual sensor.status10 {
+  display: none;
+}
+
+#dynRowSizer {
+}
+
+#dragAdorner {
+  position: absolute;
+  display: inline-block;
+  z-index: 99999;
+  opacity: 1;
+  max-height: 100px;
+  max-width: 300px;
+  margin-left: 5px;
+}
+
+#dragAdorner * {
+  display: inline-block;
+  position: static;
+  float: none;
+  vertical-align: top;
+}
+
+#dragAdorner name {
+  display: inline;
+}
+
+#dragAdorner condition,
+#dragAdorner message,
+#dragAdorner favorit,
+#dragAdorner status {
+  display: none;
+}
+
+#dragAdorner[type='probe'],
+#dragAdorner[type='group'],
+#dragAdorner[type='device'],
+#dragAdorner[type='sensor'],
+#dragAdorner[type='library'] {
+  box-shadow: 0 0 2px 1px <#colorcode color="linkcolor">;
+  border: 1px solid #555;
+  background: #fff;
+}
+
+#dragAdorner[type='sensor'] {
+  height: 15px;
+  overflow: hidden;
+}
+
+#dragAdorner[type='sensor'] icon {
+  display: none;
+}
+
+#dragAdorner sensor name {
+  display: inline-block;
+  width: 76px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+#dragAdorner toggler,
+#dragAdorner .valueColumn {
+  display: none;
+  background: none;
+}
+
+#dragAdorner level icon {
+  display: inline-block;
+  border: none;
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+}
+
+#dragAdorner device,
+#dragAdorner library,
+#dragAdorner group,
+#dragAdorner probe {
+  margin-top: 0;
+}
+
+#dradragAdorner .treeColumn {
+  height: auto;
+}
+
+#dragAdorner .selected,
+#dragAdorner .active {
+  background-color: transparent;
+}
+
+#treeAdorner {
+  background-image: url(/css/images/ui-icons_cd0a0a_256x240.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+#treeAdorner.dropBefore {
+  margin-top: -8px;
+}
+
+#treeAdorner.dropOnClosed {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#treeAdorner.dropAfter {
+  bottom: -8px;
+}
+
+dragging sensor,
+dragging .indent {
+  opacity: 0.45;
+}
+
+sensor.sensorAdorner {
+  opacity: 0.2;
+  background: <#colorcode color="linkcolor">;
+}
+
+sensor.sensorAdorner * {
+  display: none;
+}
+
+.treeissmall sensor {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.treeissmall sensor * {
+  cursor: default;
+}
+
+.treeissmall sensor.dragable,
+.treeissmall sensor.dragable * {
+  cursor: move;
+  opacity: 1;
+}
+
+
+.treeissmall sensor.noContextMenu {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.treeissmall sensor.fixed *,
+.treeissmall sensor.noContextMenu * {
+  cursor: default;
+}
+
+.treeissmall sensor.dragable:hover {
+  box-shadow: 0 0 1px 1px <#colorcode color="linkcolor">;
+}
+
+dragging sensor.dragable:hover {
+  box-shadow: none;
+}
+
+.treeissmall sensor name {
+  position: absolute;
+  display: inline-block;
+}
+
+.treeissmall sensor icon.working {
+  display: inline-block;
+}
+
+.treeissmall name:hover {
+  text-decoration: none;
+}
+
+.treeissmall .indent {
+  padding: 1px;
+}
+
+.treeissmall .indent,
+.treeissmall .indent * {
+  cursor: move;
+}
+
+.treeissmall div.group .indent {
+  padding-top: 0px;
+}
+
+.treeissmall .indent:hover,
+.treeissmall .indent.hovered {
+  <#system type="browserdependent" aboveversion="8" browsertype="MSIE" browsercontent="padding: 0;
+  ">
+  border: 1px solid <#colorcode color="linkcolor">;
+  padding-left: 0px;
+}
+
+.treeissmall .nondragable name,
+.treeissmall .nondragable icon {
+  opacity: 0.5;
+}
+
+.nondragable * {
+  cursor: pointer !important;
+}
+
+.treeissmall .nondragable .indent:hover {
+  border: none;
+  outline: none;
+}
+
+dragging .indent:hover {
+  border: none;
+  outline: none;
+  padding: 1px;
+}
+
+.treeissmall .sensorItem.cell-inner {
+  margin-left: 0;
+}
+
+.deviceTree * {
+  vertical-align: top;
+}
+
+.deviceTree level,
+.deviceTree toggler,
+.deviceTree div {
+  display: inline-block;
+}
+
+.deviceTree div {
+  margin: 0;
+}
+
+.deviceTree level.item,
+.deviceTree level.device,
+.deviceTree level.collapsed {
+  border-radius: 0;
+}
+
+.deviceTree level.device toggler {
+  background-image: none;
+}
+
+.deviceTree .slick-row {
+  height: 20px;
+}
+
+a.treeminilink,
+a.treeminilink:link,
+a.treeminilink:active,
+a.treeminilink:visited {
+  background-repeat: no-repeat;
+  margin: 0 1px;
+}
+
+.treeColumn.children00  a.treeminilink {
+  margin: 5px;
+  height: 25px;
+}
+
+.rootTree .treesearchbox {
+  position: relative;
+  float: right;
+  width: 90px;
+  margin-right: 3px;
+}
+
+.treesearchbox {
+  position: relative;
+}
+
+.treesearchbox label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.treesearchbox input {
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  text-indent: 15px;
+  width: 90px;
+  line-height: 16px;
+  height: 16px;
+}
+
+.treesearchbox input:active {
+  color: #000;
+}
+
+.grid-canvas {
+  width: 100%;
+}
+.slick-viewport{
+}
+.slick-top-panel,
+.slick-top-panel-scroller,
+.slick-top-panel-scroller .ui-state-default {
+  border: none;
+  background: #fff;
+  filter: none;
+}
+
+.slick-top-panel-scroller .sensorstateswitches .ui-state-default {
+  border: 1px solid #fff;
+}
+
+.slick-top-panel-scroller .sensorstateswitches .ui-state-default:hover {
+  border: 1px solid <#colorcode color="midgray">;
+}
+
+.treeiseditable .slick-top-panel-scroller {
+  display: none;
+}
+
+div.slick-row[row='0'] level[lastx='true'],
+div.slick-row[row='0'] > level,
+div.slick-row[row='0'] level toggler {
+  background: none;
+}
+
+.l0.r1.unapproved {
+  height: 60px;
+}
+
+.approvebutton {
+  font-size: 11px;
+}
+
+/*.tiny .approve,
+.treeiseditable .approve {
+  zoom: 0.75;
+}
+*/
+.approve {
+  display: block;
+}
+
+.centeredHint {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  font-size: 13px;
+}
+
+.propertiesHint {
+  padding: 5px;
+  font-size: 13px;
+}
+
+.centeredHint b,
+.propertiesHint b {
+  color: #ed0e69;
+}
+
+.treeiseditable a.treeminilink {
+  display: none;
+}
+
+probe name:hover,
+group name:hover,
+device name:hover,
+library[libkind="linked"] name:hover,
+library[libkind="sensorTree"] name:hover,
+library[libkind="filter"] name:hover,
+library[libkind="node"] name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+div.noaccess probe name:hover,
+div.noaccess group name:hover,
+div.noaccess device name:hover,
+div.noaccess library name:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+library .droptarget {
+  display: block;
+  color: #666;
+  background-color: #aaa;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.treemap {
+  position: relative;
+  top: 0;
+}
+
+.treemap .cell {
+  overflow: hidden;
+  position: absolute;
+}
+
+.treemap .cell.group {
+  box-shadow: 0px 0px 7px 0px #000000;
+}
+
+.treemap .cell.device a {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.treemap .cell.device.down a {
+  color: #fff;
+}
+
+.treemap .cell > div,
+.treemap device {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.treemap device {
+  outline: <#colorcode color="lightgray"> solid 1px;
+}
+
+.treemap text {
+  font-family: "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.treemap name {
+  float: left;
+  position: absolute;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  left: 1px;
+  right: 1px;
+  top: 0px;
+  text-indent: 14px;
+}
+
+.treemap  sensor {
+  float: left;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+}
+
+.treemap sensor icon,
+condition,
+name {
+  display: inline-block;
+}
+
+probe name,
+probe condition,
+group name,
+group condition,
+group message {
+  vertical-align: top;
+}
+
+.treemap icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+}
+
+.treemap .cell favorit {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: 2px;
+}
+
+.treemap div.device device name {
+  font-size: 9px;
+  word-wrap: break-word;
+}
+
+g.down,
+g.partialdown,
+g.linked path,
+g.node path,
+.treemap .library.linked.partialdown,
+.treemap .library.linked.down,
+.treemap .probe.none {
+  color: #fff;
+  fill: #fff;
+  background-color: #fff;
+}
+
+.treemap .device.down,
+.treemap .library.down,
+g.down path,
+.treemap .device.partialdown,
+.treemap .library.partialdown,
+g.partialdown path {
+  fill: <#colorcode color="statusdown">;
+  background-color: <#colorcode color="statusdown">;
+}
+
+.treemap .device.warn,
+.treemap .library.warn,
+g.warn  path {
+  fill: <#colorcode color="statuswarning">;
+  background-color: <#colorcode color="statuswarning">;
+}
+
+.treemap .device.downack,
+.treemap .library.downack,
+g.downack  path {
+  fill: <#colorcode color="statusdownack">;
+  background-color: <#colorcode color="statusdownack">;
+}
+
+.treemap .device.paused,
+.treemap .library.paused,
+g.paused path {
+  fill: <#colorcode color="statuspaused">;
+  background-color: <#colorcode color="statuspaused">;
+}
+
+.treemap .device.unusual,
+.treemap .library.unusual,
+g.unusual path {
+  fill: <#colorcode color="statusunusual">;
+  background-color: <#colorcode color="statusunusual">;
+}
+
+.treemap .device.none,
+.treemap .library.none,
+g.none path {
+  stroke: <#colorcode color="mousegray">;
+  fill: white;
+  background-color: White;
+}
+
+.treemap .device.up,
+.treemap .library.up,
+g.up path {
+  fill: <#colorcode color="statusup">;
+  background-color: <#colorcode color="statusup">;
+}
+
+.treemap .device.undefined,
+.treemap .library.undefined,
+g.undefined path {
+  fill: <#colorcode color="statusunknown">;
+  background-color: <#colorcode color="statusunknown">;
+  color: #fff;
+}
+#layout.library .bordered .slickTree{
+  border: 3px solid <#colorcode color="lightgray">;
+}
+#treemapSizeSwitch input,
+#sunburstSizeSwitch input {
+  display: none;
+}
+
+#treemapSizeSwitch label,
+#sunburstSizeSwitch label {
+  padding: 3px;
+  border: 1px solid lightGrey;
+  line-height: 18px;
+}
+
+.treemap .sensorstateswitches,
+.treemap .searchbox,
+.sunburst .sensorstateswitches,
+.sunburst .searchbox {
+  display: none;
+}
+
+.sunburst .slick-viewport {
+  overflow: hidden !important;
+}
+
+.treemap .treesizeswitches,
+.sunburst .treesizeswitches {
+  right: 0px;
+}
+
+.treemap *[goto],
+.sunburst *[goto] {
+  cursor: pointer;
+}
+
+.sunburst path {
+  stroke: #fff;
+  cursor: pointer;
+}
+
+.sunburst g.uplink path {
+  fill: transparent;
+}
+
+.sunburst g.uplink a {
+  font-size: 0px;
+  stroke: <#colorcode color="midgray">;
+  fill: <#colorcode color="midgray">;
+}
+
+.sunburst:hover g.uplink a,
+.sunburst g.uplink:hover a,
+.sunburst g.uplink a:hover,
+.sunburst g.uplink a text:hover {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.detailpageoverview .col2.multiedit {
+  width: 438px;
+  padding: 0px;
+  margin: 0px;
+  top: auto;
+  right: 7px;
+  border: none;
+  box-shadow: 0 0 3px #777777;
+}
+
+.detailpageoverview .col2.multiedit.fullsize.unpinned {
+  width: 16px;
+  background-color: <#colorcode color="midgray">;
+  right: 4px;
+  margin-left: 4px;
+  border: none;
+  box-shadow: 0 0 3px #777777;
+}
+
+.detailpageoverview .col2.multiedit.fullsize,
+.detailpageoverview .col2.multiedit.unpinned.show {
+  background-color: #FFF;
+  width: 430px;
+}
+
+.detailpageoverview .col2.multiedit.fullsize.unpinned #rightpanel_pinbutton {
+  background-image: url("/css/images/ui-icons_ebebeb_256x240.png");
+  background-repeat: no-repeat;
+  background-position: -131px -145px;
+  background-color: <#colorcode color="menucolor">;
+  opacity: 1;
+}
+
+.detailpageoverview .col2.multiedit.fullsize.unpinned #rightpanel_titletext,
+.detailpageoverview .col2.multiedit.fullsize.unpinned .editsettings {
+  display: none;
+}
+
+.detailpageoverview .col2.multiedit.fullsize.unpinned.show #rightpanel_titletext,
+.detailpageoverview .col2.multiedit.fullsize.unpinned.show .editsettings {
+  display: block;
+}
+
+.ui-layout-resizer {
+  top: auto;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+.detailpageoverview span.ui-layout-resizer-east {
+  right: 4px;
+  margin-left: 4px;
+  border: none;
+  box-shadow: 0 0 3px #777777;
+}
+
+.detailpageoverview span.ui-layout-resizer-east div {
+  border: none;
+  box-shadow: 0 0 3px #777777;
+}
+
+.treeissmall .selected,
+.treeissmall .selected .indent,
+.treeissmall .selected .indent * {
+  background-color: <#colorcode color="linkcolor"> !important;
+  color: White;
+}
+
+.treeissmall sensor.selected * {
+  background-color: <#colorcode color="linkcolor">;
+  color: White;
+}
+
+#layout.fullsize {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#layout.fullsize .ui-table-row {
+  display: table-header-group;
+}
+
+#layout.fullsize .ui-layout-north,
+#layout.fullsize .ui-layout-south {
+  width: 100%;
+  display: table-caption;
+}
+
+#layout.fullsize .ui-layout-north {
+  margin-bottom: 5px;
+}
+
+#layout.fullsize .ui-layout-south {
+  display: table-footer-group;
+}
+
+#layout.fullsize .ui-layout-center,
+#layout.fullsize dummy {
+  display: table-cell;
+  vertical-align: top;
+}
+
+
+/* #layout.fullsize dummy {
+  width: 320px;
+}
+
+*/
+#layout.fullsize .ui-layout-center {
+  padding: 0 4px 10px 4px;
+}
+
+#layout.fullsize .ui-layout-east {
+  width: 320px;
+  min-height: 700px;
+  display: table-cell;
+  vertical-align: top;
+}
+
+#layout.fullsize .ui-layout-east.multiedit.unpinned {
+  width: 16px;
+  background-color: <#colorcode color="midgray">;
+}
+
+#layout.fullsize .ui-layout-east.multiedit.unpinned .inline {
+  display: none;
+}
+
+#layout.fullsize .ui-layout-east.multiedit {
+  width: 408px;
+  border-left: 1px solid <#colorcode color="lightgray">;
+}
+
+#layout .ui-layout-east.multiedit.fullsize.show {
+  width: 420px;
+  min-width: 420px;
+}
+
+#layout .ui-layout-east.multiedit.fullsize.unpinned {
+  width: 16px;
+  max-width: 420px;
+}
+
+.controls label {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.d3.sunburst text:hover {
+  text-decoration: underline;
+}
+
+.d3.sunburst text {
+  cursor: pointer;
+}
+
+.roundbuttons {
+  background: <#colorcode color="midgray">;
+  background-image: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px #000;
+  border: 1px solid #fff;
+  border-collapse: separate;
+  background: url(data:image/svg+xml;
+    base64, PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2U4ZTllYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM0JSIgc3RvcC1jb2xvcj0iI2UwZTFlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2UyZTNlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #ffffff 0%, #E8E9EA 33%, #E0E1E3 34%, #E2E3E5 45%, #F7F7F8 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%, #E8E9EA 33%, #E0E1E3 34%, #E2E3E5 45%, #F7F7F8 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #E8E9EA 33%, #E0E1E3 34%, #E2E3E5 45%, #F7F7F8 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #E8E9EA 33%, #E0E1E3 34%, #E2E3E5 45%, #F7F7F8 100%);
+  background: linear-gradient(top, #ffffff 0%, #E8E9EA 33%, #E0E1E3 34%, #E2E3E5 45%, #F7F7F8 100%);
+  display: inline-block
+}
+
+.treesizeswitches {
+  margin-top: 7px;
+}
+.treesizeswitches label{
+  vertical-align: bottom;
+}
+
+.treesizeswitches label:hover .roundbuttons {
+  border: 1px solid #DD2765;
+  box-shadow: 0px 0px 2px #DD2765;
+}
+
+.treesizeswitches label.sunburst:hover div,
+.treesizeswitches label.treemap:hover div {
+  border-color: #DD2765;
+  box-shadow: 0px 0px 2px #DD2765;
+}
+
+.treesizeswitches label.first div {
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+}
+
+.treesizeswitches label.second div {
+  width: 9px;
+  height: 9px;
+  margin: 0 4px;
+}
+
+.treesizeswitches label.third div {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.treesizeswitches label.last div {
+  width: 15px;
+  height: 15px;
+  margin: 0 4px;
+}
+
+.treesizeswitches input + label div {
+  top: 1px;
+  box-shadow: 0px 0px 2px #000;
+  border: 1px solid #fff;
+}
+
+.treesizeswitches input:checked + label span,
+.treesizeswitches input:checked + label div {
+  border: 1px solid #000;
+}
+
+.treesizeswitches ul {
+  display: none;
+  background: white;
+  padding-bottom: 10px;
+  list-style-type: none;
+  -webkit-padding-start: 17px;
+  box-shadow: 1px 1px 2px #888;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+  border-top: none; /* IE8 */
+  width: 75px;
+  height: 110px;
+  margin: 7px auto 0 auto;
+}
+
+.treesizeswitches label.newview {
+}
+
+.treesizeswitches label.newview div {
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.treesizeswitches label.treemap div {
+  background-image: url(/images/treemap.svg);
+}
+
+.treesizeswitches label.sunburst div {
+  background-image: url(/images/sunburst.svg) !important;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px #000;
+  border: 1px solid #fff;
+}
+
+.mapelementeditbox .fadeinpath {
+  display: none;
+}
+
+.checkboxbuttonset .ui-state-default .ui-button-icon-primary {
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  border: 2px solid <#colorcode color="midgray">;
+  border-radius: 4px;
+  background: white;
+}
+
+.checkboxbuttonset .ui-state-active .ui-button-icon-primary {
+  background-position: -7px -7px;
+  background-image: url(/images/checked.png);
+}
+
+.sensorstateswitches input {
+  display: none;
+}
+
+.sensorstateswitches div {
+  display: inline-block;
+  float: left;
+}
+
+.overviewsmalldata input:checked + label i.prtg-checkbox {
+  background-position: -66px -147px;
+}
+
+.overviewsmalldata label {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.overviewsmalldata label .prtg-checkbox {
+  width: 11px;
+  height: 11px;
+  margin: 1px 5px 0 5px;
+  border: none;
+  outline: 2px solid <#colorcode color="midgray">;
+}
+
+.overviewsmalldata label span {
+  min-width: 30px;
+  margin-left: -5px;
+}
+
+.sensorstateswitches .iszero0 {
+  display: none;
+}
+
+.managelibraryright .treesizeswitches {
+  display: none;
+}
+
+.size-by-switch.show {
+  visibility: visible;
+}
+
+.size-by-switch {
+  visibility: hidden;
+}
+
+.scrollabletablecontainer .slick-viewport {
+  border: none;
+}
+
+.treeisreadonly .treeminilink {
+  display: none;
+}
+
+#viewport #Zoom_Sunburst,
+.slick-viewport #Zoom_Sunburst {
+  visibility: hidden;
+}
+
+#viewport:hover #Zoom_Sunburst,
+.slick-viewport:hover #Zoom_Sunburst {
+  visibility: visible;
+}
+
+.treeswitches {
+  display: inline;
+  min-height: 15px;
+}
+.treeItem.autodisco icon{
+  display: inline-block;
+  background-image: url(/images/ajax-loader-small.gif)!important;
+  background-position: 0 2px !important;
+}

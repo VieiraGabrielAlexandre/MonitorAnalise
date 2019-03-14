@@ -1,0 +1,67 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addgroup.title" default="Add Group" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><#lang key="html.addgroup0.head" default="Add Group"></h1>
+	<div id="content" class="ui-dialog-content">
+			<form id="addobjectdialogform" action="addgroup.htm" method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+				<fieldset>
+					<legend class="prtg-header"><#lang key="html.addgroup0.wizhead" default="Choose a Probe or Group to Add the New Group to"></legend>
+					<div class="control-group">
+						<div class="controls fillwidth">
+							<p class="controls-info">
+									<span class="readonlyproperty">
+										<#lang key="html.addgroup0.wizhelp1" default="Select a group from the list. Tip: You can create new groups much faster by right-clicking a probe or group and choosing <b>Add Group</b> from the context menu."></span>
+								</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<!-- <label class="control-label no_help" for="hostid"><#lang key="html.global.search2" default="Search..."></label> -->
+						<div class="controls fillwidth">
+              <div class="searchbox">
+                <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+                <input id="objtreesearch" type="text" data-placement="top" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">"  name="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">">
+              </div>
+							<div class="prtg-plugin objectselector"
+								style="height:400px"
+								id="objectSelectorTree"
+								data-plugin="objectselector"
+								data-branch="<#inserturlparam parameter="preselect">"
+								data-allowone="1">
+	                <!--
+	                {
+	                  "tree": <#selectionlist content='groupsanddevices_as_json'
+												id='0'
+												groups='1'
+												hidedevices='1'
+												probes='1'
+												allowroot='0'
+												altformat='1'>
+									}
+									-->
+							</div>
+							<input data-validate-related="#objectSelectorTree" class="fieldrequired {required:true} invisible" id="groupdevid" name="id" type="text">
+						</div>
+					</div>
+				</fieldset>
+				<div class="submitbuttonboxanchor">
+					<div class="submitbuttonbox" style="position: static!important;">
+						<input style="<#system type="hideforreadonlyusers">" class="submit btngrey button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+						<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+					</div>
+				</div>
+		</form>
+	</div>
+<#lang key="html.addgroupgeneral.help.text" default="In PRTG your network devices are organized into groups. You can define as many groups as you like and you can create multiple levels of sub-groups."  var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#lang key="html.addgroupgeneral.help.title" default="Add a New Group" var="helptitle">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#lang key="html.addgroup0.help.title" default="Choose Parent" var="helptitle">
+<#lang key="html.addgroup0.help.text" default="Choose a parent object for the group.<br><br><a href='/help/add_a_group.htm' target='_blank'><b>Help: Add a Group</b></a>"  var="helptext">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

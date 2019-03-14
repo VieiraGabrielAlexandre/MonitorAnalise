@@ -1,0 +1,6 @@
+﻿<#system type="denyfornonadmins">
+<div class="licensebox">
+  <h2><#lang key="html.welcome.licenseinfos.headline" default="License Status"/></h2>
+    <#system type="editiontype" var="editiontype"/>
+    <#include file="controls\welcome_licenseinfo_@editiontype.htm" varexpand="file" skiptagfornonadmins="true"/>
+</div>

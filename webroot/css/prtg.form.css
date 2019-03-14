@@ -1,0 +1,787 @@
+﻿/* prtg.form.css */
+.InitialDisplayNone {
+  display: none !important;
+}
+
+.no_help {
+  clear: left;
+}
+
+.has_help {
+  clear: both;
+}
+
+.prtg-form {
+  display: block;
+  margin-top: 5px;
+}
+
+.prtg-form fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  background: #fff;
+  padding: 0 0 10px 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+.prtg-form select {
+  min-height: 21px;
+  padding-left: 2px !important;
+}
+
+.prtg-form textarea,
+#comments textarea {
+  background-color: <#colorcode color="lightgray">;
+}
+
+#comments textarea {
+  height: 400px;
+  width: 820px;
+  margin: 4px;
+}
+
+.prtg-form legend:first-child {
+  margin-top: 0;
+}
+
+.prtg-form fieldset legend {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: #fff;
+  margin-top: 30px;
+  padding: 12px 0px 5px 3px;
+  text-transform: uppercase;
+  font-family: "Lucida Sans-Serif", "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-weight: normal;
+  color: <#colorcode color="linkcolor">;
+  font-size: 18px;
+}
+.prtg-form fieldset legend dummy{
+  display: inline-block;
+  bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 27em;
+  padding: 0;
+  vertical-align: bottom;
+}
+@-moz-document url-prefix() {
+  wingui-hidden {
+    display: block;
+  }
+}
+
+/* wg.  gelbem blink effekt beim einblenden */
+.prtg-form fieldset.collapsed {
+  padding: 0;
+}
+
+.prtg-form fieldset.collapsed .control-group {
+  display: none;
+}
+
+.prtg-form fieldset legend i.right {
+  cursor: pointer;
+}
+
+.prtg-form fieldset legend>label {
+  width: 360px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.prtg-form fieldset legend>label:hover {
+  text-decoration: underline;
+}
+
+.prtg-form fieldset legend>span>label:hover {
+  text-decoration: underline;
+}
+
+.prtg-form fieldset .control-group {
+  padding: 3px;
+}
+
+/* <#comment Label> */
+.prtg-form fieldset>.control-group .control-label {
+  background: #fff !important;
+  display: block;
+  width: 170px;
+  float: left;
+  padding: 6px 27px 4px 0px;
+  white-space: normal;
+}
+
+.prtg-form fieldset>.control-group .control-label:first-child {
+  border-bottom: none;
+}
+
+/* comparison label */
+.prtg-form fieldset>.control-group .control-label.comparison {
+  width: 76px;
+  display: none;
+}
+
+
+/* <#comment Control> */
+.prtg-form fieldset>.control-group .controls {
+  display: block;
+  white-space: normal;
+  width: 508px;
+  float: left;
+  margin: 1px;
+  position: relative;
+  padding: 0;
+  background-color: <#colorcode color="lightgray">;
+  margin-bottom: 9px;
+}
+
+.prtg-form .controls #favstarinput:hover {
+  background-color: <#colorcode color="midgray">;
+}
+
+.prtg-form .controls .checkboxbuttonset {
+  padding: 4px;
+  display: block;
+}
+
+.prtg-form .controls .checkboxbuttonset input {
+  border: none;
+}
+
+.resettodefaultlink {
+  left: -20px;
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-top: -20px;
+}
+
+
+.prtg-form fieldset>.control-group {
+  overflow: auto; /* clearfix */
+}
+
+.prtg-form fieldset>.control-group .controls:first-child {
+  border-bottom: none;
+}
+
+.prtg-form fieldset>.control-group .fillwidth {
+  width: 678px !important;
+  clear: both;
+  background-color: transparent;
+}
+
+.prtg-form fieldset>.control-group .controls.info,
+.controls-info {
+  padding: 0px;
+  margin: 0px;
+}
+
+.controls-info .readonlyproperty  {
+  border: 1px solid <#colorcode color="helpbackground">;
+  background: #fff;
+  display: block;
+  padding: 5px;
+}
+
+.prtg-form fieldset>.control-group .readonlyproperty table:not(.table) {
+  width: 100%;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+  margin-top: 5px;
+}
+
+.prtg-form fieldset>.control-group .readonlyproperty table:not(.table) th,
+.prtg-form fieldset>.control-group .readonlyproperty table:not(.table) td {
+  background: <#colorcode color="helpbackground">;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #000;
+  padding: 2px;
+  font-size: 9px;
+}
+
+.prtg-form fieldset .controls>.readonlyproperty div {
+  color: #888;
+  display: block;
+  border: 1px solid <#colorcode color="lightgray"> !important;
+  padding: 6px;
+}
+
+.prtg-form fieldset .controls>.readonlyproperty {
+  padding: 6px;
+  color: #888;
+  font-weight: bold;
+}
+
+.prtg-form fieldset>.control-group .controls.wide {
+  width: 584px;
+  padding-right: 20px;
+}
+
+.prtg-form fieldset>.control-group .controls.small {
+  width: 186px;
+  padding: 0;
+}
+
+
+/* <#comment Control Help> */
+.prtg-form fieldset .controls-info {
+  padding: 0 0 0 0;
+  max-width: 716px;
+}
+
+
+.prtg-form fieldset .controls.geomap-active {
+  height: 384px;
+}
+
+.prtg-form .controls select {
+  border: 1px solid <#colorcode color="lightgray">;
+  background-color: #fff;
+  margin-bottom: -1px;
+}
+
+
+/* <#comment BEGIN Radio Boxes> */
+.radio-control>.radio-control-label {
+  display: block;
+  margin: 0;
+  padding: 1px 0 0px 4px;
+  color: #000;
+  text-align: left;
+  min-height: 15px;
+  border: 1px solid transparent;
+  border: 1px solid <#colorcode color="lightgray">;
+  background-color: #fff;
+  margin-bottom: -1px;
+}
+.radio-control>.radio-control-label.inline{
+  display: inline;
+  background-color: transparent;
+}
+.radio-control label:hover {
+  background: <#colorcode color="midgray">;
+  cursor: pointer;
+}
+
+.radio-control>.radio-control-label:active,
+.radio-control>.radio-control-label:focus {
+  background: #a0c9ec;
+}
+
+.radio-control>.radio-control-label  i {
+  background-image: url(images/ui-icons_prtg_256x240.png);
+}
+
+.radio-control>.radio-control-label:hover  i {
+  background-position: -98px -146px;
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+.radio-control>input[type="radio"]:checked + .radio-control-label {
+  font-weight: bold;
+}
+
+.radio-control>input[type="radio"]:checked + .radio-control-label:hover {
+  background-color: <#colorcode color="midgray">;
+}
+
+.radio-control>input[type="radio"]:checked + .radio-control-label>i {
+  background-position: -81px -146px;
+}
+
+.radio-control>input {
+  margin-top: 4px;
+}
+
+.radio-control>label>i {
+  vertical-align: text-top;
+}
+
+
+/* <#comment END Radio Boxes> */
+/* <#comment BEGIN Device Selection> */
+.prtg-form fieldset .controls>ul.deviceiconselection {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 40px;
+  height: auto;
+  display: block;
+  margin-bottom: -2px;
+  display: inline-block;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li {
+  float: left;
+  list-style-type: none;
+  width: 65px;
+  height: 20px;
+  margin: 0 2px 2px 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  display: block;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label:hover {
+  background-color: <#colorcode color="midgray">;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label>i {
+  background-image: url(images/ui-icons_prtg_256x240.png);
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label:hover>i {
+  background-position: -98px -146px;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>input[type="radio"]:checked + label>i {
+  background-position: -81px -146px;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label>img {
+  position: absolute;
+  left: 25px;
+  top: 3px;
+}
+
+.prtg-form fieldset .controls>ul.deviceiconselection>li>label>i {
+  padding: 0;
+  margin: 4px 0px 0px 5px;
+}
+
+
+/* <#comment END Device Selection > */
+/* <#comment BEGIN required icon > */
+
+.fieldrequired {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.textarea-fieldrequired {
+  float: left;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+input[type="text"].fieldrequired.invisible {
+  height: 0;
+  margin: 0;
+  padding: 0 0 0 4px;
+  display: block;
+  border: none;
+  vertical-align: top;
+}
+
+.inputfield {
+  display: block;
+}
+
+.textarea-required {
+  border: 1px solid #aaa;
+  top: 0;
+  right: 0;
+  height: 18px;
+  border-right: 1px solid #aaa;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  border-left: 0;
+}
+
+
+/* <#comment END required icon> */
+.prtg-form fieldset input,
+textarea,
+span.control,
+.prtg-form fieldset select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.prtg-form fieldset input[type="checkbox"],
+.prtg-form fieldset input[type="radio"] {
+  width: auto;
+}
+
+.prtg-form textarea {
+  overflow: hidden;
+  padding: 6px;
+  height: 70px;
+  margin: 0;
+}
+
+.prtg-form textarea:focus {
+  overflow: auto;
+}
+
+#editicket fieldset textarea:focus,
+#editicket fieldset textarea,
+#assignticket fieldset textarea:focus,
+#assignticket fieldset textarea {
+  height: 200px;
+}
+.prtg-form fieldset input[readonly]:hover,
+.prtg-form fieldset input {
+  background: none;
+  padding: 6px;
+  margin: 0;
+  border: 1px solid <#colorcode color="lightgray">;
+}
+
+.prtg-form fieldset input:hover,
+.prtg-form fieldset textarea:hover,
+.prtg-form fieldset select:hover {
+  background-color: <#colorcode color="midgray">;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #a0c9ec !important;
+}
+
+input[type="text"],
+textarea,
+input[type="password"] {
+  border: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding-left: 3px;
+}
+
+select:not([size]) {
+  -webkit-appearance: button;
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none; /* FF Hack start */
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: ''; /* FF Hack end */
+  background-image: url("images/arrow_down.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  color: #000;
+  font-size: inherit;
+  margin: 0 0 -2px 0;
+  overflow: hidden;
+  /* text-overflow: ellipsis;
+  */
+  white-space: nowrap;
+  padding: 4px;
+  border: 1px solid black;
+}
+
+
+/* IE Hack */
+select::-ms-expand {
+  display: none;
+}
+
+.inputfield select {
+  border-right: 1px solid #d6d7d8;
+}
+
+select[size] {
+  height: auto;
+}
+
+
+/* <#comment BEGIN submitbuttonbox > */
+.prtg-form>.submitbuttonboxanchor {
+  height: 41px;
+  width: 859px;
+  z-index: 110;
+  position: relative;
+}
+
+.prtg-form .submitbuttonbox.float {
+  position: fixed;
+  bottom: 0;
+}
+
+.prtg-form .submitbuttonbox {
+  width: 682px;
+  padding: 3px;
+  box-shadow: 0 -7px 7px 0 #fff;
+  background: #c1c2c3;
+  opacity: 0.95;
+  border: 0;
+  margin: 10px 0 25px 0;
+}
+
+.wingui .prtg-form .submitbuttonbox {
+  width: 682px;
+}
+
+.prtg-form .submitbuttonbox input {
+  min-width: 91px;
+  z-index: 9999;
+}
+
+.prtg-form .submitbuttonbox.active {
+  background: #EC0E68;
+  border: 1px solid #EC0E68;
+}
+
+.submitbuttonbox a:link,
+.submitbuttonbox a:hover,
+.submitbuttonbox a:visited,
+.submitbuttonbox a:active {
+  float: right;
+  color: #000;
+}
+
+
+/* <#comment END submitbuttonbox > */
+.historicrangeselectors {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: -2px;
+  padding: 3px;
+}
+
+.historicrangeselectors ul {
+  border: 0px;
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+.historicrangeselectors li {
+  display: block;
+  float: left;
+  padding: 0 2px;
+  margin: 2px;
+  margin-bottom: 3px;
+  border: 0;
+}
+
+.historicrangeselectors li a,
+.historicrangeselectors li a:link {
+  background: <#colorcode color="actioncolor">;
+  border: 0;
+  color: #fff;
+  padding: 1px 3px 1px 3px;
+  display: block;
+  width: 117px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.historicrangeselectors li a:hover {
+  background: #E1EDFB;
+  color: #000;
+  border: 0;
+  text-decoration: none;
+}
+
+input.validateerror,
+textarea.validateerror {
+  background-color: #FFEBEB !important;
+}
+input.validateerror~div.validateerror,
+textarea.validateerror~div.validateerror{
+  display: block!important;
+}
+div.validateerror {
+  background-color: #fff;
+  color: <#colorcode color="statusdown">;
+  font-weight: bold;
+  padding: 2px;
+  width: 100%;
+  display: inline-block;
+  margin-top: 1px;
+}
+
+/* farbtastic color picker */
+.farbtastic {
+  position: relative;
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.farbtastic * {
+  cursor: crosshair;
+  position: absolute;
+}
+
+.farbtastic,
+.farbtastic .wheel {
+  height: 195px;
+  width: 195px;
+}
+
+.farbtastic .color,
+.farbtastic .overlay {
+  height: 101px;
+  left: 47px;
+  top: 47px;
+  width: 101px;
+}
+
+.farbtastic .wheel {
+  background: url(/images/wheel.png) no-repeat;
+  height: 195px;
+  width: 195px;
+}
+
+.farbtastic .overlay {
+  background: url(/images/mask.png) no-repeat;
+}
+
+.farbtastic .marker {
+  background: url(/images/marker.png) no-repeat;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden;
+  width: 17px;
+}
+
+div.objectlookup {
+  min-height: 18px;
+  background-color: white;
+  border: 1px solid #BFBFBF;
+}
+
+.sensorlookupnew {
+  min-height: 50px;
+  background-color: white;
+}
+
+
+/* datepicker */
+.prtg-form fieldset input.hasDatepicker {
+  margin-right: -17px;
+  padding: 5px;
+}
+
+.ui-datepicker-trigger {
+  vertical-align: top;
+  margin-top: 3px;
+}
+
+table.table .ui-datepicker-trigger {
+  margin-top: 2px;
+}
+
+.prtg-form .datatablecontrols {
+  width: 100%;
+}
+
+.prtg-form .datatablecontrols td {
+  width: 33.3%;
+  margin: 0;
+  padding: 0 2px 2px 0;
+}
+
+.prtg-form .datatablecontrols td:last-child {
+  padding: 0 0 2px 0;
+}
+
+.prtg-form .datatablecontrols td a {
+  width: 100%;
+  margin: 0;
+}
+
+.prtg-form table.table,
+.prtg-form .dataTables_wrapper {
+  margin: 0;
+}
+
+.prtg-form .dataTables_wrapper {
+  display: inline-block;
+  width: 100%;
+}
+.dataTables_wrapper .dataTables_scroll{
+  overflow: auto!important;
+}
+.dataTables_wrapper .dataTables_scrollHead{
+  overflow: visible!important;
+}
+.dataTables_wrapper .dataTables_scrollHeadInner {
+  box-sizing: content-box;
+  padding-right: 0px!important;
+  background-color: <#colorcode color="tableheaders1">;
+  border-top: 1px solid #f3f2f2;
+}
+
+.dataTables_wrapper .dataTables_scrollHeadInner th {
+  border-top: none;
+}
+.dataTables_wrapper .dataTables_scrollBody{
+  overflow: visible!important;
+}
+
+.prtg-form .dataTables_wrapper table.table {
+  border: none;
+  margin: 0;
+}
+
+.prtg-form .clustertreeobject {
+  display: none;
+}
+
+form .Hidefilterprio0 label[for="checkboxtoggler0"] {
+  visibility: hidden;
+}
+
+.inline #addobjectdialogform.prtg-form {
+  padding-left: 0;
+  background: #fff;
+}
+
+.inline #addobjectdialogform.prtg-form .selectgroupfordevice {
+  display: none;
+}
+
+.prtg-form i.locked {
+  width: 14px;
+  height: 14px;
+  background-image: url(images/ui-icons_222222_256x240.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  margin: 7px 3px;
+  right: 0;
+}
+
+li#probeip div {
+  display: inline;
+}
+
+.multieditactivecheckbox{
+  display:none;
+}
+
+.inheritedfrom .probemenu,
+.inheritedfrom .groupmenu,
+.inheritedfrom .devicemenu,
+.inheritedfrom .sensormenu{
+  width: 30em;
+}

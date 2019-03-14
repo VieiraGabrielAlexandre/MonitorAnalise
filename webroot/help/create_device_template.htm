@@ -1,0 +1,172 @@
+﻿<!--Create Device Template-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Create Device Template</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Create Device Template</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">If you want to add a certain device several times, you can create a device template from an existing device in your device tree. When creating a device template, PRTG will save information for nearly all sensors on this device to a template file that you can later use in combination with <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a> </span>(<a href="create_device_template.htm#exceptions" class="topiclink">restrictions</a> apply for a few sensor types). There are also custom device templates available in the <span class="f_BoldCustom"><a href="https://www.paessler.com/script-world" target="_blank" class="weblink">PRTG Script World</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">From the sensors, all relevant settings are saved, except settings that refer to other objects, such as <a href="scheduling.htm" class="topiclink">schedules</a>, <a href="notifications.htm" class="topiclink">notification triggers</a>, and <a href="user_access_rights.htm" class="topiclink">access rights</a>. PRTG will automatically revert them to <span class="f_BoldCustom">Inherit</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To start, right-click a device in your device tree. From the <a href="context_menus.htm" class="topiclink">context menu</a>, select <span class="f_BoldCustom">Create Device Template...</span>. An assistant appears.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:594px"><a href="device_template2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Create Device Template Assistant" title="Create Device Template Assistant" style="width:594px;height:667px;border:none" src="device_template2_zoom66.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Create Device Template Assistant</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Device templates only save the sensors on the device and the sensors' settings, including channels. The device itself and its settings are not saved. For successful device template creation, sensors must be added to the device (either <a href="add_a_sensor.htm" class="topiclink">manually</a> or via <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span>) and must be <a href="create_device_template.htm#template_capable" class="topiclink">device template-capable</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Device Template Settings</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Choose Template Name</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">File Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Enter a name under which PRTG will store the file. Template files have the extension <span class="f_BoldCustom">.odt</span> in the <span class="f_BoldCustom">\PRTG Network Monitor\devicetemplates</span> sub-directory of <a href="data_storage.htm" class="topiclink">your PRTG core installation</a> (of the Master node, if in a <a href="clustering.htm" class="topiclink">cluster</a>). If a file with this name already exists in this directory, you will see an according error message.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/><span class="f_ListBulleted">The device templates folder is not accessible on PRTG hosted by Paessler. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Template Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful display name for the template as it will appear in the web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Exclude Sensors</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select sensors that you do not want to include into the device template. Mark the corresponding check boxes of the sensors that you do not want to include into the device template.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted"><a href="create_device_template.htm#exceptions" class="topiclink">Sensors that cannot be saved into templates</a> will not appear in this list.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensor types that dynamically scan for available monitoring items when you add the sensor to a device will not appear in this list. PRTG includes these sensors automatically into the template if they support template functionality. You cannot exclude them from the device template that you create. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you leave the current page, all changes to the settings will be lost!</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If your template file was saved successfully, you will see an according message and can review the sensors that were added. Click <span class="f_BoldCustom">OK</span> to finish. The device template is now stored in the program path of your PRTG core installation. Your device template file contains all sensors, including their settings, of the original device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">During your next auto-discovery, choose the <span class="f_BoldCustom">Automatic sensor creation using specific device template(s)</span> option and select the name of your newly created device template from the list. PRTG will then try to discover the stored sensor types on the new (or existing) device. If the physical device answers to a sensor request, the sensor is added to the PRTG device. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see section <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="exceptions" class="hmanchor"></a><span class="f_InTopicHeading">Settings That Are Not Saved</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are a few settings that you cannot save into a device template, so PRTG will set them to default, for example:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the </span><span class="f_BoldCustom">Dependency Type</span><span class="f_ListBulleted"> setting </span><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted"> (in </span><span class="f_BoldCustom">Schedules and Dependencies </span><span class="f_ListBulleted">section) &nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Result Handling</span><span class="f_ListBulleted"> setting </span><span class="f_BoldCustom">Write result to disk</span><span class="f_ListBulleted"> because this is intended for debugging purposes only. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Settings in the </span><span class="f_BoldCustom">Access Rights</span><span class="f_ListBulleted"> section are not saved to avoid security flaws.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>In general, you cannot save all <span style="font-weight: bold;"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a></span> and <span style="font-weight: bold;"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span> (for example, channel limits) of sensor types that dynamically scan for available monitoring items when you add the sensor. This affects, for example, <span class="f_BoldCustom">traffic sensors</span> where you can choose interfaces that you want to monitor in the <span class="f_BoldCustom"><a href="add_a_sensor.htm" class="topiclink">Add Sensor</a></span><a href="add_a_sensor.htm" class="topiclink"> dialog</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="template_capable" class="hmanchor"></a>Furthermore, due to internal restrictions, the following sensor types will not be saved into a device template:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Amazon CloudWatch sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Business Process</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Core/Probe/Cluster Health</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DHCP</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DICOM Bandwidth</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DICOM C-ECHO</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DICOM Query/Retrieve</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Docker Container Status</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Dropbox</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enterprise Virtual Array</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Backup (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Database (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Database DAG (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Mail Queue (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Mailbox (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Exchange Public Folder (PowerShell)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Google Analytics</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Google Drive</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HL7</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">IPFIX</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">IPFIX (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">IPMI System Health</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">jFlow V5</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">jFlow V5 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Microsoft OneDrive</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp Aggregate</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp I/O</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp LIF</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp LUN</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp NIC</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp Physical Disk</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp SnapMirror</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp System Health</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetApp Volume</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetFlow V5</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetFlow V5 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetFlow V9</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">NetFlow V9 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Packet Sniffer</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Packet Sniffer (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">QoS (Quality of Service)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">QoS (Quality of Service) Roundtrip</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Custom</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Dell EMC Capacity</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Dell EMC File System</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Dell EMC LUN</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Dell EMC Pool</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">REST Dell EMC System Health</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Sensor Factory</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">sFlow</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">sFlow (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SNMP Trap Receiver</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Syslog Receiver</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">WMI Security Center</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notes" class="hmanchor"></a><span class="f_InTopicHeading">No Update of Device Templates</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Once a device template is created, it is not possible to add additional sensors to it via the PRTG web interface. If you want to create a template with an extended set of sensors, please create a new one. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>When saving a new device template, all internal IDs of the sensors in this template are updated. Because of this, when you apply a new template to an existing device, PRTG will newly create all sensors that this template contains on this device, even if these sensors were previously created using another device template!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You cannot directly delete device templates. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>You cannot edit existing template files on PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="clone_object.htm" class="topiclink">Clone Object</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Device,Device Template</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

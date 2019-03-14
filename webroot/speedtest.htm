@@ -1,0 +1,288 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.speedtest.title" default="PRTG Pageload Speedtest" var="pagetitle">
+<#include file="includes\htmlheader.htm"bodyclass="hashelp" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<style>
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+</style>
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1>
+    <b>
+      <#lang key="html.speedtest.headhelpcenter" default="PRTG Pageload Speedtest (Experimental/BETA)">
+    </b>
+  </h1>
+  <p>
+    In order to compute an average speed your web browser will now load various web
+    pages and API URLs from the PRTG Server while measuring the load times!
+  </p>
+  <div id="content">
+    <div>
+      <p>
+        <span id="graph">
+          Loading...
+        </span>
+      </p>
+    </div>
+    <div id="average">
+    </div>
+    <div id="doing">
+    </div>
+    <table id="output" class="table smallfonts" style="width:1000px">
+    </table>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+<script>
+var fastest = 1000000000;
+var slowest = -1;
+var counter = 0;
+var current = 0;
+var start = 0;
+var run = 1;
+var runs = 1;
+if (_Prtg.Util.getUrlVars()['runs'] > 0) {
+  runs = _Prtg.Util.getUrlVars()['runs'];
+}
+var timesum = 0;
+var timecount = 0;
+var total = 0;
+var iteration = 0;
+var iterationtimesum = 0;
+var maxiterations = 8;
+if (_Prtg.Util.getUrlVars()['maxiterations'] > 0) {
+  maxiterations = _Prtg.Util.getUrlVars()['maxiterations'];
+}
+var time;
+var allTimes = [];
+var links = [];
+var colormap = [];
+var error = false;
+var LASTMBRAM = 0;
+var FIRSTMBRAM = 0;
+
+function getrambytes(mycounter) {
+  $.ajax({
+    url: '/api/getobjectstatus.htm?id=1002&name=lastvalue',
+    dataType: 'xml',
+    success: function(responseXML) {
+      var MBRAM = parseInt($(responseXML).find("result").text(), 10);
+      MBRAM = Math.round(MBRAM / 10 / 1024);
+      if (FIRSTMBRAM == 0) {
+        FIRSTMBRAM = MBRAM;
+      }
+      if (LASTMBRAM == 0) {
+        LASTMBRAM = MBRAM;
+      }
+      if (MBRAM - LASTMBRAM != 0) {
+        $("#urlmem" + mycounter).html("Mem Delta: " + (MBRAM - LASTMBRAM) + ' kb, Total:' + (MBRAM - FIRSTMBRAM) + ' kb, Reading: ' + (MBRAM) + ' kb');
+        if (MBRAM - LASTMBRAM > 100) {
+          $("#urlmem" + mycounter).css("background-color", "#ffcccc")
+        }
+        if (MBRAM - LASTMBRAM > 500) {
+          $("#urlmem" + mycounter).css("background-color", "#ff8888")
+        }
+        if (MBRAM - LASTMBRAM < 0) {
+          $("#urlmem" + mycounter).css("background-color", "#ccccff")
+        }
+      }
+      LASTMBRAM = MBRAM;
+      checkLinks();
+    },
+    error: function() {
+      checkLinks();
+    }
+  });
+}
+
+
+function loaded(html, text, url) {
+  time = (new Date).getTime() - start;
+  allTimes.push(Number(time));
+  timecount++;
+
+  if (iteration == 1) {
+    $("#output").prepend("<tr><td>" + (counter + 1) + ". " + text + '</td><td><a href="' + url + '">' + url.substring(0, 10) + '</a></td><td>' + (html.length) + ' bytes</td><td id="url' + counter + '"></td><td id="urlmem' + counter + '"></td></tr>');
+  }
+
+  if (time < fastest) fastest = time;
+  if (time > slowest) slowest = time;
+
+  if (time < 100) {
+    colormap.push('#22ff22');
+  } else if (time < 200) {
+    colormap.push('#aaffaa');
+  } else if (time < 500) {
+    colormap.push('#dddddd');
+  } else if (time < 1000) {
+    colormap.push('#ddaaaa');
+  } else if (time < 2000) {
+    colormap.push('#aa4444');
+  } else {
+    colormap.push('#ff2222');
+  }
+
+  if (error) {
+    colormap[colormap.length - 1] = "#000000";
+    allTimes[allTimes.length - 1] = 1;
+    $("#url" + counter).before("<td style='background-color:" + colormap[colormap.length - 1] + "'><b style='color: red;'>ERROR</b></td>");
+    error = false;
+  } else {
+    timesum += time;
+    iterationtimesum += time;
+    if (iteration > maxiterations / 2) {
+      time = "*" + time
+    };
+    today = new Date();
+    $("#url" + counter).html("<nobr><b>Avg: " + Math.round(iterationtimesum / (iteration)) + ' ms (' + iteration + 'x)</b> ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() + '</nobr>');
+    if (maxiterations < 20) {
+      $("#url" + counter).before("<td style='background-color:" + colormap[colormap.length - 1] + "'><a href='" + url + "'>" + time + " ms</a><br>" + html.length + " Bytes</td>");
+    }
+  }
+
+  $("#average").html('<h2>Average Page Load Time: ' + Math.round(timesum / timecount) + ' ms, Slowest ' + slowest + ' ms, Fastest ' + fastest + ' ms (' + Math.round(timecount / runs / ((total) * (maxiterations)) * 100) + ' %)</h2>');
+  if (maxiterations < 20) {
+    $('#graph').sparkline(allTimes, {
+      type: 'bar',
+      barWidth: 1,
+      barSpacing: 0,
+      width: '100%',
+      height: '80px',
+      nullColor: '#000000',
+      chartRangeMin: 0,
+      zeroColor: '#000000',
+      colorMap: colormap
+    });
+  }
+
+  if (iteration >= maxiterations) {
+    if (run < runs) {
+      var mycounter = counter;
+      $.when(_Prtg.api.checkNow(1002)).always(function() {
+        setTimeout("getrambytes(" + mycounter + ")", 3000)
+      });
+      iteration = 0;
+      run++;
+      iterationtimesum = 0;
+      colormap.push("#000000");
+      allTimes.push(0);
+      return
+    } else {
+      var mycounter = counter;
+      $.when(_Prtg.api.checkNow(1002)).always(function() {
+        setTimeout("getrambytes(" + mycounter + ")", 3000)
+      });
+      run = 1;
+      counter++;
+      iteration = 0;
+      iterationtimesum = 0;
+      colormap.push("#000000");
+      allTimes.push(0);
+      return
+    }
+  }
+  setTimeout("checkLinks()", 1);
+}
+
+function checkLinks() {
+  function Go(text, url) {
+    $("#doing").html("<h3>Loading: " + text + ' (' + url + ')</h3>');
+    $.ajax({
+      url: url,
+      data: "",
+      dataType: "html",
+      type: "GET",
+      timeout: 120000,
+      beforeSend: function() {
+        start = (new Date).getTime();
+      },
+      success: function(html) {
+        loaded(html, text, url);
+      },
+      error: function(html) {
+        error = true;
+        loaded(html, text, url);
+      }
+    });
+  }
+  $(links).each(
+
+  function(index, element) {
+    if ((index == counter)) {
+      iteration++;
+      var url = $(this)[1];
+      var text = $(this)[0];
+      if (iteration > maxiterations / 2) {
+        if (url.indexOf("?") == -1) {
+          url = url + "?";
+        }
+        url = url + "&_hjax=true";
+        text = text + " (HJax)";
+      }
+      Go(text, url);
+      return false;
+    }
+  });
+}
+
+$(document).ready(function() {
+  $("a,button,form").addClass("nohjax");
+  links.push(['Login Page', '/index.htm']);
+  links.push(['Help', '/help/index.htm']);
+  links.push(['Welcome', '/welcome.htm']);
+  links.push(['System Setup', '/systemsetup.htm']);
+  links.push(['downloads.htm', '/downloads.htm']);
+  links.push(['Local Probe', '/device.htm?id=40']);
+  links.push(['Probe Health Sensor', '/sensor.htm?id=1001']);
+  links.push(['Sensor 48h Graph and Data', '/controls/sensorgraph.htm?id=1001&graphid=0&columns=datetime,value_,coverage']);
+  links.push(['Sensor 30d  Graph and Data', '/controls/sensorgraph.htm?id=1001&graphid=1&columns=datetime,value_,coverage']);
+  links.push(['Sensor 365d Graph and Data', '/controls/sensorgraph.htm?id=1001&graphid=2&columns=datetime,value_,coverage']);
+  links.push(['Sensor Live Graph and Data', '/controls/sensorgraph.htm?id=1001&graphid=3&columns=datetime,value_,coverage']);
+  links.push(['Sensor Settings', '/controls/objectdata.htm?id=1001&objecttype=sensor,aggregation']);
+  links.push(['Sensor Notifications', '/controls/triggersandnotifications.htm?id=1001&objecttype=sensor,aggregation']);
+
+  links.push(['Sensor History', '/controls/history.htm?id=1001']);
+  links.push(['Sensor Comments', '/controls/comments.htm?id=1001']);
+  links.push(['Test Login', '/api/public/testlogin.htm']);
+  //  links.push(['Provoke an Error', '/this_is_not_a_valid_url.htm']);
+  links.push(['Log Table (Default)', '/tablewithstyles.htm?tableid=messagetable&content=messages&columns=datetime,parent,type,name,status,message&sortby=date&refreshable=true&tabletitle=AUTO&sortable=false&hidezoomlink=true&count=500&filter_drel=7days']);
+  links.push(['Log Table (Ups&Downs)', '/tablewithstyles.htm?tableid=messagetable&content=messages&columns=datetime,parent,type,name,status,message&sortby=date&refreshable=true&tabletitle=AUTO&filter_status=608&filter_status=607&sortable=false&hidezoomlink=true&count=500&filter_drel=7days']);
+  links.push(['Log Table (System Messages)', '/tablewithstyles.htm?tableid=messagetable&content=messages&columns=datetime,parent,type,name,status,message&sortby=date&refreshable=true&tabletitle=AUTO&filter_status=10&filter_status=11&filter_status=1&filter_status=2&filter_status=3&filter_status=6&filter_status=7&filter_status=8&filter_status=9&sortable=false&hidezoomlink=true&count=500&filter_drel=7days']);
+  links.push(['Mini HTML (group.htm)', '/group.htm?id=0']);
+  links.push(['Mini HTML (device.htm)', '/device.htm?id=40']);
+  links.push(['Mini HTML (sensors.htm)', '/sensors.htm']);
+  links.push(['Mini HTML (sensor.htm)', '/sensor.htm?id=1001']);
+  links.push(['Mini HTML (alarms.htm)', '/alarms.htm?filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14']);
+  links.push(['Mini HTML (maps.htm)', '/maps.htm']);
+  links.push(['Mini HTML (reports.htm)', '/reports.htm']);
+  links.push(['Mini HTML (log.htm)', '/log.htm']);
+  links.push(['Mini HTML (tickets.htm)', '/tickets.htm']);
+  links.push(['Mini HTML (setup.htm)', '/setup.htm']);
+  links.push(['Get Status', '/api/getstatus.htm?id=0']);
+
+  $("#main_menu>li>a, #main_menu>li>ul>li>a,#main_menu>li>ul>li>ul>li>a").each(function(index, element) {
+    if ($(this).prop("href") != '#') {
+      urltext = $(this).text();
+      url = $(this).prop("href");
+      if (url.indexOf("http") == -1) {
+        links.push([urltext, url]);
+      }
+    }
+  });
+  total = links.length;
+
+ $(document).off("ajaxSend")
+  .off("ajaxComplete")
+  .off("ajaxError");
+
+  setTimeout("checkLinks(0)", 10);
+  autoRefreshType = "none";
+});
+</script>

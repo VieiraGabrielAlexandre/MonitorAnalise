@@ -1,0 +1,612 @@
+﻿<!--PRTG Administration Tool on Core Server System-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_administration_programs.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="prtg_probe_administrator.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>PRTG Administration Tool on Core Server System</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: PRTG Administration Tool on Core Server System</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">With the <span class="f_BoldCustom">PRTG Administration Tool</span> you can define various system-oriented settings that affect your PRTG installation, as well as restart services and view log information. You can also change many of these settings via the <a href="setup.htm" class="topiclink">system administration</a> in the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>This section describes the available settings in the PRTG Administration Tool when you open the tool on the <span class="f_ItalicCustom">PRTG core server system</span>. This means that you can edit settings that regard your PRTG core or web server and the local probe, which is the probe on your core server. If you open the PRTG Administration Tool on a remote probe machine, only <a href="prtg_probe_administrator.htm" class="topiclink">probe-related settings</a> are available.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>All settings you define are only valid for the local installation that is running on the computer on which you start the PRTG Administration Tool. In order to change settings for another installation, for example, another cluster node installation, please log in to that computer and open the program there.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Do you want to know how the PRTG Administration Tool relates to all other major parts of PRTG Network Monitor? To get familiar with the different components of PRTG, we recommend that you read the <span class="f_BoldCustom"><a href="architecture.htm" class="topiclink">Architecture</a></span> section. If you prefer a video introduction to the <span style="font-weight: bold;">PRTG Administration Tool</span>, see the <span style="font-weight: bold;"><a href="prtg_server_administrator.htm#more" class="topiclink">More</a></span> section below for more information.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This feature is not available in PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Start the PRTG Administration Tool</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">From the Windows start menu, select the <span class="f_BoldCustom">PRTG Network Monitor</span> group and click <span class="f_BoldCustom">PRTG Administration Tool</span> to open the application. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can choose from these options in different tabs:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="prtg_server_administrator.htm#web_server" class="topiclink">Web Server</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#core_server" class="topiclink">Core Server</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#cluster" class="topiclink">Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#administrator" class="topiclink">Administrator</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#probe_core" class="topiclink">Probe Settings for Core Connection</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#probe_monitor" class="topiclink">Probe Settings for Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#start_stop" class="topiclink">Service Start/Stop</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm#logs" class="topiclink">Logs and Info</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">After you change settings, click the <span class="f_BoldCustom">Save &amp; Close </span>button. A new window opens where PRTG asks you to agree to restart the PRTG core server service. Click <span class="f_BoldCustom">OK </span>if you do not want your changes to be ignored.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:345px"><a href="admin_tool_confirm_restart.png"><img id="TOGGLE0186A1" class="image-toggle" alt="PRTG Administration Tool: Restart Services" title="PRTG Administration Tool: Restart Services" style="width:345px;height:182px;border:none" src="admin_tool_confirm_restart_zoom75.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Restart Services</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="web_server" class="hmanchor"></a><span class="f_InTopicHeading">Web Server</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Edit IPs, ports, access methods, and language for the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can also change all settings on the <span class="f_BoldCustom">Web Server</span> tab via the PRTG web interface in the<span class="f_BoldCustom"> <a href="system_website_settings.htm#settings" class="topiclink">User Interface</a></span> settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_web_server.png"><img id="TOGGLE0186A2" class="image-toggle" alt="PRTG Administration Tool" title="PRTG Administration Tool" style="width:503px;height:455px;border:none" src="admin_tool_web_server_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Web Server</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select TCP Port for PRTG's Web Server</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG runs a web server in order to provide access via the web interface and the Enterprise Console. Please specify on which port this web server will run. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Secure HTTPS server (recommended, mandatory for internet access)</span><span class="f_ListBulleted">: We recommend this setting and you need it to access the PRTG server via the internet. Use a secure HTTPS connection that is encrypted via SSL on port 443.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Although the connection is secure, you will see an </span><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span><span class="f_ListBulleted"> in your browser when logging in to the PRTG web interface, because the default certificate is unknown to your browser. You can install another SSL certificate for PRTG later. Please see </span><span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span><span class="f_ListBulleted">. </span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If port 80 is free, PRTG will reserve it as well. If port 80 is not available, PRTG will try port 8080 as fallback. If this port is also not available, PRTG searches from port 8081 upwards for a free port. PRTG will send a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to 80 as soon as it is available again. When users try to connect on port 80 via HTTP, they will then be redirected to port 443 via HTTPS. You can change this behavior by using a registry setting. If port 443 is not available, PRTG will try port 8443 as fallback. If this port is also not available, PRTG searches from port 8444 upwards for a free port. PRTG will send a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to 443 as soon as it is available again.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Insecure HTTP server (standard port 80, not recommended)</span><span class="f_ListBulleted">: Use a standard web server without SSL encryption on port 80. This setting is not recommended for WAN connections.</span><br />
+<img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you use an insecure web server on the internet, attackers could potentially spy on credentials you enter into PRTG. We strongly recommend that you use this option in a LAN only.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Expert configuration</span><span class="f_ListBulleted">: This setting allows you to specify a custom web server port and the security of the connection. This option is intended for systems with an existing web server on the standard port. Define port and encryption below.</span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If PRTG always uses a fallback port after a server restart, check for other programs that use the same port as PRTG. For example, the Microsoft IIS web server also uses the port 80 (443 for SSL) by default and blocks it. Please disable such programs and services on startup.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Expert Configuration: </span><span class="f_ItalicCustom">SSL Encryption</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">You will see this setting only if you select </span><span class="f_BoldCustom">Expert configuration</span><span class="f_Comment"> above. Specify if you want to use an SSL encryption. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use SSL encryption (HTTPS)</span><span class="f_Comment">: </span><span class="f_ListBulleted">Use a secure HTTPS connection that is encrypted via SSL on a custom port as defined above. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Although the connection is secure, you will see an </span><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span><span class="f_ListBulleted"> in your browser when you log in to the PRTG web interface, because the default certificate is unknown to your browser. You can install another SSL certificate for PRTG later. Please see </span><span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Don't use encryption (not recommended)</span><span class="f_ListBulleted">: This setting is not recommended for WAN connections. Use a standard web server without SSL encryption on a custom port as defined above.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you use a web server without encryption on the internet, attackers could potentially spy on credentials you enter into PRTG. We strongly recommend that you use this option in a LAN only.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Expert Configuration: </span><span class="f_ItalicCustom">Web Server Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">You will see this setting only if you select </span><span class="f_BoldCustom">Expert configuration</span><span class="f_Comment"> above. </span><span class="f_ListBulleted">Enter the TCP port number you want the PRTG web server to run on. Please enter an integer value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you use a secure connection and port 80 is free, PRTG will reserve it as well. When users try to connect on port 80 via HTTP, they will be redirected to the custom port via HTTPS. You can change this behavior by using a registry setting.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If the defined port for a secure connection is not available, PRTG will try port 8443 as fallback. If this port is also not available, PRTG searches from port 8444 upwards for a free port. PRTG sends a <a href="tickets.htm" class="topiclink">ticket</a> that shows you the currently used port number and will switch back to the original port as soon as it is available again.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select IP Address for PRTG's Web Server</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG is running a web server in order to provide access via the web and Windows interface. Please specify the IP address this web server will run on. Later, you can log in to PRTG by simply pointing your browser to the specified IP address.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Localhost, 127.0.0.1 (PRTG will not be accessible from other computers)</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">127.0.0.1</span><span class="f_ListBulleted"> only. The PRTG web interface and the Enterprise Console will only be accessible from the computer PRTG is installed on. Either the selected port </span><span class="f_ListBulleted">or</span><span class="f_ListBulleted"> at least one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8089</span><span class="f_ListBulleted"> has to be available on </span><span class="f_ItalicCustom">127.0.0.1</span><span class="f_ListBulleted">. </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>If you run PRTG on localhost, please do not use the DNS name <span class="f_ItalicCustom">http://localhost</span> to log in to the web server, as this may considerably slow down the PRTG web interface. Please use your local IP address or <span class="f_ItalicCustom">http://127.0.0.1</span> instead.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All IPs available on this computer</span><span class="f_ListBulleted">: Use all IP addresses available on this computer and enable access to the web server for all of these addresses. The TCP port selected below must be free on every available IP address.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Specify IPs</span><span class="f_ListBulleted">: Select specific IP addresses on which the PRTG Web server will run. A list specific to your system is shown. Add a check mark in front of every IP address you want the PRTG web server to be available at. You can also select and deselect all addresses by clicking on the check box in the table header. Either the selected port or at least one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8089</span><span class="f_ListBulleted"> has to be available on the specified IP address.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Regardless of the selected setting above, one port in the range from </span><span class="f_BoldCustom">8080</span><span class="f_ListBulleted"> to </span><span class="f_BoldCustom">8180</span><span class="f_ListBulleted"> has to be available on the specified IP address so PRTG can create reports. The report engine will try to connect to the core server on one of these ports.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If PRTG does not find a network card on startup it will switch the IP setting to </span><span class="f_BoldCustom">Localhost</span><span class="f_ListBulleted">. This setting will remain, even if a network card is available later on. If you disabled or removed the network card on the machine running the PRTG core server, please re-check this setting.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select System Language</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose the system language from the dropdown list. Default is </span><span class="f_BoldCustom">English</span><span class="f_ListBulleted">. Depending on your installation, you may be able to choose other languages here. This setting defines the language of the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a>, as well as of the </span><span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="core_server" class="hmanchor"></a><span class="f_InTopicHeading">Core Server</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define settings for the core server.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_core_server.png"><img id="TOGGLE0186A3" class="image-toggle" alt="PRTG Administration Tool: Core Server" title="PRTG Administration Tool: Core Server" style="width:503px;height:455px;border:none" src="admin_tool_core_server_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Core Server</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Core Server</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe Connection Management</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how PRTG will handle incoming connections from probes. Choose between the following options:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Accept connections from the Local Probe only (default setting, does not allow remote probes)</span><span class="f_ListBulleted">: This is the default setting. Only local probe connections will be accepted by the PRTG core server. You cannot use <a href="add_remote_probe.htm" class="topiclink">remote probes</a> with this setting enabled.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Accept connections from remote probes on all IPs</span><span class="f_ListBulleted">: Incoming connections from remote probes will always be accepted, no matter on which IP address of the core server they come in.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Accept connections from remote probes on selected IPs only</span><span class="f_ListBulleted">: Incoming connections from <a href="remote_probe_setup.htm" class="topiclink">remote probes</a> will only be accepted on the selected IP address(es) of the core server. In the list, select the IP addresses by adding a check mark in front of the desired IPs.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can also change this setting in the PRTG web interface under </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Local Storage of Data Files and Monitoring Database</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the data folder to which PRTG will store configuration and monitoring data. Click the </span><span class="f_BoldCustom">...</span><span class="f_ListBulleted"> button to choose another folder on your system.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">Before you change the path, make sure you stop both the core server and the probe services and copy all data to the new location.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Revert to default folder</span><span class="f_ListBulleted"> to reset to default.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="cluster" class="hmanchor"></a><span class="f_InTopicHeading">Cluster</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Cluster</span> tab, you can manually change how the current core installation will behave in a cluster. Before changing settings here, please read the <span class="f_BoldCustom"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span> section.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_cluster.png"><img id="TOGGLE0186A4" class="image-toggle" alt="PRTG Administration Tool: Cluster" title="PRTG Administration Tool: Cluster" style="width:503px;height:455px;border:none" src="admin_tool_cluster_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Cluster</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Cluster</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cluster Settings</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Depending on the current cluster settings, you will see different information here.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cluster Mode</span><span class="f_ListBulleted">: Shows which cluster mode the current installation is running. This setting is shown for your information only and cannot be changed here. Possible values are </span><span class="f_BoldCustom">Standalone </span><span class="f_ListBulleted">(no cluster mode), </span><span class="f_BoldCustom">Cluster Mode: Master Node</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Cluster Mode: Failover Node</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cluster Port</span><span class="f_ListBulleted">: This field is only shown when PRTG is running in a cluster mode. This setting is shown for your information only and cannot be changed here.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Cluster Access Key</span><span class="f_ListBulleted">: This field is only shown when PRTG is running in a cluster mode. This setting is shown for your information only and cannot be changed here.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Own Node ID</span><span class="f_ListBulleted">: This field is only shown when PRTG is running in a cluster mode. This setting is shown for your information only and cannot be changed here.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cluster Mode Actions</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Depending on the current cluster settings, you see different active buttons here. </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Create a PRTG Cluster...</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Join a PRTG Cluster...</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Change PRTG Cluster Settings...</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Revert to Standalone...</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For details on these options, see <a href="prtg_server_administrator.htm#clustermodeactions" class="topiclink">below this table</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Master Heartbeat</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This section is only visible if you are running your PRTG installation in cluster mode. The </span><span class="f_ItalicCustom">current</span><span class="f_ListBulleted"> master can execute an external executable file on a regular basis. We call this a &quot;heartbeat&quot;.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can use this, for example, to report the IP address of the current master node to a dynamic DNS provider, so a DNS name is always redirected to the current PRTG master node in case the original master node fails and a failover node (running at a different IP address) takes over the master role.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No heartbeat:</span><span class="f_ListBulleted"> Do not execute a file on a regular basis.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the following external executable file every 5 minutes: </span><span class="f_ListBulleted">Click the </span><span class="f_BoldCustom">...</span><span class="f_ListBulleted"> button to choose a file you want to execute. This can be, for example, a command-line tool, or a batch file. It will be executed on the current master node only, with a fixed interval of five minutes. The interval cannot be changed.</span></li>
+</ul>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Please make sure that the selected file is available under the same (local) path on all failover nodes. In case one of your failover nodes becomes current master, the heartbeat can only be executed reliably if the executable file exists on all of your failover nodes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="clustermodeactions" class="hmanchor"></a><span class="f_BoldCustom">Cluster Mode Actions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Follow these instructions to create or join a cluster, to change a cluster's settings, or to revert a cluster node to a standalone PRTG installation:</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Create a PRTG Cluster...</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click this button to start creating a cluster. The current PRTG core server will then be the </span><span class="f_BoldCustom">Master Node</span><span class="f_ListBulleted"> of your cluster. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Yes</span><span class="f_ListBulleted"> to confirm the conversion of this installation into a cluster master node.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:403px"><a href="admin_clustercreate.png"><img id="TOGGLE0186A5" class="image-toggle" alt="Converting an Installation into a Cluster Master Node" title="Converting an Installation into a Cluster Master Node" style="width:403px;height:162px;border:none" src="admin_clustercreate_zoom82.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Converting an Installation into a Cluster Master Node</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A new dialog box will appear.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:400px"><a href="admin_mastercreate.png"><img id="TOGGLE0186A6" class="image-toggle" alt="PRTG Administrator: Creating a Cluster Master" title="PRTG Administrator: Creating a Cluster Master" style="width:400px;height:212px;border:none" src="admin_mastercreate_zoom83.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administrator: Creating a Cluster Master</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter a </span><span class="f_BoldCustom">Cluster Port</span><span class="f_ListBulleted">. This is the port on which the internal communication between the different cluster nodes is sent. Make sure connections between cluster nodes are possible on the selected port.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter or paste a </span><span class="f_BoldCustom">Cluster Access Key</span><span class="f_ListBulleted">. This is a unique access key. All nodes in a cluster have to be configured with the same cluster access key in order to join the cluster. Connection attempts with the wrong access key will be rejected.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">We recommend that you use the default value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Save the </span><span class="f_BoldCustom">Cluster Access Key</span><span class="f_ListBulleted"> so you have it at hand when configuring your </span><span class="f_BoldCustom">Failover Node(s)</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">After confirming your settings you will be asked to restart Windows services. Please do so in order for your changes to take effect.</span></li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Join a PRTG Cluster...</span> </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click this button to add this installation to an existing cluster that already has a </span><span class="f_BoldCustom">Master Node</span><span class="f_ListBulleted">. The current PRTG core server will then be a </span><span class="f_BoldCustom">Failover Node </span><span class="f_ListBulleted">in the cluster. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This button is also available if you are currently running your PRTG installation in </span><span class="f_BoldCustom">Cluster Mode: Master Node</span><span class="f_ListBulleted">. This option will then change your master node to a failover node!</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Yes </span><span class="f_ListBulleted">to confirm the conversion of this installation into a failover node.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:390px"><a href="admin_tool_confirm_failover.png"><img id="TOGGLE0186A7" class="image-toggle" alt="Converting an Installation into a Cluster Failover Node" title="Converting an Installation into a Cluster Failover Node" style="width:390px;height:158px;border:none" src="admin_tool_confirm_failover_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Converting an Installation into a Cluster Failover Node</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A dialog box will appear. </span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:390px"><a href="admin_tool_join_cluster.png"><img id="TOGGLE0186A8" class="image-toggle" alt="PRTG Server Administrator" title="PRTG Server Administrator" style="width:390px;height:207px;border:none" src="admin_tool_join_cluster_zoom81.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Server Administrator</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter a </span><span class="f_BoldCustom">Master IP address/DNS name</span><span class="f_ListBulleted"> for your cluster</span>. It must be reachable from the machine running the failover node.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter the other settings as defined in the settings of your </span><span class="f_BoldCustom">Master Node.</span><span class="f_ListBulleted"> Please make sure you use the same settings on all nodes in your cluster.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter a </span><span class="f_BoldCustom">Cluster Port</span><span class="f_ListBulleted">. This is the port on which the internal communication between the different cluster nodes is sent. Make sure connections between cluster nodes are possible on the selected port.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter or paste a </span><span class="f_BoldCustom">Cluster Access Key</span><span class="f_ListBulleted">. This is a unique access key. All nodes in a cluster have to be configured with the same cluster access key in order to join the cluster. Connection attempts with the wrong access key will be rejected.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">After confirming your settings you will be asked to restart Windows services. Please do so in order for your changes to take effect.</span></li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Change PRTG Cluster Settings...</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:386px"><a href="admin_tool_edit_cluster.png"><img id="TOGGLE0186A9" class="image-toggle" alt="PRTG Server Administrator" title="PRTG Server Administrator" style="width:386px;height:204px;border:none" src="admin_tool_edit_cluster_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Server Administrator</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">If you are running your PRTG installation in cluster mode, you can change the settings here. <span class="f_ListBulleted">A new window will appear.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter a </span><span class="f_BoldCustom">Cluster Port</span><span class="f_ListBulleted">. This is the port on which the internal communication between the different cluster nodes is sent. Make sure connections between cluster nodes are possible on the selected port.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter or paste a </span><span class="f_BoldCustom">Cluster Access Key</span><span class="f_ListBulleted">. This is a unique access key. All nodes in a cluster have to be configured with the same cluster access key in order to join the cluster. Connection attempts with the wrong access key will be rejected.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Please make sure you use the same settings on all nodes in your cluster.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">After confirming your settings you will be asked to restart Windows services. Please do so in order for your changes to take effect.</span></li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Revert to Standalone...</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you are currently running your </span>PRTG installation in cluster mode, you can change it to <span class="f_BoldCustom">Standalone</span> mode. If you do so, this node will no longer be part of a cluster.</li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">After confirming your settings you will be asked to restart Windows services. Please do so in order for your changes to take effect.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="administrator" class="hmanchor"></a><span class="f_InTopicHeading">Administrator</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Change PRTG System Administrator specific settings. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can also change these settings in the <a href="user_accounts_settings.htm#settings" class="topiclink">account settings</a> of </span>the <span class="f_BoldCustom">PRTG System Administrator</span> <span class="f_ListBulleted">user in the PRTG web interface.</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_administrator.png"><img id="TOGGLE0186AA" class="image-toggle" alt="PRTG Administration Tool: Administrator" title="PRTG Administration Tool: Administrator" style="width:503px;height:455px;border:none" src="admin_tool_administrator_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Administrator</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Login Credentials for the Administrator Account</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Email Address</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a valid email address for the administrator. By default, PRTG will send notifications and important messages to this address. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Login Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a name for the </span><span class="f_BoldCustom">PRTG System Administrator</span><span class="f_ListBulleted"> login. This is your default login! You use it when you log in to the PRTG web interface or Enterprise Console.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The default login name is </span><span class="f_BoldCustom">prtgadmin.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a password for the </span><span class="f_BoldCustom">PRTG System Administrator</span><span class="f_ListBulleted"> login. This is your default login! You use it when you log in to the PRTG web interface or Enterprise Console.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The default password is </span><span class="f_BoldCustom">prtgadmin.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Confirm Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you change your password, re-enter the password for the </span><span class="f_BoldCustom">PRTG System Administrator</span><span class="f_ListBulleted"> login to confirm it.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe_core" class="hmanchor"></a><span class="f_InTopicHeading">Probe Settings for Core Connection</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define general settings regarding the probe and probe connections.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_probe_settings_for_core_connection.png"><img id="TOGGLE0186AB" class="image-toggle" alt="PRTG Administration Tool: Probe Settings for Core Connection" title="PRTG Administration Tool: Probe Settings for Core Connection" style="width:503px;height:455px;border:none" src="admin_tool_probe_settings_for_core_connection_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Probe Settings for Core Connection</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Probe Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of Probe</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the probe. PRTG shows this name, for example, in the device tree, and in all alarms by default. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Reconnect Time</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time that PRTG will wait until the probe tries to reconnect to the core server if the connection fails. Please enter an integer value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Connection to PRTG Core Server</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">These settings affect the way the probe will connect to the core server. A probe is either a local probe, a hosted probe, or a remote probe. PRTG will automatically detect the type of probe and show the correct setting options.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Server (IPv4 address or DNS name)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If this probe is configured as the </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted"> of the PRTG core installation, it will connect to the core via </span><span class="f_ItalicCustom">127.0.0.1</span>, <span class="f_ListBulleted">which you cannot change. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If this probe is configured as a </span><span class="f_BoldCustom">Remote Probe</span><span class="f_ListBulleted">, enter the IP address or DNS name of the core server.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe GID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">Probe GID (global ID (GID))</span><span class="f_ListBulleted"> is a unique identifier for the probe. We recommend that you do not change it. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Exception:</span><span class="f_ListBulleted"> Only if you substitute an existing remote probe from a different computer, you have to copy the GID from the old probe to the new probe. To do so, click the </span><span class="f_BoldCustom">Edit GID...</span><span class="f_ListBulleted"> button and confirm the warning with </span><span class="f_BoldCustom">Yes</span><span class="f_ListBulleted">. You can then change the value. You cannot change the GID for a local probe.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can deny GIDs under </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> in the PRTG web interface. If you remove a remote probe from the device tree or if you <a href="install_a_prtg_remote_probe.htm#approve" class="topiclink">deny a remote probe after installation</a>, its global ID (GID) will be automatically entered in the </span><span class="f_BoldCustom">Deny GIDs</span><span class="f_ListBulleted"> list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You do not need an access key for </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted"> connections.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">On a </span><span class="f_BoldCustom">Remote Probe</span><span class="f_ListBulleted">, the </span><span class="f_BoldCustom">Probe Access Key</span><span class="f_ListBulleted"> must match one of the access keys configured in your PRTG core server installation. If it does not match, the remote probe will not be able to connect to the core server. See the </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> section for more information.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Check also allowed and denied IPs in </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> to ensure that the core server accepts the IP address of the remote probe.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Confirm Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you enter an access key for a remote probe, enter it in this field again to assure correctness.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Path for Probe Data Storage</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Path</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the data folder to which PRTG will store configuration and monitoring data. Click the </span><span class="f_BoldCustom">...</span><span class="f_ListBulleted"> button to choose another folder on your system.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">Before you change the path, make sure you stop both the core server and the probe services and copy all data to the new location.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Language for the PRTG Administration Tool for Remote Probes</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&lt;your language&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose the language for the PRTG Administration Tool on your remote probe from the dropdown list. Default is </span><span class="f_BoldCustom">English</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe_monitor" class="hmanchor"></a><span class="f_InTopicHeading">Probe Settings for Monitoring</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_probe_settings_for_monitoring.png"><img id="TOGGLE0186AC" class="image-toggle" alt="PRTG Administration Tool: Probe Settings for Monitoring" title="PRTG Administration Tool: Probe Settings for Monitoring" style="width:503px;height:455px;border:none" src="admin_tool_probe_settings_for_monitoring_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Probe Settings for Monitoring</span></p></div></div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="outgoingipgroup" class="hmanchor"></a><a id="probe_admin" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Probe Settings for Monitoring</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address used for outgoing monitoring requests.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If there is more than one IP on the current system available, you can specify the IP address that PRTG will use for outgoing monitoring requests of certain sensor types. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting will be used for sensors using the following connection types: HTTP, DNS, FTP, IMAP, POP3, Port, Remote Desktop, SMTP, and SNMP. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The setting is valid for all monitoring requests sent from this PRTG probe.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting is useful for devices that expect a certain IP address when queried.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Default setting is </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">. PRTG will select an IP address automatically.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This feature does not support all sensor types for technical reasons.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you change this setting, some sensors might stop working. For example, sensors might show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status if the selected IP address is blocked on the way to or directly on the monitored device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv4</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv4 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv6</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv6 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For details about the basic concept of IPv6 in PRTG, see the </span><span class="f_BoldCustom"><a href="ipv6.htm" class="topiclink">IPv6</a></span><span class="f_ListBulleted"> section.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start_stop" class="hmanchor"></a><span class="f_InTopicHeading">Service Start/Stop</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can stop and start PRTG Windows services manually. For connected probes, click <span class="f_BoldCustom">Start Core Server</span> to start the service or <span class="f_BoldCustom">Stop Core Server</span> to stop it. Both actions usually take from a few seconds up to several minutes to complete. You can also restart the core server and connected probes via the PRTG web interface under <span class="f_BoldCustom"><a href="administrative_tools_settings.htm#core" class="topiclink">Administrative Tools</a></span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/> We recommend that you set a schedule for automatic system restarts.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_service_start_stop.png"><img id="TOGGLE0186AD" class="image-toggle" alt="PRTG Administration Tool: Start and Stop Service" title="PRTG Administration Tool: Start and Stop Service" style="width:503px;height:455px;border:none" src="admin_tool_service_start_stop_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Start and Stop Service</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also define a restart schedule on the <span class="f_BoldCustom"><a href="probe_settings.htm#basic" class="topiclink">Settings</a></span> tab of a probe under <span class="f_BoldCustom">Restart Options</span>, in the PRTG web interface.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="restartoptionsgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scheduled Restart settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This setting is not available on the <span class="f_BoldCustom">Hosted Probe</span> of a PRTG hosted by Paessler instance.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Options</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For best performance, we recommend that you regularly restart the Windows servers on which PRTG is running. To do this automatically for PRTG, you can schedule an automatic restart. Choose between the following options:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No scheduled reboot or service restart</span><span class="f_ListBulleted">: Do not perform any scheduled restart of services automatically. We recommend a manual restart every few weeks. You can initiate a restart of your PRTG core server and probes under </span><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled restart of PRTG services</span><span class="f_ListBulleted">: Restart all PRTG services on the system where this probe runs on. If you choose this option on the local probe, the PRTG core server will restart as well. Define a schedule below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled system reboot (recommended)</span><span class="f_ListBulleted">: We recommend this setting, although it is not set by default. Enter a schedule below. We recommend that you restart Windows servers once a month for best performance.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Choose how often you want to restart PRTG services or the Windows server:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per week</span><span class="f_ListBulleted">: Select a day of the week and a time below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per month (recommended)</span><span class="f_ListBulleted">: Select a day of the month and a time below. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Day</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select a specific day of the week (</span><span class="f_ItalicCustom">Monday</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">Sunday</span><span class="f_ListBulleted">) or month (</span><span class="f_ItalicCustom">1st</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">30th</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Last</span><span class="f_ListBulleted">). If you select </span><span class="f_BoldCustom">Last</span><span class="f_ListBulleted">, the restart will always be executed on the last day of the month, regardless of how many days the month has.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you select a date that does not exist in every month (for example, the 30th day in February), PRTG will automatically initiate the restart on the last day of this month.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Hour</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select the time of day when PRTG will perform the restart. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You will get a Windows warning message 10 minutes before the restart to inform you if you are a currently logged in user. The actual restart time can differ up to 30 minutes from the settings you enter here.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="logs" class="hmanchor"></a><span class="f_InTopicHeading">Logs and Info</span></p>
+<div class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><div style="margin:0;width:503px"><a href="admin_tool_logs_and_info.png"><img id="TOGGLE0186AE" class="image-toggle" alt="PRTG Administration Tool: Logs and Info" title="PRTG Administration Tool: Logs and Info" style="width:503px;height:455px;border:none" src="admin_tool_logs_and_info_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Logs and Info</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Log Files</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open Log Folder...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open the PRTG Network Monitor data directory on your hard disk drive to access all logfiles that PRTG creates.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Send Logs to Paessler...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an assistant to send logfiles to the Paessler Support Team. See <a href="prtg_probe_administrator.htm#send_logs" class="topiclink">below for details</a>.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can send logfiles more easily with the support bundle via </span><span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open Support Ticket...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This will open the support form on the Paessler website in a browser window.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you need help, we recommend that you use the </span><span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span><span class="f_ListBulleted"> option in the PRTG web interface instead.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">About</span> section shows information about the version of installed PRTG programs and copyright.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="send_logs" class="hmanchor"></a><span class="f_InTopicHeading">Send Logs to Paessler</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can send logfiles more easily with the support bundle via <span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span> in the PRTG web interface.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:327px"><a href="admin_tool_send_logs.png"><img id="TOGGLE0186AF" class="image-toggle" alt="Send Logs to Paessler" title="Send Logs to Paessler" style="width:327px;height:462px;border:none" src="admin_tool_send_logs_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Send Logs to Paessler</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">If you open a support ticket, Paessler Support might ask you to send logfiles for further analysis. With the <span class="f_BoldCustom">Send Logs to Paessler... </span>button, PRTG will automatically collect, compress, and send your logfiles to our FTPS server.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Send Logs to Paessler</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your name.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Email</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a valid email address. You can provide any of your addresses, but we recommend that you use the email address of your PRTG account, which is entered by default.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Ticket No.</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is optional. If you have already opened a ticket at Paessler Support, please provide the ticket number you received. Your files will then be associated with your ticket automatically.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Please enter the ticket number starting with </span><span class="f_ItalicCustom">PAE</span><span class="f_ListBulleted"> followed by four or more digits, for example, PAE12345. If you do not have a ticket number, leave this field empty. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Configuration</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to include the configuration file in the data. PRTG will remove all passwords from the config file before sending it to our support team.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Send </span>button to start the data upload. Ensure that FTPS and HTTP connections are allowed on this machine.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: The PRTG Administration Tool</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/administration-tool" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/administration-tool</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which ports does PRTG use on my system?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61462" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61462</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">PRTG Administration Tool—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_step_by_step.htm" class="topiclink">Failover Cluster Step by Step</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure PRTG Server,Server Administrator</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_administration_programs.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="prtg_probe_administrator.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

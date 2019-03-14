@@ -1,0 +1,45 @@
+﻿<div class="onereport report<@counter>">
+	<#include file="includes\printheading.htm">
+	<div class="comment-block">
+		<#objectproperty name="reportheader">
+	</div>
+	<h1><#objectproperty name="name">: <b><#objectproperty id="<@objectid>" name="name"></b></h1>
+
+	<table cellspacing=0 class="overview">
+		<tr class=even>
+			<td class=title><#lang key="html.reporttemplates.reporttimespan" default="Report Time Span">:</td>
+			<td colspan=6><#report type="startdate"> - <#report type="enddate"></td>
+		</tr>
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.reporthours" default="Report Hours">:</td>
+			<td colspan=6><#report type="reporthours"></td>
+		</tr>
+		<tr class=even>
+			<td class=title><#lang key="html.reporttemplates.sensortype" default="Sensor Type">:</td>
+			<td colspan=6><#objectstatus name="type" id="<@objectid>"> (<#objectstatus id="<@objectid>" name="interval"> <#lang key="html.reporttemplates.interval" default="Interval">)</td>
+		</tr>
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.probegroupdevice" default="Probe, Group, Device">:</td>
+			<td colspan=6><#objectstatus id="<@objectid>" name="probe" show="textshort"> &gt; <#objectproperty id="<@objectid>" name="ParentGroup" show="text"> &gt; <#objectproperty  id="<@objectid>" name="ParentDevice" show="text"></td>
+		</tr>
+		<@loop>
+	</table>
+
+	<div class="reportgraph">
+	<#report type="chart" graphid="<@subid>" repsensid="<@objectid>" avg="<@graphaverage>" sdate="<@start>" edate="<@end>" width=850 height=630 graphstyling="baseFontSize='12'%20showLegend='0'" tooltexts="1" refreshable="true">
+    <div style="width:850px"><#report type="legend" repnodeid="<@subid>" repsensid="<@objectid>" width="850"></div>
+	<#report type="chart" graphid="<@subid>" repsensid="<@objectid>" avg="3600" sdate="<@start>" edate="<@end>" startoff="-30" endoff="0"	 width=850 height=220 graphstyling="baseFontSize='9'%20showLegend='0'" tooltexts="1" refreshable="true">
+	</div>
+
+	<br>
+
+	<#report type="averagetable" repnodeid="<@subid>" repsensid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+	<br>
+	<#report type="toplist" repnodeid="<@subid>" repsensid="<@objectid>" sdate="<@start>" edate="<@end>" save="@save">
+
+	<div class="comment-block">
+		<#objectproperty name="reportfooter">
+	</div>
+
+	<#include file="includes\printfooter.htm">
+</div>

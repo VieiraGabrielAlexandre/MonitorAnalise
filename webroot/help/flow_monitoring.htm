@@ -1,0 +1,115 @@
+﻿<!--Monitoring Bandwidth via Flows-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="packet_sniffer_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="bandwidth_monitoring_comparison.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring Bandwidth via Flows</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring Bandwidth via Flows</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Using flow protocols, you can monitor the bandwidth usage of all packets going through a device. In PRTG, you can view <span class="f_BoldCustom"><a href="toplists.htm" class="topiclink">Toplists</a></span> for all xFlow (NetFlow, IPFIX, sFlow, jFlow) sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Flows are a type of monitoring data pushed from network devices to PRTG. You can use it to monitor where data is traveling to and from, and how much. This way it determines which machine, protocol, and user is consuming bandwidth. PRTG currently supports the following flow types:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetFlow v5/v9 and IPFIX: Originally introduced by Cisco and supported by several vendors </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">jFlow: Traffic sampling technology introduced by Juniper networks</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">sFlow: Short for sampled flow, introduced by HP. sFlow uses statistical sampling of the traffic at defined intervals to achieve scalability for high volume interfaces.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also use <a href="packet_sniffer_monitoring.htm" class="topiclink">packet sniffing</a> for bandwidth monitoring if your hardware does not support any of these flow versions.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="how" class="hmanchor"></a><span class="f_InTopicHeading">How xFlow Monitoring works</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can measure bandwidth usage <span class="f_ItalicCustom">by IP address</span> or <span class="f_ItalicCustom">by application</span> in a network, using one of the xFlow (including IPFIX) protocols. They are the best choice especially for networks with high traffic (connections with hundreds of megabits or gigabits). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">For xFlow monitoring, the router gathers bandwidth usage data (<span class="f_ItalicCustom">flows</span>), aggregates them, and sends information about these flows to PRTG using UDP packets. When you use sampling (mandatory for sFlow), only information about every n-th packet is sent to PRTG, which reduces CPU load a lot. Because the switch already performs a pre-aggregation of traffic data, the flow of data to PRTG is much smaller than the monitored traffic. This makes xFlow the ideal option for high traffic networks that need to differentiate the bandwidth usage by network protocol and/or IP addresses.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="netflow" class="hmanchor"></a><span class="f_InTopicHeading">NetFlow and IPFIX Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The NetFlow (and IPFIX) protocol is mainly used by Cisco devices. Once configured, the router sends for each data flow a NetFlow or IPFIX packet to the monitoring system running on a PRTG probe. You can filter and evaluate the data in PRTG. There are different NetFlow and IPFIX sensors available: The basic ones offer predefined channel definitions, the custom variants enable you to define your own channels.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The advantage of using NetFlow or IPFIX:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Generates little CPU load on the router itself (according to Cisco, 10,000 active flows create about 7% additional CPU load; 45,000 active flows account for about 20% additional CPU load).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Generates less CPU load on the PRTG core system compared to packet sniffer sensors.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>You must enable NetFlow or IPFIX export on the device you want to monitor. The device must send a flow data stream to the IP address of the PRTG probe system on which you set up the NetFlow or IPFIX sensor. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can monitor Juniper <span class="f_BoldCustom">jFlow</span> with the corresponding sensors as well. Basically they are adjusted NetFlow v5 sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ItalicCustom">NetFlow Lite</span> monitoring is possible using the <span class="f_BoldCustom">Sampling Mode</span> of the <span class="f_BoldCustom"><a href="netflow_v9_sensor.htm" class="topiclink">NetFlow V9 sensor</a></span> or of the <span class="f_BoldCustom"><a href="netflow_v9_custom_sensor.htm" class="topiclink">NetFlow V9 (Custom) sensor</a></span>. You can turn on the sampling mode and define a suitable <span class="f_BoldCustom">Sampling Rate</span> in the <a href="netflow_v9_sensor.htm#flowspecific" class="topiclink">sensor settings</a>. Please note that NetFlow Lite monitoring might not work in every case even with active sampling mode.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sflow" class="hmanchor"></a><span class="f_InTopicHeading">sFlow Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">sFlow works similar to NetFlow monitoring. The router sends data flow packets to the monitoring system running on a PRTG probe. The most obvious difference between the two flow protocols: With sFlow, not all of the traffic is analyzed, but only every n-th packet. It is like having a river of traffic and you take a cup of water out of it ever so often and analyze it. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The advantage is clear: There is less data to analyze, there is less CPU load needed, and less monitoring traffic is generated. Nevertheless, you can get a good insight into your network bandwidth usage. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>PRTG supports sFlow version 5.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="setup" class="hmanchor"></a><span class="f_InTopicHeading">Set Up Flow Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find details on how to set up the different flow sensors in the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="netflow_v5_sensor.htm" class="topiclink">NetFlow V5 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="netflow_v5_custom_sensor.htm" class="topiclink">NetFlow V5 (Custom) Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="netflow_v9_sensor.htm" class="topiclink">NetFlow V9 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="netflow_v9_custom_sensor.htm" class="topiclink">NetFlow V9 (Custom) Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ipfix_sensor.htm" class="topiclink">IPFIX Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ipfix_custom_sensor.htm" class="topiclink">IPFIX (Custom) Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sflow_sensor.htm" class="topiclink">sFlow Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sflow_custom_sensor.htm" class="topiclink">sFlow (Custom) Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="jflow_v5_sensor.htm" class="topiclink">jFlow V5 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="jflow_v5_custom_sensor.htm" class="topiclink">jFlow V5 (Custom) Sensor</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limitations" class="hmanchor"></a><span class="f_InTopicHeading">Limitations</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On a powerful 2008 PC (Dual Core, 2.5 Ghz), you can process about 100,000 flows per second for one xFlow stream. Using sampling, the number of actual flows can be much higher. When using complex filters, the value can be much lower. For example, with a router sending about 2,000 flows/second (which corresponds to mixed traffic at gigabit/second level without sampling) you can expect to configure up to 50 NetFlow sensors operating properly. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG internally monitors its own NetFlow processing. You can see decreased values in the <span style="font-weight: bold;">Health</span> channels of the <span class="f_BoldCustom"><a href="core_health_sensor.htm" class="topiclink">Core Health</a></span> and <span class="f_BoldCustom"><a href="probe_health_sensor.htm" class="topiclink">Probe Health</a></span> sensors as soon as NetFlow packets are not processed due to an overload (you find these sensors on the local probe device).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you experience an overload, please consider using sampling or setting up multiple probes and distribute the NetFlow streams to them. We recommend that you do not add more than 50 NetFlow sensors per PRTG probe.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">This sensor type cannot be used in cluster mode. You can set it up on a local probe or remote probe only, not on a cluster probe.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>IPv6 flows are supported by NetFlow V9 and IPFIX sensors, other flow sensor types only support IPv4. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: Bandwidth Monitoring With Flows and Packet Sniffing</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/bandwidth-monitoring-advanced" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/bandwidth-monitoring-advanced</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Can I add custom channels to standard Packet Sniffer and NetFlow sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/2143" target="_blank" class="weblink">https://kb.paessler.com/en/topic/2143</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What filter rules can be used for custom Packet Sniffing or xFlow (NetFlow/sFlow) sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/483" target="_blank" class="weblink">https://kb.paessler.com/en/topic/483</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do the channel definitions for custom Packet Sniffing or xFlow (NetFlow/sFlow) sensors work?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/473" target="_blank" class="weblink">https://kb.paessler.com/en/topic/473</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Does my Cisco device (Router/Switch) support NetFlow Export?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/5333" target="_blank" class="weblink">https://kb.paessler.com/en/topic/5333</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Do you have any configuration tips for Cisco routers and PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/563" target="_blank" class="weblink">https://kb.paessler.com/en/topic/563</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How to monitor Cisco ASA Firewalls using NetFlow 9 and PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/1423" target="_blank" class="weblink">https://kb.paessler.com/en/topic/1423</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I change the default groups and channels for xFlow and Packet Sniffer sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60203" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60203</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What is the Active Flow Timeout in Flow sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/66485" target="_blank" class="weblink">https://kb.paessler.com/en/topic/66485</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tools: NetFlow Generator and NetFlow Tester</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/tools/" target="_blank" class="weblink">https://www.paessler.com/tools/</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Flow,Flow Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="packet_sniffer_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="bandwidth_monitoring_comparison.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

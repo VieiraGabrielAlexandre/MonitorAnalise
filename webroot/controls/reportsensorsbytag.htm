@@ -1,0 +1,10 @@
+﻿<#lang key="html.reportsensorsbytag.help" default="Selecting Sensors by Tag" var="helptitle">
+<#lang key="html.reportsensorsbytag.text" default="This list shows all sensors that have been selected by tag (report setting 'Include Sensors By Tag').
+ This list is dynamic: as soon as you add a new sensor with this tag or add the tag to an existing sensor (or parent object) the contents of the report will change accordingly.
+ To remove a sensor from this list, you must remove the tag from the sensor (or its parents)." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<div class="prtg-plugin" data-plugin="prtg-table">
+	<#report type="taglist" tableid="sensortable" columns="probegroupdevice,sensor,priority,favorite" sortby="probegroupdevice" tabletitle="AUTO" refreshable="true" >
+</div>

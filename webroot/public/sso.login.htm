@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>PRTG-Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, follow">
+	<script src="//downloads.paessler.com/js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">
+	// IE11 shims
+	if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
+		document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-shim.min.js"><\/script>');
+		document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"><\/script>');
+	}
+	</script>
+	<script type="text/javascript" src="https://assets.my-prtg.com/paessler-authentication.js"></script>
+	<script src="../javascript/sso.login.js" defer></script>
+
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/sso.login.css">
+
+</head>
+<body>
+
+	<div id="header">
+		<span class="prtglogo">
+			<img border=0 id="prtgname" src="/images/prtg_network_monitor.png">
+		</span>
+		<span class="paesslerlogo">
+			<a tabindex="-1" href="https://www.paessler.com" target="_blank" title="Paessler AG - The Network Monitoring Company"><img border=0 id="paesslerlogo" src="/images/paessler.png"></a>
+		</span>
+	</div>
+
+	<div class="container">
+		<div class='row'>
+			<div class='col-lg-6 col-md-6'>
+				<div id='loader'><div class="cssload-loading"><i></i><i></i><i></i></div></div>
+			</div>
+
+			<div class='adds col-lg-6 col-md-6'>
+				<img class="prtg-logo-big" width="200" height="120" src="/images/prtg_logo_gray.png" />
+				<#include file="public\newsfeed.htm">
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<span class="prtgversion">&nbsp;<#system type="codename"> <#system type="version"> <#system type="expiry"></span>
+		<span class="copyright">&copy; <#copyrightyear> <a tabindex="-1" href="https://www.paessler.com?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="The Network Monitoring Company">Paessler AG</a></span>
+	</div>
+
+</body>
+</html>
+

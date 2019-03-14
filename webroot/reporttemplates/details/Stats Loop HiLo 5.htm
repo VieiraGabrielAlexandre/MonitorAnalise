@@ -1,0 +1,18 @@
+﻿
+<!-- Template Stats Loop HiLo 5.htm-->
+<h2>
+<span style="<#clusterdependent showfor='clusterinstallation'>">
+    <#lang key="html.reporttemplates.clusternode" default="Cluster Node"> <#cluster type="name" clgid="<@clgid>">:
+</span>
+<#lang key="html.reporttemplates.highest" default="Highest Averages"> (5 <#lang key="html.reporttemplates.minuteinterval" default="Minute Interval">)
+</h2>
+
+<div><#report type="statstable" columns="sensor,average,minimum,maximum,probegroupdevice" count="100" avg="300" sortby="average" showposition="true" clgid="<@clgid>"></div>
+
+<h2>
+<span style="<#clusterdependent showfor='clusterinstallation'>">
+    <#lang key="html.reporttemplates.clusternode" default="Cluster Node"> <#cluster type="name" clgid="<@clgid>">:
+</span>
+<#lang key="html.reporttemplates.lowest" default="Lowest Averages"> (5 <#lang key="html.reporttemplates.minuteinterval" default="Minute Interval">)</h2>
+
+<div><#report type="statstable" columns="sensor,average,minimum,maximum,probegroupdevice" count="100" avg="300" sortby="-average" showposition="true" clgid="<@clgid>"></div>

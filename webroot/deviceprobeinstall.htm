@@ -1,0 +1,139 @@
+﻿<#checkobjecttype objecttype="device">
+<#system type="denyreadonlyusers">
+
+<#objectproperty name="name" var="devicename">
+
+<#lang key="html.deviceprobeinstaller.title" default="Install Remote Probe on Device @devicename" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+
+<div id="main" data-title="<#pagetitle>" >
+  <h1><#lang key="html.deviceprobeinstaller.title" default="Install Remote Probe on Device @devicename"></h1>
+  <div id="content" class="limitedcontentwidth">
+	<div class="tabs-container">
+
+		<div class="prtg-box">
+
+			<p><b><#lang key="html.deviceprobeinstaller.experimentalnote" default="Please note: This is an experimental feature, it may not work in all situations. Please send your feedback to <a href='mailto:support@@paessler.com'>support@@paessler.com</a>."></b></p>
+
+			<p><#lang key="html.deviceprobeinstaller.description" default="You are about to install a PRTG Remote Probe on the computer &quot;@devicename&quot;. This will allow PRTG to monitor this computer locally instead of using remote monitoring features. This can be a good workaround for performance or authentication problems (for example, for WMI sensors) sometimes. Additionally, this will allow you to use some probe-only sensors like Packet Sniffing, NetFlow, and others."></p>
+
+		</div>
+		<div><#include file="controls\devicedata.htm"></div>
+
+		<div class="prtg-box">
+			<h2><#lang key="html.deviceprobeinstaller.prereqs.header" default="Prerequisites"> </h2>
+
+			<p><#lang key="html.deviceprobeinstaller.prereqs.pleasemakesure" default="Please make sure you fulfill the following conditions.">
+			<ul>
+				<li><#lang key="html.deviceprobeinstaller.prereqs.targetwindows" default="The target device must be a computer with a <a href='/help/detailed_system_requirements.htm#os' target='_blank'>supported Windows version.</a>"></li>
+				<li><#lang key="html.deviceprobeinstaller.prereqs.targetrpc" default="The target computer must be accessible through RPC (this is usually the case when your PRTG server and the target computer are located in the same LAN segment)."></li>
+				<li><#lang key="html.deviceprobeinstaller.prereqs.targetport" default="Open or forward <b>port 23560</b> in your firewall to allow connections between the probe and your PRTG core server."></li>
+				<li id="localprobe"><#lang key="html.deviceprobeinstaller.prereqs.localprobe" default="You cannot install a remote probe on a probe device."></li>
+
+				<#objectid var="objectid">
+				<#inserthtml html="href='/device.htm?id=@objectid&tabid=7'" var="devicetab" varexpand="html">
+				<#objectproperty show="text" name="windowslogindomain" inherit="true" var="logindomain">
+				<#objectproperty name="windowsloginusername" inherit="true" var="loginname">
+				<li id="winlogin"><#lang key="html.deviceprobeinstaller.prereqs.winlogin" default="Windows credentials must be set in the <a @devicetab>device settings</a> or its parents' settings (current user name: @logindomain\@loginname) and the user account must have administration rights on the target machine."></li>
+				<#objectproperty id="810" show="text" name="probeips" var="probeips">
+				<#inserthtml html="href='/systemsetup.htm?tabid=4'" var="coretab">
+				<li id="probeip"><#lang key="html.deviceprobeinstaller.prereqs.probeip" default="You have to allow remote probe connections to your PRTG core server. Open the <a href='/systemsetup.htm?tabid=4' target='_blank'>Core &amp; Probes</a> tab in the System Administration of your PRTG web interface. In section <b>Probe Connection Settings</b> choose the option <b>All IPs available on this computer</b> or specify IPs for the setting <b>Probe Connection IPs</b>. Do not use the &quot;Local Probe only&quot; (127.0.0.1) setting! (Current setting: @probeips)"></li>
+			</ul></p>
+		</div>
+
+		<div class="prtg-box">
+			<h2><#lang key="html.deviceprobeinstaller.startinstall" default="Start Probe Installation"></h2>
+
+			<p id="nogomessage"><b><#lang key="html.deviceprobeinstaller.prereqs.sorry" default="Sorry, you cannot continue. Please correct the highlighted items above!"></b></p>
+
+			<p id="startbutton" style="display:none"><#lang key="html.deviceprobeinstaller.duration" default="The installation will take between 10 and 100 seconds."><br><br><a id="installprobe" class="actionbutton" href="#" onclick="installprobe(<#objectid>);return false"><#lang key="html.deviceprobeinstaller.installit" default="Install Remote Probe on &quot;@devicename&quot;"></a></p>
+
+		  <p id="working"></p>
+		</div>
+   </div>
+  </div>
+   <span style="display:none" id="probeinstallprobeips"><#objectproperty id="810" show="textraw" name="probeips"></span>
+   <span style="display:none" id="probeinstallloginusername"><#objectproperty name="windowsloginusername" inherit="true"></span>
+   <span style="display:none" id="probeinstallobjectid"><#objectid></span>
+   <span style="display:none" id="probeinstallhost"><#objectproperty name="host" show="text"></span>
+
+
+<script type="text/javascript">
+<!--
+
+function installprobe(objid) {
+	$("#startbutton").hide();
+	$("#working").html("<div class='loading'><div class='loadspinner'></div></div><#langjs key="html.deviceprobeinstaller.working" default="Working... (This usually takes between 10 and 100 seconds.)">");
+	$.ajax({
+		url: "/api/remoteinstallprobe.htm",
+		timeout: 120000,
+		data: {
+			"id": objid,
+		},
+		type: "GET",
+		beforeSend: function(jqXHR){
+			jqXHR.ignoreManager = true;
+		}
+	}).done(function(html) {
+		var msg1 = "<#langjs key="html.deviceprobeinstaller.done" default="Done. Result is: {s}">";
+		msg1 = msg1.printf({s: html});
+		var link1 ="<#langjs key="html.deviceprobeinstaller.devicetree" default="device tree">";
+		var msg2 = "<#langjs key="html.deviceprobeinstaller.pleasego" default="Please go to the {s} now and acknowledge the new probe which should appear at the bottom of the list, afterwards you can add new sensors to it!" comment="{s} will be replaced with a link and: html.deviceprobeinstaller.devicetree">";
+		msg2 = msg2.printf({s: "<a href='/group.htm?id=0'>"+link1+"</a>"});
+		var link2 ="<#langjs key="html.deviceprobeinstaller.probesettings" default="probes settings">";
+		var msg3 = "<#langjs key="html.deviceprobeinstaller.ifnoconnect" default="If the remote probe does not connect to your PRTG core server please check the {s} page and log into the remote computer using remote desktop and check the settings in the Probe Administrator." comment="{s} will be replaced with a link and: html.deviceprobeinstaller.probesettings">";
+		msg3 = msg3.printf({s: "<a href='/systemsetup.htm?tabid=4'>"+link2+"</a>"});
+
+		if(html === 'OK') {
+			$("#working").html("<b>"+msg1+"</b><br><br>"+msg2+"<br><br>"+msg3);
+		} else {
+			$("#working").html("<b>"+msg1+"</b>");
+    }
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+		var msg1 = "<#langjs key="html.deviceprobeinstaller.error" default="Error: {s}">";
+		msg1 = msg1.printf({s: textStatus});
+  		$("#working").html("<b>"+msg1+"</b>");
+	});
+	return false;
+};
+
+$(function(){
+	$("#startbutton").hide();
+	$(".makemyhomelink").remove();
+
+  var id = _Prtg.Util.getUrlVars()["id"];
+  var stop=false;
+
+  if ($("#probeinstallprobeips").text()=="127.0.0.1") {
+	 $("#probeip").css("color","red").prepend("<b><#langjs key="html.deviceprobeinstaller.pleasecorrect" default="Please correct before proceeding"></b>: ");
+	 stop=true;
+	}
+
+	if ($("#probeinstallloginusername").text() == "") {
+		$("#winlogin").css("color","red").prepend("<b><#langjs key="html.deviceprobeinstaller.pleasecorrect" default="Please correct before proceeding"></b>: ");
+		stop=true;
+	}
+	if ($("#probeinstallobjectid").text()=="40" || $("#probeinstallhost").text()=="127.0.0.1") {
+		$("#localprobe").css("color","red").prepend("<b><#langjs key="html.deviceprobeinstaller.pleasecorrect" default="Please correct before proceeding"></b>: ");
+		stop=true;
+	}
+	if (!stop) {
+		$("#startbutton").show();
+		$("#nogomessage").hide();
+		$("#localprobe").hide();
+	}
+});
+
+//-->
+</script>
+
+<#lang key="html.deviceprobeinstaller.help.title" default="Install Remote probe" var="helptitle">
+<#lang key="html.deviceprobeinstaller.help.text" default="This feature allows you to remotely install a remote probe on a device!<br><br><a href='/help/remote_probe_quick_install.htm' target='_blank'><b>Help: Remote Probe Quick Install</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

@@ -1,0 +1,2 @@
+﻿.hideforreadonly {<#system type='hideforreadonlyusers'>}
+.actionbutton,.actionbutton:link {<#clusterdependent insertfor="failovernode" insertcontent="display:none;">}

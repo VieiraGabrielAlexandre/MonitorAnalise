@@ -1,0 +1,150 @@
+﻿<!--HTTP API-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="application_programming_interface_api_definition.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="live_data.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>HTTP API</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: HTTP API</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">All calls to the PRTG HTTP API are performed by HTTP GET requests. The URLs consist of a path to the API function and some parameters.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you are accessing the API inside your secure LAN, you can simply use HTTP. In insecure environments (for example, when accessing your PRTG server across the internet), you should</span><span class="f_BoldCustom"> use HTTPS requests</span><span class="f_ListBulleted"> to make sure that your parameters and passwords are encrypted. This way all communication between the PRTG server and your client is SSL-encrypted.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">For every API call, the default limit of items is </span><span class="f_ItalicCustom">500</span><span class="f_ListBulleted">. If you want to receive more items per call, add a </span><span class="f_BoldCustom">count=xxx</span><span class="f_ListBulleted"> parameter with enough room for all sensors.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">Authentication with username and <a href="my_account_settings.htm#basic" class="topiclink">passhash</a> (or username and password) must always be included in each request. See section <span class="f_BoldCustom"><a href="http_api.htm#authentication" class="topiclink">Authentication</a></span> for more information.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All data in the GET parameters must be </span><span class="f_ItalicCustom">UTF-8</span><span class="f_ListBulleted"> encoded and </span><span class="f_ItalicCustom">URL</span><span class="f_ListBulleted"> encoded.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"> Here are two example API calls:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://yourserver/api/table.xml?content=sensors&amp;columns=sensor</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">or:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://yourserver/api/table.xml?content=sensors&amp;columns=sensor</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The example URLs consist of the following elements:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">yourserver</span><span class="f_ListBulleted">: the name of your PRTG server.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">/api/table.xml</span><span class="f_ListBulleted">: addresses an API function. Here the function renders a table in Extensible Markup Language (XML) format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">content=sensors</span><span class="f_ListBulleted">: parameter for additional control. In this case, it includes all sensors in the table.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">columns=sensor</span><span class="f_ListBulleted">: parameter for additional control. In this case, only the names of all sensors are shown in the table.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="authentication" class="hmanchor"></a><span class="f_InTopicHeading">Authentication</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">All requests to the API are stateless, which means that there is no multi-step login process of an kind. The authentication with username and <a href="my_account_settings.htm#basic" class="topiclink">passhash</a> (or username and password) must always be included in each request by using the username and passhash (or username and password) parameters.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://yourserver/api/table.xml?content=sensors&amp;columns=sensor&amp;username=myuser&amp;passhash=hash</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">or:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://yourserver/api/table.xml?content=sensors&amp;columns=sensor&amp;username=myuser&amp;password=mypassword</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The example URLs now also contain the credentials for authentication purposes:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">username=myuser&amp;passhash=hash</span><span class="f_ListBulleted"> (or </span><span class="f_BoldCustom">password=mypassword</span><span class="f_ListBulleted">)</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can request the passhash for an account with the following API call:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://yourserver/api/getpasshash.htm?username=myuser&amp;password=mypassword</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Make sure that the username and password are URL encoded.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="version" class="hmanchor"></a><span class="f_InTopicHeading">Versioning</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Most XML replies from the API contain a <span class="f_BoldCustom">&lt;version&gt;</span> field that contains the program version and buildnumber of the server's PRTG installation. Your client must look at this version number and compare it to the version number that was used to develop the client. Do not accept version numbers older (smaller) than this one. You should display a warning to the user (or stop processing) if the version number differs by <span class="f_BoldCustom">0.1</span> or more (for example, version <span class="f_BoldCustom">18.1</span> vs. <span class="f_BoldCustom">18.2</span>, or version <span class="f_BoldCustom">17.x</span> vs. <span class="f_BoldCustom">18.x</span>). API conventions or parameters may have changed between versions.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Newer versions of the same major version of PRTG will reply to API calls just as previous versions have.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="error" class="hmanchor"></a><span class="f_InTopicHeading">Error Handling</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Depending on whether your API call was processed successfully or not, the PRTG server will reply with the following HTTP status codes:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">HTTP Status Code</span></p>
+</th>
+<th style="vertical-align:top; width:284px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Meaning</span></p>
+</th>
+<th style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Comments</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">200</p>
+</td>
+<td style="vertical-align:top; width:284px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">OK</p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The API call was completed successfully, the XML response contains the result data.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">302</p>
+</td>
+<td style="vertical-align:top; width:284px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Found</p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The API call was completed successfully and a new object was created (the redirection URL contains the new object id).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">400</p>
+</td>
+<td style="vertical-align:top; width:284px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Bad Request</p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The API call could not be completed successfully. The XML response contains the error message.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">401</p>
+</td>
+<td style="vertical-align:top; width:284px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Unauthorized</p>
+</td>
+<td style="vertical-align:top; width:887px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The username/password credentials cannot be accepted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">For 400 error codes, the error XML document will include the error message as follows:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&lt;prtg&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&lt;version&gt;18.1.37.10127+&lt;/version&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&lt;error&gt;Sorry,&nbsp;there&nbsp;is&nbsp;no&nbsp;object&nbsp;with&nbsp;the&nbsp;specified&nbsp;id.&lt;/error&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&lt;/prtg&gt;</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use the PRTG Application Programming Interface (API)?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/593" target="_blank" class="weblink">https://kb.paessler.com/en/topic/593</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Application Programming Interface (API) Definition—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http_api.htm" class="topiclink">HTTP API</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm" class="topiclink">Live Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_graphs.htm" class="topiclink">Live Graphs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data.htm" class="topiclink">Historic Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_notifications.htm" class="topiclink">Custom Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="application_programming_interface_api_definition.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="live_data.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

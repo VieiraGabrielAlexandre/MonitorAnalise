@@ -1,0 +1,17 @@
+MODULE-IDENTITY MACRO (lines 55..79 parsed and ignored).
+OBJECT-IDENTITY MACRO (lines 81..103 parsed and ignored).
+OBJECT-TYPE MACRO (lines 212..298 parsed and ignored).
+NOTIFICATION-TYPE MACRO (lines 302..334 parsed and ignored).
+OBJECT-TYPE MACRO (lines 25..39 parsed and ignored).
+TRAP-TYPE MACRO (lines 7..32 parsed and ignored).
+Warning: snmp.30 is both snmpEnableAuthenTraps and snmpEnableAuthTraps (C:\Program Files (x86)\PRTG Network Monitor\MIB/RFC1158-MIB.MIB)
+Warning: ip.21 is both ipRouteTable and ipRoutingTable (C:\Program Files (x86)\PRTG Network Monitor\MIB/RFC1158-MIB.MIB)
+Warning: ccitt.0 is both zeroDotZero and nullSpecific (C:\Program Files (x86)\PRTG Network Monitor\MIB/RFC1158-MIB.MIB)
+TRAP-TYPE MACRO (lines 7..32 parsed and ignored).
+OBJECT-TYPE MACRO (lines 21..70 parsed and ignored).
+Warning: intSrv.4 is both intSrvConformance and intSrvGuaranteed (C:\Program Files (x86)\PRTG Network Monitor\MIB/INT-SERV-GUARANTEED-MIB.my)
+Warning: intSrvGuaranteed.2 is both intSrvCompliances and intSrvGuaranteedNotifications (C:\Program Files (x86)\PRTG Network Monitor\MIB/INT-SERV-GUARANTEED-MIB.my)
+Warning: intSrvGuaranteed.1 is both intSrvGroups and intSrvGuaranteedObjects (C:\Program Files (x86)\PRTG Network Monitor\MIB/INT-SERV-GUARANTEED-MIB.my)
+Warning: intSrvGuaranteedObjects.1 is both intSrvIfAttribGroup and intSrvGuaranteedIfTable (C:\Program Files (x86)\PRTG Network Monitor\MIB/INT-SERV-GUARANTEED-MIB.my)
+Undefined OBJECT (dmiGroupClassId): At line 1291 in C:\Program Files (x86)\PRTG Network Monitor\MIB/dmi-mib.mib
+Warning: ccitt.0 is both nullSpecific and null (C:\Program Files (x86)\PRTG Network Monitor\MIB/DLSW-MIB.my)

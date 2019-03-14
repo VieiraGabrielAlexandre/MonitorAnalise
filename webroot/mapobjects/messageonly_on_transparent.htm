@@ -1,0 +1,23 @@
+﻿<!--Status Icons: Sensor (message only, transparent background)-->
+<div class="map_object map_icon2 map_icon_large mapicon_status_transparent" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+  <#mapobject type="objectgrip" mode="<@editmode>">
+  <#mapobject type="htmlbefore" subid="<@subid>">
+  <#checkobjecttype objecttype="sensor" nicemessage="true" id="<@objectid>">
+
+    <span class="label">
+      <#objectstatus name="downsens" id="<@objectid>">
+      <#objectstatus name="partialdownsens" id="<@objectid>">
+      <#objectstatus name="downacksens" id="<@objectid>">
+      <#objectstatus name="warnsens" id="<@objectid>">
+      <#objectstatus name="upsens" id="<@objectid>">
+      <#objectstatus name="pausedsens" id="<@objectid>">
+      <#objectstatus name="unusualsens" id="<@objectid>">
+      <#objectstatus name="undefinedsens" id="<@objectid>">
+    </span>
+
+  <span class="label"><#objectproperty name="Name" id="<@objectid>"></span>
+
+  <div style="clear: both;"><#objectstatus name="message" show="textraw" id="<@objectid>"></div>
+
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>

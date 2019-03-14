@@ -1,0 +1,29 @@
+﻿ <!--Status Icons: Primary channel (gauge)-->
+
+<div class="map_object map_table <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="sensor" nicemessage="true" id="<@objectid>">
+  <p><b><#objectproperty name="Name" id="<@objectid>"></b></p>
+	<div id="Plugin_<@itemid>"
+    class="prtg-plugin"
+    data-plugin="channelgauges"
+    data-primarychannel='<#objectproperty name="primarychannel" show="number" id="<@objectid>">'
+    data-objectid="<@objectid>"
+    data-type="channels"
+    data-mapview="primaryonly"
+    data-mapobj="true">
+    <!--
+    {
+      "objects":<#table
+      id="<@objectid>"
+      output='json'
+      noraw='1'
+      content='channels'
+      sortby='name'
+      columns='name,info=treejson,minimum,maximum,condition,lastvalue'>
+    }
+    -->
+	</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

@@ -1,0 +1,113 @@
+{
+  "prtg": {
+    "description" : {
+      "device": "api.wunderground.com",
+      "query": "/api/<API-KEY>/conditions/q/pws:<STATION-ID>.json",
+      "comment": "You need a custom api key from weather underground to access the api. Documentation and a free developer key can be found on https://www.wunderground.com/weather/api/"
+    },
+    "result": [
+      {
+        "channel": "Temperature °C" ,
+        "value": $.current_observation.temp_c ,
+        "unit": "Temperature",
+        "float": 1,
+        "decimalmode": 2,
+        "LimitMode":1,
+        "LimitMinWarning": 7,
+        "LimitMinError": 5,
+        "LimitMaxWarning": 30,
+        "LimitMaxError": 35
+      },
+      {
+        "channel": "Temperature °F" ,
+        "value": $.current_observation.temp_f ,
+        "float": 1,
+        "decimalmode": 2,
+        "unit": "Custom",
+        "customunit": "°F",
+        "LimitMode":1,
+        "LimitMinWarning": 45,
+        "LimitMinError": 41,
+        "LimitMaxWarning": 86,
+        "LimitMaxError": 95
+      },
+      {
+        "channel": "Dewpoint °C" ,
+        "value": $.current_observation.dewpoint_c ,
+        "unit": "Temperature",
+        "float": 1,
+        "decimalmode": 2,
+        "LimitMode":1,
+        "LimitMinWarning": 7,
+        "LimitMinError": 5,
+        "LimitMaxWarning": 30,
+        "LimitMaxError": 35
+      },
+      {
+        "channel": "Dewpoint °F" ,
+        "value": $.current_observation.dewpoint_f ,
+        "float": 1,
+        "decimalmode": 2,
+        "unit": "Custom",
+        "customunit": "°F",
+        "LimitMode":1,
+        "LimitMinWarning": 45,
+        "LimitMinError": 41,
+        "LimitMaxWarning": 86,
+        "LimitMaxError": 95
+      },
+      {
+        "channel": "Pressure mbar",
+        "value": $.current_observation.pressure_mb,
+        "unit": "Custom",
+        "decimalmode": 2,
+        "customunit": "mbar",
+        "float": 0
+      },
+      {
+        "channel": "Wind speed km/h",
+        "value": $.current_observation.wind_kph,
+        "unit": "Custom",
+        "customunit": "km/h",
+        "decimalmode": 2,
+        "float": 1,
+        "LimitMode":1,
+        "LimitMaxWarning": 80,
+        "LimitMaxError": 100
+      },
+      {
+        "channel": "Wind speed mph",
+        "value": $.current_observation.wind_mph,
+        "unit": "Custom",
+        "customunit": "mph",
+        "decimalmode": 2,
+        "float": 1,
+        "LimitMode":1,
+        "LimitMaxWarning": 50,
+        "LimitMaxError": 65
+      },
+      {
+        "channel": "Wind direction",
+        "value": $.current_observation.wind_degrees,
+        "unit": "Custom",
+        "customunit": "°"
+      },
+      {
+        "channel": "latitude",
+        "value": $.current_observation.display_location.latitude,
+        "unit": "Custom",
+        "customunit": " ",
+        "decimalmode": 6,
+        "float": 1
+      },
+      {
+        "channel": "longitude",
+        "value": $.current_observation.display_location.longitude,
+        "unit": "Custom",
+        "customunit": " ",
+        "decimalmode": 6,
+        "float": 1
+      }
+    ]
+  }
+}

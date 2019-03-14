@@ -1,0 +1,30 @@
+﻿<#system type="denyreadonlyusers">
+<#countobj var="objectcount">
+<div id="content" class="ui-dialog-content">
+	<form onsubmit="return false" class="prtg-form prtg-plugin" data-plugin="prtg-form"  title='<#lang key="html.maintenance.head" default="Set up a one-time maintenance window">'>
+		<fieldset>
+			<legend></legend>
+			<div class="control-group">
+				<label for="" class="control-label no_help"><#lang key="html.objects.selected" default="Selected Objects"></label>
+				<div class="controls">
+		    	<div>
+						<p id="objlist">
+							<#listobj>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+        <label for="maintstart_" class="control-label has_help"><#lang key="html.maintenance.start" default="Maintenance Begins At"></label>
+				<div class="controls" data-placement="right" title="<#lang key="html.maintenance.starthelp" default="Enter the start date and time of the maintenance window. ">">
+	        <input class="fieldrequired {required:true} text prtg-plugin" type="text" id="maintstart_" name="maintstart_" autocomplete="off" value="<#datetimepickervalue value="now">" data-plugin="prtg-datetimepicker" data-timepicker="true" data-min-date="+0" data-max-date="+10y">
+				</div>
+
+        <label for="maintend_" class="control-label has_help"><#lang key="html.maintenance.end" default="Maintenance Ends At"></label>
+        <div class="controls" data-placement="right" title="<#lang key="html.maintenance.endhelp" default="Enter the end date and time of the maintenance window. ">">
+          <input class="fieldrequired {required:true} text prtg-plugin" type="text" id="maintend_" name="maintend_" autocomplete="off" value="" data-plugin="prtg-datetimepicker" data-timepicker="true" data-min-date="+0" data-max-date="+10y">
+        </div>
+			</div>
+		</fieldset>
+	</form>
+</div>

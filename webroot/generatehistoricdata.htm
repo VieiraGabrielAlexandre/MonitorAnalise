@@ -1,0 +1,13 @@
+﻿<#inserturlparam parameter="generate" var="extrapar">
+<#include file="includes\printhead.htm" extraparam="<meta http-equiv='refresh' content='1; url=@extrapar'>" varexpand="extraparam">
+<img style="float:right;" width="250" height="150" src="/images/prtg_logo_gray.png">
+<div style="position:relative;width:100%;height:150px;vertical-align:middle">
+  <div class='loading'><div class='loadspinner' style="position:absolute;top:54px"></div></div>
+  <div style="position:absolute;left:40px;top:50%;height:50%;margin-top:-36px;">
+  <#lang key="html.global.historicdataisrunning" default="PRTG is now generating your historic data for:"><br><br>
+  <b><#objectid> <#objectproperty name="name"></b><br><br>
+  <#lang key="html.global.historicdatashowhere" default="The historic data will be shown here as soon as it is available.">
+  </span>
+</div>
+</body>
+</html>

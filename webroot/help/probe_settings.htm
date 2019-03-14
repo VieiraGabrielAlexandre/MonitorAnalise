@@ -1,0 +1,1149 @@
+﻿<!--Probe Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="root_group_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="group_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Probe Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Probe Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">On a probe's overview page, click the <span class="f_BoldCustom">Settings </span>tab to change settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add Remote Probe</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add additional remote probes to your setup to extend your monitoring to networks that are not directly reachable by your PRTG core installation or cluster. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span> for more details.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Probe Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following settings are available in the <span class="f_BoldCustom">Settings </span>tab of every probe. Because you may not need all of these for every probe, just regard the settings you really need, ignoring the others.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you define as many settings as possible in the </span><span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span><span class="f_ListBulleted">group, so you can inherit them to all other objects further down in the <a href="object_hierarchy.htm" class="topiclink">device tree hierarchy</a>.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Probe Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the probe. The name will be shown by default in the devices tree and in all alarms.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted">. Confirm each tag by hitting the space, comma, or enter key. You can use tags to group objects and use tag–filtered views later on. Tags are not case sensitive.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Status</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose if monitoring for this probe is started or paused.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Started</span><span class="f_ListBulleted">: Monitor this probe.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted">: Pause monitoring for this probe. All sensors on all devices on this probe will be paused until this setting is changed again.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a priority for the probe. This setting determines where the probe will be placed in list views. Top priority will be at the top of a list. You can choose from one star (low priority) to five stars (top priority).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inherited" class="hmanchor"></a><span class="f_InTopicHeading">Inherited Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, all following settings are inherited from objects higher in the hierarchy and should be changed there, if necessary. Often, best practice is to change them centrally in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span>group's settings, see section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information. To change a setting only for this object, disable inheritance by clicking the button next to <span class="f_ItalicCustom">inherit from</span> under the corresponding setting name. You will then see the options described below. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="locationgroup" class="hmanchor"></a><a id="location" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Location</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Location (for Geo Maps)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When you want to use </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span><span class="f_ListBulleted">, enter a location in the first line. Geographical maps will display objects (devices, groups) then with a flag, showing the current status using a color code similar to the <a href="sensor_states.htm" class="topiclink">sensor status icons</a> (green - yellow - orange - red). You can enter a full postal address, city and country only, or latitude and longitude. It is possible to enter any text before, between, and after the coordinates, PRTG will parse latitude and longitude automatically, for example: </span><span class="f_ItalicCustom">49.452778 11.077778</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">enter 49.452778 any 11.077778 text</span><span class="f_ListBulleted"> </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A minus sign (</span><span class="f_ItalicCustom">–</span><span class="f_ListBulleted">) in the first line will hide an object from geo maps. In this case you can enter location information in line two and following.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can define a specific label for each location: enter a string denoting the label in the first line and provide geo coordinates in the second line. This geo marker will show then the object with the label in the PRTG geo map.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The preview map will always have a road map layout regardless of the map layout you set in </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="system_website_settings.htm#geo-maps" class="topiclink">User Interface</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="windowsconnection" class="hmanchor"></a><a id="windows_credentials" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Windows Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Domain or Computer Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the authority for Windows access. This is used for Windows Management Instrumentation (WMI) and other Windows sensors. If you want to use a Windows local user account on the target device, enter the computer name here. If you want to use a Windows domain user account (recommended), enter the (Active Directory) domain name here. If not explicitly defined, PRTG will automatically add a prefix in order to use the NT LAN Manager (NTLM) protocol. Do </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> leave this field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the username for Windows access. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the password for Windows access. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="linuxconnection" class="hmanchor"></a><a id="cred_linux" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Linux/Solaris/Mac OS (SSH/WBEM) Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a login name for the access via SSH and WBEM. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Login</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the authentication method to use for login. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Login via Password</span><span class="f_ListBulleted">: Provide a password for login. Enter below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Login via Private Key</span><span class="f_ListBulleted">: Provide a private key for authentication. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">PRTG can only handle keys in OpenSSH format that are </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> encrypted. You cannot use password-protected keys here. In the text field, paste the entire private key, including the &quot;BEGIN&quot; and &quot;END&quot; lines. Please make sure the according public key is provided on the target machine. For details, see </span><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select password login above. Enter a password for the Linux access via SSH and WBEM. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Private Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select private key login above. Paste a private key into the field (OpenSSH format, unencrypted). Usually, you will use credentials with administrator privileges. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If you do not insert a private key for the first time, but </span><span class="f_ItalicCustom">change</span><span class="f_ListBulleted"> the private key, you need to <a href="administrative_tools_settings.htm#core" class="topiclink">restart your PRTG core server service</a> in order for the private key change to take effect! For details, see </span><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For WBEM Use Protocol</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the protocol to use for WBEM. This setting is only relevant if you use WBEM sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP</span><span class="f_ListBulleted">: Use an unencrypted connection for WBEM.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTPS</span><span class="f_ListBulleted">: Use an SSL-encrypted connection for WBEM.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For WBEM Use Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the port to use for WBEM. This setting is only relevant if you use WBEM sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set automatically (port 5988 or 5989)</span><span class="f_ListBulleted">: Use one of the standard ports, depending on whether you choose unencrypted or encrypted connection above.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set manually</span><span class="f_ListBulleted">: Use a custom port. Define below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">WBEM Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you enable manual port selection above. Enter the WBEM port number.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port number to use for SSH connections. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">By default, PRTG uses this setting automatically for all <a href="available_sensor_types.htm#linux" class="topiclink">SSH sensors</a>, unless you define a different port number in the sensor settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Rights Elevation</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the rights that you want to use to execute the command on the target system. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as the user connecting (default)</span><span class="f_ListBulleted">: Use the rights of the user who establishes the SSH connection, as defined above.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'sudo' (with password)</span><span class="f_ListBulleted">: Use the rights of another user with a password required for </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> to run commands on the target device, for example, as root user.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'sudo' (without password)</span><span class="f_ListBulleted">: Use the rights of another user without a password required for </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> to run commands on the target device, for example, as root user.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Run the command as another user using 'su'</span><span class="f_ListBulleted">: Use the rights of another user with </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> to run commands on the target device.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Target User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you choose </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> above. Enter a username to run the specified command as a user other than </span><span class="f_ItalicCustom">root</span><span class="f_ListBulleted">. If you leave this field empty, you will run the command as </span><span class="f_ItalicCustom">root</span><span class="f_ListBulleted">. Ensure you set the Linux password even if you use a public or private key for authentication. This is not necessary if the user is allowed to execute the command without a password.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password Target User </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you choose to run the commands using </span><span class="f_ItalicCustom">su</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">sudo</span><span class="f_ListBulleted"> with password above. Enter the password for the specified target user.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SSH Engine</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the method you want to use to <a href="ssh_monitoring.htm" class="topiclink">access data with SSH sensors</a>. We strongly recommend that you keep the default engine! For now, you still can use the legacy mode to ensure compatibility with your target systems. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Default (recommended)</span><span class="f_ListBulleted">: This is the default monitoring method for SSH sensors. It provides best performance and security.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Compatibility Mode (deprecated)</span><span class="f_ListBulleted">: Try this legacy method only if the default mode does not work on a target device. The compatibility mode is the SSH engine that PRTG used in previous versions and is deprecated. We will remove this legacy option soon, so please try to get your SSH sensors running with the default SSH engine.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted"> You can also individually select the SSH engine for each SSH sensor in the sensor settings.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="vmwareconnection" class="hmanchor"></a><a id="cred_vmware" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for VMware/XenServer</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a login name for access to VMware and Xen servers. Usually, you will use credentials with administrator privileges.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a password for access to VMware and Xen servers. Usually, you will use credentials with administrator privileges.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Single Sign-On (SSO) passwords for vSphere do not support special characters. See the manual sections for VMware sensors for details.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">VMware Protocol</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the protocol used for the connection to VMware and XenServer. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTPS (recommended)</span><span class="f_ListBulleted">: Use an SSL-encrypted connection to VMware and XenServers.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HTTP</span><span class="f_ListBulleted">: Use an unencrypted connection to VMware and XenServers.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:325px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Session Pool</span></p>
+</td>
+<td style="vertical-align:top; width:841px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use session pooling for VMware sensors. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Reuse session for for multiple scans (recommended)</span><span class="f_ListBulleted">: Select this option to use session pooling. With session pooling, a VMware sensor uses the same session as created in advance to query data and needs not to log in and out for each sensor scan. We recommend that you choose this option because it reduces network load and log entries on the target device, resulting in better performance.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Create a new session for each scan</span><span class="f_ListBulleted">: If you select this option and disable session pooling, a VMware sensor has to log in and out for each sensor scan. We recommend that you use the session pooling option above for better performance. &nbsp;</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="snmpversiongroup" class="hmanchor"></a><a id="cred_snmp" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for SNMP Devices</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Version</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the SNMP version for the device connection. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v1</span><span class="f_ListBulleted">: Use the simple v1 protocol for SNMP connections. This protocol only offers clear-text data transmission, but it is usually supported by all devices.</span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">SNMP v1 does not support 64-bit counters.</span><br />
+<span class="f_ListBulleted">This may result in invalid data when monitoring traffic via SNMP.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v2c (recommended)</span><span class="f_ListBulleted">: Use the more advanced v2c protocol for SNMP connections. This is the most common SNMP version. Data is still transferred as clear-text, but it supports 64-bit counters.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">v3</span><span class="f_ListBulleted">: Use the v3 protocol for SNMP connections. It provides secure authentication and data encryption.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>When using SNMP v3<span class="f_ListBulleted"> you can only monitor a limited number of sensors per second due to internal limitations. The limit is somewhere between 1 and 50 sensors per second (depending on the SNMP latency of your network). This means that using an interval of 60 seconds limits you to between 60 and 3000 SNMP v3 sensors for each probe. If you experience an increased </span><span class="f_ItalicCustom">Interval Delay</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Open Requests</span><span class="f_ListBulleted"> with the </span><span class="f_BoldCustom"><a href="probe_health_sensor.htm" class="topiclink">Probe Health Sensor</a></span><span class="f_ListBulleted">, distribute the load over <a href="remote_probes_and_multiple_probes.htm" class="topiclink">multiple probes</a>. SNMP v1 and v2 do not have this limitation.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Community String</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v1 </span><span class="f_ListBulleted">or </span><span class="f_BoldCustom">v2c </span><span class="f_ListBulleted">above. Enter the community string of your devices. This is a kind of &quot;clear-text password&quot; for simple authentication. We recommend that you use the default value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">MD5</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Message-Digest Algorithm 5 </span><span class="f_ListBulleted">(MD5) for authentication.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SHA</span><span class="f_ListBulleted">: </span>Use<span class="f_ItalicCustom"> Secure Hash Algorithm</span><span class="f_ListBulleted"> (SHA) for authentication.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The type you choose must match the authentication type of your device.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you do not want to use authentication, but you need SNMP v3, for example, because your device requires context, you can leave the field </span><span class="f_BoldCustom">Password</span><span class="f_ItalicCustom"> </span><span class="f_ListBulleted">empty. In this case, </span><span class="f_ItalicCustom">SNMP_SEC_LEVEL_NOAUTH</span><span class="f_ListBulleted"> is used and authentication deactivated entirely.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a username for secure authentication. This value must match the username of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a password for secure authentication. This value must match the password of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Encryption Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Select an encryption type. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">DES</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Data Encryption Standard</span><span class="f_ListBulleted"> (DES) as encryption algorithm. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">AES</span><span class="f_ListBulleted">: Use </span><span class="f_ItalicCustom">Advanced Encryption Standard </span><span class="f_ListBulleted">(AES) as encryption algorithm.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">AES 192 and AES 256 are not supported by Net-SNMP.</span><br />
+<span class="f_ListBulleted">They lack RFC specification.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The type that you choose must match the encryption type of your device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data Encryption Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter an encryption key here. If you provide a key in this field, SNMP data packets are encrypted using the encryption algorithm selected above, which provides increased security. The key that you enter here must match the encryption key of your device. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If the key you enter in this field does not match the key configured on the target SNMP device, you will not get an error message about this! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Context Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select SNMP version </span><span class="f_BoldCustom">v3</span><span class="f_ListBulleted"> above. Enter a context name only if it is required by the configuration of the device. Context is a collection of management information accessible by an SNMP device. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port for the SNMP communication. </span><span class="f_ListBulleted">We recommend that you use the default value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Timeout (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a timeout in seconds for the request. Please enter an integer value. If the reply takes longer than the value you enter here, the request is aborted and an error message triggered. The maximum timeout value is </span><span class="f_ItalicCustom">300</span><span class="f_ListBulleted"> seconds (5 minutes).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="dbcredentials" class="hmanchor"></a><a id="credentials_database" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Database Management Systems</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The settings you define in this section apply to the following sensor types:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ado_sql_v2_sensor.htm" class="topiclink">ADO SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="microsoft_sql_v2_sensor.htm" class="topiclink">Microsoft SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="mysql_v2_sensor.htm" class="topiclink">MySQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="oracle_sql_v2_sensor.htm" class="topiclink">Oracle SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="postgresql_sensor.htm" class="topiclink">PostgreSQL Sensor</a></span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port for Databases</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which ports PRTG will use for connections to the monitored databases. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set automatically (default port, recommended)</span><span class="f_ListBulleted">: PRTG automatically determines the type of the monitored database and uses the corresponding default port to connect. See below for a list of default ports.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Define one custom port valid for all database sensors</span><span class="f_ListBulleted">: Choose this option if your database management systems do not use the default ports. Define the port for database connections manually below. If you choose this option, PRTG will use the custom port for all database sensors.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you choose the automatic port selection, PRTG uses the following default ports:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">Microsoft SQL</span><span class="f_ListBulleted">: 1433</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">MySQL</span><span class="f_ListBulleted">: 3306</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">Oracle SQL</span><span class="f_ListBulleted">: 1521</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">PostgreSQL</span><span class="f_ListBulleted">: 5432</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom Database Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the number of the port that PRTG will use for database connections. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">All database sensors on this device will use this port to connect.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Authentication Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select the authentication method for the connection to the SQL database. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows authentication with impersonation</span><span class="f_Comment">: If you select this option, PRTG uses the Windows credentials as defined in the particular <a href="device_settings.htm#windows_credentials" class="topiclink">device settings</a> for the database connection. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_Comment">The user whose credentials are used needs to have permissions to log on to the system on which the PRTG probe with a database sensor runs. This is required for the impersonation. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SQL server authentication</span><span class="f_Comment">: Choose this option if you want to use explicit credentials for database connections.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you select SQL server authentication above. Enter the username for the database connection.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you select SQL server authentication above. Enter the password for the database connection.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timeout (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a timeout in seconds for the request. Please enter an integer value. If the reply takes longer than this value defines, the sensor cancels the request and triggers an error message. The maximum timeout value is </span><span class="f_ItalicCustom">300</span><span class="f_ListBulleted"> seconds (5 minutes).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="cloudcredentials" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Credentials for Amazon CloudWatch</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your Amazon Web Services (AWS) access key. Please see the corresponding <a href="available_sensor_types.htm#virtual" class="topiclink">Amazon CloudWatch sensor</a> documentation to learn more about the rights that are required for querying AWS CloudWatch metrics.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Secret Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your Amazon Web Services (AWS) secret key. Please see the corresponding <a href="available_sensor_types.htm#virtual" class="topiclink">Amazon CloudWatch sensor</a> documentation to learn more about the rights that are required for querying AWS CloudWatch metrics.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="wmicompatibility" class="hmanchor"></a><a id="windows_compatibility_options" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Windows Compatibility Options</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When experiencing problems while monitoring via Windows sensors, you can set some compatibility options for troubleshooting.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Preferred Data Source</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the method Windows sensors will use to query data. This setting is valid only for hybrid sensors offering performance counter and Windows Management Instrumentation (WMI) technology. The setting will be ignored for all other sensors! Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Performance Counters and fallback to WMI</span><span class="f_ListBulleted">: Try to query data via performance counters. If this is not possible, establish a connection via WMI. </span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Performance Counters only</span><span class="f_ListBulleted">: Query data via performance counters only. If this is not possible, a sensor will return no data.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">WMI only (recommended)</span><span class="f_ListBulleted">: Query data via WMI only. If this is not possible, a sensor will return no data. In current PRTG versions, this is our recommendation to achieve best performance and stability.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timeout Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify the time the sensor will wait for the return of its WMI query before aborting it with an error message. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use 1.5x scanning interval (recommended)</span><span class="f_ListBulleted">: Use a default of one and a half times the scanning interval set for the sensor (see below in this settings).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set manually</span><span class="f_ListBulleted">: Enter a timeout value manually.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value. Only if you experience ongoing timeout errors, try increasing the timeout value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timeout Value (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if the manual timeout method is selected above. Enter the time the sensor will wait for the return of its WMI query before aborting with an error message. Please enter an integer value. The maximum value is </span><span class="f_BoldCustom">900</span><span class="f_ListBulleted"> seconds (15 minutes).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="snmpcompatibility" class="hmanchor"></a><a id="snmp_comp" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">SNMP Compatibility Options</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When experiencing problems while monitoring via Simple Network Management Protocol (SNMP) sensors, you can set some compatibility options for troubleshooting.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SNMP Delay (ms)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Add a time in milliseconds that will be waited between two SNMP requests. This can help increase device compatibility. Please enter an integer value. We recommend that you use the default value. If you experience SNMP connection failures, please increase it. You can define a delay between </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">100</span><span class="f_ListBulleted">, higher delays are not supported and will be discarded. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Failed Requests</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if an SNMP sensor will try again after a request fails.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Retry (recommended)</span><span class="f_ListBulleted">: Try again if an SNMP request fails. This can help prevent false error messages due to temporary timeout failures.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not retry</span><span class="f_ListBulleted">: Do not retry if an SNMP request fails. With this setting enabled an SNMP sensor will be set to error status earlier.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Overflow Values</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how PRTG will handle overflow values. Some devices do not handle internal buffer overflows correctly. This can cause false peaks.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ignore overflow values</span><span class="f_ListBulleted">: Ignore overflow values and do not include them in the monitoring data.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Handle overflow values as valid results</span><span class="f_ListBulleted">: Regard all overflow values as regular data and include them in the monitoring data.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">If you experience problems because of strange peaks in your data graphs, change this option. Peaks might indicate that the monitored device resets counters without an overflow. PRTG interprets such a behavior as overflow that results in data peaks. Choose the option </span><span class="f_BoldCustom">Ignore overflow values</span><span class="f_ListBulleted"> in this case. For more details, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/43503" target="_blank" class="weblink">What is the Overflow Values setting in the SNMP Compatibility Options?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Zero Values</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how PRTG will handle zero values. Some devices send incorrect zero values. This can cause false peaks.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ignore zero values for delta sensors (recommended)</span><span class="f_ListBulleted">: Ignore zero values and do not include them in the monitoring data.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Handle zero values as valid results for delta sensors</span><span class="f_ListBulleted">: Regard all zero values as regular data and include them in the monitoring data.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value. If you experience problems, change this option. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">32-bit/64-bit Counters</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which kind of traffic counters PRTG will search for on a device.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use 64-bit counters if available (recommended)</span><span class="f_ListBulleted">: The interface scan will use 64-bit traffic counters, if available. This can avoid buffer overflows in the devices.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use 32-bit counters only</span><span class="f_ListBulleted">: The interface scan will always use 32-bit traffic counters, even if 64-bit counters are available. This can lead to more reliable monitoring for some devices.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value. If you experience problems, change this option. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Request Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which kind of request method PRTG uses for SNMP sensors.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use multi get (recommended)</span><span class="f_ListBulleted">: Bundle multiple SNMP requests into one request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use single get</span><span class="f_ListBulleted">: Use one request for each SNMP value. This can increase compatibility with older devices.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use the default value. If you experience problems, change this option. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>PRTG uses <span class="f_ItalicCustom">paging</span> for SNMP requests. This means that if a sensor has to query more than 20 OIDs, it will automatically poll the OIDs in packages of 20 OIDs each per request. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port Name Template</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how the name of SNMP sensors created on a device will be put together. Enter a template using several variables. When adding new sensors, PRTG scans the interface for available counters at certain OIDs. At each OID usually several fields are available with interface descriptions. They are different for every device and OID. PRTG will use the information in these fields to name the sensors. If a field is empty or not available, an empty string is added to the name. As default, </span><span class="f_BoldCustom">([port]) [ifalias]</span><span class="f_ListBulleted"> is set as port name template, which will create a name such as </span><span class="f_ItalicCustom">(001) Ethernet1</span><span class="f_ListBulleted">, for example. You can use any field names available at a certain OID of your device, among which are:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[port]</span>: The port number of the monitored interface.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[ifalias]</span>: The 'alias' name for the monitored interface as specified by a network manager, providing a non-volatile handling.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[ifname]</span>: The textual name of the monitored interface as assigned by the local device.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[ifdescr]</span>: A textual string containing information about the monitored device or interface, for example, manufacturer, product name, version.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[ifspeed]</span>: An estimate of the monitored interface's current bandwidth (KBit/s).</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[ifsensor]</span>: The type of the sensor, this is <span class="f_ItalicCustom">SNMP Traffic</span> or <span class="f_ItalicCustom">SNMP RMON</span>. This is useful to differentiate between your <a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic</a> and <a href="snmp_rmon_sensor.htm" class="topiclink">SNMP RMON</a> sensors.</li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Combine them as you like to obtain suitable sensor names. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For more information about SNMP sensor names, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/7363" target="_blank" class="weblink">How can I change the defaults for names automatically generated for new SNMP sensors?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port Name Update</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how PRTG will react if you change port names in your physical device (for example, a switch or router). Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Keep port names (use this if you edit the names in PRTG)</span><span class="f_ListBulleted">: Do not automatically adjust sensor names. This is the best option if you want to change names in PRTG manually.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic sensor name update if name changes in device</span><span class="f_ListBulleted">: If PRTG detects changes of port names in your physical device, it will try to automatically adjust sensor names accordingly. </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For more information about automatic updates of names, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/25893" target="_blank" class="weblink">Automatically update port name and number for SNMP Traffic sensors when the device changes them</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port Identification</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which field will be used for SNMP interface identification. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic (recommended)</span>: Tries the ifAlias field first to identify an SNMP interface and then ifDescr.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>ifName will not be tried automatically.<br />
+&nbsp;</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use ifAlias</span><span class="f_ListBulleted">: For most devices ifAlias is the best field to get unique interface names.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use ifDescr</span><span class="f_ListBulleted">: Use this option if the port order of your device changes after a reboot, and there is no ifAlias field available. For example, this is the best option for Cisco ASA devices.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">When using this option it is important that your device returns unique interface names in the ifDescr field.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use ifName</span><span class="f_ListBulleted">: You can also use this option if there is no unique ifAlias available.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">When using this option, it is important that your device returns unique interface names in the ifName field.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No Port Update</span><span class="f_ListBulleted">: Use this option to disable automatic port identification.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Start Interface Index</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For <a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic sensors</a>, define at which index PRTG will start to query the interface range during sensor creation. Use </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted"> for automatic mode. We recommend that you use the default value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">End Interface Index</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For <a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic sensors</a>, define at which index PRTG will stop to query the interface range during sensor creation. Use </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted"> for automatic mode. We recommend that you use the default value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="httpproxy" class="hmanchor"></a><a id="proxy" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Proxy Settings for HTTP Sensors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">HTTP Proxy Settings</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The proxy settings determine how a sensor connects to a given URL. You can enter data for an HTTP proxy server that sensors will use when connecting via HTTP or HTTPS. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This setting affects monitoring only and determines the behavior of HTTP sensors. To change proxy settings for the core server, see </span><span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_Comment">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="ssl_certificate_sensor.htm" class="topiclink">SSL Certificate Sensor</a></span><span class="f_ListBulleted"> and the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="ssl_security_check_sensor.htm" class="topiclink">SSL Security Check Sensor</a></span><span class="f_ListBulleted"> do not support HTTP proxies, but you can configure connections via SOCKS proxies in their sensor settings.</span><span class="f_Comment"> &nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the IP address or DNS name of the proxy server to use. If you leave this field empty, no proxy will be used.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the port number of the proxy. Often, port 8080 is used. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the proxy requires authentication, enter the username for the proxy login. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Only basic authentication is available! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If the proxy requires authentication, enter the password for the proxy login. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Only basic authentication is available! Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="intervalgroup" class="hmanchor"></a><a id="scanning" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scanning Interval</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a scanning interval (seconds, minutes, or hours) from the list. The scanning interval determines the time the sensor waits between two scans. You can change the available intervals in the <a href="monitoring_settings.htm#scanning-intervals" class="topiclink">system administration</a> on PRTG on premises installations.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Query Fails</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the number of scanning intervals that a sensor has time to reach and check a device again in case a sensor query fails. The sensor can try to re-reach and check a device several times, depending on the option you select here, before it will be set to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. This helps you avoid false alarms if the monitored device has only temporary issues. For previous scanning intervals with failed requests, the sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to down immediately</span><span class="f_ListBulleted">: The sensor will show an error immediately after the first failed request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 1 interval, then set to down (recommended)</span><span class="f_ListBulleted">: After the first failed request, the sensor will show a yellow warning status. If the following request also fails, the sensor will show an error.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 2 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after three consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 3 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after four consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 4 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after five consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 5 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after six consecutively failed requests.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensors that monitor via Windows Management Instrumentation (WMI) always wait at least one scanning interval until they show an error. It is not possible to set a WMI sensor to </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> immediately, so the first option will not apply to these sensor types. All other options can apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a sensor has defined error limits for channels, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; option will apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a channel uses <a href="define_lookups.htm" class="topiclink">lookup</a> values, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; options will apply.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="clusterscangroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Cluster Usage</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Distribution</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This box is only visible if you run a PRTG cluster. Sometimes you want to exclude a certain node from monitoring the sensors running on this probe, group, or device, for example, if a device is not reachable from every node configured in your cluster. In the list of cluster nodes, please select the nodes that will </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> be included in sensor scans. By default, this setting is <a href="inheritance_of_settings.htm" class="topiclink">inherited</a> to all objects underneath.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="scheduledependency" class="hmanchor"></a><a id="schedules" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Schedules, Dependencies, and Maintenance WindoW</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Inheritance for schedules, dependencies, and maintenance windows cannot be interrupted; the according settings from the parent objects will always be active. However, you can define additional settings here. They will be active in parallel to the parent objects' settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a schedule from the list. Schedules can be used to pause monitoring for a certain time span (days, hours) throughout the week. You can create new schedules and edit existing ones in the <a href="notifications_settings.htm" class="topiclink">account settings</a>. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Schedules are generally inherited. New schedules will be added to existing ones, so all schedules are active.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Window</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify if you want to set-up a one-time maintenance window. During a maintenance window this object and all child objects will not be monitored. They will enter a paused state then. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not set (monitor continuously)</span><span class="f_ListBulleted">: No maintenance window will be set.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set up a one-time maintenance window</span><span class="f_ListBulleted">: Pause monitoring within a maintenance window.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To terminate a current maintenance window before the defined end date, you can change the time in </span><span class="f_ListBulleted" style="font-weight: bold;">Maintenance Ends </span><span class="f_ListBulleted">field to a date in the past.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Begins</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if maintenance window is enabled above. Use the date time picker to enter the start date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Ends</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if maintenance window is enabled above. Use the date time picker to enter the end date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a dependency type. Dependencies can be used to pause monitoring for an object depending on the status of another. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use parent</span>: Pause the current object if its parent object is in a <span class="f_BoldCustom">Down</span> status, or if it is paused by another dependency.</li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select object</span>: Pause the current object if its parent object is in a <span class="f_BoldCustom">Down</span> status, or if it is paused by another dependency. Additionally, pause the current object if a specific other object in the device tree is in a <span class="f_BoldCustom">Down</span> status, or if it is paused by another dependency. Select below.</li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You do not trigger a status change by dependency if you manually pause a master object or if you pause it by schedule.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Testing your dependencies is easy! Simply choose </span><span class="f_BoldCustom">Simulate Error Status</span><span class="f_ListBulleted"> from the context menu of an object that other objects depend on. A few seconds later, all dependent objects should be paused. You can <a href="show_dependencies.htm" class="topiclink">check all dependencies</a> in your PRTG installation by selecting </span><span class="f_BoldCustom">Devices | Dependencies</span><span class="f_ListBulleted"> from the main menu bar.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if the select object option is enabled above. Click on the reading-glass symbol and use the <a href="object_selector.htm" class="topiclink">object selector</a> to choose an object on which the current object will be dependent on.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Delay (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you select another object than the parent as dependency type. Define a time span in seconds for dependency delay. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">After the master object for this dependency comes back to an </span><span class="f_BoldCustom">Up </span><span class="f_ListBulleted">status, monitoring of the depending objects will be additionally delayed by the defined time span. This can help avoid false alarms, for example, after a server restart, by giving systems more time for all services to start up. Please enter an integer value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="unitconfiggroup" class="hmanchor"></a><a id="channel" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Channel Unit Configuration</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Unit Types</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">For each type of sensor channel, define the unit in which data is displayed. If defined on probe, group, or device level, these settings can be inherited to all sensors underneath. You can set units for the following channel types (if available):</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Bandwidth</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Memory</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disk</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">File</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">Custom channel types can be set on sensor level only.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="analysisgroup" class="hmanchor"></a><a id="analysis" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Advanced Network Analysis</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unusual Detection</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to benefit from <a href="monitoring_settings.htm#unusual" class="topiclink">unusual detection</a> for sensors. You can configure the behavior of unusual detection (or disable it completely) in the <a href="monitoring_settings.htm#unusual" class="topiclink">system settings</a>. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enabled</span><span class="f_ListBulleted">: Activate unusual detection for this object and, by default, for all objects underneath in the <a href="object_hierarchy.htm" class="topiclink">hierarchy</a> of the device tree. Sensors affected by this setting will turn to orange color (<a href="sensor_states.htm" class="topiclink">unusual sensor status</a>) if PRTG detects unusual activity.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disabled</span><span class="f_ListBulleted">: Do not activate unusual detection. PRTG will ignore unusual values for sensors affected by this setting. These sensors will not show an unusual sensor status.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Similar Sensors Detection</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to activate </span><span class="f_BoldCustom"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span><span class="f_ListBulleted"> analysis. You can configure the depth of analysis of similar sensors detection (or disable it completely) in the <a href="monitoring_settings.htm#similar" class="topiclink">system settings</a>. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enabled</span><span class="f_ListBulleted">: Activate similar sensors detection for this object and, by default, for all objects underneath in the <a href="object_hierarchy.htm" class="topiclink">hierarchy</a> of the device tree. PRTG considers all sensors affected by this setting during similarity analysis.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disabled</span><span class="f_ListBulleted">: Do not activate similar sensors detection. PRTG will not consider sensors affected by this setting during similarity analysis.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">System Information</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to retrieve and show </span><span class="f_BoldCustom"><a href="system_information.htm" class="topiclink">System Information</a></span><span class="f_ListBulleted"> for your devices. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enabled</span><span class="f_ListBulleted">: Activate the system information feature for this object and, by default, for all objects underneath in the <a href="object_hierarchy.htm" class="topiclink">hierarchy</a> of the device tree. &nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disabled</span><span class="f_ListBulleted">: Do not activate system information.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_BoldCustom">System Information</span> is enabled by default. To retrieve the data, PRTG will automatically use <span class="f_BoldCustom">Credentials for Windows Systems</span> and <span class="f_BoldCustom">Credentials for SNMP Devices</span> as defined in the <a href="device_settings.htm" class="topiclink">device settings</a> or as <a href="object_hierarchy.htm" class="topiclink">inherited</a> from a parent object like the <span class="f_BoldCustom">Root</span> group. Please consider this when you monitor devices outside the local network, especially when using <span class="f_ItalicCustom">SNMP v1</span> or <span class="f_ItalicCustom">v2c</span> that do not provide encryption.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This setting is not available on the <span class="f_BoldCustom">Hosted Probe</span> of a PRTG hosted by Paessler instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="outgoingipgroup" class="hmanchor"></a><a id="probe_admin" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Probe Settings for Monitoring</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address used for outgoing monitoring requests.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If there is more than one IP on the current system available, you can specify the IP address that PRTG will use for outgoing monitoring requests of certain sensor types. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting will be used for sensors using the following connection types: HTTP, DNS, FTP, IMAP, POP3, Port, Remote Desktop, SMTP, and SNMP. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The setting is valid for all monitoring requests sent from this PRTG probe.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting is useful for devices that expect a certain IP address when queried.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Default setting is </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">. PRTG will select an IP address automatically.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This feature does not support all sensor types for technical reasons.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you change this setting, some sensors might stop working. For example, sensors might show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status if the selected IP address is blocked on the way to or directly on the monitored device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv4</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv4 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv6</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv6 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For details about the basic concept of IPv6 in PRTG, see the </span><span class="f_BoldCustom"><a href="ipv6.htm" class="topiclink">IPv6</a></span><span class="f_ListBulleted"> section.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cluster Connectivity</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This box is only visible if you run a PRTG cluster. Define if this probe connects to all cluster nodes, including the failover nodes, or only to the primary master node. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Probe sends data only to primary master node</span><span class="f_ListBulleted">: The probe connects only to the primary master node. You are not able to review monitoring data on failover nodes. Consider choosing this option if you have bandwidth limitations in your network or if the probe cannot access your failover node(s). </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Probe sends data to all cluster nodes</span><span class="f_ListBulleted">: This is the default option. The probe connects to all nodes in your cluster and sends monitoring data to the failover node(s) in addition to the primary master. The probe is visible on all your nodes as soon as it connects automatically to the correct IP addresses and ports of the failover nodes. If your master node fails, you can still see monitoring data of this probe.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">PRTG will not notify you if a remote probe is disconnected from a cluster node. Please check explicitly on a cluster node if your remote probes are connected (for example, via the device tree in the PRTG web interface on a cluster node).</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="restartoptionsgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scheduled Restart settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This setting is not available on the <span class="f_BoldCustom">Hosted Probe</span> of a PRTG hosted by Paessler instance.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Options</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For best performance, we recommend that you regularly restart the Windows servers on which PRTG is running. To do this automatically for PRTG, you can schedule an automatic restart. Choose between the following options:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No scheduled reboot or service restart</span><span class="f_ListBulleted">: Do not perform any scheduled restart of services automatically. We recommend a manual restart every few weeks. You can initiate a restart of your PRTG core server and probes under </span><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled restart of PRTG services</span><span class="f_ListBulleted">: Restart all PRTG services on the system where this probe runs on. If you choose this option on the local probe, the PRTG core server will restart as well. Define a schedule below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled system reboot (recommended)</span><span class="f_ListBulleted">: We recommend this setting, although it is not set by default. Enter a schedule below. We recommend that you restart Windows servers once a month for best performance.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Choose how often you want to restart PRTG services or the Windows server:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per week</span><span class="f_ListBulleted">: Select a day of the week and a time below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per month (recommended)</span><span class="f_ListBulleted">: Select a day of the month and a time below. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Day</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select a specific day of the week (</span><span class="f_ItalicCustom">Monday</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">Sunday</span><span class="f_ListBulleted">) or month (</span><span class="f_ItalicCustom">1st</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">30th</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Last</span><span class="f_ListBulleted">). If you select </span><span class="f_BoldCustom">Last</span><span class="f_ListBulleted">, the restart will always be executed on the last day of the month, regardless of how many days the month has.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you select a date that does not exist in every month (for example, the 30th day in February), PRTG will automatically initiate the restart on the last day of this month.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Hour</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select the time of day when PRTG will perform the restart. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You will get a Windows warning message 10 minutes before the restart to inform you if you are a currently logged in user. The actual restart time can differ up to 30 minutes from the settings you enter here.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The status or the data of a sensor can trigger notifications. Using this mechanism, you can configure external alerting tailored to your needs. In an object's detail page, click the <span class="f_BoldCustom">Notifications</span> tab to change sensor notification triggers. The defined triggers will be inherited down to sensor level. For detailed information, see <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For more general information about settings, see <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How does PRTG compute CPU Index, Traffic Index and Response Time Index?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/313" target="_blank" class="weblink">https://kb.paessler.com/en/topic/313</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I add my own device icons for use in the PRTG web interface?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/7313" target="_blank" class="weblink">https://kb.paessler.com/en/topic/7313</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I change the defaults for names automatically generated for new SNMP sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/7363" target="_blank" class="weblink">https://kb.paessler.com/en/topic/7363</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Automatically update port name and number for SNMP Traffic sensors when the device changes them</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/25893" target="_blank" class="weblink">https://kb.paessler.com/en/topic/25893</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What is the Overflow Values setting in the SNMP Compatibility Options?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/43503" target="_blank" class="weblink">https://kb.paessler.com/en/topic/43503</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Device and Sensor Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_objects_manually.htm" class="topiclink">Create Objects Manually</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probe_settings.htm" class="topiclink">Probe Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="group_settings.htm" class="topiclink">Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="device_settings.htm" class="topiclink">Device Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a>—<a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Probe</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="root_group_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="group_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

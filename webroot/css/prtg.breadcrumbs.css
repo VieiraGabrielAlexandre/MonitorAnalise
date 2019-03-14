@@ -1,0 +1,178 @@
+﻿/*prtg.breadcrumbs.css*/
+#header_breadcrumbs {
+  color: #666;
+  height: 22px;
+  width: 100%;
+  background: <#colorcode color="midgray">;
+  padding-left: 5px;
+  background-image: url(/images/prtg_network_monitor.png);
+  background-repeat: no-repeat;
+  background-position: 99% 50%;
+  padding-right: 190px;
+}
+
+#header_breadcrumbs a:hover {
+  text-decoration: none;
+}
+
+.breadcrumbs ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: left;
+  height: 22px;
+  overflow: hidden;
+}
+
+.breadcrumbs li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  font-size: 11px;
+  line-height: 22px;
+  cursor: default;
+  height: 22px;
+}
+
+.breadcrumbs li + a {
+  cursor: pointer;
+}
+
+.breadcrumbs li a.probemenu,
+.breadcrumbs li a.groupmenu,
+.breadcrumbs li a.devicemenu,
+.breadcrumbs li a.sensormenu,
+.breadcrumbs li span.probemenu,
+.breadcrumbs li a.probenodemenu,
+.breadcrumbs li span.groupmenu,
+.breadcrumbs li span.devicemenu,
+.breadcrumbs li span.sensormenu,
+.breadcrumbs li a.schedulemenu,
+.breadcrumbs li a.librarymenu {
+  padding: 0;
+  width:auto;
+}
+
+.breadcrumbs li a, .breadcrumbs li span:nth-child(2) {
+  color: #888;
+  background-image: none;
+  height: 22px;
+  float: left;
+  display: inline-block;
+}
+
+.breadcrumbdivider {
+  display: block;
+  background-position: -32px 0;
+  margin: 0 5px 0 2px;
+  padding: 0;
+  height: 22px;
+  width: 6px;
+  float: left;
+  border-right: 1px solid #aaa;
+}
+
+.breadcrumbshome {
+  background-image: url(images/ui-icons_prtg_256x240.png);
+  background-position: 0 -114px;
+  height: 12px;
+  width: 13px;
+  vertical-align: baseline;
+  margin-top: 5px;
+}
+
+.breadcrumbsubmenu a:link, .breadcrumbsubmenu a:active, .breadcrumbsubmenu a:visited, .breadcrumbsubmenu {
+  color: black;
+  white-space: nowrap;
+}
+
+.breadcrumbsubmenu {
+  background-color: white;
+  position: absolute;
+  display: none;
+  z-index: 90;
+  padding: 0;
+  margin: 0;
+  min-width: 200px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px #000;
+}
+
+.breadcrumbsubmenu ul {
+  list-style-type: none;
+  margin: 0 2px 0 0;
+  padding: 2px 0 2px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 300px;
+}
+
+.breadcrumbsubmenu ul li {
+  margin: 0;
+  padding: 4px 15px 0 10px;
+  height: 20px;
+  min-width: 200px;
+  width: auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.breadcrumbsubmenu ul li:hover, .breadcrumbsubmenu .hoveritem {
+  background-color: #D6E8FA;
+  cursor: pointer;
+}
+
+.breadcrumbsubmenusearchbox {
+  height: 16px;
+  border-bottom: 1px solid #888;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbsubmenusearchbox span {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #888;
+  height: 100%;
+}
+
+.breadcrumbsubmenusearchbox input {
+  border: 0 !important;
+  /*margin: 0 0 0 1px;*/
+  padding: 0;
+  height: 15px;
+  color: #888;
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  border-left: 1px solid red;
+}
+/*.breadcrumbsubmenuselected a,.breadcrumbsubmenuselected a:active, .breadcrumbsubmenuselected a:visited {
+}*/
+.breadcrumbsubmenuselected {
+  font-weight: bold;
+}
+
+.breadcrumbsubmenuselected .ui-icon {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.breadcrumbsubmenuopener {
+  height: 15px !important;
+  width: 12px !important;
+  background-position: -66px -16px !important;
+  float: left;
+  margin-top: 4px;
+}
+
+.breadcrumbs>li:hover .breadcrumbsubmenuopener {
+  background-image: url(images/ui-icons_454545_256x240.png);
+}
+.breadcrumbmenu a.working{
+  background-image: none!important;
+}

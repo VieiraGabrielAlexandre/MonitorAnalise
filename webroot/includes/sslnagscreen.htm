@@ -1,0 +1,18 @@
+﻿<div id="sslnagscreen" style="<#hidesslnagscreen> <#hidefornonadmins>" class="nagscreen-box">
+	<p class="nagscreen-cell nagscreen-head">
+		<#lang key="html.sslnagscreen.text1" default="You should enable SSL encryption for the PRTG website!">
+	</p>
+	<p class="nagscreen-cell nagscreen-text">
+		<span>
+			<#lang key="html.sslnagscreen.text2" default="Your browser's connection to this PRTG server is currently not secured by SSL encryption.">
+		</span>
+		<span>
+			<#lang key="html.sslnagscreen.text3" default="You should switch to SSL especially if your PRTG website is accessible from the internet (outside your firewall)!">
+		</span>
+	</p>
+	<p class="nagscreen-cell nagscreen-action">
+		<a class="button btngrey skip skipssl" onclick="_Prtg.objectTools.sslHideNagscreen();$('#sslnagscreen').hide();return false;"><#lang key="html.sslnagscreen.donttell" default="Don't Tell Me Again"></a>
+		&nbsp;
+		<a class="button actionbutton" id="switchtosslbutton" onclick="_Prtg.objectTools.sslSwitchTo();return false;"><#lang key="html.sslnagscreen.yesdotheswitch" default="Yes, Switch to SSL"></a>
+	</p>
+</div>

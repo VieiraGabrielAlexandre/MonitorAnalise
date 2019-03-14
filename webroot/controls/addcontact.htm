@@ -1,0 +1,16 @@
+﻿<div>
+  <form title="<#lang key="webinterface.addcontact" default="Add New Notification Contact">" id="addobjectdialogform" action="/editsettings" method="POST" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+    <fieldset>
+      <legend class="prtg-header inline-hidden"><#lang key="webinterface.addcontact" default="Add New Notification Contact"></legend>
+      <div class="control-group">
+        <#newcontact>
+      </div>
+    </fieldset>
+    <div class="submitbuttonboxanchor">
+      <div class="submitbuttonbox">
+        <input class="submit button" type="submit" value="<#lang key="html.global.add" default="Add">">
+        <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+      </div>
+    </div>
+  </form>
+</div>

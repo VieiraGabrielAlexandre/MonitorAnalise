@@ -1,0 +1,27 @@
+﻿<#mailinclude file="/mailtemplates/header.htm">
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tbody>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <h1 style="color:#f99d1c"><#lang key="mail.memorywarning.warning1" default="PRTG Will Need To Stop Monitoring Soon!"></h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#lang key="mail.memorywarning.message1" default="The RAM available for PRTG is running low: only @freememory MB are left.">
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#lang key="mail.memorywarning.message2a" default="Please check the PRTG server computer and free up some memory, otherwise monitoring will need to be stopped soon.">
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#mailinclude file="/mailtemplates/sendfromserver.htm">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<#mailinclude file="/mailtemplates/footer.htm">
+

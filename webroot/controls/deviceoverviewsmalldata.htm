@@ -1,0 +1,55 @@
+﻿<#checkobjecttype objecttype="device">
+<div status="objectstatus,class,overviewsmalldata " class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw">">
+  <table width="100%" >
+    <tr class="overviewsmalldatatitles">
+      <td><#lang key="html.devicedata.status" default="Status">:</td>
+      <td><#lang key="html.devicedata.sensors" default="Sensors">:</td>
+      <td><#lang key="html.devicedata.dnsip" default="DNS/IP">:</td>
+      <td><#lang key="html.devicedata.dependency" default="Dependency">:</td>
+      <td><#lang key="html.devicedata.defaultinterval" default="Default Interval">:</td>
+      <td class="<#ifclusterorpodprobedevice insert="hide">"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:</td>
+      <td class="<#ifclusterorpodprobedevice insert="hide">"><#lang key="html.devicedata.lastrecommendation" default="Last Recommendation">:</td>
+      <td><#lang key="html.devicedata.id" default="ID">:</td>
+      <td rowspan="2" class="qrcoderow" width="50">
+      	<div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" title='<#lang key="html.qrcode.tooltip" default="Click to enlarge">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host='<#objectproperty name="host">'></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="allowwordwrap">
+        <div message="title" sstatus="messagetitile,title" title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+          <b message="text"><dummy status="message"><#objectstatus name="message" show="htmllong"></dummy></b>
+        </div>
+      </td>
+      <td>
+        <b>
+          <dummy status="downsens"><#objectstatus name="downsens"></dummy>
+          <dummy status="partialdownsens"><#objectstatus name="partialdownsens"></dummy>
+          <dummy status="downacksens"><#objectstatus name="downacksens"></dummy>
+          <dummy status="warnsens"><#objectstatus name="warnsens"></dummy>
+          <dummy status="upsens"><#objectstatus name="upsens"></dummy>
+          <dummy status="pausedsens"><#objectstatus name="pausedsens"></dummy>
+          <dummy status="unusualsens"><#objectstatus name="unusualsens"></dummy>
+          <dummy status="undefinedsens"><#objectstatus name="undefinedsens"></dummy>
+        </b>
+        (<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens' status="totalsens"><#objectstatus name="totalsens"></span>)
+      </td>
+      <td style="white-space:nobreak;"><b><#objectproperty name="host" show="text"></b></td>
+      <td><b><#objectstatus name="dependency"></b></td>
+      <td style="white-space:nobreak;">
+        <#lang key="html.global.everyintervalevery" default="every">
+        <b status="interval"><#objectproperty name="interval" inherit="true"></b>
+      </td>
+      <td class="<#ifclusterorpodprobedevice insert="hide">">
+        <dummy>
+          <b status="lastautodiscovery"><#lastautodisco></b>
+        </dummy>
+      </td>
+      <td class="<#ifclusterorpodprobedevice insert="hide">">
+        <dummy>
+          <b status="lastrecommendation"><#lastautodisco recommender='true'></b>
+        </dummy>
+      </td>
+      <td><b>#<#objectid></b></td>
+    </tr>
+  </table>
+</div>

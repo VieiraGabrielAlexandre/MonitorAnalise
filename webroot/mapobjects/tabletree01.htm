@@ -1,0 +1,12 @@
+﻿<!--Device Tree Views: Device tree (S)-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow-x:hidden;overflow-y:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+
+<div class="sensortreebox sensortreesmall showdown showpartialdown showdownack showwarn showup showpaused showunusual showundefined" style="overflow:hidden">
+		<#table id="<@objectid>" treeoptions="" title="Devices" content="sensortree" columns="device,devsensrs" refreshable="false">
+</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

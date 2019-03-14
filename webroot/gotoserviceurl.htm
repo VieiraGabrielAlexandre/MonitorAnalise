@@ -1,0 +1,44 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.gotoserviceurl.title" default="Go To Service URL" var="pagetitle">
+<#include file="includes\htmlheader_mini.htm">
+
+<div style="width:500px;padding:20px;">
+	<center>
+		<b><#lang key="html.gotoserviceurl.head" default="Go To Service URL of Device"> <#objectproperty name="name"></b>
+  	<div>
+	  	<div style="min-height:170px;" id="hasurl">
+			  <p>
+			  	<#lang key="html.gotoserviceurl.onemomentplease" default="One Moment please.... Trying to redirect to service URL">:
+			  </p>
+			  <p>
+			  	<a href="<#objectproperty name="serviceurl">"><#objectproperty name="serviceurl"></a>
+			  </p>
+			  <p class='loading'>  <div class='loadspinner' style="position:absolute;top:54px"></div>
+			</p>
+	   </div>
+	  	<div style="min-height:170px;display:none" id="hasnourl">
+			  <p>
+			  	<#lang key="html.gotoserviceurl.noURL" default="Sorry, there is no service uRL for this device">:
+			  </p>
+	   </div>
+  	</div>
+	</center>
+</div>
+<script>
+  (function(window, document, undefined){
+    function byId(id) {
+      return document.getElementById(id);
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var url="<#objectproperty name="serviceurl">";
+      if (url.length>5) {
+        window.top.location.href='<#objectproperty name="serviceurl">';
+      } else {
+        byId("hasnourl").style.display="block";
+        byId("hasurl").style.display="none";
+      }
+    });
+  })(window, document);
+</script>
+
+<#include file="includes\htmlfooter_mini.htm">

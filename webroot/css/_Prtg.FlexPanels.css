@@ -1,0 +1,132 @@
+﻿.panel{
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  -ms-flex-direction: row\9; /*IE10*/
+  flex: 1;
+}
+
+.panel.space-between{
+  -ms-flex-pack: justify;
+  justify-content:space-between;
+}
+
+.panel.stretch-items{
+  align-items: stretch;
+}
+
+_:-ms-fullscreen, :root .ms-fix .panel{
+  flex: 1 0 auto;
+}
+
+.row-panel{
+  -webkit-flex-direction: row;
+  -webkit-align-content: flex-start;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.col-panel{
+  -webkit-flex-direction: column;
+  -webkit-align-content: flex-start;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.wrap-panel{
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap\9;
+  flex-wrap: wrap;
+}
+
+.fix-panel{
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.nogrow-panel{
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+
+.stretch-panel{
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.row-panel~.col-panel{
+  justify-content: space-arround;
+}
+
+.no-flex{
+  flex:none;
+}
+
+.panel > .panel-card {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.panel > .panel-card > .card {
+  padding: 10px;
+  background-color: #F3F2F2;
+}
+
+@media only screen and (min-width: 48em) {
+  .panel > .panel-card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .panel > .panel-card {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .panel > .panel-card {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .panel > .panel-card:nth-child(even) {
+    padding-left: 10px;
+    padding-right: 0px;
+  }
+
+  .panel > .panel-card:nth-child(odd) {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 100em) {
+  .panel > .panel-card {
+    flex-basis: 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  .panel > .panel-card:nth-child(1), .panel > .panel-card:nth-child(4) {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+
+  .panel > .panel-card:nth-child(2), .panel > .panel-card:nth-child(5) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .panel > .panel-card:nth-child(3), .panel > .panel-card:nth-child(6) {
+    padding-right: 0px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,58 @@
+﻿<div class="currentalarmsoverview donutwrapper">
+  <div class="flexme welcomebox-content">
+    <div class="prtg-plugin simpledonut h200" data-width=200 data-height=200 data-plugin="prtg-simpledonut"
+         data-dataset="<#colorcode color="statusdown">:<#objectstatus name='downsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statuspartialdown">:<#objectstatus name='partialdownsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statusdownack">:<#objectstatus name='downacksens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statuswarning">:<#objectstatus name='warnsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statusup">:<#objectstatus name='upsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statuspaused">:<#objectstatus name='pausedsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statusunusual">:<#objectstatus name='unusualsens' id='0' show='textraw' valueifempty='0'>,
+                        <#colorcode color="statusunknown">:<#objectstatus name='undefinedsens' id='0' show='textraw' valueifempty='0'>">
+    </div>
+    <div class="value-name-list">
+      <a href="/sensors.htm?filter_status=5" class="value-name-list_item">
+        <i class="item statusicon icon sensr"></i>
+        <span class="value"><#objectstatus name="downsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsDown" default="Down"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=14" style='<#clusterdependent showfor=" clusterinstallation ">' class="value-name-list_item">
+        <i class="item statusicon icon sensq"></i>
+        <span class="value"><#objectstatus name="partialdownsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsPartialDown" default="Down (Partial)"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=13" class="value-name-list_item">
+        <i class="item statusicon icon senso"></i>
+        <span class="value"><#objectstatus name="downacksens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsDownAck" default="Down (Acknowledged)"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=4" class="value-name-list_item">
+        <i class="item statusicon icon sensy"></i>
+        <span class="value"><#objectstatus name="warnsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsWarning" default="Warning"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=3" class="value-name-list_item">
+        <i class="item statusicon icon sensg"></i>
+        <span class="value"><#objectstatus name="upsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsUp" default="Up"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=7&filter_status=9&filter_status=8&filter_status=12&filter_status=11" class="value-name-list_item">
+        <i class="item statusicon icon sensb"></i>
+        <span class="value"><#objectstatus name="pausedsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsPausedUser" default="Paused"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=10" class="value-name-list_item">
+        <i class="item statusicon icon sensp"></i>
+        <span class="value"><#objectstatus name="unusualsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsUnusual" default="Unusual"/></span>
+      </a>
+      <a href="/sensors.htm?filter_status=1&filter_status=2&filter_status=0" class="value-name-list_item">
+        <i class="item statusicon icon sensx"></i>
+        <span class="value"><#objectstatus name="undefinedsens" id="0" show="textraw" valueifempty="0"/></span>
+        <span class="item name"><#lang key="common.strings.nodestates.onsUnknown" default="Unknown"/></span>
+      </a>
+        <div class="linkbox"><a href="/top10.htm" class="button"><#lang key="html.sensors.title" default="Sensors"/></a></div>
+    </div>
+  </div>
+  <h2><#lang key="common.strings.allsensors" default="All Sensors"/></h2>
+</div>

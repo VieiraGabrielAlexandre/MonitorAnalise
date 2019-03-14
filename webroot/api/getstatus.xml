@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<status>
+    <NewMessages><#session type="newmessages" status="*"></NewMessages>
+    <NewAlarms><#session type="newmessages" status="5"></NewAlarms>
+    <Alarms><#objectstatus name="downsens" id="0" show="textraw"></Alarms>
+    <AckAlarms><#objectstatus name="downacksens" id="0" show="textraw"></AckAlarms>
+    <NewToDos><#session type="todocount"></NewToDos>
+    <Clock><#system type="date"> <#system type="time"></Clock>
+    <ActivationStatusMessage><#system type="activationstatusalert"></ActivationStatusMessage>
+    <BackgroundTasks><#system type="histcalc" show="data"></BackgroundTasks>
+    <CorrelationTasks><#system type="correlationstatus" show="data"></CorrelationTasks>
+    <AutoDiscoTasks><#system type="discocount"></AutoDiscoTasks>
+    <Version><#system type="version"></Version>
+    <PRTGUpdateAvailable><#system type="autoupdate" insert="isupdateinstallernewer" insertifyes="yes" insertifno="no"></PRTGUpdateAvailable>
+    <IsAdminUser><#isadmin></IsAdminUser>
+    <IsCluster><#clusterdependent insertfor="clusterinstallation" insertcontent="true"></IsCluster>
+    <ReadOnlyUser><#system type="usertype" contentreadonly="true" contentallowack="true"></ReadOnlyUser>
+    <ReadOnlyAllowAcknowledge><#system type="usertype" contentallowack="true"></ReadOnlyAllowAcknowledge>
+	<ReadOnlyPwChange><#system type="hideforreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true"></ReadOnlyPwChange>
+</status>

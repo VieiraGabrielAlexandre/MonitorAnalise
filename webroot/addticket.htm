@@ -1,0 +1,35 @@
+﻿<#lang key="html.editticket.title" default="Edit Ticket" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<div class="add-ticket-main-container" id="main" data-title="<#pagetitle>">
+  <div id="content" class="ui-dialog-content">
+    <div class="tabs-container">
+      <form id="editicket" action="/api/addticket.htm" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+        <h1><#lang key="html.ticket.newticket" default="New Ticket"></h1>
+        <div class="eye-catcher"></div>
+        <div class="cancel-action">
+          <a onClick="history.back();return(false)" class="btn cancel" type="reset"><#lang key="html.global.cancel" default="Cancel"></a>
+        </div>
+        <fieldset>
+        <legend class="prtg-header"></legend>
+          <div class="control-group">
+            <#ticket>
+          </div>
+        </fieldset>
+        <div class='quick-action-wrapper <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'>
+            <button class="submit btngrey button quick-action-button" type="submit"><#lang key="html.global.create" default="Create"></button>
+            <button type="submit" class='ui-icon quick-action-badge quick-continue'></button>
+        </div>
+        <input type="hidden" name="targeturl" value="<#inserturlparam parameter="targeturl">">
+      </form>
+    </div>
+  </div>
+  <#system type='showhelp' var='showhelp'>
+
+  <#lang key="html.addticketadd.helptitle" default="New Ticket" var="helptitle">
+  <#lang key="html.addticketadd.helptext" default="Define a subject, specify the user you want to assign the ticket to, set the priority, and enter a description for the ticket.<br><br><a href='/help/tickets.htm' target='_blank'><b>Help: Tickets</b></a>" var="helptext">
+  <#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

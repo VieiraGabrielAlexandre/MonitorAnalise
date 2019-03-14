@@ -1,0 +1,162 @@
+﻿/* prtg.legends.css */
+div.geomap.google div.chartlegend {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 2px;
+  padding-bottom: 0px;
+  width: 98%;
+}
+
+div.geomap.google {
+  margin-left: 4px;
+}
+
+div.geomap.google div.chartlegend div.oneitem {
+  display: inline-block;
+  float: left;
+  height: 15px;
+  margin: 1px 10px 1px 1px;
+  min-width: 120px;
+  overflow: hidden;
+  padding: 1px;
+}
+
+div.geomap.google div.chartlegend div.oneitem div {
+  border: 1px solid #444;
+  display: inline;
+  float: left;
+  height: 14px;
+  width: 14px;
+  margin-right: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+
+div.geomap.google div.chartlegend div.oneitem div {
+  border: 1px solid #444;
+  border-radius: 7px;
+  font-size: 9px;
+  padding-bottom: 2px;
+  color: #000;
+  font-weight: bold;
+  margin: -1px 3px 0px -7px;
+}
+
+div.geomap.google div.chartlegend div.oneitem span.mapdevices {
+  background-image: url(/icons/device.png);
+  vertical-align: top;
+  display: inline-block;
+  width: 14px;
+  height: 12px;
+}
+
+div.geomap.google div.chartlegend div.oneitem {
+  border-radius: 2px;
+  padding: 2px 3px 2px 0;
+  margin: 0 4px 3px 5px;
+  overflow: visible;
+  height: auto;
+  min-height: 13px;
+}
+
+.chartlegend {
+  display: inline-block;
+  margin: 5px 0;
+  clear: both;
+}
+
+.oneitem {
+  color: black;
+  float: left;
+  overflow: hidden;
+  width: 135px;
+  height: 18px;
+  margin: 1px;
+  position: relative;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.largegraph .oneitem {
+  margin-right: 10px;
+}
+
+.oneitem:hover {
+  background-color: white;
+}
+
+.chartlegendcolorbox {
+  float: left;
+  display: block;
+  width: 14px;
+  height: 14px;
+  padding: 1px;
+  margin: 0px 4px 0px 0px;
+  font-size: 0px;
+}
+
+.chartlegendcolorbox.prtg-checkbox {
+  outline: none;
+  width: 16px;
+  height: 16px;
+}
+
+.oneitem .legendcaption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.oneitem .percent {
+  float: right;
+  display: block;
+}
+
+.graphzoomicon {
+  float: right;
+  display: inline-block;
+  width: 50px;
+}
+
+.graphzoomicon a {
+  float: left;
+}
+
+.graphzoomicon+div {
+  clear: both;
+}
+
+.scrollchart{
+  display: inline-block;
+  position:relative;
+  float:right;
+
+}
+.scrollchart.left{
+  margin: 5px 1px;
+  padding: 0px 4px 5px 4px;
+}
+
+.scrollchart.right{
+  margin: 5px 1px;
+  padding: 0px 4px 5px 4px;
+}
+
+.scrollchart.center{
+  margin: 5px 1px;
+  padding: 1px 4px 4px 4px;
+}
+
+#chart{
+  position:relative;
+}
+
+.prtg-graphs-controls {
+  float: right;
+  position: relative;
+}
+
+.prtg-graphs-control {
+  position: relative;
+}

@@ -1,0 +1,14 @@
+{
+	"prtg": {
+		"result": [{
+				"channel": "Active",
+				"ValueLookup": "sigfox.keepalive",
+				"value": $.keepAlive
+			}, {
+				"channel": "Keep Alive",
+				"CustomUnit": "min",
+				"value": $.keepAlive
+			}
+		]
+	}
+}

@@ -1,0 +1,157 @@
+﻿<!--Account Settings—Notification Contacts-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="notifications_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="schedules_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Account Settings—Notification Contacts</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Account Settings—Notification Contacts</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">To open the account settings of the currently logged in user, select <span class="f_BoldCustom">Setup</span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| Account Settings </span>from the main menu. Select the various tabs to change the different settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:540px"><a href="account_settings_tabs.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Account Settings Tabs" title="Account Settings Tabs" style="width:540px;height:13px;border:none" src="account_settings_tabs_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Account Settings Tabs</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can define the following aspects of your account settings:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a> </span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">Notification Contacts</span> settings, the PRTG user who is currently logged in defines and changes their notification contacts. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Notification contacts are unique for each user account. That is, every user of a PRTG installation can individually define how they want to get notified by PRTG. Recipients of <a href="notifications.htm" class="topiclink">notifications</a> are email addresses, phone numbers, push devices (with <a href="smartphone_apps.htm#android" class="topiclink">PRTG for Android</a> or <a href="smartphone_apps.htm#ios" class="topiclink">PRTG for iOS</a>), and users of certain instant messaging services.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="notifications_settings.htm#methods" class="topiclink">notification methods</a> <span class="f_BoldCustom">Send Email</span>, <span class="f_BoldCustom">Send SMS/Pager Message</span>, or <span class="f_BoldCustom">Send Push Notification</span> allow you to set a PRTG user who will receive notifications at <span class="f_ItalicCustom">all</span> their <span style="font-weight: bold;">active</span> notification contacts. If you select a user group, PRTG will send the notifications to <span class="f_ItalicCustom">all</span> <span style="font-weight: bold;">active </span>contacts of <span class="f_ItalicCustom">all</span> users that are in this group. To exclude defined notification contacts from notification delivery, you can use the <span class="f_BoldCustom">pause</span> feature to deactivate them.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-premises" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-premises.png"/>If you use PRTG on premises and open the system administration page from another administration page, PRTG will ask you to enter your credentials again for security reasons if 15 minutes (900 seconds) have passed since your last credential-based login. A dialog box will appear. Enter your <span class="f_BoldCustom">Login Name</span> and <span class="f_BoldCustom">Password</span> for PRTG in the corresponding fields and confirm to continue.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="note" class="hmanchor"></a><span class="f_InTopicHeading">Note</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This section describes one of four steps to set up the notification system in PRTG. To complete your notification setup, go through all of the following steps:</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up the </span><span class="f_BoldCustom">Notification Delivery</span><span class="f_ListNumbered"> settings to define how and to which recipient PRTG will send messages.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListNumbered">.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Contacts</span><span class="f_ListNumbered"> for the PRTG users to define the recipients of notifications.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListNumbered">.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Templates</span><span class="f_ListNumbered"> to define the notification methods and their content.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListNumbered">.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListNumbered">You can also check or edit notification templates via the </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListNumbered"> tab. For more information, see </span><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><span class="f_ListNumbered">.</span><br />
+<span class="f_ListNumbered">&nbsp;</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListNumbered"> for objects to define when notification messages will be sent.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><span class="f_ListNumbered">.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>We recommend that you always set up at least two notifications with different delivery methods for a notification trigger, for example, one <a href="notifications_settings.htm#email" class="topiclink">email notification</a> and one <a href="notifications_settings.htm#sms" class="topiclink">SMS notification</a>. If delivery via email fails (due to an email server failure or other reasons), PRTG can still notify you via your smartphone. Simply set your latency setting to a <a href="sensor_notifications_settings.htm#state" class="topiclink">state trigger</a> and a notification via a delivery method other than the one for the first trigger. Or set up a second trigger with another notification for the corresponding object.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For background information, see the <span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="overview" class="hmanchor"></a><span class="f_InTopicHeading">Notification Contacts Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click on the <span class="f_BoldCustom">Notification Contacts</span> tab to show a list of all existing notification contacts of the currently logged in PRTG user. Using the buttons in the particular contact rows, you can do the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Pause</span><span class="f_ListBulleted">: Pause this notification contact. If a notification contact is <a href="pause.htm" class="topiclink">paused</a>, PRTG does not send any messages to this contact when a notification for this user is triggered.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Edit</span><span class="f_ListBulleted">: Open the <a href="notification_contacts.htm#settings" class="topiclink">settings of this notification contact</a> and change its description and recipient. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This is not possible for predefined notification contacts, for example, the primary email address. You can change the primary email address under </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span><span class="f_ListBulleted">.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Delete</span><span class="f_ListBulleted">: Delete this notification contact. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This is not possible for predefined notification contacts, for example, the primary email address.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Notification Contacts Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/><span class="f_ImageCaption"> </span>and select <span class="f_BoldCustom">Add Email Contact</span> or <span style="font-weight: bold;">Add SMS Contact</span> to add a new notification contact, or click the <span style="font-weight: bold;">Edit</span> button of an existing notification contact to edit it. A dialog box appears where you can enter the contact settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>PRTG automatically adds push contacts for the corresponding user when you install a PRTG mobile app on your smartphone or tablet, connect to the PRTG server, and activate push notifications. You cannot manually add push contacts. If your mobile device actively rejects push notifications for an existing push contact, for example, because you deactivated push on the target device or reset it, the PRTG server will automatically pause this contact. The affected PRTG user account will receive a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> in this case.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Add New / Edit Notification Contact</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Description</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name for the notification contact, for example, </span><span class="f_ItalicCustom">SMS to Admin Mobile</span><span class="f_ListBulleted"> or similar.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Recipient</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a valid email address for the contact type </span><span class="f_BoldCustom">Email</span><span class="f_ListBulleted">. You can add an </span><span class="f_BoldCustom">SMS</span><span class="f_ListBulleted"> contact by entering a valid phone number. The format of the phone number depends on the SMS provider. Usually, you use a plus sign &quot;</span><span class="f_ItalicCustom">+</span><span class="f_ListBulleted">&quot;, followed by country code and number. For example, enter </span><span class="f_ItalicCustom">+1555012345</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Ensure the number format meets the requirements of your SMS provider or the hardware that you use in combination with an API call. Sometimes a preceded plus sign is not required. A wrong format may result in undelivered messages!</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For the contact type </span><span class="f_BoldCustom">Push</span><span class="f_ListBulleted">, this field shows a unique token that you cannot change here. This token is needed to send push notifications through the cloud. For details, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/60892" target="_blank" class="weblink">How can I use push notifications with PRTG?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Contact Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the type of contact, either </span><span class="f_BoldCustom">Email</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">SMS</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Push</span><span class="f_ListBulleted">. This setting is shown for your information only and cannot be changed here.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you want to use another contact type, create a new contact with </span><span class="f_BoldCustom">Add Email Contact</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Add SMS Contact</span><span class="f_ListBulleted">, or activate push notifications in your PRTG for iOS or Android app. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Save</span> or <span class="f_BoldCustom">Add</span> button to save your settings, or click <span class="f_BoldCustom">Cancel</span> to close the dialog box without changes to your configuration. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">A cloud contact is automatically added when you install the PRTG app on your smartphone, connect to the PRTG server, and enable push notifications.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use push notifications with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60892" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60892</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="downloads.htm" class="topiclink">Downloads and Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_help_and_support_center.htm" class="topiclink">Support—Help and Support Center</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, see the sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="notifications_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="schedules_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

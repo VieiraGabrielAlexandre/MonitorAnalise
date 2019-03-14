@@ -1,0 +1,175 @@
+﻿<!--Maps-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps_step_by_step.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Maps</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Maps</h1> 
+      <p class="p_ListBulleted" style="page-break-inside: avoid;">With the <span class="f_BoldCustom">Maps</span> feature (some people might call this 'dashboards') you can create web pages with up-to-the-minute monitoring status information in a customizable layout. Using this unique concept, you can also make your overview pages of live data publicly available, if you like.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:599px"><a href="map_sample2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Example of a PRTG Map" title="Example of a PRTG Map" style="width:599px;height:347px;border:none" src="map_sample2_zoom47.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Example of a PRTG Map</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">In this section:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#introduction" class="topiclink">Introduction</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#start" class="topiclink">Start Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#overview" class="topiclink">Maps Overview</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#rotation" class="topiclink">Maps Rotation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#home" class="topiclink">Maps in Home Menu</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm#working" class="topiclink">Working with Maps</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="introduction" class="hmanchor"></a><span class="f_InTopicHeading">Introduction</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are countless possibilities for the implementation of maps. For example, you can use this feature to:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create network maps with status icons for each device on the map.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create quick views of your network that can be shown on network operations center screens.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create a quick network overview for publishing on the Intranet, allowing information for management of other employees at a glance.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create a custom view of the most important sensors in your monitoring setup.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create Top 10 lists of the sensors of a specific group or device.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Technically, a map is a usual HTML web page. You can build a schema of your network by choosing from hundreds of device icons and connect them with lines. A map can consist of the following elements:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A set of map items, which can include device icons, sensor status icons, graphs, data tables, sensor lists, connection lines, geographical maps, or custom HTML code.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">An optional background image (a JPG, PNG, or GIF file, for example, your company logo, or a graphical view of your network).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also specify the size of the map. Using the map editor, you can place items anywhere on the map, and you can also change their size. Each map has a unique URL that you can use to link to the map. Users who want to access the map either need an account in your PRTG installation, or can access a public URL of the map if you allow the <span class="f_BoldCustom">Public Access</span> feature. Public maps contain a unique <span class="f_BoldCustom">Map ID</span> access key in the URL to block unwanted visitors. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG comes with a pre-configured standard map that you can use right away. You can also change or delete it, if you like. The map is automatically created when you install PRTG for the first time (visible for the <a href="user_access_rights.htm" class="topiclink">PRTG System Administrator</a> user):</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Sample Dashboard</span><span class="f_ListBulleted">: By default, this map shows a graphical structure of your device tree, a list of <a href="alarms.htm" class="topiclink">alarms</a>, a <a href="geo_maps.htm" class="topiclink">geo map</a>, and more. This sample map has a </span><span class="f_BoldCustom">5*****</span><span class="f_ListBulleted"> <a href="priority_and_favorites.htm" class="topiclink">priority</a> so you can also open it under </span><span class="f_ListBulleted" style="font-weight: bold;">Home</span><span class="f_ListBulleted"> in the <a href="main_menu_structure.htm#home" class="topiclink">main menu</a>. To not show it in the main menu, define a lower priority. </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Start Maps</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> <span class="f_BoldCustom">Maps</span> in the <a href="main_menu_structure.htm#maps" class="topiclink">main menu</a> to view or add custom views of your network's status and monitoring data. <span class="f_ItalicCustom">Hover</span> over <span class="f_BoldCustom">Maps</span> to show other menu items. Choose between:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Maps</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">All</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open the </span><span class="f_BoldCustom">Maps</span><span class="f_ListBulleted"> overview page where you can view or add custom views of your network's status and monitoring data.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Add Map</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an assistant to directly <a href="maps_step_by_step.htm#add" class="topiclink">add</a> a new map.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Select Map ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an existing map. </span><span class="f_ItalicCustom">Hover</span> over <span class="f_BoldCustom">Select Map </span><span class="f_ListBulleted">to show other menu items. Follow the menu path (it is specific to your setup) </span><span class="f_ListBulleted">to select a map.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="overview" class="hmanchor"></a><span class="f_InTopicHeading">Maps Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">All</span> view, you see a list of all existing maps. Click the name of a map to view it. To add a new map, hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Map</span> from the menu.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Edit</span> button for the following options:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click the </span><span class="f_BoldCustom">Map Rotation</span><span class="f_ListBulleted"> button to rotate between maps.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click the</span><span class="f_BoldCustom"> Clone</span><span class="f_ListBulleted"> button to create an exact copy of this map. As soon as you click this, the map is cloned.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click the </span><span class="f_BoldCustom">Delete</span><span class="f_ListBulleted"> button to remove this map.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click the </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> button to edit the map settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can also define the <a href="priority_and_favorites.htm" class="topiclink">priority</a> of a map. Maps with a </span><span class="f_BoldCustom">5*****</span><span class="f_ListBulleted"> priority appear in the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a> under </span><span class="f_ListBulleted" style="font-weight: bold;">Home</span><span class="f_ListBulleted"> for direct selection (up to 10 entries). For details, see section </span><span class="f_BoldCustom"><a href="maps.htm#home" class="topiclink">Maps in Home Menu</a></span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Please also see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span>. Additionally, the multi-edit functionality is available. This enables you to change properties of several objects simultaneously via bulk changes. For more details, see the <span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit Lists</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="rotation" class="hmanchor"></a><span class="f_InTopicHeading">Map Rotation</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The Map Rotation feature in PRTG allows you to show several maps or dashboards rotating on one page. Map rotation makes it possible to show different information on one screen based on time. You can compare this with a slide show. Follow the steps below to configure your own map rotation.</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Open the </span><span class="f_ListNumbered" style="font-weight: bold;">Maps</span><span class="f_ListNumbered"> overview page from the PRTG <a href="main_menu_structure.htm" class="topiclink">main menu bar</a>.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Select the maps that you want to rotate using the </span><span class="f_BoldCustom">Edit</span><span class="f_ListNumbered"> buttons.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">The </span><span class="f_ListNumbered" style="font-weight: bold;"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span><span class="f_ListNumbered"> menu appears.</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Click </span><span class="f_ListNumbered" style="font-weight: bold;">Map Rotation</span><span class="f_ListNumbered"> in the multi-edit menu.</span></li>
+<li value="5" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">That's all: PRTG will show the selected maps in rotation on a new page. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListNumbered">This requires login credentials for PRTG.</span></li>
+<li value="6" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">You can change the time until a new map appears with the arrows symbol </span><img alt="map-rotation-refresh" width="22" height="24" style="margin:0;width:22px;height:24px;border:none" src="map-rotation-refresh.png"/><span class="f_ListNumbered"> in the lower-right corner. Hover over the arrows symbol and choose between </span><span class="f_BoldCustom">10s</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">30s</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">60s</span><span class="f_ListBulleted"> (seconds), </span><span class="f_BoldCustom">10m</span><span class="f_ListBulleted"> (minutes), and </span><span class="f_BoldCustom">Refresh</span><span class="f_ListBulleted"> now.</span></li>
+</ol>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="map-rotation-setup.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Start Map Rotation" title="Start Map Rotation" style="width:600px;height:284px;border:none" src="map-rotation-setup_zoom54.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Start Map Rotation</span></p></div></div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="rotation-public" class="hmanchor"></a><span class="f_BoldCustom">Public Map Rotation</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also set up a <span class="f_BoldCustom">public map rotation</span> that you can use without login credentials. For this purpose, you have to create a custom URL that defines which maps will publicly rotate. The public map rotation URL has this format: the address of your PRTG server, followed by <span style="font-weight: bold;">/public/mapshow.htm?ids=</span>, followed by map IDs and secret keys.</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered" style="font-weight: bold;">Allow public access</span><span class="f_ListNumbered"> in the <a href="maps_settings.htm#pubgroup" class="topiclink">settings</a> of the maps you want to rotate. </span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Find the map IDs and secret keys to add them to the URL that opens the public map rotation. </span></li>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:lower-latin">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">To find the ID of a map, open the map with your web browser. The map ID is included in the URL of the map as value of the parameter </span><span class="f_ListNumbered" style="font-weight: bold;">id</span><span class="f_ListNumbered">, for example, https://&lt;yourprtgserver&gt;/map.htm?id=</span><span class="f_ListNumbered" style="font-weight: bold;">2124</span><span class="f_ListNumbered">, where the number </span><span class="f_ListNumbered" style="font-weight: bold;">2124</span><span class="f_ListNumbered"> is the needed ID.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">To find the secret key of a map, open the settings of the map, make sure you have selected a <a href="maps_settings.htm#pubgroup" class="topiclink">public access option</a>, and copy the entry of the </span><span class="f_ListNumbered" style="font-weight: bold;">Secret Key</span><span class="f_ListNumbered"> field.</span></li>
+</ol>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Connect each map ID with the secret key of the same map using a colon, in this format: </span><span class="f_ListNumbered" style="font-weight: bold;">mapid:secretkey</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Add all IDs with their secret keys to the URL for the public map rotation. Separate each mapid:secretkey token from the next mapid:secretkey token with a comma.</span></li>
+<li value="5" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">The complete URL has this format: </span><span class="f_ListNumbered" style="font-weight: bold;">https://yourprtgserver/public/mapshow.htm?ids=mapid1:secretkey1,mapid2:secretkey2,mapid3:secretkey3</span><br />
+<span class="f_ListNumbered">This is an example URL for public rotation of two maps: </span><br />
+<span class="f_ItalicCustom">https://prtg.example.com/public/mapshow.htm?ids=9507:4049BEA1-B89C-4B5D-ACC4-3C8E00566EB8,9358:718D3CE1-DF00-4B92-AE8A-E0253B912C37</span></li>
+<li value="6" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Open the created URL with your browser and PRTG will start the public map rotation.</span></li>
+<li value="7" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered"> You can change the time until a new map appears with the arrows symbol </span><img alt="map-rotation-refresh" width="22" height="24" style="margin:0;width:22px;height:24px;border:none" src="map-rotation-refresh.png"/><span class="f_ListNumbered"> in the lower-right corner. Hover over the arrows symbol and choose between </span><span class="f_ListNumbered" style="font-weight: bold;">10s</span><span class="f_ListNumbered">, </span><span class="f_ListNumbered" style="font-weight: bold;">30s</span><span class="f_ListNumbered">, </span><span class="f_ListNumbered" style="font-weight: bold;">60s</span><span class="f_ListNumbered"> (seconds), </span><span class="f_ListNumbered" style="font-weight: bold;">10m</span><span class="f_ListNumbered"> (minutes), and </span><span class="f_ListNumbered" style="font-weight: bold;">Refresh</span><span class="f_ListNumbered"> now.</span></li>
+</ol>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="home" class="hmanchor"></a><span class="f_InTopicHeading">Maps in Home Menu</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add any map to <span class="f_BoldCustom">Home</span> in the <a href="main_menu_structure.htm#home" class="topiclink">main menu bar</a> of the PRTG web interface. This option gives you quick access to your most important maps. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you open a map via <span class="f_BoldCustom">Home</span>, it will appear as <span class="f_ItalicCustom">dashboard</span> without the <a href="maps_settings.htm" class="topiclink">tabs</a> that are available when opening a map via the <span class="f_BoldCustom">Maps</span> <a href="main_menu_structure.htm#maps" class="topiclink">menu</a>. In contrast to a map that you <a href="maps_step_by_step.htm#view" class="topiclink">open via URL</a>, your dashboard is embedded in the PRTG web interface with <a href="general_layout.htm#tree" class="topiclink">global header area and page footer</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can control whether a map appears in the <span class="f_BoldCustom">Home</span> menu via <a href="priority_and_favorites.htm" class="topiclink">priorities</a>. Every map with a <span class="f_BoldCustom">5*****</span> star priority will appear as a single entry under <span class="f_BoldCustom">Home</span>. You can include up to 10 map entries in the <span class="f_BoldCustom">Home</span> menu.</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Open the </span><span class="f_BoldCustom">Maps</span><span class="f_ListNumbered"> overview via the PRTG <a href="main_menu_structure.htm#maps" class="topiclink">main menu bar</a>.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">In the <a href="working_with_lists.htm" class="topiclink">table list</a>, look for the entry of the map that you want to add to the </span><span class="f_BoldCustom">Home</span><span class="f_ListNumbered"> menu.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">In column </span><span class="f_BoldCustom">Priority</span><span class="f_ListNumbered">, select </span><span class="f_BoldCustom">5*****</span><span class="f_ListNumbered"> stars for the desired map.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-ok-green" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-ok-green.png"/>The map will appear in the <span class="f_BoldCustom">Home</span> menu (manually refresh the page with <span class="f_ItalicCustom">F5</span> to immediately see the changes). </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>PRTG provides a sample dashboard in the <span class="f_BoldCustom">Home</span> menu by default. You can remove the sample dashboard and other, later defined dashboards from the menu by changing the priority to <span class="f_BoldCustom">4****</span> stars or lower. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="map-to-dashboard.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Add Map to Home" title="Add Map to Home" style="width:600px;height:162px;border:none" src="map-to-dashboard_zoom43.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Add Map to Home</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="working" class="hmanchor"></a><span class="f_InTopicHeading">Working with Maps</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For detailed information on how to create and edit maps, and to learn how to make them accessible to others, see the following sections.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="maps_step_by_step.htm" class="topiclink">Maps Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="maps_designer.htm" class="topiclink">Map Designer</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="maps_settings.htm" class="topiclink">Maps Other Settings</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Map,Maps,Maps,Maps automatic rotation</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps_step_by_step.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

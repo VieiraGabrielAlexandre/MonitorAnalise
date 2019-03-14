@@ -1,0 +1,183 @@
+﻿<#checkobjecttype objecttype="map">
+<#objectproperty name="name" var="objectname">
+<#objectproperty name="id" var="mapid">
+<#setpagetitle pagetitle="@objectname" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="mapshow framed map@mapid" varexpand="bodyclass" base="<base target='_top'>">
+<span style="display: none;" class="currentprtgversion"><#system type="version"></span>
+<div id="showamap" class="mapcontainer">
+  <div class="map_background" style="visibility: hidden; overflow:hidden;<#mapobject type="background">; background-repeat:no-repeat;width:<#mapobject type="mapwidth">px;height:<#mapobject type="mapheight">px">
+    <div id="map_objectbox" class="map_objectbox" style="width:<#mapobject type="mapwidth">px;height:<#mapobject type="mapheight">px">
+      <#mapobject type="list">
+      <svg height="<#mapobject type="mapheight">px" width="<#mapobject type="mapwidth">px" id="mapsvg"></svg>
+    </div>
+  </div>
+</div>
+<div class="prtgmapfooter">
+  <a href="https://www.paessler.com/prtg?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="PRTG Network Monitoring Software"><#system type="codename"></a> <span><#system type="version"></span> <#system type="installedupdatechannel"> <#system type="expiry">,
+  <a href="https://www.paessler.com/?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage">Network Monitoring Software</a> &copy; <#copyrightyear> <a href="https://www.paessler.com/?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="The Network Monitoring Company">Paessler AG</a>,
+  <#lang key="html.global.servertime" default="Server Time">:&nbsp;<#system type="date"> <#system type="time"> (<#mapobject type="timezone">)
+</div>
+
+<script>
+window.nocheck= true;
+$(function() {
+  $(document).on('click','a',function(){
+    if (($(this).attr("href").substr(0,1)!='/') & ($(this).attr("href").substr(0,1)!='#') & ($(this).attr("href").substr(0,4)!='http')& ($(this).attr("href").substr(0,4)!='mail')& ($(this).attr("href").substr(0,4)!='file') & ($(this).attr("href").indexOf(':') == -1) ){
+      $(this).attr("href",window.location.protocol+'//'+window.location.host+'/'+$(this).attr("href"));
+    }
+  });
+
+  $("a").each(function() {
+    if (($(this).attr("href").substr(0,1)!='/') & ($(this).attr("href").substr(0,1)!='#') & ($(this).attr("href").substr(0,4)!='http')& ($(this).attr("href").substr(0,4)!='mail')& ($(this).attr("href").substr(0,4)!='file') & ($(this).attr("href").indexOf(':') == -1) ){
+      $(this).attr("href",window.location.protocol+'//'+window.location.host+'/'+$(this).attr("href"));
+    }
+  });
+
+  $('#showamap').on('click', '.map_linkedobject', function(e) {
+    e.preventDefault()
+    var link = this.getAttribute('data-link');
+    var externLink = linkIsExternal(link);
+    var strgOrShiftPressed = false;
+    if(e.shiftKey) strgOrShiftPressed = true;
+    if(e.ctrlKey) strgOrShiftPressed = true;
+
+    if((externLink && !strgOrShiftPressed) || (!externLink && strgOrShiftPressed)) {
+      if(externLink) {
+        var newWnd = window.open(link);
+        newWnd.opener = null;
+      } else {
+        window.open('../'+link);
+      }
+    } else {
+      window.top.location = '../'+link;
+    }
+    return false;
+  });
+  initConnections();
+  <#mapobject type="mapautoscale" codeif="MapAutoScale();$(window).on('resize', function(){ MapAutoScale(); });" codeifnot="">
+  $('.map_background').css('visibility', 'visible');
+});
+
+function MapAutoScale() {
+  var noautoscale = _Prtg.Util.getUrlVars()['noautoscale'];
+  if(noautoscale != 'undefined') {
+    return;
+  }
+
+  var $map = $('.map_background');
+  var $view = $(window);
+
+  var mapHeight = $map.height();
+  var mapWidth = $map.width();
+
+  var viewportsize;
+  var viewWidth = $view.innerWidth(), viewHeight = $view.innerHeight();
+  var mapsize;
+
+  var widthFactor, heightFactor, factor;
+
+  widthFactor = (viewWidth / mapWidth);
+  heightFactor = (viewHeight / mapHeight);
+  if(widthFactor > heightFactor) factor = heightFactor
+  else factor = widthFactor;
+
+  $map.css('-moz-transform', 'scale(' + factor + ')');
+  $map.css('-moz-transform-origin', '0 0');
+  $map.css('-ms-transform', 'scale(' + factor +')');
+  $map.css('-ms-transform-origin', '0 0');
+  $map.css('transform', 'scale(' + factor +')');
+  $map.css('transform-origin', '0 0');
+  if($map.parent('.scalewrapper').length) {
+    $map.parent('.scalewrapper').css({
+      'width': Math.floor($map.innerWidth()*factor)-1,
+      'height': Math.floor($map.innerHeight()*factor)-1,
+    });
+  } else {
+    $map.wrap($('<div/>', {'class': 'scalewrapper'}).css({
+      'position': 'absolute',
+      'width': Math.floor($map.innerWidth()*factor)-1,
+      'height': Math.floor($map.innerHeight()*factor)-1,
+      'overflow': 'hidden'
+    }));
+  }
+}
+
+function linkIsExternal(link) {
+  if(link.match(/.{0,7}:\/\/.*/)) return true;
+  return false;
+}
+
+var connections = <#mapobject type="connections">,
+    mapid = parseInt("<#inserturlparam parameter='id'>", 10),
+    svg, svgDefs;
+
+
+    var redClasses = ".hasred, .sensr, .map_iconcolor_sensr, .map_iconcolor_hasred, .map_objectstate_sensr, .map_objectstate_hasred";
+    redClasses = redClasses + ".haspartialred, .sensq, .map_iconcolor_sensq, .map_iconcolor_haspartialred, .map_objectstate_sensq, .map_objectstate_haspartialred";
+    var ackClasses = ".hasack, .senso, .map_iconcolor_senso, .map_iconcolor_hasack, .map_objectstate_senso, .map_objectstate_hasack";
+
+    var yellowClasses = ".hasyellow, .sensy, .map_iconcolor_hasyellow, .map_iconcolor_sensy, .map_objectstate_sensy, .map_objectstate_hasyellow";
+    var unusualClasses = ".hasorange, .sensp, .map_iconcolor_hasorange, .map_iconcolor_sensp, .map_objectstate_sensp, .map_objectstate_hasorange";
+    var blueClasses = ".hasblue, .sensb, .map_iconcolor_hasblue, .map_iconcolor_sensb, .map_objectstate_sensb, .map_objectstate_hasblue";
+    var undefindClasses = ".hasblack, .sensx, .map_iconcolor_hasblack, .map_iconcolor_sensx, .map_objectstate_sensx, .map_objectstate_hasblack";
+
+
+function initConnections() {
+  svg = d3.select('#mapsvg'),
+  svgDefs = svg.append('svg:defs');
+  for(var subid in connections) {
+    if(connections.hasOwnProperty(subid)) {
+      for (var i = connections[subid].length - 1; i >= 0; i--) {
+        createConnection(subid, connections[subid][i], i);
+      }
+    }
+  }
+}
+
+function createLine(x1, x2, y1, y2, id, i, color1, color2) {
+  svgDefs.append('svg:linearGradient').attr('x1', x1).attr('x2', x2).attr('y1', y1).attr('y2', y2)
+    .attr('id', 'gradient_'+ id +'_'+ i)
+    .attr('class', 'connectionlineGradient')
+    .attr('gradientUnits', 'userSpaceOnUse')
+    .call(
+      function(gradient) {
+        gradient.append('svg:stop').attr('offset', '40%').attr('stop-color', color1);
+        gradient.append('svg:stop').attr('offset', '60%').attr('stop-color', color2);
+      });
+  svg.append("svg:line").attr('x1', x1).attr('x2', x2).attr('y1', y1).attr('y2', y2)
+    .attr('stroke', 'url(#gradient_'+ id +'_'+ i +')')
+    .attr('class', 'connectionlineGradient');
+}
+
+function getGradientColor($elm) {
+  var color = '#b4cc38';
+  if ($elm.is(redClasses) || $elm.find(redClasses).length) color = '#d71920';
+  else if ($elm.is(ackClasses) || $elm.find(ackClasses).length) color = '#e77579';
+  else if ($elm.is(yellowClasses) || $elm.find(yellowClasses).length) color = '#ffcb05';
+  else if ($elm.is(unusualClasses) || $elm.find(unusualClasses).length) color = '#f99d1c';
+  else if ($elm.is(blueClasses) || $elm.find(blueClasses).length) color = '#447fc1';
+  else if ($elm.is(undefindClasses) || $elm.find(undefindClasses).length) color = '#808282';
+  return color;
+}
+
+function createConnection(from, to, i) {
+  var $from = $('#mapelement_' + mapid + '_' + from),
+      $to = $('#mapelement_' + mapid + '_' + to);
+      fc = getConnectionCoordinates($from),
+      tc = getConnectionCoordinates($to),
+      gc1 = getGradientColor($from),
+      gc2 = getGradientColor($to);
+
+  createLine(fc.x, tc.x, fc.y, tc.y, from, i, gc1, gc2);
+}
+
+function getConnectionCoordinates($obj) {
+  var p = $obj.position();
+  return {
+    'x' : parseInt(p.left + ($obj.width() / 2), 10),
+    'y' : parseInt(p.top + ($obj.height() / 2), 10)
+  }
+}
+</script>
+
+<#include file="includes\htmlfooter.htm">

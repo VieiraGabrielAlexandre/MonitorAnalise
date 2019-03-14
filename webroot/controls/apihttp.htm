@@ -1,0 +1,170 @@
+﻿<div class="box api-http prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">PRTG HTTP API</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>
+            PRTG includes a web-based "RESTful" API (
+            <a class="arrow" href="http://en.wikipedia.org/wiki/Application_programming_interface" target="_blank">Application Programming Interface</a>
+            )
+            that enables external programs to access information from the monitoring database
+            and to manipulate objects inside the database of PRTG.
+        </p>
+        <p>
+            In the context of the PRTG HTTP API the attribute "
+            <a class="arrow" href="http://en.wikipedia.org/wiki/RESTful" target="_blank">RESTful</a>
+            " essentially means
+        </p>
+        <ul>
+            <li>that it is HTTP/HTTPS based</li>
+            <li>
+                that it uses a set of "HTTP GET" URLs to access and manipulate the data and
+            </li>
+            <li>
+                that you'll get back an XML document in return (for most calls).
+            </li>
+        </ul>
+        <p>The PRTG HTTP API offers the following functionality:</p>
+        <ul>
+            <li>Authentication, error handling and optional encryption</li>
+            <li>
+                Functions for getting live object and status data as well as live graphs
+            </li>
+            <li>Functions for getting historic sensor data and graphs</li>
+            <li>Functions for manipulating objects (e.g. edit, add, delete)</li>
+        </ul>
+        <h1>How do I use it?</h1>
+        <p>
+            All calls to the PRTG HTTP API are performed by HTTP GET requests. The URLs consist of a path to the API function and some parameters. Here are two example calls:
+        </p>
+        <ul class="apicalls">
+            <li>
+                Sample Call 1:
+                <pre>http://yourserver<b>/api/table.xml</b>?content=sensortree</pre>
+            </li>
+            <li>
+                Sample Call 2:
+                <pre>http://yourserver<b>/api/rename.htm</b>?id=objectid&value=newname</pre>
+            </li>
+        </ul>
+        <p>
+            The first part of the URL ( <b>/api/table.xml</b>
+            or <b>/api/rename.htm</b>
+            ) addresses an API function,
+            here the functions that either render a table in XML format or rename an object.
+            The second part after the question mark contains a number of parameters for additional control.
+        </p>
+        <p>
+            Important: PRTG expects all data in the GET parameters to be
+            <a class="arrow" href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>
+            encoded and
+            <a class="arrow" href="http://en.wikipedia.org/wiki/Percent_encoding" target="_blank">URL-encoded</a>
+            .
+        </p>
+        <h1>Authentication</h1>
+        <p>
+            All requests to the API are "stateless" which means that there is no multi-step login process of any kind. The authentication with username/passhash (or
+            username/password)
+            must always be included in each request by using the
+            <b>username</b>
+            and
+            <b>passhash</b>
+            (or username and password) parameters.
+        </p>
+        <ul class="apicalls">
+            <li>
+                With these parameters the URLs will look like this:
+                <pre>http://yourserver/api/table.xml?content=sensors&columns=sensor&<b>username=myuser&passhash=hash</b></pre>
+            </li>
+            <li>
+                or:
+                <pre>http://yourserver/api/table.xml?content=sensors&columns=sensor&<b>username=myuser&password=mypassword</b></pre>
+            </li>
+        </ul>
+        <ul class="apicalls">
+            <li>
+                You can request the password hash for an account with an API call:
+                <pre>http://yourserver/api/getpasshash.htm?username=myuser&password=mypassword</b></pre>
+            </li>
+        </ul>
+        <p>
+            Note: Make sure that username and password are
+            <a class="arrow" href="http://en.wikipedia.org/wiki/Percent_encoding" target="_blank">URL-encoded</a>
+            .
+        </p>
+        <h1>Security and Encryption</h1>
+        <p>
+            If you are accessing the API inside your secure LAN you can simply use HTTP. In insecure environments
+            (e.g. when accessing your PRTG server across the Internet) you should use HTTPS requests to make sure that your parameters and passwords are encrypted.
+            This way all communication between the PRTG server and your client is encrypted by SSL encryption.
+        </p>
+        <h1>Versioning</h1>
+        <p>
+            Most XML replies from the API contain a &lt;version&gt; field that contains the program version and buildnumber of the server's PRTG installation.
+            Your client must look at this version number and compare it to the version number that was used to develop
+            the client. Do not accept version numbers older (smaller) than this one. You should display a warning to the user (or stop processing), if the version number
+            differs by 0.1 or more (e.g., version 13.1 vs. 13.2, or version 12.x vs. 13.x). API conventions or parameters may have changed between versions.
+            As a rule of thumb newer versions of the same major version of PRTG will reply to API calls just as previous versions have.
+        </p>
+        <h1>Limitations</h1>
+        <p>
+            For every API call, the default limit of items is 500. If you want to receive more items per call, please add a count=xxx parameter with enough room for all sensors.
+        </p>
+        <h1>Error Handling</h1>
+        <p>
+            Depending on whether your API call was processed successfully or not the PRTG server will reply with the following HTTP status codes:
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>HTTP Status Code</b>
+            </th>
+            <th>
+                <b>Meaning</b>
+            </th>
+            <th>
+                <b>Comments</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>200</td>
+                <td>OK</td>
+                <td>
+                    The API call was completed successfully, the XML response contains the result data.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>302</td>
+                <td>Found</td>
+                <td>
+                    The API call was completed successfully and a new object was created (the redirection URL contains the new object id).
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>400</td>
+                <td>Bad Request</td>
+                <td>
+                    The API call could not be completed successfully. The XML response contains the error message.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>401</td>
+                <td>Unauthorized</td>
+                <td>
+                    The username/password credentials of your authentication can not be accepted.
+                </td>
+            </tr>
+        </table>
+        <p>
+            For "400" error codes the error XML document will include the error message as follows:
+        </p>
+        <pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+  &lt;prtg&gt;
+  &lt;version&gt;<#system type="version">&lt;/version&gt;
+  &lt;error&gt;Sorry, there is no object with the specified id.&lt;/error&gt;
+  &lt;/prtg&gt;</pre>
+    </div>
+</div>

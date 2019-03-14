@@ -1,0 +1,21 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="group,probenode">
+<#lang key="html.adddevice.title" default="Add Device" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="groupname">
+<#system type="usernameshort" var="usernameshort">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div class="add-device-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <div id="content">
+			<#system type='displaydependingonrights' right='write' hideobjectif='false' html="_notallowed" var="extend">
+			<#include varexpand="file" file="controls\adddevice@extend.htm">
+    </div>
+<#lang key="html.adddevice.help.title" default="Add a New Device" var="helptitle">
+<#lang key="html.adddevice.help.text" default="Define a device name and address, options for auto-discovery, and credential settings for Windows, Linux, VMware/XEN, and SNMP, if necessary.<br><br><a href='/help/add_a_device.htm#settings' target='_blank'><b>Help: Add a Device</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

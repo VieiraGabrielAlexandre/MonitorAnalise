@@ -1,0 +1,33 @@
+﻿<form id="addobjectdialogform" action="addgroup2.htm" method="POST"class="prtg-form prtg-plugin" data-plugin="prtg-form autodiscovery-form">
+	<fieldset>
+		<legend class="prtg-header"><#lang key="html.addautodiscovery.wizhead" default="Group Name and Tags"></legend>
+		<div class="control-group">
+			<label class="control-label has_help"><#lang key="html.addautodiscovery.wiz2" default="Group Name:"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.addautodiscovery.wizhelp" default="Enter a name for the group.">">
+				<input class="text fieldrequired {required:true}" type="text" autocomplete="off" name="name_" value="<#defaultname type="Group">">
+			</div>
+			<label class="control-label has_help"><#lang key="html.addautodiscovery.wiz22" default="Tags"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.addautodiscovery.wizhelp2" default="Enter a list of comma separated tags (not case sensitive) for filtering purposes.">">
+				<input class="text" type="text" autocomplete="off" name="tags_" value="">
+			</div>
+		</div>
+	</fieldset>
+
+	<#session type="layoutgroup" name="discoverytypegroup" source="group" kindname="new Group">
+	<#session type="layoutgroup" name="windowsconnection" source="group" kindname="new Group">
+	<#session type="layoutgroup" name="linuxconnection" source="device" kindname="new Group">
+	<#session type="layoutgroup" name="vmwareconnection" source="group" kindname="new Group">
+	<#session type="layoutgroup" name="dbcredentials" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="cloudcredentials" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="snmpversiongroup" source="group" kindname="new Group">
+	<#session type="layoutgroup" name="httpproxy" source="group" kindname="new Group">
+	<#session type="layoutgroup" name="accessgroup" source="group" kindname="new Group">
+
+	<div class="submitbuttonboxanchor">
+		<div class="submitbuttonbox">
+			<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" class="submit button btngrey" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+			<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+		</div>
+	</div>
+	<input type="hidden" name="id" value="<#objectid>">
+</form>

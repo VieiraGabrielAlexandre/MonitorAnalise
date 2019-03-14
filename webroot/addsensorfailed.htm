@@ -1,0 +1,150 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addsensorfailed.title" default="Add Sensor Failed" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="devicename">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<#inserturlparam parameter="manuallink" var="manlink">
+<#inserturlparam parameter='sensorkind' var="sensorkindname">
+<#objectproperty name="Name" show="link" var="devicelink">
+<#objectproperty name="host" show="text" var="devicetext">
+<#langnt default="<a href='@manlink' target='_blank'><b>@sensorkindname</b></a>" var="sensorkind" varexpand="default" donotencodequotes="true">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="failed" style="display:none">
+    <p><#lang key="html.addsensorfailed.message1b" default="Could not create the sensor @sensorkind on device <b>@devicelink (@devicetext)</b>."></p>
+    <p><b style="color:red"><#system type="errormsg"></b></p>
+    <b><#lang key="html.addsensorfailed.message3" default="Please check the following resources:"></b>
+    <p class="prtg-plugin hide" data-plugin="documentation" data-url="<#inserturlparam parameter="manuallink">" data-filter=".f_Remarks"></p>
+  </div>
+  <div id="snmphelp" style="display:none"><h2><#lang key="html.addsensorfailed.snmpsensors" default="For SNMP sensors"></h2>
+	  <p><#lang key="html.addsensorfailed.snmpreason" default="PRTG reads the traffic data and other values from your routers/devices using <b>SNMP</b> (Simple Network Management Protocol) which must be installed and enabled on your device. Please go through the following checklist:"></p>
+	     <ol>
+		     <li><#lang key="html.addsensorfailed.li1" default="Is SNMP installed and enabled on the device? (see device configuration)">
+		     <li><#lang key="html.addsensorfailed.li2" default="Are you using the correct IP, port, community string and SNMP Version?">
+		     <li><#lang key="html.addsensorfailed.li3" default="Does your machine running PRTG have access to SNMP? (see device's security settings)">
+		     <li><#lang key="html.addsensorfailed.li4" default="Double check the &quot;SNMP community string&quot; and/or passwords (these values are case sensitive), as well as the SNMP Version">
+	     </ol>
+	  <p><#lang key="html.addsensorfailed.apmawsacfm" default="All parameters mentioned above will show a connection failed message if set incorrectly!"></p>
+	  <p><#lang key="html.addsensorfailed.fiitdatmmaowd" default="Firewall issues: If the device and the monitoring machine are on two different sides of a firewall make sure that UDP access to port 161 (SNMP) is allowed. You will also need the return path open. SNMP uses UDP not TCP, so SNMP requires the use of UDP ports &gt;1023 to the PRTG client side so that the results can be sent back from the device to the machine running PRTG."></p>
+	  <p>Links: <a href="https://kb.paessler.com/en/topic/793?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb"><#lang key="html.addsensorfailed.knowledgebase" default="Paessler Knowledge Base"></a></p>
+	</div>
+  <div id="wmihelp" style="display:none"><h2><#lang key="html.addsensorfailed.wmisensors" default="For WMI sensors"></h2>
+	  <p><#lang key="html.addsensorfailed.wmireason" default="When using WMI sensors the most common problems are user name/password or firewall issues"></p>
+	  <ol>
+	  	<li><#lang key="html.addsensorfailed.wmili1" default="Make sure that user name, password and login domain are correct"></li>
+	  	<li><#lang key="html.addsensorfailed.wmili2" default="Make sure that the user account has the necessary rights to access WMI on your target machine"></li>
+	  	<li><#lang key="html.addsensorfailed.wmili3" default="WMI uses DCOM/RPC for communication. If a firewall is being traversed between the monitoring PC and the target machine or if you have a local firewall or the Windows firewall running on the target PC you must allow WMI requests to pass this firewall.">
+	  </ol>
+	  <p><#lang key="html.addsensorfailed.links" default="Links:"></p>
+  	<ol>
+  		<li><#lang key="html.addsensorfailed.knowledgebase" default="Paessler Knowledge Base">: <a href="https://kb.paessler.com/en/topic/1043?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank">My WMI sensors don't work. What can I do?</a></li>
+			<li><#lang key="html.addsensorfailed.mssup" default="Microsoft Support:"> <a href="https://support.microsoft.com/kb/875605" target="_blank"><#lang key="html.addsensorfailed.mssup1" default="How to troubleshoot WMI-related issues in Windows XP SP2"></a> </li>
+			<li><#lang key="html.addsensorfailed.mssup" default="Microsoft Support:"> <a href="https://support.microsoft.com/kb/840634" target="_blank"><#lang key="html.addsensorfailed.mssup2" default="How to configure the Windows firewall under Windows XP to allow remote administration tools that use WMI, RPC, or DCOM"></a></li>
+			<li><#lang key="html.addsensorfailed.msdn" default="MSDN:"> <a href="https://support.microsoft.com/kb/154596" target="_blank"><#lang key="html.addsensorfailed.mssup3" default="DCOM port range configuration problems"></a> </li>
+		</ol>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+<script>
+(function(){
+	function showerror(){
+		$("#failed").find('.devicemenu').removeClass('devicemenu').end().show().dialog({
+			closeText: "",
+			closeOnEscape: false,
+			draggable:false,
+			modal:true,
+			resizable:false,
+      		width:600,
+			// height:200,
+			open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+			title: _Prtg.Lang.addSensor.strings.addsensorfailed,
+			buttons: [{
+				text: "<#langjs key="html.addsensorfailed.goback3a" default="< Select other sensor type">",
+				class: "button btngrey",
+				click: function() {history.back();$(this).dialog("destroy").remove();return(false)}
+			},{
+				text: "<#langjs key="html.addsensorfailed.snmphelp" default="SNMP Help">",
+				class: "button btngrey",
+				click: function() {$(this).dialog("destroy").remove();showsnmphelp();return(false)}
+			},{
+				text: "<#langjs key="html.addsensorfailed.wmihelp" default="WMI Help">",
+				class: "button btngrey",
+				click: function() {$(this).dialog("destroy").remove();showwmihelp();return(false)}
+			},{
+				text: "<#langjs key="html.addsensorfailed.cancel" default="Cancel">",
+				class: "button btngrey",
+				click: function() {
+					history.go(-1);
+					$(this).dialog("destroy").remove();
+					return(false);
+				}
+			}]
+		});
+	};
+	function showsnmphelp(){
+		$("#snmphelp").show().dialog({
+			closeText: "",
+			closeOnEscape: false,
+			draggable:false,
+			modal:true,
+			resizable:false,
+			height:400,
+			open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+			title:"<#lang key="html.addsensorfailed.snmpsensors2" default="Help for SNMP sensors">",
+			width:550,
+			buttons: [{
+				text: "<#langjs key="html.addsensorfailed.goback3a" default="< Select other sensor type">",
+				class: "button btngrey",
+				click: function() {
+					history.back();
+					$(this).dialog("destroy").remove();
+					return(false)
+				}
+			},{
+				text: "<#langjs key="html.addsensorfailed.cancel" default="Cancel">",
+				class: "button btngrey",
+				click: function() {
+					history.go(-1);
+					$(this).dialog("destroy").remove();
+					return(false);
+				}
+			}]
+		});
+	};
+	function showwmihelp(){
+		$("#wmihelp").show().dialog({
+			closeText: "",
+			closeOnEscape: false,
+			draggable:false,
+			modal:true,
+			resizable:false,
+			height:400,
+			open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+			title:"<#lang key="html.addsensorfailed.wmisensors2" default="Help for WMI sensors">",
+			width:550,
+			buttons: [{
+				text: "<#langjs key="html.addsensorfailed.goback3a" default="< Select other sensor type">",
+				class: "button btngrey",
+				click: function() {
+					history.back();
+					$(this).dialog("destroy").remove();
+					return(false)
+				}
+			},{
+				text: "<#langjs key="html.addsensorfailed.cancel" default="Cancel">",
+				class: "button btngrey",
+				click: function() {
+					history.go(-1);
+					$(this).dialog("destroy").remove();
+					return(false);
+				}
+			}]
+		});
+	}
+	$("#pagefooter").hide();
+	showerror();
+})();
+</script>

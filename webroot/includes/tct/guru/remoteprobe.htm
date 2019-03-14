@@ -1,0 +1,76 @@
+﻿
+<tct
+  data-role="<#role>"
+  class="pod <#system type='showhelp' tct='guru' page='@page.credentials' class='removeme' varexpand='page'>"
+  style="position:absolute;left:calc(50% - 25px);">
+  <!--
+    var $tct = this
+      , $tab = null
+    $tct
+    .on('click','button.actionbutton', function(event){
+      $tab = $('li[tabid="8"] a');
+      $tab
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",$tab,'click', function(){
+          $tab.tct("mouseMoveEnd",1);
+          $tct.data().confirm(event, 'guru','<#page>.credentials','done');
+          $tct.hide().remove();
+        })
+        .tct("run");
+    })
+    .on('click', 'button.btnlink', function(event){
+      $tct.data().confirm(event, 'guru','remoteprobe','skiped').always(function(){
+         _Prtg.api.setShowHelp.apply(this, [0,'guru.probenode']);
+        document.location.reload();
+      });
+    });
+   -->
+  <div>
+    <div class="info-box ">
+        <img src="/images/tct/Greg100x100.png">
+        <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.remoteprobe.credentialsA" default="Let PRTG find out more about the remote probe network."></span>
+      <span class="text"><#lang key="tct.guru.remoteprobe.credentialsB" default="Have your credentials ready."></span>
+
+        <div class="tct-buttonbar buttonbar-multiple">
+      <button class="button btnlink"><#lang key="tct.guru.remoteprobe.noreminder" default="Don't remind me again."></button>
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+        </div>
+        </div>
+    </div>
+  </div>
+</tct>
+
+
+<tct
+  data-role="<#role>"
+  data-remove-delay="1"
+  data-replace-with="/controls/groupoverviewcolumnrigth.htm"
+  data-domain="<#system type='showhelp' tct='guru' domain='guru'>"
+  class="<#system type='showhelp' tct='guru' page='@page.done' class='removeme' varexpand='page'>"
+  style="position:absolute;left:calc(50% - 25px);">
+  <!--
+    var $tct = this
+    $tct.on('click','.actionbutton', function(event){
+      $tct.data().confirm(event,'guru','<#page>.done','done');
+      $tct.remove();
+    });
+   -->
+   <div>
+    <div class="info-box">
+        <img src="/images/tct/Greg100x100.png">
+        <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.congratulationsA" default="Congratulations!"></span>
+      <span class="text"><#lang key="tct.guru.don" default="You are done with the setup."></span>
+        <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.ok" default="OK"></button>
+        </div>
+        </div>
+    </div>
+  </div>
+</tct>

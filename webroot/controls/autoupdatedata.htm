@@ -1,0 +1,114 @@
+﻿<div class="refreshable" refreshurl="/controls/autoupdatedata.htm">
+  <#system type="denyfornonsvs">
+  <table class="table">
+    <#system type="codename" var="codename">
+    <thead class="tabletitle"><tr><th colspan="3"><#lang key="html.autoupdatedata.tablehead" default="Update Status for @codename" autoexpand="default"></th></tr></thead>
+    <tr class="even" style="<#system type="editiondependedhtml" freeversiononly="display:none"><#system type="editiondependedhtml" trialversiononly="display:none">">
+      <td style="min-width:200px"><#lang key="html.autoupdatedata.remaining" default="Remaining Maintenance Days"></td>
+      <td colspan="2"><#system type="maintenance"></td>
+    </tr>
+    <tr class="odd">
+      <td><#lang key="html.autoupdatedata.latestmessage" default="Latest Message from Auto-Update"></td>
+      <td  colspan="2" id="updatestatus"><#system type="autoupdate" insert="lastupdatecheckresult"></td>
+    </tr>
+    <tr class="even">
+      <td><#lang key="html.autoupdatedata.currentlyinstalled" default="Currently Installed Version"></td>
+      <td colspan="2"><#system type="version"> <#system type="installedupdatechannel"></td>
+    </tr>
+    <tr class="odd">
+      <td><#lang key="html.autoupdatedata.channel" default="Currently Selected Release Channel"></td>
+      <td><#system type="selectedupdatechannel"></td>
+      <td nowrap="nowrap">
+        <a class="button btnlink" style="min-width:250px" href="/autoupdate.htm?tabid=3" ><#lang key="html.autoupdatedata.changechannel" default="Select Other Release Channel"></a>
+      </td>
+    </tr>
+    <tr class="even">
+      <td><#lang key="html.autoupdatedata.latestfrompaessler" default="Latest Version Available from Paessler"></td>
+      <td>
+        <span style="<#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none" insertifno="">">
+          <#system type="autoupdate" insert="autoupdatelatestversionfrompaessler">
+        </span>
+        <span class="newbadge" style="<#system type="autoupdateavailable" insertifyes="" insertifno="display:none"> ;<#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none" insertifno="">" ><#lang key="html.autoupdatedata.available2" default="NEW">!</span></b>
+      </td>
+      <td nowrap="nowrap">
+        <span id="download_p" style="<#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none" insertifno="">">
+          <a class="actionbutton" style="min-width:250px" id="triggerdownloadupdate" href="#"><#lang key="html.autoupdatedata.downloadlatest1" default="Check For Latest Update and Download"></a>
+        </span>
+        <table id="download_loader" style="<#system type="autoupdate" insert="isupdatedownloading" insertifyes="" insertifno="display:none">">
+          <tr>
+            <td class="loading-box"><div class="loadspinner"></div></td>
+            <td style="vertical-align:middle"><#lang key="html.autoupdatedata.downloadingwait" default="Downloading Update... Please wait"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr class="odd" style="<#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none" insertifno="">">
+      <td><#lang key="html.autoupdatedata.latestdownload" default="Latest Downloaded Version"></td>
+      <td nowrap="nowrap">
+        <span style="<#system type="autoupdate" insert="isupdateinstalleravailable" insertifyes="" insertifno="display:none;">">
+        <#system type="autoupdate" insert="availableupdateversion">
+        <span class="newbadge" style="<#system type="isupdateinstallernewer" insertifyes="" insertifno="display:none">"><#lang key="html.autoupdatedata.available2" default="NEW">!</span></b>
+
+        </span>
+      </td>
+      <td>
+        <span id="install_p" style="<#system type="autoupdate" insert="isupdateinstallernewer" insertifyes="" insertifno="display:none;"><#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none;" insertifno="">">
+          <a class="actionbutton" id="beforeinstallupdate" style="min-width:250px" href="#"><#lang key="html.autoupdatedata.installnow2" default="Install Update"> <#system type="autoupdate" insert="availableupdateversion"></a>
+        <br><small>
+          <#lang key="html.autoupdatedata.file" default="File">:
+        <#system type="autoupdate" insert="availableupdatefilename"></small>
+        </span>
+      </td>
+    </tr>
+  </table>
+
+  <table class="table" style="<#system type="autoupdate" insert="isupdateinstallernewer" insertifyes="" insertifno="display:none"><#system type="autoupdate" insert="isupdatedownloading" insertifyes="display:none" insertifno="">">
+    <thead class="tabletitle"><tr><th colspan=2><#lang key="html.autoupdatedata.table2head2a" default="Release Notes for Version">: <#system type="autoupdate" insert="availableupdateversion"></th></tr></thead>
+    <tr class="odd">
+      <td colspan="2">
+        <div class="relese_notes-content" id="whatsnew2">
+          <#include file="\controls\whatsnew.htm">
+          <p><b><#lang key="html.autoupdatedata.filename2" default="File name">:</b> <#system type="autoupdate" insert="availableupdatefilename"></p>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td colspan="2">
+        <p><#lang key="html.whatsnew.introsub1b" default="For detailed information please visit">:&nbsp;&nbsp;
+          <a class="button btngrey" style="min-width:180px" href='https://www.paessler.com/prtg/history/stable?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-autoupdate' target='_blank'>
+            <#lang key="html.whatsnew.introsub2a" default="PRTG Release Notes and Version History">
+          </a>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <table id="resultstable" title="<#lang key="html.autoupdatedata.updatingfrom" default="Updating from"> <#system type="version"> <#lang key="html.autoupdatedata.updatingto" default="to"> <#system type="autoupdate" insert="availableupdateversion">" style="display:none;">
+    <tr>
+      <td ><div class="loading" style="display:block;height:50px;width:50px">&nbsp;</div></td>
+      <td id="results" style="vertical-align:middle" >.&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <p><#lang key="html.whatsnew.introA" default="The update will take a few minutes. Please take this time to review the following list of important changes."></p>
+        <div class="relese_notes-content" id="whatsnew">
+          <#include file="\controls\whatsnew.htm">
+        </div>
+        <p><#lang key="html.whatsnew.introsub1a" default="For more details please visit">
+          <a class='arrow' href='https://www.paessler.com/prtg/history/stable?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-autoupdate' target='_blank'>
+            <#lang key="html.whatsnew.introsub2a" default="PRTG Release Notes and Version History">
+          </a>!
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <div id="beforeinstall" style="display:none">
+    <#system type="autoupdate" insert="availableupdateversion" var="version">
+    <p><b><#lang key="html.autoupdatedata.abouttoinstall" default="You are about to install version @version of PRTG" autoexpand="default"></b></p>
+    <p style="color: red; font-size: 15px;"><#lang key="html.autoupdatedata.text1" default="During the installation your monitoring services will be stopped for a few minutes and your server may be rebooted without prior notice."></p>
+    <p><#lang key="html.autoupdatedata.text2" default="Once started, the update process cannot be stopped. Existing Remote Probes will be updated subsequently."> </p>
+    <h2><#lang key="html.autoupdatedata.continue" default="Do you want to continue?"></h2>
+    <div class="validateerror"></div>
+  </div>
+</div>

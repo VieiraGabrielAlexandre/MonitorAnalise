@@ -1,0 +1,55 @@
+﻿<#checkobjecttype objecttype="device">
+<#objectid var="objid">
+<#objectstatus name="probegroupdevice">
+<div class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw">">
+  <div class="overview-block">
+    <span class="overview-title"><#lang key="html.devicedata.status" default="Status">:</span>
+    <span class="overview-data">
+      <div title="<#objectstatus name="message" show="treejson"><#objectstatus name="condition" show="treejson">"> <#objectstatus name="message" show="htmllong"><#objectstatus name="condition"></div>
+    </span>
+  </div>
+
+  <div class="overview-block" title="<#lang key="html.devicedata.sensors" default="Sensors">">
+  <span class="overview-data">
+    <span class="sensors-summary">
+          <#objectstatus name="downsens">
+          <#objectstatus name="partialdownsens">
+          <#objectstatus name="downacksens">
+          <#objectstatus name="warnsens">
+          <#objectstatus name="upsens">
+          <#objectstatus name="pausedsens">
+          <#objectstatus name="unusualsens">
+          <#objectstatus name="undefinedsens">
+    </span>
+    <span class="sensors-total">(<#lang key="html.addsensor.xsensors_of_ysensors" default="of"> <#objectstatus name="totalsens">)</span>
+  </div>
+
+  <div class="overview-block">
+    <span class="overview-title"><#lang key="html.devicedata.dnsip" default="DNS/IP">;</span>
+    <span class="overview-data"><#objectproperty name="host" show="text"></span>
+  </div>
+  <div class="overview-block <#if value="@objid" is="0" then="hide" varexpand="value">">
+    <span class="overview-title"><#lang key="html.devicedata.dependency" default="Dependency">:</span>
+    <span class="overview-data"><#objectstatus name="dependency"></span>
+  </div>
+  <div class="overview-block <#if value="@objid" is="0" then="hide" varexpand="value">" style="<#showbyobjecttype showonlyforobjecttype="group">">
+    <span class="overview-title"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:</span>
+    <span class="overview-data"> <#lastautodisco></span>
+  </div>
+  <div class="overview-block">
+    <span class="overview-title"><#lang key="html.devicedata.ID" default="ID">:</span>
+    <span class="overview-data">#<#objectid></span>
+  </div>
+</div>
+
+<#lang key="html.global.sensors" default="Sensors" var="title">
+<div class="prtg-plugin" data-plugin="prtg-table">
+  <#table tableid="devicesensortable" tabletitle="@title" varexpand="tabletitle"  content="sensors" columns="sensor,status,message" sortby="position" sortable="true" links="true" count="100" refreshable="true"></div>
+<div style="position:relative;" class="<#selectionlist content="geomapprovider" asClass="true">
+  ">
+  <div id="geomap_devicetooltip" class="refreshable geomap <#selectionlist content="geomapprovider">
+    " refreshurl="/controls/geomap.htm?id=
+    <#objectid>
+    &width=445&height=225&maxlegenditems=4&domobjectid=geomap_devicetooltip&nolegend=1">
+    <#selectionlist content="locationlist" width="445" height="225" maxlegenditems="4" domobjectid="geomap_devicetooltip" loadlater="true" nolegend="1"></div>
+</div>

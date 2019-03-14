@@ -1,0 +1,38 @@
+﻿<!-- Graphs: Primary toplist of a sensor -->
+<style>
+.preview .toplist-mapobject,
+.preview .toplist-mapobject .toplistgraph{
+	width: 176px;
+	height: 176px;
+}
+</style>
+<div class="map_object map_table toplist-mapobject" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="sensor" nicemessage="true" id="<@objectid>">
+
+  <div id ="Toplist_<@itemid>"
+    class="prtg-plugin toplistgraph"
+    data-plugin="toplist"
+    style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">"
+      data-objectid="<@objectid>"
+      data-topnumber="live"
+      data-nonrefreshable=true>
+<!--
+      {"objects":<#table
+        id='<@objectid>'
+        _subid="default"
+        count='*'
+        usecaption='true'
+        noraw='1'
+        output='json'
+        topnumber='live'
+        content='topdata'
+        columns='position=oftTextRaw,value_=treejson'
+        sortby='-value_2V'>
+      }
+-->
+  </div>
+  <#mapobject type="htmlafter" subid="<@subid>">
+
+</div>

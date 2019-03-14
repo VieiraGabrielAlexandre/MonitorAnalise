@@ -1,0 +1,31 @@
+﻿
+<!-- Template Sensorlist No Graph Loop.htm -->
+<tr>
+<td>
+	<b><#cluster type="name" clgid="<@clgid>"></b>
+</td>
+
+<td class="rightalign">
+
+<#report type="avgvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"><br>
+<#report type="sumvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">
+</td>
+<td class="rightalign">
+	<#report type="uptimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"><br>
+	<#report type="downtimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">
+</td>
+<td class="rightalign">
+	<span class="percent">[<#report type="uptime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span><br>
+	<span class="percent">[<#report type="downtime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+</td>
+<td class="rightalign">
+	<#report type="goodreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"><br>
+	<#report type="failedreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">
+</td>
+<td>
+	<span class="percent">[<#report type="goodreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span><br>
+	<span class="percent">[<#report type="failedreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+</td>
+</tr>
+
+

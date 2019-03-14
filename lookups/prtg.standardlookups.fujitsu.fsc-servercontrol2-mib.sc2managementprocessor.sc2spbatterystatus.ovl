@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-servercontrol2-mib.sc2managementprocessor.sc2spbatterystatus" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="None" value="2">
+        Not Present
+      </SingleInt>
+      <SingleInt state="Ok" value="3">
+        OK
+      </SingleInt>
+      <SingleInt state="Warning" value="4">
+        On Battery
+      </SingleInt>
+      <SingleInt state="Warning" value="5">
+        Recharging
+      </SingleInt>
+      <SingleInt state="Error" value="6">
+        Failed
+      </SingleInt>
+      <SingleInt state="Warning" value="7">
+        Discharging
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

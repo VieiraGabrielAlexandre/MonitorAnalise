@@ -1,0 +1,10 @@
+<#lang key="tickettext.mailerrorpod.text2" default="*** Important: There is a problem and you need to take action. ***">
+
+<#lang key="tickettext.mailerrorpod.text3" default="PRTG failed to send you an email. It is very important that PRTG can send you emails to alert you of downtimes of sensors or issues with your PRTG installation via email.">
+
+%s
+
+<#lang key="tickettext.mailerrorpod.text5" default="Please check the following:">
+<ul>
+<#lang key="tickettext.mailerrorpod.text6" default="<li>Is your PRTG administrator email spelled correctly?  [%s]</li>">
+</ul>

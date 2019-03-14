@@ -1,0 +1,21 @@
+﻿  <#system type="denyfornonadmins">
+  <#system type="maxsensorcount" var="maxsensors">
+  <#system type="isunlimitedlicense" codeif="unlimited" codeifnot="@maxsensors" var="isunlimitedsensors" varexpand="codeifnot">
+  <#objectstatus name="totalsens" show="textraw" id="0" var="totalsens">
+  <#hideforpod var="ispod">
+  <#lang key="html.welcome.licenseinfo.donut.sensavailable.unlimitedextra" default="We recommend that you use a maximum of 10,000 sensors per installation." var="unlimitedtext">
+  <#if value="@isunlimitedsensors" is="unlimited" then="@unlimitedtext" else="" varexpand="value,then" var="unlimitedextra">
+  <#if value="@ispod" is="" then="@unlimitedtext" else="" varexpand="value,then" var="unlimitedextra">
+
+  <div title="<#lang key="html.welcome.licenseinfo.donut.sensavailable.hoverinfo" default="Your license allows @maxsensors sensors, you are using @totalsens of them. Paused sensors are included here but will not count against your license. @unlimitedextra" varexpand="default">"
+  	class="prtg-plugin simpledonut h150"
+  	data-width=203
+  	data-height=150
+    data-plugin="prtg-simpledonut"
+    data-innerratio="20"
+    data-used="<#colorcode color="statusup">:<#inserthtml html="@totalsens" varexpand="html">"
+    data-total="<#if value="@isunlimitedsensors" is="unlimited" then="10000" else="@isunlimitedsensors" varexpand="value,else">"
+    data-errorlimit="<#colorcode color="statusdown">:1"
+    data-warninglimit="<#colorcode color="statuswarning">:10"
+    data-innertext="<#lang key="html.welcome.licenseinfo.donut.sensavailable" default="Sensors Available">">
+  </div>

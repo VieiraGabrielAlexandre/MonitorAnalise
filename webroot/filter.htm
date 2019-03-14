@@ -1,0 +1,30 @@
+﻿<#lang key="html.sensors.title" default="Sensors" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="sensorsname">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="table-wrapper">
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+ 	  <div class="prtg-plugin" data-plugin="prtg-table">
+			<#table tableid="sensortable"
+			   content="libobjects"
+			   columns="probegroupdevice=text,sensor=htmllong,status,message,lastvalue,minigraph,priority,favorite,checkbox"
+			   tools="pause,acknowledge,fave,prio,scan,delete,edit"
+			   sortby="priority"
+			   sortable="true"
+			   refreshable="true"
+		     tabletitle="@pagetitle"
+         varexpand="tabletitle">
+		</div>
+	</div>
+<#lang key="html.sensors.help.title" default="Sensors" var="helptitle">
+<#lang key="html.sensors.help.text" default="This page shows the sensors from the monitoring database. You can navigate the log file entries as well as change the sorting order using the links on the table. Please note that you can choose additional filters from the Sensors menu." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

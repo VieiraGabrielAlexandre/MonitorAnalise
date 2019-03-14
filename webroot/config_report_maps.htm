@@ -1,0 +1,25 @@
+﻿<#system type="denyfornonadmins">
+
+<#lang key="html.config_report_maps.header1a" default="Configuration Report: Maps" var="title">
+<#setpagetitle pagetitle="@title" varexpand="pagetitle">
+
+<#include file="includes\reportheader_configreports.htm">
+
+  <#lang key="html.config_report_Maps.header2" default="Maps" var="objecttype">
+<div class="onereport">
+
+<#table tableid="maptable"
+        content="maps"
+        userid="<#userid>"
+        columns="name,securitycontext,publicaccess"
+        count="5000"
+        sortby="name"
+        sortable="false"
+        varexpand="tabletitle" tabletitle="@pagetitle"
+        links="false"
+        refreshable="false">
+    <#include file="includes\printfoot.htm">
+  </div>
+
+<#include file="includes\config_reportfooter.htm">
+

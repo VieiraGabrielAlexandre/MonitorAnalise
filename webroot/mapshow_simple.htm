@@ -1,0 +1,65 @@
+﻿<#checkobjecttype objecttype="map">
+<#objectproperty name="name" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="mapshow simple framed">
+
+<div id="maprefreshlink">
+  <span>
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" onclick="interval=10;showNextMap(thisMap());return(false)">10<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" onclick="interval=30;showNextMap(thisMap());return(false)">30<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" onclick="interval=60;showNextMap(thisMap());return(false)">60<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" onclick="interval=600;showNextMap(thisMap());return(false)">10<#lang key="html.mapshow.minutes" default="m"></a>&nbsp;
+  </span>
+  <a href="#" onclick="showNextMap(thisMap());return(false)">
+    <span><#lang key="html.mapshow.refresh" default="Refresh"></span>
+    <img src='/images/refresh.png'>
+  </a>
+</div>
+<div id="mapclusterswitchbox" style="<#clusterdependent showfor="clusterinstallation">">
+  <table><tr><td style="padding:2px"><#lang key="html.mapshow.clusternode" default="Cluster Node:"></td><td><#clustermapsdropdown skiptagfornoncluster="true"></td></tr></table>
+</div>
+
+<div id="showamap">
+  <div class="map_background" style="overflow:hidden;<#mapobject type="background">; background-repeat:no-repeat;width:<#mapobject type="mapwidth">px;height:<#mapobject type="mapheight">px">
+    <div id="map_objectbox" class="map_objectbox">
+      <#mapobject type="list">
+    </div>
+  </div>
+</div>
+
+
+<div class="prtgmapfooter">
+  <a href="https://www.paessler.com/prtg?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="PRTG Network Monitoring Software"><#system type="codename"></a> <#system type="version"> <#system type="installedupdatechannel"> <#system type="expiry">,
+  <a href="https://www.paessler.com/?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage">Network Monitoring Software</a> &copy; <#copyrightyear> <a href="https://www.paessler.com/?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="The Network Monitoring Company">Paessler AG</a>,
+  <#lang key="html.global.servertime" default="Server Time">:&nbsp;<#system type="date"> <#system type="time"> (<#mapobject type="timezone">)
+</div>
+
+<script type="text/javascript">
+(function($, window, document, undefined) {
+  var interval,
+      id =  parseInt("<#inserturlparam parameter='id'>", 10),
+      urlInterval = parseInt("<#inserturlparam parameter='interval'>", 10),
+      ids = "<#inserturlparam parameter='ids'>"; //filter NaN
+
+  function init() {
+    if (urlInterval === undefined || isNaN(urlInterval) || urlInterval < 5) urlInterval = 60;
+    ids != "" ? ids = ids.split(',') : ids = [];
+    for (var i = 0; i < ids.length; i++) if (ids[i] == "") ids.splice(i--, 1); // remove empty array values
+    setTimeout(refresh, urlInterval*1000);
+  }
+
+  function refresh() {
+    var newUrl;
+    if(ids.length > 0) {
+      ids.push(id);
+      id = ids.shift();
+    }
+    newUrl = window.location.pathname + '?id=' + id;
+    if (ids.length > 0) newUrl = newUrl + '&ids=' + ids.join(',');
+    newUrl = newUrl + '&interval=' + urlInterval;
+    location.replace(newUrl);
+  }
+
+  $(function() { init(); });
+})(jQuery, window, document);
+</script>
+<#include file="includes\htmlfooter.htm">

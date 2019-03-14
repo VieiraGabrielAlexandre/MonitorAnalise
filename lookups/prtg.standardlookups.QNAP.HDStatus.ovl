@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.QNAP.HDStatus" desiredValue="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+      <SingleInt state="Ok" value="0">
+        ready
+      </SingleInt>
+      <SingleInt state="Error" value="-4">
+        Unknown
+      </SingleInt>
+      <SingleInt state="Error" value="-5">
+        noDisk
+      </SingleInt>
+      <SingleInt state="Error" value="-6">
+        Invalid
+      </SingleInt>
+      <SingleInt state="Error" value="-9">
+        rwError
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

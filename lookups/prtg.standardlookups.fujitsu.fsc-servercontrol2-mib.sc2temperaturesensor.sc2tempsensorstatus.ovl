@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-servercontrol2-mib.sc2temperaturesensor.sc2tempsensorstatus" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="None" value="2">
+        N/A
+      </SingleInt>
+      <SingleInt state="Ok" value="3">
+        OK
+      </SingleInt>
+      <SingleInt state="Warning" value="4">
+        Sensor Failed
+      </SingleInt>
+      <SingleInt state="Error" value="5">
+        Failed
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Warning Too Hot
+      </SingleInt>
+      <SingleInt state="Error" value="7">
+        Critical Too Hot
+      </SingleInt>
+      <SingleInt state="OK" value="8">
+        Normal
+      </SingleInt>
+      <SingleInt state="Warning" value="9">
+        Warning
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

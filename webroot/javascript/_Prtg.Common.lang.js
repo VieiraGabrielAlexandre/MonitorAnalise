@@ -1,0 +1,75 @@
+﻿_Prtg.Lang = _Prtg.Lang || {___: '_Prtg.Lang'};
+$.extend(true, _Prtg.Lang, {
+    common: {
+        strings: {
+            "OK": '<#langjs key="common.strings.ok" default="OK">',
+            "ok": '<#langjs key="js.common.ok" default="Ok">',
+            "yes": '<#langjs key="common.strings.yes" default="Yes">',
+            "no": '<#langjs key="common.strings.no" default="No">',
+            "cancel": '<#langjs key="js.common.cancel" default="Cancel">',
+            "save": '<#langjs key="js.common.save" default="Save">',
+            "apply": '<#langjs key="js.common.apply" default="Apply">',
+            "discardchanges": '<#langjs key="js.common.discardchanges" default="Discard Changes">',
+            "search": '<#langjs key="html.global.search2" default="Search...">',
+            "searchtitle": '<#langjs key="html.global.searchtitle2" default="Object Search:<br>You can search an object by its<br>ID, name or tag.">',
+            "noresult": '<#langjs key="html.global.noresult" default="No Result">',
+            "add": '<#langjs key="js.common.add" default="Add" >',
+            "working": '<#langjs key="js.common.working" default="Working...">',
+            "delete": '<#langjs key="common.strings.delete" default="Delete">',
+            "tryagain": '<#langjs key="html.global.tryagain" default="Try Again">',
+            "server": '<#langjs key="js.prtg.js.server" default="Server">',
+            "url": '<#langjs key="js.prtg.js.url" default="URL">',
+            "Group": '<#langjs key="html.objectselectorform.group" default="Group">',
+            "Device": '<#langjs key="html.objectselectorform.device" default="Device">',
+            "DropTarget": '<#langjs key="js.prtg.droptarget" default="Drop objects here">',
+            "snapshotworking": '<#langjs key="html.global.snapshotworking" default="Configuration snapshot is being created in folder Configuration Auto-Backups. This can take 10-100 seconds.">',
+            "copy": '<#langjs key="html.prtgjs.copyformdata2" default="You can now copy the content to the clipboard using CTRL-C">',
+            "ajaxerror": '<#langjs key="js.prtg.ajaxerror" default="Ajax Error">',
+            "ZoomGraph": '<#langjs key="html.global.zoomgraph" default="Zoom graph in new window">',
+            "Groups": '<#langjs key="common.strings.groups" default="Groups">',
+            "Users": '<#langjs key="common.strings.users" default="Users">',
+            "Disallowed": '<#langjs key="common.strings.disallowed" default="Disallowed">',
+            "feedbacksendthank": '<#langjs key="feedback.strings.thanksforfeedback" default="Thank you, your feedback has been sent!">',
+            "feedbacksendthanktitle": '<#langjs key="feedback.strings.thanksforfeedbacktitle" default="Thank you, your feedback has been sent!">',
+            "editrequest": '<#langjs key="html.editsettings.editrequest" default="Warning! Only edit this field when asked to do so by the Paessler support team. Unauthorized use can lead to false monitoring data!">',
+            "channeltabtiperror1": '<#langjs key="html.channeltabtip.error1" default="Could not hide the Channel Tabs tip">',
+            "channeltabtiperror2": '<#langjs key="html.channeltabtip.error2" default="Channel Tabs tip is now hidden">',
+            "findduplicatesresult": '<#langjs key="html.objecttools.duplicateresult" default="Find Duplicates Result">',
+            "loading": '<#langjs key="html.common.loading" default="Loading">',
+            "hideall": '<#langjs key="html.common.hideall" default="Hide all">',
+            "showall": '<#langjs key="html.common.showall" default="Show all">',
+            "choose": null,
+            "udpmessageprobeconn": '<#langjs key="html.udpmessages.probeconnrequired" default="Probe must be connected to display messages!">',
+            "unknownsensor": '<#langjs key="html.common.nonexistent" default="Sensor was deleted">',
+            "zoomin": '<#langjs key="html.common.zoomin" default="Zoom&nbsp;in">',
+            "zoomout": '<#langjs key="html.common.zoomout" default="Zoom&nbsp;out">',
+            "masterdependencies": '<#langjs key="html.common.masterdependencies" default="Show Master Dependencies">',
+            "dependenciestitle": '<#langjs key="html.common.dependenciestitle" default="{name}: showing {childrencount} sub-elements out of {childcount}">',
+            "highlight": '<#langjs key="html.common.hightlightconnecction" default="Highlight Connection">',
+            "login": '<#lang key="html.index.htm.login" default="Login">',
+            "defaultLogin": '<#langjs key="html.index.htm.usedefault" default="Default Login">',
+            "help": '<#langjs key="html.common.help" default="Help">',
+            "error": '<#langjs key="html.common.error" default="Error">',
+            "advancedinfo": '<#langjs key="html.common.error.show.advanced" default="Error details">',
+            "newchannels": '<#langjs key="html.common.newchannels" default="New Channels">',
+            "newpasshashsuccess": '<#langjs key="feedback.strings.newpasshashsuccess" default="New passhash successfully created!">',
+            "newpasshashfail": '<#langjs key="feedback.strings.newchannelsfail" default="There was an error creating the new passhash!">',
+            "showFilter": '<#langjs key="js.common.showFilter" default="Show Filters">',
+            "hideFilter": '<#langjs key="js.common.hideFilter" default="Hide Filters">',
+            "settings": '<#langjs key="html.global.settings" default="Settings">',
+			"selectalibraryfile": '<#langjs key="js.common.selectalibraryfile" default="Please select a library file">',
+            "scheduleAll": {
+                'OFF':'<#langjs key="common.strings.scheduleAll.off" default="All off">',
+                'ON':'<#langjs key="common.strings.scheduleAll.on" default="All on">'
+            },
+            "buttonstate":{
+                'OFF':'<#langjs key="common.strings.buttonstate.off" default="off">',
+                'ON':'<#langjs key="common.strings.buttonstate.on" default="on">'
+            }
+        }
+    },
+    TCT: {
+        "gotit": '<#langjs key="tct.js.gotit" default="OK, got it!">',
+        "dontshowagain": '<#langjs key="tct.js.dontshowagain" default="Do not show again">'
+    }
+});

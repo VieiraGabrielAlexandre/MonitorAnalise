@@ -1,0 +1,175 @@
+﻿<!--PRTG Status—Auto-Update-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_status.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="cluster_status.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>PRTG Status—Auto-Update</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: PRTG Status—Auto-Update</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Whenever a new version of the software is available from the Paessler website, PRTG will download the setup file automatically if a direct internet connection is available. The <span class="f_BoldCustom">PRTG System Administrator</span> user will then receive a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> with instructions to initiate the update installation.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">For customers using a <a href="available_licenses.htm" class="topiclink">Freeware or Trial Edition</a>, automatic software updates are available at any time. Customers using a <a href="available_licenses.htm#commercial" class="topiclink">Commercial Edition</a> need to have an active maintenance contract to receive updates.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This option is not available in PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="status" class="hmanchor"></a><span class="f_InTopicHeading">Status</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To view the auto-update page of your PRTG installation, select <span class="f_BoldCustom">Setup </span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| Auto-Update </span>from main menu. On the <span class="f_BoldCustom">Status</span> tab, you can download and perform updates. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="using" class="hmanchor"></a><span class="f_InTopicHeading">Using Auto-Update</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If there is a new version available, you will see detailed information about the available version. Please read these notes carefully! You find a summary of current and past release notes below the update section. For detailed release notes, click <span class="f_BoldCustom">PRTG Release Notes and Version History</span>, which will redirect you to the <a href="http://www.paessler.com/prtg/history/stable" target="_blank" class="weblink">version history page on paessler.com</a>. &nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To install the latest available version, click <span class="f_BoldCustom">Install Update [version number]</span>. PRTG will ask you to confirm installation and license—and that's it!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Downloaded software versions are automatically saved in the <a href="data_storage.htm#program" class="topiclink">PRTG program directory</a> in the <span class="f_BoldCustom">\download</span> subfolder. The <span class="f_ItalicCustom">prtg.zip</span> that contains all necessary files is also cached in this folder.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="auto-update4.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Automatic Software Update Page" title="Automatic Software Update Page" style="width:600px;height:308px;border:none" src="auto-update4_zoom50.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Automatic Software Update Page</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="manually" class="hmanchor"></a><span class="f_InTopicHeading">Manually Install an Interim Update</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Not all available updates from Paessler will be pushed to all customers, but they are still available from the website. Sometimes Paessler Support may ask you to update to the latest version.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">In this case please click the <span class="f_BoldCustom">Check For Latest Update and Download</span> button. PRTG will then connect to the Paessler servers and download the setup file, regardless of the status of the update-check. Then <span class="f_BoldCustom">Install Update [version number]</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>To use this function, a direct internet connection is necessary on the computer running the PRTG core server.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channels" class="hmanchor"></a><span class="f_InTopicHeading">Select Other Release Channel</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG is available in three different release channels. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For details about continuous rollout and release channels, see the <span class="f_ListBulleted">Paessler Blog: <a href="https://www.paessler.com/blog/2012/04/25/news/prtg-12-introduces-continuous-rollout" target="_blank" class="weblink">Version 12 of PRTG will introduce &quot;Continuous Rollout&quot;</a> </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change the release channel you receive updates from, please open the auto-update<span class="f_BoldCustom"> <a href="auto_update.htm#settings" class="topiclink">Settings</a></span> tab and choose the desired release channel in the <span class="f_BoldCustom">Release Channel</span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="log" class="hmanchor"></a><span class="f_InTopicHeading">Log</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> the <span class="f_BoldCustom">Log</span> tab to show log information about the update status of PRTG, newest first. In the <a href="working_with_lists.htm" class="topiclink">table list</a> appearing, you can filter the items by using the <a href="working_with_lists.htm" class="topiclink">respective options</a>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information, see the <span class="f_BoldCustom"><a href="logs.htm" class="topiclink">Logs</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> the <span class="f_BoldCustom">Settings</span> tab to configure the PRTG <span class="f_BoldCustom">Software Auto-Update</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="autoupdategroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Software Auto-Update</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When a New Version is Available</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Define what to do when there are software updates available. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatically download and install the latest version</span><span class="f_ListBulleted">: PRTG automatically downloads and installs any new version as soon as PRTG detects that there is a newer version available (PRTG checks this once per day). </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The installation of a new version will restart the PRTG Windows services and may also include a server restart.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatically download the latest version and alert the admin</span><span class="f_ListBulleted">: PRTG automatically downloads any new version as soon as PRTG detects that there is a newer version available (PRTG checks this once per day). After successful download, PRTG will create a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> for the PRTG System Administrator user.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Alert the admin only</span><span class="f_ListBulleted">: When PRTG detects that there is a newer version available, it will not download updates automatically, but create a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> only. You can still download updates manually on</span><span class="f_Comment"> the </span><span class="f_BoldCustom"><a href="auto_update.htm#manually" class="topiclink">Auto-Update</a></span><span class="f_Comment"> page.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Installation Time</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you select the automatic installation option above, choose the desired time for installation of updates from the drop-down menu. You can also choose </span><span class="f_BoldCustom">As soon as the update is available,</span><span class="f_ListBulleted"> which can be at any time of the day.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Release Channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG updates are delivered in different release channels. You can choose between maximum stability, or most early access to new features. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Stable: Updated about once per month (most conservative option, recommended)</span><span class="f_ListBulleted">: These are our best tested versions. Choose this channel for live environments you have to depend on!</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Preview: Updated about once per month</span><span class="f_ListBulleted">: Versions in this channel are already thoroughly tested in our labs, but may still contain limitations in certain monitoring configurations. Choose this channel if you are willing to take a little risk for the benefit of getting new features and bug fixes a little earlier. We strongly recommend to </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> use those versions in live environments you have to depend on!</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Canary: Updated daily (testing only, should not be used on live systems)</span><span class="f_ListBulleted">: Updated every night. Use with CAUTION! Software versions in this channel are not tested yet, might contain severe bugs, and are provided for testing purposes only. We strongly recommend to </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> use those versions in live environments you have to depend on!</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For details about continuous rollout and release channels, see the Paessler Blog: <a href="https://www.paessler.com/blog/2012/04/25/news/prtg-12-introduces-continuous-rollout" target="_blank" class="weblink">Version 12 of PRTG will introduce &quot;Continuous Rollout&quot;</a> </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notes" class="hmanchor"></a><span class="f_InTopicHeading">Notes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are a few things we ask you to consider regarding automatic software updates:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In order for auto-update to work, the machine running the PRTG core server needs direct internet access. If a proxy connection is needed, please configure it in the </span><span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> settings. </span><br />
+<img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For details about the update servers, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/32513" target="_blank" class="weblink">Which servers does PRTG connect to for Software Auto-Update and for Activation?</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">During installation the core server may be restarted without notice. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG updates existing remote probes automatically, causing short downtimes in monitoring of remote locations. In rare cases a manual update of remote probes is required after you update the core server. In these cases you will be notified in the device tree, and monitoring of remote locations will be interrupted until you perform the <a href="install_a_prtg_remote_probe.htm" class="topiclink">manual update</a> on the system(s) running the remote probe(s). If a server with a probe uses several network connections with different IP addresses, ensure these addresses are included in the <a href="probes_settings.htm#probebasic" class="topiclink">list of allowed IPs</a>. Otherwise the remote probe on this machine might be disconnected after an update.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In a cluster installation the update needs to be installed on one node only. The new version will then be deployed to all other cluster nodes automatically (causing a short downtime for the monitoring on the cluster nodes, one after another).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you run several individual PRTG core servers that are not in a cluster, for example, in combination with the </span><span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span><span class="f_ListBulleted">, an update has to be initiated and confirmed for each single core server.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You can disable automatic downloading on the </span><span class="f_BoldCustom"><a href="auto_update.htm#settings" class="topiclink">Auto-Update Settings</a> </span><span class="f_ListBulleted">tab. Updates will then only be downloaded on request, when you click the </span><span class="f_BoldCustom">Check For Latest Update and Download</span><span class="f_ListBulleted"> button.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG does not start auto-update downloads if there is less than 500 MB disk space available on the core server system. If this is the case, you can check this on the </span><span class="f_BoldCustom"><a href="auto_update.htm#log" class="topiclink">Log</a></span><span class="f_ListBulleted"> tab.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Virus scanners can potentially cause issues when downloading or installing software updates. To avoid such issues, we recommend that you make the appropriate exclusions for the <a href="data_storage.htm#program" class="topiclink">PRTG program directory</a>.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which servers does PRTG connect to for Software Auto-Update and for Activation?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/32513" target="_blank" class="weblink">https://kb.paessler.com/en/topic/32513</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which information does PRTG send back to Paessler?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/28103" target="_blank" class="weblink">https://kb.paessler.com/en/topic/28103</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How and where does PRTG store its data?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/463" target="_blank" class="weblink">https://kb.paessler.com/en/topic/463</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler Blog: Version 12 of PRTG will introduce &quot;Continuous Rollout&quot;</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/blog/2012/04/25/news/prtg-12-introduces-continuous-rollout" target="_blank" class="weblink">https://www.paessler.com/blog/2012/04/25/news/prtg-12-introduces-continuous-rollout</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="downloads.htm" class="topiclink">Downloads and Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_help_and_support_center.htm" class="topiclink">Support—Help and Support Center</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, see the sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Automatic Software Update</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_status.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="cluster_status.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

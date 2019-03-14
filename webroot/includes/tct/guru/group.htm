@@ -1,0 +1,287 @@
+﻿<tct
+  data-role="<#role>"
+  data-check="return <#objectid>===0"
+  data-remove-delay="1"
+  class="<#system type='showhelp' tct='guru' page='@page.welcome' class='removeme' varexpand='page'>"
+  style="position:absolute;left:calc(50% - 25px); top: 30vh;">
+  <!--
+    var $tct = this
+      , css = document.createElement("style");
+
+    css.type = "text/css";
+    css.id="temporaryCSS";
+    css.innerHTML = "a.treeminilink { display: none!important; }";
+    document.body.appendChild(css);
+
+    function refreshCheck(){
+      var refresh = Math.ceil(19.5 * Math.atan((_Prtg.lastStats.TotalSens-3)/15));
+      refresh = refresh > 25 ? 30 : refresh;
+      refresh < 3 ? 3 : refresh;
+      _Prtg.Events.stop().start(refresh);
+      if(refresh === 30){
+        _Prtg.Events.unsubscribe('refresh.events.prtg',refreshCheck);
+        $('#temporaryCSS').remove();
+      }
+    }
+    _Prtg.Events.subscribe('refresh.events.prtg',refreshCheck);
+    if(!_Prtg.lastStats || !_Prtg.lastStats.TotalSens)
+      _Prtg.Events.subscribeOnce('newstats.prtg',refreshCheck);
+    else
+      refreshCheck();
+
+    $tct.
+      one('click','button.skip', function(event){
+        $tct.data().replaceWith = "/controls/groupoverviewcolumnrigth.htm";
+        $tct.data().confirm(event, "guru","<#page>","skipped");
+      })
+      .one('click','button.actionbutton', function(event){
+        $('body').data('bs.popover').options.delay.show = 2000;
+        $('body').data('bs.popover').options.delay.hide = 200;
+
+        $tct.hide(0,function(){
+          $tct
+          .find('.info-box .tct-textcontent')
+          .html('<span class="headline">' + '<#langjs key="tct.guru.welcomeA" default="I'm Greg.">' + '</span><span class="text">' + '<#langjs key="tct.guru.welcomeB" default="The Team is here to walk you through our simple setup. Right now PRTG is discovering your network segment">' + '</span>')
+          .end()
+          .show(500)
+          .tct("end", function(){$tct.data().confirm(event, 'guru','<#page>.welcome','done'); $tct.hide(1000).remove();},7000)
+          .tct("run");
+        });
+      });
+  -->
+  <div>
+    <div class="info-box guru-circle" style="width:410px;">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+        <span class="headline"><#lang key="tct.guru.congratulationsA" default="Congratulations!"/></span>
+        <span class="text">
+        <#lang key="tct.guru.scanning" default="PRTG is about to scan your network. You will see all your devices soon."/>
+      </span>
+        <span class="text <#system type='showhelp' tct='guru' version='trial' page='@page.welcome' class='hidden'  varexpand='page'>">
+        <#lang key="tct.guru.thirtydays" default="For the next 30 days, we have unlocked unlimited sensors for you. Afterwards you can use 100 sensors for free forever."/>
+      </span>
+        <div class="tct-buttonbar buttonbar-multiple">
+          <button class="actionbutton"><#lang key="tct.guru.ok!" default="OK!"></button>
+          <button class="button btngrey skip"><#lang key="tct.guru.skipguru" default="Skip introduction"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<!--
+-->
+
+<tct
+  data-role="<#role>"
+  class="<#system type='showhelp' tct='guru' page='@page.credentials' class='removeme' varexpand='page'>">
+<!--
+    var $tct = this
+      , $tab = null
+    $tct.on('click','.actionbutton', function(event){
+      $tab = $('li[tabid="8"] a');
+      $tab
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height()-10; return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",$tab,'click', function(){
+          $tab.tct("mouseMoveEnd",1);
+          $tct.data().confirm(event, 'guru','<#page>.credentials','done');
+          $tct.hide().remove();
+        })
+        .tct("run");
+    });
+   -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.credentialsA" default="Let PRTG find out more about your network."></span>
+      <span class="text"><#lang key="tct.guru.credentialsB" default="Have your credentials ready."></span>
+
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  data-role="<#role>"
+  class="<#system type='showhelp' tct='guru' page='@page.adminaccount' class='removeme' varexpand='page'>">
+    <!--
+    var $tct = this
+      , $menuitem = null;
+    $tct.on('click','.actionbutton', function(event){
+      $menuitem = $("#main_menu>li:last-child");
+      $menuitem
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2; return off;})
+        .tct("css",function(){this.css("background-color","").addClass("hovered")})
+        .tct("mouseMoveTo", 1000, null, function(cursor){var off = cursor.offset(); off.top += 70; return off;})
+        .tct("css",function(){this.children("ul").children().eq(1).css("background-color","").addClass("hovered")})
+        .tct("mouseMoveTo", 1000, null, function(cursor){var off = cursor.offset(); off.left += (this.children("ul").children().eq(1).children("ul").is(".flyoutleft")?-1:1) * 250; return off;})
+        .tct("css",function(){this.children("ul").children().eq(1).children("ul").children().eq(0).css("background-color","").addClass("hovered")})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",'a[href="/myaccount.htm"]','click', function(){
+          $menuitem
+            .tct("mouseMoveEnd",1)
+            .tct("css",function(){this.find("li").addBack().removeClass("hovered");});
+          $tct.data().confirm(event, 'guru','<#page>.adminaccount','done');
+        })
+        .tct("run");
+      _Prtg.Events.subscribe('navigate.prtg', function(){
+        if(!!$menuitem)
+          $menuitem.find("li").addBack().removeClass("hovered");
+      });
+    })
+    .one('destroyed', function(){
+      if(!!$menuitem)
+        $menuitem.find("li").addBack().removeClass("hovered");
+    });
+    -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.accountA" default="Please Set your password!"></span>
+      <span class="text"><#lang key="tct.guru.accountB" default="Change the default password to make your PRTG installation secure."></span>
+
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</tct>
+
+<!--tct
+  data-role="<#role>"
+  class="<#system type='showhelp' tct='guru' page='@page.notificatons' class='removeme' varexpand='page'>">
+
+    var $tct = this
+      , $probe = null;
+    $tct.on('click','.actionbutton', function(event){
+      $probe = $('div[objid="40"] div.indent name');
+      $probe
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.rightpleaseclick" default="Please right click here!">',1500)
+        //.tct("mouseMoveEnd",1)
+        .tct("contextmenu", event, "li#devicenotifications")
+        .tct("mouseMoveTo", 1000, null, function(){var off = $("li#devicenotifications").offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",'li#devicenotifications','click', function(event){
+          $tct.data().confirm(event, 'guru','<#page>.notificatons','done');
+          $probe
+            .tct("mouseMoveEnd",1)
+            .tct("end", function(){$tct.hide().remove();});
+        })
+        .tct("run");
+    });
+
+  <div>
+
+    <div class="info-box">
+     <img src="/images/tct/Greg100x100.png">
+     <div class="tct-textcontent">
+      <#lang key="tct.guru.notifications" default="Please set up notifications.">
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+<tct
+  data-role="<#role>"
+  data-remove-delay="1"
+  data-replace-with="/controls/groupoverviewcolumnrigth.htm"
+  class="<#system type='showhelp' tct='guru' page='@page.mobilapps' class='removeme' varexpand='page'>">
+
+    var $tct = this
+      , $menuitem = null;
+    $tct.on('click','.actionbutton', function(event){
+      $menuitem = $("#main_menu>li:last-child");
+      $menuitem
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2; return off;})
+        .tct("blinkEnd")
+        .tct("css",function(){this.css("background-color","").addClass("hovered")})
+        .tct("mouseMoveTo", 1000, null, function(cursor){var off = cursor.offset(); off.top += 190; return off;})
+        .tct("css",function(){this.children("ul").children().eq(7).css("background-color","").addClass("hovered")})
+        .tct("mouseMoveTo", 1000, null, function(cursor){var off = cursor.offset(); off.left += (this.children("ul").children().eq(1).children("ul").is(".flyoutleft")?-1:1) * 150;off.top +=25; return off;})
+        .tct("css",function(){this.children("ul").children().eq(7).children("ul").children().eq(1).css("background-color","").addClass("hovered")})
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",'a[href="/downloads.htm?tabid=2"]','click', function(event){
+          $menuitem
+            .tct("mouseMoveEnd",1)
+            .tct("css",function(){this.find("li").addBack().removeClass("hovered");})
+            .tct("end", function(){$tct.hide(1000).remove();_Prtg.Events.stop().start(_Prtg.Options.refreshInterval);});
+          $tct.data().confirm(event, 'guru','<#page>.mobilapps','done');
+        })
+        .tct("run");
+      _Prtg.Events.subscribe('navigate.prtg', function(){
+        if(!!$menuitem)
+          $menuitem.find("li").addBack().removeClass("hovered");
+      });
+    })
+    .one('destroyed', function(){
+      if(!!$menuitem)
+        $menuitem.find("li").addBack().removeClass("hovered");
+    });
+
+   <div>
+
+    <div class="info-box ">
+    <img src="/images/tct/Greg100x100.png">
+    <div class="tct-textcontent">
+      <#lang key="tct.guru.mobileapps" default="Run PRTG on your Mobile Phone.">
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+-->
+
+<tct
+  data-role="<#role>"
+  data-remove-delay="1"
+  data-replace-with="/controls/groupoverviewcolumnrigth.htm"
+  data-domain="<#system type='showhelp' tct='guru' domain='guru'>"
+  class="<#system type='showhelp' tct='guru' page='@page.done' class='removeme' varexpand='page'>">
+  <!--
+    var $tct = this
+    $tct.on('click','.actionbutton', function(event){
+      $tct.data().confirm(event,'guru','<#page>.done','done');
+      $tct.remove();
+    });
+   -->
+   <div>
+    <div class="info-box guru-circle">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.congratulationsA" default="Congratulations!"></span>
+      <span class="text"><#lang key="tct.guru.don" default="You are done with the setup."></span>
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.ok" default="OK"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>

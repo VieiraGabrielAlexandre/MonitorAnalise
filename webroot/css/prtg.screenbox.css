@@ -1,0 +1,74 @@
+﻿/* prtg.screenbox.css */
+.screenbox {
+  background: <#colorcode color="lightgray">;
+  margin-top: 0;
+}
+
+.screenbox h2 {
+  font-size: 18px;
+  background: #fff;
+  padding: 2px;
+  padding: 15px 0px 10px 0px;
+  filter: none;
+  margin: 0px;
+}
+
+.screenbox h2 a:link, .screenbox h2 a:active, .screenbox h2 a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.screenbox h2 a:hover {
+  color: #00235D;
+  text-decoration: underline;
+}
+
+.screenbox ul {
+  padding: 0px;
+  margin: 0px;
+  border: 5px solid <#colorcode color="lightgray">;
+  border-radius: 5px;
+}
+
+.screenbox ul li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 2px;
+}
+
+.screenbox ul li>span:first-child {
+  display: table-cell;
+  font-weight: bold;
+  width: 140px;
+}
+
+.screenbox ul li>span:last-child {
+  display: table-cell;
+  word-break: break-all;
+}
+
+.screenbox>ul>li>ul {
+  margin-left: 12px;
+}
+
+.screenbox ul li:nth-child(even) {
+  background-color: <#colorcode color="lightgray">;
+}
+
+.screenbox ul li:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+div.screenbox table.table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.systemstatus>div {
+  width: 50%;
+  float: left;
+}
+
+.systemstatus>div:first-child {
+  padding-right: 10px;
+}

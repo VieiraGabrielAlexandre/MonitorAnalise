@@ -1,0 +1,224 @@
+﻿<!--Monitoring Databases-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="monitoring_virtual_environments.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_syslogs_and_snmp_traps.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring Databases</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring Databases</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Monitoring your databases enables you to ensure that, on the one hand, database queries are processed in time, and, on the other hand, that the database itself performs within the defined parameters. Furthermore, database monitoring with PRTG makes it possible to be alerted via a corresponding sensor status if database queries return an unexpected result value.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG comes with built-in native sensors for the most common databases:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft SQL servers</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">MySQL servers</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PostgreSQL servers</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Oracle SQL servers</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">It is also possible to monitor many other database servers. For this concern, PRTG uses the ActiveX Data Objects (ADO) interface. &nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are two types of database sensors: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="monitoring_databases.htm#direct" class="topiclink">Sensors monitoring databases directly</a></span><span class="f_ListBulleted">: Monitor databases from the user perspective. These sensors send a request to the database server and receive corresponding values. You can optionally process data tables and show values in individual channels or monitor transactions.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="monitoring_databases.htm#performance" class="topiclink">Sensors monitoring database performance</a></span><span class="f_ListBulleted">: Monitor databases with a more abstract view on the servers. Usually, these sensors monitor performance counters via Windows Management Instrumentation (WMI).</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="direct" class="hmanchor"></a><span class="f_InTopicHeading">Sensors Monitoring Databases Directly</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG provides several sensors that can &quot;look into&quot; the content of databases. Sensors of this type connect to the database server, execute a defined query, and show the execution time of the whole request and the query. You can use these sensors to process the data table and show requested values in individual channels.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following sensor types are available for this kind of monitoring:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="microsoft_sql_v2_sensor.htm" class="topiclink">Microsoft SQL v2 Sensor</a></span><span class="f_ListBulleted">: Monitor your Microsoft SQL server 2005 or later.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="mysql_v2_sensor.htm" class="topiclink">MySQL v2 Sensor</a></span><span class="f_ListBulleted">: Monitor your MySQL server version 5.0 or later.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="oracle_sql_v2_sensor.htm" class="topiclink">Oracle SQL v2 Sensor</a></span><span class="f_ListBulleted">: Monitor your Oracle database server version 10.2 or later. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="postgresql_sensor.htm" class="topiclink">PostgreSQL Sensor</a></span><span class="f_ListBulleted">: Monitor your PostgreSQL database version 7.x or later.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">For these sensor types, you can define valid SQL statements that the sensors send to the database server. Define the queries in an SQL script file and store it into the respective <span class="f_BoldCustom">\Custom Sensors\sql\</span> subfolder of your PRTG installation (see section <span class="f_BoldCustom"><a href="data_storage.htm#program" class="topiclink">Data Storage</a></span> for details). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can select this SQL script when you add the sensor to PRTG. With every <a href="root_group_settings.htm#scanning" class="topiclink">scanning interval</a>, the sensor executes this script with the defined query against the database and the database returns corresponding values in individual channels (see the <a href="monitoring_databases.htm#ex_sql_channels" class="topiclink">example</a> below for sample channel value selections). Use the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm#settings" class="topiclink">Sensor Channel Settings</a></span> to define limits for specific values.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>These sensor types need .NET 4.5 or later installed on the computer running the PRTG probe.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Alternatively, you can monitor almost all available database servers with the </span><span class="f_BoldCustom"><a href="ado_sql_v2_sensor.htm" class="topiclink">ADO SQL v2 Sensor</a></span><span class="f_ListBulleted"> via an ActiveX Data Objects (ADO) connection.</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="ex_sql_channels" class="hmanchor"></a><span class="f_InTopicHeading">Example: SQL Channel Value Selection</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The SQL (v2) sensors determine their channel values by using column numbers, column names, row numbers, or key value pairs. This section shows which option you can choose to get the desired value from an SQL data table. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Consider the following data table that an SQL query might return from a database:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:50%; border:solid 2px #000000; border-spacing:0px; border-collapse:collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#c0c0c0; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted" style="font-weight: bold;">article_id</span></p>
+</td>
+<td style="vertical-align:top; background-color:#c0c0c0; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted" style="font-weight: bold;">articles_available</span></p>
+</td>
+<td style="vertical-align:top; background-color:#c0c0c0; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted" style="font-weight: bold;">first_listing</span></p>
+</td>
+<td style="vertical-align:top; background-color:#c0c0c0; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted" style="font-weight: bold;">orders</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">00</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">12</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2001</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">4</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">01</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">345</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2005</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">56</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">02</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">678</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2008</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">290</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">03</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">90</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2012</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">32</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">This data table has four columns with the following numbering:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column 0 has the name &quot;article_id&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column 1 has the name &quot;articles_available&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column 2 has the name &quot;first_listing&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column 3 has the name &quot;orders&quot;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The numbering of columns starts with 0, as well as the numbering for rows starts with 0. The table has four rows, each row contains the properties of one &quot;article&quot;. The &quot;articles&quot; have the IDs 00, 01, 02, 03. This also illustrates the proper row numbering (0, 1, 2, 3).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">With the options for channel value selection in SQL sensors, you can read out the following values:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All values that are in row 0 (here: 00, 12, 2001, 4)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All values that are in column 0 (here: 00, 01, 02, 03)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All values that are in column 1 (here: 12, 345, 678, 90)</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">It is not possible to get values from any other cell in a data table. If you need this, you have to re-construct your data table.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following samples show possible results for channel value selections regarding this data table:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sample Channel Value Selections</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Value Selection by Column Number</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This channel will show the value in row 0 of the column you specify. Consider you define &quot;1&quot; as column number. Then the sensor channel value is &quot;12&quot; because it is the cell in column 1 and row 0. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Possible return values for this option are:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column number &quot;0&quot; returns &quot;00&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column number &quot;1&quot; returns &quot;12&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column number &quot;2&quot; returns &quot;2001&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column number &quot;3&quot; returns &quot;4&quot;</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Value Selection by Column Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This channel will show the value in row 0 of the column you specify. Consider you define &quot;orders&quot; as column name. Then the channel value is &quot;4&quot; because it is the cell in column &quot;orders&quot; and row 0. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Possible return values for this option are:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column name &quot;article_id&quot; returns &quot;00&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column name &quot;articles_available&quot; returns &quot;12&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column name &quot;first_listing&quot; returns &quot;2001&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Column name &quot;orders&quot; returns &quot;4&quot;</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Value Selection by Row Number</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This channel will show the value in column 0 of the row you specify. Consider you define &quot;1&quot; as row number. Then the sensor channel value is &quot;01&quot; because it is the cell in row 1 and column 0. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Possible return values for this option are:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Row number &quot;0&quot; returns &quot;00&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Row number &quot;1&quot; returns &quot;01&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Row number &quot;2&quot; returns &quot;02&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Row number &quot;3&quot; returns &quot;03&quot; </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Value Selection by Key Value Pair</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This channel will show the value in column 1 of the same row where the key in column 0 was found. Consider you define &quot;02&quot; as key. Then the sensor channel value is &quot;678&quot; because it is the cell in the same row in column 1 as the the key in column 0. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Possible return values for this option are: </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Key &quot;00&quot; returns &quot;12&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Key &quot;01&quot; returns &quot;345&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Key &quot;02&quot; returns &quot;678&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Key &quot;03&quot; returns &quot;90&quot;</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">This sample channel value selection illustrates how to choose the correct option to get needed values from an SQL data table and shows which cells the SQL sensors can address.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="udf" class="hmanchor"></a><span class="f_BoldCustom">UDF: Counting Returned Rows</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you execute a <span class="f_ItalicCustom">UDF (User Defined Function)</span> on the SQL server and want to know how many rows this UDF returns, follow these steps:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A command to execute your UDF on the SQL server may look like this, for example:</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&nbsp;exec&nbsp;myUDF</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To get the information how many rows this UDF returns, extend the query in your SQL script:</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">exec&nbsp;myUDF;</span><br />
+<span class="f_CodeExample">select&nbsp;@@rowcount&nbsp;as&nbsp;row_count</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create a new SQL v2 sensor and enable </span><span class="f_BoldCustom">Data Processing</span><span class="f_ListBulleted"> during sensor creation.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In the settings of your SQL sensor, choose the option </span><span class="f_BoldCustom">Select Channel Value by Column name </span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Enter </span><span class="f_BoldCustom">row_count</span><span class="f_ListBulleted"> into the </span><span class="f_BoldCustom">Column Name</span><span class="f_ListBulleted"> field of the channel to show the value from this column in the channel. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To count table rows returned by a </span><span class="f_ItalicCustom">SELECT</span><span class="f_ListBulleted"> statement, choose the option </span><span class="f_BoldCustom">Count table rows</span><span class="f_ListBulleted"> in the sensor settings section </span><span class="f_BoldCustom">Data Processing</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="performance" class="hmanchor"></a><span class="f_InTopicHeading">Sensors Monitoring Database Performance</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Performance sensors for database servers have a more &quot;abstract&quot; view on databases and regard performance &quot;from the outside&quot;. They do not read out any values of the database, neither do they send SQL queries to databases. This sensor type is only available for Microsoft SQL. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The Microsoft SQL server sensors monitor performance via Windows Management Instrumentation (WMI). You can manually set up different performance counters for your server instances, for example, general statistics, access methods, buffer and memory manager, locks, and SQL statistics.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Microsoft SQL Server performance sensors are available for Microsoft SQL Server 2008, 2012, 2014, 2016, and 2017:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="microsoft_sql_server_2008_sensor.htm" class="topiclink">WMI Microsoft SQL Server 2008 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_microsoft_sql_server_2012_sensor.htm" class="topiclink">WMI Microsoft SQL Server 2012 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_microsoft_sql_server_2014_sensor.htm" class="topiclink">WMI Microsoft SQL Server 2014 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_microsoft_sql_server_2016_sensor.htm" class="topiclink">WMI Microsoft SQL Server 2016 Sensor</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_microsoft_sql_server_2017_sensor.htm" class="topiclink">WMI Microsoft SQL Server 2017 Sensor</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="monitoring_virtual_environments.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_syslogs_and_snmp_traps.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

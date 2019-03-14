@@ -1,0 +1,210 @@
+﻿<!--Account Settings—Schedules-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="notification_contacts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_website_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Account Settings—Schedules</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Account Settings—Schedules</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">To open the account settings of the currently logged in user, select <span class="f_BoldCustom">Setup</span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| Account Settings </span>from the main menu. Select the various tabs to change the different settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:540px"><a href="account_settings_tabs.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Account Settings Tabs" title="Account Settings Tabs" style="width:540px;height:13px;border:none" src="account_settings_tabs_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Account Settings Tabs</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can define the following aspects of your account settings:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a> </span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">In the schedule settings, you can define or change schedules for the currently logged in user. You can use schedules to <a href="pause.htm" class="topiclink">pause</a> monitoring/notification at for certain time periods with the period lists option. Also you can activate it at certain times with the time table option. You can also use schedules to define the time periods that are to be covered when creating <a href="reports.htm" class="topiclink">reports</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-premises" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-premises.png"/>If you use PRTG on premises and open the system administration page from another administration page, PRTG will ask you to enter your credentials again for security reasons if 15 minutes (900 seconds) have passed since your last credential-based login. A dialog box will appear. Enter your <span class="f_BoldCustom">Login Name</span> and <span class="f_BoldCustom">Password</span> for PRTG in the corresponding fields and confirm to continue.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="account_settings_schedules.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Schedules Settings" title="Schedules Settings" style="width:600px;height:267px;border:none" src="account_settings_schedules_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Schedules Settings</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Schedules Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click on the <span class="f_BoldCustom">Schedules</span> tab to show a list of all existing schedules. Using the <span class="f_BoldCustom">Edit</span> button, you can perform the following actions:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Used by</span><span class="f_ListBulleted">: Show a list of objects using this notification.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Delete</span><span class="f_ListBulleted">: Delete this notification (not possible for predefined notifications)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted">: Shows the settings of the selected schedule.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Please also see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span>. Additionally, the multi-edit functionality is available. This enables you to change properties of several objects simultaneously via bulk changes. For more details, see the <span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit Lists</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Schedule</span> or click the name of an existing notification to edit.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="schedule_timetable.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Edit Schedule Time Table" title="Edit Schedule Time Table" style="width:600px;height:418px;border:none" src="schedule_timetable_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Edit Schedule Time Table</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:733px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Schedule Name</span></p>
+</td>
+<td style="vertical-align:top; width:2123px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name for the schedule that describes the defined time span(s) or their purpose.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:733px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:2123px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Use tags to filter for objects of certain categories. See section <a href="tags.htm" class="topiclink">Tags</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:733px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Edit Mode</span></p>
+</td>
+<td style="vertical-align:top; width:2123px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select how you want to define a schedule. Choose between: </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use weekday/hour time table</span><span class="f_ListBulleted">: Define a schedule by adding check marks to available check boxes. The lowest possible increment is one hour.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This time table defines which time slots are </span><span class="f_ItalicCustom">active</span><span class="f_ListBulleted">.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use list of period definitions</span><span class="f_ListBulleted">: Define a schedule by entering text lines using a specific syntax (see below). </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This time table defines which time slots are </span><span class="f_ItalicCustom">inactive</span><span class="f_ListBulleted">.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:733px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Time Table</span></p>
+</td>
+<td style="vertical-align:top; width:2123px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This selection is only visible if you enable the time table option above. Define the schedule. It will be used for monitoring objects, reporting, and notifications. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can set time spans with a precision of one full hour by adding check marks. If a box is checked, it means the object is active during this hour. If unchecked, the object will be paused during this hour. You can set check marks individually, or change complete ranges for certain days of the week or time spans.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To add ranges of check marks, use the weekday buttons </span><span class="f_BoldCustom">Mo</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Tu</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">We</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Th</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Fr</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Sa</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">Su</span><span class="f_ListBulleted">, as well as the time buttons on the left side. If the color of a button is blue, a click will select the range. To select all ranges, click </span><span class="f_BoldCustom">All on</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To remove ranges of check marks, use weekday and time buttons that are active. If the color of a button is white, a click will deselect the range. To remove all ranges, click </span><span class="f_BoldCustom">All of</span><span class="f_ListBulleted">. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:733px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Period List</span></p>
+</td>
+<td style="vertical-align:top; width:2123px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable period definitions above. Define the date/time ranges in which the objects using this schedule will be </span><span class="f_ItalicCustom">inactive</span> (for example, paused)<span class="f_ListBulleted">. During other times, the objects will be active. Enter the ranges in this format: </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">ww:hh:mm-ww:hh:mm </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Ensure you enter each period exactly in the required syntax! Otherwise you will receive an error message. Please go back to the schedule and correct the according entry in this case. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For details and examples, see <a href="schedules_settings.htm#syntax" class="topiclink">Schedules Settings—Period Definition Syntax</a> below.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Schedules use the time zone of the computer on which your PRTG core server is running. This may diverge to other time displays in PRTG that are saved in UTC.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you define a schedule with the Time Table option in the <a href="schedules_settings.htm#basic" class="topiclink">schedule settings</a>, the time to which the schedule applies is converted to the time zone of <a href="my_account_settings.htm#webinterfacesettings1" class="topiclink">your PRTG user account</a>. This means that the schedule is executed according to the time that your user account shows. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you use the Period List option, PRTG will </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> adjust the schedule to the time zone of your user account! The schedule will apply according to the time on your PRTG server in this case. Because of this, you will encounter time shifts for schedules if there are changes to the time zone on the server or in case of different daylight saving and standard time changes.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object that you are editing. A table with user groups and rights is shown; it contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object does not show up in lists. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings. However, they cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings as well as edit access rights.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="syntax" class="hmanchor"></a><span class="f_InTopicHeading">Schedules Settings—Period Definition Syntax</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define one or more periods of time during which the object using this schedule will be <span class="f_ItalicCustom">inactive</span>. In each line, enter one range in the format <span class="f_ItalicCustom">ww:hh:mm-ww:hh:mm</span>: weekday, hour, minute.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Possible values for </span><span class="f_ItalicCustom">ww</span><span class="f_ListBulleted">: mo, tu, we, th, fr, sa, su.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Possible values for </span><span class="f_ItalicCustom">hh</span><span class="f_ListBulleted">: Enter the hour in 24 hour format (no AM/PM allowed), for example, a number between 00 and 23.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Possible values for </span><span class="f_ItalicCustom">mm</span><span class="f_ListBulleted">: Enter the minute, for example, a number between 00 and 59.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This example shows a schedule that pauses an object during the weekend as well as on Wednesday evenings.</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">fr:19:30-mo:06:05</span><br />
+<span class="f_CodeExample">we:18:45-we:23:00</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Any object using this schedule will be paused from Friday, 7:30 p.m. to Monday, 6:05 a.m. as well as on Wednesday from 6:45 p.m. to 11 p.m. It will be active during the other times.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For information about the comments and history tabs, see the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="downloads.htm" class="topiclink">Downloads and Tools</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_help_and_support_center.htm" class="topiclink">Support—Help and Support Center</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, see the sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Schedule,Schedule</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="notification_contacts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_website_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

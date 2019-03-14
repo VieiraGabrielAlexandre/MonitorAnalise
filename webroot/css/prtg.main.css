@@ -1,0 +1,30 @@
+﻿.hidefornoneadmins{
+  <#hidefornonadmins>
+}
+
+.hideforreadonly {
+  <#system type="hideforreadonlyusers">
+}
+
+@-moz-document url-prefix() {
+  wingui-hidden {
+    display: block;
+  }
+}
+
+.hideinv12, .hideinv13, .hideabove14-x-12, .hideabove15-4-21, .hideabove16-x-24, .hideabove16-x-28 {
+  display: none !important;
+}
+
+.newalerts a,
+.newalerts a:link,
+.newalerts a:hover,
+.newalerts a:visited,
+.newalerts a:active,
+#sensorstats a,
+#sensorstats a:link,
+#sensorstats a:hover,
+#sensorstats a:visited,
+#sensorstats a:active {
+  <#system type="browserdependent" browsertype="MSIE" aboveversion="1" browsercontent="padding: 3px 5px 6px 5px;">
+}

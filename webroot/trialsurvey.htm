@@ -1,0 +1,19 @@
+﻿<#lang key="html.welcome.title" default="Welcome" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<#breadcrumbs trail="(AUTO)" varexpand="this" this="@pagetitle">
+
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>" style="text-align: center">
+  <iframe src="<#homenagscreenurl>" width="800px" height="800px" style="position: relative; border: none;"></iframe>
+  <br/>
+  <a class="actionbutton nohjax" style="width: 400px; height: 40px; font-size: 18px; line-height: 31px;" href="/api/dontshowhomenagscreen.htm"><#lang key="html.trialsurvay.dontask" default="Don't ask me again"></a>
+
+</div>
+
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

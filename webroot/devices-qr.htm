@@ -1,0 +1,24 @@
+﻿<#include file="includes\htmlheader.htm" ajax="exclude" bodyclass="mapshow">
+<div id="qr">
+  <!--
+  	 <#table
+      output="json"
+  		content="devices"
+  		columns="objid,device,host"
+  		sortby="probegroupdevice">
+  -->
+</div>
+<script>
+$(function(){
+  var $qr = $('#qr')
+    , data = {}
+    , comment = $qr.contents().filter(function(){return this.nodeType===8;});
+     $.extend(true, data, JSON.parse(comment.get(0).nodeValue));
+
+  if(data.devices)
+    data.devices.forEach(function(elm){
+      $qr.append('<div style="width:<#inserturlparam parameter="width" default="5cm">;height:<#inserturlparam parameter="height" default="5cm">;margin:<#inserturlparam parameter="margin" default="1cm">;float:left;position:relative;" class="prtg-plugin" data-plugin="prtgqrcode" id="qr-'+elm.objid+'" data-name="'+elm.device+'" data-host="'+elm.host+'" data-zoom="1" data-url="'+document.location.origin+'/device.htm?id='+elm.objid+'"></div>');
+    })
+});
+</script>
+<#include file="includes\htmlfooter.htm" ajax="exclude">

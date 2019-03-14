@@ -1,0 +1,17 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="notification">
+<#objectid var="objid">
+<#lang key="html.notifications.addnew" default="Add Notification Template" var="newtitle">
+<#lang key="html.editnotifcation.title" default="Edit Notification Template" var="edittitle">
+
+<#if value="@objid" is="new" then="@newtitle" else="@edittitle" varexpand="value,then,else" var="formtitle">
+
+<form id="editnotificationform" enctype="multipart/form-data" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true" title="<#inserthtml html="@formtitle" varexpand="html">">
+    <div class="cancel-action">
+        <a onClick="history.back();return(false)" class="btn cancel" type="reset"><#lang key="html.global.cancel" default="Cancel"></a>
+    </div>
+    <#object type="settings" objecttype="notification">
+    <#hiddenid>
+    <input type=hidden name="targeturl" value="/myaccount.htm?tabid=2">
+    <#include file="includes\submitbutton.htm">
+</form>

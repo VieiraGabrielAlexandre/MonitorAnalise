@@ -1,0 +1,31 @@
+﻿<#lang key="html.downloads.help.title" default="Downloads and Tools" var="helptitle">
+<#lang key="html.downloads.help.text" default="Here you can download additional software or optional network tools for PRTG that will improve your network monitoring capabilities.<br><br><a href='/help/downloads.htm' target='_blank'><b>Help: Downloads and Tools</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<div class="download-items">
+  <div class="download-item box">
+    <h2>
+      <#lang key="html.global.remoteprobeinstaller" default="Remote Probe Installer">
+    </h2>
+    <div class="download-item-text">
+      <p>
+        <#lang key="html.downloads.probe.text5" default="You can use this installer to set up a remote probe for your PRTG installation. Download and install the file on every PC that you want to use as a remote probe. Please see the manual section <a href='/help/add_remote_probe.htm'>Add Remote Probe</a> for details on how to configure the remote probe.">
+      </p>
+      <p>
+        <#lang key="html.downloads.probe.text6" default="Note: The version numbers of core and probe services must match. By default, PRTG updates probes automatically when a new version is installed on the PRTG core server. To update manually please go to your remote PC, open a web browser, and come back to this page to download the latest update.">
+      </p>
+	  <p>
+		<#lang key="html.downloads.probe.text8" default="Note: If you run a PRTG cluster and install a remote probe outside your local network, ensure the DNS names and IP addresses of your cluster nodes that you define in the System Administration—Cluster settings are reachable from the outside. Please see manual section <a href='/help/remote_probe_setup.htm#1'>Remote Probe Setup Using Installer</a> for details.">
+	  </p>
+      <p>
+        <#lang key="html.downloads.probe.text7" default="We recommend Windows Server 2012 R2 on remote probe systems, but you can also use another <a href='/help/detailed_system_requirements.htm#os' target='_blank'>supported Windows version</a> on the target computer.">
+      </p>
+      <p>
+        <a class="button add-menu-item add-remoteprobe" onclick="_Prtg.objectTools.addRemoteProbe(0, 'remoteprobeinstall.htm', 0);return false;" style="<#hidefornonadmins>" href="#"><span></span><#lang key="html.global.addremoteprobe" default="Add Remote Probe"></a>
+        <a class="nohjax btnright secondary" href="/public/PRTG_Remote_Probe_Installer.exe?version=<#system type=" version ">&filetype=.exe">
+          <#lang key="html.downloads.probeinstallerdirect" default="Download Remote Probe Installer directly">
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

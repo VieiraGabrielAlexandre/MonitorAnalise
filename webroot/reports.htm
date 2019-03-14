@@ -1,0 +1,54 @@
+﻿<#lang key="html.reports.title" default="Reports" var="pagetitle">
+<#lang key="html.reports.titlefilter" default="reports&nbsp;" var="titlefilter">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" class="reports-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+<div class="inner-wrapper">
+	<div class="inner-aside-left"></div>
+	<div class="inner-content">
+		<div class="add-menu-wrapper">
+			<div class="add-menu add-menu-fixed">
+				<a class='actionbutton add-menu-item <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href='/addreport.htm?id=new'><#lang key="html.reports.addreport" default="Add Report"></a>
+			</div>
+		</div>
+		<div id="content" class="table-wrapper">
+			<div class="buttonbox normalpage">
+				<a href='objecthistory.htm?tabid=7' data-placement="bottom" title="<#lang key="html.global.History" default="History">" style="<#hidefornonadmins>"><i class="glyph-document-history"></i></a>
+				<#include file="includes\linkpagebutton.htm">
+			</div>
+			<#system type="checkie7">
+			<div class="prtg-plugin" data-plugin="prtg-table">
+				<#table tableid="reporttable"
+					content="reports"
+					userid="<#userid>"
+					columns="name,template,securitycontext,period,schedule,email,status,nextrun,lastrun,numberofsensors,checkbox"
+					count="all"
+					tools="delete,edit"
+					sortby="name"
+					sortable="true"
+					tabletitle="@pagetitle"
+					links="true"
+					refreshable="true"
+				filters="words!@titlefilter,tags"
+					varexpand="tabletitle,filters"
+					>
+			</div>
+  		</div>
+	</div>
+	<div class="inner-aside-right">
+		<div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+	</div>
+</div>
+<#system type='showhelp' tct="theater" page="help-reports" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.reports.title" default="Reports" var="helptitle">
+<#lang key="html.reports.text2" default="Reports are used to analyze monitoring data, either once or at specified intervals. You can define any number of reports." var="helptext">
+<#lang key="html.reports.help.link" default="<a href='/help/reports_step_by_step.htm' target='_blank'><b>Help: Reports Step By Step</b></a>" var="helplink">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

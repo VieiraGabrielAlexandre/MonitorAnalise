@@ -1,0 +1,58 @@
+﻿<div id="dependencies-overview" class="loading">
+  <div id="dependencygraphlegend" class="overviewsmalldata">
+      <div  class="overview-block" style="<#system type="browserdependent" browsertype="Trident/" aboveversion='0'  browsercontent="display:none;">">
+        <span class="overview-title"><#lang key="html.dependencies.master.title" default=" Master Dependencies">:</span>
+        <span class="radio-control overview-data">
+            <input checked="checked" class="radio hidden" type="radio" value="false" name="showhidemaster" id="hidemaster">
+            <label for="hidemaster" class="radio-control-label inline"><i class="icon-gray icon-radio-on"></i><#lang key="html.dependecies.mastershow" default="Hide"></label>
+            <input class="radio hidden" type="radio" value="true" name="showhidemaster" id="showmaster">
+            <label for="showmaster" class="radio-control-label inline"><i class="icon-gray icon-radio-on"></i><#lang key="html.dependecies.masterhide" default="Show"></label>
+        </span>
+      </div>
+      <div class="overview-block">
+        <span class="overview-title"><#lang key="html.dependencies.legend.title" default="Legend">:</span>
+        <span class="overview-data"><div class="legend Parent"></div><#lang key="dependencies.legend.parent" default="Parent Dependency"></span>
+        <span class="overview-data"><div class="legend Master"></div><#lang key="dependencies.legend.master" default="Master Dependency"></span>
+        <span class="overview-data"><div class="legend Select"></div><#lang key="dependencies.legend.select" default="Select Dependency"></span>
+        <span class="overview-data"><div class="legend Broken"></div><span class=><#lang key="dependencies.legend.broken" default="Broken Dependency"></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="overview-row ">
+    <div class="tree-wrapper">
+      <div class="prtg-plugin dependenciesGraph"
+        data-plugin="dependenciesGraph"
+        data-objid="<#objectid>">
+          <!--
+           {"objects":<#selectionlist
+              content="groupsanddevices_as_json"
+              id=0
+              probes=1
+              groups=1
+              devices=1
+              showsensor=1
+              dependency=1
+              altformat=1>
+            }
+          -->
+        <div id="Zoom_Sunburst" class="olControlZoom olControlNoSelect">
+          <a class="olControlZoomIn olButton" data-placement="right" title="<#lang key="html.common.zoomin" default="Zoom&nbsp;in">">+</a>
+          <a class="olControlZoomOut olButton" data-placement="right" title="<#lang key="html.common.zoomout" default="Zoom&nbsp;out">">-</a>
+        </div>
+        <svg id="dependencygraph" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <marker id="markerCircle" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refx="5" refy="5"><circle cx="5" cy="5" r="3" style="stroke: none;"/></marker>
+                <marker id="Master" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10,0 l 0,10 l -10,-5 z"></path></marker>
+                <marker id="Select" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10,0 l 0,10 l -10,-5 z"></path></marker>
+                <symbol id="zoomicon">
+                    <circle cx="7" cy="7" r="7" stroke-width="0" fill="<#colorcode color="darkgray">" />
+                    <circle cx="7" cy="7" r="5" stroke-width="0" fill="white" />
+                    <circle cx="7" cy="7" r="3" stroke-width="0" fill="<#colorcode color="darkgray">" />
+                    <circle cx="7" cy="7" r="1" stroke-width="0" fill="white" />
+                </symbol>
+            </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

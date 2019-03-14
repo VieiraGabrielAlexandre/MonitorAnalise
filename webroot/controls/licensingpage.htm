@@ -1,0 +1,28 @@
+﻿<div class="systemmenu tab-container box">
+
+  <div class="screenbox" style='<#hidefornonadmins> <#hideforpod>'><h2><#lang key="html.systemstatus.licensing" default="Licensing"></h2>
+  <#include file="includes\licenseinfo.htm">
+  </div>
+  <div id="statusadmintools">
+  <a style="<#hideforpod> <#hidefornonadmins>" href="/activation.htm" class="button btnwhite nohjax"><#lang key="html.licenseingdata.changekey.caption" default="Change License Key"></a>
+  <a style="<#hideforpod> <#hidefornonadmins>" href="/activation.htm" class="button btnwhite nohjax"><#lang key="html.licenseingdata.refresh" default="Refresh Information"></a>
+  <a style="<#hideforpod> <#hidefornonadmins> <#system type="hidedeactivate">" class="actionbutton" onclick="return _Prtg.objectTools.licenseDeactivation();"><#lang key="html.licenseingdata.deactivation" default="Deactivate this License"></a>
+  </div>  
+  
+  <p style="width:100%" class="prtg-box oskhelpbox">
+  <b><#lang key="html.licenseingdata.changekey.caption" default="Change License Key"></b><br><br>
+  <#lang key="html.licenseingdata.changekey.description" default="Change your license information if you want to use another license for this PRTG installation. This is necessary, for example, if you have purchased a PRTG Commercial Edition and want to upgrade your running PRTG Freeware or Trial installation.">
+  </p>  
+  
+  <p style="width:100%" class="prtg-box oskhelpbox">
+  <b><#lang key="html.licenseingdata.refreshmaintenance.caption" default="Refresh Information"></b><br><br>
+   <#lang key="html.licenseingdata.refreshmaintenance.description" default="Manually refresh the displayed maintenance information. This is necessary, for example, if you have renewed your maintenance and PRTG does not show the new maintenance period yet. An automatic refresh of the maintenance information may take several days.">  
+  </p>  
+    
+  
+  <p style='width:100%; <#system type="hidedeactivate">' class="prtg-box oskhelpbox">
+  <b><#lang key="html.licenseingdata.deactivatelicense.caption" default="Deactivate License"></b><br><br>
+  <#lang key="html.licenseingdata.deactivatelicense.description" default="A PRTG license can be active on only one computer at the same time. Please deactivate the license here if you want to use it for another PRTG installation. This is necessary, for example, when you move PRTG to another computer. You can immediately activate this license on the desired PRTG server afterwards.<br>
+  Once you have deactivated the license, the PRTG installation on this computer will revert to the Freeware Edition. You will still be able to fully use this PRTG server for another 30 days, but after this grace period 100 sensors will be the limit.">
+  </p>
+</div>

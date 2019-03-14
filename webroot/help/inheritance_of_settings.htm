@@ -1,0 +1,78 @@
+﻿<!--Inheritance of Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Inheritance of Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Inheritance of Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The <a href="object_hierarchy.htm" class="topiclink">hierarchical tree</a> does not only help organize the devices and keep everything neat and tidy. There is also an important aspect involved that we call <span class="f_ItalicCustom">inheritance</span>. To ensure administration is quick and easy—especially for large monitoring setups—certain settings are inherited from the higher level. For example, you can change the monitoring interval for all sensors by editing the interval setting of the topmost <span class="f_BoldCustom">Root</span> group (unless no other setting is defined below).</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings_inheritance" class="hmanchor"></a><span class="f_InTopicHeading">Settings are Inherited to Child Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can override this inheritance on any level of the hierarchy by setting a different value for a specific probe, group, device, or sensor. All objects below will inherit these new settings; object settings from levels above will not be affected.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Settings that are inherited among all objects include:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Monitoring interval</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Notification triggers</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Authentication settings for several systems</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Compatibility settings (for certain types of sensors)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Channel and unit configuration</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User access rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Paused status: If an object is paused by the user, or a schedule, all sensors on it are paused as well</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">There is one exception for devices and sensors: the <span class="f_BoldCustom">IP address</span> or <span class="f_BoldCustom">DNS name</span> of a device and compatibility settings are always inherited by sensors and cannot be changed on sensor level.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The screenshot below shows the Windows systems credentials settings inherited from the parent.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:261px"><a href="windows_credentials1.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Inherited Credentials for Windows Systems" title="Inherited Credentials for Windows Systems" style="width:261px;height:72px;border:none" src="windows_credentials1_zoom85.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Inherited Credentials for Windows Systems</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click <img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/> next to <span class="f_BoldCustom">inherit from [parent object]</span> to override the parent's settings and enter new settings for this object and all objects underneath in the hierarchy.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:528px"><a href="windows_credentials2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Credentials for Windows Systems" title="Credentials for Windows Systems" style="width:528px;height:196px;border:none" src="windows_credentials2_zoom85.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Credentials for Windows Systems</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>Click <span class="f_BoldCustom">Save</span> for your settings to take effect. Clicking <img alt="inherited_settings_broken_button" width="19" height="12" style="margin:0;width:19px;height:12px;border:none" src="inherited_settings_broken_button.png"/> after entering your settings inherits the parent settings again and your settings will not take effect.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="default" class="hmanchor"></a><span class="f_InTopicHeading">Default Values Set in Root Group</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For all settings (except passwords), PRTG already includes a set of default values so you can get started with the software immediately. For example, the following settings will be inherited by all sensors from the <span class="f_BoldCustom">Root</span> group:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Default monitoring interval of one minute</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">SNMP version 1 with community string set to </span><span class="f_BoldCustom">public</span><span class="f_ListBulleted"> (default values for most devices)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Dependency type </span><span class="f_BoldCustom">Use parent</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">etc.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You may need to change some of the default entries as you become used to the interface. However, these settings will initially suffice for most situations. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Before sensor setup, please review the <span class="f_BoldCustom">Root</span> group settings and set the default values to suit your setup. This should include the credentials for the types of systems in your network that you want to monitor (Windows, Linux, virtual servers, etc.). </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span> for more details.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Inheritance of Notification Triggers</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you add notification triggers at probe, group, or device level, these will also be inherited to all sensors underneath, unless you break the inheritance manually. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span> for details.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Inheritance of Settings</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

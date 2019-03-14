@@ -1,0 +1,25 @@
+﻿<#checkobjecttype objecttype="library">
+<#dataview var="grpvs">
+
+<div id="libTree" class="libTree sensorTree prtg-plugin"
+  data-plugin="libtree"
+  data-objectid="<#objectid>"
+  data-lib-name='<#objectproperty name="Name">'
+  data-view-type='<#system type="groupviewsize" varexpand="overwrite" overwrite="@grpvs">'
+  data-controls-parent='<#controlsparent>'
+  data-hide-controls="<#hidecontrols>"
+  data-display-mode="<#displaymode>">
+  <!--
+    {
+      "objects":<#table
+        output='json'
+        count='*'
+        subcheck='1'
+        noraw='1'
+        content='library'
+        sortby='probegroupdevice'
+        filter_basetype='@ntxt('sensor')'
+        columns='objid,name,access=treejson,probegroupdevice=treejson,basetype,icon=treejson,favorite,fold,devicenum=textraw,groupnum=textraw,totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw,condition,status=textraw,message=textraw,info,priority,libkind,liblinkedid'>
+    }
+  -->
+</div>

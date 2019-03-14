@@ -1,0 +1,31 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.status.title2" default="PRTG Status" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.status.prtgstatus" default="PRTG <b>Status</b>"></h1>
+  <div class="buttonbox ">
+    <#include file="includes\linkpagebutton.htm">
+  </div>
+  <div id="content">
+    <#system type="processemailactivation">
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+      <ul class="nav-tabs">
+        <li tabid="1" class="tab-active"><a href="/controls/systemstatus.htm"><#lang key="html.menu.Setup.SystemStatus2" default="System Status"></a></li>
+        <li tabid="2" style='<#clusterdependent showfor="clusterinstallation">'><a href="/controls/clusterstatus.htm"><#lang key="html.menu.Setup.ClusterStatus" default="Cluster Status"></a></li>
+      </ul>
+      <div class="tab-container"></div>
+	  </div>
+  </div>
+<#lang key="html.status.help.title" default="PRTG Status" var="helptitle">
+<#lang key="html.status.help.text" default="Here you can view relevant system information like statistics about your PRTG server and check its activities. The information on this page is useful for debugging purposes or when contacting our support team so that we can better analyze your issues with PRTG.<br><br><a href='/help/system_status.htm' target='_blank'><b>Help: PRTG Status</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+
+

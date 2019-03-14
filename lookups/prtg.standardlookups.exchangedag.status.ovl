@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.exchangedag.status" desiredValue="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+		<singleInt state="Ok" value="0">
+		  Healthy
+		</singleInt>
+		<singleInt state="Ok" value="1">
+		  Mounted
+		</singleInt>
+		<singleInt state="Warning" value="2">
+		  SeedingSource
+		</singleInt>
+		<singleInt state="Warning" value="3">
+		  Seeding
+		</singleInt>
+		<singleInt state="Warning" value="4">
+		  Initializing
+		</singleInt>
+		<singleInt state="Warning" value="5">
+		  Resynchronizing
+		</singleInt>
+		<singleInt state="Warning" value="6">
+		  Mounting
+		</singleInt>
+		<singleInt state="Warning" value="7">
+		  Dismounting
+		</singleInt>
+		<singleInt state="Warning" value="8">
+		  SinglePageRestore
+		</singleInt>
+		<singleInt state="Warning" value="9">
+		  Disconnected and Healthy
+		</singleInt>
+		<singleInt state="Warning" value="10">
+		  Disconnected and Resynchronizing
+		</singleInt>
+		<singleInt state="Warning" value="11">
+		  Suspended
+		</singleInt>
+		<singleInt state="Error" value="12">
+		  Failed
+		</singleInt>
+		<singleInt state="Error" value="13">
+		  Failed and Suspended
+		</singleInt>
+		<singleInt state="Error" value="14">
+		  Dismounted
+		</singleInt>
+		<singleInt state="Error" value="15">
+		  Service Down
+		</singleInt>
+	</Lookups>
+  </ValueLookup>

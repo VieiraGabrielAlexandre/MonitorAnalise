@@ -1,0 +1,18 @@
+﻿<h1><#lang key="html.toplist.title" default="Toplist"></h1>
+<div id="content">
+	<form id="edittoplistform" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+		<fieldset>
+			<legend class="prtg-header"><#objectproperty type="toplistname"></legend>
+			<div class="control-group">
+				<#object type="toplist">
+				<#hiddenid>
+			</div>			
+		</fieldset>
+		<div class="submitbuttonboxanchor">
+			<div class="submitbuttonbox">
+			 		<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" id="toplistsubmit" class="submit" type="submit" value="<#lang key="html.global.save" default="Save">">
+					<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" onclick="window.top.location.href='/sensor.htm?id=<#objectid>&tabid=6'" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+				</div>
+		</div>
+	</form>
+</div>

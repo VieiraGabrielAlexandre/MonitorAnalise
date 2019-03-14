@@ -1,0 +1,29 @@
+﻿<header class="header js-header">
+    <div class="menu-wrapper prtg-plugin" data-plugin="main-menu-handlers">
+        <button class="header_menu-icon js-menuIcon glyph-menu5"></button>
+        <div id="crumblersensorstats" class="prtg-plugin header_sensorstats" data-plugin="crumblerSensorStats">
+            <#include file="\includes\crumblersensorstats.htm">
+        </div>
+        <div id="quickbar" class="header_quickbar">
+            <form class="header_searchForm" onsubmit="_Prtg.Hjax.loadLink('/search.htm?searchtext='+encodeURIComponent($(this).find('#searchtext').val())); return false;" method="get"
+                id="searchform">
+                <input tabindex="1" id="searchtext" class="searchstring" data-trigger="manual" type="text" placeholder="<#lang key=" html.global.search2" default="Search...">" name="searchtext">
+                <label class="glyph-search2" for="searchtext"></label>
+            </form>
+            <div class="header-logout">
+                <a class="glyph-off logout" href="/index.htm?logout=1" title="<#lang key=" html.menu.Logout" default="Logout">"></a>
+                <div class="<#system type=" logoutAfterInactivity" action="pluginactivation"> inactivitylogout hide" data-plugin="activity"
+                    data-loggedout-text=" <#lang key="html.menu.autologout2" default="You were automatically logged out after a certain time of inactivity.">"
+                    title="<#lang key="html.menu.autologout1" default="After a certain time of inactivity, you will be automatically logged out.">"></div>
+            </div>
+        </div>
+        <nav id="header_menu" class="header_menu">
+            <#include file="controls\menu.htm">
+        </nav>
+    </div>
+</header>
+<div id="header_breadcrumbs" class="headerBreadcrumbs js-adjustToMenu">
+    <#breadcrumbs varexpand="this" this="@pagetitle" parent="true"><span class="breadcrumbdivider"></span>
+</div>
+<div id="container" class="js-adjustToMenu">
+    <#comment schliessendes div in der pagefooter.htm>

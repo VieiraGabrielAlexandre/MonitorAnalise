@@ -1,0 +1,20 @@
+﻿<#system type="denyreadonlyusers">
+<div id="content" class="ui-dialog-content">
+<form id="quickeditform" title='<#lang key="html.quickedit.head" default="Rename Object"> "<#objectproperty name="name">"' class="prtg-form prtg-plugin" data-plugin="prtg-form">
+	<fieldset>
+		<legend></legend>
+		<div class="control-group">
+			<label class="control-label has_help" for="quickeditnamedit"><#lang key="html.quickedit.name" default="Name"></label>
+			<div class="controls" data-placement="right" title="<#lang key="html.adddevice.wizhelp" default="Enter a meaningful name for the device.">">
+				<input id="quickeditnamedit" class="text fieldrequired {required:true}" type="text" autocomplete="off" name="name_" value="<#objectproperty name="name">">
+			</div>
+			<label class="control-label has_help"><#lang key="html.quickedit.deviceicon" default="Device Icon"></label>
+			<div class="controls" data-placement="right" title="<#lang key="html.adddevice.wizhelp4" default="Select an icon for the device.">">
+				<#object type="deviceiconselection">
+			</div>
+
+		</div>
+	</fieldset>
+	<input type="hidden" name="id" value="<#objectid>">
+</form>
+</div>

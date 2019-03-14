@@ -1,0 +1,51 @@
+﻿<#checkobjecttype objecttype="sensor">
+
+<#lang key="html.toplist.title" default="Toplist" var="title">
+<#objectproperty type="toplistname" subid="<@subid>" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+<#include file="includes\printhead.htm" ajax="exclude">
+
+<div class="onereport">
+    <#include file="includes\printheading.htm">
+
+    <h1><#lang key="html.selecttoplisttimetable.lowertitle1" default="Toplist &quot;@objectname&quot;"/></h1>
+
+    <div id="container">
+        <h3><#toplistperiodheader><#toplistwarning></h3>
+        <table id="sensordata" cellspacing=0 class="overview table">
+            <tr class="odd"><td class="title"><#lang key="html.sensordata.sensname" default="Sensor Name"></td><td><b><#objectproperty name="Name" show="link"></b> (ID <#objectid>)</td></tr>
+            <tr class="even"><td class="title"><#lang key="html.global.parentprobe" default="Parent Probe"></td><td><#objectstatus name="probe"></td>
+            <tr class="odd"><td class="title"><#lang key="html.global.parentgroup" default="Parent Group"></td><td><#objectproperty name="ParentGroup" show="link"></td>
+            <tr class="even"><td class="title"><#lang key="html.global.parentdevice" default="Parent Device"></td><td><#objectproperty  name="ParentDevice" show="link"></td></tr>
+        </table>
+
+        <div class="prtg-plugin toplistgraph" style="position:relative;left:175px;width:500px;height:550px;" data-plugin="toplist" data-objectid="<#objectid>"
+             data-subid='<#system type="subid">' data-topnumber='<#system type="topnumber">' data-nonrefreshable='true'>
+            <!--
+              {
+               "objects":<#table
+  					    count='*'
+  					    usecaption='true'
+  					    noraw='1'
+  							output='json'
+  							tableid='topdatatable'
+  							content='topdata'
+  							columns='position=oftTextRaw,value_=treejson'
+  							sortby='-value_2V'>
+              }
+            -->
+
+        </div>
+        <div refreshurl="/toplistprint.htm?id=<#objectid>&subid=<#system type='subid'>&topnumber=<#system type='topnumber'>">
+            <#table tableid="topdatatable" count="1000" content="topdata" columns="position,value_,minigraph" sortby="-value_2V" sortable="true" links="false" infoheader="true" display="extendedheaders" showzoomlink="true">
+            <div class="toplistchartreadytoreander" style="width:1px;height:1px;overflow:hidden;"><#table tableid="topdatatableraw" count="100" content="topdata" columns="position,minigraph=textshort" sortby="" sortable="false" links="false" infoheader="false" display="" showzoomlink="false"></div>
+        </div>
+    </div>
+        <#include file="includes\printfooter.htm">
+</div>
+<#include file="includes\foreachpageview.htm">
+  <script>
+  $(function(){window.print();})
+  </script>
+<#include file="includes\printfoot.htm" ajax="exclude">

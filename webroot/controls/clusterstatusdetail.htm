@@ -1,0 +1,18 @@
+﻿<div class="refreshable top10listcontainer" refreshurl="/controls/clustervisuallist.htm">
+		<#include file="/controls/clustervisuallist.htm">
+</div>
+
+<div id="showamap">
+	<div class="map_background" style="overflow:hidden;width:650px;height:600px">
+		<div id="map_objectbox" class="map_objectbox" style="width:100%;height:100%">
+			<div id="clustermap" class='prtg-plugin' data-plugin='clustermap'>
+<!--
+{
+"objects":<#include file="/api/cluster.json">,
+"links":<#clustermapjson>
+}
+-->
+			</div>
+		</div>
+	</div>
+</div>

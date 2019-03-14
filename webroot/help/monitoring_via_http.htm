@@ -1,0 +1,200 @@
+﻿<!--Monitoring via HTTP-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="push_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_administration_programs.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring via HTTP</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring via HTTP</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Hypertext Transfer Protocol (HTTP) is a standard application layer protocol and the basis for data communication in the internet. HTTP is a request-response method for client-server architectures, where the client sends a request and the server processes and responds to the request. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Monitoring via HTTP is useful if you want to monitor websites or web servers. It enables you to keep an eye on the availability and download times of a website or the performance statistics of a web server. There are also a lot of other possible use cases for HTTP sensors. For example, you can request any Application Programming Interface (API) that is reachable via HTTP and monitor returned values. This approach makes it possible to include almost any type of device or application into your monitoring.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG comes with built-in sensor types for HTTP monitoring:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="cloud_http_sensor.htm" class="topiclink">Cloud HTTP Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="common_saas_sensor.htm" class="topiclink">Common SaaS Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_sensor.htm" class="topiclink">HTTP Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_advanced_sensor.htm" class="topiclink">HTTP Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_apache_modstatus_perfstats_sensor.htm" class="topiclink">HTTP Apache ModStatus PerfStats Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_apache_modstatus_totals_sensor.htm" class="topiclink">HTTP Apache ModStatus Totals Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_content_sensor.htm" class="topiclink">HTTP Content Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_data_advanced_sensor.htm" class="topiclink">HTTP Data Advanced Sensor</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_full_web_page_sensor.htm" class="topiclink">HTTP Full Web Page Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_count_sensor.htm" class="topiclink">HTTP Push Count Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_data_sensor.htm" class="topiclink">HTTP Push Data Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_data_advanced_sensor.htm" class="topiclink">HTTP Push Data Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_transaction_sensor.htm" class="topiclink">HTTP Transaction Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_xmlrest_value_sensor.htm" class="topiclink">HTTP XML/REST Value Sensor</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="rest_custom_sensor.htm" class="topiclink">REST Custom Sensor</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="use" class="hmanchor"></a><span class="f_InTopicHeading">Use Cases</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Monitor the availability and loading times of a website</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Monitor the source code and specific content of a website</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Test the login, purchasing, and shipping processes of a web shop</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Monitor performance statistics and activity of Apache web servers</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="types" class="hmanchor"></a><span class="f_InTopicHeading">Types of HTTP Monitoring</span></p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Availability Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This type monitors the availability of a website or a specific website element. For example, the <a href="http_sensor.htm" class="topiclink">HTTP sensor</a> shows how long the HTML code of a website takes to load. If the sensor shows a loading time that is much longer than expected, then the website may not be responding or may be unavailable.</p>
+<div class="p_Normal" style="page-break-inside: avoid;"><div style="margin:0;width:440px"><a href="cloud_http_monitoring_en.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Cloud HTTP Monitoring Provides Better Performance Statistics" title="Cloud HTTP Monitoring Provides Better Performance Statistics" style="width:440px;height:317px;border:none" src="cloud_http_monitoring_en_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Cloud HTTP Monitoring Provides Better Performance Statistics</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The HTTP sensor uses different HTTP requests to request the given URL.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">GET</span><span class="f_ListBulleted">: requests the website directly</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">POST</span><span class="f_ListBulleted">: sends post form data to the URL</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">HEAD</span><span class="f_ListBulleted">: requests the HTTP header only, without the actual webpage body, saving bandwidth</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="http_advanced_sensor.htm" class="topiclink">HTTP Advanced sensor</a> also monitors the availability of a website, along with other parameters such as bytes received, download bandwidth (speed), and time to first byte, which shows you how fast your web server responds. This sensor lets you use a (custom) user agent when connecting to the target URL and lets you send custom HTTP headers to the target URL.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="cloud_http_sensor.htm" class="topiclink">Cloud HTTP sensor</a> monitors a web server from various locations across the globe. For example, the URL of a website to measure the loading time of a page’s source code or the URL of a page asset to measure its availability and loading time. It also shows the global average response time.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="cloud_ping_sensor.htm" class="topiclink">Cloud Ping sensor</a> also monitors the availability of your website.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="common_saas_sensor.htm" class="topiclink">Common SaaS sensor</a> monitors the availability of your cloud services and is an important pillar for unified monitoring.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Content Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This type monitors internal values of a web server based application or changes to specific content on a website. The <a href="http_full_web_page_sensor.htm" class="topiclink">HTTP Full Web Page sensor</a> measures the time it takes to download a webpage including all embedded page elements, such as Flash content, images, etc.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This monitoring option can create a lot of bandwidth traffic, depending on the page size and the scanning interval.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Additionally, the <a href="http_content_sensor.htm" class="topiclink">HTTP Content sensor</a> monitors a numerical value returned by an HTTP request. A ‘change’ notification can optionally be triggered to notify you of changes to the content.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="example" class="hmanchor"></a><span class="f_InTopicHeading">Example: Content Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/>For example, consider a URL <span class="f_ItalicCustom">http://www.example.com/status.html</span> that returns a PHP script with the current system status in a simple HTML page.</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;html&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&lt;body&gt;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;Description:&nbsp;Script&nbsp;gives&nbsp;back&nbsp;current&nbsp;status&nbsp;of&nbsp;disk&nbsp;free&nbsp;(%)&nbsp;and&nbsp;CPU&nbsp;usage&nbsp;(%).</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;[85.5][12.0]</span><br />
+<span class="f_CodeExample">&nbsp;&lt;/body&gt;</span><br />
+<span class="f_CodeExample">&lt;/html&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You would configure the HTTP Content sensor using</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the script </span><span class="f_BoldCustom">URL</span><span class="f_ListBulleted"> from above,</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">value type </span><span class="f_BoldCustom">Float</span><span class="f_ListBulleted">,</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">and number of channels </span><span class="f_BoldCustom">2</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The sensor calls the URL with every scanning interval and only regards the two values in square brackets <span class="f_ItalicCustom">[ ]</span>, handling each of them in one sensor channel. The additional description text and HTML tags are not necessary. In this example, they are added in case a human calls the URL.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you define the number of channels as <span class="f_BoldCustom">1</span>, the sensor will read only the first value. The second value will be ignored. Using <span class="f_BoldCustom">3</span> as number of channels will result in a sensor error message.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To be notified when the website content changes, you first need to configure a <span class="f_BoldCustom">Trigger 'change notification'</span> in the sensor's settings and then the notification itself.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm#change" class="topiclink">Sensor Notification Triggers Settings</a></span> for more information.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Performance Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The HTTP Transaction sensor checks if a web shop is working as expected: with a series of requests, you can simulate the login, purchasing, and shipping processes, for example. Only if all actions can be completed successfully in a row, the check returns an &quot;OK&quot; message. If anything goes wrong, you are immediately alerted and can react instantly to avoid loss of earnings for your company because the web shop is unavailable or very slow.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Apache Web Server Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The HTTP Apache ModStatus PerfStats and HTTP Apache ModStatus Totals sensors monitor performance statistics and the activity of an Apache web server using <span class="f_ItalicCustom">mod_status</span> over HTTP. Among other HTTP sensors, these sensors allow you to enter credentials for webpages that need authentication and allow you to choose the necessary authentication method. </p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Security Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG also provides the option to monitor the security of your website by checking the status of SSL certificates and the security of a connection.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SSL Certificate Sensor</span><span class="f_ListBulleted">: monitors the certificate of a secure SSL/TLS connection. It displays whether a certificate has been revoked, or is trusted as root authority, or is self-signed, for example.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SSL Security Check Sensor</span><span class="f_ListBulleted">: monitors the SSL connectivity to the port of a device. It tries to connect to the specified TCP/IP port number of a device with various SSL/TLS protocol versions and shows if a specific protocol is supported.</span></li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Push Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG provides the option to monitor passively received data. For this purpose, you can set up a device in a way that it automatically sends the data to PRTG. Specific sensor types can receive this data and alarm you based on your individual settings. For example, all Linux/Unix and most network devices support remote devices generating data, which has to be configured on each device, and sending the messages to a PRTG probe system. Usually, only the destination IP and port are required.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="push_monitoring.htm" class="topiclink">Monitoring via Push</a></span> for more information.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Other Data</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also monitor other types of data from your website, for example the number of website visitors via the <a href="http_xmlrest_value_sensor.htm" class="topiclink">HTTP XML/REST Value sensor</a>. The sensor lets you monitor values within the returned XML code, provided your web analytics tool has an XML export option. The <a href="http_data_advanced_sensor.htm" class="topiclink">HTTP Data Advanced sensor</a> access a web server and retrieves XML or JSON encoded data. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <a href="rest_custom_sensor.htm" class="topiclink">REST Custom sensor</a> queries a REST Application Programming Interface (API) endpoint and maps the JSON or XML result to sensor values. The mapping rule has to be available as a REST configuration file in JSON template (*.template) format according to the API definition.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For details about the return value format, see section <span class="f_BoldCustom"><a href="custom_sensors.htm#advanced_sensors" class="topiclink">Custom Sensors</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="status" class="hmanchor"></a><span class="f_InTopicHeading">HTTP Status Codes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The HTTP sensors show their status depending on the HTTP status codes that they receive. By default, the sensor states are the following:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">HTTP Status Code</span></p>
+</th>
+<th style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">HTTP Sensor Status</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">2xx Success</p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Up (Green)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">3xx Redirection</p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Warning (Yellow, Down (Red) for too many redirects)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">4xx Client Error</p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Down (Red)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">5xx Server Error</p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Down (Red)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You need to configure your HTTP sensor(s) manually only if you want to change these default reactions. In this case, you can change the sensor status based on limits and/or keyword checks.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Other HTTP Sensor Settings</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Server Name Identification (SNI)</span><span class="f_ListBulleted">: You can configure SNI, which has to be a Fully Qualified Domain Name (FQDN) and must match the configuration of the target server. For details, see the Knowledge Base article <a href="https://kb.paessler.com/en/topic/67398" target="_blank" class="weblink">My HTTP sensors fail to monitor websites which use SNI. What can I do?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Protocol Version</span><span class="f_ListBulleted">: You can choose the HTTP protocol version that the sensor will use when connecting to the target URL.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Authentication Method</span><span class="f_ListBulleted">: You can define if the configured URL needs authentication, enter credentials, and choose an authentication method.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom User Agent</span><span class="f_ListBulleted">: You can enter a string to be used as user agent when connecting to the target URL.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom HTTP Headers</span><span class="f_ListBulleted">: You can send custom HTTP headers to the target URL.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="troubleshooting" class="hmanchor"></a><span class="f_InTopicHeading">HTTP Sensor Troubleshooting</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">See the following Knowledge Base articles for troubleshooting and other tips for monitoring with HTTP sensors.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/30593" target="_blank" class="weblink">Which user agent should I use in the HTTP Advanced sensor's settings?</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/59999" target="_blank" class="weblink">HTTP Full Web Page sensor is “unable to navigate”. What can I do?</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/40783" target="_blank" class="weblink">What to do when I see a CreateUniqueTempDir() error message for my HTTP Full Webpage Sensor?</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/62463" target="_blank" class="weblink">Where can I find more information about the HTTP XML/REST Value Sensor?</a></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/46503" target="_blank" class="weblink">Why does my HTTP XML/REST Value sensor </a><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46503" target="_blank" class="weblink">return a 404 error?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61045" target="_blank" class="weblink">My HTTP sensors could not create an SSL secure channel and are down. What can I do?</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="conclusion" class="hmanchor"></a><span class="f_InTopicHeading">Conclusion</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">These sensor types are great tools to monitor your website’s availability and performance and to keep you up-to-date with real-time information.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which HTTP status code leads to which HTTP sensor status?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/65731" target="_blank" class="weblink">https://kb.paessler.com/en/topic/65731</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My HTTP sensors fail to monitor websites which use SNI. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/67398" target="_blank" class="weblink">https://kb.paessler.com/en/topic/67398</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which user agent should I use in the HTTP Advanced sensor's settings?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/30593" target="_blank" class="weblink">https://kb.paessler.com/en/topic/30593</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I monitor internal values of a web application with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/4" target="_blank" class="weblink">https://kb.paessler.com/en/topic/4</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What is the difference between &quot;HTTP&quot; and &quot;HTTP Full Web Page&quot; Web Server sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/943" target="_blank" class="weblink">https://kb.paessler.com/en/topic/943</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Configuration Tips for HTTP Transaction Sensors needed</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/443" target="_blank" class="weblink">https://kb.paessler.com/en/topic/443</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Is there a tool available that can help me building queries for the XML/Rest Sensor?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/48783" target="_blank" class="weblink">https://kb.paessler.com/en/topic/48783</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="push_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_administration_programs.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

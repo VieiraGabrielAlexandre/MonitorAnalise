@@ -1,0 +1,42 @@
+﻿<#lang key="html.search.title" default="Search Results" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#system type="searchtext" var="searchtext">
+<#system type="searchtype" var="searchtype">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+    <h1 class="sitecaption"><b><#lang key="html.search.for" default="Searching for &quot;<b>@searchtext</b>&quot;"></b></h1>
+		<wingui-hidden>
+  		<div class="buttonbox normalpage">
+  			<#include file="includes\linkpagebutton.htm">
+  		</div>
+		</wingui-hidden>
+	    <div class="tab-container search-results">
+			<div class="left-panel">
+				<#include file="controls\searchform.htm">
+			</div>
+			<div class="right-panel">
+				<div class="searcher loadlater loading" loadurl="/controls/searchid.htm?id=<#inserturlparam parameter='searchtext' doenc='1'>">
+					<#lang key="html.search.forobjectid" default="Searching Object ID">
+				</div>
+				<div class="searcher loadlater" loadurl="/controls/search.htm?searchtext=<#inserturlparam parameter='searchtext' doenc='1'>">
+				  <#lang key="html.search.forobjects" default="Searching Monitoring Database">
+				</div>
+				<div class="searcher loadlater" loadurl="/controls/searchhelp.htm?searchtext=<#inserturlparam parameter='searchtext' doenc='1'>">
+				  <#lang key="html.search.fordocs" default="Searching Documentation">
+				</div>
+			</div>
+  		</div>
+	</div>
+</div>
+<#lang key="html.search.help.title" default="Search" var="helptitle">
+<#lang key="html.search.help.text" default="Search for objects in your entire monitoring setup. PRTG will perform a string search in groups, devices, sensors, libraries, maps, reports, tickets, and object comments, as well as in the PRTG user manual." var="helptext">
+
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

@@ -1,0 +1,34 @@
+﻿<div id="tickethistory" class="tab-container ticket-history-main-container">
+  <div class="overviewsmalldata overviewsmalldata-tickets">
+    <div class="overview-block">
+      <span class="overview-title"><#lang key="html.ticket.status" default="Status">:</span>
+      <span class="overview-data"><#ticketheader name="status" as="text"></span>
+    </div>
+    <div class="overview-block">
+      <span class="overview-title"><#lang key="html.ticket.assignedto" default="Assigned to">:</span>
+      <span class="overview-data"><#ticketheader name="assignedName"></span>
+    </div>
+    <div class="overview-block">
+      <span class="overview-title"><#lang key="html.ticket.related" default="Related Object">:</span>
+      <span class="overview-data"><#ticketheader name="objectLink"></span>
+    </div>
+    <div class="overview-block">
+      <span class="overview-title"><#lang key="html.ticket.type" default="Type">:</span>
+      <span class="overview-data"><#ticketheader name="type"> <#ticketheader name="code"></span>
+    </div>
+    <div class="overview-block">
+      <span class="overview-title"><#lang key="html.ticket.ID" default="ID">:</span>
+      <span class="overview-data">#<#ticketheader name="id"></span>
+    </div>
+
+    <p class="ticketaction" style="<#system type="hideforreadonlyusers">">
+        <#ticketheader name="action">
+      </p>
+  </div>
+
+  <div class="box">
+  <h2><#lang key="html.ticket.lastupdate" default="Last Update"></h2>
+  <#tickethistory name="lastContent">
+  <#tickethistory>
+  </div>
+</div>

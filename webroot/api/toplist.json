@@ -1,0 +1,5 @@
+﻿{
+	"period":"<#toplistperiodheader>",
+	"warning": "<#toplistwarning>",
+	"data": <#table output="json" tableid="topdatatable" content="topdata" columns="position=oftTextRaw,value_=treejson" sortby="-value_2V" usecaption="true">
+}

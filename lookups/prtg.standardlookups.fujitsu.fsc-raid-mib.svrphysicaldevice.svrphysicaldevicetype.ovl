@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrphysicaldevice.svrphysicaldevicetype" desiredValue="1" undefinedState="OK">
+    <Lookups>
+      <SingleInt state="none" value="1">
+        Other
+      </SingleInt>
+      <SingleInt state="OK" value="2">
+        Disk
+      </SingleInt>
+      <SingleInt state="OK" value="3">
+        Tape
+      </SingleInt>
+      <SingleInt state="OK" value="4">
+        Printer
+      </SingleInt>
+      <SingleInt state="OK" value="5">
+        Processor
+      </SingleInt>
+      <SingleInt state="OK" value="6">
+        WriteOnce
+      </SingleInt>
+      <SingleInt state="OK" value="7">
+        CDRomDVD
+      </SingleInt>
+      <SingleInt state="OK" value="8">
+        Scanner
+      </SingleInt>
+      <SingleInt state="OK" value="9">
+        Optical
+      </SingleInt>
+      <SingleInt state="OK" value="10">
+        Jukebox
+      </SingleInt>
+      <SingleInt state="OK" value="11">
+        CommunicationDevice
+      </SingleInt>
+      <SingleInt state="OK" value="98">
+        Host
+      </SingleInt>
+      <SingleInt state="none" value="99">
+        Unknown
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

@@ -1,0 +1,72 @@
+﻿<#checkobjecttype objecttype="probenode">
+<#lang key="html.probenode.title" default="Probe Details" var="title">
+
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" >
+<div id="main" class="probenode-main-container" data-title="<#pagetitle>">
+	<dummy class="prtg-plugin" data-plugin="status">
+		<#include file="controls\probeheader.htm"
+	</dummy>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/groupoverview.htm?id=<#objectid>">
+        <i class="glyph-gauge"></i>
+        <span class="text"><#lang key="html.global.overview" default="Overview"/></span>
+      </a></li>
+      <li tabid="2"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=1&columns=datetime,value_,coverage">
+        <i class="number-icon"><#system type="2period" unit="false"/></i>
+        <span class="text"><#system type="2period" unit="only"/></span>
+      </a></li>
+      <li tabid="3"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=2&columns=datetime,value_,coverage">
+        <i class="number-icon"><#system type="3period" unit="false"/></i>
+        <span class="text"><#system type="3period" unit="only"/></span>
+      </a></li>
+      <li tabid="4"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=3&columns=datetime,value_,coverage">
+        <i class="number-icon"><#system type="4period" unit="false"/></i>
+        <span class="text"><#system type="4period" unit="only"/></span>
+      </a></li>
+      <li tabid="5" tab-name="probenode-alarms"><a href="/controls/table.htm?id=<#objectid>&tableid=alarmtable&content=sensors&columns=downtimesince,device,sensor,lastvalue,status,message,priority,minigraph,checkbox&sortby=priority&sortable=true&links=true&filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14&tools=pause,fave,prio,scan,delete&tabletitle=AUTO">
+        <i class="glyph-attention"></i>
+        <span class="text"><#lang key="html.global.alarms" default="Alarms"/></span>
+      </a></li>
+      <li tabid="6"><a href="/controls/table.htm?id=<#objectid>&tableid=messagetable&content=messages&columns=datetime,sensor,status,message&sortby=date&sortable=true&links=true&datepicker=true&filter_drel=7days&tabletitle=<#lang key="html.global.log" default="Log" mailtoencode="true">">
+        <i class="glyph-list-alt"></i>
+        <span class="text"><#lang key="html.global.log" default="Log"/></span>
+        </a></li>
+      <li tabid="7" class="tab-spacing tab-dark hideforreadonly">
+        <a href="/controls/sensortreemanagetab.htm?id=<#objectid>">
+        <i class="glyph-sliders"></i>
+        <span class="text"><#lang key="html.global.manage" default="Management"/></span>
+      </a></li>
+      <li tabid="8" class="tab-dark"><a href="/controls/objectdata.htm?id=<#objectid>&objecttype=probenode">
+        <i class="glyph-cog"></i>
+        <span class="text"><#lang key="html.global.settings" default="Settings"/></span>
+      </a></li>
+      <li tabid="9" class="tab-dark"><a href="/controls/triggersandnotifications.htm?id=<#objectid>&objecttype=probenode">
+        <i class="glyph-bell-alt"></i>
+        <span class="text"><#lang key="html.global.notificationtriggers" default="Notification Triggers"/></span>
+      </a></li>
+      <li tabid="10" class="tab-spacing tab-dark"><a href="/controls/comments.htm?id=<#objectid>" title="<#lang key="html.global.comments" default="Comments">">
+        <i class="<#hascomment>"></i>
+        <span class="text"><#lang key="html.global.comments" default="Comments"/></span>
+        </a></li>
+      <li tabid="11" class="tab-dark hideforreadonly" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">"><a href="/controls/history.htm?id=<#objectid>">
+      <i class="glyph-document-history"></i>
+      <span class="text"><#lang key="html.global.history" default="History"/></span>
+      </a></li>
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+<#lang key="html.probenode.help.title" default="Probe Details" var="helptitle">
+<#lang key="html.probenode.help.text" default="Use the tab controls to view various data of this probe as well as edit the probe's settings." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

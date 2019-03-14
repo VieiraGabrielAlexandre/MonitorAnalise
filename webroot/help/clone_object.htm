@@ -1,0 +1,136 @@
+﻿<!--Clone Object-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="arrange_objects.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Clone Object</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Clone Object</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">If you want to duplicate an object with the same settings, you can clone it. Cloning is available for groups, devices, and sensors. Unlike the results when using the <span class="f_BoldCustom"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span> option, a cloned device contains all objects of the original device, regardless of whether they bring about working sensors or not. This often depends on the settings of the cloned device. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The new object takes over all settings of the original object. This means, for example, that an <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span> will start automatically on a cloned device (as soon as you resume it) if this option is set on the original device. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">To start, right-click an object in your device tree, and from the <a href="context_menus.htm" class="topiclink">context menu</a>, select <span class="f_BoldCustom">Clone...</span> to open an assistant.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:398px"><a href="clonesensor2a.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Clone Dialog for a Sensor" title="Clone Dialog for a Sensor" style="width:398px;height:618px;border:none" src="clonesensor2a_zoom66.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Clone Dialog for a Sensor</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You cannot clone <span class="f_ItalicCustom">fixed</span> objects, such as the root group, a probe device, or PRTG system internal sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you want to clone a <span class="f_ItalicCustom">sensor</span>, a faster way is to use the <span class="f_BoldCustom"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span> function.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>The <a href="user_accounts_settings.htm" class="topiclink">user account</a> that clones an object must have at least <a href="user_access_rights.htm" class="topiclink">read access</a> to this object and all objects underneath in the <a href="object_hierarchy.htm" class="topiclink">hierarchy</a>. The user group of this account must have the <a href="user_groups_settings.htm#basic" class="topiclink">permission to create all sensor types</a> that run on the device or group that is going to be cloned.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Clone Object Settings</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ItalicCustom">OBJECT</span><span class="f_BoldCustom"> </span><span class="f_SettingsTableHeader">To Be Cloned</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Object</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Several fields show information about the object that you are cloning. The available information varies depending on whether you clone a group, device, or sensor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name of New </span><span class="f_ItalicCustom">OBJECT</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">New </span><span class="f_ItalicCustom">Object</span><span class="f_BoldCustom"> Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">Enter a meaningful name for the new object to identify it later in, for example, the device tree or lists. By default, PRTG uses the old name with a preceding <span class="f_ItalicCustom">Clone of</span>.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">New IP Address/DNS Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;">This field is only available when you clone a device. Enter the IP address or DNS name for the new device.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Service URL</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only available when you clone a device. Specify a URL you would like to open directly when you select </span><span class="f_BoldCustom">Device Tools | Go To Service URL</span><span class="f_ListBulleted"> from the <a href="context_menus.htm#device" class="topiclink">context menu</a> of the device. For example, you can configure this option to call the address </span><span class="f_ItalicCustom">http://www.example.com/service.html</span><span class="f_ListBulleted">. Enter a valid URL or leave the field empty.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Parent group/device for new </span><span class="f_ItalicCustom">OBJECT</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Use the <a href="object_selector.htm" class="topiclink">object selector</a> to choose the object that you want to add the object clone to. If you clone a group or device, select a group. If you clone a sensor, select the device you want to add it to.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you leave the current page, all changes to the settings will be lost!</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-ok-green" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-ok-green.png"/><span class="f_BoldCustom">Results</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you have cloned a sensor, the <a href="review_monitoring_data.htm#overview" class="topiclink">overview</a> tab of the new sensor (the clone) will open. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you have cloned a group or device, you will stay on the current page. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">By default, all sensors are initially <a href="pause.htm" class="topiclink">paused</a> so you can change settings before monitoring starts. Please check the <a href="object_settings.htm" class="topiclink">settings</a> of the new objects and <a href="pause.htm" class="topiclink">resume</a> monitoring.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="create_device_template.htm" class="topiclink">Create Device Template</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Device,Device clone,Group,Group clone,Sensor,Sensor clone</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="arrange_objects.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

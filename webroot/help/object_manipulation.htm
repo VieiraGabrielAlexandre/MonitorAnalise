@@ -1,0 +1,249 @@
+﻿<!--Object Manipulation-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="historic_data.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="custom_sensors.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Object Manipulation</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Object Manipulation</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can use the following functions to manipulate existing objects (URLs are shown without username/passhash to improve readability).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Here are quick links for ease of use.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#object_settings" class="topiclink">Changing Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#inheritance" class="topiclink">Switch Inheritance Off/On</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#channel_properties" class="topiclink">Changing Properties of Channels</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#pause_resume" class="topiclink">Pausing/Resuming</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#error_handling" class="topiclink">Error Handling, Rescanning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#rescanning" class="topiclink">Rescanning, Triggering Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#reorder" class="topiclink">Reordering Objects in the Sensor Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#report" class="topiclink">Report-related</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#notification" class="topiclink">Notification-related</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#add_delete" class="topiclink">Adding/Deleting Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#duplicating_clone" class="topiclink">Duplicating Sensors and Changing Clone Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm#geo_location" class="topiclink">Setting Geo Location</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="object_settings" class="hmanchor"></a><span class="f_InTopicHeading">Changing Object Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Authentication with username and <a href="my_account_settings.htm#basic" class="topiclink">passhash</a> (or username and password) must always be included in each PRTG API request. See section <span class="f_BoldCustom"><a href="http_api.htm#authentication" class="topiclink">Authentication</a></span> for more information.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Rename an object:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/rename.htm?id=objectid&amp;value=newname</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Set priority of an object (valid values for </span><span class="f_BoldCustom">x</span><span class="f_ListBulleted"> are 1 to 5):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setpriority.htm?id=objectid&amp;prio=x</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Change properties of objects:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=id_of_object&amp;name=property_name&amp;value=new_value</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This function can change most string and number properties of objects (names, numerical values, OIDs, etc.) and should be used with caution. The </span><span class="f_BoldCustom">property_name</span><span class="f_ListBulleted"> parameter can be discerned by opening the </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> page of an object and looking at the HTML source of the INPUT fields. For example, the INPUT field for the tags of an object has the name </span><span class="f_BoldCustom">tags_</span><span class="f_ListBulleted">. Leave away the </span><span class="f_BoldCustom">_</span><span class="f_ListBulleted"> and use the rest (</span><span class="f_BoldCustom">tags</span><span class="f_ListBulleted">) as a value for the </span><span class="f_BoldCustom">property_name</span><span class="f_ListBulleted"> parameter.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inheritance" class="hmanchor"></a><span class="f_InTopicHeading">Switch Inheritance Off/On</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This API call sets the &quot;inherit&quot; setting of objects (location, credentials, compatibility options, proxy settings, scanning interval, access rights, channel unit). In general, this works like changing properties for any other object.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Replace the parameter </span><span class="f_BoldCustom">inheritType</span><span class="f_ListBulleted"> with the name of the inheritance type:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=id_of_object&amp;name=inheritType_&amp;value=0_or_1</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This internal name must be followed by an underscore (_), in contrast to changing properties above. Use the value </span><span class="f_BoldCustom">0</span><span class="f_ListBulleted"> for switching off inheritance, and </span><span class="f_BoldCustom">1</span><span class="f_ListBulleted"> for switching on inheritance. For example, the inheritance type for the scanning interval setting has the name </span><span class="f_BoldCustom">intervalgroup_</span><span class="f_ListBulleted">; thus, this specific part in the URL is </span><span class="f_BoldCustom">&amp;name=intervalgroup_&amp;value=0</span><span class="f_ListBulleted"> (switches off inheritance for scanning interval).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This call does not work with the schedules, dependencies, and maintenance window.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channel_properties" class="hmanchor"></a><span class="f_InTopicHeading">Changing Properties of Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">With this API call, you can change a sensor's <a href="sensor_channels_settings.htm" class="topiclink">channels settings</a>. In general, this works like changing properties of any other object. To set channel properties via the API, you need to provide</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the ID of a sensor (parameter id)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">a subtype (channel for channels), and</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">a subid (ID of the channel you want to edit).</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example: Enabling and Setting Limits for Channels</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Set limits for channels:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=sensorid&amp;subtype=channel&amp;subid=0&amp;name=limitmaxerror&amp;value=limitvalue</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You have to set the limits for a channel before you can enable limits.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enable limits for channels:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=sensorid&amp;subtype=channel&amp;subid=0&amp;name=limitmode&amp;value=1</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, the following API call sets the upper error limit of a channel with the ID 0 of a sensor with the ID 2970 to the value 25.</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=2970&amp;subtype=channel&amp;subid=0&amp;name=limitmaxerror&amp;value=25</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For Toplists, you can use the subtype </span><span class="f_BoldCustom">toplist</span><span class="f_ListBulleted"> to change the properties. When using this subtype, </span><span class="f_BoldCustom">subid</span><span class="f_ListBulleted"> is the ID of a Toplist.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For a list of available channel parameters, see section <a href="live_data.htm#available_parameters" class="topiclink">Live Data</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="pause_resume" class="hmanchor"></a><span class="f_InTopicHeading">Pausing/Resuming</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Pause a sensor or object indefinitely:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/pause.htm?id=objectid&amp;pausemsg=yourmessage&amp;action=0-00</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Pause a sensor or object for x minutes:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/pauseobjectfor.htm?id=objectid&amp;pausemsg=yourmessage&amp;duration=x</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The pause message is optional. You can leave out the parameter <span class="f_BoldCustom">&amp;pausemsg=yourmessage</span> if you do not want to display a message.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Pause and simulate a down status for a sensor:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/simulate.htm?id=objectid&amp;action=1</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Resume monitoring of a sensor or object:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/pause.htm?id=objectid&amp;action=1</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="error_handling" class="hmanchor"></a><span class="f_InTopicHeading">Error Handling (Acknowledge Alarm)</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Acknowledge a down status:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/acknowledgealarm.htm?id=objectid&amp;ackmsg=yourmessage</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="rescanning" class="hmanchor"></a><span class="f_InTopicHeading">Rescanning, Triggering Auto-Discovery</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scan a sensor now:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/scannow.htm?id=objectid</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Run an auto-discovery for an object:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/discovernow.htm?id=objectid&amp;template=filename</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Template for auto-discovery is optional. You can leave out the parameter </span><span class="f_BoldCustom">&amp;template=filename</span><span class="f_ListBulleted"> to run the auto-discovery with the options defined in the object's settings.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If you use a template, provide the whole filename including file extension surrounded by double quotes and encode whitespaces, if necessary. Example: </span><span class="f_BoldCustom">&amp;template=&quot;Linux%20SNMP.odt&quot;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="reorder" class="hmanchor"></a><span class="f_InTopicHeading">Reordering Objects in the Sensor Tree</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Move an object in the sensor tree (x can be </span><span class="f_BoldCustom">up</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">top</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">bottom</span><span class="f_ListBulleted">):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setposition.htm?id=objectid&amp;newpos=x</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="report" class="hmanchor"></a><span class="f_InTopicHeading">Report-related</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Add a group, device, or sensor to a report:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/reportaddsensor.htm?id=reportid&amp;addid=objectid</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notification-related</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Test a notification:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/notificationtest.htm?id=objectid</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add_delete" class="hmanchor"></a><span class="f_InTopicHeading">Adding/Deleting Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Adding and deleting objects in your PRTG configuration is the most complex and potentially most &quot;dangerous&quot; process when using the API. Keep in mind that add/delete activity is much better guided in the normal web interface with more warnings and alerts.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>We recommended that you use the web interface for adding and deleting objects if possible.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Deleting Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>API calls to the delete function immediately delete the referenced object including all subobjects, if there are any. For example, deleting a group deletes all its devices and sensors! There is no way to undo a deletion so use this function with care.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Delete an object:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/deleteobject.htm?id=objectid&amp;approve=1</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Adding Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Adding completely new objects from scratch is not supported via the API due to the complexity of object creation and its parameters. To add new objects to PRTG, create a &quot;master&quot; object that will be cloned into new objects.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Duplicate a group:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/duplicateobject.htm?id=id_of_group_to_clone&amp;name=new_name&amp;targetid=id_of_target_group</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Duplicate a device:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/duplicateobject.htm?id=id_of_device_to_clone&amp;name=new_name&amp;host=new_hostname_or_ip&amp;targetid=id_of_target_group</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Duplicate a sensor:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/duplicateobject.htm?id=id_of_sensor_to_clone&amp;name=new_name&amp;targetid=id_of_target_device</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If the </span><span class="f_BoldCustom">duplicateobject</span><span class="f_ListBulleted"> succeeds, the PRTG server will reply with a redirect to the URL of the new object (for example, </span><span class="f_BoldCustom">/sensor.htm?id=1234</span><span class="f_ListBulleted">), so your application should parse the new object ID from this URL.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">When an object is cloned, it will initially be set to &quot;paused&quot; so you have the chance to edit parameters as desired. You must resume it with an API call afterwards.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="duplicating_clone" class="hmanchor"></a><span class="f_InTopicHeading">Duplicating Sensors and Changing Clone Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following process duplicates a sensor, changes some settings, and then starts monitoring:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Duplicate the sensor (the server replies with a redirect to the new object's webpage, for example </span><span class="f_BoldCustom">/sensor.htm?id=10214</span><span class="f_ListBulleted">, parse id </span><span class="f_BoldCustom">10214</span><span class="f_ListBulleted"> from the URL):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/duplicateobject.htm?id=2002&amp;name=mynewsensor&amp;targetid=2001</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Rename the new sensor:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=10214&amp;name=name&amp;value=anothernewname</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Change the OID (in this example for an </span><span class="f_BoldCustom"><a href="snmp_custom_sensor.htm" class="topiclink">SNMP Custom sensor</a></span><span class="f_ListBulleted">):</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setobjectproperty.htm?id=10214&amp;name=oid&amp;value=1.2.3.4.5.6.7</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Resume monitoring for the new sensor:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/pause.htm?id=10214&amp;action=1</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="geo_location" class="hmanchor"></a><span class="f_InTopicHeading">Setting Geo Location</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can set the location of any object via an API call. Provide the object ID together with parameters for location and/or longitude and latitude.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If only the location parameter is given, the PRTG core server will execute the geo location lookup (this can take up to three minutes). Provide the name of the location, for example, <span class="f_BoldCustom">New York</span>. It will be shown in the <span class="f_BoldCustom">Location</span> settings, no matter the longitude/latitude.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If the longitude/latitude parameter is given, the marker in the map will be set to this position, no matter of the location parameter. Provide longitude and latitude separated by a comma, for example <span class="f_BoldCustom">-73.998672,40.714728</span>.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Set the geo location of an object:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">/api/setlonlat.htm?id=objectid&amp;location=name_of_object_location&amp;lonlat=longitude,latitude</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use the PRTG Application Programming Interface (API)?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/593" target="_blank" class="weblink">https://kb.paessler.com/en/topic/593</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Application Programming Interface (API) Definition—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http_api.htm" class="topiclink">HTTP API</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm" class="topiclink">Live Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_graphs.htm" class="topiclink">Live Graphs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data.htm" class="topiclink">Historic Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_notifications.htm" class="topiclink">Custom Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="historic_data.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="custom_sensors.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

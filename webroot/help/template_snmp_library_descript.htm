@@ -1,0 +1,40 @@
+﻿<!--Template SNMP Library Description-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+     </div>
+     PRTG Manual: <b>Template SNMP Library Description</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Template SNMP Library Description</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The SNMP Library sensor uses a compiled Management Information Base (MIB) library file to create sensors that monitor a device via Simple Network Management Protocol (SNMP). This approach provides custom monitoring beyond the standard SNMP sensors of PRTG. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The content of the MIB file will determine which data types are available for monitoring. When you create the sensor, it will provide a list of counters that came back from the target device based on checking every Object Identifier (OID) in the MIB. From this list, you can choose what you want to monitor. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The SNMP Library sensor will automatically create the following custom SNMP sensor types based on the data types available in the MIB:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_advanced_sensor.htm" class="topiclink">SNMP Custom Advanced sensors</a></span><span class="f_ListBulleted"> for all OIDs the return single values </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_string_sensor.htm" class="topiclink">SNMP Custom String sensors</a> </span><span class="f_ListBulleted">for all OIDs that return string values</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_table_sensor.htm" class="topiclink">SNMP Custom Table sensors</a></span><span class="f_ListBulleted"> for all OIDs that return tables</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The SNMP Library sensor is not actually a sensor type and will not appear as running sensor. It is a sensor that uses the meta-scan facility of the PRTG probe to find or match OIDs from an MIB and eases the creation of custom sensors, because you do not have to enter the OIDs manually.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor SNMP capable devices and add sensors using the SNMP Library sensor, download the manufacturer's MIB files for the target device, convert the MIB file to the Paessler <span class="f_ItalicCustom">oidlib</span> format, and import it into PRTG. To make setting up your monitoring &nbsp;as convenient as possible, PRTG comes with pre-compiled <span class="f_ItalicCustom">oidlib</span> library files that already contain the OIDs of SNMP counters for the most common devices in a network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see the Knowledge Base: <span class="f_Remarks"><a href="http://kb.paessler.com/en/topic/653" target="_blank" class="weblink">How do SNMP, MIBs and OIDs work?</a></span></p>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+  </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.errorreport.title" default="Report an Error" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+<h1><#lang key="html.errorreport.head" default="<b>Submit a Support Ticket</b> to the Paessler Support Team"></h1>
+  <div id="content">
+    <div id="reportit" class="tabs-container">
+		<#lang key="html.errorreport.gotofeedbackA" default="Please go to the">&nbsp;<a href="#"" onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm');return false;"><#lang key="html.errorreport.gotofeedbackB" default="Feedback Form"></a>
+    </div>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

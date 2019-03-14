@@ -1,0 +1,189 @@
+﻿<!--Additional Sensor Types (Custom Sensors)-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="wsus_statistics_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sensor_channels_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Additional Sensor Types (Custom Sensors)</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Additional Sensor Types (Custom Sensors)</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can create and use your own, self-written custom sensors in PRTG Network Monitor to go far beyond the PRTG standard sensor set. You can create your own sensors using Windows Management Instrumentation Query Language (WQL), visual basic scripting, PowerShell, batch scripting, SQL queries, by compiling an EXE or DLL file (using any Windows software development tool), by running Python scripts, or by translating JSON and XML responses of a REST API into sensor values.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>You cannot use custom sensors on hosted probes in PRTG hosted by Paessler (except SSH sensors). If you want to use custom sensors, please add them to a remote probe device.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="basics" class="hmanchor"></a><span class="f_InTopicHeading">Basics</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For a general introduction, see the sections about EXE/Script sensors and the <a href="custom_sensors.htm" class="topiclink">API documentation</a>, which contains details about the necessary return format for these sensors. WMI Custom sensors allow executing WQL requests.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="exe_script_sensor.htm" class="topiclink">EXE/Script Sensor</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="exe_script_advanced_sensor.htm" class="topiclink">EXE/Script Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="python_script_advanced_sensor.htm" class="topiclink">Python Script Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="rest_custom_sensor.htm" class="topiclink">REST Custom Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ssh_script_sensor.htm" class="topiclink">SSH Script Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="ssh_script_advanced_sensor.htm" class="topiclink">SSH Script Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_custom_sensor.htm" class="topiclink">WMI Custom Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_custom_string_sensor.htm" class="topiclink">WMI Custom String Sensor</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Additionally, some types of SQL sensors execute script files with SQL queries:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="microsoft_sql_v2_sensor.htm" class="topiclink">Microsoft SQL v2 Sensor</a></span><span class="f_ListBulleted"> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="mysql_v2_sensor.htm" class="topiclink">MySQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="oracle_sql_v2_sensor.htm" class="topiclink">Oracle SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="postgresql_sensor.htm" class="topiclink">PostgreSQL Sensor</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom"><a href="hl7_sensor.htm" class="topiclink">HL7 Sensor</a></span> sends messages that are stored in extra files on the probe system.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensors" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">After installing PRTG Network Monitor, you will already find a selection of custom EXE/Script, Python, and WMI WQL script sensors in the <a href="data_storage.htm" class="topiclink">PRTG program directory</a>, as well as scripts with SQL queries for specific <a href="additional_sensor_types.htm#basics" class="topiclink">database sensors</a>, REST configuration files in JSON template (*.template) format for the <a href="rest_custom_sensor.htm" class="topiclink">REST Custom sensor</a>, and HL7 message files for the <a href="hl7_sensor.htm" class="topiclink">HL7 sensor</a>. Many of the files are sample projects that you can edit and improve for your needs.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="exe" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG—Folder: \Custom Sensors\EXE</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">Demo Batchfile - <span class="f_ListBulleted">Returns 200.bat</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Batchfile - Set sensorstate to error.bat</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Batchfile - Set sensorstate to warning.bat</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Cmd - Returns 200.cmd</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Dll - Returns a random integer.dll</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo EXE - Returns a random integer.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo EXE - Returns number of files in folder (parameter).exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo EXE - Returns user of process.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - Available MB via WMI.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - InterruptsPerSec via WMI.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - Powershell Version.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - Returns a fixed integer value.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - Returns a random integer value.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Powershell Script - Returns Random Integer and Warnings.ps1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - InterruptsPerSec via WMI.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Multiplies two integers(2 parameters).vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns a fixed float value.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns a fixed integer value.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns a random value.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns number of svchost processes.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns user of process.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Returns warning depending on number of svchost processes.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - Timezone via WMI.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo VBScript - UTCTime via WMI.vbs</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Load_Test_CPU_1_Mio_Primes.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Load_Test_CPU_10_Mio_Primes.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Load_Test_Disk_Write_Read_1000_files.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Load_Test_Disk_Write_Read_10000_files.exe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Load_Test_Memory_Allocate_And_Free_400MB.exe</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">To create a new sensor based on one of these files, create a new <span class="f_BoldCustom"><a href="exe_script_sensor.htm" class="topiclink">EXE/Script Sensor</a></span> and choose the respective file from the <span class="f_BoldCustom">EXE/Script</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="exexml" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG—Folder: \Custom Sensors\EXEXML</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Batchfile - Returns static values in four channels.bat</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">To create a new sensor based on one of these files, create a new <span class="f_BoldCustom"><a href="exe_script_advanced_sensor.htm" class="topiclink">EXE/Script Advanced Sensor</a></span> and choose the respective file from the <span class="f_BoldCustom">EXE/Script</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="hl7" class="hmanchor"></a><span class="f_InTopicHeading">HL7 Message Files Included in PRTG—Folder: \Custom Sensors\hl7</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">ADT_A08.hl7</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">ORM_O01.hl7</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Each file contains an HL7 message that is conform to the HL7 message format. To create a new sensor based on one of these files, create a new <span class="f_BoldCustom"><a href="hl7_sensor.htm" class="topiclink">HL7 Sensor</a></span> and choose the respective file from the <span class="f_BoldCustom">HL7 Messages</span> list in the sensor settings. You can override certain message headers in the files via the sensor settings. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="python" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG—Folder: \Custom Sensors\python</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">sensor_example.py</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">This Python example script just returns fixed values in two channels to demonstrate the usage. To create a new sensor based on this file, create a new <span class="f_BoldCustom"><a href="python_script_advanced_sensor.htm" class="topiclink">Python Script Advanced Sensor</a></span> and choose the file from the <span class="f_BoldCustom">Python Script</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="rest" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG—Folder: \Custom Sensors\rest</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">kemp.loadbalancer.template: maps values returned by the RESTful API of a KEMP load balancer to sensor channels, for example, CPU usage, memory usage, traffic </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">prtg-sensor-stats.template: maps values returned by the API of your PRTG installation to sensor channels that show the count of each sensor status on the local probe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">windows.docker.container.stats.template: maps values returned by the Docker Engine API to sensor channels, for example, CPU usage, memory usage, traffic, I/O</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">wunderground.template: maps values returned by the Weather Underground API to sensor channels, for example, temperature, dew point, pressure, wind speed, wind direction</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">To create a new sensor based on one of these files, create a new <span class="f_BoldCustom"><a href="rest_custom_sensor.htm" class="topiclink">REST Custom Sensor</a></span> on the device that provides the REST API and choose the file from the <span class="f_BoldCustom">REST Configuration File</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sql" class="hmanchor"></a><span class="f_InTopicHeading">SQL Query Files Included in PRTG—Folder: \Custom Sensors\sql\&lt;dbms&gt;</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo Serveruptime.sql</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can find this demo SQL query script in each subfolder for each supported <span class="f_ItalicCustom">database management system (dbms)</span>: <span class="f_BoldCustom">\mssql</span>, <span class="f_BoldCustom">\mysql</span>, <span class="f_BoldCustom">\oracle</span>, <span class="f_BoldCustom">\postgresql</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To create a new sensor that uses one of the scripts in the dbms folders, create the according sensor type (<a href="additional_sensor_types.htm#basics" class="topiclink">see above for supported sensors</a>) and choose the respective file from the <span class="f_BoldCustom">SQL Query File</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="wql" class="hmanchor"></a><span class="f_InTopicHeading">Custom Sensors Included in PRTG—Folder: \Custom Sensors\WMI WQL scripts</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo WQL Script - Get Win32LogicalDiscFreeMB.wql</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo WQL Script - Get Win32OsBuildnumber.wql</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo WQL Script - Get Win32PercentProcessorIdleTime.wql</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Demo WQL Script - Get Win32PercentProcessorTime.wql</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">To create a new sensor based on one of these files, create a new <span class="f_BoldCustom"><a href="wmi_custom_sensor.htm" class="topiclink">WMI Custom Sensor</a></span> and choose the respective file from the <span class="f_BoldCustom">WQL File</span> list in the sensor settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="download" class="hmanchor"></a><span class="f_InTopicHeading">Downloading Pre-Built Custom Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Good resources to find custom sensors that PRTG users and we from Paessler share are the <span style="font-weight: bold;"><a href="https://www.paessler.com/script-world" target="_blank" class="weblink">PRTG Script World</a></span> and our Knowledge Base. In the Knowledge Base, search for the tag <span style="font-weight: bold;">custom-script-exe</span> to find a lot of custom sensors: <a href="https://kb.paessler.com/en/tags/custom-script-exe/" target="_blank" class="weblink">https://kb.paessler.com/en/tags/custom-script-exe/</a> </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can find useful scripts for sensors in the </span><span class="f_BoldCustom">PRTG Script World</span><span class="f_ListBulleted">:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/script-world" target="_blank" class="weblink">https://www.paessler.com/script-world</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For the other sensor types that work out-of-the-box, see </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Guide for PowerShell Based Custom Sensors</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/71356" target="_blank" class="weblink">https://kb.paessler.com/en/topic/71356</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Custom sensors</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/tags/custom-script-exe/" target="_blank" class="weblink">https://kb.paessler.com/en/tags/custom-script-exe/</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I share my self-written PRTG script/program with other PRTG users?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/63737" target="_blank" class="weblink">https://kb.paessler.com/en/topic/63737</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I test if parameters are correctly transmitted to my script when using an EXE/Script sensor?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/11283" target="_blank" class="weblink">https://kb.paessler.com/en/topic/11283</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Why do I have to store SQL sensor queries and custom scripts in files on the probe computer?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/75372" target="_blank" class="weblink">https://kb.paessler.com/en/topic/75372</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+&nbsp;</li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Device and Sensor Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_objects_manually.htm" class="topiclink">Create Objects Manually</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probe_settings.htm" class="topiclink">Probe Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="group_settings.htm" class="topiclink">Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="device_settings.htm" class="topiclink">Device Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a>—<a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Google,Google Code</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="wsus_statistics_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sensor_channels_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

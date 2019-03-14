@@ -1,0 +1,31 @@
+﻿<!--List of sensors (Data Files Not Available): List of sensors (no graphs)-->
+<!--500-->
+
+<#include file="includes\printhead.htm">
+<div class="export">
+	<#include file="includes\printheading.htm">
+	<#objectproperty name="reportheader">
+
+	<h1><b><#objectproperty name="name"></b> (<#report type="startdate"> - <#report type="enddate"> <#report type="reporthours">)</h1>
+
+	<table class="reportsensorlist" cellspacing=0 class="overview">
+
+		<thead>
+			<th><#lang key="html.global.probegroupdev" default="Probe, Group, Device"></th>
+			<th><#lang key="html.global.sensor" default="Sensor"></th>
+			<th style="<#clusterdependent hidefor='clusterinstallation'>"><#lang key="html.global.average" default="Average"><br><#lang key="html.global.total" default="Total"></th>
+			<th style="<#clusterdependent hidefor='clusterinstallation'>" colspan="2"><#lang key="html.global.uptime" default="Uptime"><br><#lang key="html.global.downtime" default="Downtime"></th>
+			<th style="<#clusterdependent hidefor='clusterinstallation'>" colspan="2"><#lang key="html.global.good" default="Good"><br><#lang key="html.global.failed" default="Failed"></th>
+			<th style="<#clusterdependent showfor='clusterinstallation'>">&nbsp;</th>
+		</thead>
+
+		<#report type="list" name="details\Sensorlist Dataline No Graph.htm" subname="details\Sensorlist No Graph Loop.htm" graphaverage="3600">
+
+	</table>
+
+	<#cropmsg>
+
+	<#objectproperty name="reportfooter">
+	<#include file="includes\printfooter.htm">
+</div>
+<#include file="includes\printfoot.htm">

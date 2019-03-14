@@ -1,0 +1,49 @@
+﻿<#lang key="html.alarms.title" default="Alarms" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<#objectidorzero var="objectid">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <h1 class="sitecaption"><#lang key="html.alarms.caaw" default="Current Alarms and Warnings"></h1>
+    <wingui-hidden>
+        <div class="buttonbox normalpage">
+            <#include file="includes\linkpagebutton.htm">
+        </div>
+    </wingui-hidden>
+  <div id="content">
+    <div class="prtg-plugin deviceoverviewsensorvalues tab-container alarmsaguages"
+        data-plugin="channelgauges"
+        data-objectid="<#objectidorzero>"
+        data-type="sensors"
+        data-ajaxdata='{
+              "noraw":1,
+              "content":"sensors",
+              "sortby":"-position",
+              "filter_status":[5,4,10,13,14],
+              "columns":"objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw"}'>
+<!--
+          {"objects":<#table id="@objectid"
+            varexpand="id"
+            output="json"
+            noraw="1"
+            content="sensors"
+            sortby="-position"
+            count="*"
+            filter_status="5"
+            filter_status="4"
+            filter_status="10"
+            filter_status="13"
+            filter_status="14"
+            columns="objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw">
+          }
+ -->
+      </div>
+  </div>
+<#lang key="html.globals.alarms" default="Alarms" var="helptitle">
+<#lang key="html.alarms.help.text" default="This page shows the list of sensors that are in an error or warning state. If all your systems are running fine this page should list no sensors at all!<br><br><a href='/help/alarms.htm' target='_blank'><b>Help: Alarms</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

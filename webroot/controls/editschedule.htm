@@ -1,0 +1,8 @@
+﻿<#checkobjecttype objecttype="schedule">
+<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<form id="editscheduleform" action="/editsettings" method="POST" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+    <#object type="settings" objecttype="schedule">
+    <#hiddenid>
+    <input type=hidden name="targeturl" value="/myaccount.htm?tabid=3">
+    <#include file="includes\submitbutton.htm">
+</form>

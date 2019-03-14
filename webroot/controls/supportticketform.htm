@@ -1,0 +1,253 @@
+﻿<#system type="errormessage" var="errmsg">
+<#system type="errorurl" var="errurl">
+
+<div id="feedbackform" class="prtg-form">
+  <div>
+    <h1><#lang key="html.supportbundle.info.h1" default="Support Ticket System"></h1>
+
+    <p>
+      <b><#lang key="html.supportbundle.info.h21a" default="How Contact Support Works"></b><br/>
+      <#lang key="html.supportbundle.info.p1b" default="PRTG transmits your feedback / support question including the support bundle securely to Paessler via the PRTG Cloud. Please make sure your PRTG server can reach the URL https://api.prtgcloud.com:443"></a>
+      <p>
+          <#lang key="html.supportbundle.info.p1c" default="Paessler safeguards data that you send to our organization in the same manner in which we protect our own similar confidential information and in accordance with the GDPR. However, Paessler cannot guarantee that your data will be handled in compliance with all regulatory standards that are applicable to such data. Accordingly, do not send any data that is subject to regulations that prescribe special handling requirements to Paessler. If your data file contains this type of regulated information, contact us before sending it. We can discuss masking, obfuscation, or other possible methods to convert your data set to a format that Paessler can manage.">
+      </p>
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h21" default="One-To-One Support for Customers with Active Maintenance Contract"></b><br/>
+      <#lang key="html.supportbundle.info.p1" default="Within your software maintenance period, you can open a support ticket here. If you have trouble using this form, please contact us via"> <a href="https://shop.paessler.com/en/openticket?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-openticket" target="_blank"><#lang key="html.supportbundle.info.p1a" default="our website"></a>.
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h22" default="Updates and Your License Key"></b><br/>
+      <#lang key="html.supportbundle.info.p2" default="Are you looking for updates or your license key? Login to our"> <a href="https://shop.paessler.com/accounts/login/" target="_blank"><#lang key="html.supportbundle.info.p2a" default="service center"></a>.
+    </p>
+    <p>
+    <b><#lang key="html.supportbundle.info.h23" default="Language"></b><br/>
+      <#lang key="html.supportbundle.info.p3" default="Please write us in English or German language.">
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h24" default="E-Mail"></b><br/>
+      <#lang key="html.supportbundle.info.p4" default="Please communicate via email. This is the best way we can support you, so we can analyze your log files, screenshots, and other data in detail. We always try to answer within 24 hours on business days. If necessary, we will ask you for remote access.">
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h25" default="Single Topics"></b><br/>
+      <#lang key="html.supportbundle.info.p5" default="Please open a new ticket for each new topic.">
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h26" default="Network Planning"></b><br/>
+      <#lang key="html.supportbundle.info.p6" default="Do you need assistance for your network setup or detailed installation planning? Our partners are happy to help. Please"> <a href="https://www.paessler.com/partners/resellers" target="_blank"><#lang key="html.supportbundle.info.p6a" default="contact a partner near you"></a>.
+    </p>
+    <p>
+      <b><#lang key="html.supportbundle.info.h27" default="Freeware Users"></b><br/>
+      <#lang key="html.supportbundle.info.p7" default="Do you use our Freeware? We try to answer your questions in a timely manner, but if we are busy, paying customers come first. You may find a prompt answer in our"> <a href="https://kb.paessler.com/en/" target="_blank"><#lang key="html.supportbundle.info.p7a1" default="Knowledge Base"></a> <#lang key="html.supportbundle.info.p7b" default="or the"> <a href="https://www.paessler.com/manuals/prtg" target="_blank"><#lang key="html.supportbundle.info.p7a2" default="PRTG Manual"></a>.
+    </p>
+  </div>
+  <form action="supportbundle_send.htm" method="post" accept-charset="utf-8" class="prtg-plugin prtg-form validateForm" data-plugin="prtg-form feedback">
+    <fieldset>
+      <legend class="prtg-header" style="max-width:100%"><#lang key="html.errorreport.ticketdata2a" default="Ask a Question or Give Us Your Feedback"></legend>
+      <div class="control-group">
+        <label class="control-label has_help" for="sdate"><#lang key="html.supportbundle.tixid2" default="Your Ticket ID PAE&lt;id&gt;<br>(If You Have One)"></label>
+        <div class="controls" data-placement="right" data-helptext="<#lang key="html.supportbundle.please2" default="Please enter your ticket ID in the Paessler Support System.">">
+          <input size="10" class="text" type="text" name="ticket" maxlength="10" value="" data-rule-ticketnumber="true">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help" for="sdate"><#lang key="html.supportbundle.customermail" default="Your Email Address"></label>
+        <div class="controls">
+          <input class="text fieldrequired"  type="text"  size="80" name="email" maxlength="50" value="<#system type="useremail">">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help">
+          <#lang key="html.supportbundle.about0a" default="Scope of Your Question">
+        </label>
+        <div class="controls">
+          <div class="radio-control">
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundletopic" value="Configuration&Usage" id="about3" checked="checked">
+            <label for="about3" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.about3d" default="PRTG configuration and usage">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundletopic" value="Clients" id="about4">
+            <label for="about4" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.about4d" default="PRTG clients (Enterprise Console and mobile apps)">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundletopic" value="Technical Issues" id="about2">
+            <label for="about2" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.about2d" default="Technical issues (performance, webserver, sensors, probes, cluster)">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundletopic" value="Critical Issue (URGENT)" id="about1">
+            <label for="about1" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.about1d" default="Critical issue (large parts of my monitoring do not work)">
+            </label>
+
+            <input type="radio" class="radio GroupShowHide hidden" name="bundletopic" value="Other" id="about5">
+            <label for="about5" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.about5d" default="Other (including feedback and feature requests)">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="control-group InitialDisplayNone Showabout1 Hideabout2 Hideabout3 Hideabout4 Hideabout5" >
+        <label class="control-label"></label>
+        <div class="controls">
+          <h3><#lang key="html.supportbundle.mayhelp" default="Tech Support resources that may be helpful for you">:</h3>
+          <ul>
+            <li><a href="https://kb.paessler.com/en/topic/50833?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.critical1a" default="What to do when the PRTG core server crashes"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/60097?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.critical3a" default="What can I do when Probe(s) are not connected"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/25643?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.critical2a" default="What can I do when Sensors are in <b>Unknown</b> status"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/25523?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.critical4a" default="How to avoid overload protection"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/59407?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.critical5a" default="Web GUI lost connection with error code PE1114"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-group InitialDisplayNone Hideabout1 Showabout2 Hideabout3 Hideabout4 Hideabout5" >
+        <label class="control-label"></label>
+        <div class="controls">
+          <h3><#lang key="html.supportbundle.mayhelp" default="Tech Support resources that may be helpful for you">:</h3>
+          <ul>
+            <li><a href="https://kb.paessler.com/en/topic/60099?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.technical1" default="Troubleshooting PRTG speed/performance problems"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/1043?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.technical2" default="Troubleshooting WMI problems"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/46863?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.technical3" default="Troubleshooting SNMP problems"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/47263?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.technical4" default="Troubleshooting Performance Counter problems"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/60101?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.technical5" default="Monitoring network traffic, Linux, Mac OS"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-group Hideabout1 Hideabout2 Showabout3 Hideabout4 Hideabout5" >
+        <label class="control-label"></label>
+        <div class="controls">
+          <h3><#lang key="html.supportbundle.mayhelp" default="Tech Support resources that may be helpful for you">:</h3>
+          <ul>
+            <li><a href="https://kb.paessler.com/en/topic/3743?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.usage1" default="Help with installation, licensing, and setup"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/60092?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.usage5a" default="Information about data storage/backup/migration and updating PRTG"></a></li>
+            <li><a href="https://www.paessler.com/manuals/prtg/user_access_rights.htm?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank"><#lang key="html.supportbundle.usage2" default="Working with user accounts and user rights"></a></li>
+		        <li><a href="https://kb.paessler.com/en/topic/283?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.usage3" default="Installing an SSL certificate for the PRTG web server"></a></li>
+		        <li><a href="https://kb.paessler.com/en/topic/6403?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.usage4a" default="Configuring failover clustering"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-group  InitialDisplayNone Hideabout1 Hideabout2 Hideabout3 Hideabout4 Showabout5" >
+        <label class="control-label"></label>
+        <div class="controls">
+          <h3><#lang key="html.supportbundle.mayhelp" default="Tech Support resources that may be helpful for you">:</h3>
+          <ul>
+            <li><a href="https://kb.paessler.com/en/topic/33873?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.other2a" default="How Paessler works with feedback and feature requests"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/31713?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.other4a" default="Sending general recognition and applause"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/593?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.other1a" default="How to use the PRTG API"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/33?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.other5" default="How can I re-brand and customize PRTG"></a></li>
+            <li><a href="https://kb.paessler.com/en/topic/47023?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.other3a" default="How to monitor backup jobs"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-group InitialDisplayNone Hideabout1 Hideabout2 Hideabout3 Showabout4 Hideabout5" >
+        <label class="control-label"></label>
+        <div class="controls">
+          <h3><#lang key="html.supportbundle.mayhelp" default="Tech Support resources that may be helpful for you">:</h3>
+            <ul>
+              <li><a href="https://kb.paessler.com/en/topic/60091?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.clients3b" default="Common Windows Client (EC) problems and their solutions"></a></li>
+              <li><a href="/downloads.htm?tabid=2" target="_blank"><#lang key="html.supportbundle.clients1a" default="Downloading mobile apps for iOS or Android"></a></li>
+              <li><a href="https://www.paessler.com/apps?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank"><#lang key="html.supportbundle.clients1b" default="More information about mobile apps"></a></li>
+      			  <li><a href="https://kb.paessler.com/en/topic/60042?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" target="_blank"><#lang key="html.supportbundle.clients2" default="Mobile apps comparison"></a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="emotionalstate" class="control-label"><#lang key="html.supportbundle.EmotionLabel" default="Emotional State"></label>
+        <div class="controls">
+          <select id="emotionalstate" name="emotionalstate">
+            <option value=""><#lang key="html.supportbundle.EmotionOption1" default="OK"></option>
+            <option value="Excited"><#lang key="html.supportbundle.EmotionOption2" default="Excited"></option>
+            <option value="Confused"><#lang key="html.supportbundle.EmotionOption3" default="Confused"></option>
+            <option value="Worried"><#lang key="html.supportbundle.EmotionOption4" default="Worried"></option>
+            <option value="Upset"><#lang key="html.supportbundle.EmotionOption5" default="Upset"></option>
+            <option value="Panicked"><#lang key="html.supportbundle.EmotionOption6" default="Panicked"></option>
+            <option value="Angry"><#lang key="html.supportbundle.EmotionOption7" default="Angry"></option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help" ><#lang key="html.supportbundle.othertext1" default="Describe Your Question in One Sentence"></label>
+          <div class="controls" data-placement="right" data-helptext="<#lang key="html.supportbundle.descriptionhelp" default="Enter a short description of your issue using max. 60 characters.">">
+            <input class="text fieldrequired"  type="text"  size="80" name="aboutother" maxlength="60" value="">
+          </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label has_help" for="sdate"><#lang key="html.supportbundle.problemdescr1" default="Do You Have Any Further Comments?"></label>
+        <div class="controls">
+          <!-- die nächsteb 3 Zeilen sehen sch... aus müssen aber genau so da stehen -->
+          <textarea id="textarea2" class="fieldrequired" name="comment" style="height:80px"><#if value="@errmsg" is="" then="" else="@errurl @errmsg" varexpand="value,else"></textarea>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="prtg-header" style="max-width:100%"><#lang key="html.errorreport.attachbundle" default="Help Us by Attaching a Screenshot and Support Bundle"></legend>
+      <div class="control-group">
+        <div class="controls-info">
+          <div class="">
+            <p><#lang key="html.errorreport.encourage9a2" default="It will be tremendously helpful for us if you attach a meaningful screenshot and analytical information about your PRTG installation.">
+            <#lang key="html.supportbundle.encourage9b1" default="We call this a 'Support Bundle'. It contains selected log and status files of your PRTG installation which help our team to analyze any issues you may have encountered."> <#lang key="html.supportbundle.packhelp" default="The Base Pack contains system status, lists of red and black sensors, core state sensor data, probe health sensor data, and recent log entries (system and probe related), as well as the log files.">
+			<#lang key="html.supportbundle.encouragenote" default="Please note that the option to attach a screenshot is disabled on generic error pages if it would not provide additional helpful details about your issue.">
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+       <label class="control-label" for="includescreenshot"><#lang key="html.supportbundle.screenshot2" default="Screenshot"></label>
+        <div class="controls">
+          <div class="radio-control">
+            <input type="radio" class="radio hidden" name="includescreenshot" value="0" id="donotincludescreenshot" checked="checked">
+            <label for="donotincludescreenshot" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.supportbundle.includescreenshotnot" default="Do not attach screenshot">
+            </label>
+            <input type="radio" class="radio hidden" name="includescreenshot" value="1" id="includescreenshot"<#if value="@errmsg" is="" then="" else=" disabled='true'" varexpand="value">>
+            <label for="includescreenshot" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.supportbundle.includescreenshot" default="Create and attach screenshot (recommended)">
+            </label>
+          </div>
+          <div id="screenshot" style="border-top:9px solid #fff;"></div>
+        </div>
+      </div>
+      <div class="control-group" style="<#hidefornonadmins>">
+        <label class="control-label has_help" for="sdate">
+          <#lang key="html.supportbundle.size2" default="Support Bundle">
+        </label>
+        <div class="controls" data-placement="right" data-helptext="<#lang key="html.supportbundle.bundletype" default="Choose which bundle type you want to attach. Passwords that are masked by the browser while you enter them in settings pages of PRTG will not be sent to Paessler.">">
+          <div class="radio-control">
+            <input type="radio" class="radio hidden" name="what" value="2" id="what2"  checked="checked">
+            <label for="what2" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.pack2a" default="Attach Base Pack with log files (recommended)">
+            </label>
+            <input type="radio" class="radio hidden" name="what" value="3" id="what3">
+            <label for="what3" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.pack3C" default="Attach Base Pack with log files and PRTG configuration file">
+            </label>
+            <input type="radio" class="radio hidden" name="what" value="0" id="what0"  >
+            <label for="what0" class="radio-control-label">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.supportbundle.pack01" default="Do not attach a Support Bundle">
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="submitbuttonboxanchor">
+      <div class="submitbuttonbox">
+        <input value="<#lang key="html.errorreport.submit22" default="Submit">"  class="actionbutton" type="submit" id="submitticketformsubmit">
+        <input class="cancel btngrey button" type="button" value="<#lang key="html.global.cancel" default="Cancel">" onClick="window.history.back();return false;">
+      </div>
+    </div>
+    <input type="hidden" name="mytopic" value="<#system type="errormessage"> <#system type="editiondependedhtml" freeversiononly="Freeware" trialversiononly="Trial" fullversiononly="Commercial"> M=<#system type="maintenanceshort" skiptagfornonadmins='true'> V=<#system type="version"> <#system type="installedupdatechannel"> <#system type="errorurl">">
+  </form>
+</div>

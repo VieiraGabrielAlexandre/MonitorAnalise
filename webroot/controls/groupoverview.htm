@@ -1,0 +1,129 @@
+﻿<#checkobjecttype objecttype="group,probenode">
+<#lang key="html.groupoverview.help.title" default="Auto-Discovery" var="helptitle">
+<#lang key="html.groupoverview.help.text" default="The fastest way to create sensors for your network is to use PRTG's automatic device discovery function. Simply click on 'Add Auto-Discovery Group' to start.<br><br><a href='/help/auto_discovery.htm' target='_blank'><b>Help: Auto-Discovery</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+
+<div id="group-overview" class="panel col-panel loading" >
+    <div class="tct-box left-column">
+        <#include file="includes/tct/theater/groupoverview.htm">
+    </div>
+
+	<div id="layout" class="panel row-panel">
+		<div class="panel col-panel stretch-panel tree-panel">
+            <div class="prtg-plugin status-smallScreen" data-plugin="status">
+                <#include file="\controls\groupoverview_statusinfo.htm">
+            </div>
+
+            <a class='button addSensor-cta status-smallScreen <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href="/addsensor0.htm"><span class="glyph-plus-circled"></span><#lang key="html.global.addsensor" default="Add Sensor"/></a>
+
+
+            <div class="tree-wrapper group-tree-wrapper">
+            <div class="add-menu-wrapper">
+                <div class="add-menu" style='<#system type="hideforreadonlyusers">'>
+                    <a class="actionbutton add-menu-item add-remoteprobe" onclick="_Prtg.objectTools.addRemoteProbe(0, 'remoteprobeinstall.htm', 0);return false;" style="<#hidefornonadmins>" href="#"><span></span><#lang key="html.global.addremoteprobe" default="Add Remote Probe"></a>
+                    <a class="actionbutton add-menu-item add-group" onclick="_Prtg.objectTools.addObject0('group', {preselect:<#objectid>});return false;" href="#"><span></span><#lang key="html.global.addgroup" default="Add Group"></a>
+                    <a class="actionbutton add-menu-item add-autodicovery podlocalprobeis<#isonpodlocalprobe>" onclick="_Prtg.objectTools.addObject0('autodiscovery', {preselect:<#objectid>});return false;" href="#"><span></span><#lang key="html.global.addautogroup" default="Add Auto-Discovery Group"></a>
+                    <a class="actionbutton add-menu-item add-device" onclick="_Prtg.objectTools.addObject0('device', {preselect:<#objectid>});return false;" href="#"><span></span><#lang key="html.global.adddevice" default="Add Device"></a>
+                    <a class="actionbutton add-menu-item add-sensor" href="/addsensor0.htm"><span></span><#lang key="html.global.addsensor" default="Add Sensor"></a>
+                    <a class="actionbutton add-menu-item hidden<#system type="dnsname">" target="_blank" href="https://play.google.com/store/apps/details?id=com.paessler.androidprobe&referrer=utm_source%3DPRTG%26utm_content%3D<#system type="dnsname">"><span></span><#lang key="html.global.addandroidprobe" default="Add Mobile Android Probe"></a>
+                </div>
+            </div>
+
+            <div class="prtg-plugin tree" data-plugin="status">
+                <#include file="\controls\groupoverview_treetoolbar.htm">
+            </div>
+
+            <div id="objecttreecontainer" class="focussearch refresh-on-actionbutton treeisnoteditable">
+                <#include file="\controls\sensortree.htm">
+            </div>
+            <div id="sensortreelinks" class="sensortree-action">
+              <div class="add-menu-badge <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+            </div>
+        </div>
+		</div>
+		<div class="panel col-panel fix-panel map-panel">
+
+              <tct
+                data-role="guru"
+                data-page="group.ssl"
+                data-remove-delay="1"
+                style="position: absolute;z-index:999"
+                class="<#system type='showhelp' tct='guru' page='group.ssl' class='removeme' isadmin='true' remoteclient='true' varexpand='page'>">
+              <!--
+                return {
+                  check: function(tct,lastStats,sensorTypes){
+                    return '<#hidesslnagscreen>' !== 'display:none;' && <#objectid>===0;
+                  },
+                  action: function(tct,lastStats,sensorTypes){
+                    var $tct = this;
+                    $tct.one('click','.actionbutton', function(event){
+                      _Prtg.objectTools.sslSwitchTo();
+                      $tct.remove();
+                    });
+                  }
+                };
+               -->
+                <div>
+                  <div class="info-box">
+                      <img src="/images/tct/Greg100x100.png">
+                      <div class="tct-textcontent">
+                    <span class="headline"><#lang key="tct.guru.sslA" default="Switch to SSL!"></span>
+                    <span class="text"><#lang key="tct.guru.sslB" default="For better security, please change to SSL encryption."></span>
+
+                      <div class="tct-buttonbar buttonbar-multiple">
+                    <button class="button btngrey skip"><#lang key="tct.guru.skipssl" default="Skip this."></button>
+                    <button class="actionbutton"><#lang key="tct.guru.switchssl" default="OK, switch now!"></button>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+              </tct>
+              <#langnt key="html.groupoverview.tct.default" default="\controls\groupoverviewcolumnrigth.htm" var="tctfile">
+              <#system
+                type='showhelp'
+                tct="guru"
+                page="group"
+                default="@tctfile"
+                varexpand="default"
+                ispopadmin="true"
+                id_eq=0
+                wingui="false"
+                version="commercial,trial"
+                daysi_lt=30
+                crosscheck='guru.group.welcome,guru.group.credentials,guru.group.adminaccount,guru.group.done'
+                var="tctfile">
+              <#system
+                type='showhelp'
+                tct="guru"
+                page="p-group"
+                default="@tctfile"
+                varexpand="default"
+                isadmin="true"
+                id_eq=0
+                wingui="false"
+                version="podpayed,podtest"
+                probes_eq=1
+                crosscheck='guru.p-group.welcome'
+                var="tctfile">
+              <#objectid var="id">
+              <#system
+                type='showhelp'
+                tct="guru"
+                page="remoteprobe.@id"
+                default="@tctfile"
+                ispopadminorpodowner="true"
+                id_gt=1
+                wingui="false"
+                nodetypes="probenode"
+                crosscheck='guru.@page.credentials,guru.@page.done'
+                varexpand="page,default,crosscheck"
+                var="tctfile">
+              <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+	</div>
+</div>
+
+
+
+
+

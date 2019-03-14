@@ -1,0 +1,49 @@
+﻿<!--Scheduling-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="dependencies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notifying.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Scheduling</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Scheduling</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">With the help of schedules you can <a href="pause.htm" class="topiclink">pause</a> the monitoring of certain objects automatically for a certain time, for example, on Sundays between 4 and 8 a.m. A paused sensor will not collect monitoring data, will not change its status, and will not trigger any <a href="notifying.htm" class="topiclink">notifications</a>. You can also pause monitoring for planned system maintenance time spans to avoid false alarms. You can apply different schedules to every object. Schedules are also used for reports and notifications.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you pause a master object by schedule or manually, you do not trigger a status change by <a href="dependencies.htm" class="topiclink">dependency</a>. See also this Knowledge Base article <a href="https://kb.paessler.com/en/topic/76351" target="_blank" class="weblink">Why will dependent objects not go into paused status automatically when I pause the master object?</a></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:475px"><a href="schedules3.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Available Default Schedules in Device Settings" title="Available Default Schedules in Device Settings" style="width:475px;height:324px;border:none" src="schedules3_zoom65.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Available Default Schedules in Device Settings</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Schedules are user account specific. To change the default pre-defined schedules or to add your own schedule, see <span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you use failover clustering with nodes in different timezones, scheduling applies at the local time of each node. For more information, see section <span class="f_BoldCustom"><a href="failover_cluster_configuration.htm#before" class="topiclink">Failover Cluster Configuration—Before Getting Started</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Scheduling</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="dependencies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notifying.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

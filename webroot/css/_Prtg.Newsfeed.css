@@ -1,0 +1,87 @@
+﻿
+.newsfeed {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.newsfeed h2 {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.newsfeed-content {
+  overflow: hidden;
+  height: auto;
+  height: calc(100% - 39px);
+}
+
+.newsfeed-content:hover {
+  overflow-y: scroll;
+  position: relative;
+}
+
+.newsfeed-content div {
+  display: block;
+}
+
+.newsfeed-content h2 {
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0;
+  padding-bottom: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 3px;
+}
+
+.newsfeed-content h3 {
+  color: #888;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.newsfeed-content p {
+  color: #888;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 36px;
+  line-height: 120%;
+  text-align: justify;
+}
+
+.newsfeed a {
+  color: #888;
+}
+
+.newsfeed:hover a, .newsfeed:hover p, .newsfeed:hover h3, .:hover h2 {
+  color: #000;
+}
+
+.newsfeed:hover .newsfeed-content * {
+  padding-right: 5px;
+  color: #000 !important;
+}
+
+#login-container .newsfeed {
+  height: 176px;
+  width: 390px;
+  padding-top: 15px;
+}
+
+.setupcontainer .newsfeed {
+  width: 400px;
+  height: 550px;
+  padding-top: 15px;
+}

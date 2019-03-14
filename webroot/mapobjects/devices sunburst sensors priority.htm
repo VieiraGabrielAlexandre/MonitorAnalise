@@ -1,0 +1,41 @@
+﻿<!--Device Tree Views: Sunburst (sized by sensors and priority)-->
+
+<div class="map_object map_table <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+	<#mapobject type="objectgrip" mode="<@editmode>">
+	<#mapobject type="htmlbefore" subid="<@subid>">
+	<#checkobjecttype objecttype="probenode,group" nicemessage="true" id="<@objectid>">
+	<div id ="Plugin_<@itemid>"
+		class="sensorTree prtg-plugin"
+		data-layout="none"
+		data-no-full-size="false"
+		data-plugin="sunburst"
+		data-root-id="<#objectid>"
+		data-objectid="<#objectid>"
+		data-view-type="sunburst"
+		data-display-mode="<#displaymode>"
+		data-show-top-panel="false"
+		data-border-bottom-width="0"
+		data-options='{"sunburstSizePriority": true,"sunburstSizeSensors": true,"treeMapSizePriority": false,"treeMapSizeSensors": false,"hideControls":true}'>
+
+    <!--
+      {
+  		 "objects":<#table
+  			id='<@objectid>'
+  			output='json'
+  			count='*'
+  			content='sensorxref'
+  			noraw='1'
+  			subcheck='1'
+  			filter_basetype='probe'
+  			filter_basetype='group'
+  			filter_basetype='device'
+        filter_tags="@tag(<@tagfilterstring>)"
+  			sortby='probegroupdevice'
+  			columns='objid,name,access=treejson,probegroupdevice=treejson,basetype,icon=treejson,favorite,fold,devicenum=textraw,groupnum=textraw,totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw,condition,status=textraw,message,info,priority'>
+      }
+    -->
+
+		<div id="viewport"></div>
+	</div>
+	<#mapobject type="htmlafter" subid="<@subid>">
+</div>

@@ -1,0 +1,199 @@
+﻿<tct
+  data-role="<#role>"
+  data-page=""
+  data-remove-delay="1"
+  style="position:absolute;right: 1vw;"
+  class="<#system type='showhelp' tct='guru' page='@page.credentials' class='removeme' varexpand='page'>">
+  <!--
+  var inputs = ['windowslogindomain_','windowsloginusername_','windowsloginpassword_','linuxloginusername_','linuxloginpassword_','esxuser_','esxpassword_','snmpcommv1_','snmpcommv2_','snmpuser_','snmpauthpass_']
+    , $tct = this;
+  $('body').data('bs.popover').options.delay.show = 2000;
+  $('body').data('bs.popover').options.delay.hide = 200;
+
+  setTimeout(function(){
+    var frm = $("#objectdataform");
+      frm.find('fieldset').eq(2)[0].scrollIntoView();
+      $(window).scrollTop($(window).scrollTop()-60);
+      frm.data().redirect = false;
+      frm.find('#'+inputs.join(',#')).each(function(){
+            $(this)
+            .css('border-color',_Prtg.Colors.tct)
+            .one('change',function(){
+              if(this.value !== '')
+                $(this).css('border','');
+            })
+            .data().oldvalue = $(this).val();
+      });
+      var $inputElem = frm.find('#'+inputs.join(',#'));
+      $tct.css({
+          'top': $inputElem.first().offset().top - 70
+        });
+
+      frm.find('input[type="submit"]').css('background-color',_Prtg.Colors.tct)
+      frm.on("submit.tct",function(event){
+        var autodisco = false;
+        frm.find('#'+inputs.join(',#')).each(function(){
+          if($(this).data().oldvalue !== $(this).val()){
+            autodisco = true;
+          }
+        })
+        frm.find('#'+inputs.join(',#')).each(function(){
+          $(this).css('border','');
+        });
+        frm.find('input[type="submit"]').css('background-color','');
+        if(!autodisco){
+           $('#guru-discovernow').off('.tct').remove();
+           $tct.data().confirm(event, 'guru','<#page>.discovernow','done');
+        }
+        $tct.data().confirm(event, 'guru','<#page>.credentials','done')
+        $tct.remove();
+        frm.off('.tct')
+      })
+      $tct.on('click','button.actionbutton',function(){frm.trigger('submit')});
+  },500);
+  -->
+  <div>
+    <div class="info-box arrowbox">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.root.credentialsA" default="How can PRTG access your systems?"></span>
+      <span class="text"><#lang key="tct.guru.root.credentialsB" default="Please enter administrator credentials so PRTG can discover more sensors for your devices."></span>
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okdone" default="OK, done!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  id="<#role>-discovernow"
+  data-role="<#role>"
+  data-page=""
+  data-remove-delay="1"
+  style="position:absolute;right: 1vw;"
+  class="<#system type='showhelp' tct='guru' page='@page.discovernow' class='removeme' varexpand='page'>">
+  <!--
+  var $tct = this;
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+
+    $tct.css({
+        'top': $('#windowslogindomain_').offset().top - 70
+      });
+
+    $tct.one('click','.actionbutton', function(event){
+      _Prtg.api.redisCoverWithCredentials().done(function(){
+        $tct.data().confirm(event, 'guru','<#page>.discovernow','done');
+        $tct.find('.info-box').html('<#langjs key="tct.js.okdone" default="OK, an auto-discovery is running!">');
+        $tct.hide(1000).remove();
+      });
+    });
+
+  -->
+  <div>
+    <img src="/images/tct/Greg100x100.png">
+    <div class="info-box ">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.root.autodiscoA" default="Thank you!"></span>
+      <span class="text"><#lang key="tct.guru.root.autodiscoB" default="With these credentials I can discover a lot of new sensors. Do you want to re-initiate the auto-discovery now?"></span>
+
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okdoit" default="OK, do it!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  data-role="<#role>"
+  data-page=""
+  data-remove-delay="1"
+  style="position:absolute;right: 1vw;"
+  class="<#system type='showhelp' tct='guru' page='@page.location' class='removeme' varexpand='page'>">
+  <!--
+  var $tct = this;
+  var frm = $("#objectdataform");
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+    $(window).scrollTop(0);
+
+    $inputElem = frm.find('#location_')
+      .css('border-bottom','1px solid '+ _Prtg.Colors.tct)
+      .one('change',function(){
+        if(this.value !== '')
+          $(this).css('border','');
+      });
+
+    $tct.css({
+        'top': $inputElem.offset().top - 70
+      });
+
+    frm.on("submit.tct",function(event){
+      $tct.data().confirm(event, 'guru','<#page>.location','done')
+      $tct.remove();
+      frm.off('.tct');
+    });
+
+    $tct.on('click.tct','button.actionbutton',function(){frm.trigger('submit')});
+  -->
+  <div>
+    <div class="info-box arrowbox">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.root.locationA" default="Is this your address?"></span>
+      <span class="text"><#lang key="tct.guru.root.locationB" default="Please correct it if necessary, so we can show it on the Geo Map."></span>
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okdone" default="OK, done!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  data-role="<#role>"
+  data-page=""
+  style="position:absolute;right: 1vw;"
+  class="<#system type='showhelp' tct='guru' page='@page' class='removeme' varexpand='page'>">
+  <!--
+    var $tct = this
+      , $menuitem = null;
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+
+    $tct.css({
+        'top': $('#location_').offset().top - 70
+      });
+
+    $tct.one('click.tct','.actionbutton', function(event){
+      $menuitem = $('li[tabid="1"] a');
+      $menuitem
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()-5;off.top+=this.height()-10; return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",$menuitem,'click', function(){
+          $tct.data().confirm(event, 'guru','<#page>','done');
+          $menuitem
+            .tct("mouseMoveEnd",1)
+            .tct("end", function(){$tct.hide().remove();});
+          })
+        .tct("run");
+    });
+  -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="text"><#lang key="tct.guru.myaccount.finished" default="Please follow me back to the device overview!"></span>
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>

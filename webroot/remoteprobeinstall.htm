@@ -1,0 +1,37 @@
+﻿<#system type="denyreadonlyusers">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#if value="a" is="a" then="@dnsname" else="" var="dnsname">
+<div id="main">
+  <div id="content" class="ui-dialog-content">
+    <form id="addremoteprobe" class="prtg-form prtg-plugin assistent" data-plugin="prtg-form">
+      <style>system,textarea[name=allowips_],.remoteprobedisabled,.coremachine{display:none;}</style>
+      <system><#system type="systemsettings"><isremote><#system type="IsRemoteClient"></isremote></system>
+      <fieldset btnText="<#lang key="html.remoteprobeinstall.step1btn" default="Prepare and Download">" wizTitle="<#lang key="html.remoteprobeinstall.step1" default="Are you on the target Windows system?">">
+          <img class="center" src="/images/windows.png">
+          <p><#lang key="html.remoteprobeinstall.winrequired" default="You need a simple Windows 7 computer (or later) to install a Remote Probe. It should be powered on 24/7."></p>
+          <p class="destpc"><#lang key="html.remoteprobeinstall.destpc" default="Please make sure that you are on the computer where you want to install your Remote Probe."></p>
+          <p class="winsystem"><#lang key="html.remoteprobeinstall.notwin" default="We have detected that you are not on a Windows system. You can download the installer here, but you need to execute it on a Windows computer."></p>
+          <p class="prepconnrp"><#lang key="html.remoteprobeinstall.prepconn" default="We will prepare your Probe Connection Settings to allow the Remote Probe to connect."></p>
+          <p class="remoteprobedisabled"><#lang key="html.remoteprobeinstall.remoteprobedisabled" default="We have detected that your PRTG core server configuration does not allow remote probe connections.<br>Please change the configuration for <a href='/systemsetup.htm?tabid=4'>Probe Connection IPs</a> to <b>all IPs available</b> or <b>specify IPs</b> before you continue."></p>
+       </fieldset>
+      <fieldset btnText="<#lang key="html.remoteprobeinstall.step2btn" default="Installation Done">" wizTitle="<#lang key="html.remoteprobeinstall.step2" default="Start Installation">">
+        <img id="downloadbrowser" class="center" src="/images/download_chrome.png">
+        <p class="installrpi"><#lang key="html.remoteprobeinstall.installrpi" default="Please click the Remote Probe Installer file on your downloads bar and follow the instructions."></p>
+        <p class="portchecksuccess"><#lang key="html.remoteprobeinstall.portnote1" default="Once installed, the Remote Probe will connect to the PRTG core server at @dnsname on port 23560."><br>
+        <b><#lang key="html.remoteprobeinstall.portnote2" default="Please allow your firewall two-way TCP communication on this port."></b></p>
+        <p class="coremachine"><#lang key="html.remoteprobeinstall.coremachine" default="We have detected that you are logged in from the machine running the PRTG core server. You cannot install a Remote Probe here. You can download the installer here, but you need to execute it on another Windows computer. For best usability, we recommend that you go to the machine where you want to install the Remote Probe and log in to the PRTG web interface from there to start the installation."></p>
+      </fieldset>
+      <fieldset btnText="<#lang key="html.remoteprobeinstall.step3btn" default="Approve and Auto-Discover">" wizTitle="<#lang key="html.remoteprobeinstall.step3" default="Approve Your New Remote Probe">">
+        <img id="rpconnectsuccess" src="/images/rpi_success.png">
+        <#include file="images\connect_rp.svg">
+        <p class="probeconnwait"><#lang key="html.remoteprobeinstall.waitconn" default="Waiting for Remote Probe to connect…"></p>
+        <p class="probeconnsuccess"><#lang key="html.remoteprobeinstall.waitconnsuccess" default="Congratulations! Your new Remote Probe has connected. Please approve it now to start an automatic network discovery."></p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

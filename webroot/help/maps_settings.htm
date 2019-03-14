@@ -1,0 +1,238 @@
+﻿<!--Maps Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="maps_designer.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="setup.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Maps Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Maps Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Using the Map tabs, you can access all functionalities and settings for a map.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:557px"><a href="map_taps.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Map Tabs" title="Map Tabs" style="width:557px;height:14px;border:none" src="map_taps_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Map Tabs</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="view" class="hmanchor"></a><span class="f_InTopicHeading">View Map</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">View Map</span> tab any time to show a preview of your map.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="designer" class="hmanchor"></a><span class="f_InTopicHeading">Map Designer</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Map Designer</span> tab to edit the contents of your map. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For details, see manual section <span class="f_BoldCustom"><a href="maps_designer.htm" class="topiclink">Map Designer</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Settings</span> tab to open a map's general settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>When using the <span class="f_BoldCustom">Add Map</span> dialog, not all of these settings are available. You can change them later by clicking the <span class="f_BoldCustom">Settings</span> tab.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Map Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Map Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name for the map.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Security Context and Color Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the user account that the map will use for access to monitoring data. The map will only contain objects that the selected <a href="user_access_rights.htm" class="topiclink">user</a> is allowed to view. This setting also affects the <a href="my_account_settings.htm#webinterfacesettings1" class="topiclink">color mode</a> of maps that are displayed without a PRTG login (<a href="template_maps_basic_settings_layout_public.htm#pubgroup" class="topiclink">public maps</a>). In this case, the color mode setting from the security context user is taken.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose a user account from the list. The available users depend on your configuration. By default, the security context is the user account that created the map. PRTG System Administrator users can change this setting.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>Basically, the security context is the minimum access right a user account has when viewing a map. If the security context of a map is PRTG System Administrator, every user account will see all objects on the map, no matter what the particular user rights are. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Map objects of type </span><span class="f_BoldCustom">Data Tables</span><span class="f_ListBulleted">, for example, include entries according to the security context, but the table headings regard to the rights of the particular user account that views the map. Because of this, a user might see more objects in the table itself than denoted in the header. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timezone</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time zone that the map will use for all date-specific options. Select a time zone from the list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tag Filter</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting affects table map objects. Enter one or more tags separated by spaces or commas to include sensors in tables. Only sensors with one of the tags entered here will appear in this map's data tables, including sensors that <a href="inheritance_of_settings.htm" class="topiclink">inherit</a> tags from parent objects. Please enter a string or leave the field empty. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">For some map objects like sunburst and treemap, the tag filter applies to devices, groups, and probes. If you use only tags of sensors, these map objects will not appear on the map. Filtering sunburst and treemap objects with multiple tags may not work properly and is not officially supported.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Use this setting with care because it will affect all tables of the current map!</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="maplayout" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Map Layout</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Map Width</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the width of the map in pixels. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Map Height</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the height of the map in pixels. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Automatic Scaling</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want the map to automatically adapt to your screen size. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Scale map view to fit browser size</span><span class="f_ListBulleted">: The size of the map automatically adapts to the size of your screen. Choose this method if the map is shown on various screens with different resolutions so that it uses the available space in the browser window in the best possible way.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Do not auto-scale map view</span><span class="f_ListBulleted">: The map uses always the size that you define above.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Background Picture</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use a background picture for the map. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use an image in the background of the map</span><span class="f_ListBulleted">: Use a custom background image that you define below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not use a background image</span><span class="f_ListBulleted">: Do not use a background image.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Background Image</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This option is only visible if you enable a background picture above. Click the </span><span class="f_BoldCustom">Select File</span><span class="f_ListBulleted"> button and select an image from your computer or network. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Only images in the format JPG, PNG, and GIF are supported. The file size must be smaller than 20 MB.</span><span class="f_ListBulleted"> If you try to upload other images, you get an error message. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Background Color</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a background color for this map. Either enter a hex color code or choose a color from the color selector. The hex color code field will always display the currently defined color.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="pubgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Public Access</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Public Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if others can see the map. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No public access (map cannot be viewed without login)</span><span class="f_ListBulleted">: Do not allow public access to the map. Only users with both a login to the PRTG web interface and sufficient access rights can see the map.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Allow public access (map can be viewed by using a unique URL)</span><span class="f_ListBulleted">: Allow access to the map using a unique address. The URL contains a key that you can change below. The map will be an interactive public map. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Allow public access, disable all links except for Geo Maps (map can be viewed by using a unique URL)</span><span class="f_ListBulleted">: Allow access to the map using a unique address. The URL contains a key that you can change below. If you choose this option, all links on the map are disabled, so it will be a non-interactive public map.</span><br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>This option does not apply to <a href="geo_maps.htm" class="topiclink">geographical maps</a> embedded in your map. It is not possible to disable the links in map objects that contain a Geo Map. <span class="f_ItalicCustom">Workaround:</span> Place an empty, transparent square object over the Geo Map object and link it to an unrelated URL. </li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Maps with public access are displayed using the color mode from the security context user. See <a href="template_maps_basic_settings_layout_public.htm#basic" class="topiclink">Security Context and Color Mode</a> for more information.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Secret Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if public access is enabled above. The key is automatically generated. It is part of the public URL for the map. You can also enter a customized string. We recommend that you use the default value. For more information on public access, see the </span><span class="f_BoldCustom"><a href="maps_settings.htm#html" class="topiclink">Get HTML</a></span><span class="f_ListBulleted"> section. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The characters comma &quot;</span><span class="f_ItalicCustom">,</span><span class="f_ListBulleted">&quot; and colon &quot;</span><span class="f_ItalicCustom">:</span><span class="f_ListBulleted">&quot; are not allowed in the secret key field!</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object that you are editing. A table with user groups and rights is shown; it contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object does not show up in lists. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings. However, they cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings as well as edit access rights.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="html" class="hmanchor"></a><span class="f_InTopicHeading">Get HTML</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Your PRTG map is like a standalone HTML page. You can make it accessible to others, if you like. Depending on the <span class="f_BoldCustom">Public Access</span> <a href="maps_settings.htm#settings" class="topiclink">setting</a> of your map, a visitor needs to provide PRTG user account login data to view the map, or sees the map immediately using a URL containing a secret key. When using this unique key, you can also include your map on another webpage, embedding it via <span class="f_ItalicCustom">&lt;iframe&gt;</span>. </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Option 1: Link to a web page with the map that requires login credentials</span><br />
+<span class="f_ListBulleted">The shown URL requires login credentials in order to display the map</span>. PRTG asks the user trying to view the map via this URL for login credentials. <br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>In the URL, usually the IP address is given via which the page is available. Maybe a NAT translation is set in your firewall, or you may want to use a domain name or a name from a dynamic DNS service for public access. Please customize the URL you use for access to your needs.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Option 2: Link to a web page that displays the map without a login</span><br />
+<span class="f_ListBulleted">To get the shown URL working for public access without a login, enable </span><span class="f_BoldCustom">Public Access</span><span class="f_ListBulleted"> in the <a href="maps_settings.htm#settings" class="topiclink">settings tab</a> of your map. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>In the URL, usually the IP address is given via which the page is available. Maybe a NAT translation is set in your firewall, or you may want to use a domain name or a name from a dynamic DNS service for public access. Please customize the URL you use for access to your needs.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Option 3: Show a map inside other web pages using an IFRAME</span><br />
+<span class="f_ListBulleted">For your convenience, this shows source code for adding an </span><span class="f_ItalicCustom">iframe</span><span class="f_ListBulleted"> to another webpage. It includes a URL for direct access. Just copy the code and paste it into your webpage code. Also enable </span><span class="f_BoldCustom">Public Access</span><span class="f_ListBulleted"> in the <a href="maps_settings.htm#settings" class="topiclink">settings tab</a>. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>In the URL, usually the IP address is given via which the page is available. Maybe a NAT translation is set in your firewall, or you may want to use a domain name or a name from a dynamic DNS service for public access. Please customize the URL you use for access to your needs.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">While a map is shown via these URLs, you can change the refresh interval any time by hovering over the arrows symbol in the lower-right corner. Choose between <span class="f_BoldCustom">10</span>, <span class="f_BoldCustom">30</span>, or <span class="f_BoldCustom">60</span> seconds, <span class="f_BoldCustom">10</span> minutes or <span class="f_BoldCustom">Refresh</span> now. The map automatically adapts to the size of the browser window if you enable the <a href="maps_settings.htm#settings" class="topiclink">auto-scaling setting</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="comments" class="hmanchor"></a><span class="f_InTopicHeading">Comments</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Comments </span>tab you can enter free text for each object. You can use this function for documentation purposes or to leave information for other users.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="history" class="hmanchor"></a><span class="f_InTopicHeading">History</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">History </span>tab all changes in the settings of an object are logged with a timestamp, the name of the PRTG user who made the change, and a message. The history log retains the last 100 entries.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="delete" class="hmanchor"></a><span class="f_InTopicHeading">Delete</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can delete the entire map any time by clicking the trash can symbol in the upper-right corner.</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG Manual:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Maps—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps_step_by_step.htm" class="topiclink">Maps Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps_designer.htm" class="topiclink">Map Designer</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps_settings.htm" class="topiclink">Maps Settings</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="maps_designer.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="setup.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

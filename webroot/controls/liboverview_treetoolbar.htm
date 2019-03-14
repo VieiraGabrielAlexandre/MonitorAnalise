@@ -1,0 +1,33 @@
+﻿
+    <div class="liboverview-data">
+        <div class="overview-block">
+            <span class="overview-title"><#lang key="html.devicedata.ID" default="ID">:</span>
+            <span class="overview-data">#<#objectid></span>
+        </div>
+        <div class="overview-block-qr">
+            <span class="overview-qr"><div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" data-zoom="12"  title='<#lang key="html.qrcode.tooltip.object" default="Show QR Code">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host=''></div></span>
+        </div>
+
+    </div>
+    <div class="tree-toolbar">
+        <div class="overview-block">
+					<span class="overview-data">
+						<span class="sensors-summary"><#include file="/controls/treesensorswitches.htm"></span>
+						<span class="sensors-total">(<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class="totalsens"><#objectstatus name="totalsens"></span>)</span>
+					</span>
+        </div>
+
+        <div class="overview-block"><#include file="/controls/treeswitches.htm"></div>
+
+        <div class="overview-block size-switch <#system type='groupviewsize' overwriteifnottree='show'>">
+            <span class="overview-title "><#lang key="html.devicedata.sizeby" default="Size by">:</span>
+            <span class="overview-data size-by-switch control <#system type='groupviewsize' overwriteifnottree='prtg-plugin'>" data-plugin="groupviewsize"></span>
+        </div>
+
+        <div class="overview-block searchblock">
+            <div class="treesearchbox">
+                <input tabindex="1" id="treesearch" class="searchstring" title="<#if value="@wingui" is="true" then="ALT&plus;@searchtitle" else="@searchtitle" varexpand="value,then,else">" type="text" value="Search..." defaultvalue="Search..."  name="searchtext">
+                <label for="treesearch" class="ui-icon ui-icon-search ui-icon-gray searchlogo"></label>
+            </div>
+        </div>
+    </div>

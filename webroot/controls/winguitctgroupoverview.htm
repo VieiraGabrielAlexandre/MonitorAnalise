@@ -1,0 +1,10 @@
+﻿<script type="text/javascript">
+   $(document).ready(function(){
+    window.setTimeout("alert(Math.max(document.body.parentElement.offsetHeight,document.body.offsetHeight,document.body.clientHeight));",200);
+});
+</script>
+<#system type='showhelp' tct="theater" page="groupoverviewcolumnrigth" isreadonly="false" version="trial" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+<#system type='showhelp' tct="theater" page="c-groupoverviewcolumnrigth" isreadonly="false" version="commercial" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+

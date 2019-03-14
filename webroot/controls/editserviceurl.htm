@@ -1,0 +1,27 @@
+﻿<div>
+  <#langjs key="html.dialog.serviceurlempty.text" default="There is no service URL specified for this device. Enter a URL that will be used in future.">
+  <br/>
+  <br/>
+  <form action="/api/setobjectproperty.htm"
+        method="post"
+        title="<#langjs key="html.dialog.serviceurlempty.title" default="Service URL">"
+        class="prtg-form prtg-plugin"
+        data-plugin="prtg-form">
+
+    <fieldset>
+      <div class="control-group">
+        <label class="control-label no_help" for="serviceUrl"><#langjs key="html.dialog.serviceurlempty.info" default="Service URL"></label>
+        <div class="controls" data-placement="right">
+          <input class="text" autofocus type="text" value="http://" id="serviceUrl" name="content">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="submitbuttonboxanchor">
+      <div class="submitbuttonbox">
+        <input class="submit btngrey button" type="submit" value="<#lang key="html.global.save" default="Save">">
+        <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+﻿<#checkobjecttype objecttype="library">
+
+<#lang key="html.libmanag.help.title" default="Manage a Library" var="helptitle">
+<#lang key="html.libmanag.help.text3" default="Here you can see the library on the left and the device tree on the right. Use drag-and-drop to add and remove objects from your library.<br><br><a href='/help/libraries_manage.htm' target='_blank'><b>Help: Manage Libraries</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#inserturlparam parameter="wingui" var="wingui">
+<#lang key="html.sensortree.searchtitle" default="Press Enter to search" var="searchtitle">
+<div class="loading panel col-panel">
+
+	<div id="layout" class="library panel tab-management">
+		<div class="lib-overviewsmalldata">
+		<#include file="/controls/liboverview_treetoolbar.htm" displaymode='overview'>
+		</div>
+
+		<div id="dropTarget" class="panel col-panel strectch-panel managelibraryleft tree-wrapper treeiseditable treeissmall">
+			<div class="centeredHint"><#langjs key="html.libmanag.hint" default="<b>Hint:</b> Please use drag&drop to add monitoring objects from the device tree on the right to your library on the left"></div>
+			<div id="objecttreecontainer" class="bordered"> 
+				<#include file="/controls/libtree.htm"
+		      controlsparent=''
+		      hidecontrols='true'
+		      dataview='sensortreenormal'
+					displaymode='managed'>
+	    </div>
+			<div id="sensortreelinks">
+				<p style="<#system type="hideforreadonlyusers">">
+		      <a class="actionbutton" onclick='_Prtg.objectTools.addObject.apply(this, ["new", "library",{"targetid": <#objectid>,"addid":<#objectid>}]);return false;'>
+		      		<span class="ui-icon ui-icon-circle-plus"></span><#lang key="html.global.addlibraynode" default="Add Library Node">
+		      </a>
+					<a class="actionbutton libaddlib" data-element='{"context":{"id":<#objectid>,"row":0}}'>
+						<span class="ui-icon ui-icon-circle-plus"></span><#lang key="html.global.addgroup" default="Add Group">
+					</a>
+				</p>
+			</div>
+		</div>
+		<div id="roottree" class="bordered panel col-panel strectch-panel managelibraryright tree-wrapper treeisreadonly treeissmall">
+			<#include file="/controls/roottree.htm"
+				dataplugin='roottree'
+				rootid='0'
+				nofullsize='true'
+				layout='#roottree'
+				dndtarget='#layout'
+				dndelements='.libTree'
+				dndplugin='.libTree'
+				hidecontrols='false'
+				dataview='sensortreenormal'
+				displaymode='overview'
+				showtoppanel='false'
+				borderBottomWidth='0'
+				class='managedSensorTree content'
+				controlsParent='.lib-overviewsmalldata'>
+		</div>
+	</div>
+</div>

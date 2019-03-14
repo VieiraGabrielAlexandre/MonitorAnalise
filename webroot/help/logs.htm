@@ -1,0 +1,121 @@
+﻿<!--Logs-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_information.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tickets.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Logs</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Logs</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Logs</span> show all past activities and events of your PRTG monitoring setup. This is useful for researching past user activities, system events, and, for example, to check whether messages were sent. In a typical setup, a huge amount of log data is produced. Because the activity of every single object is recorded, you can use this information to check if your setup works exactly as desired. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are several filters available to make navigating the log entries easier. See the <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span> section for more information.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="logslist.png"><img id="TOGGLE0186A1" class="image-toggle" alt="List with Log Entries" title="List with Log Entries" style="width:600px;height:404px;border:none" src="logslist_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">List with Log Entries</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">There are two options to open the logs list: Either you click the <span style="font-weight: bold;">Log </span>tab on the detail page of a probe, group, device, or sensor, or you choose the <span style="font-weight: bold;">Logs</span> item in the main menu. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe, group, device, and sensor pages have tabs that you can use to navigate between the different options. For example, you can view your network's status, view monitoring results, or change settings. </span></p>
+<p class="p_ImageCaption" style="page-break-inside: avoid;"><span class="f_ImageCaption">&nbsp;</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:558px"><a href="tabs-bar_group2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Tabs Bar on Group and Probe Level" title="Tabs Bar on Group and Probe Level" style="width:558px;height:12px;border:none" src="tabs-bar_group2_zoom48.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Tabs Bar on Group and Probe Level</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Log</span> tab to show a table list with all log information <span class="f_ItalicCustom">on this object</span>. This is a more detailed log than the system log available via the <span class="f_BoldCustom">Logs | All </span>option in <a href="main_menu_structure.htm#logs" class="topiclink">main menu</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="menu" class="hmanchor"></a><span class="f_InTopicHeading">Logs (Main Menu)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click <span class="f_BoldCustom">Logs</span> in the <a href="main_menu_structure.htm#logs" class="topiclink">main menu bar</a> to show a table list of all system log entries in your configuration. <span class="f_ItalicCustom">Hover</span> over <span style="font-weight: bold;">Logs</span> and select another option to narrow down your log search. Choose between:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Logs</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">All</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a <a href="working_with_lists.htm" class="topiclink">table list</a> with log information for all objects in your configuration, newest first.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Status Changes ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list with log information for certain status changes only. </span><span class="f_ItalicCustom">Hover</span> over <span class="f_BoldCustom">Status Changes </span><span class="f_ListBulleted">to show other menu items. Follow the menu path to view log entries with a special value in the </span><span class="f_BoldCustom">Status </span><span class="f_ListBulleted">field only. Select between </span><span class="f_BoldCustom">Up &amp; Down </span><span class="f_ListBulleted">(shows entries with either </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">Status</span><span class="f_ListBulleted"> field), </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Paused/Resumed</span><span class="f_ListBulleted"> (shows entries with either </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Resumed</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">Status</span><span class="f_ListBulleted"> field), or </span><span class="f_BoldCustom">Acknowledged Alarms</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">System Events ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list with log information regarding certain system event types only. </span><span class="f_ItalicCustom">Hover</span> over <span class="f_BoldCustom">System Events </span><span class="f_ListBulleted">to show other menu items. </span><span class="f_ListBulleted">Select between the following event types: </span><span class="f_BoldCustom">Probe Related</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Cluster Related</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Auto-Discovery</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Notifications</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Status Messages</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Object History</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list with log information about changes to the PRTG setup and deletions of subordinate system objects. The object history page has a tab-like interface. Using the tabs you can navigate through various sub-pages in order to view the changes to all related settings and deletions of objects. Select between the following tabs: </span><span class="f_BoldCustom">My Account</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">System Administration</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Notifications</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Schedules</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">User Accounts</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">User Groups</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Reports</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Libraries</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Maps</span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can open a specific tab directly with the context button </span><span class="f_BoldCustom">History</span><span class="f_ListBulleted"> in the <a href="general_layout.htm#page" class="topiclink">page header bar</a> on the corresponding pages.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: The logs page in the PRTG web interface does not load. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/77329" target="_blank" class="weblink">https://kb.paessler.com/en/topic/77329</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_information.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tickets.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

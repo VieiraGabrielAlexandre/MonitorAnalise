@@ -1,0 +1,38 @@
+﻿<#system type="denyfornonsvs">
+<#lang key="html.autoupdate.title" default="Auto-Update" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle" >
+<div class="autoupdate-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <h1 class="<#clusterdependent insertfor="failovernode" insertcontent="hide">"><b><#lang key="html.autoupdate.head3" default="Auto-Update"></b></h1>
+    <div id="content" class="limitedcontentwidth" style="display:none;<#clusterdependent insertfor="failovernode" insertcontent="display:block;">">
+        <h1><#lang key="html.autoupdate.failovererror1" default="Sorry, Auto-Update is not available on this Failover Node!"></h1>
+        <wingui-hidden>
+        <div class="tab-container">
+            <p><#lang key="html.autoupdate.failovererror2" default="Please select the Master-Node:"></p>
+            <p><#clusterswitchmenuitems skiptagfornoncluster="true"></p>
+        </div>
+        </wingui-hidden>
+    </div>
+
+    <div id="content" class=" prtg-plugin <#clusterdependent insertfor="failovernode" insertcontent="hide">" data-plugin="autoupdate">
+            <div class="buttonbox ">
+            <#include file="includes\linkpagebutton.htm">
+        </div>
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+        <ul class="nav-tabs">
+            <li tabid="1" tab-name="autoupdate" class="tab-active"><a href="/controls/autoupdatepage.htm"><i class="glyph-gauge"></i><span class="text"><#lang key="html.autoupdate.status" default="Status"></span></a></li>
+            <li tabid="2"><a href="/controls/loadlog.htm?count=50&columns=datetime%2Cstatus%2Cmessage&filter_status=706&filter_status=1&filter_status=8&filter_status=719&filter_status=720"><i class="glyph-list-alt"></i><span class="text"><#lang key="html.autoupdate.Log" default="Log"></span></a></li>
+            <li tabid="3" class="tab-spacing tab-dark hideforreadonly"><a href="/controls/objectdata.htm?id=810&tabname=autoupdate"><i class="glyph-cog"></i><span class="text"><#lang key="html.autoupdate.Settings" default="Settings"></span></a></li>
+        </ul>
+        <div class="tab-container"></div>
+    </div>
+    <#lang key="html.autoupdate.help.title1" default="Auto-Update" var="helptitle">
+    <#lang key="html.autoupdate.help.text" default="Here you can see available software updates, view detailed information about updates like release notes, and download updates. You can also select a different release channel, for example, if you want earlier access to new features to test them.<br><br><a href='/help/auto_update.htm' target='_blank'><b>Help: Auto Update</b></a>" var="helptext">
+    <#system type='showhelp' var='showhelp'>
+    <#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

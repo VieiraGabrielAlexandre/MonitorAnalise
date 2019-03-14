@@ -1,0 +1,144 @@
+﻿<!--Recommended Sensors-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="similar_sensors.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="object_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Recommended Sensors</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Recommended Sensors</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Recommended Sensors</span> function is one of the options that PRTG supports you in setting up a comprehensive monitoring. PRTG can explore any device and check which sensors you have already created. If it finds useful sensors that can <a href="review_monitoring_data.htm" class="topiclink">complete your monitoring</a> and are not yet created, you will find a list of recommended sensors for your specific device. By adding these sensors, you will not miss important monitoring data anymore!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>You cannot use this feature on the <span class="f_BoldCustom">Hosted Probe</span> of a<span class="f_ImageCaption"> </span>PRTG hosted by Paessler instance. You can use this feature on <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probes</a>.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:594px"><a href="recommended_sensors.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Recommended Sensors on Device Overview Tab" title="Recommended Sensors on Device Overview Tab" style="width:594px;height:368px;border:none" src="recommended_sensors_zoom48.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Recommended Sensors on Device Overview Tab</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="guide" class="hmanchor"></a><span class="f_InTopicHeading">Get Sensor Recommendations</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You want to know which sensors can complete the monitoring of your devices? By default, PRTG recommends sensors for any device that you add to PRTG and shows the suggested sensor types for it on the <span style="font-weight: bold;">Overview</span> tab of the device, as long as your installation contains less than 5,000 sensors in total. All you have to do is click the <span style="font-weight: bold;">Add These Sensors</span> button to enhance your monitoring experience. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you want to manually start the detection engine for sensor recommendations on any desired device, follow the steps below.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can see the time passed since the last execution of the sensor recommendation in the <a href="general_layout.htm#page" class="topiclink">page header bar</a> on the <span style="font-weight: bold;">Overview</span> tab of this device.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="step1" class="hmanchor"></a><span class="f_InTopicHeading">Step 1: Choose the Device</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Open the <span style="font-weight: bold;"><a href="review_monitoring_data.htm#overview" class="topiclink">Overview</a></span> tab of the device that you want to analyze.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe, group, device, and sensor pages have tabs that you can use to navigate between the different options. For example, you can view your network's status, view monitoring results, or change settings.</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:580px"><a href="tabs-bar_sensors.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Tabs Bar on Sensor Pages" title="Tabs Bar on Sensor Pages" style="width:580px;height:12px;border:none" src="tabs-bar_sensors_zoom50.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Tabs Bar on Sensor Pages</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="step2" class="hmanchor"></a><span class="f_InTopicHeading">Step 2: Recommend Now</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To start the analysis of your device, click the <span class="f_BoldCustom">Recommend Now</span> button or choose the option <span class="f_BoldCustom">Recommend Now</span> in the <a href="context_menus.htm#device" class="topiclink">context menu</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you do not see the <span class="f_BoldCustom">Recommend Now</span> option, make sure that the sensor recommendation is enabled in the <span class="f_ListBulleted" style="font-weight: bold;"><a href="monitoring_settings.htm#recommendergroup" class="topiclink">System Administration—Monitoring</a></span> settings. Probe devices do not offer this option.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Depending on the complexity of your device, it can take some time until you see the results of the analysis. Stay tuned!</p>
+<div class="p_Normal" style="page-break-inside: avoid;"><div style="margin:0;width:385px"><a href="recommended_sensors_investigating.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Recommended Sensors Investigation" title="Recommended Sensors Investigation" style="width:385px;height:116px;border:none" src="recommended_sensors_investigating_zoom70.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Recommended Sensors Investigation</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG runs the device analysis in the background with low priority to prevent potential performance issues. Consequently, the recommended sensors analysis can take more time than expected if PRTG needs resources to ensure gapless monitoring of your network in the first place. By default, the sensor recommendation engine starts automatically when you add a new device, when you do not have more than 5,000 sensors, or when the last analysis was executed more than 30 days ago. You can change these settings in the <span class="f_ListBulleted" style="font-weight: bold;"><a href="monitoring_settings.htm#recommendergroup" class="topiclink">System Administration—Monitoring</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>To recommend <a href="available_sensor_types.htm#snmp" class="topiclink">SNMP sensors</a> for a device, the detection engine uses the SNMP version that you defined in the <span style="font-weight: bold;"><a href="device_settings.htm#cred_snmp" class="topiclink">Credentials for SNMP Devices</a></span> section of the device settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="step3" class="hmanchor"></a><span class="f_InTopicHeading">Step 3: Get the Results</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">After analyzing your device, PRTG suggests a list of sensors that are useful for a more comprehensive monitoring.</p>
+<div class="p_Normal" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="recommended_sensors_result.png"><img id="TOGGLE0186A4" class="image-toggle" alt="List of Recommended Sensors" title="List of Recommended Sensors" style="width:600px;height:173px;border:none" src="recommended_sensors_result_zoom57.png"/></a><p style="text-align:center"><span class="f_ImageCaption">List of Recommended Sensors</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The list of recommended sensors provides the following information:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Recommended Sensors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; height:16px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; height:16px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows which <a href="priority_and_favorites.htm" class="topiclink">priority</a> the suggested sensors will have when you add them. The recommended sensors table is sorted by priority, beginning with top priority (5***** stars) in the first row.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can manually change the priority of a sensor after adding it.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensors</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the suggested sensors and the number of sensors from one type PRTG recommends for this device (for example, you might want to add a sensor from the type </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic</a></span><span class="f_ListBulleted"> multiple times because of several network interfaces). </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Total Sensors</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the total number of suggested sensors per table row. These sensors have the same priority.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Links</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Displays an </span><span class="f_BoldCustom">Add These Sensors</span><span class="f_ListBulleted"> button for every table row. Click to automatically add the sensors listed in this table row to the device.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The detection engine checks if a certain sensor type currently exists on your device and recommends that you add this sensor if it does not exist. If this sensor type already existed previously on the device but you have deleted it, PRTG will suggest this sensor type again. Please ignore the suggestion of this sensor type or follow <a href="recommended_sensors.htm#step4" class="topiclink">Step 4</a>.</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="step4" class="hmanchor"></a><span class="f_InTopicHeading">Step 4: Add Recommended Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Add These Sensors</span> button in a table row to add all sensors in this row to the analyzed device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you want to add <span class="f_BoldCustom">all</span> suggested sensors regardless of their priority, click every <span class="f_BoldCustom">Add These Sensors</span> button in the recommended sensors table. If you want to add only <span class="f_BoldCustom">some</span> of the sensors of a certain priority and not all of them, please click <span class="f_BoldCustom">Add These Sensors</span> first and then <a href="context_menus.htm#sensor" class="topiclink">delete</a> or <a href="pause.htm" class="topiclink">pause</a> the ones you do not need.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Settings for the Recommended Sensors Analysis</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also adjust the recommended sensors detection. Go to<span class="f_ListBulleted"> </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="monitoring_settings.htm#recommendergroup" class="topiclink">System Administration—Monitoring</a></span><span class="f_ListBulleted"> to select</span> whether</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">you want PRTG to decide on the sensor recommendation (default), or</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">you want the recommended sensors to always be displayed, or</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">you want to turn off the recommended sensors function.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">If you use the default setting, PRTG uses an intelligent assistant that takes care of your specific network monitoring situation. PRTG automatically counts the number of sensors you have and decides whether to start the recommended sensors detection or not. It will not start if your PRTG installation comprises 5,000 sensors or more to prevent performance issues. We recommend that you set this default option so you do not miss any important monitoring data about your network, without risking running into performance issues.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Disable the recommended sensors feature if you encounter performance issues or if you do not want to display this information on device overview tabs.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Do you want to get more help with choosing and creating useful sensors? This is possible in PRTG with the <span style="font-weight: bold;"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span>! You can activate it when <a href="add_a_device.htm#discoverytypegroup" class="topiclink">adding a new device</a> to PRTG, <a href="auto_discovery.htm#run" class="topiclink">manually at any time</a>, or choose if you want PRTG to <a href="auto_discovery.htm#discoverytypegroup" class="topiclink">analyze a whole section</a> of your network, for example, devices covered by a certain IP range.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The auto-discovery has a higher priority than the recommended sensors detection. If both are active, PRTG will queue the sensor recommendation and execute the auto-discovery first.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="similar_sensors.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="object_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

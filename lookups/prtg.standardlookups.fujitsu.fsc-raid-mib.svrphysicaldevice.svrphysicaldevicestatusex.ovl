@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrphysicaldevice.svrphysicaldevicestatusex" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="None" value="2">
+        NoDisk
+      </SingleInt>
+      <SingleInt state="Ok" value="3">
+        Available
+      </SingleInt>
+      <SingleInt state="OK" value="4">
+        Operational
+      </SingleInt>
+      <SingleInt state="Error" value="5">
+        Failed
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Rebuilding
+      </SingleInt>
+      <SingleInt state="OK" value="7">
+        GlobalHotSpare
+      </SingleInt>
+      <SingleInt state="OK" value="8">
+        DedicatedHotSpare
+      </SingleInt>
+      <SingleInt state="None" value="9">
+        Offline
+      </SingleInt>
+      <SingleInt state="None" value="10">
+        UnconfiguredFailed
+      </SingleInt>
+      <SingleInt state="Error" value="11">
+        FailedMissing
+      </SingleInt>
+      <SingleInt state="OK" value="12">
+        CopyBack
+      </SingleInt>
+      <SingleInt state="OK" value="13">
+        RedundantCopy
+      </SingleInt>
+      <SingleInt state="OK" value="14">
+        Waiting
+      </SingleInt>
+      <SingleInt state="OK" value="15">
+        Preparing
+      </SingleInt>
+      <SingleInt state="Warning" value="16">
+        Migrating
+      </SingleInt>
+      <SingleInt state="OK" value="17">
+        JBOD
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

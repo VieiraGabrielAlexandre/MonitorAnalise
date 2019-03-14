@@ -1,0 +1,22 @@
+<#lang key="html.mailtemplates.welcomemail.line0" default="Welcome to PRTG!">
+
+<#lang key="html.mailtemplates.welcomemail.line1" default="We are glad to help you keep your network up and running! Whenever the sensors in your installation discover outages or suspicious values, PRTG can send notifications to alert you.">
+ 
+<#lang key="html.mailtemplates.welcomemail.line2" default="IMPORTANT: Please acknowledge the reception of this mail using the following link to make sure you will receive alerts correctly in the future:">
+
+<#lang key="html.mailtemplates.welcomemail.line3" default="Please acknowledge the reception of this mail using the following link:">
+%0:s
+
+
+<#lang key="html.mailtemplates.welcomemail.line4" default="What's next?">
+
+<#lang key="html.mailtemplates.welcomemail.line5" default="Have you already set up PRTG? Thanks to PRTG's smart auto-discovery you'll see your network and the most important sensors almost immediately.">
+ 
+<#lang key="html.mailtemplates.welcomemail.line6" default="If you have questions about PRTG or network monitoring, please have a look at our support resources. You will find FAQs, video tutorials, webcasts, manuals and many more:">
+https://www.paessler.com/support
+ 
+<#lang key="html.mailtemplates.welcomemail.line7" default="You don't have the time to set up and deploy PRTG by yourself or you need local support? Get in contact with a certified partner near you:">
+https://www.paessler.com/partners/contact-by-partner
+ 
+<#lang key="html.mailtemplates.welcomemail.line8" default="Enjoy using PRTG,">
+<#lang key="html.mailtemplates.welcomemail.line9" default="Your Paessler Team">

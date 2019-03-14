@@ -1,0 +1,14 @@
+﻿
+
+<div class="map_object map_graph" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+
+	  <div id="map-geomap-box" class="geomap <#selectionlist content="geomapprovider">">
+			<#selectionlist content="locationlist" id="<@objectid>" domobjectid="map-geomap-box" width="<@width>" height="<@height>" maptype="roadmap" maxlegenditems="5">	    
+		</div>
+
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>
+

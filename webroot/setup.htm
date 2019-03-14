@@ -1,0 +1,31 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">
+<#lang key="html.setup.title" default="Setup" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<#isadmin var="isadmin">
+
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>" class="setuppage gradientbg">
+  <div id="content" class="ms-fix">
+    <div class="setupcontainer panel">
+      <div class="setupview">
+        <#include file="controls\accountoverview.htm">
+      </div>
+      <div class="news-panel panel col-panel">
+        <div class="box">
+          <div class="logo-box">
+            <div class="prtg-logo-big prtg-logo-themed"></div>
+          </div>
+        <#include file="public\newsfeed.htm">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<#lang key="html.setup.help.title" default="Setup" var="helptitle">
+<#lang key="html.setup.help.text" default="The options here allow you to make many different settings for your PRTG configuration. You can manage your system and use administrative tools to restart your server and probes, for example. You can also check your PRTG status information, change your account settings and notifications, download optional tools, contact our support team, and give us feedback." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

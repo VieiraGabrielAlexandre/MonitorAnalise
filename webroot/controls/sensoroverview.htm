@@ -1,0 +1,148 @@
+﻿<#checkobjecttype objecttype="sensor">
+
+<div id="overview_sensor" class="<#udpsensor syslog="no-" trap="no-">flex-layout">
+  <div class="panel space-between">
+    <div class="panel col-panel stretch-items responsiveobjectoverview_panelA"> <!-- Left part-->
+      <div class="tct-box status-smallScreen">
+        <#system type='showhelp' tct="theater" page="sensoroverview" isreadonly="false" version="trial" var="tctfile">
+        <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        <#system type='showhelp' tct="theater" page="c-sensoroverview" isreadonly="false" version="commercial" var="tctfile">
+        <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        <#system type='showhelp' tct="theater" page="p-sensoroverview" isreadonly="false" version="podtest" var="tctfile">
+        <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        <#system type='showhelp' tct="theater" page="pc-sensoroverview" isreadonly="false" version="podpayed" var="tctfile">
+        <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      </div>
+      <div class="sensoroverview prtg-plugin status-smallScreen" data-plugin="status">
+        <#include file="controls/sensoroverviewsmalldata.htm">
+      </div>
+
+      <div class="responsiveobjectoverview_panel1"> <!-- narrow: above panel 2; wide: on the right -->
+        <div class="sensoroverviewtoplistspreviews prtg-plugin clear" style="<#toplisttabstyle>" data-plugin="toplists">
+          <div class="refresh-on-change" refreshurl="/controls/toplists.htm?id=<#objectid>">
+            <#alltoplistinclude file="controls/toplistpreview.htm">
+          </div>
+          <div class="sensoroverviewtoplist-add">
+              <button title='<#langjs key=" js.common.add " default="Add " >' class="toplistsettings add" data-id="<#objectid>"
+                data-subid="new" style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+                <#lang key="html.toplists.addToplist" default="Add Toplist"/>
+              </button>
+          </div>
+        </div>
+        <div style="position:relative">
+          <div id="channelvalues" data-plugin="channelgauges" class="prtg-plugin" data-primarychannel='<#objectproperty name="primarychannel" show="number">'
+           data-objectid="<#objectid>" data-type="channels" data-sensortype="<#objectproperty name="sensorkind=textraw">">
+            <!--
+            {
+            "objects":<#table output='json'
+                      noraw='1'
+                      content='channels'
+                      count='*'
+                      sortby='name'
+                      columns='name=textraw,info=treejson,minimum,maximum,condition,lastvalue'>
+            }
+            -->
+          </div>
+        </div>
+      </div>
+      <div class="responsiveobjectoverview_panel2"> <!-- narrow: below panel 1; wide: in the middle-->
+
+        <div id="displaytable" class="clear table-wrapper">
+          <#cluster skiptagfornonclusterobject="true" type="state" var="title2">
+          <div class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagforclusterobject="true" tableid="channeldisplaytable" content="channels"
+            showhide="1" columns="name,objid,lastvalue_,minimum,maximum,links" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+          </div>
+          <div class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagfornonclusterobject="true" tableid="channeldisplaytablecluster" content="channels"
+            columns="name,objid,lastvalue_,links" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+          </div>
+          <div style="<#clusterdependent showfor='clustertreeobject'>" class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagfornonclusterobject="true" varexpand="tabletitle" tabletitle="@title"
+            tableid="clustertable" content="clustervalues" columns="clusternode,status,lastvalue,message"
+            sortby="member" sortable="false" links="false" refreshable="true" tools="edit">
+          </div>
+
+          <div class="<#udpsensor syslog="prtg-plugin" trap="prtg-plugin" flow="prtg-plugin"> udpmessagepreview" data-plugin="prtg-udpmessages" data-objid="<#inserturlparam parameter="id">" data-preview="true" style="<#udpsensor none="display: none">" data-udptype="<#udpsensor syslog="syslog" trap="trap" flow="flow">" data-columns="<#udpsensor trap="datetime,source,host,message,value,msgid,name,knowntime,condition" syslog="datetime,source,message,value,host,knowntime,condition,tags,location,name,procid,msgid">">
+
+              <div class="tabletitle" style="<#udpsensor trap="display: none" flow="display: none">">Syslog messages</div>
+              <div class="tabletitle" style="<#udpsensor syslog="display: none" flow="display: none">">Trap messages</div>
+              <div class="tabletitle"style="<#udpsensor syslog="display: none" trap="display: none">">Flows</div>
+
+            <div class="udpmessages-output">
+              <p class="loading"></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="<#system type="correlationstatus" show="hideifoff" codeifoff="display: none;">" class="prtg-plugin clear table-wrapper" data-plugin="prtg-table">
+          <#lang key="html.sensoroverview.correlation1" default="Similar Sensors" var="cortitle">
+          <#table content="correlation" tableid="correlationtable2" columns="value,channel,correlatedsensor" sortby="-value" varexpand="tabletitle" tabletitle="@cortitle" count="10" sortable="false" links="false" refreshable="true">
+          <#objectproperty name="sensorinfo" show="oskdef">
+        </div>
+		<div style="<#hidefornonadmins>">
+        <div style="<#system type="correlationstatus" show="hideifoff" codeifon="display: none;">">
+          <div id="oskhelpbox" class="oskhelpbox">
+            <div>
+              <#lang key="html.sensor.overview.similarsensors.infotext1" default="The similar sensors analysis is a heuristic calculation that shows similar behavior of all sensors across your entire PRTG configuration. This way, PRTG can detect relationships between different components in your network that you might have never thought of and optimize your sensor usage.">
+              <br/>&nbsp;
+            </div>
+            <div class="helpheader"><b><#lang key="html.sensor.overview.similarsensors.infotext2" default="Why can't I see any sensor similarities here?"></b></div>
+            <ul>
+              <li>
+                <a href="systemsetup.htm?tabid=2" target="_blank"><#lang key="html.sensor.overview.similarsensors.infotext3" default="Similar Sensors Analysis is turned off because of your current configuration. You can enable the analysis in section Similar Sensors Detection of PRTG's System Administration"></a>
+              </li>
+              <li>
+                <a href="help/similar_sensors.htm" target="_blank"><#lang key="html.sensor.overview.similarsensors.infotext4" default="For more information about Similar Sensors Analysis, please see PRTG Manual: Similar Sensors."></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+		</div>
+      </div>
+
+  </div>
+    <div class="panel col-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+      <div class="tct-box status-bigScreen">
+      <#system type='showhelp' tct="theater" page="sensoroverview" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="c-sensoroverview" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="p-sensoroverview" isreadonly="false" version="podtest" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="pc-sensoroverview" isreadonly="false" version="podpayed" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      </div>
+
+      <div class="sensoroverview prtg-plugin overview-list status-bigScreen" data-plugin="status">
+        <#include file="controls/sensoroverviewsmalldata.htm">
+      </div>
+      <div class="map-panel">
+      <div class="graphbox">
+      	<a href="/sensor.htm?id=<#objectid>&tabid=2">
+        <#sensor type="graph" forcesvg="true" graphid="0" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="400" height="205" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+      	<a href="/sensor.htm?id=<#objectid>&tabid=3">
+        <#sensor type="graph" forcesvg="true" graphid="1" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="400" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+      	<a href="/sensor.htm?id=<#objectid>&tabid=4">
+        <#sensor type="graph" forcesvg="true" graphid="2" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="400" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+      	<a href="/sensor.htm?id=<#objectid>&tabid=5">
+        <#sensor type="graph" forcesvg="true" graphid="3" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="400" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+       <#sensor type="legend" width="380" maxwidth="400">
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>

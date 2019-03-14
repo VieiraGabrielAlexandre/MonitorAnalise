@@ -1,0 +1,28 @@
+﻿<!--Data Tables: Primary toplist of a sensor-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="sensor" nicemessage="true"  id="<@objectid>">
+
+<div class="toplistcontainer" style="overflow:hidden">
+
+<p><#objectproperty name="name" id="<@objectid>" show="link">: <b><#objectproperty type="toplistname" id="<@objectid>" topnumber="live"></b>, <#toplistperiodheader id="<@objectid>" topnumber="live"></p>
+
+<#table tableid="topdatatable" 
+        id="<@objectid>"
+        topnumber="live"
+		count="100" 
+		content="topdata" 
+		columns="position,value_,minigraph" 
+		sortby="-value_2V" 
+		sortable="false" 
+		links="false" 
+		infoheader="true" 
+		display="extendedheaders" 
+		showzoomlink="false"
+		>        
+
+</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

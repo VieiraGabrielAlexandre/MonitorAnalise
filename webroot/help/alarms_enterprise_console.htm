@@ -1,0 +1,112 @@
+﻿<!--Alarms-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensors_enterprise_console.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps_enterprise_console.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Alarms</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Alarms</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Enterprise Console has a tab-like interface. Using the tabs you can navigate through various pages with information about your monitored objects, such as your network status and monitoring results, for example, as well as access maps, reports, tickets and settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:550px"><a href="ec_tabs.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Enterprise Console Menu Tabs Bar" title="Enterprise Console Menu Tabs Bar" style="width:550px;height:21px;border:none" src="ec_tabs_zoom85.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Enterprise Console Menu Tabs Bar</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">There is documentation available for the following tabs:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="devices_enterprise_console.htm" class="topiclink">Devices</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_enterprise_console.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensors_enterprise_console.htm" class="topiclink">Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="alarms_enterprise_console.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="maps_enterprise_console.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="reports_enterprise_console.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="logs_enterprise_console.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="tickets_ec.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="setup_enterprise_console.htm" class="topiclink">Setup</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="search_results_enterprise_console.htm" class="topiclink">Search Results</a></span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="alarms" class="hmanchor"></a><span class="f_InTopicHeading">Alarms Menu Tab</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">Alarms</span> tab you can show the alarms of <span class="f_ItalicCustom">all</span> active PRTG core servers. To do so, select <span class="f_BoldCustom">All PRTG Servers</span> from the server selection in the upper-right corner.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The alarms list shows all sensors that are currently in a <span class="f_BoldCustom">Down</span>, <span class="f_BoldCustom">Down (Partial)</span>, <span class="f_BoldCustom">Down (Acknowledged)</span>, <span class="f_BoldCustom">Warning</span>, or <span class="f_BoldCustom">Unusual </span>status. Sensors in other states (for example, <span class="f_BoldCustom">Up</span>, <span class="f_BoldCustom">Paused</span>, or <span class="f_BoldCustom">Unknown</span>) do not appear here. This is useful for keeping track of all irregularities in your network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Using the options <span class="f_BoldCustom">Error</span>, <span class="f_BoldCustom">Warning</span>, and <span class="f_BoldCustom">Unusual</span>, you can hide and show sensors in the respective status by removing and adding a check mark. When choosing <span class="f_BoldCustom">Error</span>, this includes sensors in the states <span class="f_BoldCustom">Down</span>, <span class="f_BoldCustom">Down (Partial)</span>, and <span class="f_BoldCustom">Down (Acknowledged)</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click <span class="f_BoldCustom">Show as Gauges</span> to show the sensors on the <span class="f_BoldCustom">Alarms</span> tab represented with <a href="review_monitoring_data.htm#overview" class="topiclink">gauges</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If the list has more than one entry, you can also sort the items by the contents of a certain column. To sort, simply click once or twice on the header of the column you want to sort by.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">From this list view, you can select multiple items to apply the same action to them, for example, <span class="f_BoldCustom">Edit | Scan Now</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can select multiple items by the following means (you can also combine them):</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click and hold your left mouse key while pointing to the lines you want to select</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Hold the </span><span class="f_ItalicCustom">Ctrl</span><span class="f_ListBulleted"> key while clicking to toggle the selection status of a single line</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click a line and hold the </span><span class="f_ItalicCustom">Shift</span><span class="f_ListBulleted"> key while clicking another line to select all lines in between.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="acknowledge" class="hmanchor"></a><span class="f_InTopicHeading">Acknowledge Alarm</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">An acknowledged alarm shows up in the alarms list as &quot;acknowledged&quot; (see <span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span>) and will not <a href="sensor_notifications_settings.htm" class="topiclink">trigger</a> any more <a href="notifications.htm" class="topiclink">notifications</a>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If the alarm condition clears, the sensor usually returns to an <span class="f_BoldCustom">Up</span> status immediately with the next sensor scan.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To acknowledge an alarm, right-click a sensor entry and choose <span class="f_BoldCustom">Acknowledge Alarm...</span> from the context menu, enter a message and click the <span class="f_BoldCustom">OK</span> button. The message will appear in the last message value of the sensor. You can choose between: <span class="f_BoldCustom">Acknowledge Indefinitely...</span>, acknowledge <span class="f_BoldCustom">For 5 Minutes...</span>, <span class="f_BoldCustom">For 15 Minutes...</span>, <span class="f_BoldCustom">For 1 Hour...</span>, <span class="f_BoldCustom">For 3 Hours...</span>, <span class="f_BoldCustom">For 1 Day...</span>, or <span class="f_BoldCustom">Until...</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you choose <span class="f_BoldCustom">Until...</span> a dialog box appears:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Acknowledge Alarm until</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Selected Objects</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the sensor(s) that you want to acknowledge the alarm for. You can acknowledge alarms for more than one sensor using <a href="multi_edit_lists.htm" class="topiclink">multi-edit</a>. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a text, for example, the reason why you acknowledge the alarm. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Until</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the date when the acknowledge status will end. Use the date time picker to enter the date and time. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If the alarm condition still persists after the specified date, the sensor will show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status again.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Only <a href="user_accounts_settings.htm" class="topiclink">users</a> with write access rights may acknowledge alarms. You can give read-only users the right to acknowledge alarms, too. See section <span class="f_BoldCustom"><a href="user_accounts_settings.htm#settings" class="topiclink">User Accounts Settings</a></span>, section <span class="f_BoldCustom">Account Control</span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Enterprise Console—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="first_start_enterprise_console.htm" class="topiclink">First Start</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout_enterprise_console.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="menu_tabs_enterprise_console.htm" class="topiclink">Menu Tabs and Page Content</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_servers_enterprise_console.htm" class="topiclink">PRTG Servers</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="options_enterprise_console.htm" class="topiclink">Options</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="windows_menu_structure_enterprise_console.htm" class="topiclink">Windows Menu Structure</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus_enterprise_console.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="shortcuts_overview_enterprise_console.htm" class="topiclink">Shortcuts Overview</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Alarm,Alarm Acknowledge,Alarm List</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensors_enterprise_console.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps_enterprise_console.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

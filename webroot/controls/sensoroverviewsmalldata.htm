@@ -1,0 +1,55 @@
+﻿<wingui>
+<div status="sensorstatusbig,class,sensorstatusmessage " class="sensorstatusmessage <#sensor type="colorclassofstate" prefix="sensorstatusmessage">">
+<#lang key="html.sensordata.lastmessage" default="Last Message:"><br>
+	<strong status="message"><#objectstatus name="message"></strong>
+</div>
+</wingui>
+
+<div class="overviewsmalldata">
+<ul>
+	<li class="overview-block style="<#clusterdependent hidefor='clustertreeobject'>">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastscan" default="Last Scan">:</span>
+		<span class="overview-data" status="lastcheck"><#objectstatus name="lastcheck" show="htmllong"></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastup" default="Last Up">:</span>
+		<span class="overview-data" status="lastup"><#objectstatus name="lastup" show="htmllong"></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastdown" default="Last Down">:</span>
+		<span class="overview-data" status="lastdown"><#objectstatus name="lastdown" show="htmllong"></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.global.uptime" default="Uptime">:</span>
+		<span class="overview-data" status="uptimetime,data-original-title" title="<#objectstatus name="uptimetime">"><dummy status="uptime"><#objectstatus name="uptime"></dummy></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.global.downtime" default="Downtime">:</span>
+		<span class="overview-data"b status="downtimetime,data-original-title" title="<#objectstatus name="downtimetime">"><dummy status="downtime"><#objectstatus name="downtime"></dummy></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.uptimecoverage2" default="Coverage">:</span>
+		<span class="overview-data" status="coveragetime,data-original-title" title="<#objectstatus name="knowntime" show="htmllong"> of<br> <#objectstatus name="cumsince" show="textshort"><br> since <#objectstatus name="cumsince" show="htmllong">"><dummy status="coverage"><#objectstatus name="knowntime" show="textshort"></dummy></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.sensortype" default="Sensor Type">:</span>
+		<span class="overview-data" title="<#objectstatus name="type"> (<b>#<#objectid></b>)"><#objectstatus name="type"></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.dependency" default="Dependency">:</span>
+		<span class="overview-data"><#objectstatus name="dependency"></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.interval" default="Interval">:</span>
+		<span class="overview-data"><#lang key="html.global.everyintervalevery" default="every">&nbsp;
+			<b status="interval"><#objectstatus name="interval"></b></span>
+	</li>
+	<li class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.ID" default="ID">:</span>
+		<span class="overview-data">#<#objectid></span>
+	</li>
+	<li class="overview-block-qr">
+		<span class="overview-qr"><div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" data-zoom="12" title='<#lang key="html.qrcode.tooltip.object" default="Show QR Code">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host=''></div></span>
+	</li>
+</ul>
+</div>

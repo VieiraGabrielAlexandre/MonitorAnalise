@@ -1,0 +1,25 @@
+﻿<#lang key="html.compare.title" default="Compare Graphs" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content" class="freeform">
+		<div class="box box-sorry">
+			<div class="image-sorry">
+				<img src="images/no_data.svg">
+			</div>
+			<div class="text-sorry">
+				<p><#lang key="html.global.notAvailable" default="This feature is no longer available."></p>
+			</div>
+		</div>
+	</div>
+<#lang key="html.compare.help.title2" default="Compare Objects" var="helptitle">
+<#lang key="html.compare.help.text2" default="This page is used to quickly compare the historic graphs of two monitoring objects (groups, devices and sensors).
+ Click 'Change' to select the objects you want to compare." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

@@ -1,0 +1,142 @@
+﻿<!--Libraries-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="setting_up_notifications_based_on_libraries.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_step_by_step.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Libraries</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Libraries</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">With the <span class="f_BoldCustom">Libraries</span> feature in PRTG, you can create special views of your device tree with up-to-the-minute monitoring status information, arranged the way you want it. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="library_example2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Example of a Library" title="Example of a Library" style="width:600px;height:316px;border:none" src="library_example2_zoom49.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Example of a Library</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">In this section:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm#introduction" class="topiclink">Introduction</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm#start" class="topiclink">Start Libraries</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm#list" class="topiclink">Libraries List</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm#working" class="topiclink">Working with Libraries</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-play" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-play.png"/>See also this video tutorial: <a href="https://www.paessler.com/support/videos/prtg-basics/libraries" target="_blank" class="weblink">PRTG Network Monitor – Libraries</a><span class="f_ListBulleted"> </span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="introduction" class="hmanchor"></a><span class="f_InTopicHeading">Introduction</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Libraries</span> are a powerful feature that enables you to create additional views of your device tree. These views are updated with the same scanning interval as your device tree, showing the same monitoring data, but arranged the way you want. This is useful if you want to display data in different ways, like depending on target groups or a specific use case. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">For example, you can create a library that contains an overview of all your bandwidth monitoring sensors, regardless of the device they are running on.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The library features include:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create libraries containing nodes with monitoring objects from all over your configuration.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Show data from different PRTG probes in one library.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Show different branches of your device tree right next to each other.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Arrange sensors in a tree-like view regardless of the device they are running on.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Filter your entire tree (or parts of it) for sensor type, status, or tag, showing only matching sensors.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can create libraries easily using <span class="f_ItalicCustom">drag&amp;drop</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG comes with several pre-configured standard libraries that you can use right away. You can also change or delete them, if you like. The following libraries are automatically created when you install PRTG for the first time (visible for the PRTG Administrator user). Some of them will initially be empty, but as you add more sensors, they will be filled automatically according to the filter settings defined for the nodes of the libraries:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All bandwidth sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All CPU load sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All disk space sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All memory sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">All VMware sensors</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Sensors grouped by priority</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Sensors grouped by state</span></li>
+</ul>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Sensors that are added to libraries are not counted against the maximum number of sensors of your license.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Start Libraries</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> <span class="f_BoldCustom">Libraries</span> in the <a href="main_menu_structure.htm#libraries" class="topiclink">main menu</a> to view or add custom views of your network's status and monitoring data. Hover over <span class="f_BoldCustom">Libraries</span> to show menu items. Choose between:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Libraries</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">All</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open the </span><span class="f_BoldCustom">Libraries</span><span class="f_ListBulleted"> overview list where you can view or add custom device tree views of your network status and monitoring data.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Add Library</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an assistant to <a href="libraries_step_by_step.htm" class="topiclink">create</a> a new library.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Select Library ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an existing library. </span><span class="f_ItalicCustom">Hover</span> over<span class="f_ItalicCustom"> </span><span class="f_BoldCustom">Select Library </span><span class="f_ListBulleted">to show more options. </span>Follow the alphabetical menu path (it is specific to your setup) to view your libraries<span class="f_ListBulleted">.</span><span class="f_ListBulleted"> Click a library to open it.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="list" class="hmanchor"></a><span class="f_InTopicHeading">Libraries List</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">All</span> view, you see a list of all existing libraries. Using the <span class="f_BoldCustom">Edit</span> buttons, you can perform the following actions.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Used by</span><span class="f_ListBulleted">: Show which other monitoring objects use this library.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Clone</span><span class="f_ListBulleted">: Create a <a href="clone_object.htm" class="topiclink">clone</a> of this library.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Delete</span><span class="f_ListBulleted">: Delete this library.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Settings</span><span class="f_ListBulleted">: Open this library and change the <a href="libraries_settings.htm" class="topiclink">settings</a> of the library and its nodes.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Hover over<span class="f_ListBulleted"> </span><img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/><span class="f_ListBulleted"> and select </span><span class="f_BoldCustom">Add Library</span><span class="f_ListBulleted"> from the menu to add a new library.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Please also see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span>. Additionally, the multi-edit functionality is available. This enables you to change properties of several objects simultaneously via bulk changes. For more details, see the <span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit Lists</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="working" class="hmanchor"></a><span class="f_InTopicHeading">Working with Libraries</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For detailed information on how to create and edit libraries, see the following sections.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_step_by_step.htm" class="topiclink">Libraries Step By Step</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_manage.htm" class="topiclink">Management</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_settings.htm" class="topiclink">Libraries and Node Settings</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_context_menus.htm" class="topiclink">Context Menus</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: PRTG Network Monitor – Libraries</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/libraries" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/libraries</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Libraries</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="setting_up_notifications_based_on_libraries.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_step_by_step.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

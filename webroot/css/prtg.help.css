@@ -1,0 +1,258 @@
+﻿body.help .containement{
+  height: 100%;
+  max-height: 100%;
+}
+body.help .containement1{
+  max-height: calc(100% - 40px);
+}
+body.help .container{
+  overflow-y: auto;
+  min-height: 0px;
+}
+#toc #head{
+  display: none;
+}
+#toc li{
+  background-position: 0 4px!important;
+  margin-top: 0px!important; 
+}
+body.help #content {
+  background: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 15px;
+}
+
+body.help header,
+body.help footer{
+  background: <#colorcode color="mousegray">;
+  position: relative;
+  height: 20px;
+  font-size:10px;
+}
+body.help header .paesslerlogo,
+body.help footer .paesslerlogo{
+  float: right;
+  margin-top: 1px;
+  margin-right: 3px;
+}
+
+body.help header .prtglogo,
+body.help footer .prtglogo{
+  float: left;
+  margin-left: 3px;
+}
+body.help footer span{
+  padding-top: 3px;
+  margin-top: 0;
+}
+body.help p.p_Heading1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+body.help p.p_Heading2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+body.help p.p_InTopicHeading {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+body.help p.p_ListBulleted {
+  padding-left: 15px;
+  width: auto;
+}
+
+body.help p.p_CodeExample {
+  background-color: <#colorcode color="lightgray">;
+  border: 1px solid #ccc;
+  font-family: "courier new", courier, fixed;
+  margin-right: 10px;
+  overflow-x: auto;
+  padding: 2px;
+}
+body.help span.heading1 {
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+div.help li {
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+body.help #toc li.heading1 {
+  padding: 0;
+}
+
+div.help h2 {
+  margin-top: 10px;
+}
+
+div.help h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+div.help ul {
+  list-style-type: disc;
+  margin: 0px;
+}
+
+div.help>ul {
+  /*width: 570px;*/
+}
+
+body.help #toc li {
+  padding: 2px;
+}
+
+body.help ul.heading1 {
+  padding: 0px;
+}
+
+div.help p, div.help>div {
+  padding-bottom: 2px;
+  padding-top: 0px;
+  /*width: 600px;*/
+}
+
+div.help table, div.help pre {
+  /*width: 600px !important;*/
+}
+
+div.help table p {
+  width: auto;
+}
+
+div.help table td {
+  background-color: <#colorcode color="lightgray">;
+  width: auto !important;
+}
+
+ul.apicalls {
+  background-color: <#colorcode color="lightgray">;
+  width: 710px;
+  /*border: 5px solid <#colorcode color="lightgray">;*/
+  /*border-radius: 5px;*/
+  padding: 0;
+  padding-top: 3px;
+}
+
+ul.apicalls li {
+  font-weight: bold;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  padding-left: 8px;
+}
+
+ul.apicalls pre {
+  background-color: #fff;
+  font-family: "courier new", courier, fixed;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 2px;
+  margin: 0;
+  overflow: auto;
+}
+
+.apidocs pre {
+  background-color: #fff;
+  border: 5px solid <#colorcode color="lightgray">;
+  border-radius: 5px;
+  font-family: "courier new", courier, fixed;
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 3px;
+  width: 690px;
+  padding: 5px;
+}
+
+.apidocs table.table {
+  width: auto;
+}
+
+.apidocs table.table td {
+  /*max-width: 400px;*/
+}
+
+.apidocs p {
+  margin-top: 3px;
+  width: 690px;
+  padding: 5px;
+}
+
+.apidocs .tab-container ul li {
+  margin-top: 3px;
+  width: 690px;
+  padding: 5px;
+}
+
+ul.apicalls pre b {
+  color: blue;
+}
+
+.hideinv12, .hideinv13, .hideabove14-x-12, .hideabove15-4-21, .hideabove16-x-24, .hideabove16-x-28 {
+  /* for whatsnew.htm */
+  display: none !important;
+}
+
+body.help #head {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+body.help .buttonbox {
+  font-size: 1.2rem;
+  position: fixed;
+}
+
+div.help h1:first-child {
+  display: none;
+}
+
+body.help .f_SettingsTableHeader {
+  text-transform: uppercase;
+  font-family: "Lucida Sans-Serif", "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-weight: normal;
+  color: <#colorcode color="linkcolor">;
+  font-size: 1.1rem;
+}
+body.help #head {
+  padding-left: 15px;
+}
+body.help #main {
+  padding-top:8px;
+  margin-top: 0;
+}
+body.help .p_InTopicHeading {
+  margin-bottom: 0;
+  margin-top: 15px !important;
+}
+ body.help .tabs-container.help p {
+  margin: 0.4rem 0;
+ }
+
+body.help .buttonbox {
+  display: none;
+}
+#toc #main{
+  padding-top: 0;
+}
+#toc #main #content{
+  margin: 0;
+  padding: 5px;
+}
+body.help .f_ItalicCustom{
+  font-style: italic;
+}
+body.help .p_SettingsTableHeader{
+  text-align: left!important;
+}

@@ -1,0 +1,76 @@
+﻿<!--Reports Step By Step-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_view_and_run.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Reports Step By Step</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Reports Step By Step</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">To create a new report or to run an existing one, follow the steps in this section. In the PRTG web interface, click the <span class="f_BoldCustom">Reports</span> entry in the main menu to show the reports main screen.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="existing" class="hmanchor"></a><span class="f_InTopicHeading">Quick Start: Run an Existing Report</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG is delivered with several pre-configured reports. To use one of them, click a report's name in the reports main screen and select the <span class="f_BoldCustom">Settings</span> tab. The next steps are the same as for completely new reports. Although some settings are already given, we recommend that you check them. For example, check the sensors that are included in the report. For some reports that come with PRTG, there are no sensors added yet. Continue with <span class="f_BoldCustom"><a href="reports_step_by_step.htm#3" class="topiclink">Step 3: Define Additional Options</a></span> in this section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="1" class="hmanchor"></a><span class="f_InTopicHeading">Step 1: Add Report</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Report</span> from the menu to add a new report. An assistant appears where you can define various settings. First, enter a meaningful <span class="f_BoldCustom">Report Name</span>.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:499px"><a href="add_report.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Add Report Assistant" title="Add Report Assistant" style="width:499px;height:575px;border:none" src="add_report_zoom65.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Add Report Assistant</span></p></div></div>
+<p class="p_ImageCaption" style="page-break-inside: avoid;"><span class="f_ImageCaption">&nbsp;</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="2" class="hmanchor"></a><span class="f_InTopicHeading">Step 2: Select a Template</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">Template</span> option, select one of the report templates from the list. This defines the overall look of your report and how detailed (regarding the intervals) monitoring data is included. If you are not sure yet, try a template that appears most suitable to you. You can still change all settings later.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For a detailed description of the available template options, see section <span class="f_BoldCustom"><a href="reports_settings.htm#settings" class="topiclink">Report Settings</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="3" class="hmanchor"></a><span class="f_InTopicHeading">Step 3: Define Additional Options</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Select a <span class="f_BoldCustom">Security Context</span> (best choose <span class="f_BoldCustom">PRTG System Administrator</span>, if available), your <span class="f_BoldCustom">Timezone</span>, and the <span class="f_BoldCustom">Paper Size</span> for PDF generation. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see section <span class="f_BoldCustom"><a href="reports_settings.htm#settings" class="topiclink">Report Settings</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="4" class="hmanchor"></a><span class="f_InTopicHeading">Step 4: Select Nodes and Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Choose the sensors you want to include in the report. When running a <a href="clustering.htm" class="topiclink">cluster</a>, define the <span class="f_BoldCustom">Cluster Node</span> the monitoring data is taken from first. Select a specific node from the list. If you select <span class="f_BoldCustom">All nodes</span>, PRTG creates a report with data from all of your cluster nodes, but only the primary channel of every sensor appears in the report.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Every report shows monitoring results based on sensor data. There are two ways to include sensors in a report: You can either add sensors manually or by tag. In the <span class="f_BoldCustom">Include Sensors by Tag</span> field, enter one or more tags that match the sensor range you want a report for. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">For example, enter the tag <span class="f_ItalicCustom">bandwidthsensor</span> to include all sensors that measure bandwidth (or select it from the list of tags that PRTG suggests). PRTG provides this tag by default when you add any bandwidth sensor, so the tag typically gathers all bandwidth sensors, unless you configured your system differently. You can enter several tags. Hit the enter key, or insert a comma or space after each tag and enter the next one. Use the <span class="f_BoldCustom">Filter Included Sensors by Tag</span> field to explicitly filter sensors with certain tags from the bulk of tags or manually selected sensors defined above.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Tagging is a great option to group sensors or other objects. For more information, see the <span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span> section. You can also leave the tag fields empty and only choose specific sensors manually later.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="5" class="hmanchor"></a><span class="f_InTopicHeading">Step 5: Decide on a Schedule and Additional Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">Report Schedule</span> section, choose if you want to run the report on a regular basis or on demand only. Also define which time <span class="f_BoldCustom">Period</span> will be covered by the report, if you want to show percentiles, if you want to generate CSV and XML data files for reports with data tables, and add report comments or special access rights.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see the <span class="f_BoldCustom"><a href="reports_settings.htm#settings" class="topiclink">Report Settings</a></span> section. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Scheduled reports are not executed on <a href="failover_cluster_configuration.htm" class="topiclink">failover nodes</a> by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you leave the current page, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="6" class="hmanchor"></a><span class="f_InTopicHeading">Step 6: Check and Adjust the Sensors Included</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">After saving the settings, switch to the <span class="f_BoldCustom">Sensors Selected by Tag</span> tab to see a list of all sensors that you added with the tag(s) you defined in step 4. To change tags, go back to the <span class="f_BoldCustom">Settings</span> tab. You can additionally add sensors manually. To do so, switch to the <span class="f_BoldCustom">Select Sensors Manually</span> tab. The final report shows sensors from both manual and by tag selection.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="reports_settings.htm#manually" class="topiclink">Report Settings</a></span> for detailed information and mind the <span class="f_BoldCustom"><a href="reports_view_and_run.htm#remarks" class="topiclink">Remarks for Reports</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="7" class="hmanchor"></a><span class="f_InTopicHeading">Step 7: Run Report</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Switch to the <span class="f_BoldCustom">Run Now</span> tab, select a period, and in the <span class="f_BoldCustom">Processing Options </span>select <span class="f_BoldCustom">View Report as HTML</span>. Click the <span class="f_BoldCustom">Run Report</span> button. PRTG generates the report in a new browser window or tab immediately. Depending on the number of selected sensors and the used template, it may take a few minutes until you see the report. If you do not want to wait, close the newly opened browser window or tab and select a PDF option in the <span class="f_BoldCustom">Processing Options</span>. Click the <span class="f_BoldCustom">Run Report</span> button again. The report is then generated in the background and you get a <span class="f_BoldCustom">ToDo ticket</span> or email once it is finished.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Reports—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_step_by_step.htm" class="topiclink">Reports Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_view_and_run.htm" class="topiclink">View and Run Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_settings.htm" class="topiclink">Report Settings</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_view_and_run.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

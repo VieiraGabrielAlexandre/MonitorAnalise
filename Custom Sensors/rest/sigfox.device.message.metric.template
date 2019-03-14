@@ -1,0 +1,18 @@
+{
+	"prtg": {
+		"result": [{
+				"channel": "Messages last Day",
+				"CustomUnit": "#",
+				"value": $.lastDay
+			}, {
+				"channel": "Messages last Week",
+				"CustomUnit": "#",
+				"value": $.lastWeek
+			}, {
+				"channel": "Messages last Month",
+				"CustomUnit": "#",
+				"value": $.lastMonth
+			}
+		]
+	}
+}

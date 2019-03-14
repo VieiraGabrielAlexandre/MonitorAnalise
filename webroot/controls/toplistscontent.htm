@@ -1,0 +1,12 @@
+﻿	<div id="toplistcontent" class="data">
+		<div class="toplist-graphwrapper" data-title="<#objectproperty type="toplistname" subid="<@subid>">">
+
+			<h2 id="toplistperiod" style="margin-top:5px"><#objectproperty type="toplistname" subid="<@subid>"> <#toplistperiodheader><#toplistwarning></h2>
+			<div class="toplistcontainer">
+				<#include file="controls\toplistgraph.htm" start="0">
+			</div>
+		</div>
+		<div class="prtg-plugin prtg-table" data-plugin="prtg-table">
+			<#include file="controls\toplistdata.htm" start="0" subid="<#system type='subid'>" topnumber="<#system type='topnumber'>"">
+		</div>
+	</div>

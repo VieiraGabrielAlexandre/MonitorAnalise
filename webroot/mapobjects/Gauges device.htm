@@ -1,0 +1,30 @@
+﻿ <!--Device Tree Views: Gauges (large, 4 or 5 stars priority)-->
+
+<div class="map_object map_table <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+  <p><b><#objectproperty name="Name" id="<@objectid>"></b></p>
+	<div id="Plugin_<@itemid>"
+    class="prtg-plugin deviceoverviewsensorvalues"
+    data-plugin="channelgauges"
+    data-objectid="<@objectid>"
+    data-type="sensors"
+    data-mapobj="true">
+    <!--
+    {
+      "objects":<#table
+      id="<@objectid>"
+      output='json'
+      noraw='1'
+      content='sensors'
+      sortby='-position'
+      count='*'
+      filter_priority='@above(3)'
+      filter_tags="@tag(<@tagfilterstring>)"
+      columns='objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw'>
+    }
+    -->
+	</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

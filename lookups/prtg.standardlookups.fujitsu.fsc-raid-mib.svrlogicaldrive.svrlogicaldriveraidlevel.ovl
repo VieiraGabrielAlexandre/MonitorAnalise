@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-RAID-mib.svrlogicaldrive.svrlogicaldriveRAIDlevel" desiredValue="1" undefinedState="OK">
+    <Lookups>
+      <SingleInt state="none" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="OK" value="2">
+        RAID0
+      </SingleInt>
+      <SingleInt state="OK" value="3">
+        RAID01
+      </SingleInt>
+      <SingleInt state="OK" value="4">
+        RAID1
+      </SingleInt>
+      <SingleInt state="OK" value="5">
+        RAID1e
+      </SingleInt>
+      <SingleInt state="OK" value="6">
+        RAID10
+      </SingleInt>
+      <SingleInt state="OK" value="7">
+        RAID3
+      </SingleInt>
+      <SingleInt state="OK" value="8">
+        RAID4
+      </SingleInt>
+      <SingleInt state="OK" value="9">
+        RAID5
+      </SingleInt>
+      <SingleInt state="OK" value="10">
+        RAID50
+      </SingleInt>
+      <SingleInt state="OK" value="11">
+        RAID5e
+      </SingleInt>
+      <SingleInt state="OK" value="12">
+        RAID5ee
+      </SingleInt>
+      <SingleInt state="OK" value="13">
+        RAID6
+      </SingleInt>
+      <SingleInt state="OK" value="14">
+        Concat
+      </SingleInt>
+      <SingleInt state="None" value="15">
+        Single
+      </SingleInt>
+      <SingleInt state="OK" value="16">
+        RAID60
+      </SingleInt>
+      <SingleInt state="OK" value="17">
+        RAID1e0
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

@@ -1,0 +1,92 @@
+﻿<#checkobjecttype objecttype="sensor">
+<#lang key="html.sensor.title" default="Sensor Details" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" >
+<#lang key="html.sensor.sensormessages" default="Messages" var="messagetabstring">
+<#lang key="html.sensor.sensormessages.flow" default="Flows" var="flowtabstring">
+
+<div id="main" class="sensor-main-container <#sensor type="colorclassofstate" prefix="bordercolor_"> <#sensor type="colorclassofstate" prefix="bgcolor_">" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<dummy class="prtg-plugin" data-plugin="status">
+		<#include file="controls\sensorheader.htm">
+  </dummy>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active" data-refresh-related="#container">
+        <a href="/controls/sensoroverview.htm?id=<#objectid>">
+          <i class="glyph-gauge"></i>
+          <span class="text"><#lang key="html.global.overview" default="Overview"/></span>
+        </a>
+      </li>
+      <li tabid="2">
+        <a href="/controls/sensorgraph.htm?id=<#objectid>&graphid=0&columns=datetime,value_,coverage">
+          <i class="glyph-feed"></i>
+          <span class="text"><#lang key="html.sensor.livwdata" default="Live Data"/></span>
+        </a></li>
+      <li tabid="3">
+        <a href="/controls/sensorgraph.htm?id=<#objectid>&graphid=1&columns=datetime,value_,coverage">
+          <i class="number-icon"><#system type="2period" unit="false"/></i>
+          <span class="text"><#system type="2period" unit="only"/></span>
+        </a></li>
+      <li tabid="4">
+        <a href="/controls/sensorgraph.htm?id=<#objectid>&graphid=2&columns=datetime,value_,coverage">
+          <i class="number-icon"><#system type="3period" unit="false"/></i>
+          <span class="text"><#system type="3period" unit="only"/></span>
+        </a></li>
+      <li tabid="5">
+        <a href="/controls/sensorgraph.htm?id=<#objectid>&graphid=3&columns=datetime,value_,coverage">
+          <i class="number-icon"><#system type="4period" unit="false"/></i>
+          <span class="text"><#system type="4period" unit="only"/></span>
+        </a></li>
+      <li tabid="20" style="<#udpsensor none="display: none;">">
+        <a href="/controls/sensormessages.htm?id=<#objectid>&udptype=<#udpsensor syslog="syslog" trap="trap" flow="flow">">
+      <i class="glyph-newspaper"></i>
+      <span class="text"><#udpsensor syslog="@messagetabstring" trap="@messagetabstring" flow="@flowtabstring" varexpand="syslog,trap,flow"/></span>
+        </a></li>
+      <li tabid="6">
+        <a href="/controls/historicsensordata.htm?id=<#objectid>">
+          <i class="glyph-chart-area"></i>
+          <span class="text"><#lang key="html.global.historicdata" default="Historic Data"/></span>
+        </a></li>
+      <li tabid="7" tab-name="sensor-log">
+        <a href="/controls/table.htm?id=<#objectid>&tableid=messagetable&content=messages&columns=datetime,sensor,status,message&sortby=date&sortable=true&links=true&datepicker=true&filter_drel=7days&tabletitle=<#lang key="html.global.log" default="Log" mailtoencode="true">">
+        <i class="glyph-list-alt"></i>
+        <span class="text"><#lang key="html.global.log" default="Log"/></span>
+        </a></li>
+      <li tabid="8" class="tab-spacing tab-dark">
+        <a href="/controls/objectdata.htm?id=<#objectid>&objecttype=sensor,aggregation"><i class="glyph-cog"></i>
+          <span class="text"><#lang key="html.global.settings" default="Settings"/></span>
+        </a></li>
+      <li tabid="9" class="tab-dark"  tab-name="notifications">
+        <a href="/controls/triggersandnotifications.htm?id=<#objectid>&objecttype=sensor,aggregation">
+          <i class="glyph-bell-alt"></i>
+          <span class="text"><#lang key="html.global.notificationtriggers" default="Notification Triggers"/></span>
+        </a></li>
+      <li tabid="10" class="tab-spacing tab-dark">
+        <a href="/controls/comments.htm?id=<#objectid>" title="<#lang key="html.global.comments" default="Comments">">
+        <i class="<#hascomment>"></i>
+        <span class="text"><#lang key="html.global.comments" default="Comments"/></span>
+        </a></li>
+      <li tabid="11" class="tab-dark hideforreadonly" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">">
+      <a href="/controls/history.htm?id=<#objectid>">
+        <i class="glyph-document-history"></i>
+        <span class="text"><#lang key="html.global.history" default="History"/></span>
+      </a></li>
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+<#manuallink var="manuallink">
+<#system type='showhelp' tct="theater" page="help-sensor" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.sensor.help.title" default="Sensor Details" var="helptitle">
+<#lang key="html.sensor.help.text2" default="Use the tab controls to view various data of this sensor as well as edit the sensor's settings." var="helptext">
+<#lang key="html.sensor.help.link" default="<a href='@manuallink' target='_blank'><b>Help: About this Sensor</b></a>" var="helplink">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

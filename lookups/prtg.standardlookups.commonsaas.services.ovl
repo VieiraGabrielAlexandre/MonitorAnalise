@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ <ValueLookup id="prtg.standardlookups.commonsaas.services" desiredValue="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+      <Range From="-1" To="-1" state="Ok">Not Checked</Range>
+      <Range From="0" To="0" state="Ok">Not Available</Range>
+      <Range From="1" To="99999" state="Ok">Available</Range>
+    </Lookups>
+  </ValueLookup>

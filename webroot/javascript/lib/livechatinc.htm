@@ -1,0 +1,49 @@
+﻿<!-- begin olark code -->
+<script type="text/javascript" async>
+    (function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
+    
+    /* custom configuration goes here (www.olark.com/documentation) */
+    
+    olark.identify('9081-503-10-1337')
+
+    olark('api.box.shrink')
+
+    if($('#mainbody').data('theme'))
+        olark.configure('system.hb_dark_theme', true )
+
+    olark.configure('system.hb_primary_color', '#00A3DA')
+
+    var liveChat = false
+
+    $('#hbl-live-chat-wrapper, #hbl-live-chat-wrapper *').attr('data-original-title','').attr('title','')
+    
+    function showLiveChat(){
+        $('#hbl-live-chat-wrapper, #hbl-live-chat-wrapper *').attr('data-original-title','').attr('title','')
+        if(liveChat)
+            olark('api.box.shrink')
+        else
+            olark('api.box.expand')
+    }
+
+    olark('api.box.onShrink', function(event) {
+        liveChat = false
+    })
+    
+    olark('api.box.onExpand', function(event) {
+        liveChat = true
+    })
+
+    olark('api.chat.onOperatorsAvailable', function() {
+        $('.js-livechat_button').show()
+    })
+
+    olark('api.chat.onOperatorsAway', function() {
+        $('.js-livechat_button').hide()
+    })
+
+    olark("api.chat.onMessageToVisitor", function() {
+        olark('api.box.expand')
+    })
+
+</script>
+<!-- end olark code -->

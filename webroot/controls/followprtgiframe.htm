@@ -1,0 +1,77 @@
+﻿<#include file="includes\htmlheader_mini.htm" htmlclass="autoheight">
+
+    <table class="followprtg" style="width:1100px;margin-left:10px;margin-right:9%" >
+    <tr>
+      <td colspan="3">
+        <h1><#lang key="html.followprtg.head1" default="Follow Us And Get All The Latest News About PRTG"></h1>
+        <p><#lang key="html.followprtg.head1a" default="Please click one of the following links to follow us on your favorite social network."></p>
+      </td>
+    </tr>
+    <tr>
+      <td class="content">
+        <h3><#lang key="html.followprtg.onfacebook1a" default="Become a Fan on Facebook"></h3>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content"><h3><#lang key="html.followprtg.ontwitter" default="Follow Us on Twitter"></h3></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content"><h3><#lang key="html.followprtg.onGoogle1a" default="Add Us to Your Circles on Google Plus"></h3></td>
+    </tr>
+    <tr>
+      <td class="content">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/<#system type="language" extended="true">/sdk.js#xfbml=1&version=v2.8";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-like" data-href="http://www.facebook.com/PRTG.Network.Monitor" data-width="480" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content">
+        <a href="https://twitter.com/paesslerAG" class="twitter-follow-button" data-show-count="true" data-size="large" data-width="350" data-lang="<#system type="language">"><#lang key="html.followprtg.followpaessler" default="Follow @paesslerAG"></a>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content">
+        <div class="g-plus" data-width="350" data-height="69"data-href="https://plus.google.com/109501539157548503145" data-rel="publisher"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h1><#lang key="html.followprtg.head2" default="Do you like PRTG? Please Tell Others About It!"></h1>
+        <p><#lang key="html.followprtg.head2a" default="Please give us some love and talk to your friends and followers about PRTG!"></p>
+      </td>
+    </tr>
+    <tr>
+      <td class="content"><h3><#lang key="html.followprtg.talkfacebook1" default="Recommend PRTG on Facebook"></h3></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content"><h3><#lang key="html.followprtg.talktwitter1" default="Tweet about PRTG"></h3></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content"><h3><#lang key="html.followprtg.talkgoogle1" default="Talk About PRTG on Google Plus"></h3></td>
+    </tr>
+    <tr>
+      <td class="content">
+            <div class="fb-like" data-href="https://www.paessler.com" data-send="false" data-layout="box_count" data-width="200" data-show-faces="true" data-font="segoe ui" data-action="recommend"></div>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content">
+        <a href= href="https://twitter.com/share" class="twitter-share-button" data-text="I am using #PRTG Network Monitor to keep my network in shape"
+        data-url="https://www.paessler.com" data-via="PaesslerAG" data-size="large" data-lang="<#system type="language">" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td class="content">
+        <div class="g-plusone" data-annotation="inline" data-width="220" data-href="https://www.paessler.com"></div>
+      </td>
+    </tr>
+  </table>
+
+<#include file="includes\htmlfooter_mini.htm">

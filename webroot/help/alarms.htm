@@ -1,0 +1,164 @@
+﻿<!--Alarms-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_information.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Alarms</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Alarms</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The alarms list shows all sensors that are currently in a <span class="f_BoldCustom">Down</span>, <span class="f_BoldCustom">Down (Partial)</span>, <span class="f_BoldCustom">Down (Acknowledged)</span>, <span class="f_BoldCustom">Warning</span>, or <span class="f_BoldCustom">Unusual </span>status. Sensors in other states (for example, <span class="f_BoldCustom">Up</span>, <span class="f_BoldCustom">Paused</span>, or <span class="f_BoldCustom">Unknown</span>) do not appear here. This is useful for keeping track of all irregularities in your network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <a href="working_with_lists.htm" class="topiclink">table list</a>, you can re-sort the items by clicking the column's header items.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:592px"><a href="alarms_list3.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Alarms List" title="Alarms List" style="width:592px;height:384px;border:none" src="alarms_list3_zoom47.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Alarms List</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">There are two ways to display the alarms list: either click the <span class="f_BoldCustom">Alarms </span>tab on the detail page of a probe, group, or device (not available for sensors), or click <span class="f_BoldCustom">Alarms</span> in the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>By default, table lists with alarms are ordered by <a href="priority_and_favorites.htm" class="topiclink">priority</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tab" class="hmanchor"></a><span class="f_InTopicHeading">Alarms (Object Tab)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe, group, device, and sensor pages have tabs that you can use to navigate between the different options. For example, you can view your network's status, view monitoring results, or change settings. </span></p>
+<p class="p_ImageCaption" style="page-break-inside: avoid;"><span class="f_ImageCaption">&nbsp;</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:558px"><a href="tabs-bar_group2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Tabs Bar on Group and Probe Level" title="Tabs Bar on Group and Probe Level" style="width:558px;height:12px;border:none" src="tabs-bar_group2_zoom48.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Tabs Bar on Group and Probe Level</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">On an object's detail view, click the <span class="f_BoldCustom">Alarms</span> tab to show a table list of all sensors <span class="f_ItalicCustom">on this object</span> that currently show a <span class="f_BoldCustom">Down</span>, <span class="f_BoldCustom">Down (Partial)</span>, <span class="f_BoldCustom">Warning</span>, or <span class="f_BoldCustom">Unusual </span>status. You will see a subset of sensors in an alarm status for the current object only. This is a subset of the entries available via the <span class="f_BoldCustom">Alarms | All </span>option in the <a href="main_menu_structure.htm#alarms" class="topiclink">main menu bar</a>. The tab is not available on a sensor's detail page.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="menu" class="hmanchor"></a><span class="f_InTopicHeading">Alarms (Main Menu)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> <span class="f_BoldCustom">Alarms</span> in the <a href="main_menu_structure.htm#alarms" class="topiclink">main menu bar</a> to show a table list of <span class="f_ItalicCustom">all</span> sensors in your configuration that currently show a <span class="f_BoldCustom">Down</span>, <span class="f_BoldCustom">Down (Partial)</span>, <span class="f_BoldCustom">Down (Acknowledged)</span>, <span class="f_BoldCustom">Warning</span>, or <span class="f_BoldCustom">Unusual </span>status. You can also show these sensors as gauges. Click <span class="f_BoldCustom">Alarms</span> in the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a> and select another option to only show a subset of sensors in certain states. Choose between:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Alarms</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list of all sensors that are currently in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Partial)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Unusual </span><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">status</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Show as Gauges</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a page with the gauges of all sensors that are currently in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Partial)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Unusual </span><span class="f_ListBulleted">status. The size of the sensor gauges corresponds to their respective priority.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Errors Only</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list of all sensors that are currently in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Partial)</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Down (Acknowledged) </span><span class="f_ListBulleted">status.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Warnings Only</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list of all sensors that are currently in </span><span class="f_BoldCustom">Warning </span><span class="f_ListBulleted">status.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unusuals Only </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open a list of all sensors that are currently in </span><span class="f_BoldCustom">Unusual </span><span class="f_ListBulleted">status.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="acknowledge" class="hmanchor"></a><span class="f_InTopicHeading">Acknowledge Alarm</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">An acknowledged alarm shows up in the alarms list as &quot;acknowledged&quot; (see <span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span>) and will not <a href="sensor_notifications_settings.htm" class="topiclink">trigger</a> any more <a href="notifications.htm" class="topiclink">notifications</a>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If the alarm condition clears, the sensor usually returns to an <span class="f_BoldCustom">Up</span> status immediately with the next sensor scan.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To acknowledge an alarm, right-click a sensor entry and choose <span class="f_BoldCustom">Acknowledge Alarm...</span> from the context menu, enter a message and click the <span class="f_BoldCustom">OK</span> button. The message will appear in the last message value of the sensor. You can choose between: <span class="f_BoldCustom">Acknowledge Indefinitely...</span>, acknowledge <span class="f_BoldCustom">For 5 Minutes...</span>, <span class="f_BoldCustom">For 15 Minutes...</span>, <span class="f_BoldCustom">For 1 Hour...</span>, <span class="f_BoldCustom">For 3 Hours...</span>, <span class="f_BoldCustom">For 1 Day...</span>, or <span class="f_BoldCustom">Until...</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you choose <span class="f_BoldCustom">Until...</span> a dialog box appears:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Acknowledge Alarm until</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Selected Objects</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows the sensor(s) that you want to acknowledge the alarm for. You can acknowledge alarms for more than one sensor using <a href="multi_edit_lists.htm" class="topiclink">multi-edit</a>. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a text, for example, the reason why you acknowledge the alarm. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Until</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the date when the acknowledge status will end. Use the date time picker to enter the date and time. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If the alarm condition still persists after the specified date, the sensor will show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status again.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Only <a href="user_accounts_settings.htm" class="topiclink">users</a> with write access rights may acknowledge alarms. You can give read-only users the right to acknowledge alarms, too. See section <span class="f_BoldCustom"><a href="user_accounts_settings.htm#settings" class="topiclink">User Accounts Settings</a></span>, section <span class="f_BoldCustom">Account Control</span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which audible notifications are available in PRTG? Can I change the default sound?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/26303" target="_blank" class="weblink">https://kb.paessler.com/en/topic/26303</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="system_information.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

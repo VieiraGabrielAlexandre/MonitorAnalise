@@ -1,0 +1,22 @@
+﻿<#checkobjecttype objecttype="device">
+<table id="devicedata" cellspacing=0 class="overview table refreshable" refreshurl="/controls/devicedata.htm?id=<#objectid>">
+	<thead class="tabletitle"><tr><th colspan=2><#lang key="html.global.details" default="Details"></th></thead>
+	<tr class="odd"><td class="title"><#lang key="html.devicedata.devicename" default="Device Name"></td><td><img src="/icons/devices/<#objectproperty name="deviceicon">" width=14 height=14> <b><#objectproperty name="Name"> <#objectproperty name="active" show="nicetext"> (<#objectproperty name="host" show="text">)</b></td></tr>
+	<tr class="even"><td class="title"><#lang key="html.devicedata.status" default="Status"></td><td><#objectstatus name="message" show="htmllong"> <#objectstatus name="condition"></td>
+	<tr class="odd"><td class="title"><#lang key="html.devicedata.priority" default="Priority"></td><td><#objectstatus name="priority" show="htmllong"></td></tr>
+	<tr class="even"><td class="title"><#lang key="html.devicedata.parentprobe" default="Parent Probe"></td><td><#objectstatus name="probe" show="htmllong"></td>
+	<tr class="odd"><td class="title"><#lang key="html.devicedata.parentgroup" default="Parent Group"></td><td><#objectproperty name="ParentGroup" show="linklong"></td>
+	<tr class="even"><td class="title"><#lang key="html.devicedata.sensorsbystate" default="Sensors by State"></td><td>
+	                                         	<#objectstatus name="downsens">
+	                                         	<#objectstatus name="partialdownsens">
+	                                         	<#objectstatus name="downacksens">
+	                                         	<#objectstatus name="warnsens">
+	                                         	<#objectstatus name="upsens">
+	                                         	<#objectstatus name="pausedsens">
+	                                         	<#objectstatus name="unusualsens">
+	                                         	<#objectstatus name="undefinedsens">
+	                                         	<#objectstatus name="totalsens" var="totalsens">
+												<#lang key="html.controls.totalsens" default="(Total: @totalsens)">
+	                                         </td></tr>
+</table>
+

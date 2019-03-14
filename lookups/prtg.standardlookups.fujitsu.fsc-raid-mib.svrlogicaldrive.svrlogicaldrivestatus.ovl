@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrlogicaldrive.svrlogicaldrivestatus" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="Ok" value="2">
+        Online
+      </SingleInt>
+      <SingleInt state="Warning" value="3">
+        Degraded
+      </SingleInt>
+      <SingleInt state="Error" value="4">
+        Offline
+      </SingleInt>
+      <SingleInt state="Warning" value="5">
+        Rebuilding
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Verifying
+      </SingleInt>
+      <SingleInt state="OK" value="7">
+        Initializing
+      </SingleInt>
+      <SingleInt state="Warning" value="8">
+        Morphing
+      </SingleInt>
+      <SingleInt state="Warning" value="9">
+        PartialDegraded
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

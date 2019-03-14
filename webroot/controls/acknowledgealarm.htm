@@ -1,0 +1,25 @@
+﻿<#system type="denynonackusers">
+<#countobj var="objectcount">
+<div id="content" class="ui-dialog-content">
+	<form onsubmit="return false" class="prtg-form prtg-plugin" data-plugin="prtg-form"  title='<#lang key="html.alarmack.head" default="Acknowledge Alarm"><#inserturlparam parameter="title">'>
+		<fieldset>
+			<legend></legend>
+			<div class="control-group">
+				<label for="" class="control-label no_help"><#lang key="html.objects.selected" default="Selected Objects"></label>
+				<div class="controls">
+		    	<div>
+						<p id="objlist">
+							<#listobj>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="message" class="control-label has_help"><#lang key="html.alarmack.wiz2" default="Message"></label>
+				<div class="controls" title="<#lang key="html.alarmack.wizhelpmsgnew2" default="Please enter a message to display until the alarm is cleared.">">
+					<input id="message" class="text" type="text" autocomplete="off" name="message" value="">
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

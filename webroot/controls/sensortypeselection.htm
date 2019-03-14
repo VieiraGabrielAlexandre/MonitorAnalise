@@ -1,0 +1,8 @@
+﻿<form id="addsensorform" action="addsensor.htm" method="POST"  class="validateForm">
+	<input type="hidden" name="id" value="<#objectid>">
+	<input name="sensortype" id="selectedsensortype" value="" type="hidden">
+	<table cellspacing="0"  class="sensorselectiontable">
+		<#selectionlist content="sensortypes" display="options">
+	</table>
+</form>
+<input class="cancel btngrey button" type="reset" onclick="resetsensortypeselection();return false" href="#" value="&lt; <#lang key="html.global.back" default="Back">">

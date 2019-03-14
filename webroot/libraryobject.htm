@@ -1,0 +1,33 @@
+﻿<#checkobjecttype objecttype="library">
+<#lang key="html.libobject.title" default="Library Node" var="title">
+<#objectproperty name="name" var="name">
+<#lang key="html.pagetitel.dummy" default="<dummy>@name</dummy>" comment="do not translate" var="objectname">
+<#setpagetitle pagetitle="@name | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1 class="sitecaption"><#lang key="html.libobject.head2" default="<i>Library Node</i> @objectname"></h1>
+  <div class="buttonbox">
+		<#include file="includes\linkpagebutton.htm">
+    <a data-id="<#objectidorzero>" href="#" data-placement="bottom" title="<#lang key="html.global.librarymenu" default="Library Menu">" class="menulink systemmenu menuleft libraryobjectmenu nopopup" id="<#objectid>"><i class="icon-dark icon-triangle-1-s"></i></a>
+  </div>
+  <div id="content">
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+      <ul class="nav-tabs">
+          <li tabid="1" class="tab-active"><a href="/controls/objectdata.htm?id=<#objectid>&objecttype=library"><i class="glyph-cog2"></i><span class="text"><#lang key="html.global.settings" default="Settings"></span></a></li>
+          <li tabid="10" class="tab-spacing tab-dark" title="<#lang key="html.global.comments" default="Comments">"><a href="/controls/comments.htm?id=<#objectid>"><i class="icon-comment icon-white <#hascomment>"></i><span class="text"><#lang key="html.global.comments" default="Comments"/></span></a></li>
+          <li tabid="11" class="tab-dark" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">"><a href="/controls/history.htm?id=<#objectid>"><i class="glyph-history"></i><span class="text"><#lang key="html.global.history" default="History"></span></a></li>
+      </ul>
+      <div class="tab-container"></div>
+    </div>
+  </div>
+<#lang key="html.libobject.help.title" default="Library Node Details" var="helptitle">
+<#lang key="html.libobject.help.text2" default="Use the tab controls to edit the object settings and review comments and history." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

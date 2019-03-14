@@ -1,0 +1,24 @@
+﻿
+<!-- Template Detail Loop.htm-->
+<tr class="subtitle" style="<#clusterdependent showfor='clusterinstallation'>">
+	<td class="title"><#lang key="html.reporttemplates.clusternode" default="Cluster Node">:</td>
+	<td colspan="6"><b><#cluster type="name" clgid="<@clgid>"></b></td>
+</tr>
+<tr class=even>
+	<td class="title"><#lang key="html.reporttemplates.uptimestats" default="Uptime Stats">:</td>
+	<td><#lang key="html.reporttemplates.up" default="Up">:</td><td class="rightalign"><#report type="uptimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td><td> <span class="percent">[<#report type="uptime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span> </td>
+	<td><#lang key="html.reporttemplates.down" default="Down">:</td><td class="rightalign"><#report type="downtimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td><td> <span class="percent">[<#report type="downtime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span> </td>
+</tr>
+<tr class=odd>
+	<td class="title"><#lang key="html.reporttemplates.requeststats" default="Request Stats">:</td>
+	<td><#lang key="html.reporttemplates.good" default="Good">: </td><td class="rightalign"><#report type="goodreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td><td><span class="percent">[<#report type="goodreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span> </td>
+      	<td><#lang key="html.reporttemplates.failed" default="Failed">: </td><td class="rightalign"><#report type="failedreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td><td  width="40%"><span class="percent">[<#report type="failedreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span> </td>
+</tr>
+<tr class=even>
+	<td class="title"><#report type="avgvaluelabel" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+	<td colspan=6><#report type="avgvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+</tr>
+<tr class=odd>
+	<td class="title"><#report type="sumvaluelabel" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+	<td colspan=6><#report type="sumvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+</tr>

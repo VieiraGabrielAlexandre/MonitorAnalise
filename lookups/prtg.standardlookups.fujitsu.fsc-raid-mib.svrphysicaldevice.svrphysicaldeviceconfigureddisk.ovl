@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrphysicaldevice.svrphysicaldeviceconfigureddisk" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        False
+      </SingleInt>
+      <SingleInt state="OK" value="2">
+        True
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

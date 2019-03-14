@@ -1,0 +1,26 @@
+﻿<#inserturlparam parameter="id" var="ticketid">
+<#lang key="html.ticketdata.title" default="Ticket" var="tickettitle">
+<#lang key="html.tickets.title" default="Tickets" var="trail">
+<#setpagetitle pagetitle="@tickettitle #@ticketid" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<#breadcrumbs varexpand="this,trail" this="@tickettitle #@ticketid" trail="<a href='/tickets.htm?filter_user=@userid&filter_status=1'>@trail</a>">
+
+<div class="ticket-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <div id="content" class="limitedcontentwidth ticket-content">
+        <div id="ticketheader"  class="refreshable ticket-header" refreshurl="/controls/ticketheader.htm?id=<#objectid>">
+            <#include file="\controls\ticketheader.htm">
+          </div>
+        <div class="refreshable" refreshurl="/controls/tickethistory.htm?id=<#objectid>">
+            <#include file="\controls\tickethistory.htm">
+        </div>
+    </div>
+    <#lang key="html.ticketdata.help.title" default="Ticket Data" var="helptitle">
+    <#lang key="html.ticketdata.help.text" default="A ticket in PRTG contains information about recent events in your PRTG installation which need a closer look by a responsible person. You can edit, resolve, or close existing tickets, or assign them to other users.<br><br><a href='/help/tickets.htm' target='_blank'><b>Help: Tickets</b></a>" var="helptext">
+    <#system type='showhelp' var='showhelp'>
+    <#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

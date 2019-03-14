@@ -1,0 +1,15 @@
+﻿<#system type="denyreadonlyusers">
+<div id="content" class="ui-dialog-content">
+<form id="quickeditform" action="/editsettings" title='<#lang key="html.quickedit.head" default="Rename Object"> "<#objectproperty name="name">"' class="prtg-form prtg-plugin" data-plugin="multiedit">
+	<fieldset>
+		<legend></legend>
+		<div class="control-group">
+			<label class="control-label has_help" for="quickeditnamedit"><#lang key="html.quickedit.name" default="Name"></label>
+			<div class="controls">
+				<input id="quickeditnamedit" class="text fieldrequired" type="text" autocomplete="off" name="name_" value="<#objectproperty name="name">">
+			</div>
+		</div>
+	</fieldset>
+	<input type="hidden" name="id" value="<#objectid>">
+</form>
+</div>

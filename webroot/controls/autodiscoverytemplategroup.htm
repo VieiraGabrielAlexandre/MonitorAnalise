@@ -1,0 +1,11 @@
+﻿<#objectid var="nodeid">
+<form id="autodiscogrouptemplate" action="/editsettings" method="POST" class="prtg-form prtg-plugin" data-plugin="prtg-form autodiscovery-form" data-type="template" data-object="group" data-ajaxsubmit="true" data-redirect="false">
+	<#objectproperty name="devicetemplate" show="edit">
+	<div class="submitbuttonboxanchor">
+		<div class="submitbuttonbox">
+			<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" class="submit button btngrey" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+			<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+		</div>
+	</div>
+	<input type="hidden" name="id" value="<#objectid>">
+</form>

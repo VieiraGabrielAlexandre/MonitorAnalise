@@ -1,0 +1,7 @@
+<#selectionlist content="groupsanddevices_as_json" 
+showsensors="0"
+groups="0" 
+devices="1" 
+probes="0" 
+allowroot="0" 
+altformat="1">

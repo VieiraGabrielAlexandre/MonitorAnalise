@@ -1,0 +1,29 @@
+﻿<#system type="denyfornonadmins">
+    <p><b><#lang key="html.sslnagscreen.infohead" default="You are about to switch your web server to use SSL" autoexpand="default"></b></p>
+    <p><#lang key="html.sslnagscreen.infotext1" default="Your <b>core server will be stopped</b> for a few minutes. When re-loading the web interface, your browser will show a <b>certificate warning</b> similar to the one shown below."></p>
+
+    <p>
+        <img id="sslnagscreen_sslwarnimg" >
+    </p>
+
+    <!-- Display image depending on browser:
+    src="images/sslwarn_chrome.png"
+    //  Chrome :    /website/images/sslwarn_chrome.png
+    //  Firefox:    /website/images/sslwarn_firefox.png
+    //  Else   :    /website/images/sslwarn_ie.png
+    -->
+
+    <p><#lang key="html.sslnagscreen.infotext2" default="The certificate that comes with PRTG is not insecure, but simply not signed by a valid authority. In order to proceed to the login screen, please confirm the claimed 'security risk'."> </p>
+        <p>
+
+        <a id="sslnagscreen_sslwarnhelplink" target="_blank">
+    <!-- Insert link depending on browser:
+    //  Chrome :    /help/ssl_certificate_warning.htm#chrome
+    //  Firefox:    /help/ssl_certificate_warning.htm#firefox
+    //  IE     :    /help/ssl_certificate_warning.htm#ie
+    //  Else   :    /help/ssl_certificate_warning.htm#other
+    -->
+
+        <br><a href="/help/ssl_certificate_warning.htm" target="_blank"><#lang key="html.sslnagscreen.infotext3" default="Show detailed information"></a></p>
+        <p><#lang key="html.sslnagscreen.infotext4" default="<i>Note:</i> You can install a <a href='https://kb.paessler.com/en/topic/283?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb' target='_blank'>trusted SSL certificate</a> later."> </p>
+    <h2><#lang key="html.sslnagscreen.continue" default="Do you want to continue?"></h2>

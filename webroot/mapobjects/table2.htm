@@ -1,0 +1,24 @@
+﻿<!--Data Tables: Sensors (sorted alphabetically)-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+  <#mapobject type="objectgrip" mode="<@editmode>">
+  <#mapobject type="htmlbefore" subid="<@subid>">
+  <#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+
+  <div class="top10listcontainer" style="overflow:hidden">
+    <#lang key="html.mapobjects.tableX.tabletitle" default="Sensors (@@@@)" var="tabletitle">
+    <#table tableid="sensortable"
+    id="<@objectid>"
+    content="sensors"
+    columns="sensor,probegroupdevice,status,message,lastvalue,minigraph,priority"
+    sortby="sensor"
+    infoheader="false"
+    links="false"
+    sortable="false"
+    filter_tags="@tag(<@tagfilterstring>)"
+    varexpand="tabletitle"
+    tabletitle="@tabletitle"
+    >
+  </div>
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>

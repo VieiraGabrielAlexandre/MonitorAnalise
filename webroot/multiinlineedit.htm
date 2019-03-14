@@ -1,0 +1,23 @@
+﻿<#system type="denyreadonlyusers">
+<#countobj var="objectcount">
+<#domultiedit>
+<div id="content">
+	<div class="inline-tabs multieditform" data-title="<#lang key="html.multiedit.intro" default="You are editing @objectcount objects">">
+		<p id="objlist"><#listobj></p>
+		<div class="buttonbox" style="float:right;">
+			 <a delete data-placement="left" title="<#lang key="common.strings.delete" default="Delete">" href="#"><i class="icon-dark icon-trash"></i></a>
+			 <a pause data-placement="left" title="<#lang key="common.strings.pause" default="Pause">" href="#"><i class="icon-dark icon-pause"></i></a>
+			 <a resume data-placement="left" title="<#lang key="common.strings.resume" default="Resume">" href="#"><i class="icon-dark icon-play"></i></a>
+			 <a favorite="1" style="display:none;<#inserthtml showtagonlyfortype="sensor" html="display:inline-block;"><#inserthtml showtagonlyfortype="device" html="display:inline-block;">" data-placement="left" title="<#lang key="js.contextmenus.AddFavorite" default="Add to Favorites">" href="#"><i class="icon-dark icon-flag"></i></a>
+			 <a favorite="0" style="display:none;<#inserthtml showtagonlyfortype="sensor" html="display:inline-block;"><#inserthtml showtagonlyfortype="device" html="display:inline-block;">" data-placement="left" title="<#lang key="js.contextmenus.RemoveFavorite" default="Remove from Favorites">" href="#"><i class="icon-dark icon-cancel"></i></a>
+			 <a checknow data-placement="left" title="<#lang key="common.strings.checknow" default="Scan Now">" href="#"><i class="icon-dark glyph-arrows-cw"></i></a>
+		</div>
+		<div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs" data-no-history="true" style="<#inserthtml showtagonlyfortype="sensor" html="">">
+	    <ul class="nav-tabs" style="display:none;<#inserthtml showtagonlyfortype="sensor" html="display:flex;">">
+        <li tabid="1" class="tab-active tab-dark"><a href="/controls/multitab.htm?id=<#objectid>"><i class="icon-white icon-wrench"></i><#lang key="html.global.multiedittab1" default="Settings"></a></li>
+        <li tabid="2" class="tab-channels tab-dark" style="<#inserthtml showtagonlyfortype="sensor" html="display:inline-block;">"><a href="/controls/multieditchannels.htm?id=<#objectid>"><i class="icon-white icon-signal"></i><#lang key="html.global.multiedittab2" default="Channel Settings"></a></li>
+			</ul>
+    	<div class="tab-container" style="position:relative"></div>
+		</div>
+	</div>
+</div>

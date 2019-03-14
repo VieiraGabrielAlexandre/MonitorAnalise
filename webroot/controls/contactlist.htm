@@ -1,0 +1,35 @@
+﻿<#lang key="html.contactlist.help.title" default="Notification Contacts" var="helptitle">
+<#lang key="html.globals.contactlist.help" default="Notification contacts contain information about how PRTG can send you notifications. They are unique for each user account. Add one or more notification contacts to receive notifications from PRTG. 
+You can add several email addresses or phone numbers manually. A cloud contact is added automatically when you install the PRTG app on your smartphone, connect to the PRTG server, and enable push notifications. 
+Configure the actual content and settings of notifications in the <b>Notifications</b> tab.[br][br]
+[b]Note:[/b] You can change the <b>Primary Email Address</b> under <b>My Account</b>.<br><br><a href='/help/notification_contacts.htm' target='_blank'><b>Help: Notification Contacts</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#lang key="html.global.contactlist" default="Notification Contacts" var="title">
+<div class="inner-wrapper">
+    <div class="inner-aside-left"></div>
+    <div class="inner-content">
+      <div class="add-menu-wrapper">
+                  <div class="add-menu add-menu-fixed">
+                      <a class='actionbutton add-menu-item <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' onclick="_Prtg.objectTools.addNotificationContact(<#objectid>, 0); return false;" href="#"><#lang key="html.contactlist.button.addemail" default="Add Email Contact"></a>
+                      <a class='actionbutton add-menu-item <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' onclick="_Prtg.objectTools.addNotificationContact(<#objectid>, 2); return false;" href="#"><#lang key="html.contactlist.button.addtext" default="Add SMS Contact"></a>
+                  </div>
+            </div>
+      <div class="table-wrapper">
+        <div class="prtg-plugin contactlist" data-plugin="prtg-table">
+              <#table
+                  content="contacts"
+                  columns="name,info,type,status,links"
+                  tools="pause,delete,edit"
+                  sortby="name"
+                  sortable="true"
+                  tabletitle="@title"
+                  varexpand="tabletitle"
+                  refreshable="true">
+            </div>
+        </div>
+    </div>
+    <div class="inner-aside-right">
+      <div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+    </div>
+</div>

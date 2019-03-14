@@ -1,0 +1,106 @@
+﻿<!--Define IP Ranges-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_channel_definitions.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="define_lookups.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Define IP Ranges</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Define IP Ranges</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">In some setting fields, you can either enter a host name or single IP address, or you can define IP ranges. PRTG follows a common syntax for this. IP ranges are available, for example, for <a href="available_sensor_types.htm#bandwidth" class="topiclink">xFlow and Packet Sniffer sensors</a> and for <a href="probes_settings.htm#probebasic" class="topiclink">probe connection settings</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For the supported syntax of the automatic network discovery functionality in PRTG, see section <span class="f_BoldCustom"><a href="auto_discovery.htm#discoverytypegroup" class="topiclink">Auto-Discovery</a></span> (<span class="f_BoldCustom">IP Selection Method</span>).</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="options" class="hmanchor"></a><span class="f_InTopicHeading">Available Options</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Option</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Syntax</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Example(s)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Simple</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a fixed IP address.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">a.b.c.d</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">10.0.10.9</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Hostname</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a hostname. PRTG will resolve it to an IP address in your network.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">hostname</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">device-xyz</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Hostmask</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a hostmask. A hostmask defines the relevant bits of the IP address.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">a.b.c.d/h </span><span class="f_ItalicCustom">or</span><span class="f_ListBulleted"> a.b.c.d/e.f.g.h</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">10.0.0.0/255</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Range</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter an IP address range. R</span>eplace each of <span class="f_BoldCustom">a</span>, <span class="f_BoldCustom">b</span>, <span class="f_BoldCustom">c</span>, <span class="f_BoldCustom">d</span> by either</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">*</span><span class="f_ListBulleted"> (asterisk) for any value; corresponds to </span><span class="f_ItalicCustom">0-255</span><br />
+<span class="f_ListBulleted">—or—</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">x-y</span><span class="f_ListBulleted"> for any range between </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">255</span><span class="f_ListBulleted">.</span></li>
+</ul>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">a.b.c.d</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">10.0.0.1-20 </span><span class="f_ItalicCustom">or</span><span class="f_ListBulleted"> 10.*.0.* </span><span class="f_ItalicCustom">or</span><span class="f_ListBulleted"> 10.0.0-50.*</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Flow,Flow IP Ranges,Packet Sniffer,Packet Sniffer IP Ranges,Probes,Probes IP Ranges</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_channel_definitions.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="define_lookups.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

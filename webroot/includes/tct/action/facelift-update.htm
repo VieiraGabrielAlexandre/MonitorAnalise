@@ -1,0 +1,87 @@
+﻿
+<tct
+  data-role="<#role>"
+  data-page="<#page>">
+<!--
+      var $tct = this;
+      var isAdmin = <#if value="@isadmin" is="true" then="true" else="false" varexpand="value">;
+
+      if(isAdmin){
+          _Prtg.objectTools.openReleaseDialog($('.js-facelift-dialogcontent'))
+                            .done(function(){
+                                $tct.data().confirm(null, '<#role>','<#page>','done');
+                            })
+                            .fail(function(){});
+        }
+-->
+<div id="facelift-dialogcontent" class="js-facelift-dialogcontent" data-dialog-title="What’s New in PRTG">
+    <h1>Major UI Improvements</h1>
+
+    <div class="js-slider">
+        <div class="slide">
+            <p class="media-content">
+                <span>Welcome to the all-new web interface of PRTG! We have tidied up PRTG and given it a cleaner look so you can find what you need more easily.</span>
+            </p>
+            <p class="media-content bordered">
+                <span class="overlay-text">
+                    This PRTG version includes many improvements to the look and feel of the UI. For example, <strong>Add</strong> buttons in the device tree have been bundled into one central location for ease of use.
+                    Click <i class="glyph-plus-circled"></i> to open the new <strong>Add</strong> menu.</span>
+                <img src="./images/17.3.34-add_menu1.png" >
+                <span class="image-caption">New Add Sensor Buttons in the Device Tree</span>
+            </p>
+        </div>
+        <div class="slide">
+            <p class="media-content bordered">
+                <span>
+                        <img src="./images/17.3.34-multi-edit.png" >
+                        <span class="image-caption">Editing in Table Lists with Multi-Edit</span>
+                </span>
+                <span class="overlay-text">
+                    The <strong>Edit</strong> function in table lists now always works like the former <strong>Multi-Edit</strong> function. Select the object/s you want to edit and the menu appears to the right.
+                </span>
+            </p>
+        </div>
+        <div class="slide">
+            <p class="media-content bordered">
+                <span>
+                        <img src="./images/17.3.34-floating-save.png" >
+                        <span class="image-caption">New Floating Save Button in Forms</span>
+                </span>
+                <span class="overlay-text">
+                    Forms now have a floating <strong>Save</strong> button in the bottom right corner. The button turns blue once you have made changes and you can save at any time.
+                </span>
+            </p>
+        </div>
+        <div class="slide">
+            <p class="media-content bordered">
+                <span>
+                        <img src="./images/17.3.34-table-filter.png" >
+                        <span class="image-caption">New Show/Hide Filters Function</span>
+                </span>
+                <span class="overlay-text">
+                    Table lists now have separate filters that you can hide or show.
+                </span>
+            </p>
+        </div>
+        <div class="slide">
+            <p class="media-content bordered">
+                <span>
+                        <img src="./images/17.3.34-object-selector.png" >
+                        <span class="image-caption">New Object Selector for Device Tree Object Submenus</span>
+                </span>
+                <span class="overlay-text">
+                 The submenus for device tree objects in the main menu bar have been removed and the respective pages now have a new object selector.
+                </span>
+            </p>
+        </div>
+        <div class="slide">
+            <div class="text-big js-adjustToHeight">
+                <p>
+                    These are just a few of the improvements we have made.<br/> For more information, please see the <a class="arrow" target="_blank" href="/help/introduction.htm">manual</a> or our
+                    <a class="arrow" target="_blank" href="https://blog.paessler.com/all">blog</a>.<br/> Enjoy!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</tct>

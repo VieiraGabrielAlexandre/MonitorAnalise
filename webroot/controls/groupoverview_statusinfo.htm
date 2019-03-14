@@ -1,0 +1,42 @@
+﻿<#objectstatus name="objid" show="text" var="objid">
+<div status="objectstatus,class,overviewsmalldata " class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw"> overviewsmalldatastatus<#objectstatus name="condition" show="textraw">">
+
+    <ul>
+        <li class="overview-block">
+            <span class="overview-title"><#lang key="html.devicedata.status" default="Status">:</span>
+            <span class="overview-data">
+            <div message="title" status="messagetitle,title" title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+                <span class="displayobjectstatus" status="message"><#objectstatus name="message" show="htmllong"> </span><dummy status="condition"><#objectstatus name="condition"></dummy></b>
+            </div>
+            </span>
+        </li>
+
+        <li class="overview-block" style='<#if value="@objid" is="0" then="display: none;" else="" varexpand="value">'>
+            <span class="overview-title"><#lang key="html.devicedata.dependency" default="Dependency"/>:</span>
+            <span class="overview-data"><#objectstatus name="dependency"></span>
+        </li>
+
+        <li class="overview-block">
+            <span class="overview-title"><#lang key="html.devicedata.defaultinterval" default="Default Interval"/>:</span>
+            <span class="overview-data"><#lang key="html.global.everyintervalevery" default="every"/>&nbsp;
+                <span status="interval"><#objectproperty name="interval" inherit="true"></span>
+            </span>
+        </li>
+
+        <li class='overview-block <#if value="@objid" is="0" then="hide" varexpand="value">'  style='<#showbyobjecttype showonlyforobjecttype="group">'>
+            <span class="overview-title"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery"/>:</span>
+            <span class="overview-data" status="lastautodiscovery"><#lastautodisco></span>
+        </li>
+
+        <li class="overview-block">
+            <span class="overview-title"><#lang key="html.devicedata.ID" default="ID"/>:</span>
+            <span class="overview-data">#<#objectid></span>
+        </li>
+
+        <li class="overview-block-qr">
+            <span class="overview-qr">
+            <div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" data-zoom="12" title='<#lang key="html.qrcode.tooltip.object" default="Show QR Code">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host=''></div>
+            </span>
+        </li>
+    </ul>
+</div>

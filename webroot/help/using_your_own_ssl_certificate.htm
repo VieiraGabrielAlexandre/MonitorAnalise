@@ -1,0 +1,79 @@
+﻿<!--Using Your Own SSL Certificate with the PRTG Web Server-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="data_storage.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="appendix.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Using Your Own SSL Certificate with the PRTG Web Server</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Using Your Own SSL Certificate with the PRTG Web Server</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">This section gives you a brief overview on how to use your own trusted SSL certificate files with the PRTG web server.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This only applies to PRTG on premises instances, not to PRTG hosted by Paessler. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">What is SSL?</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG supports Secure Sockets Layer (SSL) to encrypt all data entered and shown in the <span class="f_BoldCustom"><a href="ajax_gui_basic.htm" class="topiclink">Web Interface</a></span>, in the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, or in the <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">Smartphone Apps</a></span>. This ensures that no sensitive information can be intercepted when sending data between the PRTG core server and your client software.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, PRTG is already delivered with an SSL certificate so you can use secure connections to your PRTG core server. However, these certificate files are not signed by a valid authority, which is why browsers show an <span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span> when you try to access the web interface. Despite this warning your connection is still encrypted successfully.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To remove the browser warning, you can obtain a certificate that is valid for your own domain name and signed by a valid authority. You can request your own trusted certificate from an issuer like GoDaddy, DigiCert, or InstantSSL, for example. The certificate must be provided in a suitable format and you have to import it correctly for your PRTG server.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="importing" class="hmanchor"></a><span class="f_InTopicHeading">Importing Trusted SSL Certificates for PRTG</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are many different issuers for certificates, and there are different formats certificates can be provided in. PRTG needs three different files, named correctly, containing data in the expected encoding and format. This can make the manual import of an issued certificate slightly complicated, because there are various certificate files that you must retrieve from a <span class="f_ItalicCustom">certificate authority (CA)</span>. So, to ease the installation of a trusted certificate, we provide the freeware tool <span style="font-weight: bold;">PRTG Certificate Importer</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PRTG Certificate Importer combines and converts all files that a CA bundle contains automatically for the use with PRTG and stores the certificate files into the correct path on your PRTG server. In the best case, you just provide the path to your received CA bundle and let the tool do the rest. We strongly recommend that you use the PRTG Certificate Importer if you want to install a trusted certificate for PRTG! </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information about this tool and a download link, see <span class="f_ListBulleted">the Paessler website: <a href="https://www.paessler.com/tools/certificateimporter" target="_blank" class="weblink">PRTG Certificate Importer</a></span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="manual_import" class="hmanchor"></a><span class="f_InTopicHeading">Manual Certificate Import</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Although we recommend that you use the PRTG Certificate Importer because it is much more comfortable, you still can import your trusted certificate manually. If you do so, please note that PRTG requires three different certificate files in a PEM encoded format and an unencrypted private key:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">prtg.crt</span><span class="f_ListBulleted">: This is the certificate for your PRTG server. It has to be stored in </span><span class="f_ItalicCustom">PEM</span><span class="f_ListBulleted"> encoded format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">prtg.key</span><span class="f_ListBulleted">: This is the private key matching your server certificate. It has to be stored in </span><span class="f_ItalicCustom">PEM</span><span class="f_ListBulleted"> encoded format and may not be encrypted! Please make sure that you provide this file in </span><span class="f_ItalicCustom">decrypted</span><span class="f_ListBulleted"> format! The best way to check this is to open the file in a text editor. If you find a line containing the word &quot;ENCRYPTED&quot;, the file still needs to be decrypted before you can use it with PRTG. Please decrypt using an SSL tool (for example, OpenSSL) and your key password.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">root.pem</span><span class="f_ListBulleted">: This is the public root certificate of your certificate's issuer. It has to be stored in </span><span class="f_ItalicCustom">PEM</span><span class="f_ListBulleted"> encoded format and must contain all necessary root certificates of your issuer in one file. If there is more than one PEM encoded root certificate, please use a text editor to copy all of them into a single file (the order does not matter).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>PEM encoded files must not contain Unix line breaks! Only Windows line breaks are supported.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Once ready, copy these three files to the <span class="f_BoldCustom">/cert</span> subfolder of your PRTG program directory (please back up existing files) and restart your PRTG core server service (see <span class="f_BoldCustom"><a href="prtg_server_administrator.htm#start_stop" class="topiclink">PRTG Administration Tool</a></span>). </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>PRTG services will not be able to start if the files are not provided in exactly the expected format!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed instructions and examples, installation descriptions for various certificates (including <span class="f_ItalicCustom">Wildcard</span> certificates), as well as links to certificate tools and converters, see the <span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm#more" class="topiclink">More</a></span> section below.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Freeware Network Tools: PRTG Certificate Importer—Installing Trusted SSL Certificates for PRTG Network Monitor</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/tools/certificateimporter" target="_blank" class="weblink">https://www.paessler.com/tools/certificateimporter</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I establish a secure web interface connection to PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/273" target="_blank" class="weblink">https://kb.paessler.com/en/topic/273</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use a trusted SSL certificate with the PRTG web interface?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/283" target="_blank" class="weblink">https://kb.paessler.com/en/topic/283</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Certificate,Certificate Trusted SSL,SSL,Web Server,Web Server Certificate</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="data_storage.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="appendix.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

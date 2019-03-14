@@ -1,0 +1,127 @@
+﻿<!--Monitoring via Push-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="monitoring_syslogs_and_snmp_traps.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_via_http.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring via Push</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring via Push</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">PRTG provides the option to monitor passively received data. For this purpose, you can set up a device in a way that it automatically sends the data to PRTG. Specific sensor types can receive this data and alarm you based on your individual settings. For example, all Linux/Unix and most network devices support remote devices generating data, which has to be configured on each device, and sending the messages to a PRTG probe system. Usually, only the destination IP and port are required.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Push monitoring enables you to use webhooks to push messages to the PRTG server using Hypertext Transfer Protocol (HTTP). Wikipedia describes a webhook as a method of augmenting or altering the behavior of a web page or application with custom callbacks.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG comes with built-in sensor types for push monitoring:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_count_sensor.htm" class="topiclink">HTTP Push Count Sensor</a></span><span class="f_ListBulleted">: counts the number of received messages.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_data_sensor.htm" class="topiclink">HTTP Push Data Sensor</a></span><span class="f_ListBulleted">: displays numerical values from received messages.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="http_push_data_advanced_sensor.htm" class="topiclink">HTTP Push Data Advanced Sensor</a></span><span class="f_ListBulleted">: shows received values and messages encoded in valid XML or JSON.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="case" class="hmanchor"></a><span class="f_InTopicHeading">Use Cases</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The push technology can be useful for monitoring in different cases, for example when target devices do not allow requests via the usual technologies. The following scenarios are good examples of where to use HTTP Push sensors.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Devices that cannot run a PRTG probe</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Appliances that are not accessible via SSH or SNMP</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Web servers that can run certain scripts or PHP periodically</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Migrating a lot of EXE sensors into one EXE script that manages the HTTP Push sensors and sends data to them. Some coding is required, see this Knowledge Base article: </span><a href="https://kb.paessler.com/en/topic/68767" target="_blank" class="weblink">How can I monitor SCVMM hosts and VMs with PRTG?</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">When monitoring Linux services, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/70771" target="_blank" class="weblink">How can I monitor and automatically restart a service on a Linux host?</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you need to push </span><span class="f_BoldCustom">a lot</span><span class="f_ListBulleted"> of data into PRTG in short periods of time; the sensors have been tested with about 10,000 values pushed within one minute.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="use" class="hmanchor"></a><span class="f_InTopicHeading">How to Use</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Webhooks basically work like push messages. These are triggered by an event (for example, a new comment to a blog post) and send according information in real time to a specified URL. You can use this technology to push messages to the PRTG Probe, and monitor count and content with HTTP Push sensors. Because webhooks use HTTP, you can integrate them without having to add new infrastructure to your network.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="configuration" class="hmanchor"></a><span class="f_InTopicHeading">Recommended Configuration</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Follow the steps below for a sample configuration of the HTTP Push sensors.</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Add the sensors.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Define the URLs.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Step 1</span>: Add the HTTP Push Count, HTTP Push Data, and HTTP Push Data Advanced sensors to PRTG.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use the standard method to add sensors to your configuration.</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Choose the Probe Device or a device of your own.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListNumbered">A device of your own has no practical advantage with HTTP Push sensors but it might help you stay better organized.</span><br />
+<span class="f_ListNumbered">&nbsp;</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Click </span><span class="f_BoldCustom">Add Sensor</span><span class="f_ListNumbered"> and filter for </span><span class="f_BoldCustom">Push Message Receiver</span><span class="f_ListNumbered"> under </span><span class="f_BoldCustom">Technology Used</span><span class="f_ListNumbered">.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Select one of the HTTP Push sensors that fits best to your intended usage.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more details, see section <span class="f_BoldCustom"><a href="add_a_sensor.htm" class="topiclink">Add a Sensor</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ImageCaption"> </span>These sensor types cannot be used in cluster mode. You can set them up on local probes or remote probes only, not on cluster probes.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Step 2</span>: Define the corresponding URL to send HTTP requests to PRTG.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">In order for the desired configuration to be properly sent to and received by PRTG, please use the following URL formats.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">HTTP Push Count Sensor</span> uses the following URL:</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">http://</span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_BoldCustom">:</span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_BoldCustom">/</span><span class="f_ItalicCustom">&lt;token&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Replace the parameters <span class="f_ItalicCustom">&lt;probe_ip&gt;</span>, <span class="f_ItalicCustom">&lt;port_number&gt;</span>, and <span class="f_ItalicCustom">&lt;token&gt;</span> with the corresponding values.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_ListBulleted"> is the IP address of the system where the PRTG probe with the sensor is running.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_ListBulleted"> is where the sensor listens for incoming HTTP calls.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_ItalicCustom">&lt;token&gt;</span><span class="f_ListBulleted"> is used to define the matching sensor.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://192.0.2.0:5050/XYZ123</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can use several sensors with the same port and identification token. In this case, the number of push messages will be shown in each of these sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">HTTP Push Data Sensor</span> uses the following URL:</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">http://</span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_BoldCustom">:</span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_BoldCustom">/</span><span class="f_ItalicCustom">&lt;token&gt;</span><span class="f_BoldCustom">?value=</span><span class="f_ItalicCustom">&lt;integer_or_float&gt;</span><span class="f_BoldCustom">&amp;text=</span><span class="f_ItalicCustom">&lt;text message&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Replace the parameters <span class="f_ItalicCustom">&lt;probe_ip&gt;</span>, <span class="f_ItalicCustom">&lt;port_number&gt;</span>, <span class="f_ItalicCustom">&lt;token&gt;</span>, and <span class="f_ItalicCustom">&lt;integer_or_float&gt;</span> with the corresponding values. The <span class="f_BoldCustom">&amp;text</span> parameter is optional: You can omit it.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You can define </span><span class="f_BoldCustom">port number</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">identification token</span><span class="f_ListBulleted"> in the sensor settings. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">probe IP</span><span class="f_ListBulleted"> is the IP address of the system on which your PRTG probe with this sensor is running. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">value</span><span class="f_ListBulleted"> can be an integer or a float value, depending on the data of your application; you have to set the value type accordingly in the sensor settings. This parameter will be the sensor value.</span><br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">If this parameter is missing, the sensor will show a </span><span class="f_BoldCustom">down</span><span class="f_ListBulleted"> status.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">You can <span class="f_BoldCustom">optionally</span> add a custom text message by replacing the parameter <span class="f_ItalicCustom">&lt;text message&gt;</span> with it. The text will be shown as sensor message. If there is no value but only a text, the text will be shown as error message. <br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>This text message has to be URL encoded (for example, the whitespaces in the sample URL below); most browsers achieve this automatically.</li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Example:</span> </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://192.0.2.0:5050/XYZ123?value=0&amp;text=this%20is%20a%20message</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can use several sensors with the same port and identification token. In this case, the data of push messages will be shown in each of these sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">HTTP Push Data Advanced Sensor</span> uses the following URLs depending on the type of HTTP request.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">GET</span><span class="f_ListBulleted"> requests: </span><span class="f_BoldCustom">http://</span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_BoldCustom">:</span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_BoldCustom">/</span><span class="f_ItalicCustom">&lt;token&gt;</span><span class="f_BoldCustom">?content=</span><span class="f_ItalicCustom">&lt;valid XML_or_JSON&gt;</span><span class="f_ListBulleted"> </span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<span class="f_ListBulleted">The XML encoded value of the content parameter has to match the format as defined in section </span><span class="f_BoldCustom"><a href="custom_sensors.htm#advanced_sensors" class="topiclink">Custom Sensors</a></span><span class="f_ListBulleted">. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">POST</span><span class="f_ListBulleted"> requests: </span><span class="f_BoldCustom">http://</span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_BoldCustom">:</span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_BoldCustom">/</span><span class="f_ItalicCustom">&lt;token&gt;</span><span class="f_ListBulleted"> </span><br />
+<span class="f_ListBulleted">&nbsp;</span><br />
+<span class="f_ListBulleted">This HTTP request method sends the XML or JSON encoded HTTP body as POST data. The body has to match the format as defined in section </span><span class="f_BoldCustom"><a href="custom_sensors.htm#advanced_sensors" class="topiclink">Custom Sensors</a></span><span class="f_ListBulleted">. We strongly recommend the HTTP content type </span><span class="f_ItalicCustom">application/xml</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">application/json</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Replace the parameters <span class="f_ItalicCustom">&lt;probe_ip&gt;</span>, <span class="f_ItalicCustom">&lt;port_number&gt;</span>, <span class="f_ItalicCustom">&lt;token&gt;</span>, and <span class="f_ItalicCustom">&lt;valid XML_or_JSON&gt;</span><span class="f_ListBulleted"> (for GET requests) </span>with the corresponding values:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You can define </span><span class="f_BoldCustom">port number</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">identification token</span><span class="f_ListBulleted"> in the sensor settings. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">probe IP</span><span class="f_ListBulleted"> is the IP address of the system on which your PRTG probe with this sensor is running.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The content of GET requests has to be valid XML or JSON in the PRTG API format.</span><br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>The content has to be URL encoded (for example, the whitespaces in the sample URL below); most browsers achieve this automatically.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Minimum example for the GET method</span> that returns one static channel value:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://127.0.0.1:5050/XYZ123?content=&lt;prtg&gt;&lt;result&gt;&lt;channel&gt;MyChannel&lt;/channel&gt;&lt;value&gt;10&lt;/value&gt;&lt;/result&gt;&lt;text&gt;this%20is%20a%20message&lt;/text&gt;&lt;/prtg&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>By default, values within the <span class="f_ItalicCustom">&lt;value&gt;</span> tags in the returned XML or JSON must be <span class="f_ItalicCustom">integers</span> to be processed. If <span class="f_ItalicCustom">float</span> values are returned, you have to explicitly define this value type as defined in section <span class="f_BoldCustom"><a href="custom_sensors.htm#advanced_elements" class="topiclink">Custom Sensors</a></span> with <span class="f_ItalicCustom">&lt;float&gt;</span> tags, otherwise the sensor will show <span class="f_BoldCustom">0</span> values in affected channels. Example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://127.0.0.1:5050/XYZ123?content=&lt;prtg&gt;&lt;result&gt;&lt;channel&gt;MyChannel&lt;/channel&gt;&lt;value&gt;10.45&lt;/value&gt;&lt;float&gt;1&lt;/float&gt;&lt;/result&gt;&lt;text&gt;this%20is%20a%20message&lt;/text&gt;&lt;/prtg&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can use several sensors with the same port and identification token. In this case, the data of push messages will be shown in each of these sensors.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="conclusion" class="hmanchor"></a><span class="f_InTopicHeading">Conclusion</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">These sensor types are great tools to count and display HTTP push messages to the PRTG server and to keep you up-to-date with real-time information about your network.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I monitor SCVMM hosts and VMs with PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/68767" target="_blank" class="weblink">https://kb.paessler.com/en/topic/68767</a></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: How can I monitor and automatically restart a service on a Linux host?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/70771" target="_blank" class="weblink">https://kb.paessler.com/en/topic/70771</a></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="monitoring_syslogs_and_snmp_traps.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_via_http.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

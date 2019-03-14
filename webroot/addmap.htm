@@ -1,0 +1,81 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addmap.title" default="Add Map" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs  trail="<a href='/maps.htm'>Maps</a>" varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content">
+		<form id="addobjectdialogform" enctype="multipart/form-data" action="addmap2.htm" method="POST" class="prtg-form absolute-quick-action formchanged prtg-plugin" data-plugin="prtg-form">
+			<h1><#lang key="html.addmap.head" default="Add <b>Map</b>"></h1>
+			<div class="eye-catcher"></div>
+			<div class="cancel-action ">
+				<a onClick="history.back();return(false)" class="btn cancel" type="reset">
+					<#lang key="html.global.cancel" default="Cancel"/>
+				</a>
+			</div>
+			<input type="hidden" name="mapurl_" value="<#system type=GUID>">
+
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.addmap.wizhead" default="Map Name"></legend>
+				<div class="control-group">
+					<label for="name_" class="control-label has_help"><#lang key="html.addmap.wiz2" default="Map Name"></label>
+					<div class="controls" data-placement="right" data-helptext="<#lang key="html.addmap.wizhelp" default="Enter a meaninigful name for the map to identify it later.">">
+						<input class="text fieldrequired {required:'#name_:visible'} required" type="text" name="name_" id="name_" autocomplete="off" value="<#defaultname type="Map">">
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.addmap.wizhead2" default="Map Layout"></legend>
+				<div class="control-group">
+					<label for="width_" class="control-label has_help"><#lang key="html.addmap.wiz22" default="Map Width"></label>
+					<div class="controls" data-placement="right" data-helptext="<#lang key="html.addmap.wizhelp2" default="Define the width of the map in pixels.">">
+						<input class="text fieldrequired required number" type="text" name="width_" id="width_" autocomplete="off" value="800">
+					</div>
+
+					<label for="height_" class="control-label has_help"><#lang key="html.addmap.wiz23" default="Map Height"></label>
+					<div class="controls" data-placement="right" data-helptext="<#lang key="html.addmap.wizhelp3" default="Define the height of the map in pixels.">">
+						<input class="text fieldrequired required number" type="text" name="height_" id="height_" autocomplete="off" value="600">
+					</div>
+
+					<label for="upfile_" class="control-label has_help"><#lang key="html.addmap.wiz24" default="Background Image (optional)"></label>
+					<div class="controls" data-placement="right" data-helptext="<#lang key="html.addmap.wizhelp4" default="Choose a file to use as background for your map. This can be a JPG, PNG, or GIF image. The file size must be below 2 MB.">">
+						<input type="file" name="upfile_" id="upfile_" class="prtg-plugin" data-plugin="prtg-fileHandler" accept=".gif, .jpg, .png, .jpeg" data-max="2097152" defaultValue="<#lang key="html.file.select" default="Select File">">
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.addmap.wizhead5" default="Public Access"></legend>
+				<div class="control-group">
+					<label for="pubaccess_" class="control-label has_help"><#lang key="html.addmap.allow" default="Allow Public Access"></label>
+					<div class="controls" data-placement="right" data-helptext="<#lang key="html.addmap.wizhelp5" default="Define rights for public access to the map. Allow only users who are logged in to PRTG to view the map, or allow any user to access the map, as long as they know the correct URL. For public access, you can also disable all links, so the map will not be interactive.
+		  <br>For public access, PRTG applies the color theme of the security context user (see setting <b>Security Context and Color Mode</b>).<br><br><b>Note:</b> The option to disable all links does not apply to embedded geographical maps (Geo Maps)!">">
+						<div class="radio-control">
+							<input type="radio" class="hidden radio" name="pubaccess_" value="0" id="pubaccess0_" checked checked="checked">
+							<label for="pubaccess0_" class="radio-control-label">
+								<i class="icon-gray icon-radio-on"></i><#lang key="html.addmap.wiza" default="No public access (map cannot be viewed without login)">
+							</label>
+							<input type="radio" class="hidden radio" name="pubaccess_" value="1" id="pubaccess1_">
+							<label for="pubaccess1_" class="radio-control-label">
+								<i class="icon-gray icon-radio-on"></i><#lang key="html.addmap.wizb" default="Allow public access (map can be viewed by using a unique URL)">
+							</label>
+                            <input type="radio" class="hidden radio" name="pubaccess_" value="2" id="pubaccess2_">
+							<label for="pubaccess2_" class="radio-control-label">
+								<i class="icon-gray icon-radio-on"></i><#lang key="html.addmap.wizc" default="Allow public access, disable all links except for Geo Maps (map can be viewed by using a unique URL)">
+							</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<#include file="includes\submitbutton.htm">
+		</form>
+	</div>
+	<#lang key="html.addmap.help.title" default="Add a new map" var="helptitle">
+	<#lang key="html.addmap.help.text" default="Using PRTG's Map feature you can create graphs, network maps and lists of monitored objects to create your own personal pages with monitoring information. Please enter the following base information for the new map. Then use the &quot;Edit Map&quot; feature to add and arrange icons, graphs and tables." var="helptext">
+	<#system type='showhelp' var='showhelp'>
+	<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

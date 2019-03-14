@@ -1,0 +1,17 @@
+﻿<#objectproperty type="nodename" var="objtype">
+<#if value="@objtype" is="sensor" then="" else="<!--" varexpand="value">
+<div class="oskhelpbox prtg-plugin hide" data-plugin="documentation" data-url="<#manuallink check="true">" data-filter=".f_Remarks" />
+<#if value="@objtype" is="sensor" then="" else="-->" varexpand="value">
+
+<form enctype="multipart/form-data" id="multiedit" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="multiedit" data-ajaxsubmit="true" data-redirect="false">
+    <#object type="settings">
+    <#hiddenid>
+    <input type="hidden" name="domultiedit" value="1">
+    <div class="submitbuttonboxanchor">
+        <div class="submitbuttonbox">
+            <input type="submit"   style="<#system type="hideforreadonlyusers">" class="submit button btngrey" multiedit="multiedit" value="<#lang key="html.global.save" default="Save">">
+            <input onclick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+        </div>
+    </div>
+</form>
+

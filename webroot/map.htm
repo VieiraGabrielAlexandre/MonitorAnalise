@@ -1,0 +1,70 @@
+﻿<#checkobjecttype objecttype="map">
+
+<#accessright var="accesslevel">
+
+<#lang key="html.map.includeheader.title" default="Map Details" var="title">
+<#objectproperty name="name" var="name">
+<#lang key="html.pagetitel.dummy" default="<dummy>@name</dummy>" comment="do not translate" var="objectname">
+<#setpagetitle pagetitle="@name | @title" varexpand="pagetitle">
+
+
+<#lang key="html.global.maps" default="Maps" var="trail">
+<#lang key="html.global.editmap" default="Edit Map" var="this">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<#breadcrumbs varexpand="trail,this" trail="<a href='/maps.htm'>@trail</a>" this="@this" >
+
+<div id="main" class="map-main-container map<#objectproperty name="id">" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1 class="sitecaption"><#lang key="html.map.head2" default="<i>Map</i> @objectname"></h1>
+  <div class="buttonbox">
+    <#include file="includes\linkpagebutton.htm">
+    <a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+  </div>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active" tab-name="map-view">
+        <a href="/controls/mapview.htm?id=<#objectid>">
+          <i class="glyph-link-ext-alt"></i>
+          <span class="text"><#lang key="html.map.viewmap" default="View Map"/></span>
+        </a>
+      </li>
+      <li tabid="2" style='<#system type="hideforreadonlyusers">' class='<#if value="@accesslevel" is="Read" then="hide" varexpand="value">'>
+        <a href="/controls/mapdesigner.htm?id=<#objectid>">
+          <i class="glyph-insert-template"></i>
+          <span class="text"><#lang key="html.map.mapdesigner" default="Map Designer"/></span>
+        </a>
+      </li>
+      <li tabid="3" class="">
+        <a href="/controls/objectdata.htm?objecttype=map&id=<#objectid>">
+          <i class="glyph-cog"></i>
+          <span class="text"><#lang key="html.global.settings" default="Settings"/></span>
+        </a></li>
+      <li style='<#system type="hideforreadonlyusers">' tabid="4">
+      <a href="/controls/maphtml.htm?id=<#objectid>">
+        <i class="glyph-code"></i>
+        <span class="text"><#lang key="html.map.gethtml" default="Get HTML"/></span>
+      </a></li>
+      <li tabid="5" class="tab-spacing tab-dark">
+        <a href="/controls/comments.htm?id=<#objectid>" title='<#lang key="html.global.comments" default="Comments">'>
+        <i class="<#hascomment>"></i>
+        <span class="text"><#lang key="html.global.comments" default="Comments"/></span>
+        </a></li>
+      <li tabid="6" class="tab-dark" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">">
+      <a href="/controls/history.htm?id=<#objectid>">
+        <i class="glyph-document-history"></i>
+        <span class="text"><#lang key="html.global.history" default="History"/></span>
+      </a>
+      </li>
+
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+<#lang key="html.map.help.title" default="Maps" var="helptitle">
+<#lang key="html.map.help.text" default="Using Maps you can create your own overviews of your monitored network.<br><br><a href='/help/maps_designer.htm' target='_blank'><b>Help: Maps Designer</b></a><br><a href='/help/maps_settings.htm' target='_blank'><b>Help: Maps Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

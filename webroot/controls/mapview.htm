@@ -1,0 +1,9 @@
+﻿<#checkobjecttype objecttype="map">
+<div id="mapshow" class="prtg-plugin" data-plugin="prtg-maps" data-mapid="<#objectid>" data-connections='<#mapobject type="connections">' data-mapwidth="<#mapobject type="mapwidth">" data-mapheight="<#mapobject type="mapheight">" data-mode="view" data-autoscale="<#mapobject type="mapautoscale" codeif="true" codeifnot="false">">
+  <div class="view">
+    <div id="mapview" style="width:<#mapobject type="mapwidth">px;height:<#mapobject type="mapheight">px;<#mapobject type="background">; background-repeat:no-repeat;">
+      <svg id="mapsvg" height="<#mapobject type="mapheight">px" width="<#mapobject type="mapwidth">px" ></svg>
+      <#mapobject type="list">
+    </div>
+  </div>
+</div>

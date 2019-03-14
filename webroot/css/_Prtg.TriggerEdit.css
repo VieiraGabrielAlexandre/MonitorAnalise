@@ -1,0 +1,149 @@
+﻿#triggergrid {
+  border: 0px solid black;
+  margin: 0px;
+  height: 100%;
+}
+
+#triggergrid table {
+  width: auto;
+  min-width: 794px;
+}
+
+#triggergrid table.table thead th {
+  border-top: none;
+}
+
+#triggergrid table.table tbody td a {
+  vertical-align: text-bottom;
+}
+
+#triggergrid table tfoot {
+  display: none;
+}
+
+.modificationbutton {
+  margin-bottom: 4px;
+}
+
+.triggers_thresholdedithelp {
+  display: none;
+}
+
+.edittrigger select {
+  vertical-align: bottom;
+  height: 20px;
+  margin: 0 !important;
+}
+
+.edittrigger input {
+  vertical-align: baseline;
+  height: 21px;
+  background: #fff;
+  margin: 0 !important;
+}
+
+.typecolumn {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.notificationcolumn {
+  min-width: 580px;
+}
+
+.notificationcolumn form {
+  margin: 0;
+  padding: 0;
+}
+
+tr[subid="new"] p {
+  line-height: 20px;
+}
+
+tr p {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#triggertable .editcolumn {
+  width: 100px;
+  min-width: 100px;
+}
+
+#inheritedtriggertable {
+  margin-bottom: -1px;
+}
+
+#inheritedtriggertabledata .editcolumn {
+  width: 150px;
+  min-width: 150px;
+}
+
+.showselectedlink {
+  text-decoration: underline !important;
+  background-color: #E1EDFB;
+}
+
+.readtrigger,
+.selected_status {
+  font-weight: bold;
+}
+
+#addbuttons {
+  display: block;
+  margin-top: 5px;
+}
+
+.addtriggerbuttons {
+  display: none;
+}
+
+#dialog-del-confirm {
+  display: none;
+}
+
+div.triggerediting table.table {
+  width: 100%;
+}
+
+div.triggerediting input {
+  border: 1px solid <#colorcode color="midgray">;
+  padding: 0 6px;
+  background-color: #fff;
+}
+
+div.triggerediting select {
+  overflow: hidden !important;
+  width: auto !important;
+  padding: 2px;
+  border: 1px solid <#colorcode color="midgray">;
+  padding-right: 16px;
+  display: inherit;
+}
+
+@-moz-document url-prefix() {
+  div.triggerediting select {
+    padding-right: 0px;
+  }
+}
+
+div.triggereditingwide select {
+  overflow: hidden !important;
+  width: 300px !important;
+}
+
+div.triggereditingmedium select {
+  overflow: hidden !important;
+  width: 140px !important;
+}
+
+div.triggerediting input {
+  float: none;
+  width: 55px !important;
+}
+
+div.triggerediting fieldset,
+div.inheritedtriggerediting fieldset {
+  width: auto;
+}

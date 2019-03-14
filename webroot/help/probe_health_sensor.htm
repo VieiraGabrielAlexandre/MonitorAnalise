@@ -1,0 +1,256 @@
+﻿<!--Probe Health Sensor-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="postgresql_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="python_script_advanced_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Probe Health Sensor</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Probe Health Sensor</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Probe Health sensor monitors internal PRTG parameters. It shows the status of the PRTG probe (either for the local probe, the hosted probe, a <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probe</a>, or a <a href="clustering.htm" class="topiclink">cluster</a> probe).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">It checks various parameters of your PRTG system that can affect the quality of the monitoring results:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Health</span><span class="f_ListBulleted">: </span>This index value sums up the probe state into a value between 100% (healthy) and 0% (failing). <span class="f_Comment">Frequent or repeated health values below 100% should be investigated.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Probe Process CPU Load</span><span class="f_ListBulleted">: </span>This channel shows the current percentage CPU load that the probe process causes. Extensive CPU load can lead to false, incomplete, and incorrect monitoring results. This value usually should stay below 50%.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Data Storage Free</span>: This channel shows the free disk space on the probe system. PRTG dynamically sets limits for this channel. You can manually override these limits in the <a href="sensor_channels_settings.htm" class="topiclink">sensor channel settings</a>.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Handles</span><span class="f_ListBulleted">: </span>This is a counter for the data structures of the operating system. It is responsible for internal resource management. Repeated obviously increasing values should be investigated.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Interval Delay non-WMI&amp;SNMP</span><span class="f_ListBulleted">: This channel shows the percentage interval delay for all sensor types that are not of the type SNMP or WMI. If this value is over 0%, try to increase the <a href="root_group_settings.htm#scanning" class="topiclink">scanning intervals</a> or distribute your sensors over <a href="remote_probes_and_multiple_probes.htm" class="topiclink">multiple probes</a>.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Interval Delay SNMP</span><span class="f_ListBulleted">: This channel shows the percentage interval delay for SNMP sensors. If this value is above 0%, there are probably too many very slow SNMP V3 sensors. In this case, try to increase the <a href="root_group_settings.htm#scanning" class="topiclink">monitoring intervals</a> or distribute the sensors over <a href="remote_probes_and_multiple_probes.htm" class="topiclink">several probes</a>.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Interval Delay WMI</span><span class="f_ListBulleted">: This channel shows the percentage interval delay for WMI sensors. If this value is above 0%, WMI sensors could not check the target device according to their interval. 100% means that WMI sensors on the average are checked with twice their interval. For values above 0% try to increase the <a href="root_group_settings.htm#scanning" class="topiclink">monitoring intervals</a> or distribute the sensors over <a href="remote_probes_and_multiple_probes.htm" class="topiclink">several probes</a> to keep the number of WMI sensors per probe below 120 (with 60 seconds interval) or 600 (with 300 seconds interval).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Lost Flow Packets</span><span class="f_ListBulleted">: This channel shows the percentage of lost <a href="flow_monitoring.htm" class="topiclink">flow</a> packets. The higher this value, the less flow packages PRTG can handle. Usually, this value should be 0%. Investigate increasing values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Memory Usage</span><span class="f_ListBulleted">: This channel shows the amount of memory being used by the PRTG probe service as reported by the memory manager. </span>Repeated obviously increasing values should be investigated. If the value is constantly above 2 GB, this indicates that PRTG is running at its limits. In this case you should distribute some sensors to <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probes</a>.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Message Queue</span><span class="f_ListBulleted">: This channel shows the number of monitoring results from the probe that have not been processed yet by the core. This value usually should stay below 1/10 of the sensor count.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Open Requests</span><span class="f_ListBulleted">: This channel shows the number of currently active monitoring requests. This value should stay below the maximum of 500 open requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Syslog Buffer</span><span class="f_ListBulleted">: This channel shows the number of buffered syslog packages. Usually, this value should be 0 (or very low). Investigate increasing values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Threads</span><span class="f_ListBulleted">: </span>This channel shows the number of program parts that are running simultaneously currently. This value can increase with heavy load. The number should not exceed 100 in normal operation.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Toplist Memory</span>: This channel shows the amount of RAM that the <span class="f_BoldCustom"><a href="toplists.htm" class="topiclink">Toplists</a></span> on this probe are using. Stay below 1 GB memory usage (depending on available memory on the probe system). If necessary, reduce the number of Toplists or distribute them on <a href="remote_probes_and_multiple_probes.htm" class="topiclink">multiple probes</a>.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Trap Buffer</span>: This channel shows the number of buffered SNMP traps. <span class="f_ListBulleted">Usually, this value should be 0 (or very low). Investigate increasing values.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:599px"><a href="probe_health.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Probe Health Sensor" title="Probe Health Sensor" style="width:599px;height:471px;border:none" src="probe_health_zoom67.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Probe Health Sensor</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="lang" class="hmanchor"></a><span class="f_InTopicHeading">Sensor in Other Languages</span></p>
+<p style="page-break-inside: auto; margin: 0px 0px 13px 0px;">Dutch: <span style="font-weight: bold;">Probe Status</span>, French: <span style="font-weight: bold;">État de la probe</span>, German: <span style="font-weight: bold;">Zustand der Probe</span>, Japanese: <span style="font-family: 'MS Gothic'; font-weight: bold;">プローブヘルス</span>, Portuguese: <span style="font-weight: bold;">Funcionamento da sonda</span>, Russian: <span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">Работоспособность зонда</span>, Simplified Chinese: <span style="font-family: 'Microsoft JhengHei'; font-weight: bold;">探针健康状况</span>, Spanish: <span style="font-weight: bold;">Salud de sonda</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">PRTG creates this sensor automatically and you cannot delete it.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">You can create this sensor only on a probe device (either local probe, a <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probe</a>, or a <a href="clustering.htm" class="topiclink">cluster</a> probe).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: <a href="http://kb.paessler.com/en/topic/64628" target="_blank" class="weblink">My probe system is running out of disk space. What can I do?</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the details page of a sensor, click the <span class="f_BoldCustom">Settings </span>tab to change its settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Usually, a sensor connects to the <span class="f_BoldCustom">IP Address </span>or <span class="f_BoldCustom">DNS Name </span>of the parent device where you created this sensor. See the <span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span> for details. For some sensor types, you can define the monitoring target explicitly in the sensor settings. Please see below for details on available settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Sensor Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the sensor. By default, PRTG shows this name in the <a href="general_layout.htm#tree" class="topiclink">device tree</a>, as well as in <a href="alarms.htm" class="topiclink">alarms</a>, <a href="logs.htm" class="topiclink">logs</a>, <a href="notifications.htm" class="topiclink">notifications</a>, <a href="reports.htm" class="topiclink">reports</a>, <a href="maps.htm" class="topiclink">maps</a>, <a href="libraries.htm" class="topiclink">libraries</a>, and <a href="tickets.htm" class="topiclink">tickets</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Parent Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> that this sensor <a href="tags.htm#tags_inherited" class="topiclink">inherits</a> from its <a href="object_hierarchy.htm" class="topiclink">parent device, group, and probe</a>. This setting is shown for your information only and cannot be changed here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted">, separated by spaces or commas. You can use tags to group sensors and use tag–filtered views later on. Tags are not case sensitive. We recommend that you use the default value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can add additional tags to the sensor if you like. Other tags are automatically <a href="tags.htm#tags_inherited" class="topiclink">inherited</a> from objects further up in the device tree. These are visible above as </span><span class="f_BoldCustom">Parent Tags</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a priority for the sensor. This setting determines where the sensor is placed in sensor lists. Top priority is at the top of a list. Choose from one star (low priority) to five stars (top priority).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="channelgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor Display</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Primary Channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select a channel from the list to define it as the primary channel. In the device tree, the last value of the primary channel will always be displayed below the sensor's name. The available options depend on what channels are available for this sensor. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">You can set another primary channel later by clicking the pin symbol of a channel in the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_Comment"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how different channels will be shown for this sensor.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show channels independently (default)</span><span class="f_ListBulleted">: Show an own graph for each channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Stack channels on top of each other</span><span class="f_ListBulleted">: Stack channels on top of each other to create a multi-channel graph. This will generate an easy-to-read graph that visualizes the different components of your total traffic. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This option cannot be used in combination with manual </span><span class="f_ItalicCustom">Vertical Axis Scaling</span><span class="f_ListBulleted"> (available in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted"> settings).</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Stack Unit</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if stacked graphs are selected above. Choose a unit from the list. All channels with this unit will be stacked on top of each other. By default, you cannot exclude single channels from stacking if they use the selected unit. However, there is an advanced procedure to do so.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inherited" class="hmanchor"></a><span class="f_InTopicHeading">Inherited Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, all following settings are inherited from objects higher in the hierarchy and should be changed there, if necessary. Often, best practice is to change them centrally in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span>group's settings, see section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information. To change a setting only for this object, disable inheritance by clicking the button next to <span class="f_ItalicCustom">inherit from</span> under the corresponding setting name. You will then see the options described below. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="intervalgroup" class="hmanchor"></a><a id="scanning" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scanning Interval</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a scanning interval (seconds, minutes, or hours) from the list. The scanning interval determines the time the sensor waits between two scans. You can change the available intervals in the <a href="monitoring_settings.htm#scanning-intervals" class="topiclink">system administration</a> on PRTG on premises installations.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Query Fails</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the number of scanning intervals that a sensor has time to reach and check a device again in case a sensor query fails. The sensor can try to re-reach and check a device several times, depending on the option you select here, before it will be set to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. This helps you avoid false alarms if the monitored device has only temporary issues. For previous scanning intervals with failed requests, the sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to down immediately</span><span class="f_ListBulleted">: The sensor will show an error immediately after the first failed request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 1 interval, then set to down (recommended)</span><span class="f_ListBulleted">: After the first failed request, the sensor will show a yellow warning status. If the following request also fails, the sensor will show an error.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 2 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after three consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 3 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after four consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 4 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after five consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 5 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after six consecutively failed requests.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensors that monitor via Windows Management Instrumentation (WMI) always wait at least one scanning interval until they show an error. It is not possible to set a WMI sensor to </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> immediately, so the first option will not apply to these sensor types. All other options can apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a sensor has defined error limits for channels, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; option will apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a channel uses <a href="define_lookups.htm" class="topiclink">lookup</a> values, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; options will apply.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="unitconfiggroup" class="hmanchor"></a><a id="channel" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Channel Unit Configuration</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Unit Types</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">For each type of sensor channel, define the unit in which data is displayed. If defined on probe, group, or device level, these settings can be inherited to all sensors underneath. You can set units for the following channel types (if available):</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Bandwidth</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Memory</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disk</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">File</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">Custom channel types can be set on sensor level only.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: </span>My probe system is running out of disk space. What can I do?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/64628" target="_blank" class="weblink">https://kb.paessler.com/en/topic/64628</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channels" class="hmanchor"></a><span class="f_InTopicHeading">Edit Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change display settings, spike filter, and limits, switch to the sensor's <span class="f_BoldCustom">Overview</span> tab and click the gear icon of a specific channel. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Notification Triggers</span> tab to change notification triggers. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For more general information about settings, see the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+<span class="f_InTopicHeading">&nbsp;</span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="postgresql_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="python_script_advanced_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

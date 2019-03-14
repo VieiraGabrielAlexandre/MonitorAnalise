@@ -1,0 +1,28 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#objectproperty name="name" show="textlong" var="objectname">
+<#lang key="html.objectusedby.title3" default="Object @objectname is used by" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>" style="background:#fff">
+    <div id="content">
+        <div class="tabs-container" >
+            <#include file="includes\objectisusedby.htm">
+            <form>
+                <br style="clear:both"/>
+                <div class="submitbuttonboxanchor">
+                    <div class="submitbuttonbox">
+                        <input class="cancel btngrey button" type="reset"  name="button1" onClick="history.back();return(false)" value="<#lang key="html.global.goback" default="Go back">">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<#lang key="html.objectusedby.help.title2" default="Help: Object used by" var="helptitle">
+<#lang key="html.objectusedby.help.text" default="This page shows all other objects that have associations to a given object." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

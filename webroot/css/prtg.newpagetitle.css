@@ -1,0 +1,76 @@
+﻿/* prtg.newpagetitle.css */
+
+#objectpriority,
+#objectpriority span
+{
+	display:inline-block;
+}
+h1 .probegroupdevice
+{
+	margin:5px 0 6px 3px;
+	font-size:11px;
+}
+h1 .probegroupdevice a
+{
+	display:inline-block;
+	opacity:1;
+	background-color:transparent;
+	max-width:120px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	font-weight:normal;
+	overflow: hidden;
+}
+
+h1 .bigsensoricon
+{
+	display:block;
+	float:left;
+	width:26px;
+	height:26px;
+	margin-right:5px;
+	margin-bottom:10px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: 100%;
+	border:1px solid #fff;
+}
+
+.bigsensoricon{
+  background-position: center;
+}
+.bigsensoricon.bigsensoriconsensg
+{
+	background-image: url(/icons/icon_up.svg);
+}
+
+.bigsensoricon.bigsensoriconsensy
+{
+	background-image: url(/icons/icon_warning.svg);
+}
+.bigsensoricon.bigsensoriconsensr
+{
+	background-image: url(/icons/icon_down.svg);
+}
+.bigsensoricon.bigsensoriconsensq
+{
+	background-image: url(/icons/icon_partdown.svg);
+}
+.bigsensoricon.bigsensoriconsenso
+{
+	background-image: url(/icons/icon_downack.svg);
+}
+.bigsensoricon.bigsensoriconsensb
+{
+	background-image: url(/icons/icon_paused.svg);
+}
+.bigsensoricon.bigsensoriconsensp
+{
+	background-image: url(/icons/icon_unusual.svg);
+}
+.bigsensoricon.bigsensoriconsensx
+{
+	background-image: url(/icons/icon_unknown.svg);
+}
+
+

@@ -1,0 +1,48 @@
+﻿<#checkobjecttype objecttype="group,probenode">
+<#objectid var="objid">
+<#objectstatus name="probegroupdevice">
+
+<div class="overviewsmalldata ui-layout-north overviewsmalldatastatus<#objectstatus name="status" show="textraw"> overviewsmalldatastatus<#objectstatus name="condition" show="textraw">">
+    <div class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.status" default="Status">:</span>
+        <span class="overview-data">
+            <div title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+            <span class="displayobjectstatus"><#objectstatus name="message" show="htmllong"> </span><#objectstatus name="condition">
+            </div>
+        </span>
+    </div>
+    <div class="overview-block" title="<#lang key="html.devicedata.sensors" default="Sensors">">
+        <span class="overview-data">
+            <span class="sensors-summary"><#include file="/controls/treesensorswitches.htm">&nbsp;</span>
+            <span class="sensors-total">(<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens'><#objectstatus name="totalsens"></span>)</span>
+        </span>
+    </div>
+</div>
+
+<div class="overviewsmalldata">
+    <div class="overview-block" style="<#if value="@objid" is="0" then="display: none;" else="" varexpand="value">">
+        <span class="overview-title"><#lang key="html.devicedata.dependency" default="Dependency">:</span>
+        <span class="sensors-total"><#objectstatus name="dependency"></span>
+    </div>
+
+    <div class="overview-block">
+        <span class="overview-title"><#lang key="html.sensorstatusdata.interval" default="Interval">:</span>
+        <span class="sensors-total" status="interval"><#objectproperty name="interval" inherit="true"></span>
+    </div>
+
+    <div class="overview-block <#if value="@objid" is="0" then="hide" varexpand="value">"  style="<#showbyobjecttype showonlyforobjecttype="group">">
+        <span class="overview-title"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:</span>
+        <span class="sensors-total" status="lastautodiscovery"><#lastautodisco></span>
+    </div>
+
+    <div class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.ID" default="ID">:</span>
+        <span class="sensors-total">#<#objectid></span>
+    </div>
+</div>
+
+<div style="position:relative;" class="<#selectionlist content="geomapprovider" asClass="true">">
+	<div id="geomap_grouptooltip" class="refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=445&height=225&maxlegenditems=4&domobjectid=geomap_grouptooltip&nolegend=1">
+		<#selectionlist content="locationlist" width="445" height="225" maxlegenditems="4" domobjectid="geomap_grouptooltip" loadlater="true" nolegend="1">
+	</div>
+</div>

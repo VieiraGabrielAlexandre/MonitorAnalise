@@ -1,0 +1,18 @@
+﻿<#system type="denyreadonlyusers">
+<#countobj var="objectcount">
+<#domultiedit>
+	<div id="content" class="ui-dialog-content">
+	<h1><#lang key="html.runemplatemulti.page.title" default="Run Auto-Discovery with Template for @objectcount Objects"></h1>
+		<div class="multieditsearchresult">
+			<wingui-hidden>
+				<p id="objlist"><#lang key="html.multiedit.intro" default="You are editing @objectcount objects">:<br><br><#listobj></p>
+			</wingui-hidden>
+
+			<#include varexpand="file" file="controls\autodiscoverytemplatemultidevice.htm">
+		</div>
+	</div>
+</div>
+
+
+
+

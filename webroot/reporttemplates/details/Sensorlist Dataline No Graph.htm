@@ -1,0 +1,47 @@
+﻿
+<!-- Template Sensorlist Dataline No Graph.htm -->
+
+<tr>
+	<td style="max-width:150px">
+		<#objectstatus id="<@objectid>" name="probegroupdevice" show="text">
+	</td>
+	<td  style="max-width:200px">
+		<b><#objectproperty id="<@objectid>" name="name"></b><br>
+	</td>
+	<td style="<#clusterdependent showfor='clusterinstallation'>">
+		<table>
+			<thead>
+			<tr>
+			<th><#lang key="html.global.clusternode" default="Cluster Node"></th>
+			<th><#lang key="html.global.average" default="Average"><br><#lang key="html.global.total" default="Total"></th>
+			<th colspan="2"><#lang key="html.global.uptime" default="Uptime"><br><#lang key="html.global.downtime" default="Downtime"></th>
+			<th colspan="2"><#lang key="html.global.good" default="Good"><br><#lang key="html.global.failed" default="Failed"></th>
+			</tr></thead>
+			<@loop>
+
+		</table>
+	</td>
+
+		<td style="<#clusterdependent hidefor='clusterinstallation'>" class="rightalign">
+
+		<#report type="avgvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>"><br>
+		<#report type="sumvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+		</td>
+		<td style="<#clusterdependent hidefor='clusterinstallation'>" class="rightalign">
+			<#report type="uptimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>"><br>
+			<#report type="downtimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+		</td>
+		<td style="<#clusterdependent hidefor='clusterinstallation'>" class="rightalign">
+			<span class="percent">[<#report type="uptime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>"]</span><br>
+			<span class="percent">[<#report type="downtime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>"]</span>
+		</td>
+		<td style="<#clusterdependent hidefor='clusterinstallation'>" class="rightalign">
+			<#report type="goodreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>"><br>
+			<#report type="failedreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+		</td>
+		<td style="<#clusterdependent hidefor='clusterinstallation'>">
+			<span class="percent">[<#report type="goodreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">]</span><br>
+			<span class="percent">[<#report type="failedreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">]</span>
+		</td>
+
+</tr>

@@ -1,0 +1,60 @@
+﻿<#checkobjecttype objecttype="device">
+<div status="objectstatus,class,overviewsmalldata " class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw">">
+    <ul>
+      <li class="overview-block allowwordwrap">
+        <span class="overview-title"><#lang key="html.devicedata.status" default="Status">:</span>
+        <span class="overview-data">
+          <div message="title" status="messagetitile,title" title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+            <span message="text" class="textmessage"><span status="message"><#objectstatus name="message" show="htmllong"></span></span>
+          </li>
+        </span>
+      </li>
+        <li class="overview-block">
+            <span class="overview-title"><#lang key="html.devicedata.sensors" default="Sensors">:</span>
+            <span class="overview-data">
+            <span class="sensors-summary">
+              <span status="downsens"><#objectstatus name="downsens"></span>
+              <span status="partialdownsens"><#objectstatus name="partialdownsens"></span>
+              <span status="downacksens"><#objectstatus name="downacksens"></span>
+              <span status="warnsens"><#objectstatus name="warnsens"></span>
+              <span status="upsens"><#objectstatus name="upsens"></span>
+              <span status="pausedsens"><#objectstatus name="pausedsens"></span>
+              <span status="unusualsens"><#objectstatus name="unusualsens"></span>
+              <span status="undefinedsens"><#objectstatus name="undefinedsens"></span>
+            </span>
+            <span class="sensors-total">
+              (<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens' status="totalsens"><#objectstatus name="totalsens"></span>)
+            </span>
+        </span>
+        </li>
+      <li class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.dnsip" default="DNS/IP">:</span>
+        <span class="overview-data"><#objectproperty name="host" show="text"></span>
+      </li>
+      <li class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.dependency" default="Dependency">:</span>
+        <span class="overview-data"><#objectstatus name="dependency"></span>
+      </li>
+      <li class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.defaultinterval" default="Default Interval">:</span>
+        <span class="overview-data" status="interval"><#lang key="html.global.everyintervalevery" default="every">&nbsp;<#objectproperty name="interval" inherit="true"></span>
+      </li>
+      <li class="overview-block <#ifclusterorpodprobedevice insert="hide">">
+        <span class="overview-title"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:</span>
+        <span class="overview-data" status="lastautodiscovery"><#lastautodisco></span>
+      </li>
+      <li class="overview-block <#ifclusterorpodprobedevice insert="hide">">
+        <span class="overview-title"><#lang key="html.devicedata.lastrecommendation" default="Last Recommendation">:</span>
+         <span class="overview-data" status="lastrecommendation"><#lastautodisco recommender='true'></span>
+      </li>
+      <li class="overview-block">
+        <span class="overview-title"><#lang key="html.devicedata.id" default="ID">:</span>
+         <span class="overview-data">#<#objectid></span>
+      </li>
+    <li class="overview-block-qr">
+        <span class="overview-qr">
+           <div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" data-zoom="12" title='<#lang key="html.qrcode.tooltip.object" default="Show QR Code">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host='<#objectproperty name="host">'></div>
+         </span>
+    </li>
+    </ul>
+</div>

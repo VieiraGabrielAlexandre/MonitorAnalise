@@ -1,0 +1,20 @@
+﻿<#inserturlparam parameter="tablefilter" var="showmultipleobejcts">
+<div class="object-lookup <#clusterdependent insertfor="clustertreeobject" insertcontent="clusterobject">">
+<input 
+	id="input<#inserturlparam parameter='domid'>"
+	class="<#inserturlparam parameter='required'> <#inserturlparam parameter='radioclass'>" 
+	name="<#inserturlparam parameter='inputname'>" 
+	value="<#objectid>" 
+	type="hidden">
+	<div class="objectlookup">
+		<div style='<#if value="@showmultipleobejcts" varexpand="value" is="1" then="display:none;" else="">'>
+ 			<#objectstatus name="probegroupdevice">
+		</div>
+		<div class="inline">
+			<p id="objlist" style="margin:0;">
+				<#listobj>
+			</p>
+		</div>
+		<i class="ui-icon icon-search resetable"></i>
+	</div>
+</div>

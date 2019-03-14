@@ -1,0 +1,69 @@
+﻿
+.ui-widget,
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.ui-dialog {
+  padding: 0;
+  z-index: 100002;
+  /*box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.48);*/
+}
+
+.ui-front {
+  z-index: 100001;
+}
+
+.ui-dialog {
+  border: 0;
+}
+
+.ui-dialog-titlebar {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  background: #f3f2f2;
+}
+
+.ui-dialog .ui-dialog-title {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.ui-widget-overlay {
+  opacity: 0.9;
+}
+
+.ui-datepicker-buttonpane button {
+  font-weight: bold !important;
+  opacity: 1 !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  padding: .3em;
+}
+
+.ui-dialog-buttonset button {
+  height: 26px;
+  min-width: 100px;
+}
+
+.ui-corner-all,
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-right,
+.ui-corner-bottom,
+.ui-dialog-titlebar {
+  border-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+#ui-datepicker-div {
+  /*dateslector wurde von der save bar überdeckt case 546303*/
+  z-index: 100002 !important;
+}

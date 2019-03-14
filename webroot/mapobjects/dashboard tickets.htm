@@ -1,0 +1,24 @@
+﻿<!--Data Tables: Tickets -->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+  <#mapobject type="objectgrip" mode="<@editmode>">
+  <#mapobject type="htmlbefore" subid="<@subid>">
+  <#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+  <div class="maptablecontainer" style="overflow:hidden">
+    <#lang key="html.dashboard.tickets" default="Open Tickets" var="tickets">
+    <#objectproperty name="name" var="objname" id="<@objectid>">
+    <b><#inserthtml html="@tickets (@objname)" varexpand="html" skiptagforreadonly="true" ></b>
+    <#table tableid="tickettable"
+      content="tickets"
+      id="<@objectid>"
+      filter_status="1"
+      filter_tags="@tag(<@tagfilterstring>)"
+      columns="datetime,priority,message,user"
+      count="50"
+      sortby="priority"
+      sortable="false"
+      links="false"
+      infoheader="false">
+  </div>
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>

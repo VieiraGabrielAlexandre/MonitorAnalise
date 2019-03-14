@@ -1,0 +1,221 @@
+﻿/*prtg.objectselector.css*/
+.tree-default ul
+{
+	background: url("/images/tv-item.gif") repeat-y scroll 0 0 transparent;
+}
+.tree-default li,.tree-default li.open
+{
+	background-image: url("/icons/group.png");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+.tree-default ins
+{
+	display: none;
+}
+table.objectSelector2
+{
+	border: 1px solid #aaa;
+	width: 100%;
+}
+table.objectSelector2 th
+{
+	background-color: #E1EDFB;
+	border-bottom: 1px solid #aaa;
+	font-weight: bold;
+	padding: 4px;
+}
+table.objectSelector2 td
+{
+	overflow: hidden;
+}
+table.objectSelector2 th+th,
+table.objectSelector2 td+td
+{
+	border-left: 1px solid #aaa;
+}
+#objectSelectorTree, #objectSelectorSensors, #externallink-tabs-2
+{
+	background-color: #fff;
+	display: block;
+	height: 340px;
+	overflow: auto;
+	position: relative;
+}
+#objectSelector.validateerror2 {
+	background-color: #FFEBEB!important;
+	border-color: #d71920;
+
+}
+#objectSelectorTree.validateerror2,
+#objectSelectorSensors.validateerror2,
+#externallink-tabs-2.validateerror2 {
+	background-color: #FFEBEB!important;
+	border-color: #d71920;
+  font-weight: inherit;
+  width: auto;
+  display: block;
+  margin: 6px 6px 2px 6px;
+  padding: 0;
+
+}
+
+.wizard #objectSelectorTree
+{
+	border: 1px solid #aaa;
+	height: auto;
+	margin: 2px;
+	max-height: 340px;
+	min-height: 70px;
+	overflow: auto;
+	padding: 3px;
+	width: 490px;
+}
+#objectSelectorSensors label
+{
+	background-repeat: no-repeat;
+	padding: 0 0 0 16px;
+	cursor: pointer;
+
+}
+
+#objectSelectorSensors label span.name
+{
+  background:#fff;
+  padding-right:10px;
+}
+
+#objectSelectorSensors label span.type
+{
+  background:#fff;
+  float:right;
+  color:#aaa;
+}
+
+#objectSelectorSensors input:checked~label
+{
+	background-color: #beebff;
+}
+#objectSelectorSensors input:checked~label span
+{
+	background-color: #beebff;
+}
+#objectSelectorSensors label:hover,
+#objectSelectorSensors label:hover span
+{
+	background-color: #e7f4f9;
+	text-decoration: none;
+}
+
+.sensorselection
+{
+	display: none;
+}
+.objectlookup
+{
+	position: relative;
+	cursor: pointer;
+	width: 100%;
+	padding: 2px;
+}
+.objectlookup div.probegroupdevice{
+	width: 95%;
+	width: calc(100% - 20px);
+}
+.objectlookup .groupmenu,
+.objectlookup .probemenu,
+.objectlookup .devicemenu,
+.objectlookup .sensormenu
+{
+	display: block ;
+	filter: none;
+	font-size: 11px;
+	width: 100%;
+	opacity: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+
+.objectlookup div.treeellipsis{
+	margin-bottom: 10px;
+	line-height: 5px;
+}
+.objectlookup div.treeellipsis:after{
+	margin-left: 16px;
+	content: "\2026";
+}
+
+.objectlookup i{
+	position: absolute;
+	top:2px;
+	right:2px;
+}
+.objectlookup:hover
+{
+	background-color: #E1EDFB;
+}
+.objectlookup a,
+.objectlookup a:hover,
+.objectlookup a:active
+{
+	color: #000;
+	text-decoration: none;
+}
+.objectlookup .probemenu
+{
+	margin-left: 0px;
+}
+.objectlookup .groupmenu
+{
+	margin-left: 16px;
+}
+.objectlookup .devicemenu
+{
+	margin-left: 32px;
+}
+.objectlookup .sensormenu
+{
+	margin-left: 48px;
+}
+.objectlookup .probegroupdevice~a
+{
+	font-weight: bold;
+}
+.objectlookup input
+{
+	width: 35px;
+}
+#objectSelectorSensors input
+{
+	position: absolute;
+	top: -4000px;
+}
+#objectSelectorSensors label
+{
+	display: block;
+	min-width: 100%;
+	white-space: nowrap;
+}
+#objectSelectorSensors div
+{
+	border: 1px solid #fff;
+	border-bottom: 1px solid <#colorcode color="lightgray">;
+}
+.tree-default li,.tree-default ul,.tree-default a
+{
+	min-width: 230px;
+}
+.tree-default li[rel=disabled]>a,.tree-default li[rel=disabled]>a:hover
+{
+	background: #fff;
+	border: none;
+	cursor: default;
+	opacity: 0.4;
+	padding: 0 3px;
+}
+.tree-default a.clicked
+{
+	font-weight: bold;
+}

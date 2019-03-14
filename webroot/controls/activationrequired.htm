@@ -1,0 +1,186 @@
+﻿<#system type="denyfornonadmins">
+
+	 <div style='<#hideactivationinfo mode="ok">'>
+    <div class="control-group">
+      <div class="controls fillwidth controls-info">
+        <span class="readonlyproperty" style="color:inherit;font-weight:normal;">
+          <p class="licensestatus license-error">
+            <span>
+              <#lang key="html.systemstatus.LicenseInfo.Activation.Status" default="License Status"/>:
+            </span>
+            <span class="license-value">  <#system type="licensemsg" skiptagfornonadmins='true'></span>
+          </p>
+
+          <p><#lang key="html.activation.activate.line1" default="To get started with PRTG you need to first activate your license."/></p>
+          <p><#lang key="html.activation.activate.line2" default="Choose the activation type (automatic or manual), then verify the name of your license and your key."/><br/>
+          <#lang key="html.activation.activate.line3" default="If your PRTG server cannot connect to the Paessler activation server (activation.paessler.com), select manual (offline activation)."/></p>
+        </span>
+      </div>
+    </div>
+  </div>
+
+	 <div style='<#hideactivationinfo mode="error">'>
+    <div class="control-group">
+      <div class="controls fillwidth controls-info">
+        <span class="readonlyproperty" style="color:inherit;font-weight:normal;">
+          <p class="licensestatus license-ok">
+            <span>
+              <#lang key="html.systemstatus.LicenseInfo.Activation.Status" default="License Status"/>:
+            </span>
+            <span class="license-value" >  <#system type="licensemsg" skiptagfornonadmins='true'></span>
+          </p>
+          <p><#lang key="html.activation.update.line1" default="Here you can change your license or manually refresh the maintenance information."/></p>
+
+          <p><#lang key="html.activation.update.line2" default="Choose the activation type (automatic or manual), then verify the name of your license and your key."/><br />
+            <#lang key="html.activation.update.line3" default="If your PRTG server cannot connect to the Paessler activation server (activation.paessler.com), select manual (offline activation)."/></p>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <form enctype="multipart/form-data" action="/editlicense" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+    <input type="hidden" name="targeturl" value="/licensing.htm?tabid=1">
+    <fieldset>
+      <legend class="prtg-header">
+        <#lang key="html.activation.type" default="STEP 1: Choose Activation Type">
+      </legend>
+      <div class="control-group">
+        <label class="control-label has_help" for="licenseaction">
+          <#lang key="html.activation.label.activationtype" default="Activation Type">
+        </label>
+        <div class="controls" data-placement="right" data-helptext="<#lang key="html.activation.mode.help" default="If your server cannot connect to the Paessler activation server (activation.paessler.com), select manual (offline activation).">">
+          <div class="radio-control" has_help >
+            <input type="radio" checked="checked" class="hidden radio GroupShowHide" name="licenseaction" value="automatic" id="licenseaction0">
+            <label for="licenseaction0" class="radio-control-label" >
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.activation.auto.legend" default="Automatic (online activation with optional HTTP proxy)">
+            </label>
+            <input type="radio" class="hidden radio GroupShowHide" name="licenseaction" value="manual" id="licenseaction1">
+            <label id="offlineactivation" for="licenseaction1" class="radio-control-label" data-placement="right" ">
+              <i class="icon-gray icon-radio-on"></i>
+              <#lang key="html.activation.manual.legend" default="Manual (offline activation)">
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="prtg-header">
+        <#lang key="html.activation.verify" default="STEP 2: Verify Your PRTG License">
+      </legend>
+      <div class="control-group">
+        <label class="control-label has_help" for="licensename">
+          <#lang key="html.activation.licensename.label" default="License Name">
+        </label>
+        <div class="controls" data-placement="right" data-helptext="<#lang key="html.activation.licensename.help" default="Enter the name of your license.">">
+          <input type="hidden" name="licenseaction" value="edit">
+          <input aria-required="true" class="text valid" data-rule-required="true" name="licensename" id="licensename" value="<#system type="licensee" skiptagfornonadmins='true'>">
+        </div>
+        <label class="control-label has_help" for="licensekey"><#lang key="html.activation.licenskey.lable" default="License Key"></label>
+        <div class="controls" data-placement="right" data-helptext="<#lang key="html.activation.licensekey.help" default="Enter the key of your license.">">
+          <input aria-required="true" class="text valid" data-rule-required="true" name="licensekey" id="licensekey" value="<#system type="licensekey" skiptagfornonadmins='true'>">
+		    </div>
+  		  <div class="Showlicenseaction1 Hidelicenseaction0 groupshowhideelement" style="display:none;">
+          <label class="control-label no_help"><#lang key="html.activation.systemid.label" default="System ID"></label>
+          <div class="controls" data-placement="right" data-helptext="<#lang key="html.activation.systemid.help" default="This is a fixed automatic value for your PRTG installation.">">
+            <p class="readonlyproperty"><#system type="activationcode" skiptagfornonadmins='true'></p>
+        </div>
+  		<div class="Showlicenseaction1 Hidelicenseaction0 groupshowhideelement" style="display:none;">
+          <div class="control-group licenese-tip">
+             <div class="controls fillwidth">
+              <p class="readonlyproperty">
+                <#lang key="html.activation.manual.tip1-gg" default="<i class='tip'>Tip</i> You can save your license data as a .txt file here.">
+              </p>
+             </div>
+		    <div>
+          <a id="licenseSaveToFile" class="prtg-plugin actionbutton" data-plugin="prtg-fileHandler" data-fileName="License.txt" data-fileData="dataCallback">
+            <#lang key="html.file.saveTo" default="Save to File">
+          </a>
+		    </div>
+      </div>
+
+  		  </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="Showlicenseaction0  Hidelicenseaction1 groupshowhideelement">
+      <legend class="prtg-header">
+        <#lang key="html.activation.activate.legend" default="STEP 3: Activate Your PRTG">
+      </legend>
+      <div class="control-group">
+        <div class="controls fillwidth">
+          <p>
+            <span class="readonlyproperty">
+              <#lang key="html.activation.text4" default="An HTTPS connection to the Paessler activation server (activation.paessler.com) is required. You can use an HTTP proxy for the connection.">
+            </span>
+          </p>
+        </div>
+      <#session type="layoutgroup" name="proxygroup" source="unifiedoptions" nodeid="810" id="810" nocaption="1">
+      </div>
+    </fieldset>
+
+    <fieldset class="Showlicenseaction1 Hidelicenseaction0 groupshowhideelement" style="display:none;">
+      <legend class="prtg-header">
+        <#lang key="html.activation.activate.request" default="STEP 3: Request Activation Data">
+      </legend>
+      <div class="control-group">
+        <div class="controls fillwidth">
+          <p>
+            <span class="readonlyproperty">
+              <#lang key="html.activation.manual.text1" default="Open" comment="Imperative as in 'Open' the following web page..."> <b><a target="_empty" href="http://www.paessler.com/activation">http://www.paessler.com/activation</a></b> <#lang key="html.activation.manual.text2" default="on a system that can connect to www.paessler.com and enter the license data.">
+            </span>
+          </p>
+        </div>
+      </div>
+   </fieldset>
+
+
+    <fieldset class="Showlicenseaction1 Hidelicenseaction0 groupshowhideelement" style="display:none;">
+      <legend class="prtg-header">
+        <#lang key="html.activation.activate.paste" default="STEP 4: Provide Activation Data">
+      </legend>
+  	  <div class="control-group">
+        <div class="controls fillwidth">
+          <p >
+            <span class="readonlyproperty">
+              <#lang key="html.activation.manual.text3" default="Paste the resulting activation data into the following field or upload a file below.">
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label no_help">
+          <#lang key="html.activation.activationdata.label" default="Activation Data">
+        </label>
+        <div class="controls">
+          <textarea id="activationdata" name="activationdata" style="height:200px;" placeholder="<#lang key="html.activation.data.placeholder" default="Paste data from clipboard here.">"></textarea>
+        </div>
+      </div>
+      <div class="control-group licenese-tip">
+        <div class="controls fillwidth">
+          <div class="readonlyproperty">
+            <#lang key="html.activation.manual.tip2" default="<i class='tip'>Tip</i> You can upload your activation data from a .txt or .dat file you saved on the activation page.">
+          </div>
+        </div>
+          <div class="controls">
+            <input type="file" id="licenseLoadFromFile" accept=".txt,.dat " class="prtg-plugin" data-plugin="prtg-fileHandler" data-fileContent="#activationdata" style="width: auto;" defaultValue="<#lang key="html.file.loadFrom" default="Load from File">">
+          </div>
+      </div>
+    </fieldset>
+
+    <div class="hideinandroid license-buttons" id="statusadmintools">
+
+      <div class="fll">
+        <input  type="button" class="cancel button btnlink"  value="<#lang key="html.activation.cancel" default="Cancel">" onclick="history.back();return(false)">
+      </div>
+      <div class="flr" style='<#hideactivationinfo mode="ok">' >
+        <input  type="submit" class="submit actionbutton flr" value='<#lang key="html.activation.activatenow" default="Activate License">' onsubmit="!!window.__ga && window.__ga('send', 'event', 'license', 'send'); return true;">
+      </div>
+      <div style='<#hideactivationinfo mode="error">' class="flr">
+        <button class="button btngrey"  onclick="window.open('https://shop.paessler.com/en/openticket');return false;"><#lang key="html.footer.feedback" default="Contact Support"/></button>
+        <input  type="submit" class="submit actionbutton" value="<#lang key="html.activation.updatenow" default="Update License">" onsubmit="!!window.__ga && window.__ga('send', 'event', 'license', 'send'); return true;">
+      </div>
+    </div>
+  </form>

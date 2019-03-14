@@ -1,0 +1,166 @@
+﻿<tct
+  data-role="<#role>"
+  data-page=""
+  data-remove-delay="1"
+  style="position:absolute;right: 1vw"
+  class="<#system type='showhelp' tct='guru' page='@page.password' isprtgadmin='true' class='removeme' varexpand='page'>">
+  <!--
+    var inputs = ['password1','password2']
+    , $tct = this
+    , frm = $("#objectdataform");
+
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+    frm.find('#oldpassword').val('prtgadmin');
+
+    setTimeout(function(){
+        var $inputElem = frm.find('#'+inputs.join(',#'));
+
+        frm.find('label[for="UseNewpassword"]').trigger('click');
+        frm.find('#'+inputs.join(',#')).each(function(){
+        $(this)
+          .removeClass('validateerror')
+          .one('change',function(){
+            if(this.value !== '')
+              $(this).css('border','');
+          })
+          .css('border-bottom','1px solid '+ _Prtg.Colors.tct);
+        });
+        $tct.css({
+          'top': $inputElem.first().offset().top - 70
+        });
+        frm.find('input[type="submit"]').css('background-color',_Prtg.Colors.tct);
+        frm.on("submit",function(event){
+          var changed = true;
+          frm
+            .find('#'+inputs.join(':visible,#')+':visible')
+              .each(function(i){
+                if($(this).valid())
+                  changed = true;
+                else
+                  changed = false
+              })
+          if(!changed)
+            return changed;
+
+          frm.find('input[type="submit"]').css('background-color','');
+          $tct.data().confirm(event, 'guru','<#page>.password','done')
+          $tct.remove();
+        });
+        $tct.on('click','button.actionbutton',function(){frm.trigger('submit')});
+    },1000);
+  -->
+  <div>
+    <div class="info-box arrowbox">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.myaccount.passwordA" default="Please set your password here."></span>
+      <span class="text"><#lang key="tct.guru.myaccount.passwordB" default="The old password is prtgadmin."></span>
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okdone" default="OK, done!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  data-role="<#role>"
+  data-page=""
+  data-remove-delay="1"
+  style="position:absolute;right: 1vw"
+  class="<#system type='showhelp' tct='guru' page='@page.emailaccount' class='removeme' mailcheck='false' varexpand='page'>">
+  <!--
+    var inputs = ['email_']
+    , $tct = this;
+
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+
+    setTimeout(function(){
+      var frm = $("#objectdataform")
+        frm.find('#'+inputs.join(',#')).each(function(){
+          $(this)
+            .removeClass('validateerror')
+            .one('change',function(){
+              if(this.value !== '')
+                $(this).css('border','');
+            })
+            .css('border-bottom','1px solid '+ _Prtg.Colors.tct);
+        });
+        var $inputElem = frm.find('#'+inputs.join(',#'));
+        $tct.css({
+          'top': $inputElem.first().offset().top - 70,
+        });
+        frm.find('input[type="submit"]').css('background-color',_Prtg.Colors.tct)
+        frm.on("submit",function(event){
+          _Prtg.api.initialMailAcknowledge();
+          frm.find('input[type="submit"]').css('background-color','');
+          $tct.data().confirm(event, 'guru','<#page>.emailaccount','done')
+          $tct.remove();
+         });
+        $tct.on('click','button.actionbutton',function(){frm.trigger('submit')});
+    },500);
+  -->
+  <div>
+    <div class="info-box arrowbox">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.myaccount.emailA" default="Please verify your Email Address."></span>
+      <span class="text"><#lang key="tct.guru.myaccount.emailB" default="This way PRTG informs you about alarms and other notifications."></span>
+      <div class="tct-buttonbar">
+        <button class="actionbutton"><#lang key="tct.guru.okdone" default="OK, done!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+
+<tct
+  data-role="<#role>"
+  data-page=""
+  style="position:absolute;right: 1vw"
+  class="<#system type='showhelp' tct='guru' page='@page' class='removeme' varexpand='page'>">
+  <!--
+    var $tct = this
+      , $menuitem = null;
+
+    $('body').data('bs.popover').options.delay.show = 2000;
+    $('body').data('bs.popover').options.delay.hide = 200;
+
+    $tct.css({
+      'top': $('#email_').offset().top - 70,
+    });
+
+    $tct.one('click','.actionbutton', function(event){
+      $menuitem = $('#main_menu>li:nth-child(2)');
+      $menuitem
+        .tct("mouseMoveEnd",1)
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.clickhere" default="Click here!">')
+        .tct("waitFor",$menuitem,'click', function(){
+          $tct.data().confirm(event, 'guru','<#page>','done');
+          $tct.hide().remove();
+        })
+        .tct("run");
+      _Prtg.Events.subscribe('navigate.prtg', function(){
+        $('#tctCursor').remove();
+      });
+    });
+  -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="text"><#lang key="tct.guru.myaccount.finished" default="Please follow me back to the device overview!"></span>
+
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>

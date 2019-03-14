@@ -1,0 +1,83 @@
+﻿
+
+<!-- First two lines must be left empty! -->
+<!-- Help with <manuallink> from OSK, if settingspage for a sensor -->
+<#manuallink var="manuallink">
+<#objectproperty type="nodename" var="objtype">
+<#if value="@objtype" is="sensor" then="" else="<!--" varexpand="value">
+<div class="oskhelpbox prtg-plugin hide" data-plugin="documentation" data-url='<#manuallink check="true">' data-filter=".f_Remarks" />
+<#if value="@objtype" is="sensor" then="" else="-->" varexpand="value">
+
+<#lang key="html.sensorsettings.help.title" default="Settings" var="helptitle">
+<#lang key="html.sensorsettings.help.text" default="Define settings specific to this sensor. There is a manual page available with detailed information: <br><a href='@manuallink#settings' target='_blank'>Help: Sensor Settings</a>" var="helptext">
+<#system type="showhelp" var="showhelp">
+<#help showtagonlyfortype="sensor" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<#lang key="html.probesettings.help.title" default="Settings" var="helptitle">
+<#lang key="html.probesettings.help.text" default="Define settings specific to this probe. There is a manual page available with detailed information: <br><a href='@manuallink#settings' target='_blank'>Help: Probe Settings</a>" var="helptext">
+<#help showtagonlyfortype="probenode" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<#lang key="html.groupsettings.help.title" default="Settings" var="helptitle">
+<#lang key="html.groupsettings.help.text" default="Define settings specific to this group. There is a manual page available with detailed information: <br><a href='@manuallink#settings' target='_blank'>Help: Group Settings</a>" var="helptext">
+<#help showtagonlyfortype="group" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<#lang key="html.devicesettings.help.title" default="Settings" var="helptitle">
+<#lang key="html.devicesettings.help.text4" default="Define settings specific to this device. There is a manual page available with detailed information: <a href='@manuallink#settings' target='_blank'>Help: Device Settings</a>" var="helptext">
+<#help showtagonlyfortype="device" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<!-- Hilfe, falls Settingseite fuer "My Account" ID 100 -->
+<#lang key="html.myaccountsettings.help.title" default="My Account" var="helptitle">
+<#lang key="html.myaccountsettings.help.text" default="Here you can manage your personal account settings. You can change your password and show the passhash, for example, if you use the PRTG API. You can also define your default page in the web interface and define if you want to receive emails from the ticket system.<br><a href='/help/my_account_settings.htm#settings' target='_blank'>Help: My Account Settings</a>" var="helptext">
+<#help showtagonlyforid="100" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<!-- Hilfe, falls Settingseite fuer "System & Website" ID 800 -->
+<#lang key="html.websitesettings.help.title" default="User Interface" var="helptitle">
+<#lang key="html.websitesettings.help.text" default="On this tab you can make settings for your PRTG website like the language and automatic logout. You can integrate Geo Maps into your web interface to show the location of an object on a geographical map. You can also edit your web server settings and manage the graphs shown on objects' detail pages in the web interface.<br><a href='/help/system_website_settings.htm#settings' target='_blank'>Help: Interface Settings</a>" var="helptext">
+<#help showtagonlyfortabname="setupuserinterface" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<!-- Hilfe, falls Settingseite fuer "monitoring" ID 810 -->
+<#lang key="html.monitoringsettings.help.title" default="Monitoring" var="helptitle">
+<#lang key="html.monitoringsettings.help.text" default="Here you can make settings for monitoring PRTG like scanning intervals. You can also allow detection engines to run in the background to find similar sensors and to recommend sensors. PRTG will display these, for example on a device's <b>Overview</b> tab.<br><a href='/help/monitoring_settings.htm#settings' target='_blank'>Help: Monitoring Settings</a>" var="helptext">
+<#help showtagonlyfortabname="setupmonitoring" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<!-- Hilfe, falls Settingseite fuer "Notification Delivery" ID 802 -->
+<#lang key="html.notificationdeliverysettings.help.title" default="Notification Delivery" var="helptitle">
+<#lang key="html.notificationdeliverysettings.help.text" default="Here you can set up email delivery via SMTP and SMS delivery. You can define how PRTG sends emails using SMTP, for example, via direct delivery or one or more relay servers. PRTG also has built-in support for the API of some SMS providers. If you have technical questions about SMS delivery beyond PRTG, please contact your SMS provider directly.<br><a href='/help/notification_delivery_settings.htm#settings' target='_blank'>Help: Notification Delivery Settings</a>" var="helptext">
+<#help showtagonlyfortabname="setupnotifications" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<!-- Hilfe, falls Settingseite fuer "Probes" ID 801 -->
+<#lang key="html.probessettings.help.title" default="Core & Probes" var="helptitle">
+<#lang key="html.probessettings.help.text" default="Here you can make settings for the PRTG core server and decide if you need an HTTP proxy server in your network. You can also choose how PRTG handles incoming connections from remote probes, use Active Directory groups, and change your historic data purging settings.<br><a href='/help/probes_settings.htm#settings' target='_blank'>Help: Core & Probes Settings</a>" var="helptext">
+<#help showtagonlyfortabname="setupcoreprobes" varexpand="title,text,show" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<#lang key="html.libsettings.help.title" default="Edit a Library" var="helptitle">
+<#lang key="html.libsettings.help.text" default="Define settings specific to this library.<br><a href='/help/libraries_settings.htm' target='_blank'>Help: Libraries and Node Settings</a>" var="helptext">
+<#help showtagonlyfortype="library" varexpand="title,text,show" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<form id="objectdataform" enctype="multipart/form-data" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+      <#if value="@objtype" in="user" then="controls/qr-user.htm" else="" varexpand="value" var="showuserqr">
+      <#if value="@objtype" in="probenode group device library sensor" then="controls/qr-object.htm" else="" varexpand="value" var="showobjectqr">
+      <#include file="@showuserqr" varexpand="file">
+
+      <#object type="settings">
+
+      <#hiddenid>
+      <#include file="includes\submitbutton.htm" allowreadonly="@allowreadonly" varexpand="allowreadonly">
+      <div class="quick-links">
+        <#include file="@showobjectqr" varexpand="file">
+        <a class="printbutton" href="/config_report_object.htm?id=<#objectid>" target="_blank" style='<#hidefornonadmins> <#showbyobjecttype showonlyforobjecttype="group,probenode,device,sensor,map,reports,library,user,usergroup">'
+            data-placement="top" title='<#lang key="html.objectdata.configreport" default="Prepare Configuration Report for Printout">'>
+          <i class="icon-print icon-dark"></i>
+        </a>
+    </div>
+</form>
+<#system type='showhelp' tct="guru" page="root" isadmin="true" id_eq="0" daysi_lt="30" wingui="false" version="commercial,trial" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+
+<#objectid var="id">
+
+<#system type='showhelp' tct="guru" page="probenode.@id" ispopadminorpodowner="true" version="podpayed,podtest" wingui="false" nodetypes="probenode" id_gt=1 probes_eq=2 varexpand="page" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+
+<#system type='showhelp' tct="guru" page="probenode.@id" ispopadminorpodowner="true" version="commercial,trial" wingui="false" nodetypes="probenode" id_eq=1 probes_eq=1 varexpand="page" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >

@@ -1,0 +1,280 @@
+﻿<!--Detailed System Requirements-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_requirements.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="introduction_monitoring_with_prtg.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Detailed System Requirements</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Detailed System Requirements</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">This section shows different aspects of system requirements for PRTG. Please consider these requirements to avoid issues while monitoring your network.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#os" class="topiclink">Supported Operating Systems</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#hardware" class="topiclink">Hardware Requirements</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#size" class="topiclink">Network Size: Recommendations</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#vm" class="topiclink">Running PRTG on Virtual Machines</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#failover" class="topiclink">Running PRTG in a Failover Cluster</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#browser" class="topiclink">Web Browser Requirements</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#screen" class="topiclink">Screen Resolution</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#devices" class="topiclink">Requirements for Monitored Devices</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#ec" class="topiclink">Requirements for the Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#apps" class="topiclink">Requirements for Smartphones</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="detailed_system_requirements.htm#more" class="topiclink">More</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>PRTG hosted by Paessler does not require any hardware for the PRTG server, but at least one remote probe installation is necessary to monitor your local network when using PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="os" class="hmanchor"></a><span class="f_InTopicHeading">Supported Operating Systems for PRTG Server and Remote Probes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The 32-bit and 64-bit versions of the following operating systems are officially supported for PRTG <span class="f_BoldCustom">Core Service</span> and <span class="f_BoldCustom">Probe Service</span>:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows Server 2012 R2* (recommended)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows Server 2016*</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows Server 2012*</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows 10**</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows 8.1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows 8</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows 7</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Windows Server 2008 R2*</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">* Windows servers in <span class="f_ItalicCustom">Core</span> mode or <span class="f_ItalicCustom">Minimal Server Interface</span> are not officially supported.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">** The PRTG Enterprise Console is not fully compatible with Windows 10.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The version (32-bit or 64-bit) of the PRTG Core Server depends on the version of your operating system. The 64-bit version of the PRTG Core Server will be installed if</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the operating system is a 64-bit Windows system, </span><span class="f_ItalicCustom">and</span><span class="f_ListBulleted"> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">the system provides 6 GB RAM or more.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Otherwise the 32-bit version of the PRTG Core Server will be installed. </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">For best performance of VMware sensors, EXE/Script sensors, and some other sensor types, we recommend Windows Server 2012 R2 on the computer running the PRTG probe: This is either on the local system (on every node, if on a cluster probe), or on the system running a <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probe</a>.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">For best performance of hybrid sensors using Windows Performance Counters and Windows Management Instrumentation (WMI), we recommend Windows 2008 R2 or higher on the computer running the PRTG probe: This is either on the local system (on every node, if on a cluster probe), or on the system running a <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probe</a>.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Microsoft .NET Framework</span><span class="f_ListBulleted">: We recommend that you provide Microsoft .NET Framework versions 4.5 or later (with latest updates) on all systems running a PRTG probe.</span><br />
+<span class="f_ListBulleted">The .NET framework is imperatively needed for monitoring VMware and XenServer virtual environments. Also some other sensor types need the Microsoft .NET Framework to be installed on the computer running the PRTG probe. This is either on the local system (on every node, if on a cluster probe), or on the system running a <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probe</a>. Required versions are 4.5, 4.6, or 4.7. For details, see the Knowledge Base: <a href="https://kb.paessler.com/en/topic/60543" target="_blank" class="weblink">Which .NET version does PRTG require?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">Disabled FIPS Mode</span><span class="f_ListBulleted">: Ensure the </span><span class="f_ItalicCustom">FIPS (Federal Information Processing Standards)</span><span class="f_ListBulleted"> mode (Windows security option &quot;System Cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing.&quot;) is disabled on Windows systems running the PRTG core or probe service. FIPS-compliant encryption may cause errors of sensors which use the .NET framework. For details, see the Knowledge Base: <a href="https://kb.paessler.com/en/topic/71305" target="_blank" class="weblink">Why should I disable the FIPS mode under Windows?</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="hardware" class="hmanchor"></a><span class="f_InTopicHeading">Hardware Requirements for PRTG Server and Remote Probes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hardware requirements for PRTG <span class="f_BoldCustom">Core Service</span> and <span class="f_BoldCustom">Probe Service</span> mainly depend on the sensor types and intervals used. The following values are provided as reference for common usage scenarios of PRTG (based on a default sensor interval of 60 seconds). </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">CPU</span><br />
+<span class="f_ListBulleted">A current PC or server with at least a dual core CPU can easily monitor up to 2,000 sensors (see sensor type specific notes below). PRTG supports native x86/x64 architectures.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">RAM</span><br />
+<span class="f_ListBulleted">Minimum requirement: 2048 MB RAM. You need about 150 KB of RAM per sensor.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In general, we recommend at least 1 additional CPU core and 1 GB RAM per additional 1,000 sensors.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hard Disk Drive</span><br />
+<span class="f_ListBulleted">You need about 200 KB of disk space per sensor per day (for sensors with 60 second interval).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Internet connection</span><br />
+<span class="f_ListBulleted">An internet connection is required for license activation (via HTTP or email).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Stable network connection for remote probes</span><br />
+<span class="f_ListBulleted">Remote probes require a stable network connection between the PRTG core server and the remote probe. Unstable connections, for example via 3G, might work but it could be possible that you lose monitoring data if the connection is non-reliable.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">There are also non-hardware dependent limitations for some sensor types, for example, WMI and SNMP V3 sensors. These limitations can be overcome by distributing the sensors across multiple <a href="add_remote_probe.htm" class="topiclink">remote probes</a>. For clusters we recommend that you stay below 2,500 sensors per cluster. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>It is crucial for a properly working PRTG server to have a certain amount of hardware resources available. If the server runs out of resources, PRTG will send warning and emergency messages to the primary email address of the <span style="font-weight: bold;">PRTG System Administrator</span> user. You will receive <span class="f_ItalicCustom">warning</span> messages if available disk space falls below <span class="f_BoldCustom">1 GB</span> or memory below <span class="f_BoldCustom">500 MB</span>, and <span class="f_ItalicCustom">emergency</span> messages if available disk space or memory falls below <span class="f_BoldCustom">50 MB</span>. Please react immediately and free up system resources!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="size" class="hmanchor"></a><span class="f_InTopicHeading">Network Size: Recommendations</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Rule of thumb: Typical PRTG installations almost never run into performance issues when they stay under 5,000 sensors, under 30 remote probes, and under 30 user accounts.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG can scale much higher if the installation is well planned. Please read on if you plan to go beyond these numbers and/or if you plan elevated use of resource intensive features like reporting, xFlow sensors, or clustering.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you plan an installation that monitors more than 10,000 sensors from one instance of PRTG on a physical device or more than 5,000 sensors with PRTG running on a virtual machine, we ask you to <a href="mailto:mailto:presales@paessler.com?subject=PRTG%20consulting%20for%20large%20installations" class="weblink">contact your presales team</a> for consultation.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">To give you an impression: To monitor 5,000 sensors in a 1-minute interval, PRTG takes 7.2 million measurements and evaluates, notifies, and stores them—this adds 700 MB of additional data to the database every single day.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>PRTG hosted by Paessler is restricted to max. 5,000 sensors, more sensors are not possible. This number of sensors is available in the PRTG-5000 subscription.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Apart from the processing power required for the monitoring itself, several aspects can affect the number of sensors that you can use with PRTG. The following recommendations are for a PRTG single core setup (without clustering) on a physical machine. You can overcome some of these limitations if you distribute the sensors across multiple remote probes.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Size Recommendations</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Operating System</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you use </span><span class="f_ItalicCustom">Windows Server 2012 R2 </span><span class="f_ListBulleted">to run the PRTG core server and probes. This offers superior performance for monitoring, especially if you have more than 2,000 sensors.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Types</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted"><a href="ping_sensor.htm" class="topiclink">Ping</a> and <a href="available_sensor_types.htm#snmp" class="topiclink">SNMP sensors</a> create much less load than complex sensors like <a href="flow_monitoring.htm" class="topiclink">xFlow sensors</a>, <a href="available_sensor_types.htm#virtual" class="topiclink">VMware sensors</a>, <a href="sensor_factory_sensor.htm" class="topiclink">Sensor Factory sensors</a>, <a href="available_sensor_types.htm#wmi" class="topiclink">WMI sensors</a>, or <a href="syslog_receiver_sensor.htm" class="topiclink">Syslog</a>/<a href="snmp_trap_receiver_sensor.htm" class="topiclink">Trap receiver</a> sensors, for example.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you mainly use 1-minute <a href="root_group_settings.htm#scanning" class="topiclink">scanning intervals</a> for up to 2,000 sensors and 5-minute intervals if you have more sensors.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of Users</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We recommend that you stay below 30 active <a href="user_accounts_settings.htm" class="topiclink">user accounts</a> for each PRTG core server. You can work well with more users if these do not all use the user interfaces at the same time (including public dashboards).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Number of Remote Probes</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Our general recommendation is to stay below 30 <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probes</a> on one PRTG core server. PRTG still scales well up to 60 probes as long as you have less than 100 sensors per probe.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">CPU Intensive Features</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Try keeping the usage of the following features down: Many quickly refreshed <a href="maps.htm" class="topiclink">dashboards</a>, frequent generation of huge sensor <a href="reports.htm" class="topiclink">reports</a>, heavy usage of <a href="packet_sniffer_monitoring.htm" class="topiclink">packet sniffing</a>, <a href="sensor_factory_sensor.htm" class="topiclink">factory sensors</a>, and T<a href="toplists.htm" class="topiclink">oplists</a>, frequent automatically scheduled <a href="auto_discovery.htm" class="topiclink">auto-discoveries</a> for large network segments, constant queries of monitoring data via the <a href="application_programming_interface_api_definition.htm" class="topiclink">API</a>, among others.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Network Connection Quality</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The quality of your network also plays an important role. When monitoring via UDP, for example, a high packet loss rate can lead to frequent timeouts. Remote probes that connect via unstable (WAN) connections can lead to delays as well.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">In general, consider the following rules for the performance impact of different sensor types:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">SNMP V1</span> and <span style="font-weight: bold;">V2</span>, <span style="font-weight: bold;">Ping</span>, <span style="font-weight: bold;">Port</span>, and <span style="font-weight: bold;">HTTP</span><br />
+We recommend that you use these sensor types for scenarios with thousands of sensors.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">SNMP V3</span><br />
+You can monitor about 5,000 SNMP V3 sensors with an interval of 60 seconds on a common two core computer, and about 10,000 sensors on a four core system (the main limiting factor is your CPU power).</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">WMI</span><br />
+Try to keep the number of WMI sensors per probe below 120 sensors (with 60s interval), or 600 sensors (with 300s interval).</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">xFlow (IPFIX, NetFlow, sFlow, jFlow)</span><br />
+Monitoring the maximum number of sensors depends on the traffic pattern, the number of xFlow packets per second received by the PRTG probe, as well as the performance of the probe system.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">Packet Sniffer </span><br />
+These sensors create the highest CPU load on the probe system. This technology is only recommended for monitoring of low traffic connections (&lt;50 Mbit/s steady stream). When traffic is often over 10 Mbit/s a dedicated remote probe should be used.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">VMware Monitoring</span><br />
+Monitoring of VMware is limited to about 20 sensors at a 60 seconds monitoring interval, or 100 sensors at a 5 minutes interval. On probes running on Windows Server 2012 R2, you can use more VMware sensors. These limitations issue from the VMware platform. For details, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/30643" target="_blank" class="weblink">Increasing Maximum Connections for VMware sensors</a></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span style="font-weight: bold;">Other sensor types</span><br />
+The impact of a specific sensor type on performance is indicated by a color range when adding a sensor to a device. It ranges from dark green (very low impact) to bold red (very high impact).</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">To overcome any limitations mentioned above you should distribute the sensors over two <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probes</a> or more.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="vm" class="hmanchor"></a><span class="f_InTopicHeading">Running PRTG on Virtual Machines</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can run the PRTG core server as well as PRTG remote probes on virtualized platforms. However, we strongly recommend that you use a dedicated physical machine to run the PRTG core server or the <a href="remote_probes_and_multiple_probes.htm" class="topiclink">PRTG remote probes</a>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are several reasons why we recommend that you run PRTG (core server and remote probes) on real hardware, especially for thousands of sensors. Each sensor request will have to go through many virtualization layers, which costs performance and makes measurements less exact. In our experience, a physical machine simply works best for a thousand sensors and more.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Our recommendation to use real hardware is valid for the PRTG core server and for remote probes. If you must run PRTG on a virtual machine, please stay below 5,000 sensors per virtual machine and consider running several PRTG core server instances instead.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>We cannot offer technical support regarding performance and stability problems for PRTG installations on virtual machines that run with more than 5,000 sensors. In this case, please migrate PRTG to one or more, preferably physical, machines.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>When running PRTG on a virtual machine, do <span class="f_ItalicCustom">not</span> use dynamic resource allocation, but please make sure that full resources are available to the virtual machine at any time. In our experience, dynamic resource allocation is not working efficiently for a monitoring software and can lead to massive performance issues. Do not distribute CPU cores over different CPU sockets in your VM configuration. Scheduling threads does not work properly in this case, which results in performance issues.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/49193" target="_blank" class="weblink">Checklist for Running PRTG on VMware</a></span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="failover" class="hmanchor"></a><span class="f_InTopicHeading">Running PRTG in a Failover Cluster</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">We recommend a single <a href="clustering.htm" class="topiclink">failover setup</a> if you need fail-safe monitoring. This consists of two PRTG core servers, each working as a cluster node. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">In a PRTG failover cluster, the monitoring load doubles with each cluster node, so you will encounter half performance for each additional cluster node. In a single failover cluster, please divide our recommended numbers from above in half.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This feature is not available in PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="browser" class="hmanchor"></a><span class="f_InTopicHeading">Web Browser Requirements</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following browsers are officially supported by the PRTG web interface (in order of performance and reliability):</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Google Chrome 61 or later (recommended)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Mozilla Firefox 56 or later</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Microsoft Internet Explorer 11</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">For security and performance reasons, we strongly recommend that you always use the latest version of Google Chrome to access the PRTG web interface.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Firefox is potentially vulnerable for <span class="f_ItalicCustom">cross-site scripting (XSS)</span> attacks. These XSS exploits are possible if you click <span class="f_ItalicCustom">phishing</span> links that contain malicious code, for example, in emails, and you are currently logged in to PRTG with Firefox. For more information, see this Knowledge Base article: <span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/70192" target="_blank" class="weblink">How secure is it to access the PRTG web interface with Firefox?</a></span> </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Microsoft Internet Explorer 11 and Microsoft Edge, as well as other current browsers that are not officially supported have issues with some functionalities of the PRTG web interface. However, you can access the web interface with any browser. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Deprecated Internet Explorer versions as well as some mobile browsers might not be able to display the fully featured </span><span class="f_BoldCustom"><a href="ajax_gui_basic.htm" class="topiclink">Ajax web interface</a></span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Plugins may have an effect when viewing the PRTG web interface. Please make sure to add exceptions for PRTG in the plugins' settings, especially when using ad blockers. See also this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/77329" target="_blank" class="weblink">The logs page in the PRTG web interface does not load. What can I do?</a></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="screen" class="hmanchor"></a><span class="f_InTopicHeading">Screen Resolution</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">A screen resolution of at least 1024x768 pixels is sufficient for most functions of PRTG. However, we recommend a screen resolution of 1200x800 or higher.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="devices" class="hmanchor"></a><span class="f_InTopicHeading">Requirements for Monitored Devices</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">SNMP monitoring</span><br />
+<span class="f_ListBulleted">The monitored device(s) must be equipped with SNMP Version 1, 2c, or 3 (an SNMP-compatible software must be installed on the device). SNMP must be enabled on the device and the machine running PRTG must be granted access to the SNMP interface. For details, see section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_monitoring.htm" class="topiclink">Monitoring via SNMP</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Windows/WMI monitoring</span><br />
+<span class="f_ListBulleted">To use Windows Management Instrumentation (WMI) monitoring, you need a Windows network. For client PCs monitored with WMI, only the <a href="detailed_system_requirements.htm#os" class="topiclink">operating systems as given above</a> are officially supported, but do not use Windows 2008 for WMI monitoring (strong performance issues). For details, see section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="wmi_monitoring.htm" class="topiclink">Monitoring via WMI</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">xFlow (IPFIX, NetFlow, sFlow) monitoring</span><br />
+<span class="f_ListBulleted">The device must be configured to send NetFlow data packets (NetFlow version 5, 9, or IPFIX) or sFlow packets (version 5) to the machine running the PRTG probe. For details, see section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="flow_monitoring.htm" class="topiclink">Monitoring Bandwidth via Flows</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Packet Sniffer monitoring</span><br />
+<span class="f_ListBulleted">Only data packets passing the local machine's network card can be analyzed. Switches with so-called 'monitoring ports' are necessary for network-wide monitoring in switched networks. For details, see section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="packet_sniffer_monitoring.htm" class="topiclink">Monitoring Bandwidth via Packet Sniffing</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Other sensor types</span><br />
+<span class="f_ListBulleted">Depending on the specific sensor type, you can find requirements (for example, modules, components, device configurations) that may have to be fulfilled in the corresponding manual section, as well as when adding the sensor to a device.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="ec" class="hmanchor"></a><span class="f_InTopicHeading">Requirements for the Enterprise Console</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The optional PRTG <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span> (EC) runs under all <a href="detailed_system_requirements.htm#os" class="topiclink">supported Windows versions</a>, but it is not fully compatible with Windows 10. Running the EC on Windows 10 results in several issues so please use another operating system. We will consider full Windows 10 support for future PRTG desktop clients.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>PRTG hosted by Paessler does not support connections from the Enterprise Console. If you want to use it, please connect the Enterprise Console to a PRTG on premises instance.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The EC has a built-in webkit browser engine and requires no specific browser installed on the system. See also <span class="f_BoldCustom"><a href="enterprise_console.htm#requirements" class="topiclink">Enterprise Console—Requirements for Connections to PRTG Web Server(s)</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="apps" class="hmanchor"></a><span class="f_InTopicHeading">Requirements for Smartphones and Tablets</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">PRTG supports optional mobile apps for iOS and Android devices.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information and system requirements, see section <span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="update_from_previous_versions.htm" class="topiclink">Update From Previous Versions</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler Website: System Requirements for PRTG Network Monitor—Recommended Setup for Most PRTG Users</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/prtg/requirements" target="_blank" class="weblink">https://www.paessler.com/prtg/requirements</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I speed up PRTG—especially for large installations?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/2733" target="_blank" class="weblink">https://kb.paessler.com/en/topic/2733</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My WMI sensors don't work. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/1043" target="_blank" class="weblink">https://kb.paessler.com/en/topic/1043</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Frequent Questions about xFlow, Packet Sniffing, Traffic Monitoring and Cisco</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/3733" target="_blank" class="weblink">https://kb.paessler.com/en/topic/3733</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Increasing Maximum Connections for VMware Sensors</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/30643" target="_blank" class="weblink">https://kb.paessler.com/en/topic/30643</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My SNMP sensors don't work. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46863" target="_blank" class="weblink">https://kb.paessler.com/en/topic/46863</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Checklist for Running PRTG on VMware</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/49193" target="_blank" class="weblink">https://kb.paessler.com/en/topic/49193</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which ports does PRTG use on my system?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61462" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61462</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which .NET version does PRTG require?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60543" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60543</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How secure is it to access the PRTG web interface with Firefox?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/70192" target="_blank" class="weblink">https://kb.paessler.com/en/topic/70192</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Why should I disable the FIPS mode under Windows?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/71305" target="_blank" class="weblink">https://kb.paessler.com/en/topic/71305</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Introduction Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="introduction.htm" class="topiclink">Welcome to PRTG Network Monitor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="about_this_document.htm" class="topiclink">About this Document</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="key_features.htm" class="topiclink">Key Features</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="new_in_this_version.htm" class="topiclink">New in This Version</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="available_licenses.htm" class="topiclink">Available Licenses</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="system_requirements.htm" class="topiclink">System Requirements</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="detailed_system_requirements.htm" class="topiclink">Detailed System Requirements</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="introduction_monitoring_with_prtg.htm" class="topiclink">Introduction: Monitoring with PRTG</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="system_requirements.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="introduction_monitoring_with_prtg.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

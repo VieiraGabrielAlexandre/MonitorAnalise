@@ -1,0 +1,36 @@
+﻿<#lang key="html.useraccounts.help.title" default="User Accounts" var="helptitle">
+<#lang key="html.useraccounts.help.text" default="Here you can manage all user accounts for this PRTG installation. You can edit a user's login and display names, their email address, and their password. You can also make refresh settings and play audible alarms to alert you when the number of sensors in a down status changes.<br><br><a href='/help/user_accounts_settings.htm#settings' target='_blank'><b>Help: User Accounts</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.global.users" default="Users" var="title">
+<div class="inner-wrapper">
+    <div class="inner-aside-left"></div>
+    <div class="inner-content">
+        <div class="add-menu-wrapper" style='<#system type="hideforreadonlyusers">'>
+                <div class="add-menu add-menu-fixed">
+                    <a class="actionbutton add-menu-item" href="/edituser.htm?id=new"><#insertadduserlinkpodpop></a>
+                    <a class="actionbutton add-menu-item" href="#" onclick="_Prtg.Dialogs.addMultipleUserDialog(); return false;"><#lang key="html.userlist.addnewusers2" default="Add Multiple Users"></a>
+                    <a class="actionbutton add-menu-item" href="/editusergroup.htm?id=new"><#lang key="html.editusergroup.add" default="Add User Group"></a>
+                </div>
+            </div>
+        <div class="table-wrapper">
+            <div class="prtg-plugin" data-plugin="prtg-table">
+                <#table tableid="usertable"
+                content="users"
+                columns="name,type,email,primarygroup,groupmemberships,active,checkbox"
+                tools="delete,edit,pause"
+                count="all"
+                sortby="name"
+                sortable="true"
+                links="true"
+                refreshable="true"
+                tabletitle="@title"
+                varexpand="tabletitle">
+            </div>
+        </div>
+    </div>
+    <div class="inner-aside-right">
+        <div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+    </div>
+</div>

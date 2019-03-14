@@ -1,0 +1,12 @@
+﻿<tr style="<#clusterdependent showfor='clusterinstallation'>">
+	<td class=title><#lang key="html.reporttemplates.clusternode" default="Cluster Node">:</td>
+	<#cluster type="name" clgid="<@clgid>"></td>
+</tr>
+
+<h2><#lang key="html.reporttemplates.uptimebestpercent" default="Best Uptime (Percent)"></h2>
+
+<div><#report type="statstable" filter="filter_uptimetime=@above(0)" columns="sensor,uptime,uptimetime,goodreqper,downtime,downtimetime,maxdowntime,failedreqper,probegroupdevice" count="10" avg="3600" sortby="uptime" showposition="true" clgid="<@clgid>"></div>
+
+<h2><#lang key="html.reporttemplates.uptimeworstpercent" default="Worst Uptime (Percent)"></h2>
+
+<div><#report type="statstable" filter="filter_downtimetime=@above(0)" columns="sensor,uptime,uptimetime,goodreqper,downtime,downtimetime,maxdowntime,failedreqper,probegroupdevice" count="10" avg="3600" sortby="downtime" showposition="true" clgid="<@clgid>"></div>

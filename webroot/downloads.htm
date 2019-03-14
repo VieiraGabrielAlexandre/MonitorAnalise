@@ -1,0 +1,28 @@
+﻿<#lang key="html.downloads.title" default="Downloads and Tools" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <h1 class="sitecaption"><#lang key="html.downloads.header" default="Downloads and Tools for PRTG Network Monitor"></h1>
+    <div class="buttonbox">
+        <#include file="includes\linkpagebutton.htm">
+    </div>
+    <div id="content">
+        <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+            <ul class="nav-tabs">
+                <li tabid="1" class="tab-active"><a href="/controls/downloads_mobile.htm"><i class="glyph-ClientApps"></i><span class="text"><#lang key="html.global.smartphoneapps1" default="Client Apps for Mobile Devices"><span></a></li>
+                <li tabid="2" class="<#hideforpod asclass='true'>"><a href="/controls/downloads_enterpriseconsole.htm" ><i class="glyph-windows8"></i><span class="text"><#lang key="html.global.enterpriseconsole1" default="Client App for Windows (Enterprise Console)"></span></a></li>
+                <li tabid="3" style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href="/controls/downloads_probe.htm"><i class="glyph-Installer_RP"></i><span class="text"><#lang key="html.global.remoteprobeinstaller" default="Remote Probe Installer"></span></a></li>
+                <li tabid="4" style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href="/controls/downloads_tools.htm"><i class="glyph-gauge"></i><span class="text"><#lang key="html.global.tools" default="PRTG Tools"></span></a></li>
+            </ul>
+            <div class="tab-container"></div>
+        </div>
+    </div>
+<#lang key="html.downloads.help.title" default="Downloads and Tools" var="helptitle">
+<#lang key="html.downloads.help.text" default="Here you can download additional software or optional network tools for PRTG that will improve your network monitoring capabilities.<br><br><a href='/help/downloads.htm' target='_blank'><b>Help: Downloads and Tools</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrstatus.svrstatuslogicaldrives" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="Ok" value="1">
+        OK
+      </SingleInt>
+      <SingleInt state="Warning" value="2">
+        PreFailure
+      </SingleInt>
+      <SingleInt state="Error" value="3">
+        Failure
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

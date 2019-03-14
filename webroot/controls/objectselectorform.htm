@@ -1,0 +1,70 @@
+﻿<#inserturlparam parameter="rootid" var="rootid">
+<#inserturlparam parameter="probes" var="probes">
+<#inserturlparam parameter="groups" var="groups">
+<#inserturlparam parameter="devices" var="devices">
+<#inserturlparam parameter="allowone" var="allowone">
+<#inserturlparam parameter="allowself" var="allowself">
+<#inserturlparam parameter="onlysensors" var="onlysensors">
+<#inserturlparam parameter="allowreadonly" var="allowreadonly">
+<form id="objectselectorform" class="prtg-plugin objectselectorform" data-plugin="prtg-form" onsubmit="return false;"
+      title='<#lang key="html.objectselector.title" default="Please select an object!">'>
+
+    <div class="objectselectorform_panel1">
+        <div class="objectselectorform_heading">
+            1.<#lang key="html.objectselectorform.navigate" default="Navigate Device Tree"/>
+        </div>
+        <div class="searchbox">
+            <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+            <input id="objtreesearch" type="text" class="searchstring"
+                   title='<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">' name="searchtext"
+                   placeholder='<#lang key="html.global.search2" default="Search...">'>
+        </div>
+        <div class="prtg-plugin objectselector"
+             style="height:400px"
+             id="objectSelectorTree"
+             data-onlysensors='<#inserturlparam parameter=" onlysensors">'
+             data-plugin="objectselector"
+             data-sensorload="#objectSelectorSensors"
+             data-branch='<#objectstatus name="parentid" show="text" asjson="true">'
+             data-sensorid='<#objectstatus name="objid" show="text"  asjson="true">'
+             data-selid='<#inserturlparam parameter="selid">'
+             data-allowone='<#inserturlparam parameter="allowone">'>
+            <!--
+            {
+              "tree": <#selectionlist
+                      content='groupsanddevices_as_json'
+                      varexpand='id,probes,groups,devices,allowone,allowself,allowreadonly,allowreadonly'
+                      id='@rootid'
+                      probes='@probes'
+                      groups='@groups'
+                      devices='@devices'
+                      allowone='@allowone'
+                      allowself='@allowself'
+                      allowreadonly='@allowreadonly'
+                      altformat='1'>
+              }
+              -->
+        </div>
+    </div>
+    <div class="objectselectorform_panel2">
+        <div class="objectselectorform_heading">
+            2.<#lang key="html.objectselectorform.selectorfind" default="Select or Find an Object"/>
+        </div>
+        <div class="searchbox">
+            <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+            <input type="text" tabindex="2" id="objsearch" class="searchstring"
+                   title='<#langjs key="html.jstree.findobjects" default="Find Object by Name, Group, Device, or Tag">'
+                   name="searchtext" placeholder='<#lang key="html.global.find" default="Find...">'>
+        </div>
+        <div id="objectSelectorSensors"></div>
+
+    </div>
+
+    <wingui>
+        <div class="submitbuttonboxanchor">
+            <div class="submitbuttonbox">
+                <input class="submit button" type="submit" value='<#lang key="html.global.save" default="Save">'>
+            </div>
+        </div>
+    </wingui>
+</form>

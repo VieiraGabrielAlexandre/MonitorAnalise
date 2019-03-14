@@ -1,0 +1,55 @@
+﻿<!--Template Escape Parameters-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+     </div>
+     PRTG Manual: <b>Template Escape Parameters</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Template Escape Parameters</h1> 
+      <p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="escape" class="hmanchor"></a><span class="f_InTopicHeading">Escape Special Characters and Whitespaces in Parameters</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-tools" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-tools.png"/>You need to escape special characters in parameters that you pass to an executable or script and surround them with quotation marks to make sure the characters are interpreted correctly. Especially PowerShell scripts require adequate escaping so that the parameters are passed in a valid PowerShell syntax. To make escaping easy and secure, PRTG automatically does most of the escaping for you. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Please follow these rules to escape special characters and whitespaces in the parameters fields:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use quotes for parameters that contain whitespaces.</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-name&nbsp;&quot;Mr&nbsp;John&nbsp;Q&nbsp;Public&quot;</span><br />
+<span class="f_CodeExample">-name&nbsp;'Mr&nbsp;John&nbsp;Q&nbsp;Public'&nbsp;</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use double quotes for parameters that contain single quotes.</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-name&nbsp;&quot;Mr&nbsp;'John&nbsp;Q'&nbsp;Public&quot;</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use single quotes for parameters that contain double quotes.</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-name&nbsp;'Mr&nbsp;&quot;John&nbsp;Q&quot;&nbsp;Public'</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use a backslash (</span><span class="f_BoldCustom">\</span><span class="f_ListBulleted">) to escape and pass a literal double quote.</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-name&nbsp;pub\&quot;lic</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use double quotes for parameters that contain double </span><span class="f_BoldCustom">and</span><span class="f_ListBulleted"> single quotes and escape double quotes.</span></li>
+</ul>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">-name&nbsp;&quot;pu'b\&quot;lic&quot;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">In Secure Shell (SSH) scripts, you can use alphanumeric characters and the special characters &quot;.&quot;, &quot;_&quot;, &quot;-&quot;, &quot;=&quot;, and &quot;/&quot; outside of quoted strings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>We recommend that you do not pass passwords in parameters. Use PRTG placeholders instead. See section <span class="f_BoldCustom"><a href="custom_sensors.htm#escape" class="topiclink">Custom Sensors</a></span> for details.</p>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+  </div>
+  </div>
+</div>

@@ -1,0 +1,862 @@
+{
+    "acknowledgeAlarm": {
+        "ajax": {},
+        "optional": [
+            "ackmsg",
+            "duration"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/acknowledgealarm.htm"
+    },
+    "acknowledgeToDo": {
+        "ajax": {},
+        "optional": [
+            "id"
+        ],
+        "url": "/api/acktodo.htm"
+    },
+    "addGroup": {
+        "optional": [
+            "windowsconnection",
+            "windowslogindomain_",
+            "windowsloginusername_",
+            "windowsloginpassword_",
+            "vmwareconnection",
+            "esxuser_",
+            "esxpassword_"
+        ],
+        "required": [
+            "id",
+            "name_"
+        ],
+        "url": "/api/addgroup.htm"
+    },
+    "addLibrary": {
+        "ajax": {},
+        "optional": [
+            "id='new'",
+            "target='root'",
+            "accessrights_='1'",
+            "objecttype='library'"
+        ],
+        "required": [
+            "name_"
+        ],
+        "url": "/editsettings"
+    },
+    "addRecommendedSensors": {
+        "required": [
+            "id",
+            "createid"
+        ],
+        "url": "/api/recommendedconvert.htm"
+    },
+    "addReport": {
+        "ajax": {},
+        "optional": [
+            "timezone_='W. Europe Standard Time|(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna'",
+            "sensorlist_='1'",
+            "scheduletype_='0'",
+            "specifichour_='0'",
+            "dayweek_='1'",
+            "daymonth_='1'",
+            "maildisk_='1'",
+            "emailgroup_='-1'",
+            "usecompression_='0'",
+            "dataperiod_='1'",
+            "reporttype_='1'",
+            "reportday_='0'",
+            "reportweek_='1'",
+            "reportmonth_='1'",
+            "reportyear_='1'",
+            "schedule_='-1'",
+            "percentileshow_='0'",
+            "percentile_='95'",
+            "percentileaverage_='300'",
+            "percentilemode_='1'",
+            "accessrights_='1'",
+            "accessrights_201='0'",
+            "objecttype='report'",
+            "id='new'"
+        ],
+        "required": [
+            "name_",
+            "template_",
+            "ownerid_"
+        ],
+        "url": "/editsettings"
+    },
+    "addSchedule": {
+         "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "description": "Add Schedule to PRTG",
+        "optional": [
+            "id='new'",
+            "objecttype='schedule'",
+            "accessrights_=1",
+            "name_",
+            "comments_"
+        ],
+        "required": [
+        ],
+        "url": "/editsettings"
+    },
+    "addUser": {
+        "ajax": {},
+        "description": "Add User to PRTG",
+        "optional": [
+            "id='new'",
+            "objecttype='user'",
+            "password_=''",
+            "passwordradio='1'",
+            "primarygroup_='201'"
+        ],
+        "required": [
+            "login_",
+            "name_",
+            "password1",
+            "password2",
+            "usertype_",
+            "email_"
+        ],
+        "url": "/editsettings"
+    },
+    "addUsers": {
+        "ajax": {},
+        "description": "Add Users by mail to PRTG",
+        "required": [
+            "id",
+            "users"
+        ],
+        "url": "/api/addusers.htm"
+    },
+    "addMap": {
+         "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "description": "Add a map to PRTG",
+         "optional": [
+            "width_",
+             "height_",
+             "name_"
+        ],
+        "required": [
+        ],
+        "url": "/addmap2.htm"
+    },
+    "addUserGroup": {
+        "ajax": {},
+        "optional": [
+            "id='new'",
+            "isadmingroup_='0'",
+            "isadgroup_='0'",
+            "adusertype_='0'",
+            "allowedsensorsmode_='0'",
+            "ticketmode_='1'",
+            "objecttype='usergroup'",
+            "adgroup_=''"
+        ],
+        "required": [
+            "name_"
+        ],
+        "url": "/editsettings"
+    },
+    "changeDNSName": {
+        "_comment": "added by Enrico Weigler for POD API Tests",
+        "ajax": {},
+        "url": "/editsettings",
+        "required": [
+        "dnsname_"
+        ],
+        "optional": [
+        "id='810'"
+        ]
+    },
+    "checkNow": {
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/api/scannow.htm"
+    },
+    "clearCaches": {
+        "ajax": {},
+        "url": "/api/clearcache.htm"
+    },
+    "createDatabaseSnapshot": {
+        "ajax": {},
+        "url": "/api/savenow.htm"
+    },
+    "deleteObj": {
+        "ajax": {},
+        "optional": [
+            "approve=1"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/deleteobject.htm"
+    },
+    "deleteSubObj": {
+        "ajax": {},
+        "required": [
+            "id",
+            "subid"
+        ],
+        "url": "/api/deletesubobject.htm"
+    },
+    "discover": {
+        "ajax": {},
+        "optional": [
+            "template"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/discovernow.htm"
+    },
+    "doLogin": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "required": [
+            "username",
+            "password"
+        ],
+        "url": "/checklogin.htm"
+    },
+	"addComment": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "required": [
+            "id",
+            "comments_"
+        ],
+        "url": "/editsettings"
+    },
+    "duplicateObj": {
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/api/duplicateobject.htm"
+    },
+    "editSetup": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "optional": [
+            "addomainname_=''",
+            "addomainuser_=''",
+            "addomainpass_=''",
+            "adaccesstype_=''"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+    },
+    "addProxySettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "proxy_",
+            "proxyport_",
+            "proxyuser_",
+            "proxypassword_"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+},
+    "addProxyToSystemsetup": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "useproxy_='1'",
+            "proxyserver_=''",
+            "proxyport_='8080'",
+            "useproxycredentials_='1'",
+            "proxyuser_=''",
+            "proxypass_=''",
+            "id='810'"
+        ],
+        "required": [
+        ],
+        "url": "/editsettings"
+},
+    "addSmtpToNotificationDelivery": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "smtpconfig_",
+            "smtpfrom_",
+            "smtpfromname_",
+            "smtpheloident_",
+            "smtpserver_",
+            "smtpport_='25'",
+            "smtpauthtype_",
+            "smtpusername_",
+            "smtppassword_",
+            "smtpusetls_='1'",
+            "smtpssl_='sslvSSLv23'",
+            "smtpserver2_",
+            "smtpport2_='25'",
+            "smtpauthtype2_='1'",
+            "smtpusername2_",
+            "smtppassword2_",
+            "smtpusetls2_='1'",
+            "smtpssl2_='sslvSSLv23'"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+    },
+    "addSmsToNotificationDelivery": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "smsselect_=''",
+            "smsservice_=''",
+            "smscustom_=''",
+            "smscustomsni_=''",
+            "smscustomsniname_=''",
+            "smsencoding_=''",
+            "smsusername_=''",
+            "smspassword_=''",
+            "smsappid_=''",
+            "smsmaxlength_=''"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+    },
+    "addDbSettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "dbauth_",
+            "dbuser_",
+            "dbpassword_"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+},
+    "addAwsskToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "awsak_",
+            "awssk_"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+},
+    "addSnmpSettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "snmpversiongroup",
+            "snmpversion_",
+            "snmpcommv1_",
+            "snmpcommv2_",
+            "snmpauthmode_",
+            "snmpuser_",
+            "snmpauthpass_",
+            "snmpencmode_",
+            "snmpencpass_",
+            "snmpcontext_",
+            "snmpport_",
+            "snmptimeout_"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+},
+    "addVmwareSettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "required": [
+            "id",
+            "vmwareconnection",
+            "esxuser_",
+            "esxpassword_"
+        ],
+        "url": "/editsettings"
+},
+     "addWindowsloginSettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "required": [
+            "id",
+            "windowsconnection",
+            "windowslogindomain_",
+            "windowsloginusername_",
+            "windowsloginpassword_"
+        ],
+        "url": "/editsettings"
+},
+    "addLinuxLoginSettingsToObject": {
+        "_comment": "Added by AS for encryption testing",
+        "ajax": {},
+        "optional": [
+            "linuxconnection='1'",
+            "linuxloginusername_",
+            "linuxloginmode_",
+            "linuxloginpassword_",
+            "privatekey_",
+            "wbemprotocol_='https'",
+            "wbemportmode_='0'",
+            "wbemport_='5989'",
+            "sshport_='22'",
+            "sshelevatedrights_",
+            "elevationnamesudo_",
+            "elevationnamesu_",
+            "elevationpass_",
+            "sshversion_devicegroup_='2'"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/editsettings"
+},
+    "EditUserPassword":
+    {
+        "_comment": "added by Enrico Weigler for POD API Tests",
+        "ajax": {},
+        "required": [
+            "id",
+            "oldpassword",
+            "password1",
+            "password2"
+        ],
+        "optional": [
+            "passwordradio='1'",
+            "password_=''"
+        ],
+        "url": "/editsettings"
+    },
+    "favorite": {
+        "ajax": {},
+        "required": [
+            "id",
+            "action"
+        ],
+        "url": "/api/fave.htm"
+    },
+    "findDuplicates": {
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/api/findduplicates.htm"
+    },
+    "fold": {
+        "ajax": {},
+        "required": [
+            "id",
+            "fold"
+        ],
+        "url": "/api/foldobject.htm"
+    },
+    "getObjectProperty": {
+        "required": [
+            "id",
+            "name",
+            "show"
+        ],
+        "url": "/api/getobjectproperty.htm"
+    },
+    "getObjectPropertySensorChannel": {
+        "required": [
+            "id",
+            "subtype",
+            "subid",
+            "name",
+            "show"
+        ],
+        "url": "/api/getobjectproperty.htm"
+    },
+    "getObjectStatus": {
+        "_comment": "Added by AS; name means status if you want to get device status",
+        "ajax": {},
+        "optional": [
+            "show"
+        ],
+        "required": [
+            "id",
+            "objecttype",
+            "name"
+        ],
+        "url": "/api/getobjectstatus.htm"
+    },
+    "getObjectStatusPlain": {
+        "_comment": "Added by AS; name means status if you want to get device status",
+        "ajax": {},
+        "optional": [
+            "show",
+            "objecttype"
+        ],
+        "required": [
+            "id",
+            "name"
+        ],
+        "url": "/api/getobjectstatus.htm"
+    },
+    "getPasshash": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "optional": [
+            "username",
+            "password"
+        ],
+        "url": "/api/getpasshash.htm"
+    },
+    "getStatus": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "required": [
+            "id",
+            "username",
+            "passhash",
+            "password"
+        ],
+        "url": "/api/getstatus.htm"
+    },
+    "initialMailAcknowledge": {
+        "url": "/api/initialmailacknowledge.htm"
+    },
+    "loadLookUp": {
+        "ajax": {},
+        "url": "/api/loadlookups.htm"
+    },
+    "logError": {
+        "ajax": {},
+        "required": [
+            "msg"
+        ],
+        "url": "/api/logajax.htm"
+    },
+    "maintenanceWindow": {
+        "ajax": {},
+        "optional": [
+            "scheduledependency=0",
+            "maintenable_=1"
+        ],
+        "required": [
+            "id",
+            "maintstart_",
+            "maintend_"
+        ],
+        "url": "/editsettings"
+    },
+     "mapShow": {
+        "_comment": "Added by AS",
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/mapshow.htm"
+    },
+    "move": {
+        "ajax": {},
+        "required": [
+            "id",
+            "targetid"
+        ],
+        "url": "/api/moveobjectsimple.htm"
+    },
+    "pause": {
+        "ajax": {},
+        "description": "",
+        "optional": [
+            "action=0",
+            "pausemsg"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/pause.htm"
+    },
+    "pausefor": {
+        "ajax": {},
+        "optional": [
+            "pausemsg"
+        ],
+        "required": [
+            "id",
+            "duration"
+        ],
+        "url": "/api/pauseobjectfor.htm"
+    },
+    "position": {
+        "ajax": {},
+        "required": [
+            "id",
+            "newpos"
+        ],
+        "url": "/api/setposition.htm"
+    },
+    "primaryChannel": {
+        "ajax": {},
+        "required": [
+            "id",
+            "primarychannel_"
+        ],
+        "url": "/editsettings"
+    },
+    "priority": {
+        "ajax": {},
+        "required": [
+            "id",
+            "prio"
+        ],
+        "url": "/api/setpriority.htm"
+    },
+    "recalcCache": {
+        "ajax": {},
+        "optional": [
+            "id"
+        ],
+        "url": "/api/recalccache.htm"
+    },
+    "recommendNow": {
+        "required": [
+            "id"
+        ],
+        "url": "/api/recommendnow.htm"
+    },
+    "redisCoverWithCredentials": {
+        "ajax": {},
+        "optional": [
+            "nodeid"
+        ],
+        "url": "/api/rediscoverwithcredentials.htm"
+    },
+    "reloadFileLists": {
+        "ajax": {},
+        "optional": [
+            "id"
+        ],
+        "url": "/api/reloadfilelists.htm"
+    },
+    "restartProbes": {
+        "ajax": {},
+        "optional": [
+            "id"
+        ],
+        "url": "/api/restartprobes.htm"
+    },
+    "restartServer": {
+        "ajax": {},
+        "optional": [
+            "id"
+        ],
+        "url": "/api/restartserver.htm"
+    },
+    "resume": {
+        "ajax": {},
+        "optional": [
+            "action=1"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/pause.htm"
+    },
+    "setClusterNodeState": {
+        "ajax": {},
+        "optional": [
+            "type='setstatus'"
+        ],
+        "required": [
+            "clid",
+            "state"
+        ],
+        "url": "/api/setclusterproperty.htm"
+    },
+    "setLocation": {
+        "optional": [
+            "location",
+            "lonlat"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/setlonlat.htm"
+    },
+    "setObjectProperty": {
+        "required": [
+            "id",
+            "name",
+            "value"
+        ],
+        "url": "/api/setobjectproperty.htm"
+    },
+    "setObjectPropertySensorChannel": {
+        "required": [
+            "id",
+            "subtype",
+            "subid",
+            "name",
+            "value"
+        ],
+        "url": "/api/setobjectproperty.htm"
+    },
+    "setProbeState": {
+        "ajax": {},
+        "optional": [
+            "action='deny'"
+        ],
+        "required": [
+            "id"
+        ],
+        "url": "/api/probestate.htm"
+    },
+    "setShowHelp": {
+        "required": [
+            "action",
+            "page"
+        ],
+        "url": "/api/setshowhelpstatus.htm"
+    },
+    "settings": {
+        "url": "/editsettings"
+    },
+    "simulateError": {
+        "ajax": {},
+        "required": [
+            "id",
+            "action"
+        ],
+        "url": "/api/simulate.htm"
+    },
+    "sort": {
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/api/sortsubobjects.htm"
+    },
+    "startActivation": {
+        "ajax": {},
+        "url": "/api/allowactivation.htm"
+    },
+    "status": {
+        "url": "/api/status.json"
+    },
+    "sysinfo": {
+        "ajax": {},
+        "optional": [],
+        "required": [
+            "id",
+            "kind"
+        ],
+        "url": "/api/sysinfo.json"
+    },
+    "sysinfoCheckNow": {
+        "ajax": {},
+        "optional": [],
+        "required": [
+            "id",
+            "kind"
+        ],
+        "url": "/api/sysinfochecknow.json"
+    },
+    "tctAction": {
+        "optional": [
+            "action",
+            "page",
+            "eventtype",
+            "key",
+            "data"
+        ],
+        "url": "/api/tctAction.htm"
+    },
+    "testNotification": {
+        "ajax": {},
+        "required": [
+            "id"
+        ],
+        "url": "/api/notificationtest.htm"
+    },
+    "ticketAdd": {
+        "required": [
+            "id"
+        ],
+        "url": "/api/addticket.htm"
+    },
+    "ticketAssign": {
+        "required": [
+            "id",
+            "assigned",
+            "content"
+        ],
+        "url": "/api/assignticket.htm"
+    },
+    "ticketClose": {
+        "required": [
+            "id",
+            "content"
+        ],
+        "url": "/api/closeticket.htm"
+    },
+    "ticketEdit": {
+        "optional": [
+            "subject",
+            "assigned",
+            "priority"
+        ],
+        "required": [
+            "id",
+            "content"
+        ],
+        "url": "/api/editticket.htm"
+    },
+    "ticketPriority": {
+        "required": [
+            "id",
+            "priority"
+        ],
+        "url": "/api/setticketpriority.htm"
+    },
+    "ticketReopen": {
+        "required": [
+            "id",
+            "assigned",
+            "content"
+        ],
+        "url": "/api/addticket.htm"
+    },
+    "ticketResolve": {
+        "required": [
+            "id",
+            "content"
+        ],
+        "url": "/api/resolveticket.htm"
+    },
+    "ticketStatus": {
+        "required": [
+            "id",
+            "status"
+        ],
+        "url": "/api/editticket.htm"
+    },
+    "writeCoreStatus": {
+        "ajax": {},
+        "url": "/api/writecorestatus.htm"
+    },
+    "writeProbeState": {
+        "ajax": {},
+        "url": "/api/writeprobestatus.htm"
+    },
+    "reconfigureLogging":{
+        "ajax": {},
+        "url": "/api/reconfigurelogging.htm"        
+    }
+}

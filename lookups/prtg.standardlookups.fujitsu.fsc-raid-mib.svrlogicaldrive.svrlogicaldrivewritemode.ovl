@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrlogicaldrive.svrlogicaldrivewritemode" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="OK" value="2">
+        WriteBack
+      </SingleInt>
+      <SingleInt state="OK" value="3">
+        WriteThrough
+      </SingleInt>
+      <SingleInt state="OK" value="4">
+        Adaptive
+      </SingleInt>
+      <SingleInt state="Warning" value="5">
+        WriteBackBadBBU
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

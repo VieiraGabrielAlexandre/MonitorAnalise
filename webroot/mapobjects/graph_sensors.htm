@@ -1,0 +1,22 @@
+﻿<!--Graphs: Live graphs (with labels)-->
+
+<div class="map_object map_table reaload_wo_params" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+  <#mapobject type="objectgrip" mode="<@editmode>">
+  <#mapobject type="htmlbefore" subid="<@subid>">
+  <#checkobjecttype id="<@objectid>" objecttype="sensor,device,group,probenode" nicemessage="true">
+  <b>Graphs of <#objectproperty name="Name" id="<@objectid>"> (<#lang key="html.sensor.livwdata" default="Live Data">)</b>
+  <div class="sensorgraphs">
+    <#selectionlist
+    id="<@objectid>"
+    content="sensorgraphs"
+    width="336"
+    height="175"
+    graphid="0"
+    filter_tags="<@tagfilterstring>"
+    styling='refreshable=false'
+    >
+  </div>
+
+  <#mapobject type="htmlafter" subid="<@subid>">
+  <br style="clear:both">
+</div>

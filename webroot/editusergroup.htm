@@ -1,0 +1,39 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="usergroup">
+<#objectproperty name="name" var="objectname">
+<#lang key="html.editusergroup.title" default="Edit User Group" var="title">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<#lang key="html.global.usergroups" default="User Groups" var="usergroups">
+<#breadcrumbs varexpand="trail" trail="<a href='/systemsetup.htm?tabid=6'>@usergroups</a>" this="(OBJECT)" >
+<div id="main" data-title="<#objectproperty name="name">" data-contexthelpshow="<#system type='showhelp'>">
+  <h1 class="sitecaption <#objectidorzero zeroidcode="hidden" objectidcode="show">">
+    <#lang key="html.editusergroup.title1" default="<i>User Group</i>">
+    <dummy><#objectproperty name="name"></dummy>
+  </h1>
+   <h1 class="<#objectidorzero zeroidcode="show" objectidcode="hidden">"><#lang key="html.editusergroup.add" default="Add User Group"></h1>
+  <wingui-hidden>
+	  <div class="buttonbox">
+		<#include file="includes\linkpagebutton.htm">
+		<a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+	  </div>
+  </wingui-hidden>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/editusergroup.htm?id=<#objectid>"><i class="glyph-cog2"></i><span class="text"><#lang key="html.global.settings" default="Settings"></span></a></li>
+      <li tabid="2" class="tab-spacing tab-dark <#objectidorzero zeroidcode="hidden">" title="<#lang key="html.global.comments" default="Comments">">
+        <a href="/controls/comments.htm?id=<#objectid>"><i class="<#hascomment>"></i><span class="text"><#lang key="html.global.comments" default="Comments"/></span></a></li>
+      <li tabid="3" class="tab-dark <#objectidorzero zeroidcode="hidden">" style="<#hidefornonadmins>" title=""><a href="/controls/history.htm?id=<#objectid>"><i class="glyph-history"></i><span class="text"><#lang key="html.global.history" default="History"></span></a></li>
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+<#lang key="html.usergroupssettings.help.title" default="Edit Group" var="helptitle">
+<#lang key="html.usergroupssettings.help.text" default="Here you can edit user groups settings. For example, you can give the user group a new name, change the default homepage, and add or remove members from the group.<br><br><a href='/help/user_groups_settings.htm' target='_blank'><b>Help: User Groups Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

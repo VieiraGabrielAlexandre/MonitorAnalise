@@ -1,0 +1,25 @@
+﻿<script>
+  (function(window, document, undefined){
+    var LastClicked;
+    $(document).on('click.catch', '*', function(event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      LastClicked = $(this);
+      return false;
+    });
+    document.addEventListener("DOMContentLoaded", function(event) {
+      if(LastClicked !== undefined) {
+       LastClicked.trigger('click');
+      }
+      $(document).off('click.catch', '*');
+      LastClicked = undefined;
+    });
+  })(window, document);
+</script>
+
+
+<#include file="includes\htmlfooter_custom_v2.htm">
+<script src='/javascript/prtg.js?version=<#system type="version">&language=<#system type="language">'></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<#lang key="html.downloads.help.title" default="Downloads and Tools" var="helptitle">
+<#lang key="html.downloads.help.text" default="Here you can download additional software or optional network tools for PRTG that will improve your network monitoring capabilities.<br><br><a href='/help/downloads.htm' target='_blank'><b>Help: Downloads and Tools</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<div class="download-items">
+  <div class="download-item box">
+    <h2>
+      <#lang key="html.downloads.tools.title" default="Free Network Tools by Paessler">
+    </h2>
+    <div class="download-item-text">
+      <p>
+        <#lang key="html.downloads.tools.text" default="We provide several freeware tools that support you in the daily work with your network. Among these free tools are small helpers to manage your network, as well as tools to diagnose and test network monitoring issues.">
+      </p>
+      <p>
+        <#lang key="html.downloads.tools.text.addition" default="Please see our webpage for all free-to-use network tools from our labs:">
+      </p>
+      <p>
+        <a class="button" href="https://www.paessler.com/tools" target="_blank">
+          <#lang key="html.downloads.tools.link" default="More Information and Download">
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,240 @@
+﻿<#mailinclude file="/mailtemplates/mailvars.htm">
+	<table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">;margin-bottom:10px;">
+        <tr>
+          <td>
+            %sumheader
+          </td>
+        </tr>
+      </table>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">;margin-bottom:10px;">
+        <tr>
+          <td style="width:23px">
+            <h1 style="margin:0 0 8px 0;font-size:18px;white-space:nowrap">%mimgiconofstate</h1>
+          </td>
+          <td nowrap>
+            <h1 style="margin:0 0 8px 0;font-size:18px;white-space:nowrap">
+              <span style="font-weight: 200;">
+                <#lang key="html.sensor.head2" default="Sensor">
+              </span>
+              %name %priority
+            </h1>
+          </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr style="vertical-align: top;">
+            <td nowrap style="width:18px"><#mailimg src="../icons/probe.png" width="14" height="14" alt="<#lang key="common.strings.probe" default="Probe">">&nbsp;</td>
+            <td nowrap>%probe&nbsp;</td>
+            <td nowrap>&nbsp;&gt;&nbsp;</td>
+            <td nowrap style="width:18px"><#mailimg src="../icons/group.png" width="14" height="14" alt="<#lang key="common.strings.group" default="Group">">&nbsp;</td>
+            <td nowrap>%group&nbsp;&gt;&nbsp;</td>
+            <td nowrap style="width:18px"><#mailimg src="../icons/device.png" width="14" height="14" alt="<#lang key="common.strings.device" default="Device">">&nbsp;</td>
+            <td nowrap>%device&nbsp;(%host)</td>
+            <td width="90%">&nbsp;</td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="3" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr>
+          <td bgcolor="%colorofstate" style="padding:5px;margin:0;color:%textcolorofstate;font-size:9px;">
+              <#lang key="common.strings.newstatusat" default="New Status at"> %datetime (%timezone):
+              <br />
+              <span style="display:inline-block;font-size:14px;padding:5px 0 10px 0">
+                <b>%status</b>&nbsp;&nbsp;&nbsp;&nbsp;%down
+              </span>
+              <br />
+              <#lang key="common.strings.lastmessage" default="Last Message">:
+              <br />
+              <span style="display:inline-block;font-size:14px;padding:5px 0 0px 0">
+                <b>%message</b>
+              </span>
+          </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr >
+            <td height="15" bgcolor="#eeeeee" style="padding:0px;">
+            <table width="100%" cellpadding="3" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+                <tr >
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.lastscan" default="Last Scan">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.lastup" default="Last Up">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.lastdown" default="Last Down">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.global.uptime" default="Uptime">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.global.downtime" default="Downtime">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.uptimecoverage2" default="Coverage">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.sensortype" default="Sensor Type">:
+                    </td>
+                    <td style="font-size:9px;">
+                        <#lang key="html.sensorstatusdata.interval" default="Interval">:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:11px;" >
+                        <b><#objectstatus name="lastcheck" show="textshort" id="@sensorid"></b><br>
+                    </td>
+                    <td style="font-size:11px;" >
+                        <b><#objectstatus name="lastup" show="textshort" id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px;" >
+                        <b><#objectstatus name="lastdown" show="textshort" id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px;">
+                        <b><#objectstatus name="uptime" id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px;">
+                        <b><#objectstatus name="downtime" id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px;">
+                        <b title="<#objectstatus name="knowntime" show="htmllong" id="@sensorid"> of<br> <#objectstatus name="cumsince" show="textshort" id="@sensorid"><br> since <#objectstatus name="cumsince" show="htmllong"id=" @sensorid">"><#objectstatus name="knowntime" show="textshort"  id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px" title="<#objectstatus name="type"  id="@sensorid">">
+                        <b ><#objectstatus name="type"  show="textshort" id="@sensorid"></b>
+                    </td>
+                    <td style="font-size:11px;">
+                        <b><#objectstatus name="interval" id="@sensorid"></b></td>
+                </tr>
+            </table>
+        </td>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr bgcolor="#ffffff">
+            <td colspan="3" style="padding:9px 0px;">
+                <table width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/scannow.htm?id=%sensorid&amp;action=0&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                                <#lang key="js.contextmenus.CheckNow" default="Scan Now">
+                            </a>
+                        </td>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">" align="center">
+                            <a href="%home/acknowledgealarm.htm?id=%sensorid&amp;ackmsg=Acknowledged+via+email&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                                <#lang key="js.contextmenus.AcknowledgeAlarmnoellipsis" default="Acknowledge Alarm">
+                            </a>
+                        </td>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/pause.htm?id=%sensorid&amp;action=0&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                                <#lang key="js.contextmenus.Pause" default="Pause">
+                            </a>
+                        </td>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/pause.htm?id=%sensorid&amp;action=1&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">border-right:0;">
+                                <#lang key="js.contextmenus.Pause.Resume" default="Resume">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/pauseobjectfor.htm?id=%sensorid&amp;duration=5&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                                <#lang key="js.contextmenus.Pause.PauseFor5Minutes" default="Pause for 5 minutes">
+                            </a>
+                        </td>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/pauseobjectfor.htm?id=%sensorid&amp;duration=60&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                                <#lang key="js.contextmenus.Pause.PauseFor60Minutes" default="Pause for 60 minutes">
+                            </a>
+                        </td>
+                        <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                            <a href="%home/pauseobjectfor.htm?id=%sensorid&amp;duration=1440&amp;targeturl=/sensor.htm?id=%sensorid" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">;border-right:0;">
+                                <#lang key="js.contextmenus.Pause.PauseFor24Hours" default="Pause for 24 hours">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr>
+            <td colspan="3">
+                <table width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
+                    <tr >
+                        <td bgcolor="#ffffff">&nbsp;</td>
+                    </tr>
+                    <tr >
+                        <td bgcolor="#ffffff">
+                            <#chart graphtitle="@@notitle@@" charttext="@@period@@" forcepng="true" graphid="0" width="520" height="100" graphstyling="showLegend%3D%270%27%2520baseFontSize%3D%279%27" id="@sensorid"><br>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td bgcolor="#ffffff">
+                            <#chart graphtitle="@@notitle@@" charttext="@@period@@" forcepng="true" graphid="1" width="520" height="100" graphstyling="showLegend%3D%270%27%2520baseFontSize%3D%279%27" id="@sensorid"><br>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td bgcolor="#ffffff">
+                            <#chart graphtitle="@@notitle@@" charttext="@@period@@" forcepng="true" graphid="2" width="520" height="150" graphstyling="showLegend%3D%271%27%2520baseFontSize%3D%279%27" id="@sensorid">
+                        </td>
+                    </tr>
+                    <tr >
+                        <td bgcolor="#ffffff">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr>
+            <td>
+                <#table content="channels" id="@sensorid" showhide="1" columns="name,lastvalue_" sortby="name" sortable="false" links="false" refreshable="false">
+            </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                %commentssensor
+                %commentsdevice
+                %commentsgroup
+                %commentsprobe
+                %syslogerrors%traperrors
+                %syslogwarnings%trapwarnings
+                %syslogmessages%trapmessages
+                %history
+            </td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tr>
+            <td colspan="3">
+                <table width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
+                    <tr >
+                        <td bgcolor="#ffffff">&nbsp;</td>
+                    </tr>
+                    <tr >
+                        <td class="content_wrap" style="<#mailstyle style=" @font @fontsize @boxsizing @tabletd " varexpand="style ">" valign="top">
+                         <h3><#lang key="mail.ticket.notification.clickheretoedit" default="Don't want to receive this email?"></h3>
+                         <p>
+                            <#lang key="mail.ticket.notification.clickheretoedit1a" default="Please edit the">
+                            <a href="%home/sensor.htm?id=%SensorId&tabid=9"><#lang key="mail.ticket.notification.clickheretoedit1b" default="triggers of this sensor"></a>
+                            <#lang key="mail.ticket.notification.clickheretoedit1c" default="or edit your">
+                            <a href="%home/editnotification.htm?id=%notification"><#lang key="mail.ticket.notification.clickheretoedit1d" default="notification settings">!
+                         </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+

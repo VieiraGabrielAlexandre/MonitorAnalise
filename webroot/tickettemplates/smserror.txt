@@ -1,0 +1,8 @@
+<#lang key="tickettext.mailerror.text2" default="*** Important: There is a problem and you need to take action. ***">
+
+<#lang key="tickettext.smserror.text3" default="PRTG failed to send a SMS notification to %0:s. It is very important that PRTG can send notifications to alert the users who need to know of downtimes of sensors or issues with your PRTG installation.">
+
+<#lang key="tickettext.notificationerror.text4" default="This is the error that occurred during the delivery process:">
+%1:s
+
+<#lang key="tickettext.notificationerror.text10" default="You can activate notification delivery logging to investigate notification delivery issues. Please see <a href='https://kb.paessler.com/en/topic/55363'>Notification Delivery Logging</a> and send the log files to our support team if necessary.">

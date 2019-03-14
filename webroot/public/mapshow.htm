@@ -1,0 +1,151 @@
+﻿<#include file="includes\htmlheader.htm" bodyclass="mapshow publicmapshow">
+
+<div id="maprefreshlink">
+  <span>
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" interval="10">10<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" interval="30">30<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" interval="60">60<#lang key="html.mapshow.seconds" default="s"></a>&nbsp;
+    <a href="#" title="<#lang key="html.mapshow.changeint" default="Change Refresh Interval">" interval="600">10<#lang key="html.mapshow.minutes" default="m"></a>&nbsp;
+  </span>
+  <div id="mapclusterswitchbox" style="<#clusterdependent showfor="clusterinstallation">">
+    <table><tr><td style="padding:2px"><#lang key="html.mapshow.clusternode" default="Cluster Node:"></td><td><#clustermapsdropdown skiptagfornoncluster="true"></td></tr></table>
+  </div>
+  <a href="#" onclick="return(false)">
+    <span><#lang key="html.mapshow.refresh" default="Refresh"></span>
+    <img src='/images/refresh.png'>
+  </a>
+</div>
+
+<div class="maploading">
+  <p>
+    <span class="loadspinner"></span>
+    <span><#lang key="html.mapshow.loading" default="Loading..."></span>
+    <span></span>
+  </p>
+</div>
+
+<div class="mapshowfailed">
+  <p>
+    <span class="mapshowfailedheader"><#lang key="html.mapshow.refreshfailed" default="Map Refresh Failed"></span>
+    <span class="mapshowfaileddefaultmessage"><#lang key="html.mapshow.lostconnection" default="Lost connection to PRTG server"></span>
+    <span class="mapshowfailedcustommessage"></span>
+  </p>
+</div>
+
+<script type="text/javascript">
+window.nocheck = true;
+(function($, window, document, undefined) {
+  var iframes = $('.mapshowiframe'), timeout,
+      id =  parseInt("<#inserturlparam parameter='id'>", 10),
+      interval = parseInt("<#inserturlparam parameter='interval'>", 10),
+      ids = "<#inserturlparam parameter='ids'>", //filter NaN
+      mapid = "<#inserturlparam parameter='mapid'>",
+      refreshes = 0,
+      prtgVersion = "<#system type="version">",
+      currentPrtgVersion,
+      defaultTitle = document.title;
+
+    $.fn.purgeFrame = function() {
+      var deferred;
+      this.remove();
+      deferred = $.Deferred();
+      deferred.resolve();
+      return deferred;
+    };
+
+    window.frameLoaded = function(me) {
+      var $this = $(me);
+      clearTimeout(timeout);
+      $('.maploading').hide();
+      if(checkIframeContent($this)) {
+        $('.mapshowiframe').not('invisible').addClass('invisible');
+        $this.removeClass('invisible');
+        iframes.not($this).contents().find('body').html(' ');
+        document.title = $this.contents().find("title").html();
+        $('.mapshowiframe').filter('.invisible').purgeFrame();
+      } else {
+        $('.mapshowiframe').purgeFrame();
+        refreshes = 0;
+        $this = null;
+      }
+
+      if(!!$this && $this.contents().find('.currentprtgversion').length > 0) currentPrtgVersion = $this.contents().find('.currentprtgversion').eq(0).text();
+      if(refreshes > 99 || prtgVersion !== currentPrtgVersion) {
+       timeout = setTimeout('window.location.reload()', interval*1000);
+      } else {
+        refreshes = refreshes + 1;
+        timeout = setTimeout(refresh, interval*1000);
+      }
+      $this = null;
+    };
+
+  function init() {
+  $('#clusterselect').change(function() { window.top.location.href=$(this).val();return false;});
+    if (interval === undefined || isNaN(interval) || interval < 1) interval = 60;
+    ids != "" ? ids = ids.split(',') : ids = [];
+    if(!isNaN(id)) ids.unshift(id + ':' + mapid);
+    for (var i = 0; i < ids.length; i++) if (ids[i] == "") ids.splice(i--, 1); // remove empty array values
+
+    $('.mapshow').on('click', '#maprefreshlink a', function(e) {
+      e.preventDefault();
+      if(this.getAttribute('interval') !== null) {
+        changeInterval(parseInt(this.getAttribute('interval'), 10) || interval);
+      } else {
+        refresh();
+      }
+    });
+    refresh(true);
+  }
+
+  function refresh(initial) {
+    $('.maploading').show();
+    document.title = defaultTitle + ' <#lang key="html.mapshow.loading.title" default="Loading...">';
+    if(!initial) {
+      ids.push(id);
+    }
+    id = ids.shift();
+    var $frame = $('<iframe onload="window.frameLoaded(this);" frameborder="0" ticks="'+refreshes+'"/>')
+    .attr('class',"mapshowiframe")
+    .attr('src', 'mapshow_simple.htm' + '?id=' + id.split(':')[0] + '&mapid=' +  id.split(':')[1] );
+    $frame.insertAfter("#maprefreshlink");
+    $frame = null;
+  }
+
+  function checkIframeContent($iframe) {
+    var ret = false;
+    try{
+      if($iframe.attr('src') === "") return true;
+      var contents = $iframe.contents();
+      if(contents.find('.mapshow').length < 1) {
+        $(".mapshowfailed").show();
+        if(contents.find('.errormsg').length > 0) {
+          $('.mapshowfailedcustommessage').text(contents.find('.errormsg').find('h2').text());
+          $('.mapshowfaileddefaultmessage').hide();
+        }
+        document.title = defaultTitle + '<#lang key="html.mapshow.lostconnection.title" default="Connection error">';
+        ret = false;
+      } else {
+        $(".mapshowfailed").hide();
+        $('.mapshowfailedcustommessage').text('');
+        $('.mapshowfaileddefaultmessage').show();
+        ret = true;
+      }
+    }catch(e){
+      $(".mapshowfailed").show();
+      $('.mapshowfaileddefaultmessage').hide();
+    }
+    return ret;
+  }
+
+  function changeInterval(sec) {
+    var iv = parseInt(sec, 10);
+    if(iv !== NaN && iv !== undefined) interval = iv;
+    clearTimeout(timeout);
+    refresh();
+  }
+
+  $(function() { init(); });
+})(jQuery, window, document);
+</script>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\htmlfooter.htm">

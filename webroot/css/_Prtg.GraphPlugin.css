@@ -1,0 +1,56 @@
+﻿body.graphzoom {
+  min-width: inherit;
+}
+
+body.graphzoom #sendfeedbackbox {
+  display: none;
+}
+
+body.graphzoom #chartcontainer {
+  position: absolute;
+  bottom: 22px;
+  width: 100%!important;
+}
+
+body.graphzoom #chartcontainer.loading {
+  top: 0;
+  background-color: transparent;
+}
+
+body.graphzoom #chartcontainer > div {
+  height: calc(100% - 10px);
+  width: 100%;
+}
+
+body.graphzoom #chartcontainer .PNGGraph {
+  width: auto !important;
+  height: auto !important;
+}
+
+body.graphzoom #chartcontainer .chartlegend .prtg-graphs-controls {
+  margin-left: 10px;
+}
+
+body.graphzoom #graphzoom .chartlegend {
+  max-width: calc(100% - 150px);
+  width: auto !important;
+  position: absolute;
+  padding: 0 0 15px 2px;
+  bottom: 0;
+  left: 5px;
+}
+
+body.graphzoom #chartcontainer #chart .prtg-graphs-controls {
+  position: absolute;
+  bottom: -25px;
+  right: -2px
+}
+
+body.graphzoom #chartcontainer .prtg-graphs-controls a {
+  margin: 0;
+}
+
+body.graphzoom .prtg-graphs-controls.loading {
+  background-image: url(/images/ajax-loader-small.gif)!important;
+  background-color: #fff;
+}

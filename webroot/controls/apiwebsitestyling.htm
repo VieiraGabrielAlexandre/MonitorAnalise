@@ -1,0 +1,127 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">>Styling the Web Interface using CSS, JS, and HTML Injection</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>
+            PRTG users can use their own logos and/or corporate colors inside the AJAX Web GUI by adding their own HTML and CSS code to PRTG's web interface. For the AJAX Web GUI
+            it is also possible to add your own JavaScript code, too.
+        </p>
+
+        <h2>Limited Support</h2>
+        <p>
+            This feature should only be used by experienced web designers with a good knowledge of HTML, JavaScript, and CSS. Due to the complexity of PRTG's code
+            the Paessler support team cannot support you regarding the actual HTML, JavaScript, and/or CSS code that you need to use.
+            <br><br><b>Note:</b> New versions of PRTG may render the web pages with a different HTML structure and may require changes for your CSS statements (however, we will try
+            to avoid such situations).
+        <h2>How does it work?</h2>
+
+        <p>
+            When web pages are created, PRTG uses various include files from the <i>webroot</i> sub folder of your PRTG program directory. You can add your own HTML, CSS, and
+            JavaScript by editing the following files for the <b>AJAX Web GUI</b>.
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Interface</b>
+            </th>
+            <th>
+                <b>Folder and File</b>
+            </th>
+            <th>
+                <b>Contents</b>
+            </th>
+            <th>
+                <b>Will be inserted</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>AJAX Web GUI</td>
+                <td>webroot\includes\htmlheader_custom.htm</td>
+                <td>HTML</td>
+                <td>at the top of the page, just after the &lt;BODY&gt; tag</td>
+            </tr>
+            <tr class="even">
+                <td>AJAX Web GUI</td>
+                <td>webroot\includes\htmlfooter_custom.htm</td>
+                <td>HTML</td>
+                <td>at the bottom of the page, just before the &lt;/BODY&gt; tag</td>
+            </tr>
+            <tr class="odd">
+                <td>AJAX Web GUI</td>
+                <td>webroot\css\styles_custom.css</td>
+                <td>CSS</td>
+                <td>at the end of PRTG's CSS file for the AJAX Web GUI</td>
+            </tr>
+            <tr class="even">
+                <td>AJAX Web GUI</td>
+                <td>webroot\javascript\scripts_custom.js</td>
+                <td>JavaScript</td>
+                <td>at the end of PRTG's JavaScript file for the AJAX Web GUI</td>
+            </tr>
+        </table>
+
+        <p>
+            The contents of these files are then added at the respective positions. By creating these files and adding your own HTML and CSS statements (e.g. by using a text
+            editor)
+            you can append your own HTML and overwrite the built-in CSS statements to change PRTG's look and feel. Custom JavaScript gives you even more possibilities.
+        </p>
+
+        <p>
+            After adding/changing the file(s) a simple "full reload" of your browser window (Shift-F5) will instantly use the new code and you should be able to see the changes
+            immediately.
+        </p>
+
+        <p>
+            <b>Note:</b> Please only modify the files mentioned above. Changing PRTG's built-in HTML and CSS files is not recommended and not supported.
+            All changes to PRTG's other files will be overwritten with new files as soon as a new PRTG version is installed.
+        </p>
+
+        <h2>Writing CSS Code</h2>
+
+        <p>
+            For some common redesign tasks (colors, logos, margins) we have included sample statements in the CSS code below. If you have additional design requirements
+            we recommend that you use a tool like
+            <a class="arrow" href="http://getfirebug.com/">FireBug</a>, <a class="arrow" href="https://developers.google.com/chrome-developer-tools/">Chrome Developer Tools</a> or any other web page analyzer
+            tool to dig into
+            PRTG's existing HTML code structure and CSS statements in order to find out what CSS statements you must add/change.
+        </p>
+
+        <pre style="height:400px;overflow:auto;">/* Sample CSS redesign file for PRTG Network Monitor, works with V13.2.3.x or later */
+    /* Created May 2013 by Dirk Paessler */
+    /* This styling is not meant to look pretty, 
+        it serves as sample code on how to change the style */
+
+    /* How to use:
+    - Create file "styles_custom.css" in the \prtg network monitor\webroot\css folder
+    - insert the code below and edit as desired
+    - reload your browser */
+
+body  /*change base font and size */
+{
+  font-family:"Times New Roman",times,serif;
+  font-size: 10px;
+}
+
+#main /* Change background color */
+{
+  background:#666;
+}
+
+#header_menu /*change top header background color*/
+{
+  background:#eee;
+}
+
+#header_breadcrumbs /*change top header background color*/
+{
+background:#000;
+color: #333;
+}
+
+</pre>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+﻿<!--Geo Maps-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notifications.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Geo Maps</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Geo Maps</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">With the PRTG Geo Maps feature, you can visualize geographical information about your monitored objects. You can display the location of <span class="f_ItalicCustom">probes</span>, <span class="f_ItalicCustom">groups</span>, and <span class="f_ItalicCustom">devices </span>in a graphical map on the details page of an object, or on PRTG <span class="f_BoldCustom"><a href="maps.htm" class="topiclink">Maps</a></span>. This feature is especially useful when you monitor networks that are spread over several different locations. Devices located in a few cities of a country or various continents can all easily be visualized.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can enter <span class="f_BoldCustom">Location</span> information for each probe, group, and device. PRTG uses the first line of this information to query a geographical map that shows your objects. Your location specification is resolved to global geographical coordinates by the PRTG core server with the help of an external map service provider. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG connects to the specified maps provider to get <span class="f_ItalicCustom">map</span> <span class="f_ItalicCustom">tiles</span>. The map tiles provide the (geo)graphical &quot;background&quot;. Then PRTG marks the defined locations with the corresponding object icons and their <a href="geo_maps.htm#flag" class="topiclink">status</a> on the map. You can select your favorite map tiles provider in <span class="f_BoldCustom"><a href="system_website_settings.htm#geo-maps" class="topiclink">System Administration—User Interface</a></span> (setting <span class="f_BoldCustom">Geo Maps</span>).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can display geographical maps on the device tree. PRTG adjusts the zoom of a map automatically so that it can show all locations of a selected object. You can also add geographical maps to PRTG <span class="f_BoldCustom"><a href="maps.htm" class="topiclink">Maps</a></span>. To do so, open the PRTG <span class="f_BoldCustom"><a href="maps_designer.htm" class="topiclink">Map Designer</a></span> (either in an existing map or create a new one) and click <span class="f_BoldCustom">Geo Maps</span> in the properties menu on the right.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="hmfile_hash_8d9aeebd.png"><img id="TOGGLE0186A1" class="image-toggle" alt="The Global Status of a Network in a Geo Map" title="The Global Status of a Network in a Geo Map" style="width:600px;height:395px;border:none" src="hmfile_hash_37d61cbc.png"/></a><p style="text-align:center"><span class="f_ImageCaption">The Global Status of a Network in a Geo Map</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Using Geo Maps</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To use geographical maps within the PRTG <a href="ajax_gui_basic.htm" class="topiclink">web interface</a> or <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span>, please ensure the following:</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;">In the system administration in the PRTG web interface, select the maps provider and type you want to view. There, you will also find an option to disable geo maps integration if you do not want to use it. See section <span class="f_BoldCustom"><a href="system_website_settings.htm#geo-maps" class="topiclink">System Administration—User Interface</a></span> (setting <span class="f_BoldCustom">Geo Maps</span>) for detailed information.</li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;">In the <a href="object_settings.htm" class="topiclink">settings of a monitoring object</a> (probe, group, device), add a city name, address, or coordinates in the first line of the <span class="f_BoldCustom">Location</span> field. When you view the details of this object, PRTG will show a geographical map. PRTG uses the <span class="f_BoldCustom">Location</span> information also when you view objects in the <span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span> or add <span class="f_BoldCustom">Geo Maps</span> objects to PRTG <span class="f_BoldCustom"><a href="maps.htm" class="topiclink">Maps</a></span>.</li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;">Make sure your PRTG core server has access to the internet to obtain map tiles. If a proxy is mandatory in your network, configure proxy settings accordingly.<br />
+<img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For details, see <span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a></span>.<br />
+&nbsp;<br />
+<img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For details about tile server domains, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/35823" target="_blank" class="weblink">Which domains and ports does the GeoMaps feature use?</a></span></li>
+</ol>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="label" class="hmanchor"></a><span class="f_InTopicHeading">Labeling Locations</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can define your own labels for locations of objects. To do so, enter the desired label in the first line of the <span class="f_BoldCustom">Location</span> settings and provide the geo coordinates of the location in the second line. This object will appear with the defined label in PRTG Geo Maps.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">For example, add the following to the location field:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">Big&nbsp;Apple</span><br />
+<span class="f_CodeExample">40.712778,-74.005833</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:464px"><a href="location_bigapple2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Defining Location New York City with Geo Coordinates and Label Big Apple" title="Defining Location New York City with Geo Coordinates and Label Big Apple" style="width:464px;height:202px;border:none" src="location_bigapple2_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Defining Location New York City with Geo Coordinates and Label Big Apple</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The location New York City appears with the label Big Apple:</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="geomap_bigapple.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Location New York City with Label Big Apple" title="Location New York City with Label Big Apple" style="width:600px;height:441px;border:none" src="geomap_bigapple_zoom68.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Location New York City with Label Big Apple</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">It is also possible to define the same label for different locations. For example, imagine your company's headquarter is spread over several different locations. For each object representing a dedicated headquarter in the PRTG device tree, enter its coordinates in the second line of the respective <span class="f_BoldCustom">Location</span> settings and the label &quot;Headquarter&quot; in the first line. All corresponding objects will be displayed as &quot;Headquarter&quot;. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">This way, you can easily find your desired objects on the map.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="flag" class="hmanchor"></a><span class="f_InTopicHeading">Map Icon Colors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the geographical maps, the different location icons show the overall <a href="sensor_states.htm" class="topiclink">status</a> at this location by using a color code. Following, you can see all possible location states in order of their hierarchy:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Flag</span></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Flag Color</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Location Status</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Meaning</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_red_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_red_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Red</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Down</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">At least one sensor at this location shows a red </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status. Hover the circle with the letter symbol in the legend to view the total number of alarms at this location.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_redok_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_redok_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Light-Red</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Down (Acknowledged)</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">At least one sensor at this location is </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> and a PRTG user acknowledged this status with the </span><span class="f_BoldCustom">Acknowledge Alarm</span><span class="f_ListBulleted"> function. The </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> states of all sensors at this location must be acknowledged—if at least one </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status is unacknowledged, this location will be displayed as </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_yellow_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_yellow_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yellow</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Warning</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">At least one sensor at this location shows a yellow </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. There is no sensor in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted"> status at this location.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_orange_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_orange_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Orange</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Unusual</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">At least one sensor at this location shows an orange </span><span class="f_BoldCustom">Unusual </span><span class="f_ListBulleted">status. There is no sensor in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status at this location.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_green_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_green_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Green</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Up</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All sensors at this location are in a green </span><span class="f_BoldCustom">Up </span><span class="f_ListBulleted">status. There is no sensor in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted"> status at this location.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_blue_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_blue_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Blue</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Paused</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All sensors at this location show a blue </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted"> status. There is no sensor in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> status at this location.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:44px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_grey_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_grey_big.png"/></p>
+</td>
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Black (Grey)</span></p>
+</td>
+<td style="vertical-align:top; width:129px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">Unknown</span></p>
+</td>
+<td style="vertical-align:top; width:366px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All sensors at this location have an </span><span class="f_BoldCustom">Unknown</span><span class="f_ListBulleted"> status. There is no sensor in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> status at this location.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information about sensor states, see the section <span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tracking" class="hmanchor"></a><span class="f_InTopicHeading">Geo Tracking of Your Mobile Device</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">It is possible to show the location of an Android device and track its movements on PRTG Geo Maps. PRTG can draw the route a device has taken directly into geo maps. For this feature, you need the <span class="f_ItalicCustom">PRTG Mobile Probe for Android</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For details, see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/59647" target="_blank" class="weblink">How can I track geo data of my Mobile Probe device?</a></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which provider should I use for PRTG's &quot;Geo Maps&quot; feature?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/34603" target="_blank" class="weblink">https://kb.paessler.com/en/topic/34603</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which domains and ports does the GeoMaps feature use?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/35823" target="_blank" class="weblink">https://kb.paessler.com/en/topic/35823</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Why does my street not appear on the Geo Map shown in PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/35653" target="_blank" class="weblink">https://kb.paessler.com/en/topic/35653</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do I get a Google Maps API key for use in PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/32363" target="_blank" class="weblink">https://kb.paessler.com/en/topic/32363</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: </span><span class="f_ListBulleted">Which limitations apply when using the Google Maps API in PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/7913" target="_blank" class="weblink">https://kb.paessler.com/en/topic/7913</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: How can I track geo data of my Mobile Probe device?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/59647" target="_blank" class="weblink">https://kb.paessler.com/en/topic/59647</a></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My geo maps are displayed without background. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/63608" target="_blank" class="weblink">https://kb.paessler.com/en/topic/63608</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Geographical Map,Geographical Map,Google,Google Maps</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notifications.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

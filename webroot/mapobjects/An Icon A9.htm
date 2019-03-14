@@ -1,0 +1,27 @@
+﻿<!--Status Icons: Name and status (sizeable, status-related background)-->
+
+<div class="map_object map_icon2 map_icon_large <#sensor type="colorclassofstate" prefix="map_iconcolor_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+  <#mapobject type="objectgrip" mode="<@editmode>">
+  <#mapobject type="htmlbefore" subid="<@subid>">
+
+  <#objectproperty type="nodename" id="<@objectid>" var="nodename">
+  <#objectstatus name="lastvalue" id="<@objectid>" var="lastvalue">
+  <#objectstatus name="message" show="textraw" id="<@objectid>" var="message">
+
+  <span>
+    <#objectstatus name="downsens" id="<@objectid>">
+    <#objectstatus name="partialdownsens" id="<@objectid>">
+    <#objectstatus name="downacksens" id="<@objectid>">
+    <#objectstatus name="warnsens" id="<@objectid>">
+    <#objectstatus name="upsens" id="<@objectid>">
+    <#objectstatus name="pausedsens" id="<@objectid>">
+    <#objectstatus name="unusualsens" id="<@objectid>">
+    <#objectstatus name="undefinedsens" id="<@objectid>">
+    <br>
+    <#objectproperty name="Name" id="<@objectid>">
+    <br><#if value="@nodename" is="sensor" then="@lastvalue" varexpand="value,then">
+    <br>&nbsp;
+    <br><#if value="@nodename" is="sensor" then="@message" varexpand="value,then">
+  </span>
+    <#mapobject type="htmlafter" subid="<@subid>">
+</div>

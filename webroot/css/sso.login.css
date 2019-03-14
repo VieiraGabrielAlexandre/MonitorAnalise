@@ -1,0 +1,218 @@
+﻿html{
+    background-color: #fafafa;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-color: #fafafa;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+  opacity: 0;
+}
+
+.adds{
+  padding-top: 30px;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.container{
+  padding-top:20px;
+}
+
+#header {
+    background-color: #b7b7b7;
+    border-bottom: 1px solid #aaa;
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    z-index: 5;
+  }
+
+#header .prtglogo {
+    position: absolute;
+    bottom: -1px;
+    left: 3px;
+}
+
+#header .paesslerlogo {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+}
+
+#footer {
+    background-color: #b7b7b7;
+    border-top: 1px solid #aaa;
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    bottom: 0px;
+    font-size: 10px;
+    color: #333;
+}
+
+#footer .prtgversion {
+    position: absolute;
+    bottom: 1px;
+    left: 3px;
+}
+
+#footer .copyright {
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+}
+
+#loader{
+  position: absolute;
+  background: #fafafa;
+  margin: 0 auto;
+  min-height: 450px;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  z-index: 3;
+}
+
+/********** Newsfeed *************/
+
+.newsfeed-content{font-size: 12px;width:400px;height:253px;overflow:hidden;padding-right: 20px;opacity: 0.7;}
+.newsfeed-content:hover{overflow-y:scroll;opacity: 1.0;}
+.newsfeed h3{font-size: 16px;}
+.lightblue{color:#00b6f4;}
+.white{color:#ffffff;}
+
+
+/****** Loader Animation *********/
+
+.cssload-loading {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  margin:-38px 0 0 -33px;
+  left: 50%;
+  top: 50%;
+}
+
+.cssload-loading i {
+  position: absolute;
+  top: 36px; left: 36px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  background: rgb(249,157,28);
+  border-radius: 36px;
+  animation: cssload-spin2 2.4s ease-in-out infinite;
+}
+.cssload-loading i:first-child {
+  top: -36px; left: 0;
+  background: rgb(178,203,56);
+  animation: cssload-spin 2.4s ease-in-out infinite;
+}
+.cssload-loading i:last-child {
+  top: 36px; left: -36px;
+  background: rgb(237,15,104);
+  animation: cssload-spin3 2.4s ease-in-out infinite;
+}
+
+@keyframes cssload-spin {
+  0% {
+    top: -36px;
+    left: 0;
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(.5);
+  }
+  33% {
+    top: 36px;
+    left: 36px;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.5);
+  }
+  66% {
+    top: 36px;
+    left: -36px;
+    transform: scale(1);
+  }
+  83% {
+    transform: scale(.5);
+  }
+  100% {
+    top: -36px;
+    left: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes cssload-spin2 {
+  0% {
+    top: 36px;
+    left: 36px;
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(.5);
+  }
+  33% {
+    top: 36px;
+    left: -36px;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.5);
+  }
+  66% {
+    top: -36px;
+    left: 0;
+    transform: scale(1);
+  }
+  83% {
+    transform: scale(.5);
+  }
+  100% {
+    top: 36px;
+    left: 36px;
+    transform: scale(1);
+  }
+}
+
+@keyframes cssload-spin3 {
+  0% {
+    top: 36px;
+    left: -36px;
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(.5);
+  }
+  33% {
+    top: -36px;
+    left: 0;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.5);
+  }
+  66% {
+    top: 36px;
+    left: 36px;
+    transform: scale(1);
+  }
+  83% {
+    transform: scale(.5);
+  }
+  100% {
+    top: 36px;
+    left: -36px;
+    transform: scale(1);
+  }
+}

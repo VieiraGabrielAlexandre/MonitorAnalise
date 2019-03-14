@@ -1,0 +1,142 @@
+﻿<!--Monitoring via SNMP-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensor_technologies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="choosing_the_right_snmp_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring via SNMP</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring via SNMP</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Monitoring via Simple Network Management Protocol (SNMP) is the most basic method of gathering bandwidth and network usage data.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="how" class="hmanchor"></a><span class="f_InTopicHeading">How SNMP Monitoring Works</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">SNMP is a set of standards for communication with devices in a TCP/IP network. SNMP monitoring is useful if you are responsible for servers and network devices such as hosts, routers, hubs, and switches. It enables you to keep an eye on network and bandwidth usage, and monitor important issues such as uptime and traffic levels.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use SNMP to monitor the bandwidth usage of routers and switches on a port-by-port basis, as well as device readings such as memory and CPU load. The target devices must support SNMP. Most devices with enabled SNMP require the same configuration like SNMP version and community string. To find out how to set up SNMP on a specific device, search in the internet for your device name or model and SNMP configuration. You will likely get plenty of information on how to configure SNMP. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:491px"><a href="network-monitoring-via-snmp.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Network Monitoring via SNMP" title="Network Monitoring via SNMP" style="width:491px;height:210px;border:none" src="network-monitoring-via-snmp_zoom54.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Network Monitoring via SNMP</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">When you use a sensor with this technology, PRTG sends small data packets to devices, for example, querying routers, switches, and servers for the traffic counters of each port. These queries trigger reply packets from the device. Compared to other bandwidth monitoring technologies via flows, packet sniffing, or WMI, the SNMP option creates the least CPU and network load.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="reasons" class="hmanchor"></a><span class="f_InTopicHeading">Reasons to Choose SNMP Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">SNMP is the most commonly used method mainly because it is easy to set up and requires minimal bandwidth and CPU cycles. If your network devices support SNMP and/or if you want to monitor large networks with several hundred or thousands of sensors, we recommend that you start with SNMP. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Besides network usage monitoring, another well-known feature of SNMP is the ability to also watch other network parameters such as CPU load, disk usage, temperature, as well as monitoring many other readings, depending on the queried device.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="network" class="hmanchor"></a><span class="f_InTopicHeading">SNMP Network Issues</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To use Simple Network Management Protocol (SNMP) for monitoring purposes, it is imperative that UDP packets can travel from the machine running PRTG to the device you want to monitor and back. This is usually the case in LANs and intranets. For connections across the internet, to a Demilitarized Zone (DMZ), or for Wide Area Network (WAN) connections, some changes to the traversed firewalls may be necessary. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Keep in mind that SNMP V1 and V2c are not secure protocols so you should not use them across the internet or insecure data connections. Only SNMP version 3 supports encryption.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="understand" class="hmanchor"></a><span class="f_InTopicHeading">Understanding SNMP Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To better understand and set up SNMP sensors, you may want to learn more about the principles of <span class="f_ItalicCustom">Object Identifiers (OID)</span> and <span class="f_ItalicCustom">Management Information Base (MIB)</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information about this topic, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/653" target="_blank" class="weblink">How do SNMP, MIBs and OIDs work?</a></span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For an overview and details about all SNMP sensors, see section <span class="f_BoldCustom"><a href="available_sensor_types.htm#snmp" class="topiclink">List of Available Sensor Types</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information about which SNMP sensor is best for your monitoring setup, see section <span class="f_BoldCustom"><a href="choosing_the_right_snmp_sensor.htm" class="topiclink">Choosing the Right SNMP Sensor</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="versions" class="hmanchor"></a><span class="f_InTopicHeading">SNMP Versions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG supports three versions of the SNMP protocol: Version 1, version 2c, and version 3.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">SNMP Version 1</span> </p>
+<p class="p_Normal" style="page-break-inside: avoid;">This is the oldest and most basic version of SNMP.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Pro: Supported by most SNMP-compatible devices; simple to set up.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Con: Limited security because it only uses a simple password (<a href="snmp_monitoring.htm#community" class="topiclink">community string</a>) and sends data in clear text (unencrypted). Because of this, you should only use it inside LANs behind firewalls, but not in WANs. Version 1 only supports 32-bit counters, which are not enough for high-load (gigabits/second) bandwidth monitoring.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">SNMP Version 2c</span> </p>
+<p class="p_Normal" style="page-break-inside: avoid;">This version adds 64-bit counters.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Pro: Supports 64-bit counters to monitor bandwidth usage in networks with gigabits/second loads.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Con: Limited security (same as with SNMP V1).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">SNMP Version 3</span> </p>
+<p class="p_Normal" style="page-break-inside: avoid;">This version adds authentication and encryption to SNMP.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Pro: Offers user accounts and authentication for multiple users and optional data packet encryption, increasing available security; plus all advantages of Version 2c.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Con: Difficult to configure and higher overhead for the probe, which will reduce the number of devices that you can monitor (see <a href="snmp_monitoring.htm#limitations" class="topiclink">here</a> for more information).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">SNMP Traps</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Various devices can send SNMP trap messages to notify you of system events.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG supports SNMP v1 and SNMP v2c traps.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Destination for SNMP traps: IP address of the trap receiver, which is the IP of the PRTG probe system (server with either a local or remote probe running on it) to which you add the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_trap_receiver_sensor.htm" class="topiclink">SNMP Trap Receiver Sensor</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Which SNMP Version Should I Choose?</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The SNMP version to choose depends on your environment, but as a guideline:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If your network is publicly accessible, you may want to use SNMP v3, which has encryption and secure access. However security and encryption adds overhead, which results in less performance.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If your network is isolated or well protected behind firewalls, the lower security of SNMP v1 or SNMP v2c may be sufficient.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">From the PRTG perspective, if you have a lot of devices to monitor, the SNMP v2c is preferable. It will allow you to monitor more devices on a shorter monitoring interval and supports 64-bit counters.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The most important thing is to set the same SNMP version in the PRTG settings (for example, on <span style="font-weight: bold;">Root</span> level) as you have configured in your target device. If you select an SNMP version that is not supported by the server or device you want to monitor, you receive an error message. Unfortunately, in most cases, these error messages do not explicitly point to the possibility that you use the incorrect SNMP version. These messages provide minimum information only, such as <span class="f_ItalicCustom">cannot connect</span> or similar. Similar errors occur when community strings, usernames, or passwords do not match.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For basic requirements for SNMP monitoring, see this Knowledge Base article: <span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46863" target="_blank" class="weblink">My SNMP sensors don't work. What can I do?</a> </span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limitations" class="hmanchor"></a><span class="f_InTopicHeading">SNMP Overload and Limitations of the SNMP System</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">SNMP V1 and V2 scale directly with the performance of the hardware and the speed of the network. In our labs we are able to monitor 30,000 SNMP V1 sensors at a 60 second interval with one PRTG server (core and local probe) plus two remote probes with 10,000 sensors each.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">However, SNMP V3 has performance limitations due to the SSL encryption. <span class="f_ListBulleted">The main limiting factor is CPU power (as well as the other general limits for PRTG).</span> Because of <span class="f_ListBulleted">this limitation, you can monitor only a limited number of sensors per second using SNMP V3. Currently, PRTG is able to handle about 40 requests per second and computer core, depending on your system. This means that, on a common 1.x GHz computer with two cores, you can run about 5,000 SNMP v3 sensors with a 60 seconds scanning interval; on a system with four cores, you can monitor around 10,000 sensors with 60 seconds interval. The CPU load is at about 50% then. We do not recommend more. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Furthermore, the PRTG core server and probes should run on different computers. If you experience </span>increased values in the<span class="f_ItalicCustom"> Interval Delay SNMP</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Open Requests</span><span class="f_ListBulleted"> channels of the </span><span class="f_BoldCustom"><a href="probe_health_sensor.htm" class="topiclink">Probe Health Sensor</a></span><span class="f_ListBulleted"> (v</span>alues above 0 % indicate that the SNMP requests cannot be performed at the desired interval<span class="f_ListBulleted">), you need to distribute the load over multiple probes. SNMP V1 and V2 do not have this limitation.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you run into SNMP overload problems, you have three options:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Increase the monitoring interval of the SNMP V3 sensors.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Distribute the SNMP V3 sensors over two or more probes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Switch to SNMP V1 or V2 if you can go without encryption.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="community" class="hmanchor"></a><span class="f_InTopicHeading">What is the SNMP Community String?</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The SNMP <span class="f_ItalicCustom">Community String</span> is similar to a user ID or password that allows access to the statistics of a router or another device. PRTG Network Monitor sends the community string along with all SNMP requests. If the correct community string is provided, the device responds with the requested information. If the community string is incorrect, the device simply discards the request and does not respond.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>SNMP community strings are only used by devices that support SNMP V1 and SNMP V2c protocols. SNMP V3 uses safer username/password authentication, along with an encryption key.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">By convention, most SNMP V1/V2c equipment ships with a read-only community string set to the value <span class="f_BoldCustom">public</span>. It is standard practice for network managers to change all the community strings to customized values during device setup.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What SNMP sensors does PRTG offer?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/75522" target="_blank" class="weblink">https://kb.paessler.com/en/topic/75522</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tools: </span>Paessler MIB Importer and SNMP Tester</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/tools/" target="_blank" class="weblink">https://www.paessler.com/tools/</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do SNMP, MIBs and OIDs work?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/653" target="_blank" class="weblink">https://kb.paessler.com/en/topic/653</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler White Papers: </span><span class="f_ItalicCustom">Introducing SNMP</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">Putting SNMP into Practice</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/press/whitepapers/introducing_snmp" target="_blank" class="weblink">https://www.paessler.com/press/whitepapers/introducing_snmp</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ItalicCustom">German</span><span class="f_ListBulleted">: Paessler White Paper: </span><span class="f_ItalicCustom">Einführung in SNMP</span><span class="f_ListBulleted"> und </span><span class="f_ItalicCustom">SNMP praktisch anwenden</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http://www.de.paessler.com/press/whitepapers/introducing_snmp" target="_blank" class="weblink">http://www.de.paessler.com/press/whitepapers/introducing_snmp</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: SNMP Basics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/snmp-basics" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/snmp-basics</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: Debugging SNMP</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/snmp-debugging" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/snmp-debugging</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My SNMP sensors don't work. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46863" target="_blank" class="weblink">https://kb.paessler.com/en/topic/46863</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: The interface numbers on my switch keep changing. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/62217" target="_blank" class="weblink">https://kb.paessler.com/en/topic/62217</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: What can I check if SNMP and SSH sensors throw timeout and auth errors?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/63794" target="_blank" class="weblink">https://kb.paessler.com/en/topic/63794</a></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Knowledge Base: What can I monitor with the SNMP Custom Table sensor?</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><a href="https://kb.paessler.com/en/topic/68539" target="_blank" class="weblink">https://kb.paessler.com/en/topic/68539</a> </li>
+</ul>
+
+    </div>
+    <p><small>Keywords: SNMP,SNMP Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensor_technologies.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="choosing_the_right_snmp_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

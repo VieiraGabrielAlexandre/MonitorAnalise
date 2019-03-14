@@ -1,0 +1,22 @@
+﻿<tr class="subtitle" style="<#clusterdependent showfor='clusterinstallation'>">
+	<td class="title"><#lang key="html.reporttemplates.clusternode" default="Cluster Node">:</td>
+	<td colspan=6><#cluster type="name" clgid="<@clgid>"></td>
+</tr>
+<tr class="even">
+	<td class="title"><#lang key="html.reporttemplates.uptimestats" default="Uptime Stats">:</td>
+	<td><#lang key="html.reporttemplates.up" default="Up">:</td><td class="rightalign"><#objectproperty type="uptimeper" usetz="1" clgid="<@clgid>"></td><td> <span class="percent">[<#objectproperty type="uptime" usetz="1" clgid="<@clgid>">]</span> </td>
+	<td><#lang key="html.reporttemplates.down" default="Down">:</td><td class="rightalign"><#objectproperty type="downtimeper" usetz="1" clgid="<@clgid>"></td><td> <span class="percent">[<#objectproperty type="downtime" usetz="1" clgid="<@clgid>">]</span> </td>
+</tr>
+<tr class="odd">
+	<td class="title"><#lang key="html.reporttemplates.requeststats" default="Request Stats">:</td>
+	<td><#lang key="html.reporttemplates.good" default="Good">: </td><td class="rightalign"><#objectproperty type="goodreqper" usetz="1" clgid="<@clgid>"></td><td><span class="percent">[<#objectproperty type="goodreq" usetz="1" clgid="<@clgid>">]</span> </td>
+   	<td><#lang key="html.reporttemplates.failed" default="Failed">: </td><td class="rightalign"><#objectproperty type="failedreqper" usetz="1" clgid="<@clgid>"></td><td  width="40%"><span class="percent">[<#objectproperty type="failedreq" usetz="1" clgid="<@clgid>">]</span> </td>
+</tr>
+<tr class="even">
+	<td class="title"><#objectproperty type="avgvaluelabel" usetz="1" clgid="<@clgid>"></td>
+	<td colspan=6><#objectproperty type="avgvalue" usetz="1" clgid="<@clgid>"></td>
+</tr>
+<tr class="odd">
+	<td class="title"><#objectproperty type="sumvaluelabel" usetz="1" clgid="<@clgid>"></td>
+	<td colspan=6><#objectproperty type="sumvalue" usetz="1" clgid="<@clgid>"></td>
+</tr>

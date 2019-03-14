@@ -1,0 +1,28 @@
+﻿<#checkobjecttype objecttype="library">
+<#objectid var="objid">
+<#include file="includes\htmlheader.htm" >
+<div id="showalibrary" style="width:<#inserturlparam parameter="size" default="500px">;height:<#inserturlparam parameter="size" default="500px">">
+  <div id="viewport"></div>
+  <div id="libTree" class="libTree prtg-plugin" 
+    data-plugin="libtree" 
+    data-objectid="<#objectid>"
+    data-lib-name='Library'
+    data-view-type="<#inserturlparam parameter="displaytype" default="sunburst">"
+    data-view-type='<#system type="groupviewsize" varexpand="overwrite" overwrite="@grpvs">'>
+<!-- 
+   {"objects":<#table 
+      id="@objid"
+      varexpand="id"
+      output="json"
+      count="*"
+      subcheck="1"
+      noraw="1"
+      content="library"
+      sortby="probegroupdevice"
+      filter_basetype="@ntxt('sensor')"
+      columns="objid,name,access=treejson,probegroupdevice=treejson,basetype,icon=treejson,favorite,fold,devicenum=textraw,groupnum=textraw,totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw,condition,status=textraw,message=textraw,info,priority,libkind,liblinkedid">
+    }
+ -->
+  </div>
+</div>
+<#include file="includes\htmlfooter.htm" ajax="exclude">

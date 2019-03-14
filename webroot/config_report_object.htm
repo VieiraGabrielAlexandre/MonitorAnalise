@@ -1,0 +1,21 @@
+﻿<#system type="denyfornonadmins">
+
+<#include file="includes\reportheader_configreports.htm">
+    <div class="onereport">
+
+        <h1><#lang key="html.config_report_objconfig.header1a" default="Configuration Report:"> <#objectproperty name="name"> (<#objectstatus name="type">)</h1>
+
+        <div class="report1">
+            <div class="table-wrapper"><table><tr><td><#lang key="html.sensorstatusdata.parents" default="Parents">:</td><td><#objectstatus name="probegroupdevice" show="linklong"></td></tr></table></div>
+
+            <form id="objectdataform" enctype="multipart/form-data" class="prtg-form prtg-plugin" >
+            <#object type="settings" readonly="true">
+            </form>
+        </div>
+    </div>
+
+    <#include file="includes\config_reportfooter.htm">
+
+    </body>
+    </html>
+

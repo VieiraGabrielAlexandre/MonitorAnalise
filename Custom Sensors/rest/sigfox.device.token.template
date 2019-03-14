@@ -1,0 +1,11 @@
+{
+	"prtg": {
+		"result": [{
+				"channel": "State",
+				"ValueLookup": "sigfox.device.token.state",
+				"value": $.code
+			}
+		],
+		"Text": $.detailMessage
+	}
+}

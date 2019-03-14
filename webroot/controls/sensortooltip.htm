@@ -1,0 +1,105 @@
+﻿<#checkobjecttype objecttype="sensor">
+<#objectstatus name="probegroupdevice">
+<div class="sensorstatusmessage <#sensor type="colorclassofstate" prefix="sensorstatusmessage">">
+	<#lang key="html.sensordata.lastmessage" default="Last Message:"><br>
+	<strong><#objectstatus name="message"></strong>
+</div>
+
+<div class="overviewsmalldata">
+
+	<div class="overview-block" style="<#clusterdependent hidefor='clustertreeobject'>">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastscan" default="Last Scan"/>:</span>
+		<span class="overview-data"><#objectstatus name="lastcheck" show="htmllong"/></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastup" default="Last Up"/>:</span>
+		<span class="overview-data"><#objectstatus name="lastup" show="htmllong"/></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.lastdown" default="Last Down"/>:</span>
+		<span class="overview-data"><#objectstatus name="lastdown" show="htmllong"/></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.global.uptime" default="Uptime"/>:</span>
+		<span class="overview-data" title="<#objectstatus name="uptimetime">"><#objectstatus name="uptime"/></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.global.downtime" default="Downtime"/>:</span>
+		<span class="overview-data" title="<#objectstatus name="downtimetime">"><#objectstatus name="downtime"/></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.uptimecoverage2" default="Coverage"/>:</span>
+		<span class="overview-data" title="<#objectstatus name="knowntime" show="htmllong">> of<br> <#objectstatus name="cumsince" show="textshort"/><br> since <#objectstatus name="cumsince" show="htmllong"/>"><#objectstatus name="knowntime" show="textshort"/></span>
+	</div>
+
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.sensortype" default="Sensor Type">:</span>
+		<span class="overview-data" title="<#objectstatus name="type"> sensor (<b>#<#objectid></span>)"><#objectstatus name="type"> sensor</span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.dependency" default="Dependency">:</span>
+		<span class="overview-data"><#objectstatus name="dependency"></span>
+	</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.interval" default="Interval">:</span>
+		<span class="overview-data"><#lang key="html.global.everyintervalevery" default="every"> <span status="interval"><#objectproperty name="interval" inherit="true"></span>			</div>
+	<div class="overview-block">
+		<span class="overview-title"><#lang key="html.sensorstatusdata.ID" default="ID">:</span>
+		<span class="overview-data">#<#objectid></span>
+	</div>
+</div>
+
+<div id="overviewgraphs" class="overview-graphs">
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<a href="/sensor.htm?id=<#objectid>&tabid=2">
+						<div class="graphbox">
+						<#sensor type="graph" graphid="0" graphtitle="@@notitle@@" charttext="@@period@@" width="445" maxwidth="445" height="130" refreshable="true">
+					</div>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/sensor.htm?id=<#objectid>&tabid=3">
+						<div class="graphbox">
+						<#sensor type="graph" graphid="1" graphtitle="@@notitle@@" charttext="@@period@@" width="445" maxwidth="445" height="130" refreshable="true">
+						</div>
+					</a>
+				</td>
+			</tr>
+			<tr>
+					<a href="/sensor.htm?id=<#objectid>&tabid=4">
+						<div class="graphbox">
+						<#sensor type="graph" graphid="2" graphtitle="@@notitle@@" charttext="@@period@@" width="445" maxwidth="445" height="130" refreshable="true">
+						</div>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/sensor.htm?id=<#objectid>&tabid=5">
+						<div class="graphbox">
+						<#sensor type="graph" graphid="3" graphtitle="@@notitle@@" charttext="@@period@@" width="445" maxwidth="445" height="130" refreshable="true">
+						</div>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="overviewpage"><#sensor type="legend" width="445" maxwidth="445"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+<div style="<#clusterdependent showfor='clustertreeobject'>">
+	<#lang key="html.sensoroverview.clusterstatus2" default="Sensor Status (per Cluster Member)" var="title">
+	<#table skiptagfornonclusterobject="true" tabletitle="@title" varexpand="tabletitle" tableid="clustertable" content="clustervalues" columns="clusternode,status,lastvalue,message" sortby="member" sortable="false" links="false" refreshable="true">
+</div>
+<div class="prtg-plugin" data-plugin="prtg-table">
+	<#lang key="html.sensoroverview.channels" default="Channels" var="title">
+	<#table tableid="channeltable" tabletitle="@title" varexpand="tabletitle" content="channels" columns="name,lastvalue_" sortby="name" sortable="true" links="true" refreshable="true">
+</div>

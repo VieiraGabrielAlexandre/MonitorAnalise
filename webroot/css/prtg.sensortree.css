@@ -1,0 +1,507 @@
+﻿ul.sensortree a,
+ul.sensortree a:link,
+ul.sensortree a:hover,
+ul.sensortree a.hover,
+ul.sensortree a:active,
+ul.sensortree a:visited
+{
+	background-repeat: no-repeat;
+	color: black;
+	display:inline;
+	text-decoration: none;
+}
+ul.sensortree a:hover
+{
+	text-decoration: underline;
+}
+ul.sensortree div.treedevice
+{
+	display: table;
+}
+/*ul.sensortree div.treedevice div.row
+{
+	display: table-row;
+}
+*/
+ul.sensortree div.treedevice div.dev
+{
+	background: url(/icons/led_dev.png) 0 0 repeat-y;
+	display: table-cell;
+	padding-left: 3px;
+	padding-top: 1px;
+	vertical-align: top;
+}
+ul.sensortree div.dev a.devicemenu,
+ul.sensortree div.dev span.nolink,
+ul.sensortree div.dev a.probemenu,
+ul.sensortree div.dev a.groupmenu,
+ul.sensortree div.dev a.treeminilink
+{
+	padding-left: 19px;
+	display:block;
+}
+
+ul.sensortree > li
+{
+	font-size: 15px;
+	font-weight: bold;
+}
+ul.sensortree ul > li
+{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+ul.sensortree div.treedevice div.sens
+{
+	display: table-cell;
+	padding: 0px 1px 1px 0px;
+	/*text-align: top;*/
+	vertical-align: top;
+}
+ul.sensortree ul div.treedevice div.dev > a
+{
+	border-bottom: none;
+	overflow: hidden;
+}
+ul.sensortree ul div.treedevice div.dev
+{
+	font-size: 12px;
+	overflow: hidden;
+	width: 160px;
+}
+ul.sensortree a
+{
+	overflow: hidden;
+}
+ul.sensortree ul ul div.treedevice div.dev
+{
+	width: 144px;
+}
+ul.sensortree ul ul ul div.treedevice div.dev
+{
+	width: 127px;
+}
+ul.sensortree ul ul ul ul div.treedevice div.dev
+{
+	width: 109px;
+}
+ul.sensortree ul ul ul ul ul div.treedevice div.dev
+{
+	width: 90px;
+}
+ul.sensortree ul div.treedevice div.dev > a
+{
+	width: 144px;
+}
+ul.sensortree ul ul div.treedevice div.dev > a
+{
+	width: 126px;
+}
+ul.sensortree ul ul ul div.treedevice div.dev > a
+{
+	width: 108px;
+}
+ul.sensortree ul ul ul ul div.treedevice div.dev > a
+{
+	width: 90px;
+}
+ul.sensortree ul ul ul ul ul div.treedevice div.dev > a
+{
+	width: 72px;
+	font-size: 10px;
+}
+ul.sensortree li.disconnected a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sx > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sg > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sp > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sb > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sr > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sq > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.so > a,
+ul.sensortree li.disconnected div.treedevice div.sens div.sy > a,
+ul.sensortree li.disconnected
+{
+	color: #888;
+}
+ul.sensortree li.disconnected > a
+{
+	color: #C00000;
+}
+ul.sensortree ul > li div
+{
+	font-weight: normal;
+}
+ul.sensortree ul,ul.sensortree
+{
+	background: url(/images/tv-item.gif) 0 0 repeat-y;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color:#fff;
+}
+ul.sensortree ul
+{
+	background: url(/images/tv-item.gif) 0 0 repeat-y;
+}
+ul.sensortree ul.onechildonly
+{
+	background: url(/images/tv-item.gif) 0 0 no-repeat;
+}
+ul.sensortree ul li
+{
+	background: url(/images/tv-item-group.gif) 0 0 no-repeat;
+	margin: 0;
+	padding: 0;
+	padding: 5px 0pt 0px 18px;
+}
+ul.sensortree ul li.lastnode
+{
+	background: url(/images/tv-item-group-last.gif) 0 0 no-repeat;
+}
+ul.sensortree ul li.collapsed.lastnode,
+ul.sensortree ul li.gr.collapsed.lastnode,
+ul.sensortree ul li.pr.collapsed.lastnode
+{
+	background-image: url(/images/tv-item-group-last.gif);
+}
+ul.sensortree ul li.dev
+{
+	background-image: url(/images/tv-item-device.gif);
+	padding: 5px 0pt 0px 16px;
+}
+ul.sensortree ul li.dev.lastnode
+{
+	background-image: url(/images/tv-item-device-last.gif);
+}
+ul.sensortree ul li.dev.collapsed.lastnode
+{
+	background-image: url(/images/tv-item-device-last.gif);
+}
+ul.sensortree li.collapsed>div.treedevice div.sens div > a
+{
+	height: 15px;
+	padding-top: 2px;
+}
+#sensortree>li
+{
+	margin-left: 0px;
+}
+ul.sensortree div.allowdeny
+{
+	padding: 5px;
+}
+ul.sensortree div.allowdeny a
+{
+	display: inline-block ;
+}
+ul.sensortree div.treedevice div.sens > div
+{
+	display: inline-block;
+	font-size: 9px;
+	margin: 0px;
+	overflow: hidden;
+	padding: 0px;
+	white-space: nowrap;
+	width: 78px;
+}
+ul.sensortree div.treedevice div.sens > div > a
+{
+	background-color: #fff;
+	border-radius: 3px;
+	border-top:1px solid <#colorcode color="lightgray">;
+	display: block;
+	height: 24px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 16px;
+	width: 78px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position:relative;
+}
+
+ul.sensortree div.treedevice div.sens > div > a.isfavorite .ui-icon-flag
+{
+  position:absolute;
+  right:-3px;
+  bottom:-1px;
+  background-color:#fff;
+  opacity:0.8;
+}
+
+ul.sensortree div.treedevice div.sens div > a:link,
+ul.sensortree div.treedevice div.sens div > a:hover,
+ul.sensortree div.treedevice div.sens div > a.hover,
+ul.sensortree div.treedevice div.sens div > a:active,
+ul.sensortree div.treedevice div.sens div > a:visited
+{
+	background-repeat: no-repeat;
+	color: black;
+	text-decoration: none;
+  background-size: 13px 100%;
+}
+ul.sensortree div.treedevice div.sens div:hover,
+ul.sensortree div.treedevice div.sens div.hover
+{
+	text-decoration: underline;
+}
+ul.sensortree div.treedevice div.sens div.sg > a
+{
+  background-image: url(/icons/icon_up.svg);
+}
+ul.sensortree div.treedevice div.sens div.sr > a
+{
+  background-image: url(/icons/icon_down.svg);
+}
+ul.sensortree div.treedevice div.sens div.sq > a
+{
+  background-image: url(/icons/icon_partdown.svg);
+}
+ul.sensortree div.treedevice div.sens div.so > a
+{
+  background-image: url(/icons/icon_downack.svg);
+}
+ul.sensortree div.treedevice div.sens div.sx > a
+{
+  background-image: url(/icons/icon_unknown.svg);
+}
+ul.sensortree div.treedevice div.sens div.sy > a
+{
+  background-image: url(/icons/icon_warning.svg);
+}
+ul.sensortree div.treedevice div.sens div.sb > a
+{
+  background-image: url(/icons/icon_paused.svg);
+  color: gray;
+}
+ul.sensortree div.treedevice div.sens div.sp > a
+{
+  background-image: url(/icons/icon_unusual.svg);
+}
+ul.sensortree div.treedevice
+{
+	background-color: <#colorcode color="lightgray">;
+	border-radius: 4px 0 0 4px;
+	margin: 0 -2px 0 0;
+	padding: 0px;
+	width: 100%;
+}
+ul.sensortree li.gr.collapsed>div.treedevice
+{
+	background-color: <#colorcode color="lightgray">;
+}
+ul.sensortree a.treeminilink,
+ul.sensortree a.treeminilink:link,
+ul.sensortree a.treeminilink:active,
+ul.sensortree a.treeminilink:visited
+{
+	background-color: transparent;
+	background-image: url(/icons/plus.gif);
+	background-position: 2px 1px;
+	color: <#colorcode color="linkcolor">;
+	display: block;
+	font-size: 11px;
+	margin-left: 17px;
+	min-width: 200px;
+	padding-left: 19px;
+}
+ul.sensortree ul.sensortree a.treeminilink:HOVER
+{
+	color: #333;
+	text-decoration: underline;
+}
+div.sensortreel div.treedevice div.sens > div
+{
+	width: 155px;
+}
+div.sensortreel div.treedevice div.sens > div > a
+{
+	height: auto;
+	width: auto;
+}
+div.sensortreexl ul.sensortree div.sens > div,
+div.sensortreexl ul.sensortree div.sens > div > a,
+div.sensortreexl ul.sensortree div.treedevice tr,
+div.sensortreexl ul.sensortree div.dev,
+div.sensortreexl ul.sensortree div.dev > a
+{
+	display: block;
+	width: auto;
+}
+div.sensortreexl ul.sensortree div.row
+{
+	display: block;
+}
+div.sensortreexl ul.sensortree div.treedevice
+{
+	display: block;
+}
+div.sensortreexl ul.sensortree div.treedevice tr
+{
+	display: table;
+}
+div.sensortreexl ul.sensortree div.treedevice div.sens
+{
+	display: block;
+	margin-left: 20px;
+}
+div.sensortreexl ul.sensortree div.treedevice div.dev,
+div.sensortreexl ul.sensortree ul ul ul div.treedevice div.dev > a
+{
+	display: block;
+	font-weight: bold;
+	width: 100%;
+}
+div.sensortreesmall ul.sensortree  div.treedevice div.sens > div
+{
+	font-size: 9px;
+	height: 16px;
+	width: 75px;
+}
+div.sensortreesmall ul.sensortree ul div.treedevice div.dev > a
+{
+	height: 16px;
+}
+div.sensortreesmall ul.sensortree > li
+{
+	font-size: 14px;
+	font-weight: bold;
+}
+div.sensortreesmall ul.sensortree ul > li
+{
+	font-size: 12px;
+}
+div.sensortreesmall div.dev a
+{
+	font-size: 10px;
+}
+div.sensortreesmall div.row
+{
+	position: relative;
+}
+div.sensortreesmall div.row div.sens
+{
+	display: none ;
+}
+div.sensortreesmall div.browsertip
+{
+	display: block;
+}
+div.sensortreesmall div.hasgreen,
+div.sensortreesmall ul.hasgreen > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasgreen > ul.pr > li.node.collapsed > div.treedevice > div.row
+{
+	background-color: #D5FDDA;
+}
+div.sensortreesmall div.hasblue,
+div.sensortreesmall ul.hasblue > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasblue > ul.pr > li.node.collapsed > div.treedevice > div.row
+{
+	background-color: #C3D2E9;
+}
+div.sensortreesmall div.hasorange,
+div.sensortreesmall ul.hasorange > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasorange > ul.pr > li.node.collapsed > div.treedevice > div.row
+{
+	background-color: #FED78C;
+}
+div.sensortreesmall div.hasyellow,
+div.sensortreesmall ul.hasyellow > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasyellow > ul.pr > li.node.collapsed > div.treedevice > div.row
+{
+	background-color: #F8FBC5;
+}
+div.sensortreesmall div.hasred,
+div.sensortreesmall ul.hasred > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasred > ul.pr > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall div.hasack,
+div.sensortreesmall ul.hasack > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.hasack > ul.pr > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall div.haspartialred,
+div.sensortreesmall ul.haspartialred > li.node.collapsed > div.treedevice > div.row,
+div.sensortreesmall li.pr.collapsed.haspartialred > ul.pr > li.node.collapsed > div.treedevice > div.row
+{
+	background-color: #ffcccc;
+}
+div.sensortreesmall div.row div.dev,
+div.sensortreesmall div.dev > a
+{
+	font-size: 11px;
+	height: 16px;
+	width: 120px;
+}
+div.sensortreesmall ul li.dev
+{
+	background: none;
+	display: inline-block;
+	font-size: 11px;
+	padding: 2px;
+}
+div.sensortreesmall div.dev
+{
+	background: url(/icons/led_dev.png) 0 0 no-repeat;
+	display: inline-block;
+	font-size: 11px;
+	height: 12px;
+	overflow: visible;
+	padding: 0px;
+	padding-left: 2px;
+	width: auto;
+}
+div.sensortreesmall div.treedevice,
+div.sensortreesmall div.row
+{
+	display: block;
+}
+ul.sensortree .working
+{
+	background-image: url(/images/ajax-loader-small.gif);
+	background-position: 0 0;
+}
+ul.sensortree ul li
+{
+	position: relative;
+}
+ul.sensortree div.treeopen,
+ul.sensortree div.treeclose
+{
+	cursor: pointer;
+	display: inline-block;
+	height: 9px;
+	left: 5px;
+	position: absolute;
+	top: 7px;
+	width: 9px;
+}
+ul.sensortree div.treeopen
+{
+	background-image: url(/images/tree-foldout-gray.gif);
+}
+ul.sensortree div.treeopen:hover
+{
+	background-image: url(/images/tree-foldout.gif);
+}
+ul.sensortree div.treeclose
+{
+	background-image: url(/images/tree-collapse-gray.gif);
+}
+ul.sensortree div.treeclose:hover
+{
+	background-image: url(/images/tree-collapse.gif);
+}
+#sensortree>li.lastnode>div.treeclose,
+#sensortree>li.lastnode>div.treeclose:hover
+{
+  display:none;
+}
+
+ul.sensortree span.statusintree
+{
+    display:block;
+	padding-left:17px;
+	font-size:10px;
+	font-weight:normal;
+	color:#888;
+background:url("/images/tv-item.gif") repeat-y scroll 0 0 transparent;
+}

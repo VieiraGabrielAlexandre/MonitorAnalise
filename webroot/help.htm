@@ -1,0 +1,146 @@
+﻿<#lang key="html.help.title" default="Help and Support" var="pagetitle">
+<#isadmin var="isadmin">
+<#include file="includes\htmlheader.htm" bodyclass="hashelp full-width" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+
+<div id="main" class="help-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.help.headhelpcenter" default="Help and Support Center"></h1>
+  <div id="content">
+    <div id="helpcenter" class="<#if value="@isadmin" is="true" then="" else="small-container" varexpand="value">">
+
+      <div id="helpcenter-container" class='prtg-plugin square-breakpoint-1128' data-plugin="prtgPluginCssHelper">
+        <div class="helpcenterbox ">
+          <div class="helpcenterbox-header">
+            <div class="left-half orange"><#lang key="html.helppage.UserManual" default="User Manual"></div>
+            <div class="right-half"><img src="/images/UserManual.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+              <#lang key="html.helppage.UserManualDesc" default="The extensive PRTG user manual provides in-depth coverage of all topics you need for network monitoring with PRTG, including:">
+              <ul>
+                <li><#lang key="html.helppage.UserManualDesc.BasicConcepts" default="Basic Concepts of PRTG"></li>
+                <li><#lang key="html.helppage.UserManualDesc.BasicProcedures" default="Basic Procedures in the PRTG Web Interface"></li>
+                <li><#lang key="html.helppage.UserManualDesc.DeviceAndSensorSetup" default="Device and Sensor Setup"></li>
+                <li><#lang key="html.helppage.UserManualDesc.SensorTechnologies" default="Sensor Technologies"></li>
+                <li><#lang key="html.helppage.UserManualDesc.EnterpriseConsole" default="Enterprise Console"></li>
+              </ul>
+			</span>
+            <a class="nohjax btn btn-orange hvr-underline-from-center" href="/help/introduction.htm">
+              <#lang key="html.helppage.ReadManual" default="Read Manual">
+            </a>
+          </div>
+        </div>
+
+        <div class="helpcenterbox ">
+          <div class="helpcenterbox-header">
+            <div class="left-half cyan"><#lang key="html.helppage.KnowledgeBase" default="Knowledge Base"></div>
+            <div class="right-half"><img src="/images/KnowledgeBase.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+              <#lang key="html.helppage.KnowledgeBaseDesc" default="The Knowledge Base contains thousands of articles about PRTG, including:">
+              <ul>
+                <li><#lang key="html.helppage.KnowledgeBaseDesc.Tutorials" default="Tutorials and How-Tos"></li>
+                <li><#lang key="html.helppage.KnowledgeBaseDesc.TipsAndTricks" default="Tips and Tricks"></li>
+                <li><#lang key="html.helppage.KnowledgeBaseDesc.CustomCode" default="Custom Code"></li>
+                <li><#lang key="html.helppage.KnowledgeBaseDesc.Workarounds" default="Workarounds"></li>
+                <li><#lang key="html.helppage.KnowledgeBaseDesc.Contribute" default="Contribute: Make your own questions, answers, and custom content available for all PRTG users worldwide!"></li>
+              </ul>
+            </span>
+            <a class="nohjax btn btn-cyan hvr-underline-from-center" target="_blank" href="https://kb.paessler.com?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb" onclick="!!window.__ga && window.__ga('send', 'event', 'help', 'KB'); return true;">
+              <#lang key="html.helppage.GetAnswers" default="Get answers">
+            </a>
+          </div>
+        </div>
+
+        <div class="helpcenterbox ">
+          <div class="helpcenterbox-header">
+            <div class="left-half lightblue"><#lang key="html.helppage.VideoTutorials" default="Video Tutorials"></div>
+            <div class="right-half"><img src="/images/VideoTutorials.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+              <#lang key="html.helppage.VideoTutorialsDesc" default="Find comprehensive videos created by our network monitoring professionals, including:">
+              <ul>
+                <li><#lang key="html.helppage.VideoTutorialsDesc.Basics" default="PRTG Basics"></li>
+                <li><#lang key="html.helppage.VideoTutorialsDesc.AllAboutMonitoring" default="All About Monitoring"></li>
+                <li><#lang key="html.helppage.VideoTutorialsDesc.Advanced" default="PRTG Advanced"></li>
+                <li><#lang key="html.helppage.VideoTutorialsDesc.Webcasts" default="PRTG Webcasts"></li>
+                <li><#lang key="html.helppage.VideoTutorialsDesc.Apps" default="PRTG Apps"></li>
+              </ul>
+            </span>
+            <a class="nohjax btn btn-lightblue hvr-underline-from-center" target="_blank" href="https://www.paessler.com/support/videos">
+              <#lang key="html.helppage.HaveALook" default="Have a look">
+            </a>
+          </div>
+        </div>
+
+        <div class="helpcenterbox ">
+          <div class="helpcenterbox-header">
+            <div class="left-half blue"><#lang key="html.helppage.AdvancedTopics" default="Advanced Topics"></div>
+            <div class="right-half"><img src="/images/AdvancedTopics.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+              <#lang key="html.helppage.AdvancedTopicsDesc" default="This section covers various topics and special use cases for advanced users, including:">
+              <ul>
+                <li><#lang key="html.helppage.AdvancedTopicsDesc.ADIntegration" default="Active Directory Integration"></li>
+                <li><#lang key="html.helppage.AdvancedTopicsDesc.API" default="Application Programming Interface (API)"></li>
+                <li><#lang key="html.helppage.AdvancedTopicsDesc.Lookups" default="Lookups"></li>
+                <li><#lang key="html.helppage.AdvancedTopicsDesc.RemoteProbesSetup" default="Setting up Remote Probes and Failover Clusters"></li>
+                <li><#lang key="html.helppage.AdvancedTopicsDesc.AndManyMore" default="And many more!"></li>
+              </ul>
+            </span>
+            <a class="nohjax btn btn-blue hvr-underline-from-center" href="/help/advanced_topics.htm">
+              <#lang key="html.helppage.LearnMore" default="Learn more">
+            </a>
+          </div>
+        </div>
+
+        <div class="helpcenterbox " style="<#hidefornonadmins>">
+          <div class="helpcenterbox-header">
+            <div class="left-half limette"><#lang key="html.helppage.TechnicalSupport" default="Technical Support"></div>
+            <div class="right-half"><img src="/images/SupportTicket.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+              <#lang key="html.helppage.TechnicalSupportDesc" default="If the available help resources did not help you, you can open a support ticket at any time. Usually we will answer your questions within 24 hours on business days. Please use the Contact Support form and describe your issue with as much detail as possible.">
+              <p><#lang key="html.helppage.TechnicalSupportDesc.HappyToHelpYou" default="We will be happy to help you!"></p>
+            </span>
+            <a class="nohjax btn btn-limette hvr-underline-from-center" href="#" onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname,'');return false;">
+              <#lang key="html.helppage.OpenATicket" default="Contact Support">
+            </a>
+          </div>
+        </div>
+
+        <div class="helpcenterbox " style="<#hidefornonadmins>">
+          <div class="helpcenterbox-header">
+            <div class="left-half magenta"><#lang key="html.helppage.CustomerService" default="Customer Service"></div>
+            <div class="right-half"><img src="/images/CustomerService.png"/></div>
+          </div>
+          <div class="helpcenterbox-body">
+            <span>
+				<#lang key="html.helppage.CustomerServiceDesc" default="Let us help you with your license purchase, upgrade, or maintenance extension. Our Customer Service Team is happy to assist you with quotes (and valuable license/maintenance information), guide you through the purchasing process, and facilitate the contact to our system engineers and/or our partners in your region.">
+			</span>
+			<a class="nohjax btn btn-magenta hvr-underline-from-center" onclick="_Prtg.objectTools.sendFeedback('/sendsalesfeedback.htm',{});return false;">
+              <#lang key="html.helppage.ContactUs" default="Contact us">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<#lang key="html.help.help.title" default="Help and Support Center" var="helptitle">
+<#lang key="html.help.help.text" default="There are various support options. Please select one using the buttons." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#lang key="html.help.help.title3a" default="Need API Access?" var="helptitle">
+<#lang key="html.help.help.text3d" default="<a href='/api.htm'>PRTG offers an extensive API!</a>" var="helptext">
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

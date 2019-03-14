@@ -1,0 +1,369 @@
+﻿/* prtg.links.css */
+a, input, input:focus, th:focus {
+  outline: none;
+}
+
+a:link, a:active, a:visited {
+  color: <#colorcode color="linkcolor">;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+}
+/*
+input {
+  background-color: <#colorcode color="lightgray">;
+}
+*/
+a.usermenu, a.usergroupmenu, a.reportmenu, a.mapmenu, a.schedulemenu, a.triggermenu, a.notificationmenu, a.groupmenu, a.librarymenu, a.libraryobjectmenu, a.rootgroupmenu, a.devicemenu, a.probemenu, a.probenodemenu, a.sensormenu, span.groupicon, span.deviceicon, span.probeicon, span.sensoricon, .sensq, .sensx, .sensp, .senso, .sensb, .sensq, .sensr, .sensy, .sensg, .simplelink {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding-bottom: 1px;
+  padding-left: 16px;
+  padding-top: 1px;
+  background-size: 14px 14px;
+}
+
+a.isfavorite .ui-icon-flag {
+  background-position: -16px -114px;
+  height: 14px;
+  display: inline-block;
+  background-image: url("images/ui-icons_454545_256x240.png");
+  vertical-align: top;
+}
+
+span.objectisnotfavorite, span.objectisfavorite {
+  cursor: pointer;
+}
+
+a.groupmenu, a.rootgroupmenu, span.groupicon {
+  background-image: url(/icons/group.png);
+}
+
+a.libraryobjectmenu, span.libraryobjecticon {
+  background-image: url(/icons/libraryobject.png);
+}
+
+a.librarymenu, span.libraryicon {
+  background-image: url(/icons/library.png);
+}
+
+a.devicemenu, span.deviceicon {
+  background-image: url(/icons/device.png);
+}
+/* links in dialog text */
+.ui-dialog p a[dependency][style*="background-image:url"]{
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  max-width: 12em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+#table_messagetable a.sensormenu, #table_messagetable span.sensoricon {
+  background-image: url(/icons/led_nostate.png);
+  background-position: 0px 0px;
+}
+
+a.reportmenu {
+  background-image: url(/icons/report.png);
+}
+
+a.probemenu, a.probenodemenu, span.probeicon {
+  background-image: url(/icons/probe.png);
+  background-position: left top;
+}
+
+a.probemenu.disconnected, a.probenodemenu.disconnected {
+  background-image: url(/icons/probeoffline.png);
+}
+
+a.schedulemenu {
+  background-image: url(/icons/schedule.png);
+}
+
+a.mapmenu {
+  background-image: url(/icons/map.png);
+}
+
+a.notificationmenu {
+  background-image: url(images/Glocke_003596_14x14.png);
+}
+
+a.usermenu {
+  background-image: url(/icons/useraccount.png);
+}
+
+a.usergroupmenu {
+  background-image: url(/icons/usergroup.png);
+}
+
+a.refresh {
+  background-image: url(/images/refresh_black.png);
+  background-repeat:no-repeat;
+}
+
+a.refresh.disabled {
+  background-image: url(/images/refresh_disabled.png);
+}
+
+.working {
+  background-image: url(/images/ajax-loader-small.gif)!important;
+  background-position: 0 2px !important;
+  background-repeat: no-repeat;
+  height:14px;
+}
+
+h1 .working {
+  background: none!important;
+}
+
+/*.sensx, .sensg, .sensy, .sensr, .sensq, .senso, .sensb, .sensp {
+  width: 14px;
+  height: 14px;
+}
+*/
+.sensx {
+  background-image: url(/icons/icon_unknown.svg);
+}
+
+.sensg {
+  background-image: url(/icons/icon_up.svg);
+}
+
+.sensy {
+  background-image: url(/icons/icon_warning.svg);
+}
+
+.sensr {
+  background-image: url(/icons/icon_down.svg);
+}
+
+.sensq {
+  background-image: url(/icons/icon_partdown.svg);
+}
+
+.senso {
+  background-image: url(/icons/icon_downack.svg);
+}
+
+.sensb {
+  background-image: url(/icons/icon_paused.svg);
+}
+
+.sensp {
+  background-image: url(/icons/icon_unusual.svg);
+}
+
+.probemenu, .devicemenu, .sensormenu {
+  width: 35em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 3px;
+}
+
+.sensormenu.nolimit {
+  width: auto;
+}
+
+/* a.sensormenu.sensg, a.sensormenu.sensr, a.sensormenu.sensq, a.sensormenu.senso, a.sensormenu.sensb, a.sensormenu.sensy, a.sensormenu.sensp, a.sensormenu.sensx, */
+div.sensg, div.sensr, div.sensq, div.senso, div.sensb, div.sensy, div.sensp, div.sensx, label.sensg, label.sensr, label.sensq, label.senso, label.sensb, label.sensy, label.sensp, label.sensx {
+  width: auto;
+}
+
+div.sensg, div.sensr, div.sensq, div.senso, div.sensb, div.sensy, div.sensp, div.sensx, label.sensg, label.sensr, label.sensq, label.senso, label.sensb, label.sensy, label.sensp, label.sensx {
+  display: inline;
+  padding-right: 6px;
+}
+
+div.buttonbox a.devicemenu, div.buttonbox a.probemenu, div.buttonbox a.sensormenu, div.buttonbox a.groupmenu, div.buttonbox a.rootgroupmenu, div.buttonbox a.probenodemenu {
+  padding-left: 0px;
+}
+
+div.buttonbox.ispausedbyparent .checknow {
+  display: none;
+}
+
+div.buttonbox .acknow {
+  display: none;
+}
+
+div.buttonbox.sensr .acknow {
+  display: inline-block;
+}
+
+div.buttonbox {
+  width: auto;
+  background: none;
+  height: 18px;
+}
+
+/* NOTE: Fix for PRTG-782 */
+@-moz-document url-prefix() {
+  div.buttonbox {
+    overflow: visible;
+  }
+}
+
+a.button .ui-icon, a.actionbutton .ui-icon, button.actionbutton .ui-icon {
+  display: inline-block;
+  height: 14px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.button, .actionbutton, .button:link, .actionbutton:link, .button:visited, .actionbutton:visited, .ui-widget-content button.ui-state-default.actionbutton, .ui-widget-content button.ui-state-default.actionbutton:link, .ui-widget-content button.ui-state-default.actionbutton:visited, .ui-widget-content button.ui-state-default.button, .ui-datepicker-buttonpane button {
+  display: inline-block;
+  padding: 2px 10px;
+  /*margin: 2px 2px;*/
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 0;
+  transition: .1s;
+}
+
+input.button, input.actionbutton {
+  height: 30px;
+}
+
+.tablebuttonbox .button, .tablebuttonbox .actionbutton {
+  padding: 2px 6px 0px 4px;
+  margin: 1px 5px 1px 0;
+  line-height: 14px;
+  position: relative;
+}
+
+.tablebuttonbox .button .icon, .tablebuttonbox .actionbutton .icon {
+  margin-right: 4px;
+  margin-left: -2px;
+  margin-top: -2px;
+}
+
+.tablebuttonbox .button.right, .tablebuttonbox .actionbutton.right {
+  position: absolute;
+  right: 0;
+}
+
+a.actionbutton.approvebutton, a.actionbutton.button.btngrey {
+    margin-right: 4px;
+}
+
+.actionbutton, .actionbutton:link, .actionbutton:visited, .ui-widget-content button.ui-state-default.actionbutton, .ui-widget-content button.ui-state-default.actionbutton:link, .ui-widget-content button.ui-state-default.actionbutton:visited, .ui-datepicker-buttonpane .ui-datepicker-close {
+  background: <#colorcode color="actioncolor">;
+  color: #fff;
+  border: 1px solid transparent;
+  transition: .1s;
+}
+
+.approvegrowl, .denygrowl {
+  color: <#colorcode color="actioncolor">;
+}
+
+.approvegrowl:hover, .denygrowl:hover {
+  cursor: pointer;
+  color: #000;
+  transition: .1s;
+}
+
+.denygrowl {
+  position: absolute;
+  right: 0px;
+  padding-right: 8px;
+}
+
+.button.btndisabled, .button.btndisabled:hover, .button.btndisabled:active {
+  color: #fff;
+  border: 1px solid transparent;
+  background: #d5d6d7;
+  cursor: default;
+  text-decoration: none;
+  transition: .1s;
+}
+
+.button .ui-icon, .actionbutton .ui-icon {
+  background-image: url(images/ui-icons_ffffff_256x240.png);
+  transition: .1s;
+}
+
+.tablebuttonbox .button {
+  max-width: 250px;
+  width: auto;
+  transition: .1s;
+}
+
+.button.btnorange {
+  background: #f7931e;
+  color: #ffffff;
+  border: 1px solid transparent;
+  transition: .1s;
+}
+
+.button.btngreen {
+  border: 1px solid transparent;
+  background: #bbd63d;
+  color: #000;
+  text-decoration: underline;
+  transition: .1s;
+}
+
+.button.btnsmall {
+  padding: 2px 4px 2px 4px;
+  height: auto;
+  margin: 5px;
+  line-height: 100%;
+  transition: .1s;
+}
+
+.button.btngrey, .ui-widget-content button.ui-state-default.button.btngrey, .ui-datepicker-buttonpane .ui-datepicker-current {
+  color: #212c52;
+  border: 1px solid transparent;
+  background: #d5d6d7;
+  transition: .1s;
+}
+
+.button:hover, .actionbutton:hover, .ui-widget-content button.ui-state-default.actionbutton:hover, .ui-widget-content button.ui-state-default.button:hover {
+  text-decoration: underline;
+  background: <#colorcode color="graph7">;
+  color: #000;
+  transition: .1s;
+}
+
+.button:hover > .ui-icon, .actionbutton:hover > .ui-icon {
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+  transition: .1s;
+}
+
+.button:active, .actionbutton:active, .button.atwork, .actionbutton.atwork, .ui-widget-content button.ui-state-default.actionbutton:active, .ui-widget-content button.ui-state-default.button:active {
+  background: #bbd63d;
+  color: #000;
+  text-shadow: 0 -1px 0 #bbb;
+  transition: .1s;
+}
+
+.button.btngrey .ui-icon {
+  background-image: url("images/ui-icons_222222_256x240.png");
+  transition: .1s;
+}
+
+.ui-button-text-only span.ui-button-text {
+  padding: 0;
+}
+
+#reportrunnerform .actionbutton, #reportrunnerform .actionbutton:link, #autoupdatedata .actionbutton, #autoupdatedata .actionbutton:link, #statusadmintools .actionbutton, #statusadmintools .actionbutton:link {
+  display: inline-block;
+}

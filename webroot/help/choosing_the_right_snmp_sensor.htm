@@ -1,0 +1,433 @@
+﻿<!--Choosing the Right SNMP Sensor-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="snmp_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="wmi_monitoring.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Choosing the Right SNMP Sensor</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Choosing the Right SNMP Sensor</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Simple Network Management Protocol (SNMP) is easy to use and generally requires little configuration once it is set up. Many network devices support it and many parameters can be monitored with it. So to help cover all of your monitoring needs, PRTG provides you with around 70 SNMP sensors. These sensors range from monitoring general parameters to very specific parameters. Choosing the right sensor for SNMP monitoring that gives you the desired hardware parameters is a decision that depends on several factors: the type of hardware you have, what values you want to monitor, and a few others.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="capability" class="hmanchor"></a><span class="f_InTopicHeading">Check SNMP Capability</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Make sure that each device you want to monitor supports SNMP, and that it is enabled. You can find out whether SNMP is supported by a device by either going to the vendor’s website or check that it is enabled in the configuration of the device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you are uncertain whether SNMP is enabled on the target device and works, we recommend that you try our <a href="https://www.paessler.com/tools/snmptester" target="_blank" class="weblink">SNMP Tester</a>, designed for just this purpose. You can scan for uptime to perform a basic check for SNMP availability of the target device.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Setup Checklist</span></p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Enable SNMP on the device.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Allow access to SNMP for the machine running PRTG Network Monitor in the device's security settings.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Allow User Datagram Protocol (UDP) packages to travel from the machine running PRTG to the device you want to monitor and back.</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">SNMP requires the use of UDP ports &gt;1023 to the PRTG client side. This is important for your firewall settings.</span></li>
+<li value="5" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Ensure that the firmware of the monitored device is up to date.</span></li>
+<li value="6" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Select the appropriate SNMP protocol.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is important to know which SNMP version you have to select, because if it is not supported by the server or device you want to monitor, you will receive an error message.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>See this article in our Knowledge Base for more information: <a href="https://kb.paessler.com/en/topic/46863" target="_blank" class="weblink">General Introduction to SNMP and PRTG</a></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:385px"><a href="snmp_monitoring_en.png"><img id="TOGGLE0186A1" class="image-toggle" alt="SNMP Monitoring Overview" title="SNMP Monitoring Overview" style="width:385px;height:379px;border:none" src="snmp_monitoring_en_zoom70.png"/></a><p style="text-align:center"><span class="f_ImageCaption">SNMP Monitoring Overview</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="vendor" class="hmanchor"></a><span class="f_InTopicHeading">Vendor Specific SNMP Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG offers many vendor specific SNMP sensors for some common vendors. These sensors have been tailored to fit the end devices perfectly. Many years of experience allow us to work around familiar vendor implementation errors, for example if SNMP has not been fully implemented on an end device according to the RFCs. In this case, our vendor specific sensors still automatically receive the most important values with little to no effort on your part (looking for Object Identifiers (OIDs), for example). These sensors take care of everything for you.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Supported Vendors</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">APC</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Buffalo</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Cisco</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Dell</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Fujitsu</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">HP</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">IBM</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Jacarta</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Juniper</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">LenovoEMC</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetApp</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Poseidon</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">QNAP</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">SonicWall</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Synology</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information, see this article in our Knowledge Base: <a href="https://kb.paessler.com/en/topic/75522" target="_blank" class="weblink">What SNMP Sensors does PRTG offer?</a> </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="generic" class="hmanchor"></a><span class="f_InTopicHeading">Generic SNMP Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG offers several generic sensors that work with practically any device that supports SNMP, the corresponding Management Information Base (MIB) and Object Identifiers (OIDs), and correctly implements the according RFCs. The standard SNMP libraries of PRTG include predefined, common values for the generic SNMP sensors so that you can easily get started with monitoring via SNMP. You can monitor the following parameters with the generic sensors.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor</span></p>
+</th>
+<th style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">What it monitors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_cpu_load_sensor.htm" class="topiclink">SNMP CPU Load sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP CPU Load sensor monitors the system load using Simple Network Management Protocol (SNMP). </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">It shows the load of several CPUs in percent.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="ssh_disk_free_sensor.htm" class="topiclink">SNMP Disk Free sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Disk Free sensor monitors the free disk space on a logical disk via Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It can show the following: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free disk space in percent</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free disk space in bytes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Total disk space</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_hardware_status_sensor.htm" class="topiclink">SNMP Hardware Status sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Hardware Status sensor monitors the status of a hardware component of a server via Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Current status of the monitored hardware component</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Number of errors per time period</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_memory_sensor.htm" class="topiclink">SNMP Memory sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Memory sensor monitors the memory usage of a system via Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It can show the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Available memory in bytes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Available memory in percent</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Total memory</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_printer_sensor.htm" class="topiclink">SNMP Printer sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Printer sensor is a generic sensor that monitors various types of printers via Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It can show the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Total number of printed pages</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Fill level of cartridges and toners</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Status of the printer cover</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Additionally, the sensor shows the printer status as sensor message.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_rmon_sensor.htm" class="topiclink">SNMP RMON sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP RMON sensor monitors traffic on a device using the Remote Monitoring (RMON) standard via Simple Network Management Protocol (SNMP). You can create it on an SNMP compatible device that provides traffic data via RMON. Depending on the data returned by your device, traffic data for each port can be displayed in different channels, allowing detailed analysis. If available, the sensor queries 64-bit counters.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">For each port, the sensor can show, for example:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Transmitted kbit/s</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Broadcast Packets (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Multicast Packets (#/s) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">CRC Errors (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Undersize Packets (#/s) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Oversize Packets (#/s) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Fragments (#/s) </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Jabbers (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Collisions (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets &lt;= 64 Byte (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets 65 - 127 Bytes (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets 128 - 255 Bytes (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets 256 - 511 Bytes (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets 512 - 1023 Bytes (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packets 1024 - 1518 Bytes (#/s)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Drop Events (#/s)</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_uptime_sensor.htm" class="topiclink">SNMP System Uptime sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP System Uptime sensor monitors the time a device is running via Simple Network Management Protocol (SNMP). </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">It reads the system uptime value of the monitored device and shows it.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Traffic sensor monitors traffic on a device using Simple Network Management Protocol (SNMP). You can create it on a device that provides traffic data, one traffic sensor for each individual port. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It can show the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Traffic in</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Traffic out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Traffic total </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also add additional channels:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Errors in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Discards in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Unicast packets in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Non unicast packets in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Multicast packets in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Broadcast packets in and out</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Unknown protocols</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_trap_receiver_sensor.htm" class="topiclink">SNMP Trap Receiver sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Trap Receiver sensor receives and analyzes Simple Network Management Protocol (SNMP) traps. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Overall number of received traps per second </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Trap messages categorized as &quot;warning&quot; per second </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Trap messages categorized as &quot;error&quot; per second</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Number of dropped trap packets per second</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The actual trap messages</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="os" class="hmanchor"></a><span class="f_InTopicHeading">Operating System-based SNMP Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG also offers several operating system-based SNMP sensors that extend your SNMP monitoring. You can monitor the following parameters with these sensors.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor</span></p>
+</th>
+<th style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">What it monitors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_linux_disk_free_sensor.htm" class="topiclink">SNMP Linux Disk Free sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Linux Disk Free sensor monitors free space on disks of a Linux/Unix system using Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free total disk space in bytes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free space in bytes for every mounted partition</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free space in percent for every mounted partition</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free inodes in percent for every mounted partition</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_linux_load_average_sensor.htm" class="topiclink">SNMP Linux Load Average sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Linux Load Average sensor monitors the system load average of a Linux/Unix system using Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Average system load within a 1-minute interval</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Average system load within a 5-minute interval</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Average system load within a 15-minute interval</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_linux_meminfo_sensor.htm" class="topiclink">SNMP Linux Meminfo sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Linux Meminfo sensor monitors the memory usage of a Linux/Unix system using Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following :</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Available memory in absolute and percentage values </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Used physical memory (free memory plus buffer plus cache) in percent </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free physical memory (free memory plus buffer plus cache) in bytes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Used swap memory in percent</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free swap memory in bytes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Used memory on the whole system (physical memory plus swap) in percent</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Free memory on the whole system (physical memory plus swap) in bytes</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_linux_physical_disk_sensor.htm" class="topiclink">SNMP Linux Physical Disk sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Linux Physical Disk sensor monitors input/output (I/O) on disks of a Linux/Unix system using Simple Network Management Protocol (SNMP). </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It shows the following: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Read bytes per second</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Written bytes per second</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Number of read accesses per second </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Number of write accesses per second</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_windows_service_sensor.htm" class="topiclink">SNMP Windows Service sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Windows Service sensor monitors a Windows service via Simple Network Management Protocol (SNMP). </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">It shows the operating status of the monitored service.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="custom" class="hmanchor"></a><span class="f_InTopicHeading">Custom SNMP Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For your more individual needs, PRTG offers custom SNMP sensors. The monitoring capabilities of these sensors go beyond the scope of the generic sensors. The custom sensors allow you to show certain values that are not included in the standard libraries of PRTG. With these sensor types, you can monitor most devices that support SNMP and that PRTG does not have native sensor types for. Basically, you just need to find out the required Object Identifiers (OIDs) for your desired device readings, for example, in the vendor’s documentation of your hardware device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see the Knowledge Base: <a href="https://kb.paessler.com/en/topic/903" target="_blank" class="weblink">How do I find out which OID I need for an SNMP Custom sensor?</a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor</span></p>
+</th>
+<th style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">What it monitors</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_custom_sensor.htm" class="topiclink">SNMP Custom sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Custom sensor monitors a single parameter that is returned by a specific Object Identifier (OID) using Simple Network Management Protocol (SNMP).</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This sensor shows a single numerical value</span> (int64)<span class="f_ListBulleted"> for a given OID. Each OID always refers to a specific parameter of a certain SNMP device.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Value types include the expected numeric type of the results at the given OID: You can choose between</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Absolute (unsigned integer)</span><span class="f_ListBulleted">: for integer values such as 10 or 120</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Absolute (signed integer)</span><span class="f_ListBulleted">: for integer values such as -12 or 120 (negative values supported)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Absolute (float)</span><span class="f_ListBulleted">: for float values such as -5.80 or 8.23 (with decimal places)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Delta (counter)</span><span class="f_ListBulleted">: PRTG calculates the difference between the previous and the current value.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-camera" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-camera.png"/>See this video tutorial <a href="https://www.paessler.com/support/videos/prtg-advanced/snmp-custom-and-library-sensor" target="_blank" class="weblink">SNMP Custom and Library Sensor</a> on our website for more information.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_custom_advanced_sensor.htm" class="topiclink">SNMP Custom Advanced sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Custom Advanced sensor monitors numerical values returned for Object Identifiers (OIDs) using Simple Network Management Protocol (SNMP). </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The sensor displays numerical values for given OIDs that refer to this specific SNMP device. Up to 10 OIDs and corresponding numerical values are possible.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">This sensor monitors very similarly to the regular SNMP Custom sensor, with the advantage of being able to poll up to 10 specific OIDs with a single sensor. For each OID you will be able to define a name, OID, expected type, and the unit to be displayed. The possible value types are the same as with the SNMP Custom sensor.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_custom_string_sensor.htm" class="topiclink">SNMP Custom String sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Custom String sensor monitors a string returned by a specific Object Identifier (OID) using Simple Network Management Protocol (SNMP). It can check for keywords. If you want to set limits to the sensor channel value, you can also extract a numeric value contained in the string.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">This sensor shows the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Response time of the monitored device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Optionally a value extracted from the string</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In the sensor message, the sensor shows the string you <a href="snmp_custom_string_sensor.htm#keywordgroup" class="topiclink">search</a> for and which is the reason for a current </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Hexadecimal-encoded strings can also be decoded as MAC addresses or IP addresses. The sensor can check for keywords via plain text or regular expression or you can use a regular expression to extract a numerical value from the string that can be evaluated later for additional alerts.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_Remarks"><a href="snmp_custom_string_sensor.htm#example" class="topiclink">Number Extraction with Regular Expression</a> </span>for an example.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Custom String Lookup sensor monitors a string that a specific Object Identifier (OID) returns via Simple Network Management Protocol (SNMP). It can map the string directly to a <a href="sensor_states.htm" class="topiclink">sensor status</a> by using a <a href="define_lookups.htm" class="topiclink">defined lookup file</a>. Basically, this sensor type does a &quot;reverse lookup&quot;. You have to define all potential return strings in the lookup file as text values, each in one lookup entry. Graphs and data tables show the value to which the string is mapped, usually an integer (<a href="define_lookups.htm#lookuptypes" class="topiclink">lookup type</a> <span class="f_BoldCustom">SingleInt</span>). See manual section <span class="f_BoldCustom"><a href="snmp_custom_lookup_sensor.htm#example" class="topiclink">SNMP Custom String Lookup Sensor—Example</a></span>.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This sensor shows a retrieved string value and its status, as defined in the corresponding lookup file.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_custom_table_sensor.htm" class="topiclink">SNMP Custom Table sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Custom Table sensor monitors entries from a table that is provided via Simple Network Management Protocol (SNMP). You can create one new sensor per table row. For each sensor, you can define up to ten channels. Each channel shows the value of one defined table column.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">It can show numerical values in up to 10 channels per table row.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;">Vendors use tables when there are multiple instances of the same object (for example, memory, disks). The sensor recognizes a table via a meta-scan and allows you to configure the indexes (interfaces) that you want to monitor.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see the Knowledge Base: <a href="https://kb.paessler.com/en/topic/68539" target="_blank" class="weblink">What can I monitor with the SNMP Custom Table Sensor?</a></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom"><a href="snmp_library_sensor.htm" class="topiclink">SNMP Library sensor</a></span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">The SNMP Library sensor uses a compiled Management Information Base (MIB) library file to create sensors that monitor a device via Simple Network Management Protocol (SNMP). This approach provides custom monitoring beyond the standard SNMP sensors of PRTG. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The content of the MIB file will determine which data types are available for monitoring. When you create the sensor, it will provide a list of counters that came back from the target device based on checking every Object Identifier (OID) in the MIB. From this list, you can choose what you want to monitor. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The SNMP Library sensor will automatically create the following custom SNMP sensor types based on the data types available in the MIB:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_advanced_sensor.htm" class="topiclink">SNMP Custom Advanced sensors</a></span><span class="f_ListBulleted"> for all OIDs the return single values </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_string_sensor.htm" class="topiclink">SNMP Custom String sensors</a> </span><span class="f_ListBulleted">for all OIDs that return string values</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_table_sensor.htm" class="topiclink">SNMP Custom Table sensors</a></span><span class="f_ListBulleted"> for all OIDs that return tables</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The SNMP Library sensor is not actually a sensor type and will not appear as running sensor. It is a sensor that uses the meta-scan facility of the PRTG probe to find or match OIDs from an MIB and eases the creation of custom sensors, because you do not have to enter the OIDs manually.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor SNMP capable devices and add sensors using the SNMP Library sensor, download the manufacturer's MIB files for the target device, convert the MIB file to the Paessler <span class="f_ItalicCustom">oidlib</span> format, and import it into PRTG. To make setting up your monitoring &nbsp;as convenient as possible, PRTG comes with pre-compiled <span class="f_ItalicCustom">oidlib</span> library files that already contain the OIDs of SNMP counters for the most common devices in a network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see the Knowledge Base: <span class="f_Remarks"><a href="http://kb.paessler.com/en/topic/653" target="_blank" class="weblink">How do SNMP, MIBs and OIDs work?</a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="oidlib" class="hmanchor"></a><span class="f_InTopicHeading">Default OIDLIB Files Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following files are included in PRTG and are ready to use with the SNMP Library sensor. These allow the extension of your SNMP monitoring to many devices. Please be aware that not all devices and/or parameters may be supported by the libraries.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">APC UPS.oidlib</span><br />
+Can be used to monitor uninterruptible power supplies (UPS) from APC American Power Conversion Corp.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">APCSensorstationlib.oidlib</span><br />
+Can be used to monitor alarm status, communication status, humidity, and temperature as shown by an APC sensor station.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Basic Linux Library (UCD-SNMP-MIB).oidlib</span><br />
+Can be used to monitor basic system parameters on Linux systems, such as memory, disk and swap, CPU, etc.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">cisco-interfaces.oidlib</span><br />
+Can be used to monitor Cisco specific parameters, for example, the number of present network interfaces on a system, several states of an interface (admin, oper, speed, type, errors, discards, etc.), and more.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">cisco-queue.oidlib</span><br />
+Can be used to monitor queues on a Cisco interface, for example, queue depth and its maximum, discarded messages from the queue, the number of the queue within the queue set, etc.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Dell Storage Management.oidlib</span><br />
+Can be used to monitor Dell storage devices. Possible parameters include disk arrays, battery and power supply, fan and temperature, virtual disk, etc.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Dell Systems Management Instrumentation.oidlib</span><br />
+Can be used to monitor the hardware of Dell systems. Possible parameters include ACPower and battery, alerts, base board, Bios, BMC, chassis, COO, cooling, event log, firmware, IDE, keyboard, memory, port, network, processor, SCSI, system, temperature, USB, UUID, etc.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">HP LaserJet Status.oidlib</span><br />
+Can be used to monitor toner, paper, and jam status of an HP LaserJet printer.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Linux SNMP (AX BGP DisMan EtherLike Host).oidlib</span><br />
+Can be used to monitor different aspects of Linux systems.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This file may detect a very large number of interfaces. It may take a few seconds until the selection table is shown.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Linux SNMP (Framework Proxy Noti v2).oidlib</span><br />
+Can be used to monitor different aspects of Linux systems.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This file may detect a very large number of interfaces. It may take a few seconds until the selection table is shown.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Linux SNMP (IP Net SNMP Noti OSPF RMON SMUX).oidlib</span><br />
+Can be used to monitor different aspects of Linux systems.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This file may detect a very large number of interfaces. It may take a few seconds until the selection table is shown.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Linux SNMP (Source TCP UCD UDP).oidlib</span><br />
+Can be used to monitor different aspects of Linux systems.<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This file may detect a very large number of interfaces. It may take a few seconds until the selection table is shown.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Paessler Common OID Library.oidlib</span><br />
+Can be used to monitor many common hardware devices.<span class="f_Comment"> It is used for several sensors and is encrypted.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">SNMP Informant std.oidlib</span><br />
+<span class="f_Comment">Can be used to monitor logical disks, processor, memory, and network interface on Windows systems.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How do SNMP, MIBs and OIDs work?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/653" target="_blank" class="weblink">https://kb.paessler.com/en/topic/653</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: My SNMP sensors don't work. What can I do?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46863" target="_blank" class="weblink">https://kb.paessler.com/en/topic/46863</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I import my MIB files into PRTG?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/733" target="_blank" class="weblink">https://kb.paessler.com/en/topic/733</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Can't find a sensor for my device in PRTG but I believe it supports SNMP. How to proceed?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/65638" target="_blank" class="weblink">https://kb.paessler.com/en/topic/65638</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="snmp_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="wmi_monitoring.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

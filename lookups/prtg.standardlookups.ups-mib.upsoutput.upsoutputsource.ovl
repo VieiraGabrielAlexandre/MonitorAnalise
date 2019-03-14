@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.ups-mib.upsoutput.upsoutputsource" desiredValue="3" undefinedState="1">
+    <Lookups>
+      <SingleInt state="Ok" value="1">
+        Other
+      </SingleInt>
+      <SingleInt state="Ok" value="2">
+        None
+      </SingleInt>
+      <SingleInt state="Ok" value="3">
+        Normal
+      </SingleInt>
+      <SingleInt state="Warning" value="4">
+        Bypass
+      </SingleInt>
+      <SingleInt state="Error" value="5">
+        Battery
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Booster
+      </SingleInt>
+      <SingleInt state="Warning" value="7">
+        Reducer
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>
+ 

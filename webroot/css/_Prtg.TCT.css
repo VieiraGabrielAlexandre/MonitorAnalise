@@ -1,0 +1,331 @@
+﻿tct{
+  -webkit-transition:  opacity 1.0s;
+  transition:  opacity 1.0s;
+  font-family: tahoma;
+}
+tct.invisible{
+  opacity: 0;
+}
+tct[data-role="guru"]{
+  margin-bottom: 3px;
+  border: none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+tct[data-role="guru"] span{
+  color: #00245d;
+  display: block;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+tct[data-role="guru"].visible{
+  display: block;
+}
+
+tct[data-role="guru"]>div{
+  min-width: 100%;
+}
+tct[data-role="guru"]>div,
+tct[data-role="theater"]>span,
+tct[data-role="theater"]{
+  position: relative;
+  box-shadow:none;
+  display:block;
+  width: 100%;
+}
+tct a{
+  position: absolute;
+  padding: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-image: none;
+}
+
+tct[data-role="theater"] button.closebutton{
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-image: url('/images/tct/close.png');
+}
+
+tct[data-role="guru"] button.closebutton{
+  position: absolute;
+  right: 3px;
+  top:1px;
+  margin-top: 3px;
+  z-index: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 1px 3px 1px 1px;
+  opacity: 0.5;
+  -webkit-transition:  opacity 0.5s;
+  transition:  opacity 0.5s;
+}
+tct[data-role="guru"] button.closebutton{
+  top: 4px;
+  right: 3px;
+}
+tct[data-role="guru"] .tct-content{
+  background-color: transparent;
+}
+tct[data-role="guru"]  img{
+  width: 180px;
+}
+tct.no-buttons button{
+  display: none;
+}
+tct[data-role="guru"] button{
+  border: 1px solid transparent;
+  transition: .1s;
+}
+tct[data-role="guru"] button.btngrey{
+  position: absolute;
+  left: 9px;
+  bottom: 9px;
+}
+tct[data-role="guru"] button.btnlink{
+  position: absolute;
+  left:20%;
+  border: none;
+  color: grey;
+  bottom: 9px;
+  background-color: transparent;
+  font-size: xx-small;
+}
+tct[data-role="guru"] button.actionbutton{
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+}
+tct.pod[data-role="guru"] button{
+  right: auto;
+  left: auto;
+  bottom: auto;
+}
+tct.pod[data-role="guru"] button.btngrey{
+  position: relative;
+  float:right;
+  margin:0 9px;
+}
+tct.pod[data-role="guru"] button.btnlink{
+  position: relative;
+  float:left;
+  padding: 0;
+  margin:17px 9px 0 0;
+  line-height: 5px;
+  border: none;
+  color: grey;
+  background-color: transparent;
+  font-size: xx-small;
+}
+tct.pod[data-role="guru"] button.actionbutton{
+  position: relative;
+  margin:0 0 0 9px;
+  float:right;
+}
+
+
+#tctCursor{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:100000;
+  display:none;
+  background-image: url("/css/images/hand.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  min-width:20px;
+  min-height: 30px;
+}
+#tctCursor info{
+  display: none;
+  background-color: <#colorcode color="tct">;
+  width: auto;
+  padding: 3px;
+  position: relative;
+  top: 29px;
+  font-size: 14px;
+  text-align: center;
+  white-space: pre;
+  margin-left: -35%
+}
+
+#main_menu>li.hovered{
+  background-color: <#colorcode color="actioncolor">;
+}
+#main_menu li.hovered > ul{
+  visibility: visible;
+  margin-left: 0;
+}
+#main_menu>li.hovered>a {
+  color: #fff;
+}
+
+#main_menu ul li.hovered a {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* sub levels link hover */
+#main_menu ul li.hovered {
+  background-color: #E0E0E0;
+}
+
+
+/*-----------------*/
+tct .info-box{
+  position: absolute;
+  background-color: <#colorcode color="tct">;
+  padding: 13px;
+  min-height:100px;
+}
+
+tct .greg4{
+  bottom: 215px;
+  width: 230px;
+  left: -190px;
+}
+
+tct .greg5{
+  bottom: 25px;
+}
+tct .greg6{
+  bottom: 195px;
+  width: 262px;
+  height: 114px;
+  left: -233px;
+}
+tct .andi4{
+  bottom: 282px;
+  width: 250px;
+  left: -150px;
+}
+tct .andi5{
+  bottom: 200px;
+  width: 250px;
+  left: -235px;
+}
+
+tct .info-box span:last-of-type{
+  margin-bottom: 35px;
+}
+
+tct span.headline{
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 15px;
+  margin-bottom: 5px;
+}
+
+tct[data-role="theater"] a.box{
+  font-family: tahoma;
+  background-color: #f6f6f6;
+  color: #0b2558;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 10px 80px 10px 20px;
+  margin-bottom: 5px;
+  min-height: 85px;
+  font-size: 16px;
+  line-height: 17px;
+}
+tct[data-role="theater"] a.box:hover{
+  cursor: pointer;
+}
+
+tct[data-role="theater"] a.box span{
+  display: block;
+}
+tct[data-role="theater"] a.box span.headline{
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 17px;
+  margin: 0 0 10px 0;
+}
+tct[data-role="theater"] a.box:hover span.headline{
+  color: #444444;
+}
+tct[data-role="theater"] a.box span.text{
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0 0 10px 0;
+}
+tct[data-role="theater"] a.box:hover span.text{
+  color: #444444;
+}
+tct[data-role="theater"] a.box span.cta{
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  background-color: #0b2558;
+  /*border-radius: 2px;*/
+  color: #ffffff;
+  padding: 5px 15px 5px 15px;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+  letter-spacing: 0.8px;
+}
+tct[data-role="theater"] a.box:hover span.cta{
+  background-color: #444444;
+}
+tct[data-role="theater"] a.box span.close{
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-image: url('/images/tct/theater/close.png');
+}
+tct[data-role="theater"] a.video{
+  background-position: top left;
+  padding: 10px 20px 10px 165px;
+
+}
+
+
+tcthelp{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+tcthelp img{
+  padding: 2px;
+}
+#helpcontainer tct{
+  display: block;
+}
+#helpcontainer tcthelp a{
+  position: absolute;
+  padding: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-image: none;
+}
+
+#helpcontainer tct[data-role="theater"] a.box{
+  background-position: center center!important;
+  height:165px;
+}
+#helpcontainer tct[data-role="theater"] a.box span.text{
+  position: absolute;
+  bottom: 0;
+  margin: 5px;
+}
+#helpcontainer tct[data-role="theater"] a.box span.headline{
+  margin: 5px;
+}

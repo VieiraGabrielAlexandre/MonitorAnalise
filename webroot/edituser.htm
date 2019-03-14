@@ -1,0 +1,47 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="user">
+<#objectproperty name="name" var="objectname">
+<#lang key="html.edituser.title" default="Edit User" var="title">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.global.useraccounts" default="User Accounts" var="useraccounts">
+<#breadcrumbs varexpand="trail" trail="<a href='/systemsetup.htm?tabid=5'>@useraccounts</a>" this="(OBJECT)" >
+
+<div id="main" data-title='<#objectproperty name="name">' data-contexthelpshow='<#system type="showhelp">'>
+
+	<h1 class='sitecaption <#objectidorzero zeroidcode="hidden" objectidcode="show">'>
+    	<#lang key="html.edituser.title1" default="<i>User</i>">
+    	<dummy><#objectproperty name="name"></dummy>
+  	</h1>
+
+  	<h1 class="<#objectidorzero zeroidcode="show" objectidcode="hidden">"><#lang key="html.edituser.add" default="Add User"></h1>
+
+  	<wingui-hidden>
+		<div class="buttonbox">
+			<#include file="includes\linkpagebutton.htm">
+			<a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+		</div>
+  	</wingui-hidden>
+
+	<div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+		<ul class="nav-tabs">
+			<li tabid="1" class="tab-active"><a href="/controls/edituser.htm?id=<#objectid>"><i class="glyph-cog2"></i><#lang key="html.global.settings" default="Settings"></a></li>
+			<li tabid="4" class="removefornew <#objectidorzero zeroidcode="hidden">"><a href="/controls/contactlist.htm?id=<#objectid>&targeturl=/edituser.htm?id=<#objectid>%26tabid=4"><i class="glyph-bell-alt"></i><span class="text"><#lang key="html.global.contactlist" default="Notification Contacts"></span></a></li>
+			<li tabid="2" class="tab-spacing tab-dark removefornew <#objectidorzero zeroidcode="hidden">" title="<#lang key="html.global.comments" default="Comments">">
+			<a href="/controls/comments.htm?id=<#objectid>"><i class="<#hascomment>"></i><span class="text"><#lang key="html.global.comments" default="Comments"/></span></a></li>
+			<li tabid="3" class="tab-dark removefornew <#objectidorzero zeroidcode="hidden">" style="<#hidefornonadmins>" ><a href="/controls/history.htm?id=<#objectid>"><i class="glyph-history"></i><span class="text"><#lang key="html.global.history" default="History"></span></a></li>
+		</ul>
+		<div class="tab-container"></div>
+	</div>
+	
+	<#lang key="html.useraccountsettings.help.title" default="Edit User" var="helptitle">
+	<#lang key="html.useraccountsettings.help.text2" default="Edit user account settings.<br><br><a href='/help/user_accounts_settings.htm' target='_blank'><b>Help: User Account Settings</b></a>" var="helptext">
+	<#system type='showhelp' var='showhelp'>
+	<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

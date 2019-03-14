@@ -1,0 +1,36 @@
+﻿<#lang key="html.alarms.title" default="Alarms" var="pagetitle">
+<#lang key="html.alarms.titlesmall" default="alarms" var="title">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+
+<div id="main" class= "alarms-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="table-wrapper">
+    <div class="buttonbox normalpage">
+		 <#include file="includes\linkpagebutton.htm">
+		</div>
+    <div class="prtg-plugin" data-plugin="prtg-table">
+      <#table tableid="alarmtable"
+        content="sensors"
+        columns="sensor,probegroupdevice,status,downtimesince,lastvalue,message,minigraph,priority,checkbox"
+        tools="pause,acknowledge,fave,prio,scan,delete,edit"
+        sortby="priority"
+        sortable="true"
+        refreshable="true"
+        tabletitle="AUTO"
+        varexpand="filters"
+        filters="words!@title,objects!data-filtername='id'|data-inputname='id'|data-rootid='0'|data-onlysensors='0'|data-sensors='0'|data-hidesensors='true'|data-devices='1'|data-groups='1'|data-required=''|data-probes='1'|data-allownone='1'|data-allowself='1'|data-allowroot='1',tags">
+    </div>
+  </div>
+<#system type='showhelp' tct="theater" page="help-alarms" isreadonly="false" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.globals.alarms" default="Alarms" var="helptitle">
+<#lang key="html.alarms.help.text2" default="This page shows the list of sensors that are in an error or warning state. If all your systems are running fine this page should list no sensors at all!" var="helptext">
+<#lang key="html.alarms.help.link" default="<a href='/help/alarms.htm' target='_blank'><b>Help: Alarms</b></a>" var="helplink">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

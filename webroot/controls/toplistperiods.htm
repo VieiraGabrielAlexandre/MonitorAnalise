@@ -1,0 +1,24 @@
+﻿<#lang key="html.toplistperiods" default="Available Periods" var="title">
+<div class="resetable">
+  <div class="datepicker-wrapper">
+    <input class="text prtg-plugin" type="text" id="sdate" name="sdate" data-placement="right" title="<#lang key="html.gethistoric.wizhelpstart" default="Enter the start date.">" placeholder="<#lang key="html.historicsensordata.wiz2start" default="Start">" autocomplete="off" data-plugin="prtg-datetimepicker" data-timepicker="false" data-datetimeformat="<#system type="datetimepickerformatstring">">
+    <i class="ui-icon icon-close" data-target="sdate" data-placement="right" title="" data-original-title="<#lang key="html.toplist.resetdate" default="Reset Date Selection">"></i>
+  </div>
+  <div class="datepicker-wrapper">
+    <input class="text prtg-plugin" type="text" id="edate" name="edate" data-placement="right" title="<#lang key="html.gethistoric.wizhelpend" default="Enter the end date.">" placeholder="<#lang key="html.gethistoric.wiz2end" default="End">" autocomplete="off" data-plugin="prtg-datetimepicker" data-timepicker="false" data-datetimeformat="<#system type="datetimepickerformatstring">">
+  <i class="ui-icon icon-close" data-target="edate" data-placement="right" title="" data-original-title='<#lang key="html.toplist.resetdate" default="Reset Date Selection">'></i>
+  </div>
+
+    <div class="prtg-plugin toplistperiods" data-plugin="toplistperiods" data-objid="<#objectid>" data-subid="<#system type='subid'>">
+<!--
+  {"objects":<#table
+      content="topidx"
+      output="json"
+      columns="datetime=treejson"
+      count="*"
+      noraw="1"
+      sortby="-datetime" >
+  }
+-->
+  </div>
+</div>

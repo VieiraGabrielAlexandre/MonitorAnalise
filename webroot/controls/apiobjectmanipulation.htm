@@ -1,0 +1,227 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Changing Existing Objects</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>
+            Use the following functions to manipulate existing objects (URLs are shown without username/passhash to improve readability):
+        </p>
+        <h2>Changing Object Settings</h2>
+        <ul class="apicalls">
+            <li>
+                Rename an object:
+                <pre><b>/api/rename.htm</b>?id=objectid&value=newname </pre>
+            </li>
+            <li>
+                Set priority of an object (valid values for x are 1 to 5):
+                <pre><b>/api/setpriority.htm</b>?id=objectid&prio=x </pre>
+            </li>
+            <li>
+                Change properties of objects:
+                <pre><b>/api/setobjectproperty.htm</b>?id=id_of_object&name=property_name&value=new_value </pre>
+            </li>
+        </ul>
+        <p>
+            This function can change most string and number properties of objects (names, numerical values, OIDs, etc.) and should be used with caution.
+            The "property_name" parameter can be discerned by opening the "Settings" page of an object and looking at the HTML source of the INPUT fields.
+            For example the INPUT field for the tags of an object has the name "tags_". Leave away the "_" and use the rest ("tags") as a value for the "property_name" parameter.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Switch inheritance off/on:
+                <pre><b>/api/setobjectproperty.htm</b>?id=id_of_object&name=inheritType_&value=0_or_1 </pre>
+            </li>
+        </ul>
+        <p>
+            This API call sets the "inherit" setting of objects (location, credentials, compatibility options, proxy settings, scanning interval, access rights, channel unit). In
+            general, this works like changing properties; see above. Replace the parameter "inheritType"
+            with the name of the inheritance type. This internal name must be followed by an underscore, in contrast to changing properties above. Use the value "0" for switching
+            off
+            inheritance, and "1" for switching on inheritance. For example, the inheritance type for the scanning interval setting has the name "intervalgroup_";
+            thus, this specific part in the URL is <b>&name=intervalgroup_&value=0</b> (switches off inheritance for scanning interval). <b>Note:</b> This call does not work with
+            the schedules, dependencies and maintenance window.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Change properties of channels:
+                <pre><b>/api/setobjectproperty.htm</b>?id=sensorid&subtype=channel&subid=channelid&name=property_name&value=x</pre>
+            </li>
+        </ul>
+        <p>
+            With this API call you can change settings of sensor channels. In general, this works like changing properties of any other object (see above).
+            To set channel properties via the API, you need to provide the ID of a sensor (parameter <i>id</i>), a <i>subtype</i> which is <i>channel</i> for channels, and a <i>subid</i>
+            which is the ID of the channel you want to edit.
+		<ul class="apicalls">
+            <li>
+                Set limits for channels:
+                <pre><b>/api/setobjectproperty.htm</b>?id=sensorid&subtype=channel&subid=channelid&name=limitmaxerror&value=x</pre>
+            </li>
+			<li>
+                Enable limits for channels:
+                <pre><b>/api/setobjectproperty.htm</b>?id=sensorid&subtype=channel&subid=channelid&name=limitmode&value=1</pre>
+            </li>
+        </ul>
+		<p>
+            The first API call sets limits for a channel. <b>Note:</b> You must first set limits for channels before you can enable limits. The second API call enables limits for a channel. For example, <i>/api/setobjectproperty.htm?id=2970&subid=0&subtype=channel&name=limitmaxerror&value=25</i> sets the upper error limit of a channel with the ID 0 of a sensor with the ID 2970 to the value 25. <br>
+            For toplists, you can use the subtype <i>toplist</i> to change the properties. When using this subtype, <i>subid</i> is the ID of a toplist.
+        </p>
+        <h2>Pausing/Resuming</h2>
+        <ul class="apicalls">
+            <li>
+                Pause a sensor or object indefinitely:
+                <pre><b>/api/pause.htm</b>?id=objectid&pausemsg=yourmessage&action=0 </pre>
+            </li>
+            <li>
+                Pause a sensor or object for x minutes:
+                <pre><b>/api/pauseobjectfor.htm</b>?id=objectid&pausemsg=yourmessage&duration=x </pre>
+            </li>
+        </ul>
+        <p>
+            The pause message is optional. You can leave out the parameter <b>&pausemsg=yourmessage</b> if you do not want to display a message.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Pause and simulate an error state for a sensor:
+                <pre><b>/api/simulate.htm</b>?id=objectid&action=1 </pre>
+            </li>
+            <li>
+                Resume monitoring of a sensor or object:
+                <pre><b>/api/pause.htm</b>?id=objectid&action=1 </pre>
+            </li>
+        </ul>
+        <h2>Error Handling, Rescanning</h2>
+        <ul class="apicalls">
+            <li>
+                Acknowledge an error:
+                <pre><b>/api/acknowledgealarm.htm</b>?id=objectid&ackmsg=yourmessage </pre>
+            </li>
+        </ul>
+        <h2>Rescanning, Triggering Auto-Discovery</h2>
+        <ul class="apicalls">
+            <li>
+                Scan a sensor now:
+                <pre><b>/api/scannow.htm</b>?id=objectid </pre>
+            </li>
+            <li>
+                Run Auto Discovery for an object:
+    <pre><b>/api/discovernow.htm</b>?id=objectid&template=filename </pre>
+            </li>
+        </ul>
+<p>
+Template for auto-discovery is optional. You can leave out the parameter <b>&template=filename</b> to run the auto-discovery with the options defined in the object's settings.<br><br>
+If you use a template, provide the whole filename including file extension surrounded by double quotes and encode whitespaces if necessary. Example: <b>&template="Linux%20SNMP.odt"</b>
+</p>
+        <h2>Reordering Objects in the Sensor Tree</h2>
+        <ul class="apicalls">
+            <li>
+                Move an object in the sensor tree (x can be "up", "down", "top", "bottom"):
+                <pre><b>/api/setposition.htm</b>?id=objectid&newpos=x </pre>
+            </li>
+        </ul>
+        <h2>Report Related</h2>
+        <ul class="apicalls">
+            <li>
+                Add a group, device or sensor to a report:
+                <pre><b>/api/reportaddsensor.htm</b>?id=reportid&addid=objectid </pre>
+            </li>
+        </ul>
+        <h2>Notification Related</h2>
+        <ul class="apicalls">
+            <li>
+                Test a notification:
+                <pre><b>/api/notificationtest.htm</b>?id=objectid </pre>
+            </li>
+        </ul>
+        <h1>Adding/Deleting Objects</h1>
+        <p>
+            Adding and deleting objects in your PRTG configuration is the most complex and potentially most "dangerous" process when using the API.
+            Keep in mind that add/delete activity is much better guided in the normal web interface with more warnings and alerts.
+            It is recommended to use the web interface for such activity if possible.
+        </p>
+        <h2>Deleting Objects</h2>
+        <p>
+            API calls to the delete function immediately delete the referenced object including all subobjects, if there are any. For example, deleting a group deletes all its
+            devices and sensors!
+            There is no way to undo a deletion so use this function with care.
+        </p>
+        <ul class="apicalls">
+            <li>
+                Delete an object:
+                <pre><b>/api/deleteobject.htm</b>?id=objectid&approve=1 </pre>
+            </li>
+        </ul>
+        <h2>Adding Objects</h2>
+        <p>
+            Adding completely new objects "from scratch" is not supported via the API due to complexity of object creation and its parameters.
+            To add new objects to PRTG please create a "master" object which will be cloned into new objects.
+        </p>
+        <ul>
+            <li>
+                Note 1: If the "duplicateobject" succeeds the PRTG server will reply with a redirect to the URL of the new object (e.g. /sensor.htm?id=1234),
+                your application should parse the new object ID from this URL.
+            </li>
+            <li>
+                Note 2: When an object is cloned it will initially be set to "paused" (so you have the chance to edit parameters as desired),
+                you must resume it with an API call afterwards.
+            </li>
+        </ul>
+        <ul class="apicalls">
+            <li>
+                Duplicate a group:
+                <pre>/api/duplicateobject.htm?<b>id=id_of_group_to_clone&name=new_name&targetid=id_of_target_group</b> </pre>
+            </li>
+            <li>
+                Duplicate a device:
+                <pre>/api/duplicateobject.htm?<b>id=id_of_device_to_clone&name=new_name&host=new_hostname_or_ip&targetid=id_of_target_group</b></pre>
+            </li>
+            <li>
+                Duplicate a sensor:
+                <pre>/api/duplicateobject.htm?<b>id=id_of_sensor_to_clone&name=new_name&targetid=id_of_target_device</b></pre>
+            </li>
+        </ul>
+        <h2>
+            Sample API Calls to Duplicate a Sensor and Change Clone's settings
+        </h2>
+        <p>
+            The following process duplicates a sensor, changes some settings, and then starts monitoring:
+        </p>
+        <ul class="apicalls">
+            <li>
+                Duplicate the sensor (Server replies with a redirect to new objects webpage, e.g. /sensor.htm?id=10214, parse id 10214 from the URL):
+                <pre><b>/api/duplicateobject.htm</b>?id=2002&name=mynewsensor&targetid=2001 </pre>
+            </li>
+            <li>
+                Rename the new sensor:
+                <pre><b>/api/setobjectproperty.htm</b>?id=10214&name=name&value=anothernewname </pre>
+            </li>
+            <li>
+                Change the OID (in this example for an SNMP Custom sensor):
+                <pre><b>/api/setobjectproperty.htm</b>?id=10214&name=oid&value=1.2.3.4.5.6.7 </pre>
+            </li>
+            <li>
+                Resume monitoring for the new sensor:
+                <pre><b>/api/pause.htm</b>?id=10214&action=1 </pre>
+            </li>
+        </ul>
+        <h2>
+            Setting Geo Location
+        </h2>
+        <p>
+            You can set the location of any object via an API call. Provide the object ID together with parameters for location and/or longitude and latitude.<br>
+            If only the location parameter is given, the Core Server will excute the geo location lookup (this can last up to three minutes). Provide the name of the location,
+            e.g., "New York".
+            It will be shown in the Location settings, no matter of longitude/latitude.<br>
+            If the longitude/latitude parameter is given, the marker in the map will be set to this position, no matter of the location parameter. Provide longitude and latitude
+            separated by a comma, e.g., "-73.998672,40.714728".
+        </p>
+        <ul class="apicalls">
+            <li>
+                Set the geo location of an object:
+                <pre><b>/api/setlonlat.htm</b>?id=objectid&location=name_of_object_location&lonlat=longitude,latitude</pre>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.activityhistory" default="Activity History"></h2>
+  <ul>
+    <#system type="activitystats" >
+  </ul>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.autodisco" default="Auto-Discovery Tasks"></h2>
+  <ul>
+    <li>
+      <span><#lang key="html.systemstatus.autodiscorunning" default="Currently Running"></span><span><#system type="discocount" skiptagfornonadmins='true'></span>
+    </li>
+    <#system type="discolist" skiptagfornonadmins='true'>
+  </ul>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.backtasks" default="Background Tasks"></h2>
+  <ul>
+	<li>
+      <span><#lang key="html.systemstatus.histdata" default="Historic Data:&nbsp;"></span><span><#system type="histcalc" skiptagfornonadmins='true'></span>
+    </li><li>
+      <span><#lang key="html.systemstatus.toplistbuffer" default="Toplist Buffer:&nbsp;"></span><span><#system type="toplistbuffer" skiptagfornonadmins='true'></span>
+    </li><li>
+      <span><#lang key="html.systemstatus.correlationdata" default="Similar Sensors Detection:&nbsp;"></span><span><#system type="correlationstatus" skiptagfornonadmins='true'></span>
+    </li><li>
+      <span><#lang key="html.systemstatus.recommender" default="Recommended Sensors Detection:&nbsp;"></span><span><#system type="recommenderstatus" skiptagfornonadmins='true'></span>
+    </li>
+  </ul>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.dataobs" default="Database Objects"></h2>
+  <#system type="treestat" skiptagfornonadmins='true'>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.probes" default="Probes"></h2>
+	<table>
+		<#system type="probes" skiptagfornonadmins='true' withlinks="no">
+	</table>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.syssettings" default="System Settings"></h2>
+	<ul>
+    <#system type="systemsettings" skiptagfornonadmins='true'>
+	</ul>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.webserveractivity" default="Web Server Activity"></h2>
+	<ul>
+    <#countpageview showpageviews="yes" skiptagfornonadmins='true'>
+	</ul>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.syncro" default="Synchronization"></h2>
+	<ul>
+		<li>
+      <span><#lang key="html.systemstatus.li1" default="Last synchronization with a probe"></span><span><#system type="lastsync" skiptagfornonadmins='true'></span>
+    </li><li>
+    <span><#lang key="html.systemstatus.li2" default="Probe/Core Message Count"></span><span><#system type="messagecount" skiptagfornonadmins='true'></span>
+    </li><li>
+      <span><#lang key="html.systemstatus.li4" default="Raw Buffer Count"></span><span><#system type="rawbuffercount" skiptagfornonadmins='true'></span>
+    </li>
+		<#system type="requests" skiptagfornonadmins='true'>
+	</ul>
+</div>

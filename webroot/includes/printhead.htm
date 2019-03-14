@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, follow">
+    <#lang key="html.reportheader.report" default="Report " var="title">
+    <#objectproperty name="name" var="objectname">
+    <#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+    <title><#pagetitle>&nbsp;|&nbsp;<#system type="sitename"></title>
+    <#extraparam>
+    <#comment All Our Stylesheets>
+    <link rel="stylesheet" type="text/css" href="/css/report.css?version=<#system type="version">" media="print,screen,projection" />
+    <link rel="stylesheet" type="text/css" href="/css/print.css?version=<#system type="version">" media="print"  />
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+
+	<#style> <#comment Style Overrides that may come in via Include Tag>
+    <script src="/javascript/lib/jquery.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+        <script><#include file="javascript\libload.js"></script>
+  <#system type="requesthttpurl" var="requrl">
+  <#system type="serverhttpurl" var="srvurl">
+  <#inserturlparam parameter="pdf" var="aspdf">
+  <base href='<#if value="@aspdf" is="true" then="@srvurl" else="@requrl" varexpand="value,then,else">' target='_top'>
+</head>
+<body id="reportbody">

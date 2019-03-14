@@ -1,0 +1,160 @@
+﻿/* *   prtg.table.menu.css */
+/*table.tablehasmenu {
+  overflow: hidden;
+}
+
+table.tablehasmenu:hover,
+table.tablehasmenu:active {
+  overflow: visible;
+}*/
+
+table .jd_menu {
+  list-style: none;
+  list-style-image: none;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+table .jd_menu li {
+  height: 15px;
+  padding: 0 15px;
+  position: relative;
+  float: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+table .jd_menu li:hover,
+table .jd_menu li:active {
+  background: #e0e0e0;
+}
+
+table .jd_menu li.last:hover,
+table .jd_menu li.last:active {
+  background-color: #C5F5CC !important;
+}
+
+/* main level link */
+table .jd_menu  a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+table .jd_menu a:hover,
+table .jd_menu li a:hover,
+table .jd_menu a:active,
+table .jd_menu li a:active {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+table .jd_menu  ul li a {
+  color: black;
+  padding: 0 24px 0 24px;
+  width: 100%;
+}
+
+
+/* sub levels link hover */
+table .jd_menu  .jd_meun ul li:hover,
+table .jd_menu  .jd_meun ul li:active {
+  background-color: #E0E0E0;
+}
+
+
+/* dropdown */
+table .jd_menu  li:hover > ul,
+table .jd_menu  li:active> ul {
+  visibility: visible;
+  z-index: 999;
+}
+
+
+/* level 2 list */
+table .jd_menu  ul {
+  visibility: hidden;
+  list-style-type: none;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  background: #ffffff;
+  border-top: none;
+  padding: 0;
+  box-shadow: 0 0 2px 0 #000;
+}
+
+table .jd_menu  ul {
+  left: auto;
+  right: 0;
+}
+
+table .jd_menu  ul li {
+  float: none;
+  padding: 0;
+  height: 19px;
+  padding: 1px 0;
+}
+
+table .jd_menu  span {
+  display: inline-block;
+  text-indent: 0;
+  left: 2px;
+  right: auto;
+}
+
+table .jd_menu ul span {
+  position: absolute;
+}
+
+table .jd_menu  span.ui-icon-carat-1-e {
+  position: absolute;
+  text-indent: 0;
+  right: 0;
+  left: auto;
+}
+
+table .jd_menu  li.multiedit {
+  float: left;
+  width: 20px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* level 3+ list */
+table .jd_menu  ul ul {
+  position: relative;
+  left: 100%;
+  top: -16px;
+}
+
+table .jd_menu.flyoutleft ul ul {
+  left: auto;
+  right: 100%;
+}
+
+table .jd_menu  span.txt {
+  background: #0F3E83;
+  color: white;
+  text-align: center;
+  vertical-align: text-top;
+  line-height: 16px;
+  height: 16px;
+  width: 20px;
+  font-size: 0.9em;
+}
+
+table .jd_menu  span.favstar,
+table .jd_menu  span.star {
+  /* float: left;
+  */
+  position: static;
+}
+
+table .jd_menu  .menudivider {
+  border-bottom: 1px dotted #999;
+}

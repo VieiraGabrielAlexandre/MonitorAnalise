@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueLookup desiredValue="200" id="prtg.standardlookups.http.statuscode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+        <Range From="100" To="199" state="Ok">Information</Range>
+        <Range From="200" To="299" state="Ok">Success</Range>
+        <Range From="300" To="399" state="Warning">Redirection</Range>
+        <Range From="400" To="499" state="Error">Client Error</Range>
+        <Range From="500" To="599" state="Error">Server Error</Range>
+    </Lookups>
+</ValueLookup>

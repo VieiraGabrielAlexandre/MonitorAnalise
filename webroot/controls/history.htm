@@ -1,0 +1,11 @@
+﻿<#system type="denyfornonadmins">
+<#lang key="html.history.help.title" default="Object History" var="helptitle">
+<#lang key="html.history.help.text2" default="On this page the entire object history is displayed. This shows all changes made to an object since its creation, including date and time, the user account, and changes made." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<div class="history-table prtg-plugin" data-plugin="prtg-table">
+	<#table tableid="historytable" content="history" columns="datetime,user,message" sortby="-datetime" refreshable="true">
+</div>
+
+

@@ -1,0 +1,98 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Custom Notifications</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+
+<p>
+  In addition to the various standard methods for notifications, you can also define your own notifications that can trigger desired actions. The possibilities of these notifications go far beyond just sending out messages, because you can
+  perform almost any action you like whenever the notification is triggered.
+</p>
+<p>
+  The following documentation describes these custom notifications. Different notification methods can also be combined in
+  one notification. For more general information about notifications based on email, messaging, and
+  others, please see
+  <a href="/help/notifications.htm">Notifications</a>
+  in the PRTG manual.
+</p>
+
+        <h2>Execute HTTP Action</h2>
+
+        <p>
+            This notification method sends any Postdata to a custom URL. You can execute specific actions on a web server or control
+            any web service that accepts commands via one-time HTTP requests. Whenever a notification of this kind
+            is triggered, the HTTP action is sent. With this method, you can also call any API function of your PRTG web interface.
+            For example, you can set PRTG to automatically pause a sensor, or acknowledge an alarm.
+        </p>
+
+<p>
+  For example, to automatically pause the sensor that triggers the notification, please enter the following HTTP action:
+</p>
+<pre>http://yourserver<b>/api/pause.htm</b>?id=%sensorid&action=0&username=myuser&password=mypassword</pre>
+<p>
+  To use the notification to automatically acknowledge the alarm that triggered it, please enter this HTTP action:
+</p>
+<pre>http://yourserver<b>/api/acknowledgealarm.htm</b>?id=%sensorid&ackmsg=Auto-Acknowledged&username=myuser&password=mypassword</pre>
+<p>
+  Please see the <b>HTTP API</b> tab for more information about authentication within the URL, and tab <b>Object Manipulation</b> for other possible actions you can configure.
+</p>
+
+<div class="<#hideforpod asclass='true'>">
+	<h2>Execute Program</h2>
+	<p>
+	  With this notification method you can execute a script or a program as an external process. It can be a
+	  Windows executable file or a BAT, CMD, or PowerShell file. You can use EXE, COM, BAT, CMD, VBS, or PS1 files.
+	</p>
+	<p>
+	  You must create the notification as a file and place it in a specific folder on the PRTG core server system (in a cluster, please copy the files to every node).
+	</p>
+	<p>
+	  Place executables (.EXE, .COM), batch files (.CMD, .BAT), VBS scripts (.VBS), or PowerShell scripts (.PS1) into the folder:
+	</p>
+	<pre>\Notifications\EXE</pre>
+	<p>
+	  As soon as a file is placed into the folder mentioned above, you can create or edit your own Execute Program custom notification and select the new file from the list of files. You can also enter start parameters and use PRTG’s placeholders for this.
+	</p>
+	<p>
+  <b>Notes:</b>
+	  <p>
+	    <ul>
+	      <li>
+	        PRTG will execute the file on the local PRTG core server system using the account configured for the "PRTG Core Server Service" ("system" is the default).
+	        <li>
+	          If your custom notifications code relies on other files (for example, DLLs, .NET framework, Windows PowerShell) you must copy/install these files on the PRTG core server machine manually!
+	          <li>
+	            Make sure the return code of the executable is 0 (zero). Otherwise PRTG assumes something went wrong with the notification and will try to send it up to 3 times.
+	            <li>
+	              When running PRTG in a cluster, please copy the respective files to every single node to make sure the notification also works when the primary master is not reachable.
+	              <li>
+	                EXE notifications will fail if they attempt to open any graphical user interface windows using the Win32 APIs (this is not allowed for processes that are started by a system service).
+	              </ul>
+	            </p>
+</div>
+
+        <h2>Placeholders</h2>
+        <p>
+            For more information about the placeholders you can use, please see the Paessler Knowledge Base:
+            <a href="https://kb.paessler.com/en/topic/373?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb">What placeholders can I use with PRTG?</a>
+            .
+        </p>
+
+        <h2>PRTG Script World</h2>
+        <p>Find useful scripts for custom notifications in the PRTG Script World, written by dedicated PRTG customers around the world and Paessler!</p>
+        <ul>
+            <li><a href="https://www.paessler.com/script-world?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank">PRTG Script World</a></li>
+        </ul>
+
+        <h2>More Information</h2>
+        <p>
+            For more information about custom notifications, please see the
+            <a href="https://kb.paessler.com/en/tags/custom-notification/?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-kb">Paessler Knowledge Base, tag-set
+                "custom-notification"</a>
+            .
+        </p>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿  <form class="prtg-plugin prtg-form clusterselector prtg-box" data-plugin="prtg-form" style='<#clusterdependent showfor="clustertreeobject">'>
+    <fieldset>
+      <div class="control-group"  title="<#lang key="html.sensorgraph.clusterselector.help" default="PRTG can show sensor data from all of your cluster nodes in a combined view, or from a specific cluster node only. When showing data from another cluster node than the one you're currently logged in to, PRTG will query the necessary data on demand.">">
+        <label class="control-label has_help" for="" ><#lang key="html.sensorgraph.showdataof" default="Show Data Of"></label>
+        <div class="controls">
+          <input type="hidden" name="id" value="<#objectid>">
+          <input type="hidden" name="graphid" value="<#inserturlparam parameter='graphid'>">
+          <input type="hidden" name="columns" value="<#inserturlparam parameter='columns'>">
+          <#cluster type="list">
+        </div>
+      </div>
+    </fieldset>
+  </form>

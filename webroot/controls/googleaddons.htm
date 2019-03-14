@@ -1,0 +1,108 @@
+﻿<#lang key="html.downloads.help.titledn" default="Desktop Notifications" var="helptitle">
+<#lang key="html.downloads.help.textdn" default="Here you can allow desktop notifications to be shown if you are logged in to the PRTG web interface with your Chrome or Firefox browser. The notifications are displayed in the lower-right corner of your desktop whenever there are new alarms after a page refresh in the PRTG web interface.<br><br><a href='/help/chrome_desktop_notifications.htm' target='_blank'><b>Help: Desktop Notifications</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<div class="download-items">
+   <div class="download-item box">
+      <h2>
+         <#lang key="html.global.googleaddonsheader" default="Desktop Notifications">
+      </h2>
+      <div class="download-item-text">
+         <p>
+            <#lang key="html.downloads.google.desktopnotifications1" default="">
+            <span style="font-weight: bold;"><#lang key="html.downloads.googledesktopnoti.status.text" default="Status">: </span>
+            <span class="desktopNotificationStatus" style="font-weight: bold;"></span>
+         </p>
+         <br/>
+         <p id="googledesktopnotiactivatebuttonbox" style="display: none;">
+            <a class="actionbutton" href="#" id="googledesktopnotiactivatebutton"><#lang key="html.downloads.googledesktopnoti.enablebutton" default="Enable Desktop Notifications"> </a>
+         </p>
+
+         <div id="desktopNotificationAllowHelpChrome" style="display: none;">
+            <p><br/><#lang key="html.downloads.googledesktopnotichrome.enablemessage" default="On top of your Chrome browser window you see a dialog box that asks you to allow desktop notifications. <br><br>Click <b>Allow</b> to add the web interface's URL to the allowed sites."><br/><br/>
+                <div align="center">
+                  <img src="/images/desktopNotificationAllowHelpChrome_eng.png"/>
+                </div>
+            </p>
+         </div>
+         <div id="desktopNotificationAllowHelpFirefox" style="display: none;">
+            <p><br/><#lang key="html.downloads.googledesktopnotifirefox.enablemessage" default="On top of your Firefox browser window you see a dialog box that asks you to allow desktop notifications. <br><br>Click <b>Always Receive Notifications</b> to add the web interface's URL to the allowed sites."><br/><br/>
+                <div align="center">
+                  <img src="/images/desktopNotificationAllowHelpFirefox_eng.png"/>
+                </div>
+            </p>
+         </div>
+
+         <div id="googleaddonhelp">
+            <p>
+               <span style="color: #666">
+               <#lang key="html.downloads.googledesktopnoti.text2" default="Desktop notifications will appear whenever there are new alarms after a page refresh (by default, in the lower right corner of your desktop)."><br/>
+               <#lang key="html.downloads.googledesktopnoti.text3" default="The notification will display the number of new alarms and the current number of each sensor status.">
+            </p>
+         </div>
+      </div>
+      <div class="download-item-image desktop-notification">
+         <img src="/images/chromedesktopnotifihelp2.png"/>
+      </div>
+   </div>
+</div>
+
+<script type="text/javascript">
+   $(".desktopNotificationStatus").html(function ()
+   {
+      if (Notification.permission === "granted")
+      {
+         $(".desktopNotificationStatus").text('<#langjs key="html.downloads.googledesktopnoti.statustext1." default="Desktop Notifications enabled">')
+         .css("color", "green");
+         $("#googledesktopnotiactivatebuttonbox").hide();
+      }
+      else if(Notification.permission !== 'denied')
+      {
+         $(".desktopNotificationStatus").text('<#langjs key="html.downloads.googledesktopnoti.status.allowedenable1" default="Click button below to enable Desktop Notifications">')
+         .css("color", "212C52");
+         $("#googledesktopnotiactivatebuttonbox").show();
+      }
+      else
+      {
+         $(".desktopNotificationStatus").text('<#langjs key="html.downloads.googledesktopnoti.status.unknown1" default="Unknown">')
+         .css("color", "grey");
+         $("#googledesktopnotiactivatebuttonbox").hide();
+      }
+   });
+
+   $(".download-item-text").on('click', '#googledesktopnotiactivatebutton', function(){
+      SetPermission();
+   });
+
+   function SetPermission()
+   {
+      /* show the help-picture */
+      <#system type="browserdependent" browsertype="Firefox/" aboveversion="1" browsercontent="$('#desktopNotificationAllowHelpFirefox').show('highlight',3500);">
+      <#system type="browserdependent" browsertype="Chrome/" aboveversion="1" browsercontent="$('#desktopNotificationAllowHelpChrome').show('highlight',3500);">
+
+      Notification.requestPermission(function (permission)
+      {
+         ShowNotification(permission);
+      });
+   }
+
+   function ShowNotification(permission)
+   {
+      // Whatever the user answers, we make sure we store the information
+      if(!('permission' in Notification)) {
+         Notification.permission = permission;
+      }
+
+      // If the user is okay, let's create a notification
+      if (permission === "granted")
+      {
+         var options = {
+            icon: "/icons/led_red_big.png"
+         };
+         var notification = new Notification("Desktop Notifications are activated", options);
+         $(".desktopNotificationStatus").text('<#langjs key="html.downloads.googledesktopnoti.statustext1." default="Desktop Notifications enabled">')
+         .css("color", "green");
+         $("#googledesktopnotiactivatebuttonbox").hide('blind',1000);
+      }
+   }
+</script>

@@ -1,0 +1,11 @@
+﻿<#checkobjecttype objecttype="group,probenode,device">
+<#lang key="html.googlemap.title" default="Geo Map" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="screenshot">
+	<div class="tabs-container" style="position: relative">
+		<div id="geomap_screenshot" class="refreshable geomap <#selectionlist content="geomapprovider">" style="width:<#inserturlparam parameter="width">px;height:<#inserturlparam parameter="height">px;">
+			<#selectionlist content="locationlist" width="640" height="640" maxlegenditems="50" domobjectid="geomap_screenshot">
+		</div>
+  </div>
+<#include file="includes\htmlfooter.htm" ajax="exclude">

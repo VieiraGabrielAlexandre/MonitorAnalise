@@ -1,0 +1,165 @@
+﻿<#checkobjecttype objecttype="sensor">
+<div id="sensordata" class="refreshable" refreshurl="/controls/sensordata.htm?id=<#objectid>">
+<div class="sensoroverviewtopcell">
+	<table>
+	  <tbody>
+	    <tr class="even">
+	      <td colspan="3" >
+		  	<#objectstatus name="probe" show="htmllong">
+		  </td>
+		</tr>
+	    <tr class="even">
+	    	<td style="width:20px">&nbsp;</td>
+		    <td colspan="2" >
+		  		<#objectproperty name="ParentGroup" show="linklong">
+		  	</td>
+		</tr>
+	    <tr class="even">
+	    	<td style="width:20px">&nbsp;</td>
+	    	<td style="width:20px">&nbsp;</td>
+		    <td colspan="1" style="width:90%">
+		  		<#objectproperty  name="ParentDevice" show="linklong">
+		  	</td>
+		</tr>
+	</tbody>
+	</table>
+
+</div>
+
+	<table class="table" id="objectoverview">
+		<thead>
+			<td id="objectoverviewcentername" colspan="2" class="<#sensor type="colorclassofstate" prefix="sensordata_">"><div id="bigsensorname"><div class="bigsensoricon"></div><#objectproperty name="Name" show="text"></div></td>
+
+
+		</thead>
+		<tr>
+			<td colspan="2">
+				<div id="bigsensorname"><div class="bigsensoricon"></div><#objectproperty name="Name" show="text"></div>
+			</td>
+		</tr>
+		<tr style="<#clusterdependent hidefor='clustertreeobject'>">
+			<td colspan="2">
+				<#lang key="html.sensordata.lastmessage" default="Last Message:"><br>
+				<div class="sensorstatusmessage"><b><#objectstatus name="message"></b></div>
+			</td>
+		</tr>
+
+	<tr>
+	    <td rowspan="2" id="objectoverviewleft" class="x<#sensor type="colorclassofstate" prefix="sensordata_">">
+	    	<table>
+				<tr style="<#clusterdependent hidefor='clustertreeobject'>">
+					<td colspan="2">
+						<#lang key="html.sensordata.lastmessage" default="Last Message:"><br>
+						<div class="sensorstatusmessage"><b><#objectstatus name="message"></b></div>
+					</td>
+				</tr>
+				<tr style="<#clusterdependent hidefor='clustertreeobject'>">
+					<td colspan="2" title="Click to set priority and/or favorite status">
+				    	<p><#objectstatus  name="favorite"> <#objectstatus  name="priority"></p>
+					</td>
+				</tr>
+				<tr style="<#clusterdependent hidefor='clustertreeobject'>">
+					<td colspan="2">
+						<#objectstatus name="type" var="sensortype">
+						<#objectid var="objectid">
+						<#objectstatus name="interval" var="interval">
+						<p><#lang key="html.sensordata.sensortyperunningevery" default="<b>@sensortype sensor</b> (#@objectid) running <nobr>every <b>@interval</b></nobr>"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+				<table width="100%">
+					<tr>
+						<td style="<#clusterdependent hidefor='clustertreeobject'>">
+							<#lang key="html.sensorstatusdata.lastscan" default="Last Scan">:
+						</td>
+						<td>
+							<#lang key="html.sensorstatusdata.uptimecoverage2" default="Coverage">:
+						</td>
+					</tr>
+					<tr>
+						<td style="<#clusterdependent hidefor='clustertreeobject'>">
+							<b><#objectstatus name="lastcheck" show="htmllong"></b>
+						</td>
+						<td title="<#objectstatus name="knowntime" show="htmllong"> of <#objectstatus name="cumsince" show="textshort"> since <#objectstatus name="cumsince" show="htmllong">">
+							<b><#objectstatus name="knowntime" show="textshort"></b>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<#lang key="html.sensorstatusdata.lastup" default="Last Up">:
+						</td>
+						<td>
+							<#lang key="html.sensorstatusdata.lastdown" default="Last Down">:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b><#objectstatus name="lastup" show="htmllong"></b>
+						</td>
+						<td>
+							<b><#objectstatus name="lastdown" show="htmllong"></b>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<#lang key="html.global.uptime" default="Uptime">:
+						</td>
+						<td>
+							<#lang key="html.global.downtime" default="Downtime">:
+						</td>
+					</tr>
+					<tr>
+						<td title="<#objectstatus name="uptimetime">">
+							<b><#objectstatus name="uptime"></b>
+						</td>
+						<td title="<#objectstatus name="downtimetime">">
+							<b><#objectstatus name="downtime"></b>
+						</td>
+					</tr>
+		    	</table>
+				</td>
+				</tr>
+	    	</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="objectoverviewcenter">
+				<div style="<#clusterdependent hidefor='clustertreeobject'>" id="channelvalues"></div>
+				<br style="clear:both;<#clusterdependent hidefor='clustertreeobject'>">
+				<div id="overviewshowtablelink" style="<#clusterdependent hidefor='clustertreeobject'>" title="<#lang key="html.global.showchanneltable" default="Show Channel Data Table">"><a href="#" onclick="$('#displaytable').show();$(this).hide();return(false)"><span class='glyph-document-history'></span></a></div>
+
+				<h2 style="<#clusterdependent showfor='clustertreeobject'>">
+					<#lang key="html.sensoroverview.clusterstatus2" default="Sensor Status (per Cluster Member)" var="title">
+				</h2>
+				<div style="<#clusterdependent showfor='clustertreeobject'>" class="prtg-plugin" data-plugin="prtg-table">
+					<#table skiptagfornonclusterobject="true" varexpand="tabletitle" tabletitle="@title" tableid="clustertable" content="clustervalues" columns="clusternode,status,lastvalue,message" sortby="member" sortable="false" links="false" refreshable="true">
+				</div>
+
+				<#lang key="html.sensoroverview.channels" default="Channels" var="title">
+				<#cluster skiptagfornonclusterobject="true" type="state" var="title2">
+
+				<div id="displaytable" style="<#clusterdependent showfor='clustertreeobject'>">
+					<div class="prtg-plugin" data-plugin="prtg-table">
+						<#table skiptagforclusterobject="true" tableid="channeldisplaytable" content="channels" columns="name,objid,lastvalue_,minimum,maximum" varexpand="tabletitle" tabletitle="@title @title2" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+					</div>
+					<div class="prtg-plugin" data-plugin="prtg-table">
+						<#table skiptagfornonclusterobject="true" tableid="channeldisplaytablecluster" content="channels" columns="name,lastvalue_" varexpand="tabletitle" tabletitle="@title @title2" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+					</div>
+				</div>
+				<br style="clear:both;">
+			</div>
+		</td>
+	</tr>
+	</table>
+</div>
+

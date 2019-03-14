@@ -1,0 +1,30 @@
+﻿<#system type="denyreadonlyusers">
+<#countobj var="objectcount">
+<div id="content" class="ui-dialog-content">
+	<form id="deleteobjectsform" action="/deleteobject.htm" class="prtg-form" title='<#lang key="html.deleteobjects.head" default="Delete Objects">'>
+		<h2><#lang key="html.deleteobject.pleaseapprove" default="Please Approve"></h2>
+      <p style="padding-left:5px">
+        <#lang key="html.deleteobjects.areyousure" default="Are you sure you want to delete @objectcount objects?">
+      </p>
+		<fieldset>
+			<legend></legend>
+			<div class="control-group">
+				<label for="" class="control-label no_help"><#lang key="html.objects.selected" default="Selected Objects"></label>
+				<div class="controls">
+		    	<div>
+						<p id="objlist">
+							<#listobj>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+		</fieldset>
+    <div class="submitbuttonboxanchor">
+      <div class="submitbuttonbox">
+        <input style="<#system type='hideforreadonlyusers'>" class="submit btngrey button" type="submit" name="button2" onclick="window.location='/deleteobject.htm?id=<#objectid>&approve=1';return(false)" value="<#lang key="html.global.deleteitmulti" default="Delete Objects">">
+        <input class="cancel btngrey button" type="reset"  name="button1" onClick="history.back();return(false)" value="<#lang key="html.global.no2multi" default="No, I do not want to delete these objects">">
+      </div>
+    </div>
+	</form>
+</div>

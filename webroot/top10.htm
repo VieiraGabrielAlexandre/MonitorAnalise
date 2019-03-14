@@ -1,0 +1,32 @@
+﻿<#lang key="html.top10.title" default="Top 10" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)">
+<div class="top10-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content">
+    <h1 class="sitecaption"><#lang key="html.global.top10" default="Top 10"></b> <#objectproperty name="name"></h1>
+		<wingui-hidden>
+			<div class="buttonbox normalpage top10-header-links">
+				<#include file="includes\linkpagebutton.htm">
+			</div>
+		</wingui-hidden>
+    <div>
+    	<wingui>
+			<#include file="controls\winguitop10listcontent.htm">
+		</wingui>
+		<wingui-hidden>
+			<#include file="controls\top10listcontent.htm">
+		</wingui-hidden>
+    </div>
+	</div>
+<#lang key="html.top10.help.title" default="Sensor Charts" var="helptitle">
+<#lang key="html.top10.help.text" default="This page shows lists with the top 10 sensors in your network sorted by various parameters. Only currently active sensors are shown in these lists, paused sensors are not shown. Note: Sensors will show on both lists (left and right) if there are less than 20 sensors per category." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

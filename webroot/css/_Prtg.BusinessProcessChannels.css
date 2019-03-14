@@ -1,0 +1,74 @@
+﻿table.businessprocessdefinitions{
+  border-spacing: 3px 6px;
+  border-collapse: separate;
+  background-color: white;
+  width: 100%;
+  table-layout: fixed;
+}
+table.businessprocessdefinitions th{
+  border-spacing: 0;
+  font-family: "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+}
+table.businessprocessdefinitions td{
+  background-color: <#colorcode color="lightgray">;
+}
+table.businessprocessdefinitions tbody{
+  vertical-align: top;
+}
+table.businessprocessdefinitions tbody ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+table.businessprocessdefinitions tbody ul li{
+  float: left;
+  margin: 3px;
+}
+table.businessprocessdefinitions tbody a{
+  background-color: transparent;
+}
+table.businessprocessdefinitions tbody li span{
+  background-color: white;
+  margin: 0;
+  border: 1px solid #c1c2c3;
+  padding: 1px 1px 1px 3.5ex;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-size: 16px 100%;
+}
+table.businessprocessdefinitions i.ui-icon-close{
+  height: 13px;
+}
+table.businessprocessdefinitions tbody li input{
+  width: 15em;
+  padding: 1px;
+  font-size: 11px;
+  background-color: white;
+}
+table.businessprocessdefinitions i.ui-icon-close:hover{
+  background-image: url(images/ui-icons_cd0a0a_256x240.png);
+}
+table.businessprocessdefinitions tbody tr td:last-child{
+  vertical-align: bottom;
+}
+table.businessprocessdefinitions col.channelname{
+  width: 11em;
+}
+table.businessprocessdefinitions col.threshholds{
+  width: 5em;
+}
+table.businessprocessdefinitions col.buttons{
+  width: 0;
+}
+table.businessprocessdefinitions td .ui-icon-circle-plus{
+  margin-left: -22px
+}
+.prtg-form fieldset table.businessprocessdefinitions input{
+  border: none;
+}
+.prtg-form fieldset table.businessprocessdefinitions input[disabled]{
+  color: rgb(169,169,169);
+}

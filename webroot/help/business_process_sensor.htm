@@ -1,0 +1,485 @@
+﻿<!--Business Process Sensor-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="amazon_cloudwatch_sqs_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="cisco_ip_sla_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Business Process Sensor</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Business Process Sensor</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Business Process sensor is a powerful and very flexible sensor that allows you to give a summary status of whole business processes while monitoring several process components.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">This means that you can create your very own and individual sensor with channels based on data from other sensors (&quot;source sensors&quot;) that are specific to your network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The sensor can show the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The summarized status of the objects contained in each channel according to the individually defined error and warning thresholds</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The overall and summarized status of all channels in the Global State channel</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The Business Process sensor does not show values in the &quot;Downtime&quot; channel because they cannot be calculated for this sensor type.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you want to process values from other sensors and you want to perform calculations with these values, for example, use the <span style="font-weight: bold;"><a href="sensor_factory_sensor.htm" class="topiclink">Sensor Factory Sensor</a></span> instead.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Which channels the sensor actually shows might depend on the monitored device and the sensor setup.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:599px"><a href="business_process.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Business Process Sensor" title="Business Process Sensor" style="width:599px;height:343px;border:none" src="business_process_zoom67.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Business Process Sensor</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="lang" class="hmanchor"></a><span class="f_InTopicHeading">Sensor in Other Languages</span></p>
+<p style="page-break-inside: auto; margin: 0px 0px 13px 0px;">Dutch: <span style="font-weight: bold;">Bedrijfs Proces</span>, French: <span style="font-weight: bold;">Processus métier</span>, German: <span style="font-weight: bold;">Business Process</span>, Japanese:<span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif;"> </span><span style="font-family: 'MS Gothic'; font-weight: bold;">ビジネスプロセス</span>, Portuguese:<span style="font-size: 11pt;"> </span><span style="font-weight: bold;">Processo de Negócio</span>, Russian: <span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">Бизнес</span><span style="font-weight: bold;">-</span><span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">процесс</span>, Simplified Chinese: <span style="font-family: 'Microsoft JhengHei'; font-weight: bold;">业务进程</span>, Spanish: <span style="font-weight: bold;">Proceso commercial</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: </span><span class="f_ListBulleted"><a href="http://kb.paessler.com/en/topic/66647" target="_blank" class="weblink">How does the Business Process sensor calculate summarized sensor states?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">This sensor <a href="business_process_sensor.htm#limit" class="topiclink">does not support more than 50 channels</a> officially.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">This sensor type uses lookups to determine the status values of one or more sensor channels. This means that possible states are defined in a lookup file. You can change the behavior of a channel by editing the lookup file that this channel uses. For details, see the manual section </span><span class="f_BoldCustom"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span><span class="f_Remarks">.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limit" class="hmanchor"></a><span class="f_InTopicHeading">Limited to 50 Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>PRTG does not support more than 50 sensor channels officially. Depending on the data used with this sensor type, you might exceed the maximum number of supported sensor channels. In this case, PRTG will try to display all sensor channels. However, please be aware that you will experience limited usability and performance.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Add Sensor</span> dialog appears when you <a href="add_a_sensor.htm" class="topiclink">manually</a> add a new sensor to a device. It only shows the setting fields that are required for creating the sensor. Therefore, you will not see all setting fields in this dialog. You can change (nearly) all settings in the sensor's <span class="f_BoldCustom">Settings</span> tab later.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the details page of a sensor, click the <span class="f_BoldCustom">Settings </span>tab to change its settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Usually, a sensor connects to the <span class="f_BoldCustom">IP Address </span>or <span class="f_BoldCustom">DNS Name </span>of the parent device where you created this sensor. See the <span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span> for details. For some sensor types, you can define the monitoring target explicitly in the sensor settings. Please see below for details on available settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Sensor Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the sensor. By default, PRTG shows this name in the <a href="general_layout.htm#tree" class="topiclink">device tree</a>, as well as in <a href="alarms.htm" class="topiclink">alarms</a>, <a href="logs.htm" class="topiclink">logs</a>, <a href="notifications.htm" class="topiclink">notifications</a>, <a href="reports.htm" class="topiclink">reports</a>, <a href="maps.htm" class="topiclink">maps</a>, <a href="libraries.htm" class="topiclink">libraries</a>, and <a href="tickets.htm" class="topiclink">tickets</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Parent Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> that this sensor <a href="tags.htm#tags_inherited" class="topiclink">inherits</a> from its <a href="object_hierarchy.htm" class="topiclink">parent device, group, and probe</a>. This setting is shown for your information only and cannot be changed here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted">, separated by spaces or commas. You can use tags to group sensors and use tag–filtered views later on. Tags are not case sensitive. We recommend that you use the default value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can add additional tags to the sensor if you like. Other tags are automatically <a href="tags.htm#tags_inherited" class="topiclink">inherited</a> from objects further up in the device tree. These are visible above as </span><span class="f_BoldCustom">Parent Tags</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a priority for the sensor. This setting determines where the sensor is placed in sensor lists. Top priority is at the top of a list. Choose from one star (low priority) to five stars (top priority).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="businessprocessspecific" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Business Process Specific Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the channel. To add a new channel to the sensor, click the </span><span class="f_BoldCustom">Enter Channel Name</span><span class="f_ListBulleted"> field, enter a name for the channel, and confirm with the </span><span class="f_ItalicCustom">enter</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">tab</span><span class="f_ListBulleted"> key. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">It might take several sensor scans until new channel names or changes to existing channel names become visible.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Error Threshold %</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Set a percentage limit to define when the sensor channel displays a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status. Please enter an integer value. Default is </span><span class="f_ItalicCustom">50%</span><span class="f_ListBulleted">. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This value depends on how many objects you feed into a business process channel.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a channel contains less source objects in &quot;up&quot; condition than the error threshold defines, this channel and the </span><span class="f_BoldCustom">Global State</span><span class="f_ListBulleted"> channel of the Business Process sensor will show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span><span class="f_ListBulleted"> that allow for the &quot;up&quot; condition </span><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">of a Business Process channel are the following:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Up</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Warning</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Unusual</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Partial Down</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All other sensor states will support the &quot;down&quot; condition </span><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">(see the table below).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, if you define 4 source sensors for a channel, an error threshold of 50% means that 3 source sensors have to be in &quot;down&quot; condition to set this channel to a </span><span class="f_ListBulleted" style="font-weight: bold;">Down</span><span class="f_ListBulleted"> status. So, 50% means that more than half of the source sensors must not be in &quot;up&quot; condition to set the sensor to </span><span class="f_ListBulleted" style="font-weight: bold;">Down</span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For more information, an illustration of the business process mechanisms, and some use cases of the Business Process sensor, see the table <a href="business_process_sensor.htm#businessprocessconditions" class="topiclink">below</a> and this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/67109" target="_blank" class="weblink">How can I use the Business Process sensor?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Warning Threshold %</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Set a percentage limit to define when the sensor channel displays a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Please enter an integer value. Default is </span><span class="f_ItalicCustom">75%</span><span class="f_ListBulleted">. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This value depends on how many objects you feed into a business process channel.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a channel contains less source objects in &quot;up&quot; condition than the threshold defines, this channel and the </span><span class="f_BoldCustom">Global State</span><span class="f_ListBulleted"> channel of the Business Process sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status (and so the sensor status is </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span><span class="f_ListBulleted"> that allow for the &quot;up&quot; condition </span><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">of a Business Process channel are the following:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Up</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Warning</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Unusual</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Partial Down</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All other sensor states will support the &quot;down&quot; condition </span><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/><span class="f_ListBulleted">(see the table below).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, if you define 4 source sensors for a channel, a warning threshold of 75% means that all 4 source sensors have to be in &quot;down&quot; condition to set this channel to a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. So, 75% means that more than three out of four of the source sensors must not be in &quot;up&quot; condition to set the sensor to </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For more information, an illustration of the business process mechanisms, and some use cases of the Business Process sensor, see the table <a href="business_process_sensor.htm#businessprocessconditions" class="topiclink">below</a> and this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/67109" target="_blank" class="weblink">How can I use the Business Process sensor?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Objects</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the objects you want to have in a channel using the </span><span class="f_ItalicCustom">+</span><span class="f_ListBulleted"> sign. This way, you can choose the desired objects from the device tree with the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="object_selector.htm" class="topiclink">Object Selector</a></span><span class="f_ListBulleted">. You can also start typing the object's ID, name, or a tag. PRTG then suggests the possible objects to be selected.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can add sensors, devices, groups, and probes to a channel. Each object you add is weighted equally, no matter if it is a single sensor or a whole device with many sensors. To give more weight to a specific object, add it several times. For example, add it twice to give double weight to an object, add it three times to give it triple weight.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">A probe, group, or device is as long in &quot;up&quot; condition </span><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/><span class="f_ListBulleted"> as it does not contain any sensors in &quot;down&quot; condition </span><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="businessprocessconditions" class="hmanchor"></a><span class="f_BoldCustom">Up and Down Conditions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Business Process</span> Up <img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/><span class="f_ImageCaption"> </span>and Down <img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/> <span class="f_BoldCustom">conditions</span> are different from the normal PRTG up and down <span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span>. This is necessary for the Business Process sensor to be able to calculate summarized states and to show a calculated result for a whole business process. This table illustrates which sensor status leads to which Business Process condition.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="4" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">The Relation Between Object States And Business Process Conditions</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Channel Object Status</span></p>
+</td>
+<td colspan="2" style="vertical-align:top; width:223px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Business Process Condition</span></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Reason: Why does a given sensor status correspond to a given Business Process condition?</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_green_big" width="19" height="19" style="margin:0;width:19px;height:19px;border:none" src="led_green_big.png"/><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_ListBulleted">Up</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up </span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The monitored object works, so everything is fine.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_yellow_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_yellow_big.png"/><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_ListBulleted">Warning</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up </span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor may show a warning, but the monitored object still works.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon_green-red" width="19" height="19" style="margin:0;width:19px;height:19px;border:none" src="icon_green-red.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">Partial Down</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This status is available in a cluster setup and is displayed if at least one cluster node reports the sensor as up and at least one cluster node reports it as down. With at least one up report, the monitored object is supposed to be working and meets the business process up condition.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_orange_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_orange_big.png"/><span class="f_ListBulleted"> Unusual</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor may show unusual values, but the monitored object works.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_grey_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_grey_big.png"/><span class="f_ListBulleted"> Collecting</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-up-full" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-up-full.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor still waits for more monitoring data to definitely decide about the sensor status, but so far the monitored object works. This PRTG internal status is visualized as Unknown in the PRTG web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_red_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_red_big.png"/><span class="f_ListBulleted"> Down</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The monitored object does not work.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_grey_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_grey_big.png"/><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_ListBulleted">Unknown</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor does not know if the monitored object works, for example because it has not yet received any data or because it has not received any data for a certain amount of time.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_grey_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_grey_big.png"/><span class="f_ListBulleted"> None</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The sensor has not yet received any monitoring data from the monitored object. This PRTG internal status is visualized as Unknown in the PRTG web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_blue_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_blue_big.png"/><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_ListBulleted">Paused</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The monitored object does not work and monitoring has been paused, for example actively by the user, by inheritance, or by executed schedules. It might be convenient to exclude regularly or frequently paused objects from your business process monitoring, so you do not give more weight than necessary to a Business Process down status because of issues you already know about.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_redok_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_redok_big.png"/><span class="f_ListBulleted"> Down Acknowledged</span></p>
+</td>
+<td style="vertical-align:top; width:53px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+<td style="vertical-align:top; width:147px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-arrow-blue-down" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-arrow-blue-down.png"/></p>
+</td>
+<td style="vertical-align:top; width:709px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The monitored object does not work and someone already knows.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you encounter issues with your Business Process sensor and want to <a href="support_contact_support.htm" class="topiclink">contact our support team</a>, please send us your exact configuration. It helps us find the cause more easily and quickly. Click the little clipboard icon in the upper-right of the <span class="f_BoldCustom">Business Process Specific Settings</span> table to copy your configuration:</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:599px"><a href="business_process_sensor_clipboard-m.png"><img id="TOGGLE0186A2" class="image-toggle" alt="The Business Process Sensor Configuration Clipboard" title="The Business Process Sensor Configuration Clipboard" style="width:599px;height:309px;border:none" src="business_process_sensor_clipboard-m_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">The Business Process Sensor Configuration Clipboard</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You find your configuration in the window that opens. Copy the marked text and paste it into the <a href="support_contact_support.htm" class="topiclink">support form</a> to send it our support team.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="channelgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor Display</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Primary Channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select a channel from the list to define it as the primary channel. In the device tree, the last value of the primary channel will always be displayed below the sensor's name. The available options depend on what channels are available for this sensor. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">You can set another primary channel later by clicking the pin symbol of a channel in the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_Comment"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how different channels will be shown for this sensor.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show channels independently (default)</span><span class="f_ListBulleted">: Show an own graph for each channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Stack channels on top of each other</span><span class="f_ListBulleted">: Stack channels on top of each other to create a multi-channel graph. This will generate an easy-to-read graph that visualizes the different components of your total traffic. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This option cannot be used in combination with manual </span><span class="f_ItalicCustom">Vertical Axis Scaling</span><span class="f_ListBulleted"> (available in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted"> settings).</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Stack Unit</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if stacked graphs are selected above. Choose a unit from the list. All channels with this unit will be stacked on top of each other. By default, you cannot exclude single channels from stacking if they use the selected unit. However, there is an advanced procedure to do so.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inherited" class="hmanchor"></a><span class="f_InTopicHeading">Inherited Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, all following settings are inherited from objects higher in the hierarchy and should be changed there, if necessary. Often, best practice is to change them centrally in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span>group's settings, see section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information. To change a setting only for this object, disable inheritance by clicking the button next to <span class="f_ItalicCustom">inherit from</span> under the corresponding setting name. You will then see the options described below. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="intervalgroup" class="hmanchor"></a><a id="scanning" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scanning Interval</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a scanning interval (seconds, minutes, or hours) from the list. The scanning interval determines the time the sensor waits between two scans. You can change the available intervals in the <a href="monitoring_settings.htm#scanning-intervals" class="topiclink">system administration</a> on PRTG on premises installations.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Query Fails</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the number of scanning intervals that a sensor has time to reach and check a device again in case a sensor query fails. The sensor can try to re-reach and check a device several times, depending on the option you select here, before it will be set to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. This helps you avoid false alarms if the monitored device has only temporary issues. For previous scanning intervals with failed requests, the sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to down immediately</span><span class="f_ListBulleted">: The sensor will show an error immediately after the first failed request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 1 interval, then set to down (recommended)</span><span class="f_ListBulleted">: After the first failed request, the sensor will show a yellow warning status. If the following request also fails, the sensor will show an error.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 2 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after three consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 3 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after four consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 4 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after five consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 5 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after six consecutively failed requests.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensors that monitor via Windows Management Instrumentation (WMI) always wait at least one scanning interval until they show an error. It is not possible to set a WMI sensor to </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> immediately, so the first option will not apply to these sensor types. All other options can apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a sensor has defined error limits for channels, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; option will apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a channel uses <a href="define_lookups.htm" class="topiclink">lookup</a> values, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; options will apply.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="scheduledependency" class="hmanchor"></a><a id="schedules" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Schedules, Dependencies, and Maintenance Window</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Inheritance for schedules, dependencies, and maintenance windows cannot be interrupted. The corresponding settings from the parent objects will always be active. However, you can define additional settings here. They will be active at the same time as the parent objects' settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a schedule from the list. Schedules can be used to monitor for a certain time span (days, hours) every week. With the period list option it is also possible to pause monitoring for a specific time span. You can create new schedules and edit existing ones in the <a href="notifications_settings.htm" class="topiclink">account settings</a>. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Schedules are generally inherited. New schedules will be added to existing ones, so all schedules are active at the same time.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Window</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Specify if you want to set up a one-time maintenance window. During a &quot;maintenance window&quot; period, this object and all child objects will not be monitored. They will be in a paused state instead. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not set (monitor continuously)</span><span class="f_ListBulleted">: No maintenance window will be set and monitoring will always be active.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set up a one-time maintenance window</span><span class="f_ListBulleted">: Pause monitoring within a maintenance window. You can define a time span for a monitoring pause below and change it even for a currently running maintenance window.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To terminate a current maintenance window before the defined end date, change the time entry in </span><span class="f_ListBulleted" style="font-weight: bold;">Maintenance Ends</span><span class="f_ListBulleted"> field to a date in the past.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Begins</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the start date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Ends </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the end date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a dependency type. Dependencies can be used to pause monitoring for an object depending on the status of another. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use parent</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Additionally, pause the current sensor if a specific other object in the device tree is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Select below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">: Make this sensor the master object for its parent device. The sensor will influence the behavior of the device, where it is created on: If the sensor is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, the device will be paused. For example, it is a good idea to make a Ping sensor the master object for its parent device to pause monitoring for all other sensors on the device in case the device cannot even be pinged. Additionally, the sensor will be paused if the parent group of its parent device is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or if it is paused by another dependency.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Testing your dependencies is easy! Simply choose </span><span class="f_BoldCustom">Simulate Error Status</span><span class="f_ListBulleted"> from the context menu of an object that other objects depend on. A few seconds later all dependent objects should be paused. You can <a href="show_dependencies.htm" class="topiclink">check all dependencies</a> in your PRTG installation by selecting </span><span class="f_BoldCustom">Devices | Dependencies</span><span class="f_ListBulleted"> from the main menu bar.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if the </span><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted"> option is enabled above. Click on the reading-glasses and use the <a href="object_selector.htm" class="topiclink">object selector</a> to choose an object on which the current sensor will depend.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Delay (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a time span in seconds for a dependency delay. After the master object for this dependency goes back to </span><span class="f_BoldCustom">Up </span><span class="f_ListBulleted">status, PRTG will start monitoring the depending objects after this extra delayed. This can help to avoid false alarms, for example, after a server restart, by giving systems more time for all services to start up. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This setting is not available if you choose this sensor to </span><span class="f_ListBulleted" style="font-weight: bold;">Use parent</span><span class="f_ListBulleted"> or to be the </span><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">. In this case, please define delays in the parent </span><span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span><span class="f_ListBulleted"> or in the superior </span><span class="f_BoldCustom"><a href="group_settings.htm" class="topiclink">Group Settings</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How does the Business Process sensor calculate summarized sensor states?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/66647" target="_blank" class="weblink">https://kb.paessler.com/en/topic/66647</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I use the Business Process sensor?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/67109" target="_blank" class="weblink">https://kb.paessler.com/en/topic/67109</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channels" class="hmanchor"></a><span class="f_InTopicHeading">Edit Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change display settings, spike filter, and limits, switch to the sensor's <span class="f_BoldCustom">Overview</span> tab and click the gear icon of a specific channel. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Notification Triggers</span> tab to change notification triggers. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For more general information about settings, see the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+<span class="f_InTopicHeading">&nbsp;</span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="amazon_cloudwatch_sqs_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="cisco_ip_sla_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

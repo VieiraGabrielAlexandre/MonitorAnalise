@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.Synology.RaidStatus" desiredValue="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+      <SingleInt state="Ok" value="1">
+        Normal
+      </SingleInt>
+      <SingleInt state="Warning" value="2">
+        Repairing
+      </SingleInt>
+      <SingleInt state="Warning" value="3">
+        Migrating
+      </SingleInt>
+      <SingleInt state="Warning" value="4">
+        Expanding
+      </SingleInt>
+      <SingleInt state="Error" value="5">
+        Deleting
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Creating
+      </SingleInt>
+      <SingleInt state="Warning" value="7">
+        RaidSyncing
+      </SingleInt>
+      <SingleInt state="Ok" value="8">
+        RaidParityChecking
+      </SingleInt>
+      <SingleInt state="Warning" value="9">
+        RaidAssembling
+      </SingleInt>
+      <SingleInt state="Error" value="10">
+        Canceling
+      </SingleInt>
+      <SingleInt state="Error" value="11">
+        Degrade
+      </SingleInt>
+      <SingleInt state="Error" value="12">
+        Crashed
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

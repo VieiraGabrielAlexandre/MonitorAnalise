@@ -1,0 +1,30 @@
+﻿<#system type="searchtext" var="searchtext">
+<#system type="searchtype" var="searchtype">
+<#lang key="html.searchdetailed.found5" default="@searchtype Matching Search String @searchtext:" var="found">
+<#lang key="html.searchdetailed.nonefound2" default="Sorry, no @searchtype found for your search" var="nonefound">
+
+<#inserturlparam parameter='searchtype' var="searchtype2">
+<#if value="@searchtype2" is="device" then="device,group,probe,checkbox" else="name,checkbox" varexpand="value" var="columns">
+<#if value="@searchtype2" is="device" then="edit,discover,delete,scan,pause" else="edit,delete" varexpand="value" var="tools">
+
+<#if value="@searchtype2" is="group" then="group,probe,checkbox" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="group" then="edit,delete,scan,pause" else="@tools" varexpand="value,else" var="tools">
+
+<#if value="@searchtype2" is="probenode" then="name,checkbox" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="probenode" then="edit,delete,scan,pause" else="@tools" varexpand="value,else" var="tools">
+
+<#if value="@searchtype2" is="sensor" then="name,probegroupdevice,status,lastvalue,message,checkbox" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="sensor" then="edit,delete,scan,pause" else="@tools" varexpand="value,else" var="tools">
+
+<#if value="@searchtype2" is="library" then="name,library,checkbox" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="library" then="edit,delete" else="@tools" varexpand="value,else" var="tools">
+
+<#if value="@searchtype2" is="notification" then="name,checkbox" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="notification" then="edit,delete,pause" else="@tools" varexpand="value,else" var="tools">
+
+<#if value="@searchtype2" is="ticket" then="datetime,priority,parentid,message,user,status,name" else="@columns" varexpand="value,else" var="columns">
+<#if value="@searchtype2" is="ticket" then="" else="@tools" varexpand="value,else" var="tools">
+
+<div class="prtg-plugin" data-plugin="prtg-table">
+	<#search refreshable="true" links="true" tableid="searchresult_all" varexpand="tabletitle,nonefound,columns,tools" tabletitle="@found" nonefound="@nonefound" columns="@columns" tools="@tools" maxcount="10000">
+</div>

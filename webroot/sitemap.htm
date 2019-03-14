@@ -1,0 +1,51 @@
+﻿<#lang key="html.sitemap.title" default="Sitemap" var="pagetitle">
+<#include file="includes\htmlheader.htm"  bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+    <h1 class="sitecaption"><#lang key="html.sitemap.head" default="Sitemap"></h1>
+    <div class="buttonbox normalpage">
+      <#include file="includes\linkpagebutton.htm">
+    </div>
+    <div class="tabs-container">
+        <#include file="controls\sitemap.htm">
+    </div>
+  </div>
+  <script>
+	$("#sitemaplist #sensorsmenuitem").detach().prependTo("#sitemaplist"); // sensors menu is largest, let's move it first.
+	$("#sitemaplist #sensorsmenuitem>ul>li").addClass("sensormenuitems");
+
+	var target=$("#sitemaplist #sensorsmenuitem>ul").eq(0);
+
+	$("#sitemaplist #sensorsmenuitem>ul>li").each( // sort sensormenuitems by size, largest first
+	function() {
+		if ($(this).text().length>$("#sitemaplist #sensorsmenuitem>ul>li").eq(0).text().length) {
+			$(this).detach().prependTo($(target));
+		}
+	});
+
+	$(function(){
+	  $("#sitemaplist #sensorsmenuitem>ul").eq(0).masonry({
+	    // options
+	    itemSelector : '.sensormenuitems',
+	    columnWidth : 160
+	  });
+	  $('#sitemaplist').masonry({
+	    // options
+	    itemSelector : '#sitemaplist>li',
+	    columnWidth : 170
+	  });
+	});
+      $(window).on("resize", function(ev) {
+      $('#sitemaplist').masonry('reload')
+    });
+  </script>
+<#lang key="html.sitemap.help.title" default="Sitemap" var="helptitle">
+<#lang key="html.sitemap.help.text" default="This page display a list of all links and pages for your PRTG Installation (filtered for your user account)." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

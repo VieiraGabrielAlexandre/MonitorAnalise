@@ -1,0 +1,86 @@
+﻿
+
+/*<#css border-radius="5px">
+<#css box-shadow="10px 10px 5px #888">
+<#css opacity="100">
+<#css text-overflow="ellipse">
+<#css user-select="none">*/
+
+<#comment -- Css from/for Libs >
+<#javascriptinclude file="css\jquery-ui.min.css">
+<#javascriptinclude file="css\normalize.css">
+<#javascriptinclude file="css\jquery-ui-timepicker-addon.css">
+
+<#comment -- Header/Footer Stuff>
+<#include file="css\prtg.main.css">
+<#include file="css\prtg.headfoot.css">
+<#include file="css\prtg.mainmenu.css">
+<#include file="css\prtg.breadcrumbs.css">
+<#include file="css\prtg.contexthelp.css">
+<#include file="css\prtg.main.content.css">
+
+<#comment -- General Stuff>
+<#include file="css\prtg.icons.css">
+<#include file="css\prtg.table.css">
+<#include file="css\prtg.table.menu.css">
+<#include file="css\prtg.dialogs.css">
+<#include file="css\prtg.Growls.css">
+<#include file="css\prtg.form.css">
+<#include file="css\prtg.links.css">
+<#include file="css\prtg.help.css">
+<#include file="css\prtg.helppage.css">
+<#include file="css\prtg.sensorstats.css">
+
+<#comment -- Special Page Stuff>
+<#include file="css\prtg.welcome.css">
+<#include file="css\prtg.setuppage.css">
+<#include file="css\prtg.screenbox.css">
+<#include file="css\prtg.nagscreen.css">
+<#include file="css\prtg.sensortree.css">
+<#include file="css\prtg.clustermap.css">
+<#include file="css\_Prtg.Downloads.css">
+
+<#comment -- Modul Specific>
+<#include file="css\_Prtg.FlexPanels.css">
+<#include file="css\_Prtg.dataTables.css">
+<#include file="css\_Prtg.Tabs.css">
+<#include file="css\prtg.contextmenu.css">
+<#include file="css\prtg.tip.css">
+<#include file="css\_prtg.sensortree.css">
+<#include file="css\_Prtg.AddSensor.css">
+<#include file="css\_Prtg.GeoMaps.css">
+<#include file="css\prtg.toplist.css">
+<#include file="css\prtg.tree.css">
+<#include file="css\_Prtg.Maps.css">
+<#include file="css\_Prtg.Multiedit.Inline.css">
+<#include file="css\layout-default.css">
+<#include file="css\prtg.objectselector.css">
+<#include file="css\prtg.reports.css">
+<#include file="css\prtg.compare.css">
+<#include file="css\prtg.newpagetitle.css">
+<#include file="css\prtg.overviews.css">
+<#include file="css\prtg.dashboards.css">
+<#include file="css\prtg.sitemap.css">
+<#include file="css\_Prtg.TriggerEdit.css">
+<#include file="css\_Prtg.Jquery.Favstarsinput.css">
+<#include file="css\_Prtg.Jquery.Tagsinput.css">
+<#include file="css\_Prtg.DependenciesGraph.css">
+<#include file="css\prtg.legends.css">
+<#include file="css\prtg.tickets.css">
+<#include file="css\_Prtg.UDPMessages.css">
+<#include file="css\_Prtg.BusinessProcessChannels.css">
+<#include file="css\_Prtg.Quicksearch.css">
+<#include file="css\_Prtg.TCT.css">
+<#include file="css\_Prtg.Newsfeed.css">
+<#include file="css\_Prtg.GraphPlugin.css">
+<#include file="css\prtg.sysinfo.css">
+<#include file="css\prtg.hover_animations.css">
+<#include file="css\_Prtg.FileHandler.Plugin.css">
+
+<#comment -- Extern/Lib>
+<#include file="css\bootstrap.css"> <#comment for bootstrap_tooltip.js>
+<#include file="css\bootstrap-overwrite.css">
+<#include file="css\ui-overwrite.css">
+
+<#comment -- include customer CSS (if available)>
+<#include file="css\styles_custom.css">

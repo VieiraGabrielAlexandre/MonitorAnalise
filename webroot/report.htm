@@ -1,0 +1,71 @@
+﻿<#checkobjecttype objecttype="report">
+
+<#lang key="html.report.title" default="Report Details" var="title">
+<#objectproperty name="name" var="name">
+<#lang key="html.pagetitel.dummy" default="<dummy>@name</dummy>" comment="do not translate" var="objectname">
+<#setpagetitle pagetitle="@name | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.report.selectmanually" default="Select Sensors Manually" var="selectmanually">
+<#lang key="html.report.selecttag" default="Sensors Selected by Tag" var="selecttag">
+<#lang key="html.global.reports" default="Reports" var="trail">
+<#lang key="html.global.editreport" default="Edit Report" var="this">
+<#objectid var="objid">
+<#breadcrumbs varexpand="trail,this" trail="<a href='/reports.htm'>@trail</a>" this="@this" >
+<div id="main" class="report-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1 class="sitecaption">
+    <#lang key="html.report.head2" default="<i>Report</i> @objectname">
+    <br/>
+    <span id="messagebox" class="statusmessage">
+      <#system type="message">
+    </span>
+  </h1>
+
+  <div class="buttonbox">
+    <#include file="includes\linkpagebutton.htm">
+    <a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+  </div>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active" tab-name="run-now">
+        <a href="/controls/reportrunner.htm?id=<#objectid>">
+          <i class="glyph-stopwatch"></i>
+          <span class="text"><#lang key="html.report.runnow" default="Run Now"/></span>
+        </a>
+      </li>
+      <li tabid="2" tab-name="stored_reports">
+        <a href="/controls/reportlister.htm?id=<#objectid>">
+          <i class="glyph-database"></i>
+          <span class="text"><#lang key="html.report.stored" default="Stored Reports"/></span>
+        </a>
+      </li>
+      <li tabid="3">
+        <a href="/controls/objectdata.htm?id=<#objectid>&objecttype=Report&targeturl=/reports.htm">
+          <i class="glyph-cog"></i>
+          <span class="text"><#lang key="html.global.settings" default="Settings"/></span>
+        </a>
+      </li>
+      <#system type="usertype" varexpand="contentnotreadonly" contentnotreadonly="<li tabid='4'><a href='/controls/reportchannels.htm?id=@objid'><i class='glyph-sliders'></i><span class='text'>@selectmanually</span></a></li>">
+      <#system type="usertype" varexpand="contentnotreadonly" contentnotreadonly="<li tabid='5'><a href='/controls/reportsensorsbytag.htm?id=@objid'><i class='glyph-tags'></i><span class='text'>@selecttag</span></a></li>">
+      <li tabid="6">
+        <a href="/controls/comments.htm?id=<#objectid>" title='<#lang key="html.global.comments" default="Comments">'>
+        <i class="<#hascomment>"></i>
+        <span class="text"><#lang key="html.global.comments" default="Comments"/></span>
+        </a>
+      </li>
+
+    </ul>
+    <div class="tab-container"></div>
+    <div class="to-reports-wrapper">
+      <a class="back-to-reports" href='/reports.htm'><#lang key="html.report.allreports" default="Go to all reports"></a>
+</div>
+  </div>
+<#lang key="html.report.helptitle" default="Reports" var="helptitle">
+<#lang key="html.report.text" default="Reports are used to analyze monitoring data, either once or at specified intervals.<br><br><a href='/help/reports_view_and_run.htm' target='_blank'><b>Help: Run Reports</b></a><br><a href='/help/reports_settings.htm' target='_blank'><b>Help: Reports Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

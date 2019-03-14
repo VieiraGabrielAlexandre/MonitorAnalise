@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrctrl.svrctrlinterface" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        Other
+      </SingleInt>
+      <SingleInt state="OK" value="2">
+        SCSI
+      </SingleInt>
+      <SingleInt state="OK" value="3">
+        IDE
+      </SingleInt>
+      <SingleInt state="OK" value="4">
+        IEEE1394
+      </SingleInt>
+      <SingleInt state="OK" value="5">
+        SATA
+      </SingleInt>
+      <SingleInt state="OK" value="6">
+        SAS
+      </SingleInt>
+      <SingleInt state="OK" value="7">
+        FC
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

@@ -1,0 +1,42 @@
+﻿<#lang key="html.error.title" default="System Error" var="pagetitle">
+<#include file="includes\htmlheader_mini.htm">
+<div id="login-container">
+	<div class="header">
+		<span class="prtglogo">
+			<a href="/home" title="<#lang key="html.menu.Home" default="Home">"><img border=0 id="prtgname" src="/images/prtg_network_monitor.png"></a>
+		</span>
+		<span class="paesslerlogo">
+			<a href="https://www.paessler.com?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="Paessler AG - The Network Monitoring Company"><img border=0 id="paesslerlogo" src="/images/paessler.png"></a>
+		</span>
+	</div>
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+  	<div id="showmessage" class="tabs-container">
+		<div class="prtg-box">
+		    <div class="errormsg" style="margin:30px;padding:20px">
+			<h1><#lang key="html.error.sorry2" default="There was a problem..."></h1>
+		    <form action="/sendfeedback.htm" method="GET">
+			    <p><#lang key="html.error.problem" default="PRTG Network Monitor has encountered a problem. Your last request could not be processed properly."></p>
+			    <h2 style="max-width:800px;white-space:normal"><#system type="errormessage" html="true"></h2>
+			    <input type="hidden" name="errormsg" value="<#system type="errormessage">">
+			    <small><#lang key="html.error.url" default="Error URL">: <#system type="errorurl"></small>
+			    <p>&nbsp;</p>
+			    <input type="hidden" name="errorurl" value="<#system type="errorurl">">
+			    <input class="loginbutton btnwidth150px" onClick="history.back();return(false)"  type="submit" value="<#lang key="html.global.goback" default="Go back">">
+			    <wingui-hidden>
+				<input class=" loginbutton btnwidth150px" onClick="window.location=window.location.protocol+'//'+window.location.host+'/';return(false)"  type="reset" value="<#lang key="html.global.myhome" default="Go to my homepage">">
+			    </wingui-hidden>
+				<input class=" loginbutton btnwidth150px" style="<#system type='hideforreadonlyusers'><#system type="editiondependedhtml" freeversiononly=";display:none;">" type="submit" value="<#lang key="html.error.reportthiserror" default="Report this error">">
+				</form>
+		  	</div>
+		</div>
+	   </div>
+	</div>
+</div>
+	<div class="footer">
+		<span class="prtgversion">&nbsp;<#system type="codename"> <#system type="version"> <#system type="expiry"></span>
+		<span class="copyright">&copy; <#copyrightyear> <a href="https://www.paessler.com?utm_source=prtg&utm_medium=referral&utm_campaign=webgui-homepage" target="_blank" title="The Network Monitoring Company">Paessler AG</a></span>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\htmlfooter_mini.htm">

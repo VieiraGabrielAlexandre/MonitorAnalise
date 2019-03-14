@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<!--
+ _____  _______ _______ _______ _______        _______  ______
+|_____] |_____| |______ |______ |______ |      |______ |_____/
+|       |     | |______ ______| ______| |_____ |______ |    \_
+
+We are hiring software developers! https://www.paessler.com/jobs
+
+-->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.8">
+    <meta name="robots" content="noindex, follow">
+    <title>PRTG Server Restart</title>
+    <style>
+    @font-face {
+        font-family: 'prtg';
+        src: url("/css/fonts/prtg.woff2") format("woff2"), url("/css/fonts/prtg.woff") format("woff"), url("/css/fonts/prtg.ttf") format("truetype"), url("/css/fonts/prtg.svg#prtg") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body,
+    html {
+        font-family: "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+        font-size: 12px;
+        height: 100%;
+    }
+
+    html {
+        overflow: auto;
+    }
+
+    body {
+        overflow: hidden;
+        margin: 0;
+        width: 100%;
+        height:100%;
+    }
+
+    h1, a {
+        font-family: "Lucida Sans-Serif", "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        text-decoration: none;
+        color: #00235D;
+    }
+
+
+    #start-container {
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .centerBox {
+        margin-top: 12.5%;
+        margin-left: 25%;
+        margin-right: 25%;
+        height: 50%;
+        width: 50%;
+        position: absolute;
+    }
+
+    h1{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -3vh;
+        font-size: calc(.4vw + .4vh + 1.4vmin);
+    }
+
+		div.info {
+        position: absolute;
+        left:10%;
+        width: 80%;
+        text-align: center;
+	      bottom: -14vh;
+        font-size: calc(.1vw + .1vh + 1.1vmin);
+
+		}
+    h1 i {
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    .centerBox.gray {
+        -webkit-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    .centerBox svg {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(0%);
+    }
+
+    .centerBox.gray svg {
+        display: inline-block;
+        filter: none;
+    }
+
+    .spinner {
+        animation: rotator 2s linear infinite;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @keyframes rotator {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(270deg);
+        }
+    }
+
+    .path {
+        stroke-dasharray: 187;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+        animation: dasher 2s ease-in-out infinite, colors 8s ease-in-out infinite;
+    }
+
+    @keyframes colors {
+        0% {
+            stroke: #c0cc18;
+        }
+        25% {
+            stroke: #f59c00;
+        }
+        50% {
+            stroke: #e5005f;
+        }
+        75% {
+            stroke: #f59c00;
+        }
+        100% {
+            stroke: #c0cc18;
+        }
+    }
+
+    @keyframes dasher {
+        0% {
+            stroke-dashoffset: 187;
+        }
+        50% {
+            stroke-dashoffset: 46.75;
+            /* 187/4 */
+            transform: rotate(135deg);
+        }
+        100% {
+            stroke-dashoffset: 187;
+            transform: rotate(450deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="start-container">
+        <div class="centerBox">
+            <svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#B0B0B2" d="M22.5,77c0,0-1.5-0.4-1.5,1.5v18.9c0,0-0.3,1.7,1.5,1.7h82.9c0,0,1.5,0.2,1.5-1.7V78.5
+				c0,0,0.3-1.5-1.5-1.5H22.5z"></path>
+                        </g>
+                        <g>
+                            <path fill="#FFFFFF" d="M96.9,91.8c2.1,0,3.8-1.7,3.8-3.9S99,84,96.9,84c-2.1,0-3.8,1.7-3.8,3.9S94.8,91.8,96.9,91.8"></path>
+                        </g>
+                        <g>
+                            <path fill="#BBCA0E" d="M46,35.8c-4.5,4.2-7.6,9.9-8.3,16.5C37,58.8,38.8,65,42.4,70l3.7-2.4c-2.4-3-3.9-6.8-4.1-10.9
+ c-0.2-6.6,3.2-12.5,8.5-15.9c0,0-0.1,0-0.1,0.1L46,35.8z"></path>
+                        </g>
+                        <g>
+                            <path fill="#BBCA0E" d="M51.5,40.1c-0.1,0-0.1,0.1-0.2,0.1C51.4,40.2,51.5,40.2,51.5,40.1"></path>
+                        </g>
+                        <g>
+                            <path fill="#BBCA0E" d="M52.6,39.6c-0.1,0-0.1,0.1-0.2,0.1C52.5,39.6,52.6,39.6,52.6,39.6"></path>
+                        </g>
+                        <g>
+                           <path fill="#E50060" d="M89.9,49.7c-1.4-6.5-5-11.8-9.9-15.5l0,0c1,0.7,1.9,1.5,2.7,2.3l-7.5,8.3c-0.1-0.1-0.1-0.2-0.2-0.2
+				c2.5,3,4.1,6.9,4.2,11.1c0.1,3.3-0.7,6.4-2.1,9.1l8.6,5.3C89.7,64.3,91.4,57,89.9,49.7"></path>
+                        </g>
+                        <g>
+                            <path fill="#E5007E" d="M73,42.5c0.4,0.4,0.9,0.8,1.3,1.2C73.9,43.3,73.5,42.9,73,42.5L73,42.5z"></path>
+                        </g>
+                        <g>
+                            <path fill="#F49C00" d="M82.7,36.5c-0.8-0.8-1.8-1.6-2.7-2.3c-4.6-3.5-10.5-5.5-16.7-5.3C56.5,29,50.5,31.6,46,35.8v0l4.4,5.1
+				c0,0,0.1,0,0.1-0.1c0.3-0.2,0.6-0.4,0.9-0.5c0.1,0,0.1-0.1,0.2-0.1c0.3-0.2,0.6-0.3,0.9-0.5c0.1,0,0.1-0.1,0.2-0.1
+				c2.3-1.1,4.8-1.7,7.4-1.8c5-0.1,9.5,1.7,13,4.7c0.4,0.4,0.9,0.8,1.3,1.2c0,0,0,0,0,0c0.2,0.2,0.3,0.4,0.5,0.6
+				c0,0.1,0.1,0.1,0.1,0.2c0.1,0.1,0.1,0.2,0.2,0.2L82.7,36.5z"></path>
+                        </g>
+                    </g>
+                    <g>
+                        <polygon fill="#222956" points="66.9,63.5 70.7,60.3 46.5,45.8"></polygon>
+                    </g>
+                </g>
+            </svg>
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="1" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+        		<h1>
+            	<i class="action"><#lang key="html.start.message.waitingtostop" default="Waiting for PRTG Core Server to stop"></i><i class="action hidden"><#lang key="html.start.message.waitingtostart" default="Waiting for PRTG Core Server to start"></i>...
+		        </h1>
+        <div class="info">
+        	<#lang key="html.start.messageAa" default="Restarting core service and web server now. This takes a few minutes.">
+        	<br>
+        	<#lang key="html.start.messageB" default="Afterwards you are automatically taken to the login screen.">
+        	<br><br>
+        	<#lang key="html.start.messageC" default="After the restart your server will be reachable on:">
+        	<br>
+        	<b><a href="<#geturlstringwithdnsname>"><#geturlstringwithdnsname></a></b>
+        </div>
+        </div>
+
+        <noscript>
+            &lt;div style="margin-bottom:10px"&gt; &lt;div class="nagscreen-box"&gt; &lt;p class="nagscreen-head"&gt;Javascript not available!&lt;/p&gt; &lt;p class="nagscreen-cell"&gt; You cannot use the AJAX Web Interface without Javascript. &lt;br&gt;It seems to be disabled or this browser does not support Javascript. &lt;/p&gt; &lt;/div&gt; &lt;/div&gt;
+        </noscript>
+    </div>
+    <script>
+    (function ServerPing() {
+        var newURL = [location.href.replace(location.pathname, '/checkrunning'), '<#geturlstring>/checkrunning', '<#geturlstringwithdnsname>/checkrunning']
+          , timeout = 1500;
+
+        function redirect(newURL) {
+            document.location.replace(newURL.replace('/checkrunning', '/home'));
+        }
+
+        function wait(address, success, error, func, timer) {
+            var args = Array.prototype.slice.call(arguments);
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                func.apply(this, args);
+            }, timeout);
+        }
+
+        function checkboot(address, success, error, func, timer) {
+            var args = Array.prototype.slice.call(arguments),
+                request = new XMLHttpRequest();
+            request.addEventListener("load", function() {
+                success.apply(this, args);
+            });
+            request.addEventListener("error", function() {
+                error.apply(this, args);
+            });
+
+            request.addEventListener("timeout", function() {
+                error.apply(this, args);
+            });
+
+            request.open('POST', address + '?' + Date.now(), true);
+            request.timeout = timeout;
+            request.send()
+        }
+        function checkhalt(address, success, error, func, timer) {
+            var args = Array.prototype.slice.call(arguments),
+                request = new XMLHttpRequest();
+            request.addEventListener("load", function() {
+                success.apply(this, args);
+            });
+
+            request.addEventListener("error", function() {
+                error.apply(this, args);
+            });
+
+            request.open('POST', address + '?' + Date.now(), true);
+            request.send()
+        }
+
+        function reboot() {
+            var box = document.getElementsByClassName('centerBox')[0],
+                actions = document.getElementsByTagName('i');
+
+            box.classList.add('gray');
+            for (var i = 0; i < actions.length; ++i) {
+                actions[i].classList.toggle('hidden')
+            }
+
+            setTimeout(function() {
+	            wait(newURL[0], redirect, wait, checkboot, null);
+            }, 1 * timeout/3);
+            setTimeout(function() {
+	            wait(newURL[1], redirect, wait, checkboot, null);
+            }, 2 * timeout/3);
+            setTimeout(function() {
+	            wait(newURL[2], redirect, wait, checkboot, null);
+            }, 3 * timeout/3);
+            setTimeout(function() {
+	            redirect(newURL[2]);
+            }, 300 * timeout);
+        }
+        wait('/checkrunning', wait, reboot, checkhalt);
+
+    })();
+    </script>
+</body>
+
+</html>

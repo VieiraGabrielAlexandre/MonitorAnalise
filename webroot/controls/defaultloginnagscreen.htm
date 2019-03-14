@@ -1,0 +1,18 @@
+﻿<#system type="denyfornonadmins">
+<div class="nagscreen-box" style="<#system type="defaultlogin" code="" codeifnot="display:none;"> <#hidefornonadmins> <#clusterdependent insertfor="failovernode" insertcontent="display:none;">">
+    <p class="nagscreen-cell nagscreen-head">
+      <#lang key="html.loginnagscreen.text1" default="You should set a secret password if your PRTG website is publicly accessible!">
+    </p>
+
+    <p class="nagscreen-cell nagscreen-text">
+      <span>
+        <#lang key="html.loginnagscreen.text2bb" default="The admin account is currently using the default password (prtgadmin) <br> You should change this default password to make your PRTG website secure.">
+      </span>
+      <span>
+        <#lang key="html.loginnagscreen.text3bb" default="This is absolutely mandatory if your PRTG website is accessible from the Internet (outside your firewall)!">
+      </span>
+    </p>
+    <p class="nagscreen-cell nagscreen-action">
+      <a class="actionbutton" href="/edituser.htm?id=100"><i class="icon-white icon-locked" style="vertical-align:middle"></i><#lang key="html.loginnagscreen.changenow1" default="Change Default Password Now"></a>
+    </p>
+</div>

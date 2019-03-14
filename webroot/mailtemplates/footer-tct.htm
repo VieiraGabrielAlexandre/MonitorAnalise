@@ -1,0 +1,96 @@
+﻿                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td style="<#mailstyle style="@hr" varexpand="style ">">
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                                <tr class="send-information">
+                                  <td class="container" style="<#mailstyle style="@font @fontsize @boxsizing @container  padding:5px 20px;" varexpand="style ">" valign="top" bgcolor="#fff">
+                                    <table width="<#mailstyle style="@tablewidth" varexpand="style ">" border="0" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="content_wrap" style="<#mailstyle style=" @font @fontsizesmall @boxsizing @tabletd " varexpand="style ">" valign="top">
+                                            <#lang key="html.mailtemplatehtmlfooter.emailsentat2" default="Sent">&nbsp;%systemdatetime
+                                            <#lang key="html.mailtemplatehtmlfooter.emailsentto2" default="to">&nbsp;%toaddress<br>
+                                            <#lang key="html.mailtemplatehtmlfooter.emailsentby2" default="by">&nbsp;<a href="%home">%sitename</a> %nodename (<a href="%home">%home</a>)
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="<#mailstyle style="@hr" varexpand="style ">">
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                                <tr class="tct">
+                                  <td class="container" style="<#mailstyle style="@font @fontsize @boxsizing @container padding:0;" varexpand="style ">" valign="top" bgcolor="#fff">
+                                    <table width="<#mailstyle style="@tablewidth" varexpand="style ">" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                              <tr>
+                                                <td class="content_wrap" style="<#mailstyle style=" @font @fontsize @boxsizing @tabletd " varexpand="style ">" valign="top">
+                                                  <#mailinclude file="/includes/tct/mail/footer-tct.htm">
+                                                </td>
+                                                <td class="content_wrap" style="<#mailstyle style=" @font @fontsize @boxsizing @tabletd background-color:#f6f6f6;padding:30px 20px;" varexpand="style ">" align="right" valign="middle">
+                                                  <#mailimg src="../images/prtg_logo_gray.png" width="125" height="75" alt="PRTG Network Monitor">
+                                                </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="<#mailstyle style="@hr" varexpand="style ">">
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                                <tr class="custom-footer">
+                                  <td class="container" style="<#mailstyle style="@font @fontsize @boxsizing @container" varexpand="style ">" valign="top" bgcolor="#fff">
+                                    <table width="<#mailstyle style="@tablewidth" varexpand="style ">" border="0" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="content_wrap" style="<#mailstyle style=" @font @fontsize @boxsizing @tabletd" varexpand="style ">" valign="top">
+                                            <#mailinclude file="/mailtemplates/footer_custom.htm">
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+
+                                <tr class="prtg-version">
+                                  <td class="container" style="<#mailstyle style="@font @fontsize @boxsizing @container padding-top:5px;" varexpand="style ">" valign="top">
+                                    <hr style="width:<#mailstyle style="@containerwidth" varexpand="style ">">
+                                    <table width="<#mailstyle style="@tablewidth" varexpand="style ">" border="0" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="aligncenter content-block" style="<#mailstyle style="@font @fontsizesmall @boxsizing @tdcontenblock @footercolor" varexpand="style ">" align="left" valign="top">
+                                            <#system type="codename"> <#system type="version"> <#system type="installedupdatechannel">
+                                          </td>
+                                          <td class="aligncenter content-block" style="<#mailstyle style=" @font @fontsizesmall @boxsizing @tdcontenblock @footercolor " varexpand="style ">" align="center" valign="top">
+                                          </td>
+                                          <td class="alignright content-block" style="<#mailstyle style=" @font @fontsizesmall @boxsizing @tdcontenblock @footercolor " varexpand="style ">" align="right" valign="top">
+                                            &copy;
+                                            <#copyrightyear> <a href="https://www.paessler.com" target="_blank" style="<#mailstyle style=" @font @fontsizesmall @boxsizing @tdcontenblock @footercolor text-decoration:none; " varexpand="style ">" title="The Network Monitoring Company">Paessler AG</a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

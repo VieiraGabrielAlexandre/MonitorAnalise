@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.exchangedag.contentindexstate" desiredValue="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+		<singleInt state="Ok" value="0">
+		  Healthy
+		</singleInt>
+		<singleInt state="Warning" value="1">
+		  Crawling
+		</singleInt>
+		<singleInt state="Error" value="2">
+		  Error
+		</singleInt>
+	</Lookups>
+  </ValueLookup>

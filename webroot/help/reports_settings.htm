@@ -1,0 +1,512 @@
+﻿<!--Report Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_view_and_run.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Report Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Report Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">In the PRTG web interface, click <span class="f_BoldCustom">Reports</span> in the main menu bar to show the reports main screen. Click a report's name to select it. Use the various report tabs to access all functionalities and settings for the selected report.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:574px"><a href="report-tabs2.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Report Tabs" title="Report Tabs" style="width:574px;height:18px;border:none" src="report-tabs2_zoom50.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Report Tabs</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click <span class="f_BoldCustom">Go to all reports</span> at the bottom of the page to return to the list of all <span style="font-weight: bold;">Reports</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="run" class="hmanchor"></a><span class="f_InTopicHeading">Run Now</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Run Now</span> tab, you can execute a report immediately with the settings that you configured before. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="reports_view_and_run.htm#run" class="topiclink">View and Run Reports</a></span> for details.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="stored" class="hmanchor"></a><span class="f_InTopicHeading">Stored Reports</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Stored Reports</span> tab, you can view reports created in the past. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="reports_view_and_run.htm#stored" class="topiclink">View and Run Reports</a></span> for details.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Settings</span> tab to open the settings of a report. Please mind the <span class="f_BoldCustom"><a href="reports_view_and_run.htm#remarks" class="topiclink">Remarks for Reports</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Report Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify this report. The name of the report is used in <a href="main_menu_structure.htm#reports" class="topiclink">reports lists</a> and as headline of generated reports.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more tags, separated by space or comma. For example, you can use tags later to search for the report. Tags are not case sensitive.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Template</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a template for the report. The template defines the overall look of your report and in which detail (interval) the report shows monitoring data. PRTG includes several report templates out of the box. You can choose from templates in the following categories:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Data Table Only</span><span class="f_ListBulleted">: Create a report with data tables only. Choose from several intervals. Reports with this template also generate data files (CSV and XML) if set in the </span><span class="f_ListBulleted" style="font-weight: bold;">Data Files</span><span class="f_ListBulleted"> section of the report.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Graph Only</span><span class="f_ListBulleted">: Create a report with graphs only. Choose from several intervals. Reports with this template cannot generate data files (neither CSV nor XML).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Graph with Data Table</span><span class="f_ListBulleted">: Create a report with graphs and data table. Choose from several intervals. Reports with this template also generate data files (CSV and XML) if set in the </span><span class="f_ListBulleted" style="font-weight: bold;">Data Files</span><span class="f_ListBulleted"> section of the report.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">List of Sensors</span><span class="f_ListBulleted">: Create a report in a compact sensor list style. This is available with and without graphs. Reports with this template cannot generate data files (neither CSV nor XML)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top 100 Highest and Lowest</span><span class="f_ListBulleted">: Create a report with up to 100 objects with the highest and lowest average values. Choose from different intervals. Reports with this template cannot generate data files (neither CSV nor XML)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top 10 Uptime/Downtime</span><span class="f_ListBulleted">: Create a report with up to 10 objects with the highest uptime and downtime each. You can choose between data in percent and hours. Reports with this template cannot generate data files (neither CSV nor XML)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Top 100 Uptime/Downtime</span><span class="f_ListBulleted">: Create a report with up to 100 objects with the highest uptime and downtime each. You can choose between data in percent and hours. Reports with this template cannot generate data files (neither CSV nor XML)</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Monitoring data within an interval is averaged. See also the comment on data averaging in the </span><span class="f_BoldCustom"><a href="reports.htm#averaging" class="topiclink">Reports</a></span><span class="f_ListBulleted"> (Automatic Averaging) section.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Security Context</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the <a href="user_accounts_settings.htm" class="topiclink">user account</a> that you want to use for access to your monitoring data. The report only contains objects that the selected <a href="user_access_rights.htm" class="topiclink">user</a> is allowed to view. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose a PRTG user from the list. The available users depend on your configuration. By default, this is the user that created the report. PRTG System Administrator users can change this setting.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Timezone</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time zone to use for all date-specific settings in this report (see <a href="reports_settings.htm#reportdetails" class="topiclink">below</a>). Choose a time zone from the list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paper Size</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the paper size in which PDF reports are created. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Do not specify a paper format. The size is set automatically.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">A4</span><span class="f_ListBulleted">: Use German DIN A4 format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">A3</span><span class="f_ListBulleted">: Use DIN A3 format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">A2</span><span class="f_ListBulleted">: Use DIN A2 format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Legal</span><span class="f_ListBulleted">: Use North American legal paper format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Letter</span><span class="f_ListBulleted">: Use North American letter paper format.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Ledger</span><span class="f_ListBulleted">: Use North American ledger paper format.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Orientation</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the page orientation for the data in PDF reports. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Portrait</span><span class="f_ListBulleted">: Use portrait mode for the page orientation.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Landscape</span><span class="f_ListBulleted">: Use landscape mode for the page orientation. The landscape format is designed to properly show data tables of sensors with many channels. Other parts of the report will remain in portrait mode and do not re-size to the landscape format.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="reportschedulesensors" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensors (&quot;What sensors will be included in the report?&quot;)</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cluster Node</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible when you run PRTG in </span><span class="f_BoldCustom"><a href="clustering.htm" class="topiclink">Clustering</a></span><span class="f_ListBulleted"> mode. Define the cluster node from which the report will take monitoring data. Choose a cluster node from the list. The available options are specific to your configuration. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">By default, the current master node is set. Select </span><span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted"> to create a report with data from all of your cluster nodes. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">A report for all nodes includes data of the primary sensor channels only, not for other sensor channels. Be careful with big reports for all nodes because the report generation may slow down significantly.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If you select a failover node, report and data files will not show data from the local probe or from a remote probe and might be empty or show &quot;0&quot; values.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">You can generate CSV and XML data files only for a single failover node. If you choose the option </span><span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted">, the report will not create data files!</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Add Sensors Manually</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you want to manually choose the sensors included in this report, please save settings and switch to the </span><span class="f_BoldCustom"><a href="reports_settings.htm#manually" class="topiclink">Select Sensors Manually</a></span><span class="f_ListBulleted"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Include Sensors by Tag</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the sensors included in this report by <a href="tags.htm" class="topiclink">tag</a>. Enter one or more tags. The report covers all sensors that have at least one of the tags. Please enter a string or leave the field empty. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can also use plus (must have) and minus (must not have) signs to categorize tags, for example, </span><span class="f_ItalicCustom">+snmp;–wmi</span><span class="f_ListBulleted"> (must have the tag </span><span class="f_ItalicCustom">snmp</span><span class="f_ListBulleted"> and must not have the tag </span><span class="f_ItalicCustom">wmi</span><span class="f_ListBulleted">). See the section </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> for details.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags are inherited</a> automatically. So, for example, if you enter the tag of a <a href="object_hierarchy.htm#group" class="topiclink">group</a> here, the report will include all sensors within this group. For detailed information, see the </span><span class="f_BoldCustom"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span><span class="f_ListBulleted"> section. For sensors you add by tag, the report includes all sensor channels automatically, except if you run a PRTG <a href="clustering.htm" class="topiclink">cluster</a> and select </span><span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">Cluster Node</span><span class="f_ListBulleted"> selection above.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Filter Included Sensors by Tag</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Filter the included sensors further. This option works best in combination with manually added groups and devices. From the sensors that are implicitly added because of their parent objects, the report includes only the ones with the tags you enter here. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more tags to include sensors in the report. Confirm a tag with enter, space, or comma key. Please enter a string or leave the field empty.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can also use plus (must have) and minus (must not have) signs to categorize tags, for example, </span><span class="f_ItalicCustom">+snmp;–wmi</span><span class="f_ListBulleted"> (must have the tag </span><span class="f_ItalicCustom">snmp</span><span class="f_ListBulleted"> and must not have the tag </span><span class="f_ItalicCustom">wmi</span><span class="f_ListBulleted">). See the section </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> for details.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="reportscheduleoptions" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Schedule</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define at which time you want to run the report. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No schedule (run interactive/on-demand only)</span><span class="f_ListBulleted">: Only use the options on the </span><span class="f_BoldCustom">Run Now</span><span class="f_ListBulleted"> tab to start generating this report manually.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Every full hour</span><span class="f_ListBulleted">: Run this report every 60 minutes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Every day at a specific hour</span><span class="f_ListBulleted">: Run this report every 24 hours.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Every specific day of a week</span><span class="f_ListBulleted">: Run this report every 7 days. Specify the day below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Every specific day of a month</span><span class="f_ListBulleted">: Run this report on a specific day every month. Specify below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">The day after a quarter has finished (i.e. on 1. April for the 1. January - 31. March Quarter)</span><span class="f_ListBulleted">: Run this report for every quarter of the year.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Every specific date</span><span class="f_ListBulleted">: Run this report on a specific date every year. Specify below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Hour</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select a specific hour above. From the list, select the hour at which you want to run the report. PRTG automatically chooses a suitable time within this hour, usually at the beginning of it.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Day</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select the day of week or day of month option above. From the list, select a day of week or a date of the month you want to run the report. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you select </span><span class="f_BoldCustom">Last</span><span class="f_ListBulleted">, the report will always run on the last day of the month, regardless of how many days the month has. If you select a date that does not exist in every month, for example, February 31st , PRTG will automatically run the report on the last day of this month.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Date</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select the specific date option above. Enter a valid date in the format </span><span class="f_BoldCustom">DD.MM.</span><span class="f_ListBulleted">, for example, </span><span class="f_ItalicCustom">31.12.</span><span class="f_ListBulleted"> The report runs annually on this date.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scheduled Processing</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select one of the schedule options above. Define what to do with a finished report. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Save report to disk and send it by email</span><span class="f_ListBulleted">: Create a PDF file and, depending on the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="reports_settings.htm#datafilegroup" class="topiclink">Data Files</a></span><span class="f_ListBulleted"> setting, data files of the report, store it, and send it via email. You find the report in your emails and on the </span><span class="f_BoldCustom">Stored Reports</span><span class="f_ListBulleted"> tab. Define an email address below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Save report to disk only</span><span class="f_ListBulleted">: Create a PDF file and, depending on the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="reports_settings.htm#datafilegroup" class="topiclink">Data Files</a></span><span class="f_ListBulleted"> setting, data files of the report and store it. Once finished, you find them on the </span><span class="f_BoldCustom">Stored Reports</span><span class="f_ListBulleted"> tab. You receive also a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> from PRTG. By default, PRTG sends out a notification email to the administrator in this case.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Send report by email only</span><span class="f_ListBulleted">: Create a PDF file and, depending on the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="reports_settings.htm#datafilegroup" class="topiclink">Data Files</a></span><span class="f_ListBulleted"> setting, data files of the report and send them via email once finished. With this option the report is not permanently stored in PRTG. Define an email address below.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Certain special characters, for example, 4-byte unicode characters, may not be displayed correctly in PDF reports. As workaround, generate an HTML report and save it as PDF.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Email Address</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select a send by email option above. Enter a valid email address to which PRTG sends the report. To enter more addresses, separate them by comma. PRTG sends a message with all recipients in the &quot;To&quot; field of the email. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can change the configuration for outgoing emails in the </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListBulleted"> settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Send to User Group</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select a send by email option above. From the list, choose a user group to send an email with the report to all members of this group. You can edit user groups in </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span><span class="f_ListBulleted">. &nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you define individual email addresses (see field above) and a user group, PRTG will send the report to the individual email addresses as well as to the members of the selected user group. In both cases, PRTG will send one message with all recipients in the &quot;To&quot; field of the email.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Compression</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select a send by email option above. Define if PRTG will compress the attached report files before sending them out. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Send files uncompressed (default)</span><span class="f_ListBulleted">: PRTG sends the report files by email in their original size.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Send all in one ZIP file</span><span class="f_ListBulleted">: PRTG will compress the report files to a ZIP file before they are sent by email.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="reportdetails" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Period</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Reported Period</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time span the report covers. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Current</span><span class="f_ListBulleted">: Use monitoring data of the current period. Define the period type below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Previous</span><span class="f_ListBulleted">: Use monitoring data of the last period. Define the period type below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report Period Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the type of period you want to create a report for. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Day</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Week</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Month</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Quarter (January-March, April-June, etc.)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Year</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Depending on your selection, different period selections are shown below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Day Period</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Day</span><span class="f_ListBulleted"> above. Define the hours when a day starts and ends. Choose from the list of hours. Default setting is </span><span class="f_BoldCustom">0:00-23:59</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Week Period</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Week</span><span class="f_ListBulleted"> above. Define when the week starts and ends. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Monday-Sunday</span><span class="f_ListBulleted">: A reported week starts on Monday.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Saturday-Friday</span><span class="f_ListBulleted">: A reported week starts on Saturday.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Sunday-Saturday</span><span class="f_ListBulleted">: A reported week starts on Sunday.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Month Period</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Month</span><span class="f_ListBulleted"> above. Define when the month starts and ends. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">1.-last day</span><span class="f_ListBulleted">: A reported month starts on the first and ends on last of the month.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">15.-14.</span><span class="f_ListBulleted">: A reported month starts on 15th and ends on 14th of the month.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Year Period</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Year</span><span class="f_ListBulleted"> above. Define when the year starts and ends. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">1/1-12/31</span><span class="f_ListBulleted">: A reported year starts on January 1st.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">7/1-6/30</span><span class="f_ListBulleted">: A reported year starts on July 1st.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Report only for specific hours-of-day (Schedule)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Include certain time spans within the defined period only. If a schedule is selected, the report will include only monitoring data for specified hours or weekdays within the defined period. Select </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to include all available monitoring data in the report, or choose a schedule. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For example, select the schedule </span><span class="f_BoldCustom">Weekdays</span><span class="f_ListBulleted"> to exclude all weekends from the report. The available schedules depend on your configuration.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, see the </span><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span><span class="f_ListBulleted"> section.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="percentilesettings" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Include Percentiles</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Percentile Results</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to include an additional <a href="calculating_percentiles.htm" class="topiclink">percentile calculation</a> of your data in the report. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not show percentiles</span><span class="f_ListBulleted" style="font-weight: bold;">:</span><span class="f_ListBulleted"> PRTG does not use a percentile formula to calculate your monitoring results. It will show only the standard values.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show percentiles</span><span class="f_ListBulleted">: PRTG adds a column to the result data tables that shows percentiles for every sensor channel.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Percentiles are not available for all report templates. If a template does not support percentiles, they will simply not show up in the report, even if you enable this setting.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Likewise, percentiles are not available in a cluster setup if you choose the option </span><span class="f_BoldCustom">All Nodes</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">Cluster Node</span><span class="f_ListBulleted"> setting in the sensor section above.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Percentile Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Show percentiles</span><span class="f_ListBulleted"> above. Enter the percentile type you want PRTG to use for the calculation. If you choose, for example, to calculate the 95th percentile, enter &quot;95&quot; here and 5 % of peak values will be discarded. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Percentile Average Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_BoldCustom">Show percentiles</span><span class="f_ListBulleted"> above. Enter a value to define the averaging interval on which PRTG bases the percentile calculation. The default value is </span><span class="f_ItalicCustom">300</span><span class="f_ListBulleted"> seconds (5 minutes). This means that PRTG takes 5 minute averages as basic values for the percentile calculation. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Percentile Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only visible if you select </span><span class="f_ListBulleted" style="font-weight: bold;">Show percentiles</span><span class="f_ListBulleted"> above. Choose the mode for percentile calculation:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Discrete</span><span class="f_ListBulleted">: PRTG takes discrete values to calculate percentile results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Continuous</span><span class="f_ListBulleted">: PRTG interpolates between discrete values and bases the calculation on interpolated values.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="datafilegroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Data Files</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">CSV / XML Files</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to generate CSV and XML files for data tables in the report in addition to the PDF. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not include data files</span><span class="f_ListBulleted">: PRTG will not generate CSV or XML files for the report but only a PDF file.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Include CSV files only (available for templates with data tables)</span><span class="f_ListBulleted">: PRTG will generate and store CSV files in addition to the PDF. CSV data files are only generated if the report uses a template with data tables.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Include XML files only (available for templates with data tables)</span><span class="f_ListBulleted">: PRTG will generate and store XML files in addition to the PDF. XML data files are only generated if the report uses a template with data tables.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Include all data files (available for templates with data tables)</span><span class="f_ListBulleted">: PRTG will generate and store CSV and XML files in addition to the PDF. CSV and XML data files are only generated if the report uses a template with data tables.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If you run PRTG in a cluster, the report will not generate data files if you select </span><span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted"> in the <a href="reports_settings.htm#reportschedulesensors" class="topiclink">sensors selection</a> above. Please specify a single failover node to get data files.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="reportoptions" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Report Comments</span></p>
+</td>
+<td style="vertical-align:top; width:849px; padding:5px; border:none"><br />
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Introductory Comment</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your custom text that will show up on top of the first page of your report. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Final Comment</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your custom text that will show up below the last data table or graph on the last page of your report. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object that you are editing. A table with user groups and rights is shown; it contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object does not show up in lists. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings. However, they cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings as well as edit access rights.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="manually" class="hmanchor"></a><span class="f_InTopicHeading">Select Sensors Manually</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Select Sensors Manually</span> tab to manually choose sensors that you want to include in the report. You see a split screen: On the left side, there is a list of objects that the report already contains (empty in the beginning), and on the right side, you see your device tree, like on the <a href="manage_device_tree.htm" class="topiclink">Management</a> tab in the device tree. You can add objects to the report using drag and drop.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="reports_sensor_selection.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Manual Selection for Reports" title="Manual Selection for Reports" style="width:600px;height:276px;border:none" src="reports_sensor_selection_zoom44.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Manual Selection for Reports</span></p></div></div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Add Items</span><br />
+From the device tree on the right side, drag objects and drop them on the list on the left side. You can add entire probes, groups, devices, or single sensors. Each dropped object is added as a new list item. Repeat this procedure as often as you wish until you have added all desired items to the report. <br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The objects you drop on the left side are always added to the end of the list, you cannot add objects directly in another order. </li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Select Sensor Channels</span><br />
+If you add a sensor to the selection, you can specify the sensor channels that the report will include. By default, all channels are selected. To exclude a channel from the report, remove the check mark in front of a channel name. <br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you run a PRTG <a href="clustering.htm" class="topiclink">cluster</a>, you can only choose between single channels if you select one specific <span style="font-weight: bold;">Cluster Node</span> in the report settings. If you select <span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted"> in </span>the report's <span class="f_BoldCustom">Cluster Node</span> setting, the channel selection is not available and the report contains only the primary channel of each sensor.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Change Order</span><br />
+You can change the order of manually selected objects on the left side with drag and drop. Each item you add appears at the end of the list by default. To change the order, point to the drag and drop symbol (two arrows) in the upper-right corner of a selected item, drag it to the desired position, and drop it there.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">Remove</span><br />
+To remove any objects from the report, click the trash can symbol next the respective list item, or select several list items while holding down the <span class="f_ItalicCustom">Ctrl</span> key and clicking a trash can symbol.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Your selection is saved automatically. There is no undo function. The final <span class="f_ListBulleted">report will include both sensors selected manually and those selected by tag.</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-asterisk-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-asterisk-blue.png"/><span class="f_BoldCustom">Permanently exclude a sensor channel from reports:</span> To avoid a reselection of channels when you change the object order, permanently exclude unwanted channels from the report. </p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Click the sensor name under </span><span class="f_BoldCustom">Objects</span><span class="f_ListNumbered"> to open its </span><span class="f_BoldCustom">Overview</span><span class="f_ListNumbered"> tab. </span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Open the <a href="sensor_channels_settings.htm#settings" class="topiclink">settings</a> of the desired channel. </span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Choose option </span><span class="f_BoldCustom">Hide from Graphs</span><span class="f_ListNumbered"> in section </span><span class="f_BoldCustom">Graph Rendering</span><span class="f_ListNumbered">.</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Choose option </span><span class="f_BoldCustom">Hide from Tables</span><span class="f_ListNumbered"> in section </span><span class="f_BoldCustom">Table Rendering</span><span class="f_ListNumbered">.</span></li>
+<li value="5" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Save</span><span class="f_ListNumbered"> and the channel will not appear in the object selection nor in reports anymore. N</span>ote that the channel will also not appear in any other graphs or data tables using this option.</li>
+</ol>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You have to choose both hide options to not show a channel in the sensor selection of a report.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tag" class="hmanchor"></a><span class="f_InTopicHeading">Sensors Selected by Tag</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Sensors Selected by Tag</span> tab to view all sensors that are added to the report depending on the <span class="f_BoldCustom">Include Sensors by Tag</span><span class="f_ListBulleted"> setting of the report. In the <a href="working_with_lists.htm" class="topiclink">table list</a>, you see all sensors that you added to the report by their respective tags. This is for your information only, you cannot change sensors here. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">However, you can switch to the </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> tab of the report and change the tags that the report uses to include sensors. Additionally, you can also exclude sensors with certain tags there. The final report will include both sensors selected manually and those selected by tag.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">For sensors that you add by tag, all sensor channels are included in the report automatically, except you use a PRTG <a href="clustering.htm" class="topiclink">cluster</a> and select </span><span class="f_BoldCustom">All nodes</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">Cluster Node</span><span class="f_ListBulleted"> selection of the report. In this case, the report includes only the primary channel of each sensor. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The final <span class="f_ListBulleted">report will include both sensors selected manually and those selected by tag.</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="comments" class="hmanchor"></a><span class="f_InTopicHeading">Comments</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the <span class="f_BoldCustom">Comments </span>tab you can enter free text for each object. You can use this function for documentation purposes or to leave information for other users.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">PRTG Manual:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Reports—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_step_by_step.htm" class="topiclink">Reports Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_view_and_run.htm" class="topiclink">View and Run Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports_settings.htm" class="topiclink">Report Settings</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="reports_view_and_run.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="maps.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

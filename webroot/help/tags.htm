@@ -1,0 +1,65 @@
+﻿<!--Tags-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="inheritance_of_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="dependencies.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Tags</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Tags</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">For every object in your PRTG setup, you cannot only name objects, you can also define tags in the <a href="object_settings.htm" class="topiclink">object settings</a> to additionally mark an object as a member of certain categories. Although some tags are automatically predefined when <a href="create_objects_manually.htm" class="topiclink">adding objects</a>, you are completely free in which tags you want to add. For example, you can mark all of the bandwidth sensors that are especially important for you with the tag <span class="f_ItalicCustom">bandwidth_important</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Later on, you can view lists of objects with certain tags (helpful for <a href="multi_edit_lists.htm" class="topiclink">multi-edit</a> of settings), or select sensors via tags when creating <a href="reports.htm" class="topiclink">reports</a>. A smart arrangement of tags can be a huge time saver. The keys<span class="f_ListBulleted"> enter, space, or comma confirm a tag.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can also change tags for several objects simultaneously using the <a href="multi_edit_lists.htm" class="topiclink">multi-edit</a> function.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:488px"><a href="tags.png"><img id="TOGGLE0186A1" class="image-toggle" alt="View and Edit Tags in Basic Sensor Settings&nbsp;" title="View and Edit Tags in Basic Sensor Settings&nbsp;" style="width:488px;height:301px;border:none" src="tags_zoom75.png"/></a><p style="text-align:center"><span class="f_ImageCaption">View and Edit Tags in Basic Sensor Settings&nbsp;</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tags_inherited" class="hmanchor"></a><span class="f_InTopicHeading">Tags are Inherited</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The tags in the settings of an object are automatically <a href="inheritance_of_settings.htm" class="topiclink">inherited</a> by all other objects underneath in the <span style="font-weight: bold;"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span>. You can view inherited tags in section <span style="font-weight: bold;">Parent Tags</span> in the settings of a <a href="object_hierarchy.htm#sensor" class="topiclink">sensor</a>, <a href="object_hierarchy.htm#device" class="topiclink">device</a>, or <a href="object_hierarchy.htm#group" class="topiclink">group</a>. So, for example, a device with the tag <span class="f_ItalicCustom">myExampleTag</span> automatically passes on this tag to all sensors that you add to it. These sensors appear in lists whenever you search for <span class="f_ItalicCustom">myExampleTag</span>. This is useful, for example, when you include sensors by tag in <a href="reports.htm" class="topiclink">reports</a> settings, because you do not have to tag every single sensor manually. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Inheritance for tags cannot be disabled.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="filtering" class="hmanchor"></a><span class="f_InTopicHeading">Filtering with Tags</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use tags to filter <a href="working_with_lists.htm" class="topiclink">table lists</a> for specific objects, or to add sensors to <span style="font-weight: bold;"><a href="libraries.htm" class="topiclink">Libraries</a></span> and <span style="font-weight: bold;"><a href="reports.htm" class="topiclink">Reports</a></span>. For example, you can restrict the <a href="main_menu_structure.htm#sensors" class="topiclink">sensors overview page</a> to the sensors that have the tag <span class="f_ItalicCustom">bandwidth_important</span>. You can also use more than one tag to filter for monitoring objects like sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">When filtering with tags, you can also use plus (+) and minus (–) signs in front of the tags to include or exclude them: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Tags with + must exist for an object to be shown</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Tags with </span>– must <span style="font-weight: bold;">not</span> exist for an object to be shown</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">At least one tag of the tags without either a + or – must exist on an object</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The filter shows an object only if all three conditions are true. The order of the tags in a tag field does not matter.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">For example, if you enter <span class="f_ItalicCustom">–windows</span> into a tag field, all sensors/devices that do not have &quot;windows&quot; as tag are shown. With <span class="f_ItalicCustom">+windows</span> or <span class="f_ItalicCustom">windows</span> you filter for objects that are tagged with &quot;windows&quot;.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can use more than one logical operator in a tag field: For example, if you enter <span class="f_ItalicCustom">+netflow –bandwidth_important</span> into a tag field, the corresponding list, library, or report includes all sensors that are tagged with &quot;netflow&quot; but not with the tag &quot;bandwidth_important&quot;. If you enter <span class="f_ItalicCustom">netflow</span> <span class="f_ItalicCustom">bandwidth_important</span>, a sensor has to be tagged with &quot;netflow&quot; or &quot;bandwidth_sensor&quot; or both to be affected.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tag_limits" class="hmanchor"></a><span class="f_InTopicHeading">Tag Display Limits</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For performance reasons, PRTG has a display limit of 1000 tags when filtering <span class="f_BoldCustom">By Tag</span> under <span class="f_BoldCustom">Sensors</span> in the <a href="main_menu_structure.htm#sensors" class="topiclink">PRTG main menu</a>. If you have more than 1000 tags, no tags are shown here. You can still use tags in this case, for example, for filtering and searching. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Tags</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="inheritance_of_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="dependencies.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

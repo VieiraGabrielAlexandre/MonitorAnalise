@@ -1,0 +1,6 @@
+﻿
+<#objectproperty name="login" var="login">
+
+<#include file="\controls\objectdata.htm" allowreadonly="true">
+<#system type='showhelp' tct="guru" page="myaccount" isadmin="true" id_eq="100" wingui="false" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >

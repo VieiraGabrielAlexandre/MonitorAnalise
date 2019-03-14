@@ -1,0 +1,24 @@
+﻿<#lang key="html.searchdetailed.title" default="Search Results" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#system type="searchtext" var="searchtext">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+
+<div class="detailed-search-main-container" id="main" data-title="<#pagetitle>" data-namecontexthelpshow="<#system type='showhelp'>">
+	<div id="content">
+		<div class="tab-container detailed-search-box">
+			<form id="detailedsearch" class="validateForm detailed-search-form" action="/searchdetailed.htm" onsubmit="_Prtg.Hjax.loadLink('/searchdetailed.htm?searchtext='+$(this).find('#searchstring2').val()+'&searchtype='+$(this).find('#searchtype2').val()); return false;" method="get">
+				<input type="hidden" value="<#inserturlparam parameter='searchtype'>" name="searchtype" id="searchtype2">
+				<h2><#lang key="html.searchdetailed.refine" default="Refine Your Search For"></h2>
+				<input id="searchstring2" class="detailed-searchstring" name="searchtext" type=text value="<#system type="searchtext">">
+				<div class="detailed-button-box">
+					<button class="submit actionbutton button btnsmall detailed-submit-button" type="submit"><#lang key="html.search.start" default="Start Search"></button>
+				</div>
+			</form>
+	  	<div class="loadlater loading detailed-results" loadurl="/controls/searchdetailed.htm?searchtext=<#inserturlparam parameter='searchtext' doenc='1'>&searchtype=<#inserturlparam parameter='searchtype'>"></div>
+		</div>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

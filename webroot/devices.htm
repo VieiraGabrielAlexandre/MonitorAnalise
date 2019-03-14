@@ -1,0 +1,36 @@
+﻿<#lang key="html.devices.title" default="Devices" var="pagetitle">
+<#lang key="html.devices.titlesmall" default="devices&nbsp;" var="titlesmall">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<#inserturlparam parameter="filter_favorite" var="filter">
+<#objectid var="objid">
+<div id="main" data-title="<#pagetitle>">
+  <div id="content" class="table-wrapper">
+    <div class="buttonbox normalpage">
+		 <#include file="includes\linkpagebutton.htm">
+		 <a data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0 nohjax' href="/devices-qr.htm?<#if value="@filter" is="" then="id=@objid>" else="filter_favorite=@filter" varexpand="value,then,else">&width=5cm&height=5cm&margin=1cm" title="<#lang key="html.devices.printqrcodes" default="Print QR Codes">"><i class="icon-dark icon-print"></i></a>
+		</div>
+
+	  <#objectproperty name="name" var="objectname">
+		<div class="prtg-plugin" data-plugin="prtg-table">
+		<#table tableid="devicetable"
+			content="devices"
+			columns="probegroupdevice,device,location,downsens,partialdownsens,downacksens,upsens,warnsens,pausedsens,unusualsens,undefinedsens,checkbox"
+			tools="pause,scan,delete,edit,discover"
+			sortby="probegroupdevice"
+			sortable="true"
+			refreshable="true"
+			tabletitle="@pagetitle @objectname"
+			filters="words!@titlesmall,objects!data-filtername='id'|data-inputname='id'|data-rootid='0'|data-onlysensors='0'|data-sensors='0'|data-hidesensors='true'|data-devices='0'|data-hidedevices='0'|data-groups='1'|data-required=''|data-probes='1'|data-allownone='1'|data-allowone='1'|data-allowself='1'|data-allowroot='1',tags"
+			varexpand="tabletitle,filters">
+		</div>
+	</div>
+<#lang key="html.devices.help.title" default="Devices" var="helptitle">
+<#lang key="html.devices.help.text" default="This page shows the devices from the monitoring database from one group (and its subgroups)." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

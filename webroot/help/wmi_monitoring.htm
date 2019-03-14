@@ -1,0 +1,89 @@
+﻿<!--Monitoring via WMI-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="choosing_the_right_snmp_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ssh_monitoring.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring via WMI</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring via WMI</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can monitor Windows systems via <a href="wmi_monitoring.htm" class="topiclink">Windows Management Instrumentation (WMI)</a> and <a href="wmi_monitoring.htm#windows" class="topiclink">Windows Performance Counters</a>. WMI is the Microsoft base technology for monitoring and managing Windows-based systems. PRTG uses this technology to access data of various Windows configuration parameters and status values. However, sensors using the WMI protocol generally have a high impact on system performance. In addition to strict WMI sensors, there are sensors that can use Performance Counters to monitor Windows systems. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor via WMI and Performance Counters, it is usually sufficient to provide <span style="font-weight: bold;">Credentials for Windows Systems</span> in PRTG. However, monitoring via WMI is not always trivial and often causes issues.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>See this article in our Knowledge Base if you run into issues: <a href="https://kb.paessler.com/en/topic/1043" target="_blank" class="weblink">My WMI sensors don't work. What can I do?</a> </p>
+<p class="p_Normal" style="page-break-inside: avoid;">It is also possible to use Simple Network Management Protocol (SNMP) for Windows devices. The same information is often available using any of these protocols. From a performance perspective, the preference would be SNMP, and then WMI or Performance Counters.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="how" class="hmanchor"></a><span class="f_InTopicHeading">How WMI Works</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">WMI allows accessing data of many Windows configuration parameters, as well as current system status values. Access can be local or remote via a network connection. WMI is based on <span class="f_ItalicCustom">COM</span> and <span class="f_ItalicCustom">DCOM</span> and is integrated in Windows versions as of Windows Server 2000. PRTG officially supports WMI for Windows 7 or later.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>WoW64 (Windows 32-bit on Windows 64-bit) must be installed on target systems that run Windows Server 2016. This allows 32-bit applications to be run on 64-bit systems. This is necessary because the probe service only runs with 32-bit support. Without it, WMI sensors will not work.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor remote machines, PRTG WMI sensors need Active Directory account credentials to have access to the WMI interface. You can enter these credentials in PRTG for the parent device or group, or in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a></span> group. The sensor will then inherit these settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>Sensors using the Windows Management Instrumentation (WMI) protocol generally have a high impact on the system performance! Try to stay below 200 WMI sensors per <a href="architecture.htm" class="topiclink">probe</a>. Above this number, please consider using multiple <span class="f_BoldCustom"><a href="remote_probes_and_multiple_probes.htm" class="topiclink">Remote Probes</a></span> for load balancing.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For an overview and details about all WMI sensors, see the <span class="f_BoldCustom"><a href="available_sensor_types.htm#wmi" class="topiclink">List of Available Sensor Types</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="windows" class="hmanchor"></a><span class="f_InTopicHeading">Monitoring Windows Systems: Performance Counters</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Besides sensor types that can monitor Windows systems only via WMI, PRTG provides sensor types that can use a <span class="f_ItalicCustom">hybrid</span> approach. If you choose the hybrid approach, these sensors will first try to query data via Windows <span class="f_ItalicCustom">Performance Counters</span> using <span class="f_ItalicCustom">Remote Registry Service</span>. These Windows sensors use WMI as a fallback if Performance Counters are not available or cannot be read out. When running in fallback mode, PRTG re-tries to connect to Performance Counters after 24 hours. You can change the <span class="f_BoldCustom">Preferred Data Source</span> in the <span class="f_BoldCustom">Windows Compatibility Options</span> in the <span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can identify these hybrid sensors by looking at their categories, for example, in the <span class="f_BoldCustom"><a href="add_a_sensor.htm" class="topiclink">Add Sensor</a></span><a href="add_a_sensor.htm" class="topiclink"> dialog</a>. <span class="f_BoldCustom">Search directly</span> for &quot;windows&quot; and select &quot;Performance Counters&quot; as <span class="f_BoldCustom">Technology Used</span>. Among them are various sensors with &quot;Windows&quot; in the name, as well as some Hyper-V sensors.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limitations" class="hmanchor"></a><span class="f_InTopicHeading">Limitations of WMI on Windows Server 2008 (R1)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You should be aware that performance of WMI-based monitoring is drastically limited when the monitoring station or the monitored client runs on Windows Server 2008 (R1). When it comes to network monitoring via WMI, Windows Server 2008 R2 is many times faster than Windows Server 2008 (R1).</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>These are not limitations of PRTG, but arise from the WMI functionality built into the Windows operating systems mentioned.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>These limitations also apply to Windows Vista, which is no longer officially supported. You can still monitor machines running Windows Vista, but PRTG core server and probes are no longer supported on this operating system.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The results of our tests are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">On Windows Server 2008 R2 or Windows 7 (and on later Windows versions) you can run most WMI sensors if you provide optimal conditions, such as running the core and the target systems exclusively under Windows Server 2008 R2 and being located within the same LAN segment. Actual performance can be significantly less depending on network topology and WMI health of the target systems—we have seen configurations that could not go beyond 500 sensors (and even less).</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">On Windows 2008 (R1) you can run about 300 WMI sensors with one minute interval.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The more Windows 2008/Windows 7 client systems you have in your network, the more WMI monitoring performance will be affected.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">System performance (CPU, memory, etc.) of virtualization does not strongly affect WMI monitoring performance.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">If you want to use WMI for network monitoring of more than 20 or 30 systems, please consider the following rules:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Do not use Windows 2008 (R1) as monitoring stations for WMI-based network monitoring.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use Windows Server 2008 R2 (or later Windows versions) for WMI-based network monitoring instead.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Consider setting up remote probes for the WMI monitoring. You still get far better WMI monitoring performance with a remote probe on a virtual machine running Windows Server 2008 R2 than on any bare metal system running Windows 2008.</span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Consider switching to SNMP-based monitoring for large networks. Using SNMP you can easily monitor 10 times as many nodes as with WMI on the same hardware</span>.</li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: General introduction to WMI and PRTG</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/1043" target="_blank" class="weblink">https://kb.paessler.com/en/topic/1043</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: Bandwidth Monitoring with SNMP and WMI</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/bandwidth-monitoring-basic" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/bandwidth-monitoring-basic</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which WQL queries are used by PRTG's WMI sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/8783" target="_blank" class="weblink">https://kb.paessler.com/en/topic/8783</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tool: Paessler WMI Tester. A useful freeware tool to test WMI connections. Tests the accessibility of WMI (Windows Management Instrumentation) counters in a quick and easy manner.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/tools/wmitester" target="_blank" class="weblink">https://www.paessler.com/tools/wmitester</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: WMI,WMI Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="choosing_the_right_snmp_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ssh_monitoring.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

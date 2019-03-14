@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.ups-mib.upsbattery.upsbatterystatus" desiredValue="2" undefinedState="1">
+    <Lookups>
+      <SingleInt state="Ok" value="1">
+        Unknown
+      </SingleInt>
+      <SingleInt state="Ok" value="2">
+        Battery Normal
+      </SingleInt>
+      <SingleInt state="Warning" value="3">
+        Battery Low
+      </SingleInt>
+      <SingleInt state="Error" value="4">
+        Battery Depleted
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>
+ 

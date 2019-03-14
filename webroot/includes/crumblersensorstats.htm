@@ -1,0 +1,92 @@
+﻿<#session type="newmessages" status="5" var="alarms">
+<div class="statusinfo alert display0" title="<#lang key="pas.breadcrumbs.alarmcount" default="Current Alarm Count">">
+    <a id="new_alarms" href="/alarms.htm?filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14">
+        <span class="text"><#lang key="js.clienttimer.newalarms2" default="New Alarms"></span>
+        <span class="counter">...</span>
+    </a>
+</div>
+
+<div class="statusinfo message display0" title='<#lang key="pas.breadcrumbs.sincelastlogin" default="Number of new logfile entries since last login">'>
+    <a id="new_message" href="/log.htm">
+        <span class="text"><#lang key="js.clienttimer.newmessages2" default="New Log Entries"></span>
+        <span class="counter">...</span>
+    </a>
+</div>
+
+<div class="statusinfo newtickets display0" title="<#lang key="pas.breadcrumbs.tickets" default="Number of updated Tickets">">
+    <a href="/tickets.htm?filter_user=<#userid>&filter_status=1">
+        <span class="text"><#lang key="js.clienttimer.ticketsnew" default="Updated Tickets"></span>
+        <span class="counter">...</span>
+    </a>
+</div>
+
+<div class="spacing"></div>
+
+<div class="statusinfo downsens display<#objectstatus name="downsens" id="0" show="textraw">0"
+    title="<#objectstatus name="downsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsDown" default="Down">">
+    <a href="/sensors.htm?id=0&filter_status=5">
+        <span class="icon sensr"></span>
+        <span class="counter"><#objectstatus name="downsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo partialdownsens display<#objectstatus name="partialdownsens" id="0" show="textraw">0"
+    title="<#objectstatus name="partialdownsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsPartialDown" default="Down (Partial)">">
+    <a href="/sensors.htm?id=0&filter_status=14">
+        <span class="icon sensq"></span>
+        <span class="counter"><#objectstatus name="partialdownsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo downacksens display<#objectstatus name="downacksens" id="0" show="textraw">0"
+    title="<#objectstatus name="downacksens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsDownAck" default="Down (Acknowledged)">">
+    <a href="/sensors.htm?id=0&filter_status=13">
+        <span class="icon senso"></span>
+        <span class="counter"><#objectstatus name="downacksens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo warnsens display<#objectstatus name="warnsens" id="0" show="textraw">0"
+    title="<#objectstatus name="warnsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsWarning" default="Warning">">
+    <a href="/sensors.htm?id=0&filter_status=4">
+        <span class="icon sensy"></span>
+        <span class="counter"><#objectstatus name="warnsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo upsens display<#objectstatus name="upsens" id="0" show="textraw">0"
+    title="<#objectstatus name="upsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsUp" default="Up">">
+    <a href="/sensors.htm?id=0&filter_status=2&filter_status=3">
+        <span class="icon sensg"></span>
+        <span class="counter"><#objectstatus name="upsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+
+<div class="statusinfo pausedsens display<#objectstatus name="pausedsens" id="0" show="textraw">0"
+    title="<#objectstatus name="pausedsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsPausedUser" default="Paused">">
+    <a href="/sensors.htm?id=0&filter_status=7&filter_status=8&filter_status=9&filter_status=11&filter_status=12">
+        <span class="icon sensb"></span>
+        <span class="counter"><#objectstatus name="pausedsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo unusualsens display<#objectstatus name="unusualsens" id="0" show="textraw">0"
+    title="<#objectstatus name="unusualsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsUnusual" default="Unusual">">
+    <a href="/sensors.htm?id=0&filter_status=10">
+        <span class="icon sensp"></span>
+        <span class="counter"><#objectstatus name="unusualsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+<div class="statusinfo undefinedsens display<#objectstatus name="undefinedsens" id="0" show="textraw">0"
+    title="<#objectstatus name="undefinedsens" id="0" show="textraw">x <#lang key="common.strings.nodestates.onsUnknown" default="Unknown">">
+    <a href="/sensors.htm?id=0&filter_status=0&filter_status=6&filter_status=1">
+        <span class="icon sensx"></span>
+        <span class="counter"><#objectstatus name="undefinedsens" id="0" show="textraw"></span>
+    </a>
+</div>
+
+
+
+

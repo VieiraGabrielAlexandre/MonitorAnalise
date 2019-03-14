@@ -1,0 +1,105 @@
+﻿<!--Remote Probes and Multiple Probes-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="add_remote_probe.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="remote_probe_quick_install.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Remote Probes and Multiple Probes</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Remote Probes and Multiple Probes</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Upon installation, PRTG automatically creates the first probe, the <span class="f_BoldCustom">Local Probe</span> in PRTG on premises and the <span class="f_BoldCustom">Hosted Probe</span> in PRTG hosted by Paessler. They run on the same machine as the PRTG core server and monitor all reachable devices, servers, and services from this system, using the sensors you have configured. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Working only with a local probe should suffice for Local Area Network (LAN) monitoring with PRTG on premises and if you want to monitor one location only. For LAN monitoring with PRTG hosted by Paessler, at least one remote probe is required because the hosted probe can only reach targets that are publicly available via the internet.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="scenarios" class="hmanchor"></a><span class="f_InTopicHeading">Scenarios Requiring Remote Probes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are several situations that make it necessary to work with <span class="f_BoldCustom">Remote Probes</span> in the same LAN or in remote locations. Among these situations are the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You run a PRTG hosted by Paessler instance and want to monitor your local network.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You have more than one location and you need to make sure that services are available from all locations.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Your network is separated in several LANs by firewalls, and the local probe cannot monitor specific services across the firewalls.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You want to monitor systems in a secure network, and you need a secure connection between the PRTG server and this network.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You want to sniff packets on another computer.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You want to monitor NetFlow data on another computer.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You experience performance issues with CPU intensive sensors like Packet Sniffer or NetFlow sensors and need to distribute the load over more than one PC.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The following chart shows an example for a remote probe scenario.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="remote_probes_en.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Monitoring a Distributed Network with PRTG" title="Monitoring a Distributed Network with PRTG" style="width:600px;height:330px;border:none" src="remote_probes_en_zoom50.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Monitoring a Distributed Network with PRTG</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The PRTG core server inside the <span class="f_ItalicCustom">Corporate LAN</span> (top left) is able to monitor:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Services inside the </span><span class="f_ItalicCustom">Corporate LAN</span><span class="f_ListBulleted"> using the </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Services behind a firewall in the </span><span class="f_ItalicCustom">Corporate LAN</span><span class="f_ListBulleted"> using </span><span class="f_BoldCustom">Remote Probe 1</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Secured services inside the </span><span class="f_ItalicCustom">Branch Office</span><span class="f_ListBulleted"> (bottom right) using </span><span class="f_BoldCustom">Remote Probe 2</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Secured services on </span><span class="f_ItalicCustom">Mail Server</span><span class="f_ListBulleted"> and </span><span class="f_ItalicCustom">Web Server</span><span class="f_ListBulleted"> using </span><span class="f_BoldCustom">Remote Probe 3</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">Remote Probe 4</span><span class="f_ListBulleted"> installed directly on these servers.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Public services on the internet using</span><span class="f_ListBulleted"> any of the probes.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="how" class="hmanchor"></a><span class="f_InTopicHeading">How Probes Work</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">As soon as a probe is started, it automatically connects to the <a href="architecture.htm#core" class="topiclink">PRTG core server</a>, downloads the sensor configuration, and begins its monitoring tasks. The core server sends new configuration data to a probe as soon as the monitoring configuration is changed by the user. Probes monitor autonomously and send the monitoring results back to the core server for each check they have performed. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">If the connections between core and probe fail for any reason (for example, a reboot of the computer running the core server), the probe continues monitoring and stores the results. During a connection loss, a buffer stores a maximum of 500,000 sensor results in the RAM of the remote probe system (up to 50 - 200 MB). This means that for 100 sensors with a 1-minute interval, the monitoring results of up to 3 days can be buffered (or 52 minutes for 10,000 sensors with one minute interval). The probe automatically reconnects to the core as soon as it is available again and transmits all monitoring results gathered during the connection loss.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The connection between probe and core is initiated by the probe, secured using Transport Layer Security (TLS). This means that the data sent back and forth between core and probe is not visible to someone capturing data packets. The core server provides an open TCP/IP port and waits for connection attempts from probes. If a new probe connects for the first time, the administrator will receive a ToDo <a href="tickets.htm" class="topiclink">ticket</a> and will then see the new probe in the device tree. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">As a security precaution, you must manually approve the probe in the device tree before any sensors can be created and monitored. You can also deny a probe, which will then be disconnected. No further connection attempts will be accepted and the probe IP is added to the <span class="f_BoldCustom">Deny IPs</span> list in the probes system settings (see <span class="f_BoldCustom"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span> section). This ensures that unauthorized probes cannot connect to a core server.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Because the probe initiates the connection, you must ensure that a connection can be established from the outside world to your core server. For example, you may need to open any necessary ports in your firewall and you may need to specify a Network Address Translation (NAT) rule for your network. The process is the same as if you wanted to allow access to the web server provided by the PRTG core server via port 443, for example. Make sure that you have the TCP port <span class="f_ItalicCustom">23560 </span>open or forwarded on both your PRTG core server side and probe side.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you run PRTG in a cluster installation, remote probes also connect to your failover node(s) in addition to the master node and send monitoring data. This works as described above for a single PRTG server. If your master node fails, you can still see monitoring data on your failover(s). You can define the <span style="font-weight: bold;">Cluster Connectivity</span> of each probe in its <span class="f_BoldCustom"><a href="probe_settings.htm#outgoingipgroup" class="topiclink">Administrative Probe Settings</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="update" class="hmanchor"></a><span class="f_InTopicHeading">Automatic Probe Update</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Whenever a new version of PRTG is installed on the core server, all remote probes automatically download and install the updated version of the probe as soon as they reconnect to the updated core installation. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The local probe is updated during the core installation. All remote probes automatically download the new binaries using the TLS-secured probe or core connection. The download of the 4 MB file takes anywhere from a few seconds (in a LAN) to a few minutes (via internet connections), depending on the available bandwidth. As soon as the update has been downloaded, the probe disconnects, installs the update, and reconnects to the core server. This takes between 20 and 100 seconds. Please note that during the update phase, the monitoring of the local probe can be affected due to the bandwidth required for the downloads.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If the automatic update of a remote probe fails for some reason, please update the remote probe manually by <a href="remote_probe_setup.htm" class="topiclink">downloading and executing the installer</a> on the probe computer. If a remote probe keeps being disconnected after an update, please check if the server with the remote probe has two network connections with different IP addresses. Make sure these addresses are in the list of allowed IPs in the <a href="probes_settings.htm#probebasic" class="topiclink">Core &amp; Probes settings</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="install_a_prtg_remote_probe.htm" class="topiclink">Install a PRTG Remote Probe Using Installer</a></span><span class="f_ListBulleted"> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="remote_probe_quick_install.htm" class="topiclink">Remote Probe Quick Install</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: Core Server and Remote Probes</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/video_tutorials/distributed_monitoring" target="_blank" class="weblink">https://www.paessler.com/support/video_tutorials/distributed_monitoring</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Add Remote Probe—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="remote_probes_and_multiple_probes.htm" class="topiclink">Remote Probes and Multiple Probes</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="remote_probe_quick_install.htm" class="topiclink">Remote Probe Quick Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="remote_probe_setup.htm" class="topiclink">Remote Probe Setup Using Installer</a> &nbsp;</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="add_remote_probe.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="remote_probe_quick_install.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

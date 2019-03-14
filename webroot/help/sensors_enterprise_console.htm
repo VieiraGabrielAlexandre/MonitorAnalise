@@ -1,0 +1,84 @@
+﻿<!--Sensors-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_enterprise_console.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="alarms_enterprise_console.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Sensors</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Sensors</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Enterprise Console has a tab-like interface. Using the tabs you can navigate through various pages with information about your monitored objects, such as your network status and monitoring results, for example, as well as access maps, reports, tickets and settings.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:550px"><a href="ec_tabs.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Enterprise Console Menu Tabs Bar" title="Enterprise Console Menu Tabs Bar" style="width:550px;height:21px;border:none" src="ec_tabs_zoom85.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Enterprise Console Menu Tabs Bar</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">There is documentation available for the following tabs:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="devices_enterprise_console.htm" class="topiclink">Devices</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="libraries_enterprise_console.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensors_enterprise_console.htm" class="topiclink">Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="alarms_enterprise_console.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="maps_enterprise_console.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="reports_enterprise_console.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="logs_enterprise_console.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="tickets_ec.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="setup_enterprise_console.htm" class="topiclink">Setup</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="search_results_enterprise_console.htm" class="topiclink">Search Results</a></span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Viewing lists of sensors is a great way to keep an eye on your network status because you can select which kind of sensors you want to see. You can filter by various parameters like object or sensor type, for example, and current sensor status.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensors" class="hmanchor"></a><span class="f_InTopicHeading">Sensors Menu Tab</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>For technical reasons, this function is available for one server at a time only. If you have configured more than one PRTG core server, choose one server from the server list in the upper-right corner.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Sensors</span> entry in the menu tabs bar to show a table list of all sensors. You can enable a filter to only show certain sensors. To do so, choose from three different dropdown menus to build a filter. With each filter you can further decrease the number of shown sensors.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">By Type</span><br />
+<span class="f_ListBulleted">The second dropdown menu shows <a href="available_sensor_types.htm" class="topiclink">all sensor types</a> available in your monitoring setup. Select an entry to only show sensors of this type. The default value is </span><span class="f_BoldCustom">All Sensors</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_BoldCustom">By Status</span><br />
+<span class="f_ListBulleted">The third dropdown menu shows all possible <a href="sensor_states.htm" class="topiclink">sensor states</a>. Select an entry to only show sensors that currently show this status. Choose between </span><span class="f_BoldCustom">All States</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Acknowledged)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Down (Partial)</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">Unknown</span><span class="f_ListBulleted">. The default value is </span><span class="f_BoldCustom">All States</span><span class="f_ListBulleted">. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you click a sensor symbol in the <a href="general_layout_enterprise_console.htm#page" class="topiclink">page header bar</a>, you can directly view a sensor list filtered by the selected sensor status for the selected server.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">If you have filtered out all sensors and the list below shows no entries, remove some filters by reverting them to the default values.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">In the column </span><span class="f_BoldCustom">Last Value</span><span class="f_ListBulleted">, the table only shows the last value of the sensor's </span><span class="f_BoldCustom">primary channel</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The list can show up to one hundred entries at a time. Use the arrow symbols above the list to show other items. You can jump to the beginning of the list, or browse through it hundred by hundred. If the list has more than one entry, you can also sort the items by the contents of a certain column. To sort, simply click the header of the column you want to sort by once or twice.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">From this list view, you can select multiple items to apply the same action to them, for example, <span class="f_BoldCustom">Edit | Scan Now</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can select multiple items by the following means (you can also combine them):</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click and hold your left mouse key while pointing to the lines you want to select</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Hold the </span><span class="f_ItalicCustom">Ctrl</span><span class="f_ListBulleted"> key while clicking to toggle the selection status of a single line</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Click a line and hold the </span><span class="f_ItalicCustom">Shift</span><span class="f_ListBulleted"> key while clicking another line to select all lines in between.</span><br />
+&nbsp;</li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Enterprise Console—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="first_start_enterprise_console.htm" class="topiclink">First Start</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout_enterprise_console.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="menu_tabs_enterprise_console.htm" class="topiclink">Menu Tabs and Page Content</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_servers_enterprise_console.htm" class="topiclink">PRTG Servers</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="options_enterprise_console.htm" class="topiclink">Options</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="windows_menu_structure_enterprise_console.htm" class="topiclink">Windows Menu Structure</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus_enterprise_console.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="shortcuts_overview_enterprise_console.htm" class="topiclink">Shortcuts Overview</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_enterprise_console.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="alarms_enterprise_console.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

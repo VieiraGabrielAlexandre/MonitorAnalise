@@ -1,0 +1,141 @@
+﻿<#checkobjecttype objecttype="device">
+<#isonpodlocalprobe var="pod">
+<div id="overview-device" class="flex-layout">
+
+	<div class="panel space-between">
+    <div class="panel col-panel responsiveobjectoverview_panelA"> <!-- Left part-->
+
+      <div class="responsiveobjectoverview_panel1"> <!-- narrow: above panel 2; wide: on the right -->
+          <div class="tct-box status-smallScreen">
+            <#system type='showhelp' tct="theater" page="deviceoverview" isreadonly="false" version="trial" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="c-deviceoverview" isreadonly="false" version="commercial" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="p-deviceoverview" isreadonly="false" version="podtest" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="pc-deviceoverview" isreadonly="false" version="podpayed" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+          </div>
+          <div class="prtg-plugin status-smallScreen" data-plugin="status">
+              <#include file="controls\deviceoverview_statusinfo.htm">
+          </div>
+          <a class='button addSensor-cta status-smallScreen <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href="/addsensor.htm?id=<#objectid>">
+              <span class="glyph-plus-circled"></span><#lang key="html.global.addsensor" default="Add Sensor"/></a>
+
+          <div class="zoomable">
+
+          	<div class="prtg-plugin deviceoverviewsensorvalues"
+          			data-plugin="channelgauges"
+          			data-objectid="<#objectid>"
+          			data-type="sensors">
+                <!--
+                {
+                "objects":<#table
+                					output='json'
+                					noraw='1'
+                					content='sensors'
+                					sortby='-position'
+                					count='100'
+                          filter_priority='4'
+                          filter_priority='5'
+                					columns='objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw'>
+                }
+                -->
+            </div>
+
+        </div>
+      </div>
+
+      <div class="responsiveobjectoverview_panel2"> <!-- narrow: below panel 1; wide: in the middle-->
+        <div class="table-wrapper">
+          <div class="sensortree-action">
+              <div class='add-menu-badge <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'></div>
+          </div>
+          <div class="add-menu-wrapper">
+              <div class="add-menu">
+                  <a class='actionbutton add-menu-item <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href="/addsensor.htm?id=<#objectid>"><#lang key="html.global.addsensor" default="Add Sensor"/></a>
+              </div>
+          </div>
+
+          <div class="prtg-plugin clear" data-plugin="prtg-table" data-sortable="tbody tr">
+              <#table tableid="devicesensortable" content="sensors" columns="position=textshort,sensor=htmllong,status,message,minigraph,priority,checkbox" tools="edit,acknowledge,pause,fave,prio,scan,delete,position" sortby="position" sortable="true" links="true" count="100" refreshable="true">
+          </div>
+        </div>
+        <div class='table-wrapper display<#showsuggest count="1"> <#if value="@pod" is="true" then="hide" else="" varexpand="value">' style='<#system type="hideforreadonlyusers"> <#system type="hideforclusterdevice">'>
+	        <div id="sensortreelinks">
+
+            <h3 class="tabletitle"><#lang key="html.recommended.sensors" default="Recommended Sensors"></h3>
+            <div class="refreshable" refreshurl="/controls/recommendedsensors.htm?id=<#objectid>">
+              <#include file="/controls/recommendedsensors.htm">
+            </div>
+            <div class="recommendNow-box">
+                <a class='button btnwhite display<#showsuggest count="1"> <#if value="@pod" is="true" then="hide" else="" varexpand="value">' title="<#lastautodisco recommender='true'>" onclick="_Prtg.objectTools.recommendNow.call(this,<#objectid>);return false;"><#langjs key="js.contextmenus.RecommendNow" default="Recommend Now"/></a>
+            </div>
+                <div class="oskhelpbox">
+                <div class="helpheader"><b><#lang key="html..deviceoverview.helprecommendedsensors" default="What is this?"></b></div>
+                    <div>
+                        <#lang key="html.deviceoverview.helprecommendedsensors" default="PRTG can inspect your devices to recommend useful sensor types. Add these sensors to get a much better and more detailed picture about the status of this device in the future.">
+                    </div>
+                </div>
+          </div>
+          <div>
+            <#objectproperty name="sensorinfo" show="oskdef">
+          </div>
+        </div>
+      </div>
+
+
+</div>
+    <div class="panel col-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+        <div class="tct-box status-bigScreen">
+            <#system type='showhelp' tct="theater" page="deviceoverview" isreadonly="false" version="trial" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="c-deviceoverview" isreadonly="false" version="commercial" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="p-deviceoverview" isreadonly="false" version="podtest" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+            <#system type='showhelp' tct="theater" page="pc-deviceoverview" isreadonly="false" version="podpayed" var="tctfile">
+            <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        </div>
+        <div class="prtg-plugin overview-list status-bigScreen" data-plugin="status">
+            <#include file="controls\deviceoverview_statusinfo.htm">
+        </div>
+
+        <a class='button addSensor-cta status-bigScreen <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href="/addsensor.htm?id=<#objectid>"><span class="glyph-plus-circled"></span> <#lang key="html.global.addsensor" default="Add Sensor"/></a>
+
+        <div class="geomap-box">
+            <div class='geomap <#selectionlist content="geomapprovider" asClass="true">'>
+                <a href="geomap.htm?id=<#objectid>">
+                    <div class="graphbox">
+                        <div id="geomap_deviceoverview" class="refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=410&height=130&maxlegenditems=4&domobjectid=geomap_deviceoverview&nolegend=1">
+                        <#selectionlist content="locationlist" width="410" height="130" maxlegenditems="4" domobjectid="geomap_deviceoverview" nolegend="1">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="map-panel">
+            <div class="graphs">
+                <div class="graphbox">
+				      	<a href="/device.htm?id=<#objectid>&tabid=2">
+                <#sensor type="graph" forcesvg="true" graphid="1" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="500" height="130" refreshable="true">
+                </a>
+                </div>
+                <div class="graphbox">
+				      	<a href="/device.htm?id=<#objectid>&tabid=3">
+                <#sensor type="graph" forcesvg="true" graphid="2" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="500" height="130" refreshable="true">
+                </a>
+                </div>
+                <div class="graphbox">
+				      	<a href="/device.htm?id=<#objectid>&tabid=4">
+                <#sensor type="graph" forcesvg="true" graphid="3" graphtitle="@@notitle@@" charttext="@@period@@" width="380" maxwidth="500" height="130" refreshable="true">
+                </a>
+                </div>
+                <div class="graphbox">
+                <#sensor type="legend" width="380" maxwidth="380">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

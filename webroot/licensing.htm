@@ -1,0 +1,34 @@
+﻿<#system type="denyfornonsvs">
+<#lang key="html.licensing.title" default="License" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle" >
+<div id="main" class="licensing-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1 class="<#clusterdependent insertfor="failovernode" insertcontent="hide">"><b><#lang key="html.menu.Setup.License" default="License"></b></h1>
+  <div class="buttonbox">
+    <#include file="includes\linkpagebutton.htm">
+  </div>
+  <div id="content">
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/licensingpage.htm">
+        <i class="glyph-ok"></i>
+        <span class="text"><#lang key="html.licensing.status" default="Status"/></span>
+      </a></li>
+      <li tabid="2"><a href="/controls/loadlog.htm?id=810&count=50&columns=datetime%2Cstatus%2Cmessage&filter_status=513&filter_status=514">
+        <i class="glyph-list-alt"></i>
+        <span class="text"><#lang key="html.licensing.Log" default="Log"/></span>
+        </a></li>
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+
+  <#lang key="html.licensing.help.title1" default="License" var="helptitle">
+    <#lang key="html.licensing.help.text" default="Here you can view and manage your licensing information. You can update your license key, for example, if you have purchased a PRTG Commercial Edition and want to upgrade your running PRTG Freeware or Trial installation, or deactivate the license on this computer if you migrate PRTG to another server.<br><br><a href='/help/Enter_License_Key.htm' target='_blank'><b>Help: Licensing</b></a>" var="helptext">
+  <#system type='showhelp' var='showhelp'>
+  <#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

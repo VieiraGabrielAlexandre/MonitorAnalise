@@ -1,0 +1,114 @@
+﻿
+<#lang key="html.dashboard.alarms" default="Alarms" var="alarms">
+<#lang key="html.dashboard.ackalarms" default="Ack'ed Alarms" var="ackalarms">
+<#lang key="html.dashboard.warnings" default="Warnings" var="warnings">
+<#lang key="html.dashboard.unusuals" default="Unusuals" var="unusuals">
+<#lang key="html.dashboard.favoritesensors" default="Favorite Sensors" var="favs">
+<#lang key="html.dashboard.tickets" default="Open Tickets" var="tickets">
+<#session type="ticketcount" status="1" skipformorespeed="true" since="" var="ticketcount" skiptagforreadonly="true">
+<#objectstatus name="downsens" id="0" show="htmllink" var="alarmcount">
+<#objectstatus name="downacksens" id="0" show="htmllink" var="ackalarmcount">
+<#objectstatus name="warnsens" id="0" show="htmllink" var="warningcount">
+<#objectstatus name="unusualsens" id="0" show="htmllink" var="unusualcount">
+<#session type="favcount" var="favcount">
+<table width="100%">
+  <tr>
+    <td width="50%">
+  <h2>
+    <a href="/alarms.htm?filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14">
+      <#inserthtml html="@alarmcount @alarms, @ackalarmcount @ackalarms, @warningcount @warnings, @unusualcount @unusuals" varexpand="html">
+    </a>
+  </h2>
+    </td>
+    <td width="50%">
+<h2>
+    <a href="/log.htm">
+      <#lang key="html.global.log" default="Log">
+    </a>
+</h2>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="onedashboardcell tablewithstyles scrollabletablecontainer prtg-plugin" data-plugin="prtg-table">
+          <#table tableid="alarmtable"
+          content="sensors"
+          columns="downtimesince,device,sensor"
+          count="50"
+          sortby="downtimesince"
+          sortable="true"
+          links="false"
+          infoheader="false"
+          filter_status="5"
+          filter_status="4"
+          filter_status="13"
+          filter_status="14"
+          filter_status="10">
+        </div>
+    </td>
+    <td>
+          
+        <div class="tablewithstyles onedashboardcell prtg-plugin" data-plugin="prtg-table">
+          <#table tableid="messagetable"
+          content="messages"
+          columns="datetime,parent,name,status,message"
+          count="50"
+          sortby="date"
+          sortable="true"
+          links="false"
+          infoheader="false">
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<h2>
+    <a href="/sensors.htm?filter_favorite=1">
+    <#inserthtml html="@favcount @favs" varexpand="html">
+    </a>
+</h2>
+    </td>
+    <td>
+<h2 style="<#system type="hideforreadonlyusers">">
+    <a href="/tickets.htm">
+    <#inserthtml html="@ticketcount @tickets" varexpand="html" skiptagforreadonly="true">
+    </a>
+</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <div class="onedashboardcell tablewithstyles prtg-plugin" 
+          data-plugin="prtg-table"
+          data-tabletitle="<#inserthtml html="{Favs} @favs" varexpand="html">">
+          <#table tableid="sensortable"
+          content="sensors"
+          columns="device,sensor,status"
+          count="50"
+          sortby="priority"
+          sortable="true"
+          links="false"
+          infoheader="false"
+          filter_favorite="1">
+        </div>
+    </td>
+    <td>        
+        <div class="tablewithstyles onedashboardcell prtg-plugin actioncolumn" 
+          data-plugin="prtg-table"
+          style="<#system type="hideforreadonlyusers">" 
+          data-tabletitle="<#inserthtml html="{ToDos} @todos" varexpand="html">">
+          <#table tableid="tickettable"
+          content="tickets"
+          columns="datetime,priority,message,user,name"
+          count="50"
+          sortby="priority"
+          sortable="true"
+          links="false"
+          infoheader="false"
+          filter_status="1"
+          skiptagforreadonly="true">
+        </div>
+    </td>
+  </tr>
+</table>

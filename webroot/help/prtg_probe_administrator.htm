@@ -1,0 +1,335 @@
+﻿<!--PRTG Administration Tool on Remote Probe Systems-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="prtg_server_administrator.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="advanced_topics.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>PRTG Administration Tool on Remote Probe Systems</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: PRTG Administration Tool on Remote Probe Systems</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">If you start the <span class="f_BoldCustom">PRTG Administration Tool</span> on a system on which a PRTG <span class="f_BoldCustom"><a href="remote_probes_and_multiple_probes.htm" class="topiclink">Remote Probe</a></span> runs, you can define various probe-related settings, restart services, and view log information. You can also change many of these settings via the <a href="setup.htm" class="topiclink">system administration</a> and the <a href="probe_settings.htm#probe_admin" class="topiclink">probe settings tab</a> in the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>This section describes the available settings in the PRTG Administration Tool when you open the tool on a <span class="f_ItalicCustom">PRTG remote probe system</span>. This is not the complete set of available settings. If you need access to all possible settings regarding your whole PRTG installation, open the PRTG Administration Tool on the PRTG core server machine. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>All settings you make here are valid only for the local installation running on the computer on which you open the PRTG Administration Tool. In order to change settings for another installation, for example, another remote probe installation, please log in to that computer and open the program there.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>To get familiar with the different components of PRTG, we recommend that you read the <span class="f_BoldCustom"><a href="architecture.htm" class="topiclink">Architecture</a></span> section. If you prefer a video introduction to the <span style="font-weight: bold;">PRTG Administration Tool</span>, see the <span style="font-weight: bold;"><a href="prtg_server_administrator.htm#more" class="topiclink">More</a></span> section below for more information.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Start the PRTG Administration Tool</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">From the Windows start menu, select the <span class="f_BoldCustom">PRTG Network Monitor</span> group and click <span class="f_BoldCustom">PRTG Administration Tool</span> to open the application. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can choose from these options in different tabs:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm#probe_core" class="topiclink">Probe Settings for Core Connection</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm#probe_monitor" class="topiclink">Probe Settings for Monitoring</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm#start_stop" class="topiclink">Service Start/Stop</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm#logs" class="topiclink">Logs and Info</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">After you have changed settings, click the <span class="f_BoldCustom">Save &amp; Close </span>button. A new window opens where PRTG asks you to agree to restart the PRTG core server service. Click <span class="f_BoldCustom">OK </span>if you do not want your changes to be ignored.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:365px"><a href="administration_tool_confirm_restart_probe.png"><img id="TOGGLE0186A1" class="image-toggle" alt="PRTG Administration Tool: Restart Services" title="PRTG Administration Tool: Restart Services" style="width:365px;height:191px;border:none" src="administration_tool_confirm_restart_probe_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Restart Services</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe_core" class="hmanchor"></a><span class="f_InTopicHeading">Probe Settings for Core Connection</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define general settings regarding the probe and probe connections.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:435px"><a href="admin_coreconnectprobe2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="PRTG Administration Tool: Probe Settings for Core Connection" title="PRTG Administration Tool: Probe Settings for Core Connection" style="width:435px;height:393px;border:none" src="admin_coreconnectprobe2_zoom70.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Probe Settings for Core Connection</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Probe Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name of Probe</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the probe. PRTG shows this name, for example, in the device tree, and in all alarms by default. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Reconnect Time</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the time that PRTG will wait until the probe tries to reconnect to the core server if the connection fails. Please enter an integer value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Connection to PRTG Core Server</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">These settings affect the way the probe will connect to the core server. A probe is either a local probe, hosted probe, or a remote probe. PRTG will automatically detect the type of probe and show the correct setting options.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Server (IPv4 address or DNS name)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If this probe is configured as the </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted"> of the PRTG core installation, it will connect to the core via </span><span class="f_ItalicCustom">127.0.0.1</span>,<span class="f_ListBulleted"> which you cannot change. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If this probe is configured as a </span><span class="f_BoldCustom">Remote Probe</span><span class="f_ListBulleted">, enter the IP address or DNS name of the core server.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe GID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">Probe GID (global ID (GID))</span><span class="f_ListBulleted"> is a unique identifier for the probe. We recommend that you do not change it. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Exception:</span><span class="f_ListBulleted"> Only if you substitute an existing remote probe from a different computer, you have to copy the GID from the old probe to the new probe. To do so, click on the </span><span class="f_BoldCustom">Edit GID...</span><span class="f_ListBulleted"> button and confirm the warning with </span><span class="f_BoldCustom">Yes</span><span class="f_ListBulleted">. You can then change the value. You cannot change the GID for a local probe.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can deny GIDs under </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> in the PRTG web interface. If you remove a remote probe from the device tree or if you <a href="install_a_prtg_remote_probe.htm#approve" class="topiclink">deny a remote probe after installation</a>, its global ID (GID) will be automatically entered in the </span><span class="f_BoldCustom">Deny GIDs</span><span class="f_ListBulleted"> list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You do not need an access key for </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted"> connections.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">On a </span><span class="f_BoldCustom">Remote Probe</span><span class="f_ListBulleted">, the </span><span class="f_BoldCustom">Probe Access Key</span><span class="f_ListBulleted"> must match one of the access keys configured in your PRTG core server installation. If it does not match, the remote probe will not be able to connect to the core server. See the </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> section for more information.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Check also allowed and denied IPs in </span><span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> to ensure that the core server accepts the IP address of the remote probe.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Confirm Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you enter an access key for a remote probe, enter it in this field again to assure correctness.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Path for Probe Data Storage</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Path</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the data folder to which PRTG will store configuration and monitoring data. Click the </span><span class="f_BoldCustom">...</span><span class="f_ListBulleted"> button to choose another folder on your system.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">Before you change the path, make sure you stop both the core server and the probe services and copy all data to the new location.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Language for the PRTG Administration Tool for Remote Probes</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&lt;your language&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose the language for the PRTG Administration Tool on your remote probe from the dropdown list. Default is </span><span class="f_BoldCustom">English</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe_monitor" class="hmanchor"></a><span class="f_InTopicHeading">Probe Settings for Monitoring</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:438px"><a href="admin_tool_remote_probe_monitoring_settings.png"><img id="TOGGLE0186A3" class="image-toggle" alt="PRTG Administration Tool: Probe Settings for Monitoring" title="PRTG Administration Tool: Probe Settings for Monitoring" style="width:438px;height:397px;border:none" src="admin_tool_remote_probe_monitoring_settings_zoom71.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Probe Settings for Monitoring</span></p></div></div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="outgoingipgroup" class="hmanchor"></a><a id="probe_admin" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Probe Settings for Monitoring</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address used for outgoing monitoring requests.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If there is more than one IP on the current system available, you can specify the IP address that PRTG will use for outgoing monitoring requests of certain sensor types. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting will be used for sensors using the following connection types: HTTP, DNS, FTP, IMAP, POP3, Port, Remote Desktop, SMTP, and SNMP. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The setting is valid for all monitoring requests sent from this PRTG probe.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">This setting is useful for devices that expect a certain IP address when queried.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Default setting is </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">. PRTG will select an IP address automatically.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This feature does not support all sensor types for technical reasons.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/><span class="f_ListBulleted">If you change this setting, some sensors might stop working. For example, sensors might show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status if the selected IP address is blocked on the way to or directly on the monitored device.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv4</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv4 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Outgoing IPv6</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the IP address for outgoing requests using the IPv6 protocol. The list shows all IP addresses available on the current system. Choose a specific IP address or select </span><span class="f_BoldCustom">auto</span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For details about the basic concept of IPv6 in PRTG, see the </span><span class="f_BoldCustom"><a href="ipv6.htm" class="topiclink">IPv6</a></span><span class="f_ListBulleted"> section.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start_stop" class="hmanchor"></a><span class="f_InTopicHeading">Service Start/Stop</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can stop and start PRTG Windows services manually. For connected probes, click <span class="f_BoldCustom">Start Probe Service</span> to start the service or <span class="f_BoldCustom">Stop Probe Service</span> to stop it. Both actions usually take from a few seconds up to several minutes to complete. You can also restart the core server and connected probes via the PRTG web interface under <span class="f_BoldCustom"><a href="administrative_tools_settings.htm#core" class="topiclink">Administrative Tools</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>We recommend that you set a schedule for automatic restarts.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:438px"><a href="admin_tool_remote_probe_start_stop.png"><img id="TOGGLE0186A4" class="image-toggle" alt="PRTG Administration Tool Start and Stop Service" title="PRTG Administration Tool Start and Stop Service" style="width:438px;height:397px;border:none" src="admin_tool_remote_probe_start_stop_zoom71.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool Start and Stop Service</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also define a restart schedule on the <span class="f_BoldCustom"><a href="probe_settings.htm#basic" class="topiclink">Settings</a></span> tab of a probe under <span class="f_BoldCustom">Restart Options</span>, in the PRTG web interface.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="restartoptionsgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scheduled Restart settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This setting is not available on the <span class="f_BoldCustom">Hosted Probe</span> of a PRTG hosted by Paessler instance.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Options</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">For best performance, we recommend that you regularly restart the Windows servers on which PRTG is running. To do this automatically for PRTG, you can schedule an automatic restart. Choose between the following options:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">No scheduled reboot or service restart</span><span class="f_ListBulleted">: Do not perform any scheduled restart of services automatically. We recommend a manual restart every few weeks. You can initiate a restart of your PRTG core server and probes under </span><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled restart of PRTG services</span><span class="f_ListBulleted">: Restart all PRTG services on the system where this probe runs on. If you choose this option on the local probe, the PRTG core server will restart as well. Define a schedule below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Scheduled system reboot (recommended)</span><span class="f_ListBulleted">: We recommend this setting, although it is not set by default. Enter a schedule below. We recommend that you restart Windows servers once a month for best performance.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Restart Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Choose how often you want to restart PRTG services or the Windows server:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per week</span><span class="f_ListBulleted">: Select a day of the week and a time below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Once per month (recommended)</span><span class="f_ListBulleted">: Select a day of the month and a time below. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Day</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select a specific day of the week (</span><span class="f_ItalicCustom">Monday</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">Sunday</span><span class="f_ListBulleted">) or month (</span><span class="f_ItalicCustom">1st</span><span class="f_ListBulleted"> to </span><span class="f_ItalicCustom">30th</span><span class="f_ListBulleted"> or </span><span class="f_ItalicCustom">Last</span><span class="f_ListBulleted">). If you select </span><span class="f_BoldCustom">Last</span><span class="f_ListBulleted">, the restart will always be executed on the last day of the month, regardless of how many days the month has.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you select a date that does not exist in every month (for example, the 30th day in February), PRTG will automatically initiate the restart on the last day of this month.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Specify Hour</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can only see this setting if you selected a schedule option above. Select the time of day when PRTG will perform the restart. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You will get a Windows warning message 10 minutes before the restart to inform you if you are a currently logged in user. The actual restart time can differ up to 30 minutes from the settings you enter here.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can also define a restart schedule on the <span class="f_BoldCustom">Settings</span> tab of a probe, section <span class="f_BoldCustom"><a href="probe_settings.htm#probe_admin" class="topiclink">Scheduled Restart Settings</a></span>, in the PRTG web interface.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="logs" class="hmanchor"></a><span class="f_InTopicHeading">Logs and Info</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:438px"><a href="admin_tool_remote_probe_logs.png"><img id="TOGGLE0186A5" class="image-toggle" alt="PRTG Administration Tool: Logs and Info" title="PRTG Administration Tool: Logs and Info" style="width:438px;height:397px;border:none" src="admin_tool_remote_probe_logs_zoom71.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Administration Tool: Logs and Info</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Log Files</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open Log Folder...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open the PRTG Network Monitor data directory on your hard disk drive to access all logfiles that PRTG creates.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Send Logs to Paessler...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an assistant to send logfiles to the Paessler Support Team. See <a href="prtg_probe_administrator.htm#send_logs" class="topiclink">below for details</a>.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can send logfiles more easily with the support bundle via </span><span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span><span class="f_ListBulleted"> in the PRTG web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open Support Ticket...</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This will open the support form on the Paessler website in a browser window.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you need help, we recommend that you use the </span><span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span><span class="f_ListBulleted"> option in the PRTG web interface instead.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">About</span> section shows information about the version of installed PRTG programs and copyright.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="send_logs" class="hmanchor"></a><span class="f_InTopicHeading">Send Logs to Paessler</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can send logfiles more easily with the support bundle via <span class="f_BoldCustom"><a href="support_contact_support.htm#attach" class="topiclink">Contact Support</a></span> in the PRTG web interface.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:296px"><a href="admin_tool_remote_probe_send_logs.png"><img id="TOGGLE0186A6" class="image-toggle" alt="Send Logs to Paessler" title="Send Logs to Paessler" style="width:296px;height:428px;border:none" src="admin_tool_remote_probe_send_logs_zoom75.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Send Logs to Paessler</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">If you open a support ticket, Paessler Support might ask you to send logfiles for further analysis. With the <span class="f_BoldCustom">Send Logs to Paessler... </span>button, PRTG will automatically collect, compress, and send your logfiles to our FTPS server.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Send Logs to Paessler</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter your name.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Email</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a valid email address. You can provide any of your addresses, but we recommend that you use the email address of your PRTG account, which is entered by default.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Ticket No.</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is optional. If you have already opened a ticket at Paessler Support, please provide the ticket number you received. Your files will then be associated with your ticket automatically.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Please enter the ticket number starting with </span><span class="f_ItalicCustom">PAE</span><span class="f_ListBulleted"> followed by four or more digits, for example, PAE12345. If you do not have a ticket number, leave this field empty. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Send </span>button to start the data upload. Ensure that FTPS and HTTP connections are allowed on this machine.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: The PRTG Administration Tool</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/administration-tool" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/administration-tool</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Which ports does PRTG use on my system?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61462" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61462</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">PRTG Administration Tool—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_step_by_step.htm" class="topiclink">Failover Cluster Step by Step</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Automatic,Automatic Restart Options (Probe System),Configure,Configure Probe,Configure Reboot (automatic),Probe Administrator,Restart Options (Probe System),Scheduled Reboot (Probe System)</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="prtg_server_administrator.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="advanced_topics.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

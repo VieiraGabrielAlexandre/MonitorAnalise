@@ -1,0 +1,72 @@
+﻿<!--Management-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Management</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Management</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;"></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the PRTG web interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Management</span> tab. You will see a split screen: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">On the left side, your library is shown (empty in the beginning). </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">On the right side, you see your device tree, as known from the device tree's </span><span class="f_BoldCustom"><a href="manage_device_tree.htm" class="topiclink">Management</a></span><span class="f_ListBulleted"> tab.</span></li>
+</ul>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="library_management.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Bandwidth Library in Management Mode&nbsp;" title="Bandwidth Library in Management Mode&nbsp;" style="width:600px;height:406px;border:none" src="library_management_zoom48.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Bandwidth Library in Management Mode&nbsp;</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add and Change Library Nodes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">From the device tree on the right side, drag objects and drop them on the library on the left side. Each dropped object will be added immediately as a new <span class="f_ItalicCustom">Library Node</span>. Repeat this procedure as often as you wish until you have added all desired items to the library. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>When adding single sensors to the library, there can only be one sensor in one library node.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Library nodes can contain up to 1,000 sensors.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also create nested library nodes by adding a new node underneath an existing one or to a group.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Drag and drop nodes within the library to change their position. If you want to change the monitoring object that is associated with a library node, you can change the <span class="f_BoldCustom">Linked Object</span> in the node's settings.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="set" class="hmanchor"></a><span class="f_InTopicHeading">Set Library Node Display Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Right-click the name of a <span class="f_ItalicCustom">Library Node</span> and from the context menu, select <span class="f_BoldCustom">Edit | Settings...</span> to change the <span class="f_BoldCustom">Node Display Settings</span>. In this dialog, you can change the name of the library and its tags, as well as the linked object, node type, and filters.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">These settings are available for each library node. You can choose to either show the <span class="f_BoldCustom">Linked Object</span> as a sub-tree of your device tree, or to view a collection of all sensors underneath the <span class="f_BoldCustom">Linked Object</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">When selecting the sub-tree view, the library node will just look like a branch in your device tree, as shown in the screenshot below for the library node named &quot;My Sub Tree&quot;.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="library_subtree.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Library with one Node Showing a Branch of the Device Tree" title="Library with one Node Showing a Branch of the Device Tree" style="width:600px;height:182px;border:none" src="library_subtree_zoom52.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Library with one Node Showing a Branch of the Device Tree</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">When selecting a sensor collection view, only the sensors underneath the <span class="f_BoldCustom">Linked Object</span> are shown, omitting probes, groups, and devices. You can additionally filter by certain sensor <span class="f_BoldCustom">Type</span>, <span class="f_BoldCustom">Status</span>, and <span class="f_BoldCustom">Tags</span>. Only matching sensors will be shown. The screenshot below shows the same <span class="f_BoldCustom">Linked Object</span> as above, but in sensor collection view, additionally filtered for sensors with a <span class="f_BoldCustom">bandwidthsensor</span> tag.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="library_bandwidthnode.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Library with one Node Showing a Collection of Bandwidth Sensors Only" title="Library with one Node Showing a Collection of Bandwidth Sensors Only" style="width:600px;height:84px;border:none" src="library_bandwidthnode_zoom56.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Library with one Node Showing a Collection of Bandwidth Sensors Only</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see <span class="f_BoldCustom"><a href="libraries_settings.htm#node_display" class="topiclink">Libraries and Node Settings</a></span> (Overview—Library Node Display Settings) section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="context_menus" class="hmanchor"></a><span class="f_InTopicHeading">Context Menus</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On right-click, there are different context menus available—in the <span class="f_BoldCustom">Management</span> as well as in the <span class="f_BoldCustom">Overview </span>tab.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see <span class="f_BoldCustom"><a href="libraries_context_menus.htm" class="topiclink">Context Menus</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Libraries—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries_step_by_step.htm" class="topiclink">Libraries Step By Step</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries_manage.htm" class="topiclink">Management</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries_settings.htm" class="topiclink">Libraries and Node Settings</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries_context_menus.htm" class="topiclink">Context Menus</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+</th>
+</tr>
+</thead>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Libraries,Libraries Management</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

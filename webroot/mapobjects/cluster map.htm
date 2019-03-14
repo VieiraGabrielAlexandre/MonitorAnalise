@@ -1,0 +1,14 @@
+﻿<!--Cluster: Map -->
+<style>
+.preview .cluster-map-mapobject{
+	height: 176px;
+}
+</style>
+<div class="map_object map_table cluster-map-mapobject <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+	<#mapobject type="objectgrip" mode="<@editmode>">
+	<#mapobject type="htmlbefore" subid="<@subid>">
+		<div id="clustermap" class='prtg-plugin' data-plugin='clustermap' data-objects='<#include file="/api/cluster.json">' data-links='<#clustermapjson>'></div>
+	<#mapobject type="htmlafter" subid="<@subid>">
+</div>
+
+

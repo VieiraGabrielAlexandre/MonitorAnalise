@@ -1,0 +1,23 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="user">
+<form id="edituserform" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+	<wingui-hidden>
+		<div class="quick-links">
+			<a class="printbutton" href="/config_report_object.htm?id=<#objectid>" style="<#hidefornonadmins>" target="_blank" data-placement="top"
+				title='<#lang key="html.objectdata.configreport" default="Prepare Configuration Report for Printout">'><i class="icon-print icon-dark"></i>
+			</a>
+		</div>
+	</wingui-hidden>
+	<#object type="settings" objecttype="user">
+	<#hiddenid>
+	<input type="hidden" name="targeturl" value="/systemsetup.htm?tabid=5">
+	<wingui-hidden>
+		<#inserthtml html="true" var="poddependent"><#include file="includes\submitbutton.htm">
+	</wingui-hidden>
+	<wingui>
+		<div class="quick-action-wrapper" style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+			<button class="submit actionbutton quick-action-button" type="submit"><#lang key="html.global.save" default="Save"></button>
+			<button  type="submit" class="ui-icon quick-action-badge"></button>
+		</div>
+	</wingui>
+</form>

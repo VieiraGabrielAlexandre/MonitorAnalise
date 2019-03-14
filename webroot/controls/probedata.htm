@@ -1,0 +1,19 @@
+﻿<#checkobjecttype objecttype="probenode">
+<table id="probedata" cellspacing=0 class="overview table refreshable" refreshurl="/controls/probedata.htm?id=<#objectid>">
+	<tr class="odd"><td class=title><#lang key="html.probedata.probename" default="Probe Name"></td><td><b><#objectproperty name="Name"></b> <#objectproperty name="active" show="nicetext"></td></tr>
+	<tr class="even"><td class="title"><#lang key="html.devicedata.status" default="Status"></td><td><#objectstatus name="message"> <#objectstatus name="condition"></td>
+	<tr class="odd"><td class=title><#lang key="html.global.priority" default="Priority"></td><td><#objectstatus  name="priority"></td></tr>
+	<tr class="even"><td class=title><#lang key="html.global.parentgroup" default="Parent Group"></td><td><#objectproperty name="ParentGroup" show="link"></td>
+	<tr class="odd"><td class=title><#lang key="html.probedata.sensorsbystate" default="Sensors by State"></td><td>
+	                                         	<#objectstatus name="downsens">
+	                                         	<#objectstatus name="partialdownsens">
+	                                         	<#objectstatus name="downacksens">
+	                                         	<#objectstatus name="warnsens">
+	                                         	<#objectstatus name="upsens">
+	                                         	<#objectstatus name="pausedsens">
+	                                         	<#objectstatus name="unusualsens">
+	                                         	<#objectstatus name="undefinedsens">
+	                                         	<#objectstatus name="totalsens" var="totalsens">
+												<#lang key="html.controls.totalsens" default="(Total: @totalsens)">
+</td></tr>
+</table>

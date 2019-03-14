@@ -1,0 +1,34 @@
+﻿<#lang key="html.correlations.title" default="Similar Sensors Overview" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude" bodyclass="hashelp">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<#lang key="common.strings.sensors" default="Sensors" var="sensors">
+<div class="similar-sensors-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  	<div id="content" class="table-wrapper">
+		<h1 class="tabletitle"><#lang key="html.correaltions.head" default="Similar Sensors Overview"></h1>
+
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+
+ 		  <div class="prtg-plugin" data-plugin="prtg-table">
+			<#table content="correlations"
+					tableid="correlationtable"
+					columns="channel=htmllong,value,correlatedsensor=htmllong"
+					sortby="-value"
+					varexpand="tabletitle,filters"
+					tabletitle="@cortitle"
+					count="50"
+					sortable="true"
+					refreshable="false"
+	        filters="words!@sensors,objects!data-filtername='filter_dev'|data-inputname='filter_dev'|data-similarsenors='true'|data-rootid='0'|data-hidesensors='true'|data-devices='1'|data-groups='0'|data-required=''|data-probes='0'|data-allowone='0'|data-allowself='1'|data-allowroot='0',similarity,backreference">
+		</div>
+	</div>
+	<#lang key="html.correlations.help.title" default="Similar Sensors Overview" var="helptitle">
+	<#lang key="html.correlations.help.text" default="This page shows the results of the Similar Sensors Analysis based on your monitoring data. You can navigate the sensor entries of this table, change the sorting via the table head, and apply various filters." var="helptext">
+	<#system type='showhelp' var='showhelp'>
+	<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

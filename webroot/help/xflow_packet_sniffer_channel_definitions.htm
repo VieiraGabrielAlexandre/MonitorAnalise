@@ -1,0 +1,90 @@
+﻿<!--Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_filter_rules.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="define_ip_ranges.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">When adding <a href="flow_monitoring.htm" class="topiclink">Custom xFlow sensors, Custom IPFIX</a>, or <a href="packet_sniffer_monitoring.htm" class="topiclink">Custom Packet Sniffing sensors</a>, you have the option to provide a <span class="f_BoldCustom">Channel Definition</span>. In this field enter your channel definitions using the following syntax (one entry per channel):</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#&lt;id&gt;:&lt;Name&gt;</span><br />
+<span class="f_CodeExample">&lt;Rule&gt;</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="syntax" class="hmanchor"></a><span class="f_InTopicHeading">Syntax</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">&lt;id&gt;</span><span class="f_ListBulleted"> needs to be 1 or a higher number and must be unique for the sensor. This means each channel definition must have a unique ID. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The maximum channel ID you can use is 2147483648 (2^31). Higher IDs are not supported. We recommend that you use channel IDs like 1, 2, 3, and so on.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">&lt;id&gt;</span><span class="f_ListBulleted"> is linked to the historic data. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">As soon as you change the ID, you will loose the history for this particular channel that the ID was linked to.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">One rule can span multiple lines.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The next rule starts with a </span><span class="f_BoldCustom">#</span><span class="f_ListBulleted"> as first character in a line.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">&lt;name&gt;</span><span class="f_ListBulleted"> is the channel's display name.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">The rules are processed top to bottom (the number does not matter) and the data is accounted to the first match.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">PRTG adds one channel named <span class="f_BoldCustom">Other</span> automatically. This channel counts all traffic for which you have not defined a channel.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">After the name you can use an optional </span><span class="f_BoldCustom">[&lt;unit&gt;]</span><span class="f_ListBulleted"> to override the automatic unit, which is based on the source sensors.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">&lt;Rule&gt;</span> syntax is identical to the one described in the <span class="f_BoldCustom"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow and Packet Sniffer Sensors</a></span> section. Because data is accounted to the first match, make sure you start with the most specific rule at the top and get less specific to the bottom.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>We recommend that you write the rules list in an external editor first and then paste it into the <span style="font-weight: bold;">Channel Definition</span> field of the sensor in PRTG. Otherwise, if the rules contain an error, the entries will be removed when you add the rules in case!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>You cannot delete channels of an existing sensor, even if you remove a channel from the channel definition. You also cannot change the display name of channels using the channel definition of custom flow sensors. Renaming is only possible via <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>. &nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="example" class="hmanchor"></a><span class="f_InTopicHeading">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">General example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#5:HTTP</span><br />
+<span class="f_CodeExample">Protocol[TCP]&nbsp;and&nbsp;</span><br />
+<span class="f_CodeExample">(SourcePort[80]&nbsp;or&nbsp;DestinationPort[80]&nbsp;or&nbsp;SourcePort[8080]&nbsp;or&nbsp;</span><br />
+<span class="f_CodeExample">DestinationPort[8080])</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Channel definition example for differentiating by protocol:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:TCP</span><br />
+<span class="f_CodeExample">Protocol[TCP]</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">#2:UDP</span><br />
+<span class="f_CodeExample">Protocol[UDP]</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">#3:ICMP</span><br />
+<span class="f_CodeExample">Protocol[ICMP]</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="related" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="packet_sniffer_monitoring.htm" class="topiclink">Monitoring Bandwidth via Packet Sniffing</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="flow_monitoring.htm" class="topiclink">Monitoring Bandwidth via Flows</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I change the default groups and channels for xFlow and Packet Sniffer sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60203" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60203</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Flow,Flow Channel Definitions,Packet Sniffer,Packet Sniffer Channel Definitions</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_filter_rules.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="define_ip_ranges.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

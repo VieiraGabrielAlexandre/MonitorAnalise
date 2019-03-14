@@ -1,0 +1,1150 @@
+﻿/* prtg.table.css */
+table.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 14px;
+}
+
+.table select {
+  display: block;
+}
+
+table.table.channels td:last-child,
+table.table.correlation td:last-child {
+  text-align: left;
+}
+
+table.table.channels td {
+  white-space: nowrap;
+}
+
+table.table.channels td:first-child {
+  white-space: normal;
+}
+
+#content table.table td:first-child,
+#content table.table th:first-child {
+  padding-left: 5px;
+}
+
+.map_object table.table.channels, .map_object table.table.correlation {
+  min-width: 0;
+  width: 100%;
+}
+
+table.table td {
+  border-right: 1px solid <#colorcode color='midgray'>;
+  vertical-align: top;
+  font-size: 12px;
+  padding: 2px;
+  word-break: normal;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+table.table td:not(.fixedwidth):hover {
+  overflow: visible;
+  white-space: normal;
+}
+.tablemenu {
+  background: #C5F5CC;
+}
+
+table.table tr td:last-child {
+  border-right: none;
+}
+
+table.table tbody tr:nth-child(odd) {
+  background-color: <#colorcode color='lightgray'>;
+}
+
+table.table tbody tr:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+table.table.hoverable tbody tr:not(:only-child):hover {
+  background: #FFF;
+}
+
+table.table.hoverable tr:hover td {
+  box-shadow: inset 0 1px 0 0 <#colorcode color='mousegray'>, inset 0 -1px 0 0 <#colorcode color='mousegray'>;
+}
+
+table.table tr.subtitle td, table.table tr.sums td {
+  background-color: #f8f8f8;
+  border-bottom: 0 solid #f8f8f8;
+  border-top: 0 solid #f8f8f8;
+}
+
+tr.subtitle td, tr.subtitle td {
+  background-color: <#colorcode color='midgray'> !important;
+  font-weight: bold !important;
+}
+
+tr.averages td:first-child, tr.sums td:first-child {
+  font-weight: bold;
+}
+
+table.table tr.spacer, table.table tr.spacer td {
+  background-color: transparent !important;
+  font-size: 2px !important;
+  height: 1px !important;
+}
+
+table.table tr.sr td, table.table tr.sq td, table.table tr.so td {
+  background-color: #FEE8E9;
+  border-bottom: 0px solid #FFE3E7;
+  border-top: 0px solid #FFE3E7;
+}
+
+table.table .sr div.probegroupdevice a, table.table .sq div.probegroupdevice a, table.table .so div.probegroupdevice a {
+  background-color: #FEE8E9;
+}
+
+table.table .sr:nth-child(even) td, table.table .sq:nth-child(even) td, table.table .so:nth-child(even) td {
+  background-color: #FDD5D7;
+  border-bottom: 0px solid #FEECED;
+  border-top: 0px solid #FEECED;
+}
+
+.table tr.rowselected td,
+tr.ui-selected>td,
+tr.ui-selecting>td,
+tr.multiselected td,
+table.table tr.multiselected div.probegroupdevice a,
+table.table tr.multiselected div.probegroupdevice a {
+  background-color: #C5F5CC !important;
+}
+
+table.datatables tr.ui-selected>td,
+table.datatables tr.ui-selecting>td,
+table.datatables tr.multiselected td{
+  background-color: inherit!important;
+}
+
+table.table tbody td a{
+  max-width: 100%;
+  width: auto;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+table.table tbody td nobr a, tle.table td a.groupmenu, table.table td a.probemenu, table.table td a.devicemenu {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+table.table td.actions a {
+  display: inline;
+}
+
+table.table thead.tabletitle, table.table thead.tabletitle th {
+  background: none;
+  border-top: none;
+}
+
+table.table thead.tabletitle th,
+h3.tabletitle{
+  font-family: 'Lucida Sans-Serif', 'Segoe UI', Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: <#colorcode color='linkcolor'>;
+  background: none;
+  padding: 10px 10px 4px 3px;
+  filter: none;
+}
+
+.dialog-container.inline  table.table thead.tabletitle th,
+.tab-container table.table thead.tabletitle th,
+h3.tabletitle {
+  font-weight: normal;
+  color: <#colorcode color='linkcolor'>;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.dataTables_wrapper th {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.tablecheckbox {
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding: 0 4px;
+}
+
+thead .tablecheckbox {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 16px;
+}
+
+table.table tfoot th, table.table thead th {
+  border-top: 1px solid <#colorcode color='lightgray'>;
+  border-right: 1px solid <#colorcode color='lightgray'>;
+  background: <#colorcode color='tableheaders1'>;
+  color: #000;
+  font-weight: normal;
+  margin: 0;
+  padding: 1px 2px 1px 1px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+table.table thead.pagenavigation th{
+  overflow: visible;
+  white-space: normal;
+
+}
+
+table.table thead th:last-child {
+  border-right: none;
+}
+
+table.table thead a:hover, table.table tfoot a:hover {
+  background-color: #E1EDFB;
+}
+
+li.multiedit, ul.multiedit li, ul.multiedit ul, ul.multiedit {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 1px !important;
+}
+
+ul.multiedit li:hover {
+  background-color: <#colorcode color='lightgray'> !important;
+}
+
+ul.multiedit li.last:hover {
+  background-color: #C5F5CC !important;
+}
+
+li.multiedit, ul.multiedit {
+  border: none !important;
+  border-right: 1px solid #89DF95 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+}
+
+li.multiedit>a:link, ul.multiedit>a:link, li.multiedit>a:active, ul.multiedit>a:active, li.multiedit>a:visited, ul.multiedit>a:visited {
+  color: <#colorcode color='linkcolor'> !important;
+  text-decoration: none;
+}
+
+li.multiedit>a {
+  height: 100%;
+}
+
+li.multiedit>a:hover, ul.multiedit>a:hover {
+  color: #333 !important;
+  text-decoration: underline;
+}
+
+li.multiedit:last-child {
+  border: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+table.table.values td, table.table.values th, table.table.reports td {
+  white-space: nowrap;
+}
+
+table.table.values th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table.table.values td, table.table.report td {
+  text-align: left;
+}
+
+table.table.values td+td, table.table.channels td+td, table.table.report td+td {
+  text-align: right;
+  padding-left: 5px;
+}
+
+table.table.smallfonts td, table.table.smallfonts th {
+  font-size: 9px;
+}
+
+table.topdata tbody td span {
+  width: 40px;
+}
+
+table.topidx {
+  padding: 5px;
+}
+
+.onereport table.table, .onereport table.overview {
+  border: none;
+  border-collapse: collapse;
+}
+
+.onereport table.table tr td, .onereport table.table th, .onereport table.overview tr td {
+  border: 1px solid #888 !important;
+  padding: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+table.table.report tr.even td, .onereport table.overview tr.even td {
+  background-color: <#colorcode color='lightgray'>;
+  border: 1px solid #888;
+  padding: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/*table.table.report tr.odd td, .onereport table.overview tr.odd td {
+  background-color: #f8f8f8;
+}*/
+
+table.table div.reportchannelcheckbox {
+  float: left;
+  font-size: 9px;
+  height: 19px;
+  margin: 0px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  min-width: 82px;
+  overflow: hidden;
+  padding: 0px;
+  white-space: nowrap;
+  width: 82px;
+}
+
+table.table td:hover div.reportchannelcheckbox {
+  width: auto;
+}
+
+#table_reportchanneltable td {
+  max-width: 400px;
+}
+
+.sr, .sq {
+  background-color: #FDD5D7;
+}
+
+.so {
+  background-color: #F4E4E5;
+}
+
+span.priority {
+  display: block;
+  white-space: nowrap;
+  width: 66px;
+}
+
+a.favstar, a.favempty, span.favstar, span.star, favstar {
+  background-image: url(/images/starfilled.png);
+  background-repeat: no-repeat;
+  height: 13px!important;
+  width: 13px!important;
+  display: inline-block;
+}
+
+span.favstar {
+  display: inline-block;
+}
+
+span.star {
+  display: inline-block;
+  background-image: url(/images/starempty.png);
+}
+
+.priority0 span.favstar {
+  background-image: url(/images/starempty.png);
+}
+
+.priority1 span.favstar:nth-child(1n+2) {
+  background-image: url(/images/starempty.png);
+}
+
+.priority2 span.favstar:nth-child(1n+3) {
+  background-image: url(/images/starempty.png);
+}
+
+.priority3 span.favstar:nth-child(1n+4) {
+  background-image: url(/images/starempty.png);
+}
+
+.priority4 span.favstar:nth-child(1n+5) {
+  background-image: url(/images/starempty.png);
+}
+
+a.favempty {
+  display: block;
+  float: left;
+  background-image: url(/images/starempty.png);
+}
+
+a.favstar {
+  float: left;
+}
+
+table.overview td.title {
+  white-space: nowrap;
+  width: 150px;
+}
+
+table.overview td a {
+  display: inline-block !important;
+}
+
+table thead.headerswithlinks img {
+  display: inline-block;
+}
+
+table.overview thead th, table.report thead.headersnolink th, table.report thead.headerswithlinks th {
+  background-color: <#colorcode color='midgray'>;
+  border: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  color: #000;
+  font-weight: normal;
+  height: 17px;
+  margin: 0px;
+  padding:0px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: left;
+}
+
+table.table tr.even td div.probegroupdevice a {
+  background-color: transparent;
+  background-position: left center;
+}
+
+#form_correlationtable .probemenu {
+  max-width: 200px !important;
+}
+
+table.table>tbody .probegroupdevice .groupmenu,
+table.table>tbody .probegroupdevice .probemenu {
+  display: inline-block !important;
+  vertical-align: middle;
+  font-size: 9px;
+  max-width: 40%;
+  opacity: 0.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table .probegroupdevice .devicemenu {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table .probegroupdevice .probegroupdeviceitem:nth-child(3){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.table .probegroupdevice .devicemenu:hover {
+  overflow: visible;
+  white-space: normal;
+}
+
+.reportsensorlist .probegroupdevice span {
+  max-width: 200px;
+}
+
+fieldset .probegroupdevice>span {
+  display: block;
+}
+
+.table .status, .table .logmessage {
+  display: block;
+  max-height: 35px;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+div.moreicon {
+  background: url(/images/overflow-y.png) 0 0 no-repeat;
+  display: block;
+  height: 5px;
+  left: 0px;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+}
+
+.table  .status:hover, .table .logmessage:hover {
+  max-height: none;
+}
+
+.table .status:hover div.moreicon,
+.table .logmessage:hover div.moreicon {
+  display: none;
+}
+
+.table td:hover div.logmessage,
+.table td:hover div.status,
+.table td:hover>a,
+.table td:hover i~a{
+  overflow: visible;
+  white-space: normal;
+}
+
+.table td:hover>a,
+.table td:hover i~a{
+  height: auto;
+}
+
+.table td:hover .tablebuttonbox a {
+  display: inline-block;
+}
+
+.table .tablebuttonbox {
+  white-space: nowrap;
+  position: relative;
+}
+
+.table td:hover .moreicon {
+  display: none;
+}
+
+div.noblocklinks a {
+  display: inline !important;
+}
+
+table.detailpageoverview {
+  width: 100%;
+}
+
+table.detailpageoverview>tr>td {
+  vertical-align: top;
+}
+
+table.detailpageoverview.limitedwidth {
+  max-width: 1050px;
+  width: auto;
+}
+
+table.detailpageoverview td.col2 {
+  width: 300px;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+table.detailpageoverview td.col1 {
+  padding-left: 5px;
+  padding-right: 15px;
+  vertical-align: top;
+}
+
+div.datatable {
+  overflow: auto;
+  width: 800px;
+}
+
+div.map_table table {
+  background-color: #fff;
+}
+
+div.map_table table.table {
+  border: none;
+}
+
+a.arrow {
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 2px;
+}
+
+a.arrow:hover {
+  background-color: transparent;
+}
+
+a.a_first_on, a.a_first_off, a.a_last_on, a.a_last_off, a.a_left_on, a.a_left_off, a.a_right_on, a.a_right_off {
+  height: 10px;
+  width: 12px;
+}
+
+a.a_first_off, a.a_last_off, a.a_left_off, a.a_right_off {
+  background-image: url(images/ui-icons_888888_256x240.png);
+  background-color: transparent;
+}
+
+a.a_first_on, a.a_last_on, a.a_left_on, a.a_right_on {
+  background-image: url(images/ui-icons_prtg_256x240.png);
+}
+
+a.a_first_on:hover, a.a_last_on:hover, a.a_left_on:hover, a.a_right_on:hover {
+  background-image: url(images/ui-icons_222222_256x240.png);
+  background-color: #E1EDFB;
+}
+
+a.a_first_on, a.a_first_off {
+  background-position: -243px -50px;
+}
+
+a.a_last_on, a.a_last_off {
+  background-position: -209px -50px;
+  margin-right: 12px;
+}
+
+a.a_left_on, a.a_left_off {
+  background-position: -98px -51px;
+}
+
+a.a_right_on, a.a_right_off {
+  background-position: -34px -51px;
+}
+
+#table_devicesort a.groupmenu, #table_devicesort a.probemenu, #table_devicesort a.rootgroupmenu {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+table.schedule td {
+  text-align: center;
+}
+
+table.schedule .prtg-checkbox {
+  margin: 0;
+  margin-left: 7px;
+}
+
+div.colorflag {
+  display: inline-block;
+  margin-left: 2px;
+  width: 8px;
+}
+
+table.stats div.colorflag {
+  float: left;
+  margin-right: 2px;
+}
+
+span.sorter, span.sorterdisabled {
+  display: inline-block;
+  height: 12px;
+  margin-right: 5px;
+  margin-top: 1px;
+  vertical-align: top;
+  width: 12px;
+}
+
+span.sorter {
+  background-image: url(/images/sortergrip.png);
+  background-repeat: repeat-x;
+  cursor: move;
+}
+
+.sorthighlight {
+  border: 2px solid green;
+}
+
+table.table.dragging td, table.table.dragging tr.odd td, table.table.dragging tr.even td {
+  background-color: <#colorcode color='lightgray'>;
+  color: #888;
+}
+
+table.table.dragging td a:link, table.table.dragging td a:hover, table.table.dragging td a:visited {
+  color: #888;
+  text-decoration: none;
+}
+
+table.table.dragging td.moving a:link, table.table.dragging td.moving a:hover, table.table.dragging td.moving a:visited {
+  color: <#colorcode color='linkcolor'>;
+}
+
+td.moving, table.table.dragging td.moving {
+  background-color: #CDE2F8 !important;
+  border-bottom: 2px solid <#colorcode color='linkcolor'>;
+  border-top: 2px solid <#colorcode color='linkcolor'>;
+}
+
+span.unbreakable {
+  white-space: nowrap;
+}
+
+div.tablewithstyles {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+div.tablewithstyles table {
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+div.tablewithstyles td, div.tablewithstyles th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.actioncolumn td:last-child, div.actioncolumn th:last-child {
+  max-width: none;
+}
+
+
+div.map_object .top10listcontainer {
+  width: auto;
+}
+
+.clustereditmatrix {
+  min-width: 1030px;
+}
+
+.clustereditmatrix td>div {
+  position: relative;
+  border: 1px solid <#colorcode color='midgray'>;
+  border-width: 0;
+  <#system type='browserdependent' browsertype='Firefox/' aboveversion='1' browsercontent='border-width: 1px;
+  '>
+  height: 43px;
+}
+
+.clustereditmatrix table.table td:first-child {
+  padding: 0 !important;
+}
+
+.clustereditmatrix>table>tbody>tr>td, .clustereditmatrix>table>tbody>tr.odd>td, .clustereditmatrix>table>tbody>tr.even>td {
+  height: 42px;
+  background: #fff;
+  vertical-align: top;
+  border: 1px solid <#colorcode color='midgray'> !important;
+  padding: 0;
+}
+
+.clustereditmatrix>table>tbody>tr>td>div {
+  position: relative;
+  border: none;
+  top: 0;
+  bottom: 0;
+}
+
+.clustereditmatrix td span {
+  color: #000;
+  font-size: 9px;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  background: #eee;
+  opacity: 0.5;
+}
+
+.clustereditmatrix .readonly {
+  line-height: 43px;
+  padding-left: 3px;
+}
+
+.clustereditmatrix .table {
+  border-collapse: collapse;
+}
+
+.clustereditmatrix input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%! important;
+  border: none;
+  background: none;
+  height: 43px;
+  font-weight: bold;
+}
+
+.clustereditmatrix input:hover {
+  background-color: <#colorcode color='midgray'>;
+}
+
+.clustereditmatrix .clusterconnections input {
+  padding-top: 19px;
+}
+
+.clustereditmatrix td.cemname {
+  width: 150px;
+}
+
+.clusternodeonoff td {
+  background: none !important;
+  padding: 0;
+}
+
+.clustereditmatrix .radio-control, .clustereditmatrix .clusternodeonoff {
+  padding: 0;
+}
+
+.clustereditmatrix td.cemgid {
+  width: 225px !important;
+}
+
+input.clusterradio {
+  width: auto !important;
+  margin: 0;
+  padding: 0;
+}
+
+.clustereditmatrix td table td {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.searchdetailed {
+  width: 100%;
+}
+
+.detailpageoverview .col1 table, .detailpageoverview .col2 table {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+table select.select-reloadtablelink {
+  background-position: center left;
+  max-width: 80px;
+}
+
+#table_correlationtable {
+  width: auto;
+}
+
+thead.filters .filter:hover select, thead.filters .filter:hover .sensorlookupnew, thead.filters .filter input:hover, thead.filters .filter .icon-close:hover {
+  background-color: #E1EDFB;
+}
+
+thead.filters th {
+  vertical-align: middle;
+  min-height: 20px;
+}
+
+thead.filters a.nodecoration:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+thead.filters th>span, thead.filters div.filter {
+  float: left;
+  vertical-align: middle;
+}
+
+thead.filters th > span {
+  padding: 0px;
+}
+
+thead.filters th span {
+  line-height: 16px;
+}
+
+thead.filters select {
+  border: none;
+  max-width: 15em;
+  background-color: transparent;
+  font-weight: bold;
+  padding: 0 4px 0 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+thead.filters select::-ms-expand {
+  visibility: hidden;
+  border: 0 none;
+}
+
+@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+  thead.filters select {
+    padding: 0 0 0 2ex;
+    width:20em;
+  }
+
+}
+
+thead.filters .sensorlookupnew {
+  background-color: transparent;
+  min-height: inherit;
+  min-width: 140px;
+  max-width: 330px;
+}
+
+thead.filters .objectlookup {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  min-height: 0;
+  line-height: 15px;
+  padding-top: 0px;
+  margin-right: 15px;
+}
+
+thead.filters .objectlookup * {
+  background-color: transparent;
+}
+
+thead.filters .objectlookup i {
+  right: 0;
+}
+
+thead.filters .objectlookup br {
+  display: none;
+}
+
+thead.filters .probegroupdevice span {
+  display: none;
+}
+
+thead.filters .probegroupdevice span:last-child {
+  display: block;
+}
+
+thead.filters table.objectlookup a {
+  padding: 0 0 0 3px;
+  background-color: transparent;
+  border: none;
+}
+
+thead.filters .probegroupdevice .probegroupdeviceitem {
+  height: 15px;
+  line-height: 15px;
+}
+
+thead.filters .objectlookup a {
+  margin: 0;
+  margin-right: 12px;
+}
+
+thead.filters a .prtg-checkbox {
+  background-position: 16px 16px;
+}
+
+thead.filters a.checked .prtg-checkbox {
+  background-position: -66px -146px;
+}
+
+table.searchresulttable tfoot.pagenavigation {
+  display: none;
+}
+
+.table thead.pagenavigation div.buttons, .table tfoot.pagenavigation div.buttons {
+  float: right;
+  height: 15px;
+}
+
+.table thead.pagenavigation span, .table tfoot.pagenavigation span {
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.table tfoot.pagenavigation th div.buttons label {
+  vertical-align: top;
+}
+
+.table .pagenavigation td {
+  padding: 2px;
+  line-height: 15px;
+  vertical-align: top;
+}
+
+.table .pagenavigation .buttons span {
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pagenavigation a {
+  display: inline-block;
+}
+
+table.topdata .pagenavigation td {
+  text-align: left;
+}
+
+.table .table_itemcount_selector, .table .tablezoomlink {
+  float: right;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.table .table_itemcount_selector {
+  height: 15px;
+}
+
+.table .table_itemcount_selector a {
+  display: none;
+}
+
+.table .table_itemcount_selector a.selected, .table .table_itemcount_selector:hover a {
+  background: none;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.table .table_itemcount_selector:hover a.selected {
+  font-weight: bold;
+}
+
+.searchresulttable .tablenavigation {
+  display: none;
+}
+
+.table .ui-datepicker-trigger {
+  height: 15px;
+}
+
+.table .table_datepicker_fromtodate input {
+  height: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+/** new colgroup thing **/
+table i~.moreicon,
+table a~.moreicon{
+  display:none;
+}
+
+table col.col-message,
+table col.col-sensor{
+  width:25%;
+}
+#reportbody table col.col-sensor{
+  width: auto;
+}
+table i~a {
+  max-width: 90%;
+}
+#overview-device tbody td a{
+  max-width: 25em;
+}
+#overview-device .table .status{
+  word-break: break-all;
+}
+table .col-minigraph{
+  width: 145px;
+}
+table col.col-priority{
+  width: 6.5em;
+}
+table .col-checkbox,
+table .col-favorite{
+  width:25px;
+  text-align: center;
+}
+
+table col.col-position{
+  width: 5em;
+}
+table td.col-downsens,
+table td.col-partialdownsens,
+table td.col-downacksens,
+table td.col-upsens,
+table td.col-warnsens,
+table td.col-pausedsens,
+table td.col-unusualsens,
+table td.col-undefinedsens{
+  width:5em;
+}
+table td.col-probegroupdevice,
+table td.col-name,
+table td.col-members
+{
+  max-width:25em;
+}
+table.table td.col-message{
+  overflow: visible;
+  white-space: normal;
+}
+table.messages .probemenu,
+table.messages .devicemenu,
+table.messages .sensormenu {
+  width: 20em;
+}
+table.correlation a.sensormenu,
+table.correlations a.sensormenu,
+table.notification-test a.username{
+  width:auto;
+  max-width: 23em;
+  display: inherit;
+}
+
+table.correlation span.flr,
+table.correlations span.flr{
+  float: none;
+  display: inherit;
+  padding-left:2ex;
+}
+
+.top10listcontainer {
+  font-size: 9px;
+  padding: 0 5px;
+  width: 50%;
+}
+
+.top10listcontainer table {
+  border: none;
+  margin: 0;
+}
+.top10listcontainer table td{
+  vertical-align: top;
+  padding: 1px;
+}
+
+.top10listcontainer table colgroup col:first-child{
+  width:20%;
+}
+.top10listcontainer table colgroup col:nth-child(2){
+  width:40%;
+}
+.top10listcontainer table colgroup col:nth-child(3){
+  width:40%;
+}
+
+.toplistcontainer .col-bytessize {
+  white-space: nowrap;
+}
+
+.toplistcontainer .col-minigraph {
+  width: auto;
+  white-space: nowrap;
+}
+
+.showsuggest col.col-links{
+  width: 16em;
+}
+
+.showsuggest col.col-sensorcount{
+  width:9em;
+}
+
+table.datatables .checkboxholder{
+  width: 25px;
+  text-overflow: clip;
+}
+table.datatables input + label i.prtg-checkbox{
+  margin: 0 0 0 9px;
+  padding: 0;
+}

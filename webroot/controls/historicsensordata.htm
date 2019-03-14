@@ -1,0 +1,164 @@
+﻿<#lang key="html.historicsensordata.help.title" default="View Historic Monitoring Data" var="helptitle">
+<#lang key="html.historicsensordata.help.text2" default="This feature allows you to download and analyze monitoring results of a sensor for a specific time span. Please enter a start and end date and the average interval for the monitoring data you want to display. Data can be downloaded in HTML, XML, and CSV format.<br><br><a href='/help/historic_data_reports.htm' target='_blank'><b>Help: Historic Data Reports</b></a>" var="helptext">
+
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+<form method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-historyform="true">
+  <input type="hidden" id="myid" value="<#objectidorzero>">
+  <fieldset>
+    <legend class="prtg-header"><#lang key="html.historicsensordata.wizhead2" default="Review or Download Historic Sensor Data"></legend>
+    <div class="control-group">
+      <label class="control-label has_help" for="sdate"><#lang key="html.historicsensordata.wiz2start" default="Start"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.historicsensordata.wizhelpstart" default="Enter the start date of the sensor data that you want to include in the report.">">
+        <input class="text prtg-plugin" type="text" id="sdate" name="sdate" autocomplete="off" value="<#datetimepickervalue value="-1d">" data-plugin="prtg-datetimepicker" data-rule-purgedate="true" data-timepicker="true" data-datetimeformat="<#system type="datetimepickerformatstring">" data-endpicker="#edate">
+      </div>
+
+      <label class="control-label has_help" for="edate"><#lang key="html.historicsensordata.wiz2end" default="End"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.historicsensordata.wizhelpend" default="Enter the end date of the data that you want to include in the report.">">
+        <input class="text prtg-plugin" type="text" id="edate" name="edate" autocomplete="off" value="<#datetimepickervalue value="now">" data-plugin="prtg-datetimepicker" data-timepicker="true" data-datetimeformat="<#system type="datetimepickerformatstring">">
+      </div>
+
+      <label class="control-label has_help" for="name_"><#lang key="html.historicsensordata.wiz2quickrange" default="Quick Range"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.historicsensordata.wizhelprange" default="Select a date range for a faster selection of start and end time that the report data will cover.">">
+        <div class="historicrangeselectors prtg-plugin" data-plugin="prtg-datetimequickrange" data-sfield="sdate" data-endfield="edate">
+          <ul>
+            <li><a href="" range="24h"><#lang key="html.historicsensordata.1dayrange" default="1 Day"></a></li>
+            <li><a href="" range="48h"><#lang key="html.historicsensordata.2dayrange" default="2 Days"></a></li>
+            <li><a href="" range="7d"><#lang key="html.historicsensordata.7dayrange" default="7 Days"></a></li>
+            <li><a href="" range="14d"><#lang key="html.historicsensordata.14dayrange" default="14 Days"></a></li>
+          </ul>
+
+          <ul>
+            <li><a href="" range="0a"><#lang key="html.historicsensordata.todayrange" default="Today"></a></li>
+            <li><a href="" range="1a"><#lang key="html.historicsensordata.yesterdayrange" default="Yesterday"></a></li>
+            <li><a href="" range="0w"><#lang key="html.historicsensordata.lastweekmorange" default="Last Week (Mo-Su)"></a></li>
+            <li><a href="" range="1w"><#lang key="html.historicsensordata.lastweeksorange" default="Last Week (Su-Sa)"></a></li>
+          </ul>
+
+          <ul>
+            <li><a href="" range="1l"><#lang key="html.historicsensordata.lastmonthrange" default="Last Month"></a></li>
+            <li><a href="" range="2l"><#lang key="html.historicsensordata.last2monthrange" default="2 Months"></a></li>
+            <li><a href="" range="6l"><#lang key="html.historicsensordata.last6monthrange" default="6 Months"></a></li>
+            <li><a href="" range="12l"><#lang key="html.historicsensordata.last12monthrange" default="12 Months"></a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <label class="control-label has_help " for="avg"><#lang key="html.historicsensordata.wizavg2" default="Average Interval"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.historicsensordata.wizhelpavg2" default="Select an interval for averaging. For time spans that are greater than 40 days, the minimum interval is 60 minutes. If you set a lower interval, PRTG will increase it automatically.">">
+        <select name="avg" id="avg" >
+          <option value="0"><#lang key="html.historicsensordata.wizavg2-0" default="No Interval (Display Raw Data)"></option>
+          <option value="15"><#lang key="html.historicsensordata.wizavg2-15" default="15 Seconds"></option>
+          <option value="30"><#lang key="html.historicsensordata.wizavg2-30" default="30 Seconds"></option>
+          <option value="60"><#lang key="html.historicsensordata.wizavg2-60" default="60 Seconds/1 Minute"></option>
+          <option value="120"><#lang key="html.historicsensordata.wizavg2-120" default="2 Minutes"></option>
+          <option value="300"><#lang key="html.historicsensordata.wizavg2-300" default="5 Minutes"></option>
+          <option value="600"><#lang key="html.historicsensordata.wizavg2-600" default="10 Minutes"></option>
+          <option value="900"><#lang key="html.historicsensordata.wizavg2-900" default="15 Minutes"></option>
+          <option value="1200"><#lang key="html.historicsensordata.wizavg2-1200" default="20 Minutes"></option>
+          <option value="3600"  selected="selected"><#lang key="html.historicsensordata.wizavg2-3600" default="60 Minutes/1 Hour"></option>
+          <option value="7200"><#lang key="html.historicsensordata.wizavg2-7200" default="2 Hours"></option>
+          <option value="14400"><#lang key="html.historicsensordata.wizavg2-14400" default="4 Hours"></option>
+          <option value="21600"><#lang key="html.historicsensordata.wizavg2-21600" default="6 Hours"></option>
+          <option value="43200"><#lang key="html.historicsensordata.wizavg2-43200" default="12 Hours"></option>
+          <option value="86400"><#lang key="html.historicsensordata.wizavg2-86400" default="24 Hours/1 Day"></option>
+        </select>
+      </div>
+
+      <label class="control-label has_help clustertreeobject" for="name_"><#lang key="html.gethistoric.wizchannels" default="Channels in Graph"></label>
+      <div class="controls prtg-plugin" data-placement="right" data-helptext="<#lang key="html.gethistoric.wizhelpchannesl" default="Select the channels that you want to include in the graph of the report. The data table of the report will always show all channels.">" data-plugin="prtg-graphs" data-id="<#objectid>">
+        <input type="hidden" name="hide" id="hiddenchannels">
+        <#group type="legend" width="508">
+      </div>
+
+      <label style="<#clusterdependent showfor='clustertreeobject'>" class="control-label has_help clustertreeobject" for="name_"><#lang key="html.gethistoric.wizcluster" default="Cluster Node"></label>
+      <div style="<#clusterdependent showfor='clustertreeobject'>" class="controls clustertreeobject" data-placement="right" data-helptext="<#lang key="html.gethistoric.wizhelpcluster" default="Select a cluster node from which you want to include the data in the report.">">
+        <#cluster type="list">
+      </div>
+
+      <label class="control-label has_help" for="outformat"><#lang key="html.gethistoric.wizformat" default="File Format"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.gethistoric.wizhelpformat" default="Select an output format for the report data. Usually, your browser will open a download dialog if you choose to export the data as XML or CSV file.">">
+        <div class="radio-control">
+          <input type="radio" class="hidden radio" name="outformat" value="0" checked="" id="formathtml">
+          <label for="formathtml" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.gethistoric.wizformat.html" default="HTML web page">
+          </label>
+          <input type="radio" class="hidden radio" name="outformat" value="1" id="formatxml">
+          <label for="formatxml" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.gethistoric.wizformat.xml" default="XML file">
+          </label>
+          <input type="radio" class="hidden radio" name="outformat" value="1" id="formatcsv">
+          <label for="formatcsv" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.gethistoric.wizformat.csv" default="CSV file">
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend class="prtg-header"><#lang key="html.historicdata.pcthead1" default="Include Percentiles"></legend>
+    <div class="control-group">
+      <div style="<#clusterdependent showfor='clustertreeobject'>" class="controls fillwidth clustertreeobject">
+        <p class="controls-info">
+          <span class="readonlyproperty">
+            <#lang key="html.gethistoric.percentileinfo" default="If you select the option 'All Nodes' in the 'Cluster Node' setting in the sensor section above, percentile results will not be calculated.">
+		      </span>
+        </p>
+      </div>
+      <label class="control-label has_help" for="pcttoggle"><#lang key="html.gethistoric.showpercentile" default="Percentile Results"></label>
+      <div class="controls" data-placement="right" data-helptext="<#lang key="html.gethistoric.showpercentilehelp" default="<b>Show percentiles</b> displays an additional percentile calculation for the primary channel in the table for each interval and an overview table with the percentiles of each channel for the whole report period.">">
+        <div class="radio-control">
+          <input type="radio" class="hidden radio GroupShowHide" name="pcttoggle" value="0" checked="checked" id="pctnotshow">
+          <label for="pctnotshow" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.historicdata.pctoff" default="Do not show percentiles">
+          </label>
+          <input type="radio" class="hidden radio GroupShowHide" name="pcttoggle" value="1" id="pctshow">
+          <label for="pctshow" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.historicdata.pcton" default="Show percentiles">
+          </label>
+        </div>
+      </div>
+
+      <label class="control-label has_help Showpctshow Hidepctnotshow InitialDisplayNone" for="pct"><#lang key="html.gethistoric.percentile" default="Percentile Type"></label>
+      <div class="controls Showpctshow Hidepctnotshow InitialDisplayNone" data-helptext="<#lang key="html.gethistoric.percentilehelp" default="Enter an integer value to indicate the desired percentile type. For example, 95 means that PRTG calculates the 95th percentile.">" data-placment="right">
+        <input class="text" type="text" id="pct" name="pct" autocomplete="off" value="95">
+      </div>
+
+
+      <label class="control-label has_help Showpctshow Hidepctnotshow InitialDisplayNone" for="pct"><#lang key="html.gethistoric.percentileaverage" default="Percentile Average Interval"></label>
+      <div class="controls Showpctshow Hidepctnotshow InitialDisplayNone" data-helptext="<#lang key="html.gethistoric.percentileaveragehelp2" default="Enter an integer value as the average interval for percentile calculation (in seconds). For example, 300 (seconds) means that PRTG bases the percentile calculation on 5 minute averages.">" data-placement="right">
+        <input class="text" type="text" id="pctavg" name="pctavg" autocomplete="off" value="300">
+      </div>
+
+
+      <label class="control-label has_help Showpctshow Hidepctnotshow InitialDisplayNone" for="pctmode"><#lang key="html.gethistoric.percentilemode" default="Percentile Mode"></label>
+      <div class="controls Showpctshow Hidepctnotshow InitialDisplayNone" data-placement="right" data-helptext="<#lang key="html.gethistoric.percentilemodehelp" default="Select how PRTG calculates percentiles, either by using discrete values (<b>Discrete</b>) or interpolated ones (<b>Continuous</b>).">">
+        <div class="radio-control">
+          <input type="radio" class="hidden radio" name="pctmode" value="0" checked="" id="pctmode0">
+          <label for="pctmode0" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.gethistoric.pctdiscrete" default="Discrete">
+          </label>
+          <input type="radio" class="hidden radio" name="pctmode" value="1" id="pctmode1">
+          <label for="pctmode1" class="radio-control-label">
+            <i class="icon-gray icon-radio-on"></i>
+            <#lang key="html.gethistoric.pctcont" default="Continuous">
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="quick-action-wrapper">
+    <button type="submit" class="submit button btngrey quick-action-button"><#lang key="html.global.start" default="Start"></button>
+    <button type="submit" class="ui-icon quick-action-badge quick-continue"></button>
+  </div>
+</form>
+</div>
+</form>

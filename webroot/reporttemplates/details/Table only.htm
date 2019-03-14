@@ -1,0 +1,52 @@
+﻿
+<!-- Template Table only.htm -->
+<div class="onereport report<@counter>">
+	<#include file="includes\printheading.htm">
+
+	<div class="comment-block">
+		<#objectproperty name="reportheader">
+	</div>
+
+	<h1><#objectproperty name="name">: <b><#objectproperty id="<@objectid>" name="name"></b></h1>
+
+	<table cellspacing=0 class="overview">
+		<tr class=even>
+			<td class=title><#lang key="html.reporttemplates.reporttimespan" default="Report Time Span">:</td>
+			<td colspan=6><#report type="startdate"> - <#report type="enddate"></td>
+		</tr>
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.reporthours" default="Report Hours">:</td>
+			<td colspan=6><#report type="reporthours"></td>
+		</tr>
+		<tr class=even>
+			<td class=title><#lang key="html.reporttemplates.sensortype" default="Sensor Type">:</td>
+			<td colspan=6><#objectstatus name="type" id="<@objectid>"> (<#objectstatus id="<@objectid>" name="interval"> <#lang key="html.reporttemplates.interval" default="Interval">)</td>
+		</tr>
+		<tr class=odd>
+			<td class=title><#lang key="html.reporttemplates.probegroupdevice" default="Probe, Group, Device">:</td>
+			<td colspan=6><#objectstatus id="<@objectid>" name="probe" show="textshort"> &gt; <#objectproperty id="<@objectid>" name="ParentGroup" show="text"> &gt; <#objectproperty  id="<@objectid>" name="ParentDevice" show="text"></td>
+		</tr>
+		<@loop>
+	</table>
+
+	<br>
+	<#report type="averagetable" repnodeid="<@subid>" repsensid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+	<br>
+	<#report type="table" repnodeid="<@subid>" repsensid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" save="@save">
+	<br>
+	<#report type="toplist" repnodeid="<@subid>" repsensid="<@objectid>" sdate="<@start>" edate="<@end>" save="@save">
+
+	<h2 style="<#clusterdependent id="<@objectid>" hidefor='clustertreeobject'>"><#lang key="html.reporttemplates.statushistory" default="Sensor Status History"></h2>
+	<h2 style="<#clusterdependent id="<@objectid>" showfor='clustertreeobject'>">
+			 <#lang key="html.reporttemplates.statushistory" default="Sensor Status History">
+			 (<#lang key="html.reporttemplates.statushistoryby" default="Observed by Cluster Node ">
+			 "<#cluster type="name">")</h2>
+	
+	<#report type="statehistory" columns="status,datetime"  repnodeid="<@subid>" repsensid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>">
+
+	 <div class="comment-block">
+		 <#objectproperty name="reportfooter">
+	 </div>
+
+	 <#include file="includes\printfooter.htm">
+</div>

@@ -1,0 +1,42 @@
+﻿
+<!-- Template Sensorliste Loop.htm-->
+<tr class="subtitle" style="<#clusterdependent showfor='clusterinstallation'>">
+	<td nowrap><#lang key="html.reporttemplates.clusternode" default="Cluster Node">:</td>
+	<td  colspan="2"><b><#cluster type="name" clgid="<@clgid>"></b></td>
+</tr>
+<tr class="inline">
+	<td><#report type="avgvaluelabel" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+	<td colspan="2"><#report type="avgvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+</tr>
+<tr class="inline">
+	<td><#report type="sumvaluelabel" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+	<td colspan="2"><#report type="sumvalue" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></td>
+</tr>
+<tr class="inline">
+	<td><#lang key="html.reporttemplates.up" default="Up">:</td>
+	<td class="">
+		<span class="colorflag-wrapper"><#report type="uptimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></span>
+		<span class="percent">[<#report type="uptime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+	</td>
+</tr>
+<tr class="inline">
+	<td><#lang key="html.reporttemplates.down" default="Down">:</td>
+	<td class="">
+		<span class="colorflag-wrapper"><#report type="downtimeper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></span>
+		<span class="percent">[<#report type="downtime" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+	</td>
+</tr>
+<tr class="inline">
+	<td><#lang key="html.reporttemplates.good" default="Good">:</td>
+	<td class="">
+		<span class="colorflag-wrapper"><#report type="goodreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></span>
+		<span class="percent">[<#report type="goodreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+	</td>
+</tr>
+<tr class="inline">
+	<td><#lang key="html.reporttemplates.failed" default="Failed">:</td>
+	<td class="">
+		<span class="colorflag-wrapper"><#report type="failedreqper" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>"></span>
+		<span class="percent">[<#report type="failedreq" objectid="<@objectid>" avg="<@tableaverage>" sdate="<@start>" edate="<@end>" clgid="<@clgid>">]</span>
+	</td>
+</tr>

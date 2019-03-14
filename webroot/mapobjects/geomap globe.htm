@@ -1,0 +1,105 @@
+﻿<!--Geo Maps: Globe-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group" nicemessage="true" id="<@objectid>">
+	<div id ="Plugin_<@itemid>"
+		class="globe prtg-plugin"
+		data-plugin="globe"
+		style="overflow:hidden;width:100%;height:100%;"
+		data-options='{"animated":false}'>
+
+    <!--
+      {
+       "objects":<#table
+  			id='<@objectid>'
+  			output='json'
+  			count='*'
+  			content='sensorxref'
+  			noraw='1'
+  			subcheck='1'
+  			filter_location='@ntxt()'
+  			sortby="location"
+  			columns='location=textraw,lonlat=treejson,totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw'>
+      }
+    -->
+
+    <div class="status-icon"></div>
+  </div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>
+<style>
+  .globe canvas{
+  	background-color: #111;
+  }
+
+  div.status-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+
+  }
+  .status-icon:before{
+    font-family: "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    speak: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1.3em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin:0 0.3em;
+    color: white;
+    width: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+  }
+  .status-icon.down:before,
+  .status-icon.status-5:before{content:'‼'; background-color: #d71920;}
+
+  .status-icon.partdown:before,
+  .status-icon.status-14:before{content:'‼'; background: linear-gradient(135deg, #b4cc38 0%, #b4cc38 50%, #d71920 50%, #d71920 100%);}
+
+  .status-icon.downack:before,
+  .status-icon.status-13:before{content:'!'; background-color: #e77579;}
+
+  .status-icon.warning:before,
+  .status-icon.status-4:before{content:'W'; background-color: #ffcb05;}
+
+  .status-icon.unusual:before,
+  .status-icon.status-10:before{content:'U'; background-color: #f99d1c;}
+
+  .status-icon.paused:before,
+  .status-icon.status-7:before,
+  .status-icon.status-8:before,
+  .status-icon.status-9:before,
+  .status-icon.status-11:before,
+  .status-icon.status-12:before{content:'\2161'; background-color: #447fc1;}
+  .status-icon.status-8:after{content:'\0000a0(paused\0000a0by\0000a0dependency)';}
+  .status-icon.status-9:after{content:'\0000a0(paused\0000a0by\0000a0schedule)';}
+  .status-icon.status-11:after{content:'\0000a0(license\0000a0exceeded)';}
+  .status-icon.status-12:after{content:'\0000a0(paused\0000a0until)';}
+
+  .status-icon.up:before,
+  .status-icon.status-3:before{content:'\2714';  background-color: #b4cc38;}
+
+  .status-icon.unknown:before,
+  .status-icon.status-0:before,
+  .status-icon.status-1:before,
+  .status-icon.status-6:before,
+  .status-icon.status-2:before{content:'?'; background-color: #808282;}
+  .status-icon.status-2:after{content:'\0000a0(initializing)';}
+  .status-icon.status-6:after{content:'\0000a0(probe\0000a0disconnected)';}
+
+</style>
+<script type="text/javascript" name="xyz">
+<#include file="/javascript/_Prtg.Geomaps.Globe.js">;
+</script>
+

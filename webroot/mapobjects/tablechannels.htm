@@ -1,0 +1,21 @@
+﻿<!--Data Tables: Channels-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="sensor" nicemessage="true"  id="<@objectid>">
+
+<div class="maptablecontainer" style="overflow:hidden;">
+<b><#objectproperty name="Name" id="<@objectid>" show="link"></b>
+<#table tableid="channeltable_map"
+        id="<@objectid>"
+        content="channels"
+        columns="name,lastvalue_"
+        sortby="name"
+        sortable="false"
+        links="false"
+        >
+
+</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

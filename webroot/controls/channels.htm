@@ -1,0 +1,17 @@
+﻿<#objectproperty type="channelname" var="channelname">
+<form id="channelsform" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-ajaxsubmit="true" data-redirect="false" data-plugin="multiedit">
+	<fieldset>
+		<legend class="prtg-header inline-hidden"><#lang key="html.channels.edittitle" default="Edit Channel &quot;@channelname&quot;"></legend>
+		<div class="control-group">
+			<#object type="channels">
+			<#hiddenid>
+			<!-- <input type="hidden" name="targeturl" value="/sensor.htm?id=<#objectid>&tabid=11"> -->
+		</div>
+	</fieldset>
+	<div class="submitbuttonboxanchor">
+		<div class="submitbuttonbox">
+			<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" id="mysubmit" class="submit button btngrey" type="submit" value="<#lang key="html.global.save" default="Save">">
+			<input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" onclick="history.back();return(false)" class="cancel btngrey button hideinwingui" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+		</div>
+	</div>
+</form>

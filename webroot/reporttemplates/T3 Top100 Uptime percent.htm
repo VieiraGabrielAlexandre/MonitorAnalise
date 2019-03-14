@@ -1,0 +1,18 @@
+﻿<!--Top 100 Uptime/Downtime (Data Files Not Available): Top 100 Uptime/Downtime (based on uptime percent)-->
+<!--500000-->
+
+<#include file="includes\printhead.htm">
+<div class="export">
+	<#include file="includes\printheading.htm">
+	<#objectproperty name="reportheader">
+
+	<h1><b><#objectproperty name="name"></b> (<#report type="startdate"> - <#report type="enddate"> <#report type="reporthours">)</h1>
+
+	<#report type="clusterloop" file="details\Stats Loop 100 Up Pct.htm">
+
+	<#cropmsg>
+
+	<#objectproperty name="reportfooter">
+	<#include file="includes\printfooter.htm">
+</div>
+<#include file="includes\printfoot.htm">

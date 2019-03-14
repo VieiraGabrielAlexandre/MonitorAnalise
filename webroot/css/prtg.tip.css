@@ -1,0 +1,122 @@
+﻿/* prtg.tip.css */
+#ptip {
+  position: absolute;
+  z-index: 100006;
+  display: none;
+  padding: 10px;
+  background-image: none;
+  margin: -10px 0 0 -10px;
+}
+
+#ptip .sensorstatusmessage {
+  margin-bottom: 5px;
+}
+
+.sensorstatusmessage .status {
+    white-space: normal;
+}
+
+#ptip .overviewsmalldata td {
+  min-width: 20px;
+  max-width: 80px;
+}
+
+#ptip #table_channeltable {
+  width: 100%;
+}
+
+#ptip .probegroupdevice {
+  margin: 0;
+  vertical-align: top;
+}
+
+#ptip a.sensormenu {
+  max-width: 15em;
+}
+
+#ptip .probegroupdevice a {
+  display: inline-block;
+  opacity: 1;
+  background-color: transparent;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+#ptip .overviewsmalldatasensor .probegroupdevice a {
+  max-width: 80px;
+}
+
+#ptip #main {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#ptip .body {
+  padding: 3px;
+  height: 330px;
+  width: 476px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 10px #000;
+}
+
+#ptip .body > div:first-child {
+  height: 22px;
+}
+
+#ptip .content {
+  clear: both;
+  height: 300px;
+  overflow: auto;
+  border: none;
+  padding: 4px;
+  margin-top: 4px;
+  background-color: #fff;
+}
+
+#ptip.sr .body, #ptip.sq .body {
+  background-color: #D21925 !important;
+}
+
+#ptip a.tab {
+  margin: 4px;
+  background: no-repeat;
+  width: 35ex;
+  height: auto;
+  padding: 0 0 0 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+  background-color: #fff;
+}
+
+#ptip a:hover.tab {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
+
+#ptip .buttonbox {
+  padding: 0;
+  text-align: right;
+  height: 20px;
+  right: 16px;
+  margin-top: 4px;
+}
+
+#ptip .buttonbox a {
+  margin: 2px;
+}
+
+#ptip.ispaused a.pausenowcomment, #ptip.isnotpaused a.resumenow, #ptip.isfavorite a.addfavorite, #ptip.isnotfavorite a.removefavorite, #ptip.probemenu a.addfavorite, #ptip.probemenu a.removefavorite, #ptip.groupmenu a.addfavorite, #ptip.groupmenu a.removefavorite, #ptip.probemenu a.sensorchannels, #ptip.rootgroupmenu a.sensorchannels, #ptip.groupmenu a.sensorchannels, #ptip.devicemenu a.sensorchannels {
+  display: none;
+}
+
+#ptip a.tab.newtree {
+  font-size: 16px;
+  background-size: 20px 20px;
+}

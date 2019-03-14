@@ -1,0 +1,11 @@
+﻿<fieldset class="objectData-qr">
+    <h2 class="qr-title"><#lang key="html.qrcode.user.headline" default="Mobile App"/></h2>
+    <div class="control-group">
+        <div class="qr-label control-label"><#lang key="html.qrcode.user.description" default="Use Mobile App"/></div>
+        <div class="prtg-plugin qrcode myaccountqr actionbutton controls" data-plugin="prtgqrcode" data-placement="left" data-zoom="1"
+             data-myaccountqr="1" data-sitename='<#system type="sitename">' data-url='/group.htm?id=0&tabid=1&username=<#objectproperty name="login">'
+             data-name='Mobile App Login' data-host="" data-qrwidth="300" data-qrheight="335">
+            <#lang key="html.qrcode.tooltip.user" default="Show QR Code for Mobile App Login"/>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,204 @@
+﻿/*prtg.dialogs.css*/
+html.dialog {
+  overflow: hidden;
+}
+
+.ui-widget-header {
+  background: #c1c2c3;
+}
+
+.ui-dialog-cell {
+  position: relative;
+}
+
+.dialog-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.dialog-table {
+  position: absolute;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.ui-dialog #main {
+  margin-top: 0;
+  padding: 5px;
+  /*min-height: auto;*/
+}
+
+#content.ui-dialog-content {
+  padding: 5px;
+  margin: 0;
+  overflow: auto;
+}
+
+.dialog-cell .ui-dialog .ui-dialog-buttonpane {
+  margin: 0;
+}
+
+/* hide empty dialog buttons */
+.ui-dialog-buttonset .ui-button-text-only .ui-button-text:empty {
+  display: none;
+}
+
+.findduplicatesdialog ul {
+  list-style-type: none;
+}
+
+.inlinedatepicker {
+  padding-right: 15px;
+}
+
+.ui-dialog .ui-dialog-buttonpane i.step{
+  display: inline-block;
+  font-size: xx-large;
+  color: #a0c9ec;
+}
+.ui-dialog .ui-dialog-buttonpane i.ustep{
+  display: inline-block;
+  font-size: xx-large;
+  color: #808282;
+}
+
+.ui-dialog-buttonset {
+  margin-top: 3px;
+}
+
+#addremoteprobe p {
+  font-size: small;
+  text-align: center;
+  margin: 1em;
+}
+
+#addremoteprobe p.winsystem, p.coremachine, p.remoteprobedisabled {
+  font-weight: bold;
+  color: <#colorcode color="statusdown">;
+}
+#addremoteprobe p.winsystem{
+  display: none;
+}
+
+#addremoteprobe p.prepconnrp {
+  font-weight: bold;
+}
+
+#rpconnectsuccess {
+  display: none;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+}
+
+#addremoteprobe img.center, #loadcircle {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+}
+
+#allowips, .probeconnsuccess {
+  display: none;
+}
+
+span.ui-icon.ui-icon-check {
+  vertical-align: middle;
+  margin-right: 3px;
+  margin-top: -6px;
+}
+
+#M7 {
+  animation: loadcircle 4s infinite;
+}
+
+#M16 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 0.25s;
+}
+
+#M6 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 0.5s;
+}
+
+#M5 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 0.75s;
+}
+
+#M4 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 1s;
+}
+
+#M15 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 1.25s;
+}
+
+#M3 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 1.5s;
+}
+
+#M1 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 1.75s;
+}
+
+#M2 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 2s;
+}
+
+#M13 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 2.25s;
+}
+
+#M10 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 2.5s;
+}
+
+#M11 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 2.75s;
+}
+
+#M12 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 3s;
+}
+
+#M14 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 3.25s;
+}
+
+#M8 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 3.5s;
+}
+
+#M9 {
+  animation: loadcircle 4s infinite;
+  animation-delay: 3.75s;
+}
+
+ @keyframes loadcircle {
+  0%  {
+    fill:#fff;
+  }
+
+  15% {
+    fill:#487fc0;
+  }
+
+  100% {
+    fill:#fff;
+  }
+ }
+

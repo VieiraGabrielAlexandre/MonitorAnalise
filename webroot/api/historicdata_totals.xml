@@ -1,0 +1,79 @@
+﻿<#checkobjecttype objecttype="sensor"><#droplive>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<historicdata>
+	<prtg-version><#system type="version"></prtg-version>
+	<clusternode>
+		<![CDATA[<#cluster type="name" show="textraw" utfencode="true">]]>
+	</clusternode>
+
+	<startdate>
+		<![CDATA[<#startdate show="textraw" utfencode="true">]]>
+	</startdate>
+	<enddate>
+		<![CDATA[<#enddate show="textraw" utfencode="true">]]>
+	</enddate>
+
+	<name>
+		<![CDATA[<#objectproperty name="Name" show="textraw" utfencode="true">]]>
+	</name>
+	<sensortype>
+		<![CDATA[<#objectstatus name="type" show="textraw" utfencode="true">]]>
+	</sensortype>
+
+	<probename>
+		<![CDATA[<#objectstatus name="probe" show="textraw" utfencode="true">]]>
+	</probename>
+	<parentgroupname>
+		<![CDATA[<#objectproperty name="ParentGroup" show="textraw" utfencode="true">]]>
+	</parentgroupname>
+	<parentdevicename>
+		<![CDATA[<#objectproperty name="ParentDevice" show="text" utfencode="true">]]>
+	</parentdevicename>
+	<parentdeviceid>  
+		<![CDATA[<#objectstatus name="parentid" show="text" utfencode="true">]]>
+	</parentdeviceid>
+
+	<uptimepercent>
+		<![CDATA[<#objectproperty type="uptimeper" usetz="1" show="raw" utfencode="true">]]>
+	</uptimepercent>
+	<uptime>
+		<![CDATA[<#objectproperty type="uptime" usetz="1" show="raw" utfencode="true">]]>
+	</uptime>
+
+	<downtimepercent>
+		<![CDATA[<#objectproperty type="downtimeper" usetz="1" show="raw" utfencode="true">]]>
+	</downtimepercent>
+	<downtime>
+		<![CDATA[<#objectproperty type="downtime" usetz="1" show="raw" utfencode="true">]]>
+	</downtime>
+
+	<goodreqpercent>
+		<![CDATA[<#objectproperty type="goodreqper" usetz="1" show="textraw" utfencode="true">]]>
+	</goodreqpercent>
+	<goodreq>
+		<![CDATA[<#objectproperty type="goodreq" usetz="1" show="textraw" utfencode="true">]]>
+	</goodreq>
+
+	<failedreqpercent>
+		<![CDATA[<#objectproperty type="failedreqper" usetz="1" show="textraw" utfencode="true">]]>
+	</failedreqpercent>
+	<failedreq>
+		<![CDATA[<#objectproperty type="failedreq" usetz="1" show="textraw" utfencode="true">]]>
+	</failedreq>
+
+	<averagelabel>
+		<![CDATA[<#objectproperty type="avgvaluelabel" usetz="1"  show="textraw" utfencode="true">]]>
+	</averagelabel>
+	<average>
+		<![CDATA[<#objectproperty type="avgvalue" usetz="1" show="textraw" utfencode="true">]]>
+	</average>
+
+	<sumlabel>
+		<![CDATA[<#objectproperty type="sumvaluelabel" usetz="1"  show="textraw" utfencode="true">]]>
+	</sumlabel>
+	<sum>
+		<![CDATA[<#objectproperty type="sumvalue" usetz="1" show="textraw" utfencode="true">]]>
+	</sum>
+</historicdata>	

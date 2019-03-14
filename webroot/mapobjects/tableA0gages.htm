@@ -1,0 +1,34 @@
+﻿ <!--Data Tables: Alarms (gauges)-->
+
+<div class="map_object map_table <#sensor type="colorclassofstate" prefix="map_objectstate_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:hidden;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+  <#objectproperty name="Name" id="<@objectid>" var="name">
+  <p><b><#lang key="html.mapobjects.tablealarmgauges.tabletitle" default="Alarms (@name)"></b></p>
+	<div id="Plugin_<@itemid>"
+    class="prtg-plugin deviceoverviewsensorvalues"
+    data-plugin="channelgauges"
+    data-objectid="<@objectid>"
+    data-type="sensors"
+    data-mapview="small">
+    <!--
+    {
+      "objects":<#table      
+        id="<@objectid>"
+        output='json'
+        noraw='1'
+        content='sensors'
+        sortby='-position'
+        count='*'
+        filter_status="5"
+        filter_status="4"
+        filter_status="10"
+        filter_status="13"
+        filter_status="14"
+        columns='objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw'>
+    }        
+-->      
+	</div>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

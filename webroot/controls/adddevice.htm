@@ -1,0 +1,65 @@
+﻿<form id="addobjectdialogform" action="adddevice2.htm" method="POST" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+	<div class="add-device-header">
+        <h1>
+            <#lang key="html.adddevice.head" default="<b>Add Device</b> to Group @groupname">
+        </h1>
+        <div class="eye-catcher"></div>
+        <div class="cancel-action">
+            <a onClick="history.back();return(false)" class="btn cancel" type="reset"><#lang key="html.addsensor.canceldevicecreation" default="Cancel device creation"></a>
+        </div>
+    </div>
+	<fieldset>
+		<legend class="prtg-header"><#lang key="html.adddevice.wizhead" default="Device Name and Address"></legend>
+		<div class="control-group">
+			<label class="control-label has_help"><#lang key="html.adddevice.wiz2" default="Device Name"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelp" default="Enter a meaningful name for the device.">">
+				<input class="text fieldrequired {required:true}" type="text" autocomplete="off" name="name_" value="<#defaultname type="Device">">
+			</div>
+
+			<label class="control-label has_help"><#lang key="html.adddevice.wizlabelV4orv6" default="IP Version"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelpV4orv6" default="Specify which IP version this device uses: IPv4 or IPv6.">">
+				<div class="radio-control">
+					<input type="radio" class="radio hidden GroupShowHide" name="ipversion_" value="0" id="ipversion0" checked>
+					<label for="ipversion0" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.adddevice.connectv4" default="Connect using IPv4"></label>
+					<input type="radio" class="radio hidden GroupShowHide" name="ipversion_" value="1" id="ipversion1">
+					<label for="ipversion1" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.adddevice.connectv6" default="Connect using IPv6"></label>
+				</div>
+			</div>
+
+			<label class="control-label has_help Showipversion0  Hideipversion1"><#lang key="html.adddevice.wiz22v4" default="IPv4 Address/DNS Name"></label>
+			<div class="controls Showipversion0  Hideipversion1" data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelpV4" default="Enter a DNS name (for example, &quot;server.mycompany.com&quot;) or the IPv4 address (for example, &quot;10.0.0.15&quot;). Most sensors will inherit this setting and monitor at this address.">">
+				<input class="text fieldrequired  {required:'#host_:visible'}" autocomplete="off" type="text" name="host_" id="host_" value="">
+			</div>
+
+			<label class="control-label has_help Showipversion1  Hideipversion0  InitialDisplayNone "><#lang key="html.adddevice.wiz22v6" default="IPv6 Address/DNS Name"></label>
+			<div class="controls Showipversion1  Hideipversion0  InitialDisplayNone " data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelpv6" default="Enter a DNS name (for example, &quot;server.mycompany.com&quot;) or the IPv6 address (for example, &quot; 2001:cdba:0000:0000:0000:0000:3257:9652&quot;). Most sensors will inherit this setting and monitor at this address.">">
+				<input class="text fieldrequired  {required:'#hostv6_:visible'}" autocomplete="off" type="text" name="hostv6_" id="hostv6_" value="">
+			</div>
+
+			<label class="control-label has_help"><#lang key="html.adddevice.wiz23" default="Tags"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelp3" default="Tags are keywords or descriptive terms associated with an object as means of classification.">">
+				<input class="text" type="text" autocomplete="off" name="tags_" value="">
+			</div>
+
+			<label class="control-label has_help"><#lang key="html.adddevice.wiz24" default="Device Icon"></label>
+			<div class="controls" data-placement="right" data-helptext="<#lang key="html.adddevice.wizhelp4" default="Select an icon for the device.">"><#system type="deviceiconselection"></div>
+		</div>
+	</fieldset>
+
+	<#session type="layoutgroup" name="discoverytypegroup" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="windowsconnection" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="linuxconnection" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="vmwareconnection" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="dbcredentials" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="cloudcredentials" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="snmpversiongroup" source="device" kindname="new Device">
+	<#session type="layoutgroup" name="accessgroup" source="device" kindname="new Device">
+
+	<div class='quick-action-wrapper <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+		<button class="submit button btngrey quick-action-button" type="submit">
+			<#lang key="html.global.add" default="Add">
+		</button>
+		<button type="submit" class='ui-icon quick-action-badge quick-add'></button>
+	</div>
+	<input type="hidden" name="id" value="<#objectid>">
+</form>

@@ -1,0 +1,18 @@
+﻿<!--Geo Maps: Geo Map-->
+<style>
+.onepreview .geomap-preview{
+	height: 176px;
+}
+</style>
+<div class="map_object map_graph geomap-preview" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+
+	  <div id="map-geomap-box" class="geomap  <#selectionlist content="geomapprovider">">
+			<#selectionlist content="locationlist" id="<@objectid>" domobjectid="map-geomap-box" width="<@width>" height="<@height>" maxlegenditems="50">
+		</div>
+
+  <#mapobject type="htmlafter" subid="<@subid>">
+</div>
+

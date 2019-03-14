@@ -1,0 +1,1164 @@
+﻿<!--Mini Probe API-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="custom_notifications.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_filter_rules.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Mini Probe API</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Mini Probe API</h1> 
+      <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Important Notice</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">We do not further develop the Mini Probe API because we plan major changes to the underlying API in PRTG. You can still use the Mini Probe API &quot;as is&quot; but please note that it may be deprecated at any time.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">Knowledge Base: <a href="https://kb.paessler.com/en/topic/61215" target="_blank" class="weblink">Where can I find PRTG Mini Probes which are ready to use?</a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG Mini Probes allow PRTG users to create small probes on any device to meet specific needs. In general, probes are the part of PRTG that run monitoring processes and deliver monitoring results back to the PRTG core server. Mini Probes help gather monitoring data from platforms where it is not possible or is inapplicable to use the common local and remote probes of PRTG. Mini Probes have a less complex implementation than standard probes so that you can create them on any platform. The only requirement is HTTPS connectivity to send monitoring data to your PRTG core server.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Basically, this takes the <span class="f_BoldCustom"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span> concept to a higher level; you will have a very broad range of possibilities and you can implement amazing functions to get an even better network monitoring experience!</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>With the current version of PRTG, you can use the Mini Probe interface with your custom code to implement solutions to special scenarios that you might have in your network. Please note that there are major changes planned to the underlying API in PRTG. Therefore, any code you write now will likely need to be changed later, so it can be used for future versions of PRTG. For example, if the available HTTP Push sensors are not sufficient for your needs, you can still use the Mini Probe API. We will provide further news about changing interfaces as soon as there are more detailed plans available.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Because the PRTG Mini Probe requires an SSL-secured connection to the PRTG core server, it is not possible by default to connect if SSL is deactivated for PRTG. This is necessary because probably unencrypted passwords will be transferred between probe and core. So it is important to encrypt the connection even on internal routes. If your network setup ensures security in another way (for example, VPN), you can use a registry key option for disabling SSL in order to get a connection to your Mini Probe.<br />
+<img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more details, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/60356" target="_blank" class="weblink">How can I disable SSL for Mini Probes?</a></span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>The Mini Probe API is not available in PRTG hosted by Paessler.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Here are quick links for ease of use.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#android" class="topiclink">PRTG Mobile Probe for Android</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#probe_types" class="topiclink">Differences Between Probe Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#pmpp" class="topiclink">The PRTG Mobile Probe Protocol</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#communication_strategy" class="topiclink">The PRTG Mini Probe Protocol—Communication and Security</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#authentication" class="topiclink">The PRTG Mini Probe Protocol—Authentication</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#http_requests" class="topiclink">The PRTG Mini Probe Protocol—HTTP Requests</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#json_definition" class="topiclink">Data Format: JSON Definitions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#sensor_definition" class="topiclink">Data Format: JSON Definitions—Sensor Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#tasks_definition" class="topiclink">Data Format: JSON Definitions—Tasks Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm#data_definition" class="topiclink">Data Format: JSON Definitions—Data Definition</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="android" class="hmanchor"></a><span class="f_InTopicHeading">PRTG Mobile Probe for Android</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Initially we released a mobile probe for Android devices to gather local monitoring data with mobile devices. This mobile probe is a subtype of the Mini Probe. With the PRTG Mobile Probe for Android, you can monitor, for example, wireless LAN (WLAN) coverage, location, battery, HTTP response times, and environmental data such as temperature, pressure, humidity, or light intensity. The available data depends on the available measurement components on the device.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG Mobile Probes for Android usually connect via WLAN and monitor your network from the mobile perspective.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe_types" class="hmanchor"></a><span class="f_InTopicHeading">Differences Between Probe Types</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following table shows technical specifications of the two probe types in PRTG.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Functionality</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Local and Remote Probes</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">PRTG Mini Probe</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Connection Protocol from Probe to Core</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Protocol from PRTG</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">HTTPS</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Security</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data is secured with SSL and an access key. New probe connections must be approved by the PRTG administrator. IP and GUID filtering is possible.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The same security level as for local and remote probes.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Estimated Limit for Sensors per Probe</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Several thousand sensors</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Less than 100 sensors</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Estimated Limit for Probes per Installation</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Hundreds of probes</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Less than 100 probes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Estimated Minimum Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Some seconds</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">At least 60 seconds</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Estimated Number of Sensor Types</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">More than 200</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A few</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Updates to New PRTG Versions by the Core Server</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yes</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Complexity</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">High</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Very low</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Documented API</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yes</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Supported Platforms</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Windows 7 or later (32-bit/64-bit)</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any platform</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scheduling of Sensor Requests Performed by</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Code Managed by</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler AG</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Writer of the probe</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Probe Supports Pre-Scans for Available Measurements</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yes</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensors Support <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yes</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Limitations by Administrator for Allowed Sensor Types that a PRTG User Can Create</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Yes</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="pmpp" class="hmanchor"></a><span class="f_InTopicHeading">The PRTG Mini Probe Protocol</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PRTG Mini Probe Protocol (PMPP) is a simple, lightweight protocol that extends PRTG with custom remote probes. It can be implemented in a variety of programming languages and runs on any kind of platform. These include, for example, Linux, Android, macOS, and iOS.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>PRTG Mini Probes are not intended for high performance monitoring and support only the sensor types that you implement.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="communication_strategy" class="hmanchor"></a><span class="f_InTopicHeading">The PRTG Mini Probe Protocol—Communication and Security</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PMPP uses GET and POST requests via HTTPS in order to communicate with the PRTG server. All requests are sent to the defined TCP port for the common PRTG web server (default is 443 for SSL), or you specify an extra port explicitly for Mini Probe connections in the <span class="f_BoldCustom"><a href="probes_settings.htm#settings" class="topiclink">PRTG System Administration—Core &amp; Probes</a></span>. PRTG Mini Probes use the GET method to receive tasks, and the POST method to send information about the probe and the monitoring results to the PRTG core.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>The data format of some HTTP fields has to be JSON encoded. See <span class="f_BoldCustom"><a href="mini_probe_api.htm#json_definition" class="topiclink">Data Format: JSON Definitions</a></span> for data definitions that require JSON. All exchanged data is secured with SSL.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="authentication" class="hmanchor"></a><span class="f_InTopicHeading">The PRTG Mini Probe Protocol—Authentication</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PMPP uses the same authentication methods as the common PRTG remote probes. The authentication includes the following steps:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Allow and deny IPs filter</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Deny GIDs filter</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Access key</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Unique GID that must be approved in the PRTG web interface</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">In addition, Mini Probes must be allowed to connect in the PRTG Probe connection settings! Additionally, you have to provide the Mini Probe's IP in the </span><span class="f_BoldCustom">Allow IPs</span><span class="f_ListBulleted"> field (or enter any).</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">There are no sessions on the server: Every request must contain the required authentication information.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more details, see section <span class="f_BoldCustom"><a href="probes_settings.htm" class="topiclink">System Administration—Core and Probes</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="http_requests" class="hmanchor"></a><span class="f_InTopicHeading">The PRTG Mini Probe Protocol—HTTP Requests</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PMPP includes three different HTTP requests that are sent to the PRTG web server:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">announce</span><span class="f_ListBulleted">: An announce request is sent once when the probe starts. Afterwards, the task and data commands are run in a scheduled manner.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">tasks</span><span class="f_ListBulleted">: With a tasks request, the probe requests a list of tasks to perform.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">data</span><span class="f_ListBulleted">: The data request sends the monitoring results to the core.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">All requests of the Mini Probe to the PRTG server must contain the following HTTP fields:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">gid</span><span class="f_ListBulleted">: The unique GID of the probe. We recommend a GUID that is generated by the operating system. This identifier must stay the same for as long as the probe installation exists. You can use any string. If you clone a probe, you have to update this field to a new value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">key</span><span class="f_ListBulleted">: An access key as defined in the probe settings of the PRTG server. The key has to be encoded in SHA1 hash (for example, </span><span class="f_BoldCustom">key=a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">protocol</span><span class="f_ListBulleted">: The version of the protocol you use. Currently, this value is &quot;1&quot;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">All requests return common HTTP response codes.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information, see section <span class="f_BoldCustom"><a href="http_api.htm" class="topiclink">HTTP API</a></span>.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Announce Request</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The announce request uses the POST method and provides all required information about the capabilities of the Mini Probe for the PRTG core. The target URL is <span class="f_BoldCustom">https://&lt;yourPRTGserver&gt;/probe/announce</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>This HTTP request must be sent at least once to be able to add sensors. We recommend you send this request every time the probe starts. You should NOT send it with every scanning interval!</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The announce request must contain the following HTTP fields:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">name</span><span class="f_ListBulleted">: The name of the Mini Probe. PRTG uses this name to create a corresponding node in the device tree.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">version</span><span class="f_ListBulleted">: The version number of the Mini Probe you have implemented. This is a single integer number, for example, &quot;1&quot;.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">baseinterval</span><span class="f_ListBulleted">: The number of seconds between two calls of the task/data requests. We recommend 60 or 300 seconds; depending on the usage, higher or lower values are possible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">sensors</span><span class="f_ListBulleted">: The definition of supported sensors in JSON format.</span><br />
+<img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">See </span><span class="f_BoldCustom"><a href="mini_probe_api.htm#sensor_definition" class="topiclink">Data Format: JSON Definitions—Sensor Definition</a></span><span class="f_ListBulleted"> for more information.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">icon</span><span class="f_ListBulleted"> (optional): You can optionally send the file name of a device icon to show it for the mini probe device in the PRTG web interface.</span><br />
+<img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_ListBulleted">For details, see our Knowledge Base article <a href="https://kb.paessler.com/en/topic/7313" target="_blank" class="weblink">How can I add my own device icons for use in the PRTG web interface</a>?</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>If you change the definition of a sensor that has already been announced, these changes will only be active after the next start of PRTG. An existing definition never changes while PRTG is running. However, there is one exception: Setting the &quot;deprecated&quot; flag works without any restart. Because of this, you can replace an existing sensor with a new one that uses another definition.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Tasks Request</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The tasks request uses the GET method and is sent from your Mini Probe in the defined scheduler interval to the PRTG core server (for example, every 5 minutes). The target URL is</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://&lt;PRTGserver&gt;/probe/tasks</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This HTTP request returns a list of tasks in JSON format that have to be run by the Mini Probe.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See <span class="f_BoldCustom"><a href="mini_probe_api.htm#tasks_definition" class="topiclink">Tasks Definition</a></span> for more information.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Data Request</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The data request uses the POST method and contains the HTTP field data. This HTTP field contains any number of sensor results in JSON format. The target URL is</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">https://&lt;PRTGserver&gt;/probe/data</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can split the results of one tasks list into several result requests (for example, if some sensors are faster than others). The Mini Probe should combine as many results as possible into one request but keep the time between measurement and reporting of the value at a low level.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See <span class="f_BoldCustom"><a href="mini_probe_api.htm#data_definition" class="topiclink">Data Definition</a></span> for more information.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="json_definition" class="hmanchor"></a><span class="f_InTopicHeading">Data Format: JSON Definitions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">All data definitions of sensors, tasks, and result data of PRTG Mini Probes are JSON encoded. JSON is a language-independent data format that is used to transmit data objects consisting of attribute-value pairs between a server and an application. Refer to the JSON documentation for a general overview of this data format.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensor_definition" class="hmanchor"></a><span class="f_InTopicHeading">Data Format: JSON Definitions—Sensor Definition</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This section shows how you can define the available sensor types for your Mini Probe. Sensor definitions are given in the HTTP field &quot;sensors&quot; of the announce request.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Basic Structure</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The sensor types definition is a JSON array where each sensor type is defined in one array element as a JSON object. A JSON object denoting a sensor definition consists of the following JSON name/value pairs:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">kind</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unique identifier for the sensor type in the Mini Probe. Used in the tasks definition to identify the sensor type.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Underscore &quot;_&quot; is not allowed here.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The display name of the sensor.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">deprecated</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can flag the sensor to status deprecated. A flagged sensor can still run but this kind of sensor will not be shown when you add new sensors to the probe.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= deprecated)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= not deprecated)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">description</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A short description of the sensor that is shown in the <a href="add_a_sensor.htm#step2" class="topiclink">Add Sensor</a> dialog in the PRTG web interface.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">help</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A help text that is shown in a popup in the <a href="add_a_sensor.htm#step2" class="topiclink">Add Sensor</a> dialog in the PRTG web interface.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">tag</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A default tag for the sensor that will automatically be added to the sensor.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">default</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A sensor of this type will automatically be created with the probe if set to &quot;default&quot;.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">(= set to default)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= not default)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:208px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">groups</span></p>
+</td>
+<td style="vertical-align:top; width:259px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:706px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">In the &quot;groups&quot; array, available settings for this sensor type are defined.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">An array of grouped settings JSON objects.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">See </span><span class="f_BoldCustom"><a href="mini_probe_api.htm#group_objects" class="topiclink">Definition of Setting Groups Objects</a></span><span class="f_ListBulleted"> for more information.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="group_objects" class="hmanchor"></a><span class="f_BoldCustom">Definition of Setting Groups Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">One settings group definition (one element of the &quot;groups&quot; array) consists of three elements:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The internal name of the settings group.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any unique string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">caption</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The label of the settings group as shown in the PRTG web interface.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">fields</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The available settings of the settings group.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">An array of field definition objects.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">See </span><span class="f_BoldCustom"><a href="mini_probe_api.htm#settings_fields" class="topiclink">Parameters for Setting Fields</a></span><span class="f_ListBulleted"> for more information.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="settings_fields" class="hmanchor"></a><span class="f_BoldCustom">Parameters for Setting Fields</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following table shows available JSON name/value pairs for setting fields:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Available in Type</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">type</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Type of the field. This defines the possible content.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Edit</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Password</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Radio</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">See </span><span class="f_BoldCustom"><a href="mini_probe_api.htm#field_types" class="topiclink">Definition of Setting Fields: Field Types</a></span><span class="f_ListBulleted"> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The internal name of the field. The name has to be unique per sensor. It is sent with the settings of the probe in the task request.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any unique string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">caption</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The label of the field. It is displayed left of the field.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">required</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a field is defined as required, this field has to be set when adding or editing the sensor settings. Default is not required.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= not required)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= required)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">default</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The default value of the field.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string or integer (depending on the field type)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">help</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A help text that is displayed right of the field.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can use limited BBCode: &quot;[b]&quot; and &quot;[/b]&quot; for bold, &quot;[i]&quot; and &quot;[/i]&quot; for italics, and &quot;[br]&quot; for linebreak.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">maximum</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The maximum value that is allowed for this field.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">minimum</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The minimum value that is allowed for this field.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">options</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">A JSON array that provides several radio buttons to choose a desired option.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Radio</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&quot;name&quot;:&quot;value&quot; pairs. See </span><span class="f_BoldCustom">Example</span><span class="f_ListBulleted"> below.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&quot;name&quot;:&quot;value&quot; pairs that define radio button options:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;1&quot;:&quot;This&nbsp;is&nbsp;option&nbsp;1&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;2&quot;:&quot;This&nbsp;is&nbsp;option&nbsp;2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;XYZ&quot;:&quot;Another&nbsp;option&quot;</span><br />
+<span class="f_CodeExample">}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="field_types" class="hmanchor"></a><span class="f_BoldCustom">Definition of Setting Fields: Field Types</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">A sensor type can have any number of setting fields that are organized in groups of settings. One field is one element in the &quot;fields&quot; array of a settings group. Currently, PRTG Mini Probes support four different field types for settings:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">edit</span><span class="f_ListBulleted">: One line edit field.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">password</span><span class="f_ListBulleted">: An edit field with masked characters.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">integer</span><span class="f_ListBulleted">: A number field with optional minimum/maximum selection.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">radio</span><span class="f_ListBulleted">: A selection of multiple options with radio buttons.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The following is a detailed example that shows the JSON object definition of a sensor type that is used in the HTTP field sensors of the announce request.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This sensor type is called </span><span class="f_BoldCustom">Sample Sensor</span><span class="f_ListBulleted"> and is from the type </span><span class="f_BoldCustom">Sample</span><span class="f_ListBulleted">. It has a description, a help text, and a default tag. There are two setting groups, </span><span class="f_BoldCustom">Group</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">group2</span><span class="f_ListBulleted">, with several setting fields (six in the first group, one in the second group). The example also shows how you can use the available JSON name/value pairs in the </span><span class="f_BoldCustom">fields</span><span class="f_ListBulleted"> array object.</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;kind&quot;:&quot;Sample&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;name&quot;:&quot;Sample&nbsp;Sensor&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;description&quot;:&quot;This&nbsp;is&nbsp;a&nbsp;sample&nbsp;demo&nbsp;sensor&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;help&quot;:&quot;This&nbsp;is&nbsp;the&nbsp;help&nbsp;text&nbsp;of&nbsp;the&nbsp;demo&nbsp;sensors&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;tag&quot;:&quot;demosensor&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;groups&quot;:[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;Group&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Group&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;fields&quot;:[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;edit&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;simpleedit&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Edit&nbsp;Field&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;edit&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;extendededit&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Edit&nbsp;Field&nbsp;2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;required&quot;:&quot;yes&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;:&quot;Default&nbsp;Value&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;help&quot;:&quot;Help&nbsp;text&nbsp;displayed&nbsp;to&nbsp;the&nbsp;right&nbsp;of&nbsp;the&nbsp;field&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;integer&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;simplenumber&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Number&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;integer&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;number2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Number&nbsp;2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;required&quot;:&quot;1&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;minimum&quot;:23,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;maximum&quot;:99,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;help&quot;:&quot;Number&nbsp;field&nbsp;with&nbsp;limit&nbsp;23-99&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;password&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;password&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Password&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;help&quot;:&quot;This&nbsp;is&nbsp;a&nbsp;password&nbsp;field&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;radio&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;radiotest&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Radio&nbsp;test&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;help&quot;:&quot;This&nbsp;is&nbsp;a&nbsp;radio&nbsp;selection&nbsp;field&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;options&quot;:{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;1&quot;:&quot;This&nbsp;is&nbsp;option&nbsp;1&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;2&quot;:&quot;This&nbsp;is&nbsp;option&nbsp;2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;3&quot;:&quot;This&nbsp;is&nbsp;option&nbsp;3&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;:&quot;2&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">]</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;group2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Group&nbsp;2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;fields&quot;:[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;testfield2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;caption&quot;:&quot;Test2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;:&quot;edit&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">]</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&nbsp;&nbsp;]</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span><br />
+<span class="f_CodeExample">]</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="tasks_definition" class="hmanchor"></a><span class="f_InTopicHeading">Data Format: JSON Definitions—Tasks Definition</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">A tasks definition is a JSON array where each task is one object. Tasks contain all name/value pairs as defined in the sensor settings definition, which are filled with the values you have provided. Additionally, the following information is included:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">kind</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The type of the sensor.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">String</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensorid</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The ID of the sensor.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">host</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The IP address/DNS name of the parent device as specified for this device. For the probe device, it is 127.0.0.1 by default.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">IP/DNS name</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">all defined fields</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All fields that are defined in the sensor setting group objects are included in the tasks definition as name/value pairs.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">name/value pairs</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>This data comes from PRTG, so the mandatory JSON objects are included automatically.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Definition of two tasks, the first one is the simplest possible one without any values, and the second one uses the sensor settings objects as defined above:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;sensorid&quot;:&quot;2009&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;kind&quot;:&quot;ping&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;host&quot;:&quot;www.google.com&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;sensorid&quot;:&quot;2010&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;kind&quot;:&quot;sample&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;host&quot;:&quot;www.paessler.com&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;simpleedit&quot;:&quot;Test2&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;extendededit&quot;:&quot;Extended&nbsp;Test&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;simplenumber&quot;:&quot;3&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;number2&quot;:&quot;42&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;password&quot;:&quot;masked&nbsp;text&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;radiotest&quot;:&quot;1&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;testfield2&quot;:&quot;This&nbsp;is&nbsp;test&nbsp;3&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span><br />
+<span class="f_CodeExample">]</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="data_definition" class="hmanchor"></a><span class="f_InTopicHeading">Data Format: JSON Definitions—Data Definition</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">A data definition is a JSON array where each result of a task is one object. Every array element contains the following name/value pairs:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">sensorid</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The ID of a specific sensor.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">time</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The time of measurement in UTC/GMT timezone as JSON number in Unix time format (in milliseconds since Unix epoch, which is 00:00:00 UTC on January 1, 1970). Time values must be strictly chronological, so the Unix time of each measurement must be greater than the one before. The time values should be close to the current time (which is now) to prevent gray sensors.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If no time value is provided, the current time (now) is used.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">JSON number defining Unix time</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">message</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">An optional text message.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">channel</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The channel result values.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">An array of name/value pairs.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">See </span><span class="f_BoldCustom"><a href="mini_probe_api.htm#channel_result" class="topiclink">Parameters for Data Definitions: Channel Result Values</a></span><span class="f_ListBulleted"> for more information.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data definition object with sensor status </span><span class="f_BoldCustom">OK</span><span class="f_ListBulleted">:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;sensorid&quot;:&quot;2003&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;message&quot;:&quot;Optional&nbsp;Message&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;channel&quot;:[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;Time&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;mode&quot;:&quot;integer&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;unit&quot;:&quot;TimeResponse&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;value&quot;:6</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;showchart&quot;:1</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;showtable&quot;:1</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;name&quot;:&quot;Pages&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;mode&quot;:&quot;counter&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;unit&quot;:&quot;Custom&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;customunit&quot;:&quot;Pages&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;value&quot;:99</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&nbsp;&nbsp;]</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span><br />
+<span class="f_CodeExample">]</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data definition object with sensor status error:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">{</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;sensorid&quot;:&quot;2003&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;error&quot;:&quot;Response&quot;,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;code&quot;:10,</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;message&quot;:&quot;Error&nbsp;Message&quot;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span><br />
+<span class="f_CodeExample">]</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><a id="channel_result" class="hmanchor"></a><span class="f_BoldCustom">Parameters for Data Definitions: Channel Result Values</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following table shows name/value pairs that can be used in the &quot;channel&quot; array objects of data definition objects:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Name</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Mandatory</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Description</span></p>
+</th>
+<th style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Possible Value</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The name of the channel as displayed in user interfaces.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Value</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">X</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any number without quotation marks.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">An integer, float, or counter value</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Mode</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The type of the value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Make sure that it matches the provided value, otherwise PRTG will show 0 values.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer, float, or counter</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unit</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The unit of the value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Setting the correct unit type instead of custom units helps PRTG display received values in a better way.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">BytesBandwidth</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">BytesMemory</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">BytesDisk</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">BytesFile</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TimeResponse</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TimeSeconds</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TimeHours</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Temperature</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Percent</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Count</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">CPU: </span>This is a % unit that is accounted to the CPU load in index graphs.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom (define the name of the unit using the additional field customunit)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ShowChart</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Init value for the </span><span class="f_BoldCustom">Show in Graphs</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= do not show graph)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= show graph)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ShowTable</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Init value for the </span><span class="f_BoldCustom">Show in Tables</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= do not show table)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= show table)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SpeedSize</span><br />
+<span class="f_ListBulleted">VolumeSize</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Size used for the display value. For example, if you have a value of 50000 and use Kilo as size, the display is 50 kilo #. Default is One (value used as returned).</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">For the Bytes and Speed units, this is overridden by the setting in the user interface.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">One</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Kilo</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Mega</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Giga</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tera</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Byte</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">KiloByte</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">MegaByte</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">GigaByte</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TeraByte</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Bit</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">KiloBit</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">MegaBit</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">GigaBit</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">TeraBit</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SpeedTime</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">See above, used when displaying the speed. Default is Second.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Second</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Minute</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Hour</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Day</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">decimalMode</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Init value for the </span><span class="f_BoldCustom">Decimal Places</span><span class="f_ListBulleted"> option. If 0 is used in the float mode (use integer), the default is Automatic; otherwise (for float) default is All.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Automatic</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Custom</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">decimalDigits</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If you define Custom as decimalMode, specify the number of digits after the delimiter.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ValueLookup</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use a lookup file (for example, to view integer values as status texts). Enter the ID of the lookup file you want to use, or omit this element to not use lookups.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">See section <a href="define_lookups.htm" class="topiclink">Define Lookups</a> for more information.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This setting will be considered only on the first sensor scan, when the channel is newly created; it is ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitMaxError</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an upper error limit for the channel. If enabled, the sensor will be set to a &quot;Down&quot; status if this value is overrun and the LimitMode is activated.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section. While a sensor shows a &quot;Down&quot; status triggered by a limit, it will still receive data in its channels.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitMaxWarning</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an upper warning limit for the channel. If enabled, the sensor will be set to a &quot;Warning&quot; status if this value is overrun and the LimitMode is activated.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitMinWarning</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a lower warning limit for the channel. If enabled, the sensor will be set to a &quot;Warning&quot; status if this value is undercut and the LimitMode is activated.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitMinError</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a lower error limit for the channel. If enabled, the sensor will be set to a &quot;Down&quot; status if this value is undercut and the LimitMode is activated.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitErrorMsg</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an additional message. It will be added to the sensor's message when entering a &quot;Down&quot; status that is triggered by a limit.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitWarningMsg</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an additional message. It will be added to the sensor's message when entering a &quot;Warning&quot; status that is triggered by a limit.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">LimitMode</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if the limit settings defined above will be active. Default is 0 (no; limits inactive). If 0 is used, the limits will be written to the sensor channel settings as predefined values, but limits will be disabled.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The values defined with this element will be considered only on the first sensor scan, when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= no)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= yes)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Warning</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If enabled for at least one channel, the entire sensor is set to &quot;Warning&quot; status. Default is 0 (no).</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0 (= no)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1 (= yes)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Text the sensor returns in the Message field with every scanning interval. There can be one message per sensor, regardless of the number of channels. Default is OK.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any string</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Error</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The type of error.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The type is not necessarily shown in PRTG.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data: The monitored device returned a value but the sensor could not process it.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Response: The monitored device reported an error. This includes timeouts, HTTP response codes, etc.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Exception: Error in sensor handling.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Socket: Socket error.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Code</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">—</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">The error code that is stored in the database.</span></p>
+</td>
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Integer</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I disable SSL for Mini Probes?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60356" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60356</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Where can I find PRTG Mini Probes which are ready to use?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61215" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61215</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Application Programming Interface (API) Definition—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http_api.htm" class="topiclink">HTTP API</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm" class="topiclink">Live Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_graphs.htm" class="topiclink">Live Graphs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data.htm" class="topiclink">Historic Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_notifications.htm" class="topiclink">Custom Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="custom_notifications.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="xflow_packet_sniffer_filter_rules.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

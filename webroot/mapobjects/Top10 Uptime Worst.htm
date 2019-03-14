@@ -1,0 +1,33 @@
+﻿<!--Top 10: Availability/Uptime (worst)-->
+
+<div class="map_object map_table" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="overflow:auto;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+<#checkobjecttype objecttype="probenode,group,device" nicemessage="true" id="<@objectid>">
+
+			<div class="top10listcontainer" style="overflow:hidden">
+			<#lang key="html.mapobjects.top10uptimeworst.tabletitle" default="Top 10: Worst Availability (@@@@)" var="tabletitle">
+			<#table tableid="sensortable"
+					   content="sensors"
+					   columns="uptime,sensor,probegroupdevice"
+					   sortby="-uptime"
+					   sortable="false"
+					   refreshable="false"
+					   filter_status="3"
+					   filter_status="4"
+					   filter_status="5"
+					   filter_status="10"
+					   filter_status="13"
+					   filter_status="14"
+					   infoheader="false"
+					   links="false"
+					   filter_tags="@tag(<@tagfilterstring>)"
+					   count="10"
+					   varexpand="tabletitle"
+					   tabletitle="@tabletitle"
+                       id="<@objectid>">
+			</div>
+
+
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

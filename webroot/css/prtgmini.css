@@ -1,0 +1,9 @@
+﻿/*prtgmini.css*/
+<#javascriptinclude file="css\normalize.css">
+
+<#include file="css\mini.css">
+
+/** ################################################### */
+/** include customer CSS (if available) */
+/** ################################################### */
+<#include file="css\styles_custom_v2.css">

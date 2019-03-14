@@ -1,0 +1,83 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="device,group">
+<#lang key="html.moveobject.title" default="Move an Object" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="objectname">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.moveobject.head" default="Move Object <b>@objectname</b> to Another Group"></h1>
+  <div id="content" class="ui-dialog-content">
+    <form id="moveobjectform" action="/moveobjectnow.htm" method="POST" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true">
+			<fieldset>
+    		<legend class="prtg-header"><#lang key="html.moveobject.selectedobject" default="Selected Object"></legend>
+    		<div class="control-group">
+    			<label class="control-label no_help" for="propeid"><#lang key="html.moveobject.wiza" default="Parent Probe"></label>
+    			<div class="controls">
+    				<span class="control" id="propeid"><#objectstatus name="probe" show="link"></span>
+    			</div>
+    			<label class="control-label no_help" for="groupid"><#lang key="html.moveobject.wizb" default="Parent Group"></label>
+    			<div class="controls">
+    				<span class="control" id="groupid"><#objectproperty name="ParentGroup" show="link"></span>
+    			</div>
+    			<label class="control-label no_help" for="deviceid"><#lang key="html.moveobject.wiz12" default="Object to Move"></label>
+    			<div class="controls">
+    				<span class="control" id="deviceid"><b><#objectproperty name="Name" show="link"></b></span>
+    			</div>
+    		</div>
+    	</fieldset>
+    	<fieldset>
+    		<legend class="prtg-header"><#lang key="html.moveobject.wizhead" default="Please Choose a Target Group"></legend>
+    			<!-- <label class="control-label no_help" for="objtreesearch"><#lang key="html.movedevice.pleaseselectagroupfromlist" default="Please select a group from the list"></label> -->
+          <div class="searchbox">
+            <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+            <input id="objtreesearch" type="text" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">"  name="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">">
+          </div>
+    			<div class="controls">
+    				<div class="prtg-plugin objectselector"
+    					style="height:300px"
+    					id="objectSelectorTree"
+    					data-plugin="objectselector"
+              data-allowone="1"
+    					data-branch="<#objectstatus name="parentid" show="text">"
+    					data-disabled="#objectnode_<#objectid>">
+              <!--
+              {  
+    					"tree": <#selectionlist content='groupsanddevices_as_json'
+    						id='0'
+    						groups='1'
+    						probes='1'
+    						hidedevices='1'
+    						allowroot='0'
+    						altformat='1'>
+              }
+              -->
+    				</div>
+            <input data-validate-related="#objectSelectorTree" class="fieldrequired {required:true} invisible" id="groupdevid" name="targetid" type="text">
+    			</div>
+    	</fieldset>
+     <#hiddenid>
+
+      <fieldset>
+        <legend class="prtg-header"><#lang key="html.moveobject.warning" default="Please note: The following sub-objects will also be moved"></legend>
+          <label class="control-label no_help" for=""></label>
+          <div class="controls prtg-plugin" data-plugin="prtg-table">
+            <#search extraclass="prevent-datatables">
+          </div>
+      </fieldset>
+      <div class="submitbuttonboxanchor">
+        <div class="submitbuttonbox">
+          <input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" class="submit btngrey button" type="submit" value="<#lang key="html.moveobject.submit" default="Move Object">" form="moveobjectform">
+          <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">" form="moveobjectform">
+        </div>
+      </div>
+    </form>
+  </div>
+<#lang key="html.moveobject.help.title" default="Move an Object" var="helptitle">
+<#lang key="html.moveobject.help.text" default="Please select a group that you want to place the selected object in." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

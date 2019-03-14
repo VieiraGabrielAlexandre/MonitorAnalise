@@ -1,0 +1,33 @@
+﻿<#system type="denyfornonadmins">
+<div class="yesterdaysactivitybox">
+  <h2><#lang key="html.welcome.yesterdayactivities.headline" default="Yesterday's Activity"></h2>
+  <div class="sensorscansbox">
+    <p class="scansum"><#system type="activitystats" name="Sensor Scans" daysback="1"></p>
+    <p class="scantext"><#lang key="html.welcome.yesterdayactivity.sensscansperf" default="Sensor Scans Performed"></p>
+    <p><span class="sparklineextend prtg-plugin" data-plugin="prtg-sparklineextend"><!-- <#system type="activitystatsjson" name="Sensor Scans"> --></span></p>
+  </div>
+
+  <div class="value-name-list">
+    <div>
+      <span class="item value"><#system type="activitystats" name="State Changes" daysback="1"></span>
+      <span class="item name"><#lang key="html.welcome.yesterdayactivity.list.sensstatechanges" default="Sensor State Changes"></span>
+    </div>
+
+    <div>
+      <span class="item value"><#system type="activitystats" name="Notifications Sent" daysback="1"></span>
+      <span class="item name"><#lang key="html.welcome.yesterdayactivity.list.notisend" default="Notifications Sent"></span>
+    </div>
+
+    <div>
+      <span class="item value"><#system type="activitystats" name="Reports Generated" daysback="1"></span>
+      <span class="item name"><#lang key="html.welcome.yesterdayactivity.list.reportsgenerated" default="Reports Generated"></span>
+    </div>
+
+    <div>
+      <span class="item value"><#system type="activitystats" name="Page Views" daysback="1"></span>
+      <span class="item name"><#lang key="html.welcome.yesterdayactivity.list.webpagesserved" default="Web Pages Served"></span>
+    </div>
+  </div>
+  <#include file="controls\welcome_opentickets.htm" skiptagforreadonly="true">
+</div>
+

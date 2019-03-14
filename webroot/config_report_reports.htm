@@ -1,0 +1,26 @@
+﻿<#system type="denyfornonadmins">
+
+<#lang key="html.config_report_reports.header1a" default="Configuration Report: Reports" var="title">
+<#setpagetitle pagetitle="@title" varexpand="pagetitle">
+
+<#include file="includes\reportheader_configreports.htm">
+
+  <h1><#lang key="html.config_report_reports.header1a" default="Configuration Report: Reports"></h1>
+  <#lang key="html.config_report_reports.header2" default="Reports" var="objecttype">
+
+  <div class="onereport">
+    <#table tableid="reporttable"
+    content="reports"
+    userid="<#userid>"
+    columns="name,template,securitycontext,period,schedule,email,nextrun,lastrun,numberofsensors"
+    count="5000"
+    sortby="name"
+    sortable="false"
+    tabletitle="@objecttype"
+    varexpand="tabletitle"
+    links="false"
+    refreshable="false">
+   </div>
+
+<#include file="includes\config_reportfooter.htm">
+

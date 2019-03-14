@@ -1,0 +1,300 @@
+﻿/*_Prtg.AddSensor.css*/
+
+select.ui-dialog-content {
+  padding: 0px !important;
+  margin: 5px !important;
+  border: 1px solid <#colorcode color="midgray"> !important;
+  width: 98% !important;
+}
+
+#addsensor_form {
+  width: 99%;
+}
+
+#addsensor_view {
+  display: block;
+  width: auto;
+  padding-left: 5px;
+}
+
+#addsensor_sensorfilter {
+  padding-left: 5px;
+}
+
+#addsensor_sensorfilter ul {
+  padding: 0px;
+  padding-right: 15px;
+  margin: 0 3px 0 0;
+  width: 257px;
+  float: left;
+  list-style: none;
+}
+
+.addsensor_search {
+  padding: 0px;
+  padding-left: 5px;
+  margin: 0 3px 0 0;
+  list-style: none;
+}
+
+.addsensor_filterbuttonicon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin-right: 4px;
+  margin-top: 1px;
+}
+
+.addsensor_filterbutton {
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid <#colorcode color="lightgray">;
+  margin-bottom: -1px;
+  padding: 2px;
+}
+
+.addsensor_filterbutton:hover {
+  background: <#colorcode color="midgray">;
+}
+
+.addsensor_filterbutton:hover i {
+  background-position: -98px -146px;
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+.addsensor_filterselected .addsensor_filterbuttonicon i {
+  background-position: -81px -146px;
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+.addsensor_filterselected {
+  font-weight: bold;
+}
+
+#addsensor_searchbox {
+  position: relative;
+  display: block;
+  height: 20px;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+#addsensor_searchicon {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
+#addsensor_searchinput {
+  width: 182px;
+  height: 16px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  text-indent: 16px;
+}
+
+#addsensor_listheader {
+  clear: both;
+  padding-top: 15px;
+}
+
+#addsensor_headerfiltertext,
+#addsensor_headersearchtext {
+  display: none;
+}
+
+/*.addsensor_sensorwarning {
+  color: #c3005d;
+}*/
+
+.addsensor_sensorcategorie {
+  clear: both;
+}
+
+.addsensor_categorieheader {
+  padding: 15px 0 5px 5px;
+}
+
+.addsensor_sensorcategoriehide {
+  display: none;
+}
+
+.addsensor_sensorcategorieshow {
+  display: block;
+}
+
+.addsensor_sensorcategorie ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.addsensor_sensorcategorie li {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.addsensor_sensorcontainer p {
+  margin-bottom: 3px;
+  margin-top: 2px;
+  line-height: 100%;
+}
+
+.addsensor_sensorcontainer {
+  width: 250px;
+  height: 80px;
+  padding: 1px 4px 0px 4px;
+  margin: 4px;
+  position: relative;
+  background-color: <#colorcode color="lightgray">;
+  transition: .1s;
+}
+
+.addsensor_sensorcontainer:hover {
+  background-color: <#colorcode color="midgray">;
+  transition: .1s;
+}
+
+.addsensor_disabledsensors {
+  border: 1px solid #888;
+  background-color: white;
+}
+
+.addsensor_disabledsensors .addsensor_sensorname {
+  color: gray;
+}
+
+.addsensor:hover {
+  cursor: pointer;
+}
+
+.addsensor:hover .addsensor_addthis {
+  background-color: <#colorcode color="actioncolor">;
+  color: #fff;
+  transition: .1s;
+}
+
+.addsensor_filterheader {
+  font-family: "Lucida Sans-Serif","Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-weight: normal;
+  color: #00235D;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 5px;
+}
+
+.addsensor_sensorname {
+  font-weight: normal;
+  font-size: 13px;
+  height: 17px;
+  max-height: 17px;
+  margin: 0px;
+  padding: 0px;
+  white-space: nowrap;
+}
+
+.addsensor_sensorname {
+  width: 230px;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.addsensor_sensordescription {
+  height: 40px;
+  max-height: 40px;
+  margin: 0px;
+  padding: 0px;
+  color: gray;
+  overflow: hidden;
+}
+
+.addsensor_sensorinfo {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.addsensor_resourcebar {
+  float: left;
+  width: 24px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  margin: 0px;
+}
+
+.addsensor_resourcebar0 {
+  background-image: url(images/bar0.png);
+}
+
+.addsensor_resourcebar1 {
+  background-image: url(images/bar1.png);
+}
+
+.addsensor_resourcebar2 {
+  background-image: url(images/bar2.png);
+}
+
+.addsensor_resourcebar3 {
+  background-image: url(images/bar3.png);
+}
+
+.addsensor_resourcebar4 {
+  background-image: url(images/bar4.png);
+}
+
+.addsensor_resourcebar5 {
+  background-image: url(images/bar5.png);
+}
+
+.addsensor_addthis {
+  padding: 3px;
+  margin: 2px;
+  float: right;
+  display: none;
+  right: 0px;
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+}
+
+#addsensor_list_normal .addsensor_addthis,
+#addsensor_list_istop10 .addsensor_addthis  {
+  display: block;
+}
+
+.addsensor_addthis span {
+  display: block;
+  float: left;
+}
+
+.addsensor_addthisicon {
+  margin-left: 5px;
+  width: 12px;
+  height: 12px;
+  background-image: url(images/pfeilrechts.png);
+}
+
+.addsensor_sensorhelplink {
+  right: 0px;
+  position: absolute;
+  top: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.addsensor_sensorhelplink:hover {
+  background-image: url(images/ui-icons_2e83ff_256x240.png);
+}

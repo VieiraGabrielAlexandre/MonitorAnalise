@@ -1,0 +1,44 @@
+﻿<#lang key="html.downloads.help.title" default="Downloads and Tools" var="helptitle">
+<#lang key="html.downloads.help.text" default="Here you can download additional software or optional network tools for PRTG that will improve your network monitoring capabilities.<br><br><a href='/help/downloads.htm' target='_blank'><b>Help: Downloads and Tools</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<div class="download-items">
+  <div class="download-item box">
+    <h2>
+      <#lang key="html.global.enterpriseconsole1" default="Client App for Windows (Enterprise Console)">
+    </h2>
+    <div class="download-item-text">
+      <p>
+        <#lang key="html.downloads.wingui.text1a" default="The Enterprise Console allows you to completely control one or more PRTG installations using a native Windows application.
+        It has two modes:
+        <ul>
+          <li>
+            <b>Graphical user interface for PRTG</b>:
+            You can add and edit groups, servers, devices, and sensors (includes viewing sensor data and graphs, as well as comparing sensor data).
+            You can review and configure alarms, maps, reports, and libraries.
+          </li>
+          <li>
+            <b>Tray tool</b>: Runs on your PC in the background and will notify you with, for example, popups and sounds whenever PRTG discovers changes in your network.
+          </li>
+        </ul>">
+      </p>
+      <p>
+        <#lang key="html.downloads.wingui.text2" default="Simply download and install the software. Start the software and enter your account credentials as well as the DNS name of your server.">
+      </p>
+      <p>
+        <#lang key="html.downloads.wingui.text3" default="The program will now run in the background and will alert you about alarms, logs, and tickets. Double-click the tray icon to open the Enterprise Console.">
+      </p>
+      <p>
+        <#lang key="html.downloads.wingui.text5a" default="Requires a <a href='/help/detailed_system_requirements.htm#os' target='_blank'>supported Windows version</a> on the computer.">
+      </p>
+      <p>
+        <a class="button nohjax" href="/public/PRTG_Enterprise_Console_Installer.exe?version=<#system type=" version ">&filetype=.exe">
+          <#lang key="html.downloads.wingui.text4a9" default="Download: PRTG Enterprise Console (18 MB)">
+        </a>
+      </p>
+    </div>
+    <div class="download-item-image">
+      <img src="/images/download_ec.png">
+    </div>
+  </div>
+</div>

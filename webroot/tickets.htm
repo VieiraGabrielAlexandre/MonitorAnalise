@@ -1,0 +1,47 @@
+﻿<#session type="resetnewmessagestimestamp">
+<#lang key="html.tickets.title" default="Tickets" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" class="tickets-main-container inner-wrapper" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div class="inner-aside-left"></div>
+  <div class="inner-content">
+    <div class="add-menu-wrapper">
+			<div class="add-menu add-menu-fixed">
+        <a href="#" class='actionbutton add-menu-item nohjax <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' onclick="_Prtg.objectTools.ticketAdd0({preselect:0});return false;"><#lang key="html.global.addticket" default="Add Ticket"></a>
+			</div>
+		</div>
+    <div id="content" class="table-wrapper">
+      <div class="buttonbox normalpage">
+        <#include file="includes\linkpagebutton.htm">
+      </div>
+      <div class="prtg-plugin" data-plugin="prtg-table">
+        <#table
+          tableid="tickettable"
+          content="tickets"
+          tabletitle="@pagetitle"
+          tools="tickets prio"
+          varexpand="tabletitle"
+          columns="datetime,priority,parentid,message,user,status,name,checkbox,fold"
+          sortby="datetime"
+          sortable="true"
+          refreshable="true"
+          filters="ticketstatus,tickettype,usergroup,objects!data-filtername='id'|data-inputname='id'|data-rootid='0'|data-onlysensors='0'|data-sensors='1'|data-devices='1'|data-groups='1'|data-required=''|data-probes='1'|data-allownone='1'|data-allowself='1'|data-allowroot='1',datepicker">
+      </div>
+    </div>
+  </div>
+  <div class="inner-aside-right">
+    <div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+  </div>
+  <#system type='showhelp' tct="theater" page="help-tickets" isreadonly="false" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+  <#lang key="html.tickets.help.title" default="Tickets" var="helptitle">
+  <#lang key="html.tickets.help.text2" default="With tickets you can manage and maintain various issues that might appear while monitoring. Tickets can be assigned to you by the PRTG system or by other users. You can edit, resolve, or close existing tickets, or assign them to other users. Open a new ticket via the context menus in the device tree." var="helptext">
+  <#lang key="html.tickets.help.link" default="<a href='/help/tickets.htm' target='_blank'><b>Help: Tickets</b></a>" var="helplink">
+  <#system type='showhelp' var='showhelp'>
+  <#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+  <#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

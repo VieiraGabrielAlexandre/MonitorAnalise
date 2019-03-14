@@ -1,0 +1,43 @@
+{
+  "prtg": {
+    "description" : {
+      "device": "IP address or FQDN of your PRTG server",
+      "query": "/api/table.json?id=1&content=sensorxref&noraw=1&filter_basetype=probe&columns=totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw&username=<USERNAME>&passhash=<PASSHASH>",
+      "comment": "You need to replace <USERNAME> and <PASSHASH> with the appropriate values"
+    },
+    "result": [
+      {
+        "channel": "Total",
+        "value": $.sensorxref[0].totalsens
+      },
+      {
+        "channel": "Down",
+        "value": $.sensorxref[0].downsens
+      },
+      {
+        "channel": "Down (Partial)",
+        "value": $.sensorxref[0].partialdownsens
+      },
+      {
+        "channel": "Down (Acknowledged)",
+        "value": $.sensorxref[0].downacksens
+      },
+      {
+        "channel": "Warning" ,
+        "value": $.sensorxref[0].warnsens
+      },
+      {
+        "channel": "Unusual",
+        "value": $.sensorxref[0].unusualsens
+      },
+      {
+        "channel": "Undefined",
+        "value": $.sensorxref[0].undefinedsens
+      },
+      {
+        "channel": "Paused",
+        "value": $.sensorxref[0].pausedsens
+      }
+    ]
+  }
+}

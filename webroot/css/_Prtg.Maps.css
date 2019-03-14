@@ -1,0 +1,1037 @@
+﻿/*_Prtg.Maps.css*/
+body.mapshow {
+  min-width: 0 !important;
+}
+
+body.mapshow #container {
+  display: inline;
+}
+
+#mapeditor, #mapshow {
+  min-height: 600px;
+  /*box-sizing: content-box;*/
+  position: relative;
+}
+
+#mapeditor .panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+}
+
+#mapeditor .panel .panelpinbutton {
+  margin-top: 1px;
+}
+
+#mapeditor .panel .panelpinbutton:hover {
+  background-image: url(images/ui-icons_888888_256x240.png);
+  cursor: pointer;
+}
+
+#mapeditor .panelsizer {
+  z-index: 99;
+}
+
+#mapeditor .panelsizer:hover {
+  cursor: w-resize;
+}
+
+#mapeditor .historyloader {
+  display: none;
+  background-color: rgba(255, 255, 255, .7);
+
+  z-index: 99999;
+
+
+}
+
+/* Leftpanel sizer*/
+#mapeditor .objectpanelsizer {
+  left: 200px;
+  width: 6px;
+  background: <#colorcode color="midgray">;
+  overflow: auto;
+}
+/* Leftpanel */
+#mapeditor .objectpanel {
+  left: 0;
+  width: 200px;
+  border: 1px solid <#colorcode color="tableborders">;
+}
+
+#objectpanel_tree {
+  overflow: auto;
+}
+
+/* Editor */
+#mapeditor .editor, #mapeditor .loading {
+  left: 206px;
+  right: 306px;
+  border: 1px solid <#colorcode color="tableborders">;
+  overflow: auto;
+}
+/* Rightpanel sizer */
+#mapeditor .probpanelsizer {
+  right: 300px;
+  width: 6px;
+  background: <#colorcode color="midgray">;
+}
+
+/* Rightpanel */
+#mapeditor .probpanel {
+  right: 0;
+  min-width: 300px;
+  width: 300px;
+  border: 1px solid <#colorcode color="tableborders">;
+}
+
+.probpanel {
+  padding-bottom: 2px;
+}
+
+.probpanel * {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+#mapeditor .paneltitletext {
+  background-color: <#colorcode color="menucolor">;
+  color: White;
+  padding: 2px 0 2px 0;
+  margin: 0 0px 0 0px;
+  display: block;
+}
+
+#mapeditor .probpanel .paneltitletext {
+  text-align: left;
+  padding-left:4px;
+}
+
+#mapeditor .objectpanel_tree_searchbar {
+  padding: 0 1px 1px 0;
+}
+
+#mapeditor #prtgtreeview_deleteicon {
+  float: right;
+  padding: 0;
+}
+
+.maptreesearchbox {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+}
+
+.objectpanel_tree_searchbar .maptreesearchbox input {
+  border: 0px;
+  background-color: white;
+  color: #888;
+  height: 16px;
+  margin: 1px 0 0 0;
+  padding: 0;
+  width: 100%;
+  line-height: 15px;
+}
+
+#prob_form table {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#prob_form table th {
+  border-right:1px solid <#colorcode color="midgray">;;
+  color:#888;
+  text-align:left;
+  font-weight:normal;
+  padding-left:4px;
+}
+#prob_form table td {
+  border-right:1px solid <#colorcode color="midgray">;;
+  border-bottom:1px solid <#colorcode color="midgray">;;
+  font-weight:bold;
+}
+#prob_form table input,
+#prob_form table textarea
+ {
+  font-weight:bold;
+ }
+
+#prob_form table td.prob_save
+{
+    border:none;
+}
+
+
+td.prob_save {
+  text-align: center;
+}
+
+#prob_save {
+  display: none;
+  width: 99%;
+  box-sizing: border-box;
+}
+
+.propertyval {
+  width: 97%;
+}
+
+ul.objectpreview {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  margin-bottom: 0px;
+}
+
+ul.objectpreview li {
+  margin: 2px;
+  padding: 2px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+ul.objectpreview li:hover {
+  cursor: pointer;
+  background-color: #D6E8FA;
+}
+
+.preview {
+  height: 200px;
+  width: 100%;
+}
+
+.mapobjectpreviewcontainer {
+  float: left;
+  height: 167px;
+  margin: 1px;
+  padding: 0;
+  margin-right: 1px;
+  width: 95%;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+.dragto_helper {
+  z-index: 999999;
+}
+
+.dragto_helper {
+  z-index: 1010;
+  cursor: move;
+  width: 150px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  width: 200px;
+  height: 200px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.maptable_selected {
+  z-index: 99999;
+}
+
+.selected_indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mapobject_selected .selected_indicator {
+  background-color: #D6E8FA;
+  opacity: 0.5;
+}
+
+.maptable_selected .map_object_overlay .selected_indicator {
+  background-color: #D6E8FA;
+  opacity: 0.5;
+}
+
+.drophoverhighlight .map_object_overlay .selected_indicator {
+  /*border: 1px solid #b4cc38 !important;*/
+  background-color: #b4cc38;
+  opacity: 0.5;
+}
+
+#mapview {
+  border: 1px solid <#colorcode color="midgray">;
+  position: absolute;
+  padding: 0;
+  overflow: hidden;
+}
+
+.editor #mapview {
+  position: relative;
+  /*overflow: none;*/
+}
+
+/* Editor */
+#mapshow .view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  display: block;
+  border: none;
+  overflow: auto;
+}
+
+.map_object {
+  position: absolute;
+}
+
+#mapeditor .map_object {
+  box-shadow: 0px 0px 1px 1px  <#colorcode color="midgray">;
+}
+
+.map_object #viewport,
+.map_object .sensorTree {
+  width: 100%;
+  height: 100%;
+}
+/* Rightpane */
+ul.iconspreview {
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+ul.iconspreview li {
+  margin: 0;
+  padding: 5px;
+  float: left;
+  position: relative;
+  /* Set the absolute positioning base coordinate */
+  width: 55px;
+  height: 55px;
+  background: #ffffff;
+}
+
+ul.iconspreview li img {
+  width: 50px;
+  height: 50px;
+ /* Set the small thumbnail size */
+  -ms-interpolation-mode: bicubic;
+ /* IE Fix for Bicubic Scaling */
+  border: 1px solid <#colorcode color="midgray">;
+  padding: 5px;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#objectproperties {
+  display: none;
+  overflow: auto;
+}
+
+/*<#comment BEGIN probpanel icons >*/
+ul.iconspreview li:hover img {
+  margin-top: -65px;
+  margin-left: -65px;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  z-index: 99999;
+}
+
+ul.iconspreview li img {
+  margin-top: 0;
+  margin-left: 0;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  z-index: 0;
+}
+
+ul.iconspreview li img.icontemplate {
+  width: 50px;
+  height: 11px;
+  top: 39px;
+}
+
+ul.iconspreview li:hover img.icontemplate {
+  top: 123px;
+  left: 60px;
+  border: none;
+}
+
+.ui-accordion-header {
+  height: 15px;
+  padding: 0 0 0 25px !important;
+  background: <#colorcode color="lightgray"> !important;
+}
+
+.ui-accordion-header:hover {
+  background: <#colorcode color="mousegray"> !important;
+}
+
+.ui-accordion-header a {
+  padding-top: 0px !important;
+  background: <#colorcode color="mousegray"> !important;
+}
+
+.ui-accordion-content {
+  padding: 0px !important;
+  border-left: 1px solid <#colorcode color="darkgray"> !important;
+  border-right: 1px solid <#colorcode color="darkgray"> !important;
+  border-bottom: 1px solid <#colorcode color="darkgray"> !important;
+}
+
+/*<#comment END probpanel icons >*/
+.selected {
+  background-color: #D6E8FA;
+}
+
+line:hover {
+  stroke-width: 10px;
+  z-index: 99999999;
+}
+
+.connection-remove-container {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+}
+
+.connection-remove {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 10px;
+  bottom: 10px;
+  background: #ccc;
+  border: 1px solid #D3D3D3;
+  background: url("images/ui-icons_222222_256x240.png") no-repeat scroll 50% 50% #E6E6E6;
+  background-position: -144px -128px;
+  z-index: 9999999;
+}
+
+.connection-remove:hover {
+  background: url("images/ui-icons_222222_256x240.png") no-repeat scroll 50% 50% #fff;
+  background-position: -144px -128px;
+}
+
+.map_object_overlay {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 99999;
+  position: absolute;
+}
+
+.map_objectsizer {
+  position: absolute;
+  cursor: se-resize;
+  z-index: 99999999;
+}
+
+.map_objecttools,
+.map_objectsettings {
+  border: 1px solid #D3D3D3;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0 2px;
+  padding: 0;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+  float: left;
+}
+
+.map_object_buttonbar {
+  position: absolute;
+  z-index: 9999;
+}
+
+.map_objecttools a,
+.map_objectsettings a {
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  width: 16px;
+  background: url("images/ui-icons_222222_256x240.png") no-repeat scroll 50% 50% #E6E6E6;
+  display: block;
+}
+
+.map_object_buttonbar:hover .map_objecttools,
+.map_object_buttonbar:hover .map_objectsettings,
+.map_object:hover .map_objecttools,
+.map_object:hover .map_objectsettings {
+  display: block;
+}
+
+.map_objecttools a:hover,
+.map_objectsettings a:hover {
+  background: url("images/ui-icons_222222_256x240.png") no-repeat scroll 50% 50% #fff;
+}
+
+.map_objecttools a {
+  background-position: -176px -96px;
+}
+
+.map_objecttools.delete a {
+  background-position: -176px -96px;
+}
+
+.map_objecttools.moveup a {
+  background-position: -192px -48px;
+}
+
+.map_objecttools.movedown a {
+  background-position: -224px -48px;
+}
+
+.map_objecttools.dropconnectors a {
+  background-position: -144px -128px;
+}
+
+.object_connector {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #aaa;
+  border: 1px solid #888;
+  cursor: alias;
+  z-index: 99999;
+}
+
+.object_connector:hover {
+  background: #CDE2F8;
+}
+
+#map_snaptogridcontrol {
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+}
+
+#map_snaptogridcontrol .checkbox-control {
+  padding: 1px 0 0px 2px;
+}
+
+.showsnaptogrid {
+  background-image: url(/images/mapdots.png);
+}
+
+/* TODO */
+#externallinkdialog {
+  overflow: hidden;
+  padding: 0px;
+}
+
+#map_selectobjectlink, #externallinkdialog {
+  border: 0px !important;
+}
+
+#map_mapslist .maplistselected {
+  background: #BEEBFF;
+  border: 1px solid #99DEFD;
+}
+
+#map_mapslist li:hover {
+  background: #E7F4F9;
+  border: 1px solid #D8F0FA;
+}
+
+#map_mapslist {
+  list-style-type: none;
+  padding: 0;
+}
+
+#map_mapslist li {
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+}
+
+.connectionline, .connectionlineGradient {
+  stroke-width: 2px;
+}
+
+/* mapshow stuff */
+#maprefreshlink {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #444;
+  border: 1px solid #888;
+  color: #fff;
+  padding: 2px;
+  margin: 2px;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+#maprefreshlink a {
+  color: #fff;
+}
+
+#maprefreshlink span {
+  display: none;
+  color: #fff;
+}
+
+#maprefreshlink:hover span {
+  display: inline;
+}
+
+#mapclusterswitchbox {
+  display: none;
+}
+
+#maprefreshlink:hover #mapclusterswitchbox {
+  display: block;
+  float: left;
+  padding-right: 10px;
+}
+
+.prtgmapfooter {
+  position: fixed;
+  bottom: 0;
+  font-size: 9px;
+}
+
+.mapshowiframe {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+body.mapshow .maploading {
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+
+body.mapshow .maploading p {
+  position: relative;
+  left: -50%;
+  margin: 0;
+  padding: 5px 20px 0 20px;
+  background: #eee;
+  border: 1px solid #999999;
+  border-top: 0;
+  height: 25px;
+  border-radius: 0 0 4px 4px;
+}
+
+body.mapshow .maploading p span {
+  display: block;
+  float: left;
+  margin: 0 0 0 5px;
+  padding: 0;
+  line-height: 14px;
+}
+
+body.mapshow .mapshowfailed {
+  position: absolute;
+  left: 50%;
+  display: none;
+}
+
+body.mapshow .mapshowfailed p {
+  position: relative;
+  left: -50%;
+  top: 100px;
+  margin: 0;
+  padding: 5px 20px 0 20px;
+  background: #ffeeee;
+  border-radius: 4px;
+  border: 1px solid red;
+}
+
+body.mapshow .mapshowfailed p span {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.mapshowfailedheader {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.graphicalmapicon {
+  background: none;
+  display: block;
+  position: absolute;
+}
+
+.graphicalmapicon .label {
+  background: #fff;
+  padding: 2px;
+  display: inline-block;
+}
+
+.graphicalmapicon.sensr .label,.graphicalmapicon.hasred .label,
+.graphicalmapicon.senso .label,.graphicalmapicon.hasred .label,
+.graphicalmapicon.sensq .label,.graphicalmapicon.hasack .label {
+  background: #ffcccc;
+}
+
+.map_object.map_icon2 {
+  text-align: center;
+}
+
+.map_object.map_iconcolor_sensr,.map_object.map_iconcolor_sensr label,.map_object.map_iconcolor_sensr span,
+.map_object.map_iconcolor_sensq,.map_object.map_iconcolor_sensq label,.map_object.map_iconcolor_sensq span {
+  background-color: <#colorcode color="statusdown">;
+  color: #fff;
+}
+
+.map_object.map_iconcolor_senso,.map_object.map_iconcolor_senso label,.map_object.map_iconcolor_senso span {
+  background-color: <#colorcode color="statusdownack">
+}
+
+.map_object.map_iconcolor_sensg,.map_object.map_iconcolor_sensg label,.map_object.map_iconcolor_sensg span {
+   /*background-color:<#colorcode color="statusup">;*/
+}
+
+.map_object.map_icon2.map_iconcolor_sensg,.map_object.map_icon2.map_iconcolor_sensg label,.map_object.map_icon2.map_iconcolor_sensg span {
+  background-color: <#colorcode color="statusup">;
+}
+
+.map_object.map_iconcolor_sensy,.map_object.map_iconcolor_sensy label,.map_object.map_iconcolor_sensy span {
+  background-color: <#colorcode color="statuswarning">;
+}
+
+.map_object.map_iconcolor_sensb,.map_object.map_iconcolor_sensb label,.map_object.map_iconcolor_sensb span {
+  background-color: <#colorcode color="statuspaused">;
+}
+
+.map_object.map_iconcolor_sensp,.map_object.map_iconcolor_sensp label,.map_object.map_iconcolor_sensp span {
+  background-color: <#colorcode color="statusunusual">;
+}
+
+.map_object.map_iconcolor_sensx,.map_object.map_iconcolor_sensx label,.map_object.map_iconcolor_sensx span {
+  background-color: <#colorcode color="statusunknown">;
+  color: #fff;
+}
+
+stop.hasblack, stop.sensx {
+  stop-color: <#colorcode color="statusunknown">;
+}
+
+stop.hasgreen, stop.sensg {
+  stop-color: <#colorcode color="statusup">;
+}
+
+stop.hasblue, stop.sensb {
+  stop-color: <#colorcode color="statuspaused">;
+}
+
+stop.hasorange, stop.sensp {
+  stop-color: <#colorcode color="statusunusual">;
+}
+
+stop.hasyellow, stop.sensy {
+  stop-color: <#colorcode color="statuswarning">;
+}
+
+stop.hasred,
+stop.haspartialred,
+stop.hasack,
+stop.senso,
+stop.sensr,
+stop.sensq {
+  stop-color: <#colorcode color="statusdown"> !important;
+}
+
+.map_icon_large .moreicon {
+  display: none;
+}
+
+.map_object.map_iconcolor_hasblack {
+  background-color: #ddd;
+}
+
+.map_object.map_iconcolor_hasgreen {
+  background-color: #D5FDDA;
+}
+
+.map_object.map_iconcolor_hasblue {
+  background-color: #C3D2E9;
+}
+
+.map_object.map_iconcolor_hasorange {
+  background-color: #FED78C;
+}
+
+.map_object.map_iconcolor_hasyellow {
+  background-color: #F8FBC5;
+}
+
+.map_iconcolor_hasred,
+.map_iconcolor_haspartialred,
+.map_iconcolor_hasack {
+  background-color: #FFCCCC !important;
+}
+
+
+.map_icon_large,
+.map_icon_large div,
+.map_icon_large span,
+td.map_icon_large {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.map_icon_large .status {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.map_icon span {
+  white-space: nowrap;
+}
+
+.mapicon_status_white {
+  background-color: #fff;
+}
+
+.map_object .sensg:before,.map_object .sensr:before,.map_object .sensq:before,.map_object .senso:before,.map_object .sensb:before,.map_object .sensy:before,.map_object .sensp:before,.map_object .sensx:before {
+  background-image: url(/icons/icon_up.svg);
+  content: " ";
+  position: relative;
+  height: 14px;
+  width: 14px;
+  padding: 0;
+  margin: 0;
+  margin-right: 2px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.map_object .sensg,.map_object .sensr,.map_object .sensq,.map_object .senso,.map_object .sensb,.map_object .sensy,.map_object .sensp,.map_object .sensx {
+  background-image: none;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  min-height: 14px;
+  width: auto;
+  vertical-align: top;
+}
+
+.map_object .sensx:before {
+  background-image: url(/icons/icon_unknown.svg);
+}
+
+.map_object .sensg:before {
+  background-image: url(/icons/icon_up.svg);
+}
+
+.map_object .sensy:before {
+  background-image: url(/icons/icon_warning.svg);
+}
+
+.map_object .sensr:before {
+  background-image: url(/icons/icon_down.svg);
+}
+
+.map_object .sensq:before {
+  background-image: url(/icons/icon_partdown.svg);
+}
+
+.map_object .senso:before {
+  background-image: url(/icons/icon_downack.svg);
+}
+
+.map_object .sensb:before {
+  background-image: url(/icons/icon_paused.svg);
+}
+
+.map_object .sensp:before {
+  background-image: url(/icons/icon_unusual.svg);
+}
+
+#showamap .connectionline, #map_objectbox .connectionline {
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.wingui .view {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.mapshow .map_objectbox {
+  overflow: hidden;
+  position: absolute;
+}
+
+.mapshow_notsupportedbrowser {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.mapshow_notsupportedbrowser p {
+  position: relative;
+  left: -50%;
+  margin: 0;
+  padding: 5px 20px 0 20px;
+  background: #eee;
+  border: 1px solid #999999;
+  border-bottom: 0;
+  height: 20px;
+  border-radius: 4px 4px 0 0;
+}
+.mapshow_notsupportedbrowser p span {
+  display: block;
+  float: left;
+  margin: 0 0 0 5px;
+  padding: 0;
+  line-height: 10px;
+}
+
+.map_icon span.label,
+.map_icon2 span.label {
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.map_object .label .sensg,.map_object .label .sensr,.map_object .label .sensq,.map_object .label .senso,.map_object .label .sensb,.map_object .label .sensy,.map_object .label .sensp,.map_object .label .sensx,
+.map_object .label a{
+  margin-bottom: 1px;
+  word-break: break-all;
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+  width: inherit;
+}
+
+.map_object form table .sensg,
+.map_object form table .sensr,
+.map_object form table .sensq,
+.map_object form table .senso,
+.map_object form table .sensb,
+.map_object form table .sensy,
+.map_object form table .sensp,
+.map_object form table.sensx,
+.map_object p{
+  margin-bottom: 1px;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.map_object p{
+  vertical-align: middle;
+}
+.map_object form table td:hover .sensg,.map_object form table td:hover  .sensr,.map_object form table td:hover .sensq,.map_object form table td:hover .senso,.map_object form table td:hover .sensb,.map_object form table td:hover .sensy,.map_object form table td:hover .sensp,.map_object form table td:hover .sensx,
+.map_object p:hover{
+  margin-bottom: 1px;
+  word-break: break-all;
+  overflow: visible;
+  white-space: normal;
+}
+
+.map_object_filemissing {
+  color: <#colorcode color="statusdown">;
+  font-weight: bold;
+  font-size: 12px;
+  border: 1px solid black;
+}
+
+.status-unknown path.status{
+  fill: <#colorcode color="statusunknown">!important;
+}
+
+.status-up path.status{
+   fill: <#colorcode color="statusup">!important;
+}
+
+.status-warning path.status{
+  fill: <#colorcode color="statuswarning">!important;
+}
+
+.status-down  path.status,
+.status-down-partial path.status{
+  fill: <#colorcode color="statusdown">!important;
+}
+
+.status-down-ack path.status{
+  fill: <#colorcode color="statusdownack">!important;
+}
+
+.status-paused path.status{
+  fill: <#colorcode color="statuspaused">!important;
+}
+
+.status-unusual path.status{
+  fill: <#colorcode color="statusunusual">!important;
+}
+
+.sensortreebox  .probemenu,
+.sensortreebox .devicemenu,
+.sensortreebox .sensormenu{
+  width: 15em;
+}
+
+
+.mapdashboard #mapshow .view{
+  position: static;
+}
+
+#mapeditor .history_buttons {
+  padding: 1px;
+  overflow: auto; /* clearfix */
+}
+
+#mapeditor .history_button {
+  display: block;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  border: 1px solid white;
+}
+
+#mapeditor .history_buttons .icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
+#mapeditor .history_buttons .custom {
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+
+#mapeditor .history_buttons a:hover {
+    text-decoration: none;
+}
+
+#map_snaptogridcontrol i.prtg-checkbox {
+  transform: scale(0.8,0.8);
+  -moz-transform: scale(0.8,0.8);
+  -webkit-transform: scale(0.8,0.8);
+  -ms-transform: scale(0.8,0.8);
+  vertical-align: middle;
+  margin-bottom: 2px;
+}

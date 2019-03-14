@@ -1,0 +1,12 @@
+﻿<div class="js-timezoneMismatch js-adjustToMenu browsercheck" style="display:none;">
+  <div class="browsercheck_inner">
+    <button title='<#langjs key="html.dialog.close" default="Close">' class="js-timezone-ignore ignore glyph-cancel-1"></button>
+    <div>
+    <h2>
+      <#lang key="html.timezonewarning.title" default="Different Timezones Detected">
+    </h2>
+    <p class="js-timezone-textreplace"><#lang key="html.timezonewarning.content" default="The timezone in your settings (${user_set_timezone}) differs from the time zone determined by your browser (${browser_set_timezone}). Time-related data in PRTG may be different than expected. This can affect toplists or live graphs, for example."> </p>
+    <p style='<#system type="hideforreadonlyusers">'><a href="myaccount.htm?tabid=1" class="button btngrey"><#lang key="html.dialog.changeSetting" default="Change Setting"></a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+<#lang key="html.addlibrary.node" default="Node" var="nodename">
+<#lang key="html.addlibrary.library" default="Library" var="libname">
+<#lang key="common.strings.group" default="Group" var="groupname">
+
+	"current":"<#objectproperty name="Name">",
+	"nodename":"<#defaultname varexpand="type" type="@nodename">",
+	"libname":"<#defaultname varexpand="type" type="@libname">",
+	"groupname":"<#defaultname varexpand="type" type="@groupname">" 
+}

@@ -1,0 +1,83 @@
+﻿/*prtg.main.content.css*/
+.no-content{
+  display:none;
+}
+
+#content .col2 {
+	vertical-align:top;
+}
+.buttonbox
+{
+	right:2px;
+	margin-top:2px;
+	display: inline-block;
+	margin: 0;
+	white-space: nowrap;
+	position: absolute;
+}
+.buttonbox.normalpage
+{
+	top: 15px;
+
+}
+div.buttonbox a
+{
+	background:<#colorcode color="actioncolor">;
+	background-image:none;
+  	border:1px solid transparent;
+	width:17px;
+	height:17px;
+	margin:0 auto 0 auto;
+	padding:2px;
+	display:inline-block;
+	color:#fff;
+}
+
+body.help div.buttonbox a
+{
+	width:auto;
+	height:auto;
+	font-size:12px;
+}
+
+
+div.buttonbox a:hover
+{
+  background: <#colorcode color="graph7">;
+
+}
+
+div.buttonbox a i.icon-dark
+{
+	background-image: url("images/ui-icons_ffffff_256x240.png")!important;
+}
+div.buttonbox a:hover span
+{
+	background-image: url("images/ui-icons_ffffff_256x240.png")!important;
+}
+.buttonbox .deletebutton.fixed{
+	display: none;
+}
+
+.buttonbox i
+{
+	width: 16px;
+	height: 16px;
+	display: block;
+	position: relative;
+	left: -1px;
+	top: -1px;
+}
+
+img.loader
+{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: -17px;
+}
+
+.hideForID0[data-id="0"],
+.hideForIDnot0:not([data-id="0"]){
+	display: none!important;
+}

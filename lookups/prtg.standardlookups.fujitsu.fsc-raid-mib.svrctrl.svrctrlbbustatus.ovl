@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.standardlookups.fujitsu.fsc-raid-mib.svrctrl.svrctrlbbustatus" desiredValue="1" undefinedState="None">
+    <Lookups>
+      <SingleInt state="None" value="1">
+        NotAvailable
+      </SingleInt>
+      <SingleInt state="Ok" value="2">
+        OnLine
+      </SingleInt>
+      <SingleInt state="Warning" value="3">
+        OnBattery
+      </SingleInt>
+      <SingleInt state="Error" value="4">
+        OnBatteryLow
+      </SingleInt>
+      <SingleInt state="Warning" value="5">
+        Charging
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        Discharging
+      </SingleInt>
+      <SingleInt state="Error" value="7">
+        Failed
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

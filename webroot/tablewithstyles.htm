@@ -1,0 +1,13 @@
+﻿<#lang key="table.newwindow.title" default="Table Zoom" var="title">
+<#setpagetitle pagetitle="@title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="tablewithstyles">
+
+<div id="container" class="zoomedtable" style="width:auto;">
+  <h2><#objectproperty name="name"> <#inserturlparam parameter='customtitle'></h2>
+  <div class="prtg-plugin" data-plugin="prtg-table">
+  <#table refreshable="true">
+</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm">

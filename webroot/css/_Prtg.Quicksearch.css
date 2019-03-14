@@ -1,0 +1,30 @@
+﻿ul.quick-search-content{
+  position:absolute;
+  width: 100%;
+  max-height:30ex;
+  overflow:hidden;
+  overflow-y:auto;
+  background: <#colorcode color="lightgray">;
+  outline: 1px solid <#colorcode color="midgray">;
+  z-index: 999;
+}
+ul.quick-search-content li{
+  margin: 1px;
+  padding:0;
+  text-indent: 18px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-size: 16px 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+ul.quick-search-content li.focus{
+  background-color: #D6E8FA;
+}
+ul.quick-search-content .loading{
+  min-height: 40px;
+}

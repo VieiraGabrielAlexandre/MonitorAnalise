@@ -1,0 +1,16 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="group,device">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty type="nodename" var="extend">
+<#system type="usernameshort" var="usernameshort">
+<div id="main">
+  <h1><#lang key="html.runemplate.page.title" default="Run Auto-Discovery with Template for"> <b><#objectproperty name="name"></b></h1>
+	<div id="content">
+		<#include varexpand="file" file="controls\autodiscoverytemplate@extend.htm">
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

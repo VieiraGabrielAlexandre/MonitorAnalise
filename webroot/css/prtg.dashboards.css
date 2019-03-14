@@ -1,0 +1,53 @@
+﻿/* prtg.dashboards.css */
+
+#dashboard1 {
+  min-height: 580px;
+  font-size: 9px
+}
+
+#dashboard1 .onedashboardcell {
+  height: 300px;
+  overflow: auto;
+  background: #fff;
+}
+
+#dashboard2 .scrollabletablecontainer {
+  height: 250px;
+  overflow: auto;
+}
+
+#dashboard3 .scrollabletablecontainer {
+  overflow: auto;
+}
+
+#dashboard2 .slickTree,
+#dashboard3 .slickTree {
+  background: #fff;
+}
+
+#top10list td {
+  vertical-align: top;
+  padding: 1px;
+}
+
+#dashboard1 table .col-datetime{
+  width: 12em;
+}
+
+#dashboard1 table.table td.col-message,
+#dashboard1 table.table td.col-status,
+#dashboard1 table.table td.col-clusternode{
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 25em;
+}
+#dashboard1 table.table td:hover.col-message,
+#dashboard1 table.table td:hover.col-status,
+#dashboard1 table.table td:hover.col-clusternode{
+  overflow: visible;
+  white-space: normal;
+}
+
+#dashboard1 table col.col-sensor{
+  width: auto;
+}

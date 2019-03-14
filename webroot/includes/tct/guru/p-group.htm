@@ -1,0 +1,65 @@
+﻿<tct
+  data-role="<#role>"
+  data-remove-delay="1"
+  class="pod <#system type='showhelp' tct='guru' page='@page.welcome' class='removeme' varexpand='page'>"
+  style="position:absolute;left:calc(50% - 25px);">
+  <!--
+    return {
+      check: function($tct,lastStats,sensorTypes){
+        var ts = localStorage.getItem('pod.guru.stalled') || '{"t":'+(Date.now()-1)+',"c":0}';
+        ts = JSON.parse(ts);
+        return (<#objectid>===0) && (Date.now() > (ts.t + parseInt(3600000 * ts.c,10)));
+      },
+      action: function(tct,lastStats,sensorTypes){
+        _Prtg.api.setShowHelp.apply(this, [0,'guru.install.remoteprobe']);
+        _Prtg.api.setShowHelp.apply(this, [0,'guru.pod']);
+        $tct
+          .one('click','button.btnlink', function(event){
+            $tct.data().confirm(event, "guru","<#page>.welcome","skipped").always(function(){
+              document.location.reload();
+            });
+          })
+          .one('click','button.skip', function(event){
+            var ts = localStorage.getItem('pod.guru.stalled');
+            if(ts === null)
+              ts = {"t":Date.now(),"c":0.5};
+            else{
+              ts = JSON.parse(ts);
+              ts.c = parseInt(ts.c*2);
+            }
+            ts.t = Date.now();
+            localStorage.setItem('pod.guru.stalled',JSON.stringify(ts));
+          })
+          .one('click','button.actionbutton', function(event){
+            $tct.data().confirm(event, "guru","<#page>","done").always(function(){
+              _Prtg.objectTools.addRemoteProbe(0, 'remoteprobeinstall.htm', 0);
+              $tct.hide().remove();
+            });
+          });
+        }
+      };
+  -->
+  <div>
+    <div class="info-box" style="width:410px;">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <span class="headline"><#lang key="tct.guru.pod.congratulations" default="Congratulations! PRTG is ready to start."></span>
+      <span class="text">
+        <#lang key="tct.guru.pod.remoteprobeA" default="Do you want to monitor your local network? All you need is to install a “Remote Probe” in your LAN. We will guide you through this simple process so you get most out of your monitoring.">
+      </span>
+      <span class="text">
+        <#lang key="tct.guru.pod.remoteprobeB" default="This step is highly recommended!">
+      </span>
+
+      <div class="tct-buttonbar buttonbar-multiple">
+        <span>
+          <button class="button btngrey skip"><#lang key="tct.guru.pod.noreminder" default="Don't remind me again."></button>
+          <button class="button btngrey skip later"><#lang key="tct.guru.pod.later" default="Later"></button>
+        </span>
+      <button class="actionbutton"><#lang key="tct.guru.pod.install" default="Install Remote Probe"></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</tct>
+<#include file="\controls\groupoverviewcolumnrigth.htm">

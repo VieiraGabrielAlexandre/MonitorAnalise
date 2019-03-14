@@ -1,0 +1,14 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<div class="clusterstatus loading-box">
+    <h2 class="main-headline">
+        <#lang key="html.clusterstatus.status" default="Cluster Status">
+    </h2>
+    <div class="screenbox clusterstatus-summary">
+        <#include file="controls\clusterstatusdetail.htm">
+    </div>
+
+        <div style="width:100%" class="logcontainer loadlater"
+             loadurl='/controls/loadlog.htm?count=50&filter_status=851&filter_status=852&filter_status=853&filter_status=854&filter_status=855&filter_status=856&filter_status=857&filter_status=858&filter_status=859&tabletitle=<#lang key="html.clusterstatus.clusterlog" default="Cluster Log">'>
+        </div>
+
+</div>

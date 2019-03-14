@@ -1,0 +1,29 @@
+﻿<div>
+  <div class="pseudoform" title="<#langjs key="pas.webserver.youmustrelogin2" default="Please Re-Enter Your Credentials">">
+    <form id="loginform" class="prtg-form prtg-plugin" data-plugin="prtg-form" data-ajaxsubmit="true" data-redirect="false" accept-charset="UTF-8" action="/public/checklogin.htm" method="post" <#system type="autocomplete">>
+
+      <fieldset>
+        <div class="control-group">
+          <!-- <input id="hiddenloginurl" type="hidden" name="loginurl" value="<#inserturlparam parameter="loginurl">"> -->
+          <h2><#langjs key="pas.webserver.youmustrelogin" default="Please Re-Enter Your Credentials to Gain Access to Admin Pages"></h2>
+
+          <label class="control-label no_help" for="loginusername"><#lang key="html.index.htm.LoginNamenbsp" default="Login&nbsp;Name"></label>
+          <div class="controls">
+            <input class="text" id="loginusername" name="username" type="text" value="<#system type="defaultlogin" code="prtgadmin">"/>
+          </div>
+          <label class="control-label no_help" for="loginpassword"><#lang key="html.index.htm.Password" default="Password"></label>
+          <div class="controls">
+            <input class="text" id="loginpassword" name="password" type="password" value="<#system type="defaultlogin" code="prtgadmin">" <#system type="autocomplete">/>
+          </div>
+        </div>
+      </fieldset>
+      <span class="buttonbar">
+        <div class="submitbuttonboxanchor">
+          <div class="submitbuttonbox">
+            <input type="submit" class="submit button btngrey" value="<#lang key="html.index.htm.login" default="Login">">
+          </div>
+        </div>
+      </span>
+    </form>
+  </div>
+</div>

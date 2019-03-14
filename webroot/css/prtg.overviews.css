@@ -1,0 +1,1008 @@
+﻿#objectoverview {
+  margin: 0;
+  width: 100%;
+}
+
+#overviewleftcol {
+  vertical-align: top;
+  border: none;
+  min-width: 640px;
+}
+
+#overviewleftcol, #overviewrightcol {
+  padding-top: 0px;
+  vertical-align: top;
+}
+
+#overviewrightcol {
+  padding-left: 5px;
+}
+
+#overviewleftcol table.table {
+  margin: 0 0 5px 0;
+}
+
+.sensorstatusmessage {
+  padding: 5px;
+  background-color: <#colorcode color="lightgray">;
+  color: #fff;
+  min-height: 48px;
+  max-height: 200px;
+  overflow: auto;
+  word-break: break-all;
+}
+
+.sensorstatusmessage.sensorstatusmessagesensg {
+  background-color: <#colorcode color="statusup">; /* green */
+  color: #000;
+}
+
+.sensorstatusmessage.sensorstatusmessagesensr {
+  background-color: <#colorcode color="statusdown">; /* red */
+}
+
+.sensorstatusmessage.sensorstatusmessagesensq {
+  background-color: <#colorcode color="statuspartialdown">; /* red */
+}
+
+.sensorstatusmessage.sensorstatusmessagesenso {
+  background-color: <#colorcode color="statusdownack">; /* red */
+}
+
+.sensorstatusmessage.sensorstatusmessagesensy {
+  background-color: <#colorcode color="statuswarning">; /* yellow */
+  color: #000;
+}
+
+.sensorstatusmessage.sensorstatusmessagesensb {
+  background-color: <#colorcode color="statuspaused">; /* blue */
+}
+
+.sensorstatusmessage.sensorstatusmessagesensp {
+  background-color: <#colorcode color="statusunusual">; /* Orange */
+}
+
+.sensorstatusmessage.sensorstatusmessagesensx {
+  background-color: <#colorcode color="statusunknown">; /* Gray */
+}
+
+.sensorstatusmessage strong {
+  font-family: "Lucida Sans-Serif", "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.sensorstatusmessage .moreicon,
+.overviewsmalldata .moreicon,
+.overviewsmalldatastatus .moreicon{
+  display: none;
+}
+
+.sensorstatusmessage .status, .overviewsmalldata .status {
+  max-height: none;
+}
+
+.overviewsmalldata {
+  margin: 0 0 5px 0;
+  padding: 5px;
+  background-color: <#colorcode color="lightgray">;
+  overflow: hidden !important;
+}
+
+.sensoroverview .overviewsmalldata {
+  margin-top: 5px;
+}
+
+.overviewsmalldata td {
+  background-color: <#colorcode color="lightgray">;
+  padding-left: 0px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.overviewsmalldata td.label {
+  color: #888;
+  width: 1%;
+}
+
+.overviewsmalldata td[rowspan] {
+  vertical-align: top;
+}
+
+.overviewsmalldata td.allowwordwrap {
+  white-space: normal;
+  max-width: 200px;
+}
+
+.overviewsmalldata td.allowwordwrap .status {
+  max-height: 100px;
+}
+
+.tree .overviewsmalldata td.allowwordwrap .status {
+  max-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewsmalldata .treesearchbox {
+  top: -1px;
+}
+
+.overviewsmalldatatitles td {
+  white-space: nowrap;
+  color: #555;
+  padding-bottom: 2px;
+}
+
+#channelvalues, .deviceoverviewsensorvalues {
+  background-image: url(/images/emptygaugebox.png);
+  width: 100%;
+}
+
+.sensorgraphs .deviceoverviewsensorvalues {
+  background-image: none;
+}
+
+.map_object .sensorgraphs .deviceoverviewsensorvalues {
+  background-image: none;
+}
+
+.deviceoverviewsensorvalues.alarmsaguages {
+  background-image: none;
+}
+
+#channelvalues #channelbox-4 {
+  display: none;
+}
+
+#channelvalues #channelbox-4.primary {
+  display: block;
+}
+
+.deviceoverviewsensorvalues {
+  display: block;
+}
+
+.deviceoverviewsensorvalues .achannel, .deviceoverviewsensorvalues .chartlegend {
+  border: 2px solid #fff;
+}
+
+.deviceoverviewsensorvalues .chartlegend {
+  border-top: none;
+  border-left-width: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.deviceoverviewsensorvalues .sensormenu {
+  border-radius: 5px;
+}
+
+.deviceoverviewsensorvalues .margin {
+  float: left;
+  padding: 0 2px 5px 0;
+  margin: 0;
+  background-color: white;
+}
+
+.deviceoverviewsensorvalues > .achannel {
+  margin: 0 5px 5px 0;
+}
+
+.achannel {
+  display: block;
+  float: left;
+  background-color: <#colorcode color="lightgray">;
+  width: 180px;
+  height: 70px;
+  position: relative;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  border-radius: 5px;
+}
+
+.deviceoverviewsensorvalues .margin .achannel {
+  float: none;
+}
+
+.channeledit {
+  cursor: pointer;
+}
+
+.sensorgraphs .deviceoverviewsensorvalues .achannel {
+  float: left;
+  width: 386px;
+  height: 230px;
+}
+
+.sensorgraphs .deviceoverviewsensorvalues .PNGGraph {
+  left: 30px;
+  top: 30px;
+}
+
+.sensorgraphs .deviceoverviewsensorvalues .chartlegend {
+  position: absolute !important;
+  left: -2px;
+  top: 208px;
+  width: 386px !important;
+  display: none;
+  background: <#colorcode color="lightgray">;
+  z-index: 10;
+}
+.sensorgraphs .deviceoverviewsensorvalues .achannel:hover{
+  overflow: visible;
+}
+.sensorgraphs .deviceoverviewsensorvalues .achannel:hover .chartlegend {
+  display: block;
+  box-shadow: 0 2px 1px 1px #fff;
+}
+
+.deviceoverviewsensorvalues .achannel {
+  width: 200px;
+  height: 65px;
+}
+
+.achannel.primary {
+  width: 360px;
+  height: 210px;
+}
+
+.deviceoverviewsensorvalues .achannel.primary {
+  width: 405px;
+  height: 205px;
+}
+
+/* onsNone=0, onsUnknown=1, onsCollecting=2, onsUp=3, onsWarning=4, onsDown=5, onsNoProbe=6, onsPausedUser=7, onsPausedDependency=8, onsPausedSchedule=9, onsUnusual=10, onsPausedLicense=11, onsPausedUntil=12, onsDownAck=13, onsPartialDown=14 */
+
+.deviceoverviewsensorvalues .achannel.status0,
+.deviceoverviewsensorvalues .achannel.status1,
+.deviceoverviewsensorvalues .achannel.status0 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status1 .chartlegend {
+  border-color: <#colorcode color="statusunknown">
+}
+
+.deviceoverviewsensorvalues .achannel.status2,
+.deviceoverviewsensorvalues .achannel.status3,
+.deviceoverviewsensorvalues .achannel.status2 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status3 .chartlegend {
+  border-color: <#colorcode color="statusup">
+}
+
+.deviceoverviewsensorvalues .achannel.status4,
+.deviceoverviewsensorvalues .achannel.status4 .chartlegend {
+  border-color: <#colorcode color="statuswarning">
+}
+
+.deviceoverviewsensorvalues .achannel.status5,
+.deviceoverviewsensorvalues .achannel.status14,
+.deviceoverviewsensorvalues .achannel.status5 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status14 .chartlegend {
+  border-color: <#colorcode color="statusdown">
+}
+
+.deviceoverviewsensorvalues .achannel.status6,
+.deviceoverviewsensorvalues .achannel.status6 .chartlegend {
+  border-color: <#colorcode color="statusunknown">
+}
+
+.deviceoverviewsensorvalues .achannel.status13,
+.deviceoverviewsensorvalues .achannel.status13 .chartlegend {
+  border-color: <#colorcode color="statusdownack">
+}
+
+.deviceoverviewsensorvalues .achannel.status7,
+.deviceoverviewsensorvalues .achannel.status8,
+.deviceoverviewsensorvalues .achannel.status9,
+.deviceoverviewsensorvalues .achannel.status11,
+.deviceoverviewsensorvalues .achannel.status12,
+.deviceoverviewsensorvalues .achannel.status7 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status8 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status9 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status11 .chartlegend,
+.deviceoverviewsensorvalues .achannel.status12 .chartlegend {
+  border-color: <#colorcode color="statuspaused">
+}
+
+.deviceoverviewsensorvalues .achannel.status10,
+.deviceoverviewsensorvalues .achannel.status10 .chartlegend {
+  border-color: <#colorcode color="statusunusual">
+}
+
+.deviceoverviewsensorvalues .achannel {
+  padding-left: 30px;
+}
+
+.deviceoverviewsensorvalues .achannel .sensoricon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  background-color: <#colorcode color="statusup">;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url(/icons/icon_up.svg);
+}
+
+.deviceoverviewsensorvalues .achannel .sensoricon.sorter {
+  cursor: move;
+}
+
+.deviceoverviewsensorvalues .achannel.status0 .sensoricon, .deviceoverviewsensorvalues .achannel.status1 .sensoricon, .deviceoverviewsensorvalues .achannel.status6 .sensoricon {
+  background-color: <#colorcode color="statusunknown">
+}
+
+.deviceoverviewsensorvalues .achannel.status2 .sensoricon, .deviceoverviewsensorvalues .achannel.status3 .sensoricon {
+  background-color: <#colorcode color="statusup">
+}
+
+.deviceoverviewsensorvalues .achannel.status4 .sensoricon {
+  background-color: <#colorcode color="statuswarning">
+}
+
+.deviceoverviewsensorvalues .achannel.status5 .sensoricon, .deviceoverviewsensorvalues .achannel.status14 .sensoricon {
+  background-color: <#colorcode color="statusdown">
+}
+
+.deviceoverviewsensorvalues .achannel.status13 .sensoricon {
+  background-color: <#colorcode color="statusdownack">
+}
+
+.deviceoverviewsensorvalues .achannel.status7 .sensoricon, .deviceoverviewsensorvalues .achannel.status8 .sensoricon, .deviceoverviewsensorvalues .achannel.status9 .sensoricon, .deviceoverviewsensorvalues .achannel.status11 .sensoricon, .deviceoverviewsensorvalues .achannel.status12 .sensoricon {
+  background-color: <#colorcode color="statuspaused">
+}
+
+.deviceoverviewsensorvalues .achannel.status10 .sensoricon {
+  background-color: <#colorcode color="statusunusual">
+}
+
+.deviceoverviewsensorvalues .achannel.status {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  background-color: <#colorcode color="statusup">;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.deviceoverviewsensorvalues .achannel.status0 .sensoricon, .deviceoverviewsensorvalues .achannel.status1 .sensoricon, .deviceoverviewsensorvalues .achannel.status6 .sensoricon {
+  background-image: url(/icons/icon_unknown.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status2 .sensoricon, .deviceoverviewsensorvalues .achannel.status3 .sensoricon {
+  background-image: url(/icons/icon_up.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status4 .sensoricon {
+  background-image: url(/icons/icon_warning.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status5 .sensoricon {
+  background-image: url(/icons/icon_down.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status13 .sensoricon {
+  background-image: url(/icons/icon_downack.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status14 .sensoricon {
+  background-image: url(/icons/icon_partdown.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status7 .sensoricon, .deviceoverviewsensorvalues .achannel.status8 .sensoricon, .deviceoverviewsensorvalues .achannel.status9 .sensoricon, .deviceoverviewsensorvalues .achannel.status11 .sensoricon, .deviceoverviewsensorvalues .achannel.status12 .sensoricon {
+  background-image: url(/icons/icon_paused.svg);
+}
+
+.deviceoverviewsensorvalues .achannel.status10 .sensoricon {
+  background-image: url(/icons/icon_unusual.svg);
+}
+
+.achannel.primary .channelname {
+  width: 99%;
+  font-size: 18px;
+}
+
+.achannel.primary .channelid {
+  font-size: 18px;
+}
+
+
+.achannel .channelgauge {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  right: 0px;
+  padding-top: 4px;
+}
+
+.channelgauge .boolean{
+  position: relative;
+}
+.channelgauge .boolean .bool-status{
+}
+.channelgauge .boolean .status{
+  position: absolute;
+  top:38%;
+  right: 15px;
+  width: 50%;
+  height: 24%;
+}
+.channelgauge .boolean .status>div{
+  float:left;
+  width: 50%;
+  height: 100%;
+  border: 1px solid <#colorcode color="statusunknown">;
+  padding: 2px;
+}
+.channelgauge .boolean .status>div:first-child{
+  padding-right: 1px;
+  border-color: <#colorcode color="statusunknown">;
+  border-right: none;
+}
+.channelgauge .boolean .status>div:last-child{
+  padding-left: 1px;
+  border-color: <#colorcode color="statusunknown">;
+  border-left: none;
+}
+.channelgauge .boolean .status div div{
+  width: 100%;
+  height: 100%;
+  background-color: <#colorcode color="statusunknown">;
+  opacity: 0.1;
+}
+.channelgauge .boolean .status div.other div{
+  background-color: <#colorcode color="statusunknown">!important;
+  opacity: 0.1!important;
+}
+
+/*.channelgauge .boolean .status.unexpected div.unexpected div{
+  background-color: <#colorcode color="statusdown">;
+  opacity: 1;
+
+}
+.channelgauge .boolean .status.expected div.expected div{
+  background-color: <#colorcode color="statusup">;
+  opacity: 1;
+
+}
+*/
+.achannel.primary .channelgauge {
+  padding-right: 5px;
+  text-align: center;
+  top: 3px;
+}
+
+.achannel .channelname {
+  top: 5px;
+  height: 25px;
+  left: 5px;
+  right:55px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  position: absolute;
+}
+
+.sensorgraphs .achannel .channelname {
+  position:initial;
+}
+
+.achannel .channelsubname {
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  right: 45px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.achannel .channelid {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px;
+  text-overflow: ellipsis;
+}
+
+.achannel .channelvalue {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 18px;
+  right: 45px;
+  position: absolute;
+  bottom: 6px;
+  left: 5px;
+  text-overflow: ellipsis;
+}
+
+.achannel .channelmessage {
+  position: absolute;
+  display: block;
+  white-space: normal;
+  overflow: hidden;
+  left: 8px;
+  top:31px;
+  right: 190px;
+  bottom: 40px;
+}
+
+.deviceoverviewsensorvalues .achannel .channelvalue, .deviceoverviewsensorvalues .achannel .channelmessage, .deviceoverviewsensorvalues .achannel .channelname, .deviceoverviewsensorvalues .achannel .channelsubname {
+  left: 32px;
+  color: #000;
+}
+
+.sensorgraphs .achannel .channelname
+{
+  position:relative;
+  left: -10px;
+}
+
+.deviceoverviewsensorvalues .achannel .channelvalue {
+  bottom: 3px;
+}
+
+.deviceoverviewsensorvalues .achannel .channelsubname {
+  bottom: 18px;
+}
+
+.deviceoverviewsensorvalues .achannel.primary .channelsubname {
+  bottom: 25px;
+}
+
+.achannel .channelvalue b,
+.achannel .channelvalue{
+  font-size: 12px;
+}
+
+.achannel.primary .channelvalue b,
+.achannel.primary .channelvalue{
+  font-size: 18px;
+}
+
+.achannel.primary .channelmessage {
+  font-size: 12px;
+}
+.achannel.primary .channelsubname{
+  font-size: 12px;
+  right: 173px;
+}
+
+.toplistsettings, .channelsettings {
+  display: block;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 100%;
+  height: 14px;
+  opacity: 0.1;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.toplistsettings.add {
+  cursor: pointer;
+  background-image: url(/images/toplistplaceholder.svg);
+  background-repeat: no-repeat;
+  right: auto;
+  background-position: 6px 33px;
+  width: 180px;
+}
+
+.sensoroverviewtoplist a, .sensoroverviewtoplist a:hover, .sensoroverviewtoplist a:active {
+  color: black;
+}
+
+.sensoroverviewtoplist:hover .toplistsettings, .achannel:hover .channelsettings {
+  opacity: 1;
+}
+
+.sensoroverviewtoplist .toplistsettings.toplist-add {
+  width: 100%;
+  height: 100%;
+  background-image: url(/icons/plus.gif);
+  background-size: 38px 33px;
+  background-position: 72px 100px;
+  opacity: 1.0;
+}
+
+.toplistsettings i, .channelsettings i {
+  float: right;
+  width: 13px;
+  height: 13px;
+}
+
+.sensoroverviewtoplistspreviews {
+  overflow: hidden;
+  background-image: url(/images/toplistcontainer.png);
+}
+
+.sensoroverviewtoplistspreviews .toplist-chordgraph span {
+  display: none;
+}
+
+#overviewdevicetree {
+  background-color: <#colorcode color="lightgray">;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+#overviewgraphs td {
+  background-color: <#colorcode color="lightgray">;
+  padding: 0;
+}
+
+#overviewgraphs .chartlegend {
+  margin-top: 15px;
+}
+
+.overviewsmalldata td[rowspan].qrcoderow {
+  padding: 0;
+  min-width: 50px;
+}
+
+.qrcode canvas {
+  background-color: white;
+}
+
+.myaccountqr {
+  float: right;
+}
+
+.qrcode {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  width: 36px;
+  height: 36px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 100;
+}
+.qrcode canvas{
+  width: 36px;
+  height: 40px;
+}
+
+.overviewsmalldata.overviewsmalldatastatus7, .overviewsmalldata.overviewsmalldatastatus7 td, .overviewsmalldata.overviewsmalldatastatus8, .overviewsmalldata.overviewsmalldatastatus8 td, .overviewsmalldata.overviewsmalldatastatus9, .overviewsmalldata.overviewsmalldatastatus9 td, .overviewsmalldata.overviewsmalldatastatus12, .overviewsmalldata.overviewsmalldatastatus12 td {
+  background-color: <#colorcode color="statuspaused"> !important; /* blue */
+}
+
+.overviewsmalldata.overviewsmalldatastatus7, .overviewsmalldata.overviewsmalldatastatus7 td, .overviewsmalldata.overviewsmalldatastatus7 td a, .overviewsmalldata.overviewsmalldatastatus8, .overviewsmalldata.overviewsmalldatastatus8 td, .overviewsmalldata.overviewsmalldatastatus8 td a, .overviewsmalldata.overviewsmalldatastatus9, .overviewsmalldata.overviewsmalldatastatus9 td, .overviewsmalldata.overviewsmalldatastatus9 td a, .overviewsmalldata.overviewsmalldatastatus12, .overviewsmalldata.overviewsmalldatastatus12 td, .overviewsmalldata.overviewsmalldatastatus12 td a, .overviewsmalldata.overviewsmalldatastatusDisconnected, .overviewsmalldata.overviewsmalldatastatusDisconnected td, .overviewsmalldata.overviewsmalldatastatusDisconnected td a {
+  color: white;
+}
+
+.overviewsmalldata.overviewsmalldatastatusDisconnected, .overviewsmalldata.overviewsmalldatastatusDisconnected td {
+  background-color: <#colorcode color="statusdown"> !important; /* red */
+}
+
+.overviewsmalldata.overviewsmalldatastatusDisconnected .displayobjectstatus {
+  display: none;
+}
+
+.oskhelpbox {
+  width: auto;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid <#colorcode color="helpbackground">;
+  margin-top: 5px;
+  color: black;
+}
+
+#messagebox {
+  width: auto;
+  background-color: <#colorcode color="helpbackground">;
+  margin: -10px 0 10px 0px;
+}
+
+#messagebox .infomessage {
+  padding: 7px;
+}
+
+div.nosensors img {
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+#form_channeldisplaytable tbody tr, .udpmessagepreview tr {
+  cursor: pointer;
+}
+
+.achannel .moreicon{
+  display: none;
+}
+.achannel .lookups text {
+  display: none;
+}
+
+.achannel.primary .lookups text {
+  display: block;
+}
+
+h1.sitecaption{
+  display: flex;
+  align-items:flex-start;
+  flex:0;
+}
+h1.sitecaption dummy {
+  background: none;
+  vertical-align: top;
+  padding: 0 0 0.6ex 0;
+  height: auto;
+  width: auto;
+  min-width: 0;
+  max-width: 40em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+h1.sitecaption i {
+  margin-right: 0.6ex;
+}
+h1.sitecaption:hover,
+h1.sitecaption:hover dummy{
+  white-space: normal;
+  transition: all 2s;
+}
+
+
+h1.sitecaption #objectpriority dummy{
+  display:inline;
+}
+h1.sitecaption:hover #objectpriority dummy{
+  white-space: nowrap;
+}
+h1.sitecaption .probemenu,
+h1.sitecaption .devicemenu,
+h1.sitecaption .sensormenu{
+  width: auto;
+}
+
+h1.sitecaption dummy[status="priority"] {
+  margin-left: 0.3rem;
+}
+
+#overview_sensor #globe{
+  height: 210px;
+  margin-bottom: 3px;
+}
+#overview_sensor #globe .prtg-plugin-initialized{
+  background-color:<#colorcode color="lightgray">;
+}
+/* flex layout */
+.responsiveobjectoverview_panelA {
+  margin-right: 5px;
+}
+.responsiveobjectoverview_panelB {
+  flex: 0.4 0.4;
+  max-width: 410px;
+  min-width: 350px;
+  -webkit-transition: all 1.0s;
+  transition: all 1.0s;
+}
+#overview_sensor .responsiveobjectoverview_panelB {
+  min-width: 420px;
+}
+.responsiveobjectoverview_panel2 table.table {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.responsiveobjectoverview_panel2 #displaytable {
+  min-height: 130px;
+}
+@media screen and (min-width:100px) and (-ms-high-contrast: none) {
+  .flex-layout .responsiveobjectoverview_panel1,
+  .flex-layout .responsiveobjectoverview_panel2 {
+    -ms-flex: none\9; /*IE10*/
+    max-width: 1050px\9; /*IE10*/
+  }
+}
+
+@media screen and (min-width:1500px) {
+  #overview_sensor.flex-layout .responsiveobjectoverview_panelA {
+    -webkit-flex-direction: row;
+    -webkit-transition: all 1.0s;
+    -ms-flex-direction: row;
+
+    flex-direction: row;
+    transition: all 1.0s;
+  }
+
+  #overview_sensor.flex-layout .responsiveobjectoverview_panel1 {
+    -webkit-transition: all 1.0s;
+    -webkit-flex-shrink:0;
+
+
+    margin-right: 5px;
+    max-width: 410px;
+    transition: all 1.0s;
+    flex-shrink:0;
+  }
+  #overview_sensor.flex-layout  .responsiveobjectoverview_panel2 {
+    -webkit-transition: all 1.0s;
+
+    width: 100%;
+    transition: all 1.0s;
+  }
+
+  #overview_sensor.flex-layout .responsiveobjectoverview_panel2 #displaytable {
+    min-height: 205px;
+  }
+}
+@media screen and (min-width:1800px) and (max-width: 2199px) {
+  .flex-layout .responsiveobjectoverview_panelA {
+    -webkit-flex-direction: row;
+    -webkit-transition: all 1.0s;
+    -ms-flex-direction: row;
+
+    flex-direction: row;
+    transition: all 1.0s;
+  }
+  .flex-layout .responsiveobjectoverview_panel1 {
+    -webkit-transition:  all 1.0s;
+    -webkit-flex-shrink:0;
+
+    margin-right: 5px;
+    transition: all 1.0s;
+    flex-shrink:0;
+    max-width: 602px;
+
+    /*zoom:0.6;*/
+  }
+  .flex-layout .deviceoverviewsensorvalues {
+    background-image: url(/images/emptygaugeboxsmall.png);
+  }
+  .flex-layout .deviceoverviewsensorvalues .margin *{
+    transition: all 1.0s;
+  }
+  .flex-layout .deviceoverviewsensorvalues .margin{
+    padding: 0px 0px 2px 0px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel{
+    padding-left: 17px;
+    border-width: 1px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel {
+    width: 147px;
+    height: 49px;
+  }
+
+  .flex-layout .deviceoverviewsensorvalues .achannel.primary {
+    width: 298px;
+    height: 150px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel .sensoricon{
+    width: 18px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelvalue,
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelmessage,
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelname,
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelsubname,
+  .flex-layout .achannel.primary .channelvalue,
+  .flex-layout .achannel.primary .channelvalue b{
+    left: 20px;
+    right: auto;
+    max-width: 13ex;
+    font-size: 9px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelname{
+    font-size: 11px;
+    max-width: 17ex;
+  }
+  .flex-layout .achannel.primary .channelvalue,
+  .flex-layout .achannel.primary .channelname{
+    font-size: 15px;
+    max-width: 20ex;
+
+  }
+  .flex-layout .achannel .channelname{
+    top: 0;
+    font-size: 11px;
+  }
+  .flex-layout .achannel .channelsubname{
+    bottom: 14px;
+  }
+
+  .flex-layout .achannel.primary .channelsubname{
+    bottom: 18px;
+  }
+  .flex-layout .achannel.primary .channelvalue{
+    bottom: 0px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelmessage{
+    top: 20px;
+    bottom: 35px;
+    line-height: 10px;
+    max-width: 25ex;
+    font-size: 9px;
+  }
+  .flex-layout .deviceoverviewsensorvalues .achannel .channelgauge{
+    -webkit-transform: scale(0.9);
+    -berkit-transform-origin: 100% -25%;
+
+    transform: scale(0.9);
+    transform-origin: 100% -25%;
+  }
+
+  .flex-layout .deviceoverviewsensorvalues .achannel.primary .channelgauge{
+    -webkit-transform: scale(0.77);
+    -webkit-transform-origin: 110% -25%;
+
+    transform: scale(0.77);
+    transform-origin: 110% -25%;
+  }
+  #overview_sensor.flex-layout .responsiveobjectoverview_panel1 {
+    max-width: 540px;
+  }
+}
+@media screen and (min-width:2200px) {
+  .flex-layout .responsiveobjectoverview_panelA {
+    -webkit-flex-direction: row;
+    -webkit-transition: all 1.0s;
+    -ms-flex-direction: row;
+
+    flex-direction: row;
+    transition: all 1.0s;
+  }
+  .flex-layout .responsiveobjectoverview_panel1 {
+    -webkit-transition:  all 1.0s;
+    -webkit-flex-shrink:0;
+
+    margin-right: 5px;
+    transition: all 1.0s;
+    flex-shrink:0;
+    max-width: 820px;
+  }
+}
+
+@media screen and (min-width:2126px) {
+  #overview_sensor.flex-layout .responsiveobjectoverview_panel1 {
+   max-width: 720px;
+ }
+
+}
+
+#overviewgraphs .graphbox,
+.responsiveobjectoverview_panelB .graphbox{
+  position: relative;
+  padding-bottom: 5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.responsiveobjectoverview_panelB .graphbox .PNGGraph{
+  width: 100%!important;
+  height: auto!important;
+  min-height: 75px;
+}
+
+.displayNone,
+.display0 {
+  display: none!important;
+}
+
+.overviewsmalldatastatus7 .sensb {
+  background-blend-mode: multiply;
+  background-color: #447FC1;
+}

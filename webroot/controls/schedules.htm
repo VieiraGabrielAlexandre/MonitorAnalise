@@ -1,0 +1,36 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.schedules.help.title" default="Schedules" var="helptitle">
+<#lang key="html.schedules.titlesmall" default="schedules&nbsp;" var="titlefilter">
+<#lang  key="html.schedules.usingschedules" default="Here you can pause monitoring for groups, servers, and sensors based on time of day of week. You can also pause the delivery of notifications and use schedules to define time periods that are to be covered when creating reports. After creating schedules, you can select them on the respective settings pages.<br><br><a href='/help/schedules_settings.htm#settings' target='_blank'><b>Help: Schedules Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+<#lang key="html.global.schedules" default="Schedules" var="title">
+
+<div class="inner-wrapper">
+	<div class="inner-aside-left"></div>
+    <div class="inner-content">
+			<div class="add-menu-wrapper">
+				<div class="add-menu add-menu-fixed" style='<#system type="hideforreadonlyusers">'>
+					<a class="actionbutton" href="/editschedule.htm?id=new"><#lang key="html.schedules.addnew" default="Add Schedule"></a>
+				</div>
+			</div>
+			<div class="table-wrapper">
+				<div class="prtg-plugin" data-plugin="prtg-table">
+					<#table tableid="scheduletable"
+					content="schedules"
+					userid="<#userid>"
+					columns="name,checkbox"
+					tools="delete,edit"
+					sortby="name"
+					sortable="true"
+					tabletitle="@title"
+					filters="words!@titlefilter,tags"
+					varexpand="tabletitle,filters"
+					links="true" refreshable=true>
+				</div>
+			</div>
+    </div>
+    <div class="inner-aside-right">
+      <div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+    </div>
+</div>

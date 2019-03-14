@@ -1,0 +1,11 @@
+﻿<div class="box">
+    <#objectproperty name="name" var="name">
+        <wingui><#system type="message"></wingui>
+        <h2><#lang key="html.reportlister.sr" default="Stored Reports for &quot;@name&quot;"></h2>
+    <div class="prtg-plugin " data-plugin="prtg-table">
+         <#table tableid="storedreporttable" content="storedreports" columns="name,datetime,size" sortby="-datetime" refreshable="true">
+    </div>
+</div>
+
+
+

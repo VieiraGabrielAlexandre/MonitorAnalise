@@ -1,0 +1,22 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="group,probenode">
+<#lang key="html.addautodiscovery.includeheader.title" default="Add Auto-Discovery Group" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="groupname">
+<#system type="usernameshort" var="usernameshort">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1 class="sitecaption"><#lang key="html.addautodiscovery.head" default="<b>Add Auto-Discovery Group</b> to Group @groupname"></h1>
+	<div id="content">
+		<#system type='displaydependingonrights' right='write' hideobjectif='false' html="_notallowed" var="extend">
+		<#include varexpand="file" file="controls\addautodiscovery@extend.htm">
+	</div>
+<#lang key="html.addautodiscovery.help.text" default="Create a group of monitoring objects that you want to explore with the help of PRTG's auto-discovery. Specify your group settings, the sensor management, a discovery schedule, the IP range for discovery, and the credentials for Windows, Linux, VMware/Xen, and SNMP, if necessary.<br><br><a href='/help/auto_discovery.htm#group' target='_blank'><b>Help: Auto-Discovery</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

@@ -1,0 +1,122 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Getting Historic Sensor Data</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>
+            You can download the historic monitoring data for one sensor in XML or CSV format using the following API calls.
+            You can either request the results of each single monitoring request (called raw data) or you can let PRTG calculate
+            averages of the data (for example, hourly or daily averages). To avoid potential server overload, the number
+            of requestable values per API call is limited by means of automatic averaging as follows:
+        </p>
+        <table class="table">
+            <thead class="headersnolink">
+            <th>
+                <b>Minimum Level of Detail (Average Interval)</b>
+            </th>
+            <th>
+                <b>Maximum Timeframe per API call</b>
+            </th>
+            </thead>
+            <tr>
+                <td>Raw data (all single monitoring requests)</td>
+                <td>For up to 40 days per API request</td>
+            </tr>
+            <tr class="even">
+                <td>60 minutes/1 hour averages</td>
+                <td>40 to 500 days per API request<br><i>Note:</i> If you try to use a larger time span than 500 days, PRTG will reduce it to 365 days automatically.</td>
+            </tr>
+        </table>
+        <p>
+            <i>Note:</i> API calls for historic data are limited to 5 requests per minute!
+        </p>
+        <h1>API Calls for Historic Data</h1>
+        <p>The API calls for historic data tables look like this:</p>
+        <ul class="apicalls">
+            <li>
+                Historic data in XML format:
+                <pre><b>/api/historicdata.xml</b>?id=objectid&avg=0&sdate=<#copyrightyear>-01-20-00-00-00&edate=<#copyrightyear>-01-21-00-00-00</pre>
+            </li>
+            <li>
+                Historic data in CSV format:
+                <pre><b>/api/historicdata.csv</b>?id=objectid&avg=0&sdate=<#copyrightyear>-01-20-00-00-00&edate=<#copyrightyear>-01-21-00-00-00</pre>
+            </li>
+  <li>
+    Historic data in JSON format:
+    <pre><b>/api/historicdata.json</b>?id=objectid&avg=0&sdate=<#copyrightyear>-01-20-00-00-00&edate=<#copyrightyear>-01-21-00-00-00&usecaption=1</pre>
+  </li>
+        </ul>
+        <p>
+            The first URL will give you the data in XML format, the second URL will respond with CSV data, the third URL will return JSON. You must supply the object ID of a sensor as well as a
+            start date/time "sdate" and end date/time "edate". If you use the JSON call, additionally provide the parameter <b>usecaption=1</b> to get more information than just the raw data table.
+        </p>
+        <h1>API Call for Historic Graphs</h1>
+        <p>Historic graphs are also available (in PNG format):</p>
+        <ul class="apicalls">
+            <li>
+                Historic Graph:
+                <pre><b>/chart.png</b>?id=objectid&avg=15&sdate=<#copyrightyear>-01-20-00-00-00&edate=<#copyrightyear>-01-21-00-00-00&width=850&height=270&graphstyling=baseFontSize='12'%20showLegend='1'&graphid=-1</pre>
+            </li>
+        </ul>
+        <h1>Common Parameters for Historic Data API Calls</h1>
+        <p>
+            The following parameters can be used for the graphs and the data tables:
+        </p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Parameter</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            <th>
+                <b>Possible values</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>id</td>
+                <td>ID of the specific sensor</td>
+                <td>integer value</td>
+            </tr>
+            <tr class="even">
+                <td>sdate</td>
+                <td>Start of the time span (date and time)</td>
+                <td>yyyy-mm-dd-hh-mm-ss</td>
+            </tr>
+            <tr class="odd">
+                <td>edate</td>
+                <td>End of the time span (date and time)</td>
+                <td>yyyy-mm-dd-hh-mm-ss</td>
+            </tr>
+            <tr class="even">
+                <td>avg</td>
+                <td>
+                    Average interval in seconds; use 0 to download raw data (= results of all single monitoring requests)
+                </td>
+                <td>integer value</td>
+            </tr>
+            <tr class="odd">
+                <td>width/height</td>
+                <td>Width and height of the graph in pixels</td>
+                <td>integer value</td>
+            </tr>
+            <tr class="even">
+                <td>graphstyling</td>
+                <td>
+                    baseFontSize='x' sets the size of the font, showLegend='x' enables (1) or disables (0) the graph legend
+                </td>
+                <td>baseFontSize='x'%20showLegend='x'</td>
+            </tr>
+        </table>
+        <h1>Historic Data Query Builder</h1>
+        <p>
+            You can also use the PRTG
+            <a class="arrow" href="/historicdata.htm">historic data function</a>
+            to manually generate and analyze historic sensor data via the web interface.
+        </p>
+    </div>
+</div>

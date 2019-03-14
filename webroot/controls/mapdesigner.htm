@@ -1,0 +1,97 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="map">
+<div id="mapeditor" class="prtg-plugin" data-plugin="prtg-maps" data-mapid="<#objectid>" data-historydata="<#mapobject type="historydata">" data-connections='<#mapobject type="connections">' data-mapwidth="<#mapobject type="mapwidth">" data-mapheight="<#mapobject type="mapheight">" data-mode="edit">
+
+  <div class="objectpanelsizer panel panelsizer">
+  </div>
+  <div class="objectpanel panel">
+    <span class="paneltitletext">
+      <#lang key="html.map.devicetree" default="Device Tree">
+    </span>
+    <span class="paneltitletext objectpanel_tree_searchbar">
+      <span id="prtgtreeview_searchicon">&nbsp;</span>
+      <span id="prtgtreeview_deleteicon" style="display: none;">&nbsp;</span>
+      <span class="maptreesearchbox"><input id="maptreesearchinput" value="<#langjs key="html.global.search2" default="Search...">" /></span>
+    </span>
+    <div id="objectpanel_tree"></div>
+
+    <div id="map_snaptogridcontrol">
+      <div class="checkbox-control switchcheckbox">
+        <input type="checkbox" class="hidden checkbox" name="snaptogrid" value="1" checked="" id="snaptogrid">
+        <label for="snaptogrid" class="radio-control-label">
+          <i class="icon-dark prtg-checkbox"></i>
+          <#lang key="htm.maplayout.gridon" default="Snap To Grid">
+        </label>
+      </div>
+      <div class="history_buttons">
+        <a data-placement="top" title='<#lang key="html.map.tooltipUndo" default="Undo: Ctrl&#043;Z">' class="history_button history_undo"><span class="icon-white glyph-left-big custom"></span></a>
+        <a data-placement="top" title='<#lang key="html.map.tooltipRedo" default="Redo: Ctrl&#043;Y">' class="history_button history_redo"> <span class="icon-white glyph-right-big custom"></span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading panel historyloader" data-step='1' data-intro=''>
+  </div>
+
+  <div class="editor panel" data-step='1' data-intro=''>
+    <div id="mapview" class="showsnaptogrid" style="width:<#mapobject type="mapwidth">px;height:<#mapobject type="mapheight">px;<#mapobject type="background">;">
+      <svg id="mapsvg" height="<#mapobject type="mapheight">px" width="<#mapobject type="mapwidth">px" ></svg>
+      <#mapobject type="list" mode="edit">
+    </div>
+  </div>
+
+  <div class="probpanelsizer panel panelsizer">
+  </div>
+  <div class="probpanel panel">
+    <span class="paneltitletext">
+      <#lang key="html.map.properties" default="Properties">
+    </span>
+    <div id="objectproperties">
+      <form id="prob_form">
+        <div class="prob_form-row">
+          <div><label for="prob_top"><#lang key="html.map.top" default="Top"/>:</label>
+            <input type="text" class="text propertyval" name="prob_top" id="prob_top" size="4" maxlength="4"/></div>
+          <div>
+            <label for="prob_left"><#lang key="html.map.left" default="Left"/>:</label>
+            <input type="text" class="propertyval" name="prob_left" id="prob_left" size="4" maxlength="4"/></div>
+          <div>
+            <label for="prob_width"><#lang key="html.map.width" default="Width"/>:</label>
+            <input type="text" class="propertyval" name="prob_width" id="prob_width" size="4" maxlength="4"/></div>
+          <div><label for="prob_height"><#lang key="html.map.height" default="Height"/>:</label>
+            <input type="text" class="propertyval" name="prob_height" id="prob_height" size="4" maxlength="4"/></div>
+          <div><label for="prob_zindex"><#lang key="html.map.layer" default="Layer"/>:</label>
+            <input type="text" class="propertyval" name="prob_zindex" id="prob_zindex" size="4" maxlength="4"/></div>
+        </div>
+        <div class="prob_form-row">
+          <div><label for="prob_externallink"><#lang key="html.map.externallink" default="External Link"/>:</label>
+            <input type="text" class="propertyval" name="prob_externallink" id="prob_externallink"/></div>
+          <div><a href="#" id="map_select_externallink"><#lang key="html.map.selectobject" default="Select object"/>
+          </a></div>
+        </div>
+
+        <div class="prob_form-row expertprops">
+          <div>
+            <label for="prob_htmlbefore"><#lang key="html.map.htmlbefore" default="HTML Before"/>:</label>
+            <span class="htmlafterbefore"><textarea cols="40" rows="2" name="prob_htmlbefore" class="propertyval probertyarea" id="prob_htmlbefore"></textarea></span>
+          </div>
+        </div>
+        <div class="prob_form-row expertprops">
+          <div>
+            <label for="prob_htmlafter"><#lang key="html.map.htmlafter" default="HTML After"/>:</label>
+            <span colspan="5" class="htmlafterbefore"><textarea cols="40" rows="2" name="prob_htmlafter" class="propertyval probertyarea" id="prob_htmlafter"></textarea></span>
+          </div>
+        </div>
+
+        <div class="prob_save prob_form-row">
+          <button name="prob_save" id="prob_save" class="actionbutton">
+            <#lang key="html.map.save" default="Save"/>
+          </button>
+        </div>
+
+        <div id="htmlvalidator"></div>
+      </form>
+    </div>
+      <div id="possibleobjects">
+      </div>
+  </div>
+</div>

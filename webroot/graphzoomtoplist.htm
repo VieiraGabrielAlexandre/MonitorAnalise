@@ -1,0 +1,33 @@
+﻿<#checkobjecttype objecttype="sensor">
+
+<#lang key="html.graphzoomtoplist.title" default="Toplist" var="title">
+<#objectproperty type="toplistname" usetopid="1" var="toplistname">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)">
+<div class="graph-zoom-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div class="graph-zoom-content">
+		<div class="toplist-item">
+			<h1><#lang key="html.selecttoplisttimetable.lowertitle" default="Toplist &quot;@toplistname&quot; for @objectname"></h1>
+			<h3><#toplistperiodheader><#toplistwarning></h3>
+			<table class="overview table" id="sensordata" cellspacing=0>
+				<thead class="tabletitle">
+					<tr>
+						<th colspan=2><#lang key="html.global.details" default="Details"></th>
+					</tr>
+				</thead>
+				<tr class="odd"><td class="title"><#lang key="html.sensordata.sensname" default="Sensor Name"></td><td><b><#objectproperty name="Name" show="link"></b> (ID <#objectid>)</td></tr>
+				<tr class="even"><td class="title"><#lang key="html.global.parentprobe" default="Parent Probe"></td><td><#objectstatus name="probe"></td>
+				<tr class="odd"><td class="title"><#lang key="html.global.parentgroup" default="Parent Group"></td><td><#objectproperty name="ParentGroup" show="link"></td>
+				<tr class="even"><td class="title"><#lang key="html.global.parentdevice" default="Parent Device"></td><td><#objectproperty  name="ParentDevice" show="link"></td></tr>
+			</table>
+		</div>
+		<div class="toplist-item prtg-plugin toplistgraph" <#include file="controls\toplistgraph.htm"></div>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

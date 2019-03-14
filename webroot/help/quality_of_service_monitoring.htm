@@ -1,0 +1,198 @@
+﻿<!--Monitoring Quality of Service and VoIP-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="bandwidth_monitoring_comparison.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="email_round_trip_monitoring.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring Quality of Service and VoIP</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring Quality of Service and VoIP</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">PRTG can monitor the Quality of Service (QoS) in a network with dedicated QoS sensors, as well as Cisco IP Service Level Agreement (SLA) and Cisco Class Based Quality of Service (CBQoS). Slight variations of network parameters like jitter, packet loss, or packet delay variation (PDV) usually have only little effect on TCP-based services (for example, HTTP and SMTP). But for UDP-based services like Voice over IP (VoIP) and video streaming, a steady stream of data packets is crucial. The sound quality of a VoIP call drops dramatically when UDP packets are not received in a timely fashion, or if packets are lost or out-of-order. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">As a rule of thumb for good quality of service (from a VoIP perspective), you want low measurements for jitter (less than 20 to 50 ms) and PDV (less than 100 ms), and preferably <span class="f_ItalicCustom">zero</span> measurements for packet loss, duplicated packets, or packets in wrong order.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">For Quality of Service measurements, four sensor types are available:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="qos_quality_of_service_sensor.htm" class="topiclink">QoS (Quality of Service) Sensor</a></span><br />
+<span class="f_ListBulleted">Monitors VoIP-relevant network parameters by testing the network connection quality between two probes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="qos_quality_of_service_round_trip_sensor.htm" class="topiclink">QoS (Quality of Service) Round Trip Sensor</a></span><br />
+<span class="f_ListBulleted">Monitors VoIP-relevant network parameters by testing the network connection quality between a probe and a target device at the endpoint of the connection. Traffic is measured bidirectionally.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="cisco_ip_sla_sensor.htm" class="topiclink">Cisco IP SLA Sensor</a></span><br />
+<span class="f_ListBulleted">Monitors VoIP-relevant network parameters through IP SLA results from Cisco devices (via SNMP).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_cisco_cbqos_sensor.htm" class="topiclink">SNMP Cisco CBQoS Sensor</a></span><br />
+<span class="f_ListBulleted">Monitors VoIP-relevant network parameters by using Cisco's CBQoS (via SNMP). </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="qos" class="hmanchor"></a><span class="f_InTopicHeading">QoS (Quality of Service) Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The QoS Sensors monitor the quality of a network connection by measuring the following parameters:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">Jitter in ms accord<span class="f_ListBulleted">ing to RFC 3550</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packet delay variation (PDV) in ms according to RFC 3393</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Lost packets in %</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Out-of-order packets in %</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Duplicated packets in %</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The QoS sensors measure quality of service by sending UDP packets between two probes. This means that you can test any network connection in your network by simply placing a <a href="add_remote_probe.htm" class="topiclink">remote probe</a> on (or near) each 'end' of the connection and measuring the connection quality between them. This is the perfect tool to find network issues that can affect VoIP sound quality or video streaming 'hiccups'.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>You can use the QoS Round Trip sensor also without installing a remote probe at the connection endpoint. See this <span class="f_ListBulleted">Knowledge Base article for details about the PRTG QoS Reflector: <a href="https://kb.paessler.com/en/topic/61176" target="_blank" class="weblink">How can I monitor QoS roundtrips without using remote probes?</a></span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:501px"><a href="voip-monitoring-1.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Monitoring Quality of Service with PRTG" title="Monitoring Quality of Service with PRTG" style="width:501px;height:400px;border:none" src="voip-monitoring-1_zoom55.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Monitoring Quality of Service with PRTG</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The measurements for QoS monitoring are taken between two probes. So the first step is to place two PCs running a remote probe on (or near) both ends of the connection that you want to monitor. As an alternative, the local probe on the PC running the PRTG core can also be used as one end, or you can use the PRTG QoS Reflector (see the <a href="https://kb.paessler.com/en/topic/61176" target="_blank" class="weblink">Knowledge Base</a>) to bounce the packets when monitoring QoS roundtrips. If any firewalls, packet filters, or Network Address Translation (NAT) systems are en route, you must configure them as necessary so that the UDP packets can reach the target probe.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">In PRTG, create a new QoS sensor on a <span class="f_BoldCustom">Probe Device</span>, or, if you use the roundtrip sensor, on any device. With the settings for number and for size of the packets, you can configure the test data stream. 1,000 packets of 172 bytes each is a good start, but if your applications use larger packets, you may want to enter other values here. Try to configure the test streams with parameters similar to that of the UDP services you are using across this connection. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>Find details about settings in the manual sections <span class="f_BoldCustom"><a href="qos_quality_of_service_sensor.htm" class="topiclink">QoS (Quality of Service) One Way Sensor</a></span> and <span class="f_BoldCustom"><a href="qos_quality_of_service_round_trip_sensor.htm" class="topiclink">QoS (Quality of Service) Round Trip Sensor</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="ipsla" class="hmanchor"></a><span class="f_InTopicHeading">Cisco IP SLA Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Wikipedia describes IP SLA as <span class="f_ItalicCustom">a feature included in the Cisco IOS Software that can allow administrators the ability to Analyze IP Service Levels for IP applications and services. IP SLA uses active traffic-monitoring technology to monitor continuous traffic on the network. This is a reliable method in measuring over head network performance.</span> IP SLA is mostly used to monitor the sound quality of VoIP traffic.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you have not done so already, add a device in PRTG for the Cisco device that you want to monitor. Then create a new <span class="f_BoldCustom">Cisco IP SLA</span> sensor on this device. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>Find details about settings in the <span class="f_BoldCustom"><a href="cisco_ip_sla_sensor.htm" class="topiclink">Cisco IP SLA Sensor</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">This feature is only available in the more expensive Cisco devices. If you do not have IP SLA capable routers and switches, you can still get similar information with PRTG QoS sensors (see <a href="quality_of_service_monitoring.htm#qos" class="topiclink">above</a>) that do not require any special hardware—just two PCs running Windows. If you own hardware that supports IP SLA, then PRTG brings you probably the least-cost monitoring solution for IP SLA. Most vendors charge extra for IP SLA support (a thousand bucks and more). Following Paessler's long term policy, we simply include this as one of our sensor types. With PRTG you can even use the PRTG on premises Freeware Edition to monitor IP SLA!</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG monitors the following parameters: Calculated Planning Impairment Factor (ICPIF), Mean Opinion Score (MOS), Average Jitter, Packets Lost, Packets Out Of Sequence, Packets Late, Average Round Trip Time (RTT), DNS RTT, TCP RTT, Transaction RTT. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Especially two of these parameters are interesting for VoIP: <span class="f_ItalicCustom">Mean Opinion Score (MOS)</span> and <span class="f_ItalicCustom">Calculated Planning Impairment Factor (ICPIF)</span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="cbqos" class="hmanchor"></a><span class="f_InTopicHeading">SNMP Cisco CBQoS Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Cisco Class Based Quality of Service (CBQoS) provides information about QoS of Cisco network devices that support the <span class="f_ItalicCustom">Modular QoS command line interface (MQC)</span>. With Classed Based QoS, you can obtain monitoring data that includes summary counts and rates by traffic class before and after the enforcement of QoS policies, according to Cisco's CBQoS Management Information Base (MIB) definition. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG determines CBQoS data via Simple Network Management Protocol (SNMP). The corresponding sensor type is available out-of-the-box in PRTG version 13.x.5 or later. CBQoS is available in Cisco IOS by default as of version 12.4(4)T.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To monitor CBQoS, add a device to PRTG for the Cisco device that you want to monitor. Then create a new SNMP Cisco CBQoS sensor on this device. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See section <span class="f_BoldCustom"><a href="snmp_cisco_cbqos_sensor.htm" class="topiclink">SNMP Cisco CBQoS Sensor</a></span> for more details. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">This sensor type supports the following CBQoS classes: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Class Map</span><span class="f_ListBulleted">: statistical data about class maps, such as pre- and post-policy packets and sizes, drop packets and size, as well as no-buffer drop packets</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Match Statement</span><span class="f_ListBulleted">: statistical data about match statement specific information, such as pre-policy packets and size</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Queueing</span><span class="f_ListBulleted">: statistical data about queuing actions, such as current and maximum queue depth, drop packets, and drop size</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can select the desired CBQoS entries that you want to monitor while creating the sensor in PRTG. The available entries are given with their particular connections, their descriptions, and class types.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="voip" class="hmanchor"></a><span class="f_InTopicHeading">Voice over IP</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For Mean Opinion Score (MOS) measurements, Cisco conducted a panel test where a wide range of listeners judged the quality of voice samples sent using particular codecs, on a scale of 1 (poor quality) to 5 (excellent quality). The Cisco device calculates the corresponding value for the current network connection based on the network parameter measurements like jitter and packet loss. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>The Cisco IP SLA sensor reads out the MOS directly from the Cisco device. For the QoS and the QoS Round Trip sensor, PRTG calculates the MOS by itself. For details, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/59491" target="_blank" class="weblink">How does PRTG calculate the MOS score for QoS sensors?</a></span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The values and their meanings are:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">MOS</span></p>
+</th>
+<th style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Quality</span></p>
+</th>
+<th style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Expected Quality Impairment</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">5</span></p>
+</td>
+<td style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Excellent</span></p>
+</td>
+<td style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Imperceptible </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">4</span></p>
+</td>
+<td style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Good</span></p>
+</td>
+<td style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Perceptible, but not annoying </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">3</span></p>
+</td>
+<td style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Fair</span></p>
+</td>
+<td style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Slightly annoying </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2</span></p>
+</td>
+<td style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Poor</span></p>
+</td>
+<td style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Annoying </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1</span></p>
+</td>
+<td style="vertical-align:top; width:201px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Bad</span></p>
+</td>
+<td style="vertical-align:top; width:196px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Very annoying</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The second interesting parameter ICPIF <span class="f_ItalicCustom">is the sum of measured impairment factors minus a user-defined access Advantage Factor that is intended to represent the user's expectations, based on how the call was placed (for example, a mobile call versus a land-line call)</span> (quoted from Cisco's website).</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Upper Limit for ICPIF</span></p>
+</th>
+<th style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">VoIP Call Communication Quality</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">5</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Very good</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">10</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Good</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">20</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Adequate</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">30</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Limiting case</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">45</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Exceptional limiting case</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">55</span></p>
+</td>
+<td style="vertical-align:top; width:409px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Customers likely to react strongly (complaints, change of network operator)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: Where can I find more information about Cisco IP SLAs, VoIP, and QoS?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/11093" target="_blank" class="weblink">https://kb.paessler.com/en/topic/11093</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How does PRTG calculate the MOS score for QoS sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/59491" target="_blank" class="weblink">https://kb.paessler.com/en/topic/59491</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I monitor QoS roundtrips without using remote probes?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/61176" target="_blank" class="weblink">https://kb.paessler.com/en/topic/61176</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: VoIP,VoIP Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="bandwidth_monitoring_comparison.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="email_round_trip_monitoring.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

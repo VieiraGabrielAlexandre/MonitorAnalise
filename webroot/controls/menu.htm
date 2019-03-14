@@ -1,0 +1,134 @@
+﻿<#system type="licensekey" var="lic" />
+<ul id="main_menu" class="menu">
+  <li>
+    <a class="homeicon" href="/home"><#lang key="html.menu.Home" default="Home"></a>
+    <ul>
+      <#dashboards>
+      <li style="<#clusterdependent showfor=" clusterinstallation ">">
+        <#lang key="html.menu.home.switchcluster" default="Switch Cluster Node"><span class="ui-icon ui-icon-carat-1-e"></span>
+          <#clusterswitchmenuitems skiptagfornoncluster="true">
+      </li>
+      <li class="menudivider">
+        <a href="/welcome.htm"><#lang key="html.menu.Home.Welcome" default="Welcome to PRTG"></a>
+      </li>
+      <li onclick="_Prtg.Contextmenu.makeThisMyHomepage();return false;" style="<#system type='hideforreadonlyusers'>">
+        <#lang key="html.menu.Home.MakeThisMyHomepage" default="Make This My Homepage">
+      </li>
+    </ul>
+  </li>
+  <#menu />
+  <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">'>
+    <a href="/setup.htm"><#lang key="html.menu.Setup.setup" default="Setup"></a>
+    <ul>
+      <li class='menudivider'>
+        <a href='/setup.htm'><#lang key="html.menu.Setup.Overview" default="Overview"></a>
+      </li>
+      <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">'>
+        <a href="/myaccount.htm"><#lang key="html.menu.Setup.AccountSettings" default="Account Settings"><span class="ui-icon ui-icon-carat-1-e"></span></a>
+        <ul>
+          <li class='menudivider'>
+            <a href="/myaccount.htm"><#lang key="html.menu.Setup.MyAccount" default="My Account"></a>
+          </li>
+          <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'>
+            <a href='/myaccount.htm?tabid=2'><#lang key="html.global.notificationtemplates" default="Notification Templates"></a>
+          </li>
+          <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'>
+            <a href='/myaccount.htm?tabid=4'><#lang key="html.menu.Setup.Notificationcontacts" default="Notification Contacts"></a>
+          </li>
+          <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'>
+            <a href='/myaccount.htm?tabid=3'><#lang key="html.menu.Setup.Schedules" default="Schedules"></a>
+          </li>
+        </ul>
+      </li>
+      <li style='<#hidefornonadmins>'>
+        <a href='/systemsetup.htm'><#lang key="html.menu.Setup.Sysadmin" default="System Administration"><span class="ui-icon ui-icon-carat-1-e"></span></a>
+        <ul>
+          <li class='menudivider' style="<#hidefornonpodsubscriber>">
+            <a href='https://www.my-prtg.com/dashboard?subdomain=<#system type="dnsname" subdomain="true">' target="=_blank"><#lang key="html.global.podsubscription" default="Manage Subscription"></a>
+          </li>
+          <li class='menudivider'>
+            <a href='/systemsetup.htm'><#lang key="html.global.systemsetting3" default="User Interface"></a>
+          </li>
+          <li>
+            <a href='/systemsetup.htm?tabid=2'><#lang key="html.global.setupmonitoring" default="Monitoring"></a>
+          </li>
+          <li style='<#hideforpod>'>
+            <a href='/systemsetup.htm?tabid=3'><#lang key="html.global.notificationdelivery2" default="Notification Delivery"></a>
+          </li>
+          <li>
+            <a href='/systemsetup.htm?tabid=4'><#lang key="html.global.probesmanager3a" default="Core & Probes"></a>
+          </li>
+          <li>
+            <a href='/systemsetup.htm?tabid=5'><#lang key="html.menu.Setup.UserAccounts" default="User Accounts"></a>
+          </li>
+          <li>
+            <a href='/systemsetup.htm?tabid=6' class='menudivider'><#lang key="html.menu.Setup.UserGroups" default="User Groups"></a>
+          </li>
+          <li>
+            <a href='/systemsetup.htm?tabid=7'><#lang key="html.menu.Setup.administrativetools" default="Administrative Tools"></a>
+          </li>
+          <li style='<#clusterdependent showfor="clusterinstallation">'>
+            <a href='/systemsetup.htm?tabid=8'><#lang key="html.global.clusteroptions2" default="Cluster"></a>
+          </li>
+        </ul>
+      </li>
+      <li style='<#hidefornonadmins> <#clusterdependent hidefor="clusterinstallation">'>
+        <a href='/status.htm'><#lang key="html.menu.status2" default="PRTG Status"></a>
+        <li style='<#hidefornonadmins> <#clusterdependent showfor="clusterinstallation">'>
+          <a href='/status.htm'><#lang key="html.menu.status2" default="PRTG Status"><span class="ui-icon ui-icon-carat-1-e"></span></a>
+          <ul>
+            <li>
+              <a href='/status.htm'><#lang key="html.menu.Setup.SystemStatus2" default="System Status"></a>
+            </li>
+            <li style='<#clusterdependent showfor="clusterinstallation">'>
+              <a href='/status.htm?tabid=2'><#lang key="html.menu.Setup.ClusterStatus" default="Cluster Status"></a>
+            </li>
+          </ul>
+        </li>
+        <li style='<#hidefornonadmins> <#hideforpod>'>
+          <a class="nohjax" href='/licensing.htm?tabid=1'><#lang key="html.menu.Setup.License" default="License"></span></a>
+        </li>
+        <li style='<#hidefornonadmins> <#hideforpod>'>
+          <a href='/autoupdate.htm'><#lang key="html.menu.autoeupdate" default="Auto-Update"><span class="ui-icon ui-icon-carat-1-e"></span></a>
+          <ul>
+            <li>
+              <a class="nohjax" href='/autoupdate.htm?tabid=1'><#lang key="html.menu.Setup.autoupdateStatus" default="Status"></a>
+            </li>
+            <li>
+              <a class="nohjax" href='/autoupdate.htm?tabid=3'><#lang key="html.menu.Setup.autoupdateSettings" default="Settings"></a>
+            </li>
+          </ul>
+        </li>
+        <li style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">' class='menudivider'>
+          <a href='/downloads.htm'><#lang key="html.menu.Setup.Downloads" default="Downloads and Tools"><span class="ui-icon ui-icon-carat-1-e"></span></a>
+          <ul>
+            <li>
+              <a href='/downloads.htm?tabid=1'><#lang key="html.global.smartphoneapps2a" default="Client Apps for Mobile Devices"></a>
+            </li>
+            <li  class="<#hideforpod asclass='true'>">
+              <a href='/downloads.htm?tabid=2'><#lang key="html.menu.Setup.ecapp" default="Client App for Windows (Enterprise Console)"></a>
+            </li>
+            <li>
+              <a href='/downloads.htm?tabid=3'><#lang key="html.global.remoteprobeinstaller" default="Remote Probe Installer"></a>
+            </li>
+            <li>
+              <a href='/downloads.htm?tabid=4'><#lang key="html.global.prtg.tools" default="PRTG Tools"></a>
+            </li>
+          </ul>
+        </li>
+        <li style='<#hidefornonadmins>'>
+          <a href='/api.htm'><#lang key="html.menu.Setup.api" default="PRTG API"></a>
+        </li>
+        <li>
+          <a href='/help.htm'><#lang key="html.menu.Setup.help" default="Help and Support Center"></a>
+        </li>
+        <li style='<#hidefornonadmins> <#hideforpod><#if value="@lic" is="" then="" else=" display:none;" varexpand="value">'>
+          <a class="nohjax" href='/licensing.htm?tabid=3'><#lang key="html.menu.Setup.EnterKey" default="Enter License Key"></a>
+        </li>
+        <li style='<#hidefeedbacklink showinfreeware="true"> <#hidefornonadmins>'>
+          <a onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname,'');return false;"><#lang key="html.menu.Setup.Contact Support" default="Contact Support"></a>
+        </li>
+      </li>
+    </ul>
+  </li>
+</ul>

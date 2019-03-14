@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/prtg<#system type='usertheme'>.css?version=<#system type="version">" media="print,screen,projection" />
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+  <script src="/javascript/lib/jquery.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+  <script src="/javascript/_Prtg.Util.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+  <title><#lang key="html.traceroute.title" default="Traceroute">&nbsp;|&nbsp;<#system type="sitename"></title>
+</head>
+<body style="min-width:inherit;padding:10px;">
+<#checkobjecttype objecttype="device">
+<div>
+	<h1><#lang key="html.traceroute.title" default="Traceroute">&nbsp;<b><#objectproperty name="name"></b></h1>
+  <div id="content">
+    <div id="working"style="padding:10px 0 20px 0;"></div>
+ 		<div id="traceresult">
+      <center>
+        <div class="loading"></div>
+   			<br><br>&nbsp;<br>&nbsp;<b><#lang key="html.traceroute.performing" default="Performing Traceroute..."></b><br>&nbsp;<br><#lang key="html.traceroute.takeminutes" default="(This can take up to several minutes)">
+      </center>
+ 		</div>
+  </div>
+</div>
+<script>
+  $(function(){
+  	if(!!_Prtg.Util.getUrlVars()["id"]){
+      <#objectproperty name="Name" show="link" var="devicelink">
+      <#objectstatus name="probe" var="probename">
+  	  $("#working").html('<#langjs key="html.traceroute.tracetodevice" default="Traceroute to device @devicelink starting at Probe @probename:">');
+  	  $.ajax({
+        url:"/controls/traceroute.htm",
+        data:{ 
+          id:<#objectid>
+        },
+        timeout:600000
+      }).done(function(response){
+        $("#traceresult").html(response);
+      });
+  	}	else if (!!_Prtg.Util.getUrlVars()["ip"]) {
+  	  $("#working").html('<#langjs key="html.traceroute.tracelocal" default="Traceroute to {ip} via Local Probe:">'.printf(_Prtg.Util.getUrlVars()));
+      $.ajax({
+        url:"/controls/traceroute.htm",
+        data:{ 
+          id:1,
+          ip:_Prtg.Util.getUrlVars()["ip"]
+        },
+        timeout:600000
+      }).done(function(response){
+        $("#traceresult").html(response);
+      });
+  	} else 
+      $("#traceresult").html('<#langjs key="html.traceroute.nothing" default="Nothing to do...">');
+  });
+</script>
+</body>
+</html>

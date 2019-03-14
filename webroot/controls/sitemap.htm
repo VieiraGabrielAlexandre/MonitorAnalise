@@ -1,0 +1,56 @@
+﻿<div class="sitemap">
+	<ul id="sitemaplist">
+		<li><a href="/home"><#lang key="html.menu.Home" default="Home"></a>
+			<ul>
+				<li><a href="/dashboard.htm"><#lang key="html.menu.Home.Dashboard1" default="Dashboard 1"></a></li>
+				<li><a href="/dashboard2.htm?id=0"><#lang key="html.menu.Home.Dashboard2" default="Dashboard 2"></a></li>
+				<li class="menudivider"><a href="/dashboard3.htm?id=0"><#lang key="html.menu.Home.Dashboard3" default="Dashboard 3"></a></li>
+				<li><a href="/sitemap.htm"><#lang key="html.menu.Home.Sitemap" default="Sitemap"></a></li>
+				<li class="menudivider"></li>
+				<li><a href="/welcome.htm"><#lang key="html.menu.Home.welcome" default="Welcome to PRTG"></a></li>
+				<li><#lang key="html.menu.Home.makethishomepage" default="Make This My Homepage"></li>
+			</ul>
+		</li>
+		<#menu>
+		<li  style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'><a href="/setup.htm"><#lang key="html.menu.Setup" default="Setup"></a>
+			<ul>
+				<li class='menudivider'><a href='/setup.htm'><#lang key="html.menu.Setup.Overview" default="Overview"></a></li>
+				<li><a href='/myaccount.htm'><#lang key="html.menu.Setup.AccountSettings" default="Account Settings"></a>
+					<ul>
+						<li class='menudivider'><a href="/myaccount.htm"><#lang key="html.menu.Setup.MyAccount" default="My Account"></a></li>
+						<li><a href='/myaccount.htm?tabid=2'><#lang key="html.menu.Setup.Notifications" default="Notifications"></a></li>
+						<li><a href='/myaccount.htm?tabid=3'><#lang key="html.menu.Setup.Schedules" default="Schedules"></a></li>
+					</ul>
+				</li>
+				<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/systemsetup.htm'><#lang key="html.menu.Setup.Sysadmin" default="System Administration"></a>
+					<ul>
+						<li class='menudivider' style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/systemsetup.htm'><#lang key="html.menu.Setup.SystemSetup" default="System & Website"></a></li>
+						<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/systemsetup.htm?tabid=2'><#lang key="html.menu.Setup.notificationdelivery" default="Notification Delivery"></a></li>
+						<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/systemsetup.htm?tabid=3'><#lang key="html.menu.Setup.probes" default="Probes"></a></li>
+						<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/systemsetup.htm?tabid=4'><#lang key="html.menu.Setup.UserAccounts" default="User Accounts"></a></li>
+						<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">' class='menudivider'><a href='/systemsetup.htm?tabid=5'><#lang key="html.menu.Setup.UserGroups" default="User Groups"></a></li>
+					</ul>
+				</li>
+				<li class='menudivider' style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/status.htm'><#lang key="html.menu.status2" default="PRTG Status"></a>
+					<ul>
+						<li class='menudivider' style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/status.htm'><#lang key="html.menu.Setup.SystemStatus2" default="System Status"></a></li>
+						<li style='<#clusterdependent showfor="clusterinstallation"> <#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/status.htm?tabid=2'><#lang key="html.menu.Setup.ClusterStatus" default="Cluster Status"></a></li>
+					</ul>
+				</li>
+				<li><a href='/downloads.htm'><#lang key="html.menu.Setup.Downloads" default="Downloads"></a>
+					<ul>
+						<li><a href='/downloads.htm'><#lang key="html.menu.setup.downloadwingui" default="PRTG Enterprise Console"></a></li>
+						<li><a href='/downloads.htm?tabid=2'><#lang key="html.menu.setup.downloadiosandoid" default="Apps for iOS & Android"></a></li>
+						<li><a href='/downloads.htm?tabid=3'><#lang key="html.menu.setup.downloadremoteprobe" default="Remote Probe Installer"></a></li>
+						<li><a href='/downloads.htm?tabid=4'><#lang key="html.menu.setup.downloadaddons" default="PRTG Add-Ons"></a></li>
+					</ul>
+				</li>
+				<li style='<#hidefornonadmins> <#system type="hideforreadonlyusers">'><a href='/api.htm'><#lang key="html.menu.Setup.prtgapi" default="PRTG API"></a></li>
+				<li class="menudivider" style='<#hidefornonadmins> <#hideforpod> <#system type="hideforreadonlyusers">'><a href='/autoupdate.htm'><#lang key="html.menu.Setup.autoupdate" default="Software Auto-Update"></a></li>
+				<li style='<#hidefornonadmins> <#hideforpod> <#system type="hideforreadonlyusers">'><a href='/licensing.htm?tabid=3'><#lang key="html.menu.Setup.EnterKey" default="Enter License Key"></a></li>
+			</ul>
+		</li>
+		<li><a href="/help.htm"><#lang key="html.menu.helpcenter" default="Help Center"></a></li>
+		<li><a href="/index.htm?logout=1"><#lang key="html.menu.Logout" default="Logout"></a></li>
+	</ul>
+</div>

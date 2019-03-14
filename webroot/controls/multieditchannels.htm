@@ -1,0 +1,29 @@
+﻿<#lang key="html.channels.help.title" default="Sensor Channel Settings" var="helptitle">
+<#lang key="html.channels.help.text" default="A sensor has one or more channels. This page allows to edit various settings for each channel, including value display, line color, as well as warning and alarm limits.<br><br><a href='/help/sensor_channels_settings.htm' target='_blank'><b>Help: Channels Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+<div>
+	<form id="myform" class="prtg-form prtg-plugin" data-plugin="channels" data-template="channels.htm" data-objectid="<#objectid>" data-container="#channelscontainer">
+		<fieldset>
+			<legend class="prtg-header"><#lang key="html.selectchannel.title" default="Select Channel"></legend>
+			<div class="control-group">
+				<label for="channelsdropdown" class="control-label has_help "><#lang key="html.editchannels.wiz" default="Channel"></label>
+				<div class="controls" title="<#lang key="html.selectchannel.wizhelpmultiselect" default="Please select a channel. You can select multiple channels of the same kind by pressing the CTRL-Key, or all channels of the same kind by pressing the SHIFT-Key while clicking.">">
+					<select name="channel" id="channelsdropdown" size="6" multiple="multiple">
+						<#channellist>
+					</select>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	<div id="channelscontainer" class="prtg-form">
+		<fieldset>
+			<legend class="prtg-header"><#lang key="html.channels.title" default="Edit Channel"></legend>
+			<div class="control-group">
+				<div class="controls">
+					<#lang key="html.channels.pleaseselect" default="Please select a channel above!">
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</div>

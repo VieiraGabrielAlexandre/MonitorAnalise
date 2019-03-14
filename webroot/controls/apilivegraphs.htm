@@ -1,0 +1,135 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">Using Live Sensor Graphs from PRTG in Other Web Pages</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>
+            PRTG renders graphs as PNG or SVG files. You can include them in other web pages. The URL for a graph looks like this:
+        <ul class="apicalls">
+            <li>
+                Live Graph as PNG:
+                <pre><b>/chart.png</b>?type=graph&width=300&height=160&graphid=2&id=0</pre>
+            </li>
+            <li>
+                Live Graph as SVG:
+                <pre><b>/chart.svg</b>?type=graph&width=300&height=160&graphid=2&id=0</pre>
+            </li>
+        </ul>
+        <p>
+            To switch between PNG and SVG, just change the file extension of <b>/chart</b> to <b>.png</b> or <b>.svg</b>.
+        </p>
+        <p>
+            <b>Note:</b> The URL does not start with
+            <b>/api</b>
+            . For authentication please also add username and password/passhash to the URL.
+            When placing these URLs on web pages, keep in mind that the URLs contain the account username and password/passhash.
+            This can imply security concerns. We recommend that you set up a dedicated "read-only" user account in PRTG which is member of a
+            dedicated user group, for example, that only has "read" rights for the root group and all underlying entries or, even better,
+            only for the object ids that are used for graph URLs.
+        </p>
+        <h2>Parameters for Live Graph URLs (chart.png or chart.svg):</h2>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th>
+                <b>Parameter</b>
+            </th>
+            <th>
+                <b>Description</b>
+            </th>
+            </thead>
+            <tr class="odd">
+                <td>type</td>
+                <td>Must be "graph".</td>
+            </tr>
+            <tr class="even">
+                <td>graphid</td>
+                <td>
+                    Selects time span of the graph: 0=live, 1=last 48 hours, 2=30 days, 3=365 days
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>width</td>
+                <td>Width of the image in pixels</td>
+            </tr>
+            <tr class="even">
+                <td>height</td>
+                <td>Height of the image in pixels</td>
+            </tr>
+            <tr class="odd">
+                <td>id</td>
+                <td>
+                    The object ID of the desired graph object. This is usually the ID of a sensor.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>graphstyling</td>
+                <td>
+                    Allows to control some graph styles:
+                    <br>
+                    Display legend: graphstyling=showLegend%3D%271%27
+                    <br>
+                    Hide legend: graphstyling=showLegend%3D%270%27
+                    <br>
+                    Control font size: graphstyling=baseFontSize%3D%27XX%27 (xx is the font size)
+                    <br>
+                    Control legend and font size at the same time: graphstyling=showLegend%3D%271%27+baseFontSize%3D%275%27
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>bgcolor</td>
+                <td>
+                    Background color of PNG image, for example, #fffff (value must be URL encoded, for example, %23fffff). This affects the area that surrounds the graph.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>plotcolor</td>
+                <td>
+                    Color of graph's plot area, for example, #fffff (value must be URL encoded, for example, %23fffff). This affects the whole area within the graph box.
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>plotcolor1</td>
+                <td>
+                    Alternating color of graph's plot area, for example, #fffff (value must be URL encoded, for example, %23fffff). This affects the tiles within the graph box
+                    alternating with "plotcolor2". The result is a striped graph box.
+                    This parameter is overwritten when using the parameter "plotcolor".
+                </td>
+            </tr>
+            <tr class="even">
+                <td>plotcolor2</td>
+                <td>
+                    Alternating color of graph's plot area, for example, #fffff (value must be URL encoded, for example, %23fffff). This affects the tiles within the graph box
+                    alternating with "plotcolor1". The result is a striped graph box.
+                    This parameter is overwritten when using the parameter "plotcolor".
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>gridcolor</td>
+                <td>
+                    Color of gridlines in graph's plot area, for example, #fffff (value must be URL encoded, for example, %23fffff). This affects the horizontal and vertical lines
+                    within the graph box.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>hide</td>
+                <td>
+                    Do not show defined channels in the graph. Use the ID of a channel to hide it. For example, use hide=-4 to not show the downtime channel in the graph. To hide
+                    more than one channel, use commas to separate the IDs.
+                </td>
+            </tr>
+        </table>
+        <h2>Retrieving Chart Legends (JSON):</h2>
+        <p>
+            You can show the legend of a sensor graph (channel IDs, colors, units, channel names) in JSON format:
+        <ul class="apicalls">
+            <li>
+                Graph Legend as JSON:
+                <pre><b>/api/chartlegend.json</b>?id=sensorid</pre>
+            </li>
+        </ul>
+        </p>
+    </div>
+</div>

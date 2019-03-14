@@ -1,0 +1,15 @@
+﻿    <ul>
+      <li><span><#lang key="html.systemstatus.LicenseInfo.Activation.Status" default="License Status"></span><span><b class='licenseStatus-<#system type="activationcolor">'><#system type="licensemsg" skiptagfornonadmins='true'></b></span></li>
+      <li><span><#lang key="html.systemstatus.licensee" default="License Name"></span><span><#system type="licensee" skiptagfornonadmins='true'></span></li>
+      <li><span><#lang key="html.systemstatus.key" default="License Key"></span><span><#system type="licensekey" skiptagfornonadmins='true'></span></li>
+      <li><span><#lang key="html.systemstatus.systemid" default="System ID"></span><span><#system type="systemid"></span></li>
+      <li><span><#lang key="html.systemstatus.edition" default="Licensed Edition"></span><span><#system type="edition" skiptagfornonadmins='true'></span></li>
+      <li><span><#lang key="html.systemstatus.lastupdate" default="Last Update"></span><span><#system type="activationtime" skiptagfornonadmins='true'></span></li>
+      <li style="<#system type="editiondependedhtml" freeversiononly="display:none"><#system type="editiondependedhtml" trialversiononly="display:none">">
+        <span><#lang key="html.systemstatus.maintuntil" default="Maintenance until"></span><span><#system type="maintenancedate" skiptagfornonadmins='true'> (<#system type="maintenanceshort" skiptagfornonadmins='true'> <#lang key="html.systemstatus.daysleft" default="days left">)</span>
+      </li>
+      <li><span><#lang key="html.systemstatus.numsensors" default="Number of Sensors"></span><span><#system type="maxsensorcount" skiptagfornonadmins='true'>&nbsp;&nbsp;&nbsp;
+        <a style='<#hidefornonadmins> <#hideforpod> <#system type="isunlimitedlicense" codeif="display: none;">' class="smallactionbutton" href="https://www.paessler.com/order" target="_blank"><#lang key="html.systemstatus.needmore" default="Need more sensors? Click here to upgrade!"></a>
+        <a style='<#hidefornonadmins> <#hidefornonpod> <#system type="isunlimitedlicense" codeif="display: none;">' class="smallactionbutton" href="https://my-prtg.com/" target="_blank"><#lang key="html.systemstatus.needmore" default="Need more sensors? Click here to upgrade!"></a>
+      </li>
+    </ul>

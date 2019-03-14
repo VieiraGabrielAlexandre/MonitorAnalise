@@ -1,0 +1,18 @@
+﻿<!--Status Icons: Name and status (default background, XL)-->
+
+<div class="map_object map_icon map_icon_large mapicon_status_white" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="topleftcoordinates" subid="<@subid>" mode="<@editmode>">">
+	<#mapobject type="objectgrip" mode="<@editmode>">
+	<#mapobject type="htmlbefore" subid="<@subid>">
+  <span class="fll">
+		<span class="label"><#objectproperty name="Name" id="<@objectid>">:</span>
+		<#objectstatus name="downsens" id="<@objectid>">
+		<#objectstatus name="partialdownsens" id="<@objectid>">
+		<#objectstatus name="downacksens" id="<@objectid>">
+		<#objectstatus name="warnsens" id="<@objectid>">
+		<#objectstatus name="upsens" id="<@objectid>">
+		<#objectstatus name="pausedsens" id="<@objectid>">
+		<#objectstatus name="unusualsens" id="<@objectid>">
+		<#objectstatus name="undefinedsens" id="<@objectid>">
+	</span>
+	<#mapobject type="htmlafter" subid="<@subid>">
+</div>

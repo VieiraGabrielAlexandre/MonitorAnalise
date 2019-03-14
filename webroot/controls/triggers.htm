@@ -1,0 +1,17 @@
+﻿<#system type="denyreadonlyusers">
+<p>
+<#lang key="html.triggers.triggersdefine" default="<b>Triggers</b> define certain sensor value thresholds (e.g. more than 5Mbit/s) or sensor events (e.g. failure, warning, timeout, success) that will trigger notifications (see above). After creating triggers here you can select them from the group, device and sensor settings pages.">
+</p>
+  <div  class="prtg-plugin" data-plugin="prtg-table">
+	  <#table tableid="triggertable"
+		   content="triggers"
+		   userid="<#userid>"
+		   columns="name,type,links"
+		   count="all"
+		   sortby="name"
+		   sortable="true"
+		   links="true"
+		   refreshable="true">
+	</div>
+<p><a class="actionbutton" href="/addtrigger.htm"><span class="ui-icon ui-icon-circle-plus"></span><#lang key="html.triggers.addnew" default="Add new trigger"></a></p>
+

@@ -1,0 +1,160 @@
+﻿/* CSS styles for _Prtg.Sysinfo plugin */
+.prtg-sysinfo {
+  position: relative;
+}
+
+.prtg-sysinfo > h3 {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+
+.prtg-sysinfo h3 > a {
+  float: right;
+  outline: 0;
+  width: 16px;
+  height: 16px;
+  margin: 3px 0px;
+}
+
+.prtg-sysinfo h3 > a.invisible {
+  visibility: hidden;
+  display: inline-block;
+}
+
+.prtg-sysinfo h3 > small {
+  float: right;
+  margin-right: 5px;
+}
+
+.prtg-sysinfo .panel > .panel-card {
+  flex: 0 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+.prtg-sysinfo .panel > .panel-card > .card {
+  padding: 5px;
+  background-color: #F3F2F2;
+}
+
+.prtg-sysinfo .prtg-plugin-initialized,
+.prtg-sysinfo .prtg-plugin {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.prtg-sysinfo error {
+/* background-image: url(/images/no_data.jpg);
+  background-repeat: no-repeat !important;
+  background-position: center top; */
+  height: 300px;
+  max-height: 300px;
+  display: inline-block;
+  text-align: center;
+  /* padding: 85px 20px; */
+  /* line-height: 20px; */
+  width: 100%;
+  padding-top:50px;
+}
+
+.prtg-sysinfo error .no_data{
+  color: #C6C6C6;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.prtg-sysinfo error > img {
+  height:30%;
+  margin-top:25px;
+}
+
+.prtg-sysinfo error > message {
+  display: inline-block;
+  /* font-weight: bold; */
+  width:100%;
+  /* margin-left:5%;
+  margin-right:5%; */
+  font-style:normal;
+  text-align: left;
+  bottom:20px;
+  position:absolute;
+  left:0px;
+}
+
+.prtg-sysinfo error > message > ul{
+  margin-left:0px;
+  width:100%;
+  padding-right:20px;
+  padding-left:25px;
+}
+
+table.sysinfo {
+  margin-top: 0px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+table.sysinfo td:first-child {
+  min-width: 50%;
+  width: 50%;
+}
+
+table.sysinfo td.col-state {
+  white-space: nowrap;
+}
+
+table.sysinfo td.col-properties a {
+  cursor: pointer;
+  color: <#colorcode color='linkcolor'>;
+}
+
+table.sysinfo td.col-caption {
+  max-width: 103px;
+  white-space: nowrap;
+}
+
+table.sysinfo td.col-properties a:after {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+table.sysinfo td.col-properties a:after {
+  content: url('../css/images/arrow_down.png');
+}
+
+table.sysinfo td.col-properties a.folded:after {
+  content: url('../css/images/arrow_up.png');
+}
+
+table.sysinfo td.col-properties ul {
+  margin: 0;
+  padding: 0px 20px;
+}
+
+.loading-overlay {
+  /* display: none; */
+  position: absolute;
+  z-index: 1;
+  right: 3px;
+  top: 9px;
+  width: 30px;
+  height: 20px;
+  /* background-color: rgba(255,255,255,0.4); */
+  background-image: url(/images/ajax-loader-small.gif) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+  cursor: progress;
+}
+
+.checknow{
+	background-image: url(images/ui-icons_454545_256x240_thick.png);
+}
+
+.checknow.no_probe{
+  cursor:not-allowed;
+  opacity: 0.5;
+}

@@ -1,0 +1,70 @@
+﻿<div class="inline">
+<!--   <div class="prtg-plugin" data-plugin="prtg-datetimepicker" data-timepicker="true"></div>
+  <div class="prtg-plugin" data-plugin="prtg-datetimepicker" data-timepicker="true"></div> -->
+  <form action="" method="get" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+    <fieldset>
+      <legend class="prtg-header">Date Range</legend>
+      <div class="control-group">
+        <label for="edate" class="control-label no_help"></label>
+        <div class="controls">
+          <div class="">
+            <div class="fll inlinedatepicker">
+              Start Date<br>
+              <input class="text datetimepickerinput" type="text" name="manual_period_start" id="sdate">
+              <div class="datetimepicker dt_start" for="sdate"></div>
+            </div>
+            <div class="fll inlinedatepicker">
+              End Date<br>
+              <input class="text datetimepickerinput" type="text" name="manual_period_end" id="edate">
+              <div class="datetimepicker dt_end" for="edate"></div>
+            </div>
+          </div>
+        </div>
+        <label for="edate" class="control-label no_help"><#lang key="html.historicsensordata.wiz2quickrange" default="Quick Range"></label>
+        <div class="controls">
+          <div class="historicrangeselectors prtg-plugin" data-plugin="prtg-datetimequickrange" data-mode="inline" data-sfield="sdate" data-endfield="edate">
+            <ul>
+              <li><a href="" range="0a"><#lang key="html.historicsensordata.todayrange" default="Today"></a></li>
+              <li><a href="" range="1a"><#lang key="html.historicsensordata.yesterdayrange" default="Yesterday"></a></li>
+              <li><a href="" range="0w"><#lang key="html.historicsensordata.lastweekmorange" default="Last Week (Mo-Su)"></a></li>
+              <li><a href="" range="1w"><#lang key="html.historicsensordata.lastweeksorange" default="Last Week (Su-Sa)"></a></li>
+              <li><a href="" range="1l"><#lang key="html.historicsensordata.lastmonthrange" default="Last Month"></a></li>
+              <li><a href="" range="2l"><#lang key="html.historicsensordata.last2monthrange" default="2 Months"></a></li>
+              <li><a href="" range="6l"><#lang key="html.historicsensordata.last6monthrange" default="6 Months"></a></li>
+              <li><a href="" range="12l"><#lang key="html.historicsensordata.last12monthrange" default="12 Months"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <label class="control-label no_help" for="udpmessages-sourcefilter">Source</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-sourcefilter udpmessages-filterfield" filtername="source" id="udpmessages-sourcefilter"/>
+        </div>
+
+        <label class="control-label no_help" for="udpmessages-hostnamefilter">Hostname</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-hostnamefilter udpmessages-filterfield" filtername="hostname" id="udpmessages-hostnamefilter"/>
+        </div>
+
+        <label class="control-label no_help" for="udpmessages-hostnamefilter">Tag</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-tagfilter udpmessages-filterfield" filtername="tag" id="udpmessages-tagfilter"/>
+        </div>
+
+        <label class="control-label no_help" for="udpmessages-hostnamefilter">App Name</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-appnamefilter udpmessages-filterfield" filtername="appname" id="udpmessages-appnamefilter"/>
+        </div>
+
+        <label class="control-label no_help" for="udpmessages-hostnamefilter">Proc Id</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-procidfilter udpmessages-filterfield" filtername="procid" id="udpmessages-procidfilter"/>
+        </div>
+
+        <label class="control-label no_help" for="udpmessages-hostnamefilter">Msg Id</label>
+        <div class="controls">
+          <input type="text" class="udpmessages-msgidfilter udpmessages-filterfield" filtername="msgid" id="udpmessages-msgidfilter"/>
+        </div> -->
+      </div>
+    </fieldset>
+  </form>
+</div>

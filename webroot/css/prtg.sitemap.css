@@ -1,0 +1,86 @@
+﻿.sitemap ul
+{
+	padding:0;
+	margin:0;
+}
+.sitemap ul li
+{
+	margin-left:0;
+	padding:0;
+	list-style: none;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.sitemap ul li a
+{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	display:block;
+}
+
+
+#sitemaplist #sensorsmenuitem
+{
+	width:490px;
+}
+.sitemap > ul > li,
+#sitemaplist #sensorsmenuitem>ul>li
+{
+	padding: 5px;
+	width:150px;
+	float:left;
+	background-color: #fff;
+  border-radius: 5px;
+	font-size: 18px;
+	font-weight: normal;
+	list-style-type: none;
+	margin-bottom: 35px;
+	margin-right: 15px;
+	padding: 5px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+#sitemaplist #sensorsmenuitem>ul>li
+{
+	margin-right:10px;
+}
+
+.sitemap > ul > li li
+{
+	padding-bottom:2px;
+	font-size: 13px;
+	font-weight: normal;
+}
+.sitemap > ul > li li li
+{
+	font-size: 10px;
+	padding-left:5px;
+	font-weight: normal;
+}
+.sitemap >ul> li >ul >li.menudivider
+{
+	margin-bottom: 12px;
+}
+.sitemap > ul li:hover
+{
+	background-color: <#colorcode color="midgray">;
+  box-shadow: 0 0 2px #777777 inset;
+}
+.sitemap > ul ul li:hover
+{
+	background-color: <#colorcode color="lightgray">;
+}
+.sitemap  > ul ul ul li:hover
+{
+	background-color: #fff;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.sitemap .ui-icon
+{
+  display:none;
+}
+

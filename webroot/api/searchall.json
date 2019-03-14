@@ -1,0 +1,25 @@
+{ "probenodes":
+  <#search output="json" refreshable="true"  searchtype="probenode" maxcount=1000 columns="name,basetype,objid,upsens=textraw,partialdownsens=textraw,undefinedsens=textraw,unusualsens=textraw,pausedsens=textraw,warnsens=textraw,downsens=textraw,downacksens=textraw,probegroupdevice=treejson" noraw="1" nonefound="null">, 
+  "groups":
+  <#search output="json" refreshable="true"  searchtype="group" maxcount=1000 columns="name,basetype,group,probe,objid,upsens=textraw,partialdownsens=textraw,undefinedsens=textraw,unusualsens=textraw,pausedsens=textraw,warnsens=textraw,downsens=textraw,downacksens=textraw,probegroupdevice=treejson" noraw="1" nonefound="null">, 
+  "devices":
+  <#search output="json" refreshable="true" searchtype="device" maxcount=1000 columns="name,basetype,group,probe,objid,upsens=textraw,partialdownsens=textraw,undefinedsens=textraw,unusualsens=textraw,pausedsens=textraw,warnsens=textraw,downsens=textraw,downacksens=textraw,probegroupdevice=treejson" noraw="1" nonefound="null">,
+  "sensors":
+  <#search output="json" refreshable="true" searchtype="sensor" maxcount=1000 columns="name,status,lastvalue,sensor,message,objid,probe,group,device,probegroupdevice=treejson" noraw="1" nonefound="null">,
+  "reports":
+  <#search output="json" refreshable="true" searchtype="report" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">, 
+  "maps":
+  <#search output="json" refreshable="true" searchtype="map" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">, 
+  "libraries":
+  <#search output="json" refreshable="true" searchtype="library" maxcount=1000 columns="name,library,objid" noraw="1" nonefound="null">, 
+  "notifications":
+  <#search output="json" refreshable="true" searchtype="notification" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">,
+  "schedules":
+  <#search output="json" refreshable="true" searchtype="schedule" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">,
+  "users":
+  <#search output="json" refreshable="true" searchtype="user" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">, 
+  "usergroups":
+  <#search output="json" refreshable="true" searchtype="usergroup" maxcount=1000 columns="name,objid" noraw="1" nonefound="null">,
+  "tickets":
+  <#search output="json" refreshable="true" searchtype="ticket" maxcount=1000 columns="basetype,datetime,priority,parentid,message=textraw,user,status,name,objid,tickettype,type,usertime" noraw="1" nonefound="null">  
+}

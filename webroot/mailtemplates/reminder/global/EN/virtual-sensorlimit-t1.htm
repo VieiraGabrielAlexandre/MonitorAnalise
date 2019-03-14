@@ -1,0 +1,15 @@
+﻿<html lang="en" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Please use a physical machine. Yes, really!</title>
+</head>
+<body>
+<p>Here is a note from your PRTG Network Monitor server: <span style="color:d71920;"><strong>your PRTG server currently monitors <#objectstatus name="totalsens" show="textraw" id="0"> sensors while running on a virtualized system</strong></span>. We highly recommend that you <a href="https://kb.paessler.com/en/topic/413-how-can-i-move-migrate-my-prtg-installation-to-another-computer?utm_source=prtgtrial&utm_medium=email&utm_campaign=m-thread&utm_content=mttCommercial_Reaches_2500Sensors_VM">migrate from a virtual machine to bare metal</a> if you can. This will likely <strong>improve performance and reliability</strong> of your PRTG installation.</p><br />
+<p>There are several reasons why we recommend that you run PRTG (core server and remote probes) on real hardware, especially for <#objectstatus name="totalsens" show="textraw" id="0"> sensors.</p><br />
+<p>Each sensor request will have to go through many virtualization layers, which costs performance and makes measurements less exact. In our experience, a physical machine simply works best for a thousand sensors and more. Our recommendation to use real hardware is valid for the PRTG core server and for remote probes.</p><br />
+<p>Please see our <a href="https://www.paessler.com/manuals/prtg/detailed_system_requirements?utm_source=prtgtrial&utm_medium=email&utm_campaign=m-thread&utm_content=mttCommercial_Reaches_2500Sensors_VM#size">system requirements</a> for size recommendations and our <a href="https://kb.paessler.com/en/topic/49193-i-run-prtg-on-vmware-how-can-i-obtain-best-performance?utm_source=prtgtrial&utm_medium=email&utm_campaign=m-thread&utm_content=mttCommercial_Reaches_2500Sensors_VM">Checklist for running PRTG on VMware</a>.</p><br />
+<p><strong>If you must run PRTG on a virtual machine, we recommend to stay below 2,500 sensors</strong> per virtual machine (above 5,000 are not supported) and consider running several PRTG core server instances instead.</p><br />
+
+<p>Thanks for using PRTG!</p>
+</body>
+</html>

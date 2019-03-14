@@ -1,0 +1,90 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.adddevice.title" default="Add Device" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+ <#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content">
+		<form id="addobjectdialogform" action="adddevice.htm" method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+			<h1><#lang key="html.adddevice0.head" default="Add Device"></h1>
+			<div class="eye-catcher"></div>
+			<div class="cancel-action">
+				<a onClick="history.back();return(false)" class="btn cancel" type="reset">
+					<#lang key="html.global.cancel" default="Cancel"/>
+				</a>
+			</div>
+			<fieldset class="selectgroupfordevice">
+				<legend class="prtg-header"><#lang key="html.adddevice0.pleasechooseagroup" default="Please choose a group to add the new device to"></legend>
+				<div class="control-group">
+					<div class="controls">
+						<div class="radio-control">
+							<input type="radio" class="hidden radio GroupShowHide" name="selection" value="1" id="UseNew" >
+							<label for="UseNew" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.adddevice0.createnewgroup" default="Create a new group"></label>
+							<input type="radio" class="hidden radio GroupShowHide" name="selection" value="0" id="UseExisting"  checked>
+							<label for="UseExisting" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.adddevice0.adddevicetoexistinggroup" default="Add device to an existing group"></label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="ShowUseExisting HideUseNew">
+				<legend class="prtg-header"><#lang key="html.adddevice0.pleaseselectagroupfromlist1" default="Select a Group from the List"></legend>
+				<div class="control-group">
+					<div class="controls fillwidth">
+						<p class="controls-info">
+							<span class="readonlyproperty">
+								<#lang key="html.adddevice0.pleaseselectagroupfromlist2" default="Select a group from the list. Tip: You can create new devices much faster by right-clicking a group and choosing <b>Add Device</b> from the context menu.">
+              				</span>
+						</p>
+					</div>
+				</div>
+				<div class="control-group">
+					<!-- <label class="control-label no_help" for="hostid"><#lang key="html.global.search2" default="Search..."></label> -->
+					<div class="controls fillwidth">
+	          			<div class="searchbox">
+							<i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+							<input id="objtreesearch" type="text" data-placement="top" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">"  name="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">">
+						</div>
+						<div class="prtg-plugin objectselector"
+							style="height:400px"
+							id="objectSelectorTree"
+							data-allowone="1"
+							data-plugin="objectselector"
+							data-branch="<#inserturlparam parameter="preselect">">
+                <!--
+                {
+                  "tree": <#selectionlist content='groupsanddevices_as_json'
+										id='0'
+										groups='1'
+										hidedevices='1'
+										probes='1'
+										allowroot='0'
+										altformat='1'>
+								}
+								-->
+						</div>
+						<input data-validate-related="#objectSelectorTree" class="fieldrequired {required:true} invisible" id="groupdevid" name="id" type="text">
+					</div>
+				</div>
+			</fieldset>
+			<div style='<#system type="hideforreadonlyusers">' class='quick-action-wrapper ShowUseExisting HideUseNew <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'>
+				<button class="submit btngrey button quick-action-button" type="submit"><#lang key="html.global.continue" default="Continue"></button>
+				<button type="submit" class="ui-icon quick-action-badge quick-continue"></button>
+			</div>
+			<div  style='<#system type="hideforreadonlyusers">' class="quick-action-wrapper HideUseExisting ShowUseNew InitialDisplayNone">
+				<button class="submit btngrey button button quick-action-button" type="submit" onClick="window.top.location.href = '/addgroup0.htm';return false;"><#lang key="html.global.continue" default="Continue"></button>
+				<button type="submit" class="ui-icon quick-action-badge quick-continue"></button>
+	 		</div>
+		</form>
+	</div>
+	<#lang key="html.adddevice0.help.title" default="Add a New Device" var="helptitle">
+	<#lang key="html.adddevice0.help.text" default="In PRTG, devices carry one or more sensors. They are organized in groups. Devices and their sensors can use various inherited settings, such as scanning intervals, credentials, etc." var="helptext">
+	<#system type='showhelp' var='showhelp'>
+	<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+
+	<#lang key="html.adddevice0add.helptitle" default="Choose Parent" var="helptitle">
+	<#lang key="html.adddevice0add.helptext" default="Choose a parent probe or group for the device.<br><br><a href='/help/add_a_device.htm' target='_blank'><b>Help: Add a Device</b></a>" var="helptext">
+	<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

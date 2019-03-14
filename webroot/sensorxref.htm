@@ -1,0 +1,36 @@
+﻿<#lang key="html.sensorxref.title" default="Sensor Cross Reference" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div class="sensorxref-main-container" id="main" data-title="<#pagetitle> <#objectproperty name="name">" data-contexthelpshow="<#system type='showhelp'>">
+	<#lang key="html.sensorxref.head2" default="Sensor Cross Reference @objectname" var="title">
+  <div id="content" class="table-wrapper">
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+ 	  <div class="prtg-plugin" data-plugin="prtg-table">
+			<#table tableid="sensortable"
+				content="sensorxref"
+				columns="type,probegroupdevice,sensor,priority,favorite,intervalx,access,notifiesx,schedule,dependency,checkbox"
+				tools="edit,pause,fave,prio,scan,delete"
+				sortby="probegroupdevice"
+				sortable="true"
+				refreshable="true"
+				tabletitle="@title"
+				filters="words!@titlesmall,objects!data-filtername='id'|data-inputname='id'|data-rootid='0'|data-onlysensors='0'|data-sensors='0'|data-hidesensors='true'|data-devices='0'|data-hidedevices='0'|data-groups='1'|data-required=''|data-probes='1'|data-allownone='1'|data-allowone='1'|data-allowself='1'|data-allowroot='1',tags"
+			varexpand="tabletitle,filters">
+	</div>
+  </div>
+<#lang key="html.sensorxref.help.title" default="Sensors" var="helptitle">
+<#lang key="html.sensorxref.help.text" default="This page shows a cross-reference list of all sensors. It helps to manage inheritance, dependencies, intervals, etc. for a large number of sensors simultaneously." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+

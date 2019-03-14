@@ -1,0 +1,38 @@
+﻿
+<div class="multieditsearchresult">
+    <#lang key="html.global.probes" default="Probes" var="probes">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_probes" varexpand="tabletitle" tabletitle="@probes" searchtype="probenode" columns="name,checkbox" tools="edit,delete,scan,pause" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.groups" default="Groups" var="groups">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_groups" varexpand="tabletitle" tabletitle="@groups" searchtype="group" columns="group,probe,checkbox" tools="edit,delete,scan,pause" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.devices" default="Devices" var="devices">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_devices" varexpand="tabletitle" tabletitle="@devices" searchtype="device" columns="device,group,probe,checkbox" tools="edit,discover,delete,scan,pause" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.sensors" default="Sensors" var="sensors">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_sensors" varexpand="tabletitle" tabletitle="@sensors" searchtype="sensor" columns="name,probegroupdevice,status,lastvalue,message,checkbox" tools="edit,delete,scan,pause" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.reports" default="Reports" var="reports">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_reports" varexpand="tabletitle" tabletitle="@reports" searchtype="report" columns="name,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.maps" default="Maps" var="maps">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_maps" varexpand="tabletitle" tabletitle="@maps" searchtype="map" columns="name,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.libraries" default="Libraries" var="libs">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_libs" varexpand="tabletitle" tabletitle="@libs" searchtype="library" columns="name,library,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.notificationtemplates" default="Notification Templates" var="notifications">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_notifications"  varexpand="tabletitle" tabletitle="@notifications" searchtype="notification" columns="name,checkbox" tools="edit,delete,pause" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.schedules" default="Schedules" var="schedules">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_schedules"  varexpand="tabletitle" tabletitle="@schedules" searchtype="schedule" columns="name,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.users" default="Users" var="users">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_users" varexpand="tabletitle" tabletitle="@users" searchtype="user" columns="name,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.usergroups" default="User Groups" var="usergroups">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_usergroups" varexpand="tabletitle" tabletitle="@usergroups" searchtype="usergroup" columns="name,checkbox" tools="edit,delete" extraclass="searchresulttable"></div>
+
+    <#lang key="html.global.tickets" default="Tickets" var="tickets">
+    <div class="prtg-plugin" data-plugin="prtg-table"><#search refreshable="true" tableid="searchresult_tickets" varexpand="tabletitle" tabletitle="@tickets" searchtype="ticket" columns="datetime,priority,parentid,message,user,status,name" extraclass="searchresulttable"></div>
+</div>

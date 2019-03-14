@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html class="<#htmlclass>">
+<!--
+ _____  _______ _______ _______ _______        _______  ______
+|_____] |_____| |______ |______ |______ |      |______ |_____/
+|       |     | |______ ______| ______| |_____ |______ |    \_
+
+We are hiring software developers! https://www.paessler.com/jobs
+
+-->
+<head>
+  <link rel="manifest" href="/public/manifest.json.htm">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <#system type="browserdependent" browsertype="iphone" browsercontent="<meta name='viewport' content='width=600'>" alternatecontent="<meta name='viewport' content='width=device-width, height=device-height, initial-scale=0.8'>">
+  <#system type="faviconbystate">
+  <title><#pagetitle> | <#system type="sitename"></title>
+  <link rel="stylesheet" type="text/css" href="/css/prtgmini.css?prtgversion=<#system type="version">__" media="print,screen,projection" />
+
+  <#comment Die Adressleiste bei iPhone nach oben wegscrollen>
+  <#system type="browserdependent" browsertype="iphone" browsercontent="<script type='text/javascript'>window.addEventListener('load', function() {setTimeout(scrollTo, 0, 0, 1)}, false);</script>">
+
+  <#style> <#comment Style Overrides that may come in via Include Tag>
+  <#base> <#comment Head/Basehref etc. overrides that may come in via Include Tag>
+  <#metarefresh>
+  <#googleanalytics>
+</head>
+<body id="mainbody" class="systemmenu <#bodyclass> language_<#system type="language">">
+<#include file="includes\htmlheader_custom_v2.htm">

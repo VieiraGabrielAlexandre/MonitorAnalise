@@ -1,0 +1,82 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.duplicategroup.title" default="Clone Group" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="name">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><#lang key="html.duplicategroup.head" default="Clone Group <b>@name</b>"></h1>
+	<div id="content">
+		<form id="duplicateobjectform" action="/duplicateobject.htm?id=<#objectid>" method="GET"  class="prtg-form prtg-plugin" data-plugin="prtg-form">
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicategroup.tobecloned" default="Group To Be Cloned"></legend>
+				<div class="control-group">
+					<label class="control-label no_help" for="propeid"><#lang key="html.duplicatesensor.wiz0a" default="Parent Probe"></label>
+					<div class="controls">
+						<span class="control" id="propeid"><#objectstatus name="probe" show="link"></span>
+					</div>
+					<label class="control-label no_help" for="groupid"><#lang key="html.duplicatesensor.wiz0b" default="Parent Group"></label>
+					<div class="controls">
+						<span class="control" id="groupid"><#objectproperty name="ParentGroup" show="link"></span>
+					</div>
+					<label class="control-label no_help" for="deviceid"><#lang key="html.duplicategroup.wiz0c1" default="Group"></label>
+					<div class="controls">
+						<span class="control" id="deviceid"><b><#objectproperty name="Name" show="link"></b></span>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicategroup.wizhead" default="Name of New Group"></legend>
+				<div class="control-group">
+					<label class="control-label has_help" for="nameid"><#lang key="html.duplicategroup.wiz2" default="New Group Name"></label>
+					<div class="controls" title="<#lang key="html.duplicategroup.wizhelp" default="Enter a meaningful name to identify the new group.">">
+						<input class="text fieldrequired {required:true}" type="text" autocomplete="off" id="nameid" name="name" value="<#lang key="html.global.cloneof" default="Clone of @name">">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicategroup.wizhead2" default="Parent group for New Group"></legend>
+				<label class="control-label no_help" for="objectSelectorTree"><#lang key="html.duplicategroup.wizhelp2" default="Select a group from the list to which you want to add the group clone."></label>
+        <div class="searchbox">
+          <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+          <input id="objtreesearch" type="text" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">"  name="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">">
+        </div>
+				<div class="controls">
+					<div class="prtg-plugin objectselector"
+						id="objectSelectorTree"
+						data-plugin="objectselector"
+						data-allowone="1"
+						data-branch="<#objectstatus name="parentid" show="text">"
+						data-disabled="#objectnode_<#objectid>">
+              <!--
+              {  
+	    					"tree": <#selectionlist content='groupsanddevices_as_json'
+									id='0'
+									groups='1'
+									hidedevices='1'
+									probes='1'
+									allowroot='0'
+									altformat='1'>
+							}
+							-->
+					</div>
+          <input class="fieldrequired {required:true} invisible" id="groupdevid" name="targetid" type="text">
+					<input type="hidden" name="id" value="<#objectid>">
+				</div>
+			</fieldset>
+		<wingui>
+		  <div class="submitbuttonboxanchor">
+		    <input style="<#system type="hideforreadonlyusers">" class="submit btngrey button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+			<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+		  </div>
+		</wingui>
+		</form>
+<#lang key="html.duplicategroup.help.title" default="Duplicating group by cloning" var="helptitle">
+<#lang key="html.duplicategroup.help.text" default="To <b>duplicate a group</b> by creating a clone of a group choose a parent group and a new name for the group.<br><br> <b>Note:</b> After creation the new group is paused so you can edit its settings before monitoring is actually started." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+ 	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

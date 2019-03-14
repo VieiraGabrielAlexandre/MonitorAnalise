@@ -1,0 +1,85 @@
+﻿/* prtg.compare.css */
+#content .comparison-object,
+#content.multi-compare .comparison-object,
+#content.hide-compare .comparison-object {
+  display: none;
+}
+
+#compareobjects .comparison-result {
+  position: relative;
+  overflow: visible;
+}
+
+#compareobjects .centeredHint {
+  font-weight: bold;
+  background: #c1c2c3;
+  padding: 4px;
+}
+
+#content.multi-compare .comparison-result {
+  float: left;
+  height: 172px;
+}
+
+#content.multi-compare .comparison-result:last-child {
+  height: auto;
+}
+
+#content.multi-compare .comparison-result:hover {
+  display: block;
+  outline: 1px solid #666;
+  outline-offset: -1px;
+  z-index: 10;
+  /*height: auto;*/
+}
+
+#content.multi-compare .comparison-result .compare-multi-graph .chartlegend {
+  display: none;
+  background-color: white;
+  border: 1px solid #999;
+  <#css border-radius="4px">
+  background-color: white;
+  z-index: 11;
+  margin: 5px 0 0 0;
+}
+
+#content.multi-compare .comparison-result .compare-multi-graph:hover .chartlegend {
+  display: inline-block;
+}
+
+.prtg-form > fieldset > .control-group.comparison-result .controls {
+  width: auto;
+  float: none;
+}
+
+#content.multi-compare .comparison-result.no-data .compare-multi-graph:hover .chartlegend {
+  display: none;
+}
+
+#content .comparison-result .centeredHint,
+.comparison-result .overlay {
+  display: none;
+}
+
+#content .comparison-result.no-data .centeredHint {
+  display: block;
+  left:25%;
+  right:25%;
+}
+
+.comparison-result.no-data .overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f3f2f2; /*<#colorcode color="color_lightgray">;*/
+  z-index: 999;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.selectNewSensor {
+  float: right;
+}

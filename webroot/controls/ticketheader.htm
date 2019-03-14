@@ -1,0 +1,18 @@
+﻿
+<h1>
+  <div class="bigsensoricon ticket-status">
+      <#ticketheader name="type"> <#lang key="html.ticketheader.head" default="Ticket"> #<#inserturlparam parameter="id">
+      <dummy status="priority">
+        <div id="objectpriority" class="ticket-priority ticket-<#ticketheader name="status" as="text">" title="<#lang key="html.sensorstatusdata.setprio" default="Click to set priority and/or favorite status">">
+          <#ticketheader name="priority">
+        </div>
+      </dummy>
+  </div>
+  <dummy class="ticket-subject"><#ticketheader name="subject"></dummy>
+</h1>
+
+<wingui-hidden>
+  <div class="buttonbox">
+    <#include file="includes\linkpagebutton.htm">
+  </div>
+</wingui-hidden>

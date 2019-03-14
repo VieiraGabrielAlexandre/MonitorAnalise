@@ -1,0 +1,45 @@
+﻿<!--Template Push Data Use-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+     </div>
+     PRTG Manual: <b>Template Push Data Use</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Template Push Data Use</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">HTTP Push Data Sensor</span> uses the following URL:</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">http://</span><span class="f_ItalicCustom">&lt;probe_ip&gt;</span><span class="f_BoldCustom">:</span><span class="f_ItalicCustom">&lt;port_number&gt;</span><span class="f_BoldCustom">/</span><span class="f_ItalicCustom">&lt;token&gt;</span><span class="f_BoldCustom">?value=</span><span class="f_ItalicCustom">&lt;integer_or_float&gt;</span><span class="f_BoldCustom">&amp;text=</span><span class="f_ItalicCustom">&lt;text message&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Replace the parameters <span class="f_ItalicCustom">&lt;probe_ip&gt;</span>, <span class="f_ItalicCustom">&lt;port_number&gt;</span>, <span class="f_ItalicCustom">&lt;token&gt;</span>, and <span class="f_ItalicCustom">&lt;integer_or_float&gt;</span> with the corresponding values. The <span class="f_BoldCustom">&amp;text</span> parameter is optional: You can omit it.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You can define </span><span class="f_BoldCustom">port number</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">identification token</span><span class="f_ListBulleted"> in the sensor settings. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">probe IP</span><span class="f_ListBulleted"> is the IP address of the system on which your PRTG probe with this sensor is running. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">value</span><span class="f_ListBulleted"> can be an integer or a float value, depending on the data of your application; you have to set the value type accordingly in the sensor settings. This parameter will be the sensor value.</span><br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">If this parameter is missing, the sensor will show a </span><span class="f_BoldCustom">down</span><span class="f_ListBulleted"> status.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">You can <span class="f_BoldCustom">optionally</span> add a custom text message by replacing the parameter <span class="f_ItalicCustom">&lt;text message&gt;</span> with it. The text will be shown as sensor message. If there is no value but only a text, the text will be shown as error message. <br />
+<img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>This text message has to be URL encoded (for example, the whitespaces in the sample URL below); most browsers achieve this automatically.</li>
+</ul>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Example:</span> </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://192.0.2.0:5050/XYZ123?value=0&amp;text=this%20is%20a%20message</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;<br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can use several sensors with the same port and identification token. In this case, the data of push messages will be shown in each of these sensors.</p>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       
+       
+  </div>
+  </div>
+</div>

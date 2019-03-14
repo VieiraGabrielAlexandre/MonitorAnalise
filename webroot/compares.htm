@@ -1,0 +1,28 @@
+﻿<#lang key="html.compare.title" default="Compare Graphs" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="freeform prtg-plugin" data-plugin="comparison-multi">
+	<h1><b><#lang key="html.compare.compareobjectgraphs2a" default="Compare Graphs of Two or More Monitoring Objects"></b></h1>
+		<input type="radio" checked="checked" class="radio graphid hidden" name="graphid" id="graphid1" value="<#inserturlparam parameter='graphid'>">
+		<input type="hidden" id="comparecount" value="2">
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+		<div class="prtg-form">
+			<fieldset id="compareobjects">
+				<legend class="prtg-header"><#lang key="html.compare.head" default="Data Comparison"></legend>
+			</fieldset>
+		</div>
+	</div>
+<#lang key="html.compare.help.title2" default="Compare Objects" var="helptitle">
+<#lang key="html.compare.help.text2" default="This page is used to quickly compare the historic graphs of two monitoring objects (groups, devices and sensors).
+ Click 'Change' to select the objects you want to compare." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

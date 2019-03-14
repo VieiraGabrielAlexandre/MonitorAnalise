@@ -1,0 +1,353 @@
+﻿<!--Sensor Channel Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="additional_sensor_types.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sensor_notifications_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Sensor Channel Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Sensor Channel Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">A sensor has one or more channels in which it handles the actual monitoring data. In the channel settings, you can define how to display the data from the sensor's different channels displayed in graphs, gauges, and tables. Additionally, the channel data can determine the <a href="sensor_states.htm" class="topiclink">sensor status</a>. Use the limit settings to define desired sensor states for values.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the sensor's <span class="f_BoldCustom">Overview</span> tab, click the gear icon of a specific channel gauge to change its settings. Click the pin symbol on the right of the gear icon in a gauge to make this channel the primary channel of the selected sensor.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also open the settings of a channel by clicking the gear icon in the channels data table. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>For <a href="define_lookups.htm" class="topiclink">lookup</a> channels, we recommend that you stay below 120 lookup values to get expressive gauges. For non-primary lookup channels, the upper limit is around 40 lookup values.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:270px"><a href="gauge_traffic.png"><img id="TOGGLE0186A1" class="image-toggle" alt="The Gear Icon of an SNMP Traffic Total Channel to Open Channel Settings" title="The Gear Icon of an SNMP Traffic Total Channel to Open Channel Settings" style="width:270px;height:182px;border:none" src="gauge_traffic_zoom75.png"/></a><p style="text-align:center"><span class="f_ImageCaption">The Gear Icon of an SNMP Traffic Total Channel to Open Channel Settings</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The available options are nearly the same for all sensor types. An exception applies to the <span class="f_BoldCustom">Downtime</span> channel, which is automatically calculated and does not offer all settings. Channels with <span class="f_ItalicCustom">absolute</span> values additionally have an option to define the <span class="f_BoldCustom">Value Mode</span>. Custom channels have a <span class="f_BoldCustom">Value Lookups and Limits</span> setting to distinguish between alerting by lookups or numerical limits.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can quickly choose another channel of the selected sensor via the dropdown list at the top of the channel settings list.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:531px"><a href="channel_settings2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Channel Settings for a Disk Sensor" title="Channel Settings for a Disk Sensor" style="width:531px;height:655px;border:none" src="channel_settings2_zoom66.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Channel Settings for a Disk Sensor</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Available Channel Settings</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Edit Channel</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the channel (not editable for script sensors after sensor creation). The name will appear in graphs and tables. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can automatically add the sensor's ID to the name by using the placeholder </span><span class="f_BoldCustom">[#id]</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Unit</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible for custom sensors. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter the unit for the values that this sensor returns. &nbsp;Please enter a string. This unit string is used for display purposes and will be shown in graphs, data tables, and gauges. If you want to change the </span><span class="f_ListBulleted" style="font-weight: bold;">Unit</span><span class="f_ListBulleted"> after having created the sensor, you can change it in the sensor's <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scaling Multiplication</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible for channels with a custom unit. If you want to multiply the received raw data by a certain value, enter the multiplier here. Otherwise, use the default value </span><span class="f_BoldCustom">1</span><span class="f_ListBulleted"> to not change the received value. Please enter an integer value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The following sensor types provide the scaling factor for received values with custom units in their sensor settings.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#aggregationspecific" class="topiclink">Sensor Factory Sensor</a></span><span class="f_ListBulleted"> (you can use multiplication and division in the channel definition)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_apc_hardware_sensor.htm#helpergroup" class="topiclink">SNMP APC Hardware Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_sensor.htm#oidgroup" class="topiclink">SNMP Custom Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_dell_hardware_sensor.htm#helpergroup" class="topiclink">SNMP Dell Hardware Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_custom_sensor.htm#queryspecific" class="topiclink">WMI Custom Sensor</a></span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scaling Division</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible for channels with a custom unit. If you want to divide the received raw data by a certain value, enter the divisor here. Otherwise, use the default value </span><span class="f_BoldCustom">1</span><span class="f_ListBulleted"> to not change the received value. Please enter an integer value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The following sensor types provide the scaling factor for received values with custom units in their sensor settings.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#aggregationspecific" class="topiclink">Sensor Factory Sensor</a></span><span class="f_ListBulleted"> (you can use multiplication and division in the channel definition)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_apc_hardware_sensor.htm#helpergroup" class="topiclink">SNMP APC Hardware Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_sensor.htm#oidgroup" class="topiclink">SNMP Custom Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_dell_hardware_sensor.htm#helpergroup" class="topiclink">SNMP Dell Hardware Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="wmi_custom_sensor.htm#queryspecific" class="topiclink">WMI Custom Sensor</a></span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">ID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Shows the ID of the channel. You cannot change the ID. PRTG uses it for unique identification. For example, you need the ID when using </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm" class="topiclink">Sensor Factory</a></span><span class="f_Comment" style="font-family: 'Trade Gothic LT Std Bold'; font-weight: bold;"> </span><span class="f_Comment">sensors</span><span class="f_Comment">.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">There are a few special, fixed channel IDs.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">-1</span><span class="f_ListBulleted"> is for sum channels of traffic sensors (for example, of the </span><span class="f_BoldCustom"><a href="snmp_traffic_sensor.htm" class="topiclink">SNMP Traffic Sensor</a></span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">-4</span><span class="f_ListBulleted"> is for the </span><span class="f_BoldCustom">Downtime</span><span class="f_ListBulleted"> channel (you can use it, for example, for an uptime percentage calculation in a </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm" class="topiclink">Sensor Factory Sensor</a></span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">-2</span><span class="f_ListBulleted"> (coverage) and </span><span class="f_ItalicCustom">-3</span><span class="f_ListBulleted"> (error) are internally used.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Limits</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is not available for custom channels.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use thresholds for this channel. The channel can affect the <a href="sensor_states.htm" class="topiclink">status of the sensor</a> it is part of. With limits you can define when the sensor will show a </span><span class="f_BoldCustom">Warning </span><span class="f_ListBulleted">or </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, depending on the channel data. For example, you can use this function to set a traffic sensor (which is usually never in a down state) to error when the monitored values reach critical limits.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disable Limits</span><span class="f_ListBulleted">: Do not use the channel data to control the sensor status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enable alerting based on limits</span><span class="f_ListBulleted">: Define limits for numerical values returned by the device. Additional fields appear below. The sensor of this channel will enter a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Down </span><span class="f_ListBulleted">status when limits are undercut or overrun. </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The limits option is not</span><span class="f_ListBulleted"> available for the </span><span class="f_BoldCustom">Downtime </span><span class="f_ListBulleted">channel.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">You can show limits in graphs (highlighted in yellow or red) if you select exactly one channel with a limit in a graph.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Value Lookups and Limits</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available for custom channels. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define when the channel will show a down status and alert you, either based on the lookup definition or based on thresholds for returned values. Only the option that you choose will apply. For example, if you choose limits as alerting method, an error status defined the lookups will not show up.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose between: </span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enable alerting based on lookups</span><span class="f_ListBulleted">: Use the lookup definition of the channel to control the sensor status. Make sure the channel uses a proper </span><span class="f_BoldCustom">Value Lookup</span><span class="f_ListBulleted"> if you choose this option. Select the lookup file either in the channel settings below or in the sensor settings, depending on the sensor type. If you do not want to use the channel data to control the sensor status, select </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> as </span><span class="f_BoldCustom">Value Lookup</span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enable alerting based on limits</span><span class="f_ListBulleted">: </span><span class="f_ListBulleted">Define limits for numerical values returned by the device. Additional fields appear below. The sensor of this channel will enter a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Down </span><span class="f_ListBulleted">status when limits are undercut or overrun. </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">If you choose limit-based alerting, errors and warnings that you have defined in the lookup file will not apply!</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Value Lookup</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible for custom sensors and if you select lookups-based alerting. Select the <a href="define_lookups.htm" class="topiclink">lookup</a> file that you want to use with this channel.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Do not use this option for sensors that provide the unit </span><span class="f_BoldCustom">Value Lookup</span><span class="f_ListBulleted"> in the sensor settings! The channel setting will be overwritten with the next sensor scan. Please define the lookup file that you want to use with this channel on the </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> tab of the sensor. Choose the option </span><span class="f_BoldCustom">Value Lookup</span><span class="f_ListBulleted"> for the setting </span><span class="f_BoldCustom">Sensor Channel #</span><span class="f_ItalicCustom">x</span><span class="f_BoldCustom"> Unit</span><span class="f_ListBulleted"> (where </span><span class="f_ItalicCustom">x</span><span class="f_ListBulleted"> is the number of the channel) and choose the desired lookup file under </span><span class="f_BoldCustom">Sensor Channel #</span><span class="f_ItalicCustom">x</span><span class="f_BoldCustom"> Value Lookup</span><span class="f_ListBulleted">. See manual section </span><span class="f_BoldCustom"><a href="define_lookups.htm#req_custom" class="topiclink">Define Lookups—Requirement: Channel Unit &quot;Custom&quot;</a></span><span class="f_ListBulleted"> for affected sensor types.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>If you choose <span class="f_BoldCustom">None</span>, alerting by lookups and limits will be disabled and channels will not not appear as lookup. If you want to keep the lookup representation without alerting, define the states accordingly in the lookup file. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Upper Error</span><span class="f_ListBulleted"> Limit </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable limits above. Specify an upper limit for a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. If the channel values overrun this value, the sensor will be </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">. Please enter a valid number into at least one of the limit fields.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">While a sensor shows a </span><span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Down</a></span><span class="f_ListBulleted"> status triggered by a limit, it will still receive data in its channels.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Upper Warning Limit </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable limits above. Specify an upper limit for a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. If the channel values overrun this value, the sensor will be </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">. Please enter a valid number into at least one of the limit fields.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Lower Warning Limit </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable limits above. Specify a lower limit for a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. If the channel values undercut this value, the sensor will be </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">. Please enter a valid number into at least one of the limit fields.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Lower Error</span><span class="f_ListBulleted"> Limit </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable limits above. Specify a lower limit for a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. If the channel values undercut this value, the sensor will be </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">. Please enter a valid number into at least one of the limit fields.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">While a sensor shows a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a> triggered by a limit, it will still receive data in its channels.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Error</span><span class="f_ListBulleted"> Limit Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you enable limits above. Enter an additional message. It will be added to the sensor message when showing a </span><span class="f_BoldCustom">Down </span><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">status</a></span><span class="f_Comment">. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Warning Limit Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you enable limits above. Enter an additional message. It will be added to the sensor message when showing a </span><span class="f_BoldCustom">Warning </span><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">status</a></span><span class="f_Comment">. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Rendering</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Define if you want to show this channel in <a href="review_monitoring_data.htm#live-sensors" class="topiclink">data graphs</a>. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show in Graphs</span><span class="f_ListBulleted">: Sensor graphs contain the data of this channel. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hide from Graphs</span><span class="f_ListBulleted">: Sensor graphs do not contain data of this channel.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you choose to hide this channel in graphs, it also will not appear in the graph of a </span><span class="f_BoldCustom"><a href="reports.htm" class="topiclink">Report</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Table Rendering</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to show this channel in <a href="review_monitoring_data.htm" class="topiclink">data tables</a>. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show in Tables</span><span class="f_ListBulleted">: Sensor data tables contain the data of this channel. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hide from Tables</span><span class="f_ListBulleted">: Sensor data tables do not contain the data of this channel. This option hides the channel gauge as well, but the channel will still be available in the data table of the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_ListBulleted"> tab.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you choose to hide this channel in data tables, PRTG also will not use it for the calculation of the &quot;sum&quot; (total) channel of a sensor. It also will not appear in data tables of a </span><span class="f_BoldCustom"><a href="reports.htm" class="topiclink">Report</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Line Color</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Define the color of the channel display in graphs. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic</span><span class="f_ListBulleted">: PRTG sets the color of this channel in graphs automatically.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Manual</span><span class="f_ListBulleted">: Individually define the color of this channel. You can enter the desired color code below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Color (#rrggbb)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This option is only available if you choose manual line color above. Enter a color in hexadecimal RGB notation as in HTML and CSS, or choose a color from the visual color selector. The field with the hexadecimal color value will change to the selected color automatically.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Line Width</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the width of the channel line in graphs. Enter an integer value in pixels. The maximum line width is </span><span class="f_BoldCustom">25 </span><span class="f_ListBulleted">px, but we recommend that you use values between </span><span class="f_BoldCustom">1</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">7</span><span class="f_ListBulleted"> only to get optimal results.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Data</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This setting is available for most channels. Define how to display data. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Display actual values in </span><span class="f_ItalicCustom">[unit]</span><span class="f_Comment">: Display the values in the shown unit.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Display in percent of maximum</span><span class="f_ListBulleted">: Calculate and show percent values based on a maximum value. Provide a maximum below.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you choose this option, you cannot display the data of traffic sensors as a positive and negative area graph.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maximum (</span><span class="f_ItalicCustom">[unit]</span><span class="f_ListBulleted">)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you choose the percent of maximum setting above. Enter a value to use as maximum. Please consider the given unit. PRTG will calculate all percent values based on this value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Value Mode</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This setting is only available for sensor channels that return </span><span class="f_ItalicCustom">absolute</span><span class="f_Comment"> values. It is not available for sensors showing difference values, such as traffic channels. Depending on this setting, the channel cannot only show averages, but also minimum or maximum values in the graphs for the respective time spans. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Average</span><span class="f_Comment">: The channel shows average values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Minimum</span><span class="f_Comment">: The channel shows minimum values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Maximum</span><span class="f_Comment">: The channel shows maximum values.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/><span class="f_Comment">See the Knowledge Base for more information about value modes: </span><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60238" target="_blank" class="weblink">What is the Value Mode in channel settings?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Decimal Places</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Define how many decimal places of the channel's data to display in graphs and tables. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic</span><span class="f_Comment">: PRTG automatically defines how many decimal places are used for optimal viewing results.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">Values between 10 and –10 are rounded to two decimal places. Values that are very close to an integer are rounded to the integer, for example, 3.001 is rounded to 3.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">All</span><span class="f_Comment">: Display all available decimal places.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Custom</span><span class="f_Comment">: Manually define the number of decimal places. If you choose this option, an additional field will appear. Please enter an integer value.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Spike Filter</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">You can use a spike filter to correct faulty monitoring data. Sometimes, sensors report enormously high or far too low values. This can be because of an error in data transmission, or because of incompatibilities of the physical device you are monitoring. This can make graphs unreadable. A spike filter can compensate for these flaws. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">If you enable a spike filter, values above and below a certain limit are disregarded in the monitoring data for graphs and tables. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Disable Filtering</span><span class="f_Comment">: Display all data as it is received. Do not filter out spikes.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Enable Filtering</span><span class="f_Comment">: Enable a filter to remove spike values. </span><span class="f_Comment">Additional fields appear below. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">This does not change monitoring data itself but only the presentation of the data. This setting is valid for all data of this channel, including historic data.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Use the spike filter with care. For overflow values in SNMP sensors, check the <a href="root_group_settings.htm#snmpcompatibility" class="topiclink">SNMP Compatibility Options</a> before.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The spike filter option is not available for the channel </span><span class="f_BoldCustom">Downtime</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Spike Filter Max. Value </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you enable the spike filter above. Enter the maximum value to show in the channel data. PRTG will disregard all data above this value in graphs and tables. Please enter an integer value or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Spike Filter Min. Value </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">This field is only visible if you enable the spike filter above. Enter the minimum value to show in the channel data. PRTG will disregard all data below this value in graphs and tables. Please enter an integer value or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Vertical Axis Scaling</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Define how to display the vertical axis for the channel in graphs. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Automatic Scaling</span><span class="f_ListBulleted">: PRTG automatically uses the optimum scaling. Usually the scaling ranges from the minimum to the maximum value. PRTG uses one single scale for each unit label only.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Manual Scaling</span><span class="f_ListBulleted">: Define the scaling manually. Additional fields appear below. Defining manual axis scaling can make low values better visible in your graph, but it may result in a graph with multiple vertical axes for the same unit label.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Settings for this option are ignored if you enable the </span><span class="f_ItalicCustom">Chart Type</span><span class="f_ListBulleted"> </span><span class="f_BoldCustom">Stack channels on top of each other</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">Show in and out traffic as positive and negative area chart</span><span class="f_ListBulleted"> (available for traffic sensors) on the sensor's </span><span class="f_BoldCustom">Settings</span><span class="f_ListBulleted"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Vertical Axis Maximum </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable vertical axis scaling above. Enter the maximum value to use on the vertical axis for the channel. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Vertical Axis Minimum </span><span class="f_ItalicCustom">[unit]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enable vertical axis scaling above. Enter the minimum value to use on the vertical axis for the channel. Please enter an integer value.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-ok-green" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-ok-green.png"/>Click <span class="f_BoldCustom">Ok</span> to save your settings and to close the settings window. Click <span class="f_BoldCustom">Apply</span> to save the changed settings while the <span class="f_BoldCustom">Edit Channel</span> window remains open. This functionality is useful if you want to change the settings of other channels of the current sensor as well. You can select another channel via the dropdown menu above the settings. You can close the settings window without saving by clicking <span class="f_BoldCustom">Cancel</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you have changed any settings and click <span class="f_BoldCustom">Cancel</span> or choose another channel via the dropdown menu without applying the changes, PRTG will ask you to confirm this step. <span class="f_BoldCustom">Discard Changes</span> will ignore any edits and closes the window or shows the settings of another selected channel. Click <span class="f_BoldCustom">Save</span> to apply your changes.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What is the Value Mode in channel settings?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60238" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60238</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+&nbsp;</li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Device and Sensor Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_objects_manually.htm" class="topiclink">Create Objects Manually</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probe_settings.htm" class="topiclink">Probe Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="group_settings.htm" class="topiclink">Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="device_settings.htm" class="topiclink">Device Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a>—<a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Sensor Channel,Decimal Places,Error Limit,Limits,Limits Error,Limits Warning,Line,Line Color,Line Width,Peak Filter (Spike Filter),Sensor,Sensor Channel Settings,Spike Filter,Vertical Axis Scaling,Warning Limit</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="additional_sensor_types.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sensor_notifications_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+﻿/*prtg.contexthelp.css*/
+#header_help {
+  position: absolute;
+  right: -80px;
+  top: 32px;
+  z-index: -1;
+}
+
+#helpcontainer a b {
+  font-weight: normal;
+}
+
+.popover-content a.morehelp,
+#helpcontainer a {
+  font-weight:normal;
+  background-image: url(/images/questionmark.png);
+  background-position: 2px 3px;
+  padding:2px 2px 2px 18px;
+  background-repeat: no-repeat;
+  margin-top:3px;
+}
+
+#helpcontainer a:last-child {
+  display: block;
+}
+
+#helpcontainer {
+  position: absolute;
+  font-size: 11px!important;
+  right: 8px;
+  bottom: 22px;
+  top: auto;
+  padding: 3px 3px 20px 5px;
+  background-color: <#colorcode color="helpbackground">;
+  display: block;
+  width: 275px;
+  height: auto;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#helpcontainer p {
+  margin-top: 2px;
+}
+
+body.hashelp div.oskhelpbox,
+body.hashelp div.helpheader {
+  display: block;
+}
+
+div.helpheader {
+  text-transform: uppercase;
+  font-size:14px;
+  padding: 8px 0 4px 0;
+  clear: both;
+}
+
+#content .contexthelpbox,
+#thepage .contexthelpbox {
+  display: none;
+}
+
+div.helptitle {
+  display: block;
+  font-size: 14px;
+}
+
+#helphideicon {
+  display: none;
+}
+
+div.contexthelpbox:first-child {
+  margin-top: 10px;
+}
+
+div.contexthelpbox:last-child {
+  margin-bottom: 5px;
+}
+
+div.contexthelpbox p, div.contexthelpbox h2,
+div.oskhelpbox p, div.oskhelpbox h3 {
+  margin: 0;
+  padding: 0;
+}
+div.oskhelpbox[data-plugin="documentation"]{
+  max-width: 685px;
+}
+#closehelp {
+  cursor: pointer;
+}

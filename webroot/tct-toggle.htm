@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/prtg<#system type='usertheme'>.css?prtgversion=<#system type="version">&language=<#system type="language">">
+    <link rel="stylesheet" type="text/css" href="/css/print.css?version=<#system type="version">" media="print"  />
+    <script src="/javascript/lib/jquery.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+    <style>
+      body{
+        font-size: 13px;
+      }
+      tct a{
+        height: auto;
+      }
+      textarea{
+        background-color: #eee;
+        font-family: Arial;
+        font-weight: normal;
+      }
+      .col-panel{
+        margin: 10px;
+        outline: 1px solid grey; 
+      }
+      button{
+        font-family: Arial;        
+      }
+      h1,h2{
+        text-align: center;
+        width: 100%;
+        font-variant: small-caps;
+        font-weight: bold;   
+        cursor: pointer;     
+      }
+      .reset{
+        width: 100%;
+      }
+      .test-panel{
+        min-width:325px;
+        max-width:325px;        
+      }
+      #helpcontainer{
+        position: static;
+        max-width: 275px;
+        min-width: 275px;
+      }
+      button.copybutton{
+        outline: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background-color: transparent;
+      }      
+      tct[data-role="theater"].removeme{
+        display: none;
+      }
+    </style>
+  </head>
+<body>
+  <div class="panel row-panel">
+    
+    <div class="panel col-panel" style="min-width:325px;max-width:325px;">
+      <div id="deviceoverview"> 
+      <a target="_blank" href="/group.htm?id=0"><h1>Group Overview</h1></a>
+      <button class="reset" data-raw="trial-group">Toggle visibility</button>
+      <#system type='showhelp' tct="theater" page="groupoverviewcolumnrigth" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <#system type='showhelp' tct="theater" page="c-groupoverviewcolumnrigth" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      </div>
+    </div>
+    <div class="panel col-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+      <a target="_blank" href="/device.htm?id=40"><h1>Device Overview</h1></a>
+      <button class="reset">Toggle visibility</button>
+      <#system type='showhelp' tct="theater" page="deviceoverview" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >   
+      <#system type='showhelp' tct="theater" page="c-deviceoverview" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >   
+    </div>
+    <div class="panel col-panel nogrow-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+      <a target="_blank" href="/sensor.htm?id=1002"><h1>Sensor Overview</h1></a>
+      <button class="reset">Toggle visibility</button>
+      <#system type='showhelp' tct="theater" page="sensoroverview" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >         
+      <#system type='showhelp' tct="theater" page="c-sensoroverview" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >         
+    </div>
+    <div id="helpcontainer" class="panel col-panel" > <!-- Right part-->
+      <h1>Help</h1></a>
+      <button class="reset">Toggle visibility</button>
+      <h2>- - - - Alarms - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-alarms" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - - Libraries - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-libraries" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - - Maps - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-maps" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - - Reports - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-reports" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - - Sensor - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-sensor" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - - Tickets - - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-tickets" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+      <h2>- - - Add Sensor 4 - - -</h2>
+      <#system type='showhelp' tct="theater" page="help-addsensor4" isreadonly="false" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">   
+    </div>
+  </div>
+  <script>        
+    $(function(){
+      function toggleVisibility(me, action, index){
+        $.ajax({
+          url: "/api/setshowhelpstatus.htm",
+          data: {
+            "action": action,
+            "page": index
+          },
+          type: "POST"
+        }).done(function(){
+          me.toggleClass('removeme');
+        }).fail(function(){})
+      }
+        $('button.reset').on('click',function(){
+          $(this).parent().find('tct').each(function(){
+            var me = $(this)
+              , index = 'theater.'+ me.data().page;
+            toggleVisibility(me, (me.is('.removeme') ? 1: 0), index);
+          });
+        });
+      $('tct')
+        .append('<button class="closebutton" data-placement="left"></button>')
+        .on('click input', function(){
+          var me = $(this).closest('tct')
+            , index = 'theater.'+ me.data().page;
+          toggleVisibility(me, 0, index);          
+        });
+    });
+  </script>
+</body>

@@ -1,0 +1,364 @@
+﻿/*_Prtg.Multiedit.Inline.css*/
+#layout .inline{
+	width:100%;
+	height: 100%;
+	overflow: auto;
+	background: <#colorcode color="lightgray">;
+}
+#layout.fullsize .unpinned #rightpanel_titel{
+	height:100%;
+	width:16px;
+	background-color: <#colorcode color="midgray">;
+	padding: 0;
+	border: 1px solid #aaa;
+}
+#layout.fullsize .unpinned #rightpanel_pinbutton{
+	background-position: -130px -146px;
+	background-image: url(images/ui-icons_454545_256x240.png);
+}
+/*#layout.fullsize .unpinned #rightpanel_titel span,
+#layout.fullsize .unpinned .multieditscrollcontainer
+{
+	display:none;
+}*/
+#layout.fullsize .editsettings.inline{
+	margin-top:0!important;
+	overflow-y:hidden;
+}
+#layout .inline .tab-container
+{
+	max-width: 405px;
+	min-height: 200px;
+}
+#layout .inline .inline-tabs {
+	padding: 0 2px 2px 2px;
+}
+#layout .inline .prtg-tabs{
+	padding: 0;
+}
+#layout .inline .inline-tabs #loadedcontent{
+  padding-bottom: 20px;
+}
+#layout .multieditscrollcontainer{
+	position:relative;
+	width:100%;
+	height: 100%;
+	border-bottom-width: 29px;
+}
+#layout.fullsize .multieditscrollcontainer{
+  border-bottom-width: 5px;
+}
+#layout.fullsize .unpinned .multieditscrollcontainer{
+	border: none;
+}
+
+#layout.fullsize .multieditscrollcontainer{
+	position: relative;
+	bottom: auto;
+	top: auto;
+}
+
+#layout.fullsize #rightpanel_titel{
+	position: static;
+}
+#rightpanel_titel
+{
+	background-color: <#colorcode color="darkgray">;
+	height:25px;
+	width: 100%;
+	/*position:absolute;*/
+
+}
+
+.multieditscrollcontainer .buttonbox{
+  position:relative;
+  margin-top: 3px;
+}
+.multieditscrollcontainer #content{
+	margin: 0;
+}
+#layout.fullsize #rightpanel_pinbutton{
+	position: static;
+}
+#rightpanel_pinbutton
+{
+	border:none;
+	width: 14px;
+	height:14px;
+	cursor: pointer;
+	float: left;
+	margin-top: 5px;
+ 	background-image: url(images/ui-icons_ebebeb_256x240.png);
+	background-position: -145px -145px;
+	background-color: transparent;
+}
+
+#layout.fullsize #rightpanel_titel .leftpanel_titletext
+{
+	position: absolute;
+	margin-top: -14px;
+}
+#rightpanel_titel .leftpanel_titletext
+{
+	padding-left: 16px;
+	display: none;
+}
+
+#layout.fullsize #rightpanel_titletext{
+	right: 15px;
+	margin-top: -14px;
+}
+
+#layout.ui-layout-container .ui-layout-resizer-east-closed
+{
+	display:block!important;
+	width:16px;
+	background-color: <#colorcode color="midgray">;
+	padding: 0;
+	border: 1px solid #aaa;
+}
+#layout .ui-layout-north{
+	overflow: visible!important;
+	z-index: auto!important;
+}
+#layout.ui-layout-container .ui-layout-toggler-closed{
+	border:none;
+	width: 14px;
+	height:14px;
+	margin: 0;
+	padding:0;
+	background-image: url(images/ui-icons_454545_256x240.png);
+	background-position: -130px -146px;
+
+}
+#layout.ui-layout-container .ui-layout-toggler-closed.hover{
+	background-color: transparent;
+}
+#rightpanel_titletext
+{
+	float:right;
+	margin-right: 5px;
+	background-color: <#colorcode color="menucolor">;
+}
+
+.dialog-container.inline
+{
+	background:#fff;
+	padding: 0;
+}
+
+.inline .prtg-form > fieldset,
+.inline .tab-container{
+	min-width: 380px;
+	width: 100%;
+}
+.dialog-container.inline .prtg-form > fieldset{
+	min-width: 495px;
+	width: 100%;
+	margin:5px 0;
+}
+
+.inline .prtg-form  fieldset
+{
+	width:100%;
+}
+.inline .prtg-form  fieldset legend{
+	max-width: 77%;
+}
+.inline .prtg-form  fieldset legend .inheritedfrom{
+	max-width: 60em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.inline .prtg-form fieldset> .control-label {
+	padding-left: 5px;
+}
+
+.inline .prtg-form > fieldset > .control-group .control-label
+{
+	min-width: 70px;
+	width: 25%;
+	margin-left:0px;
+	padding-left:4px;
+}
+.freeform .prtg-form > fieldset > .control-group .control-label
+{
+	min-width: 80px;
+	width:20%;
+}
+
+
+.inline .prtg-form > fieldset > .control-group .controls
+{
+	min-width:150px;
+	width: 70%;
+}
+.inline .prtg-form fieldset>.control-group .fillwidth{
+	width: 98%!important;
+}
+
+.dialog-container.inline .prtg-form > fieldset > .control-group .controls
+{
+	min-width:342px;
+	width: 50%;
+}
+.multiedit .dialog-container.inline .prtg-form > fieldset > .control-group .controls
+{
+	min-width:342px;
+	width: 50%;
+}
+
+.inline .prtg-form>fieldset .control-help .tooltip-content{
+	max-width: 300px;
+	max-height: 300px;
+	width:auto!important;
+	overflow-x:hidden;
+	overflow-y:auto;
+	z-index: 100;
+	text-align: left;
+}
+.dialog-container.inline .prtg-form > fieldset > .control-group .controls.fillwidth {
+  width: 100%!important;
+}
+
+.inline .prtg-form > fieldset legend > label{
+	width: 365px;
+}
+
+.inline .prtg-form > fieldset legend > span
+{
+	width: 365px;
+	padding-top: 2px;
+	display: block;
+	font-weight: normal;
+}
+.inline .control-activation + .has_help,
+.inline .control-activation + .no_help{
+	clear: none;
+}
+.inline .prtg-form .submitbuttonbox.float{
+	margin-bottom: 40px;
+	width:390px;
+}
+#layout.fullsize .inline .prtg-form .submitbuttonbox.float{
+	margin-bottom: 18px;
+	width:400px;
+}
+/* activation checkbox */
+.prtg-form .control-group .control-activation {
+	position: relative;
+	top:24px;
+  display: block;
+  float: left;
+  clear:both;
+  width: 16px;
+  height:16px;
+}
+.inline .prtg-form .control-group .control-activation{
+  margin-top:6px;
+  top:0;
+  left:0;
+}
+.inline p#objlist
+{
+	position: relative;
+	min-height: 15px;
+	max-height:90px;
+	width: 100%;
+	overflow:auto;
+	padding: 0;
+	margin: 7px 5px;
+}
+.ui-dialog .inline p#objlist{
+	max-height:300px;
+	padding: 0;
+	margin: 0;
+}
+
+.inline p#objlist a,
+th p#objlist a
+{
+	float: left;
+	width: 100px;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	margin-right: 5px;
+	margin-bottom: 1px;
+}
+.ui-dialog .inline p#objlist a{
+	width: 105px;
+}
+.object-lookup p#objlist{
+	/*overflow: hidden;*/
+}
+.controls .object-lookup p#objlist a{
+	width: 90%;
+	width: calc(100% - 32px);
+}
+.object-lookup p#objlist a.sensormenu{
+	width: 80%;
+	width: calc(100% - 48px);
+}
+
+.inline p#objlist a span
+{
+	display: none;
+}
+.inline input[type="reset"]{
+	display: none;
+}
+.inline .inline-hidden{
+	display: none;
+}
+.inline .tab-container{
+	min-height: 200px;
+}
+.ui-dialog .tab-container{
+	min-height: 200px;
+}
+.inline .jd_menu{
+	list-style: none;
+	list-style-image: none;
+	vertical-align: baseline;
+	float: right;
+}
+.inline li.multiedit{
+	float:left;
+}
+.inline .prtg-form .submitbuttonbox{
+	width:100%;
+}
+.inline .prtg-form > .submitbuttonboxanchor{
+	width:100%;
+}
+.ui-dialog .inline .prtg-form > .submitbuttonboxanchor{
+	display: none;
+}
+select[disabled]{
+	background-color: #EBEBE4;
+}
+.prtg-form > fieldset .control-group > .controls > .radio-control > input[disabled]+.radio-control-label{
+	color:#ccc;
+}
+.prtg-form > fieldset .control-group > .controls > input[disabled],
+.prtg-form > fieldset .control-group > .controls select[disabled],
+.prtg-form > fieldset .control-group > .controls > textarea[disabled]
+{
+	color:#888;
+}
+
+/*.inline .objectlookup{
+	width:70%;
+}
+*/
+.inline fieldset .probegroupdevice>span{
+	width:100%;
+	margin-right: 14px;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+
+}

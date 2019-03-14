@@ -1,0 +1,504 @@
+﻿<!--Sensor Notification Triggers Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensor_channels_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ajax_gui_advanced.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Sensor Notification Triggers Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Sensor Notification Triggers Settings</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The status or the data of a sensor can trigger notifications. Using this mechanism, you can configure external alerting tailored to your needs.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="notification_trigger.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Example of Notification Trigger Settings" title="Example of Notification Trigger Settings" style="width:600px;height:377px;border:none" src="notification_trigger_zoom48.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Example of Notification Trigger Settings</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Although the sensors activate a notification trigger, you can set notification triggers higher in the hierarchy (for example, for groups or devices). Because of this you can define notification triggers for multiple sensors using the <a href="inheritance_of_settings.htm" class="topiclink">inheritance mechanism</a>. Monitoring objects with inherited notification triggers show these in section <span style="font-weight: bold;">Triggers That Can Be Inherited From Parent Object(s)</span> on the <span style="font-weight: bold;">Notification Triggers</span> tab. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG already includes a default notification trigger for the <span class="f_BoldCustom"><a href="object_hierarchy.htm#root" class="topiclink">Root Group</a></span>. This default notification trigger provokes the standard notification <span class="f_BoldCustom">Email and push notification to admin</span> if there is any <a href="sensor_states.htm" class="topiclink">sensor in down status</a> in your PRTG installation for at least 10 minutes. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can also define notification triggers in <span class="f_BoldCustom"><a href="libraries.htm" class="topiclink">Libraries</a></span>. Sensors that are in a library with defined notification triggers show these notification triggers in section <span class="f_BoldCustom">Triggers That Are Defined in Library Object(s)</span> on the <span style="font-weight: bold;">Notification Triggers</span> tab.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="note" class="hmanchor"></a><span class="f_InTopicHeading">Note</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This section describes one of four steps to set up the notification system in PRTG. To complete your notification setup, go through all of the following steps:</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up the </span><span class="f_BoldCustom">Notification Delivery</span><span class="f_ListNumbered"> settings to define how and to which recipient PRTG will send messages.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListNumbered">.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Contacts</span><span class="f_ListNumbered"> for the PRTG users to define the recipients of notifications.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListNumbered">.</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Templates</span><span class="f_ListNumbered"> to define the notification methods and their content.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListNumbered">.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListNumbered">You can also check or edit notification templates via the </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListNumbered"> tab. For more information, see </span><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><span class="f_ListNumbered">.</span><br />
+<span class="f_ListNumbered">&nbsp;</span></li>
+<li value="4" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Check and set up </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListNumbered"> for objects to define when notification messages will be sent.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><span class="f_ListNumbered">.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>We recommend that you always set up at least two notifications with different delivery methods for a notification trigger, for example, one <a href="notifications_settings.htm#email" class="topiclink">email notification</a> and one <a href="notifications_settings.htm#sms" class="topiclink">SMS notification</a>. If delivery via email fails (due to an email server failure or other reasons), PRTG can still notify you via your smartphone. Simply set your latency setting to a <a href="sensor_notifications_settings.htm#state" class="topiclink">state trigger</a> and a notification via a delivery method other than the one for the first trigger. Or set up a second trigger with another notification for the corresponding object.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For background information, see the <span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span> section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Available Notification Triggers Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On an object's detail page, open the <span class="f_BoldCustom">Notification Triggers</span> tab to change sensor notification triggers. The available options are the same for all objects. When defining triggers for probes, groups, or devices, they can be inherited down to sensor level.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Triggers that can be inherited from parent object(s)</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You see a list of all notification triggers that are defined higher in the hierarchy. The list is empty and shows the message </span><span class="f_BoldCustom">(no triggers defined)</span><span class="f_ListBulleted"> when you have not set any triggers in probes, groups, or devices above the current object in the </span><span class="f_BoldCustom"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span><span class="f_ListBulleted">. You can see the </span><span class="f_BoldCustom">Type</span><span class="f_ListBulleted"> of trigger and the notification </span><span class="f_BoldCustom">Rule</span><span class="f_ListBulleted"> that the monitoring object executes once this trigger is activated.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Trigger Inheritance</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define if you want to use the triggers shown above on the current object. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherit all triggers from parent objects and use the triggers defined above</span><span class="f_ListBulleted">: Use the triggers shown above. If the defined condition is met, the corresponding trigger is activated and the notification provoked. Click the notification name to open its <a href="notifications_settings.htm" class="topiclink">settings page</a>. Click the name of the monitoring object in the column </span><span class="f_ListBulleted" style="font-weight: bold;">Inherited from</span><span class="f_ListBulleted"> to open its </span><span class="f_BoldCustom">Overview</span><span class="f_ListBulleted"> tab.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Only use the triggers defined above</span><span class="f_ListBulleted">: Do not use the triggers shown above. Only use the triggers that you define above in section </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListBulleted"> for this object.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is valid for all triggers shown above. It is not possible to only select some of the triggers.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">In section <span class="f_BoldCustom">Triggers that are defined in library object(s)</span> you see all notification triggers that are set for <span class="f_BoldCustom"><a href="libraries.htm" class="topiclink">Libraries</a></span> that contain the currently selected sensor. </p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Triggers that Are Defined in Library Object(s)</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You see a list of all notification triggers that are defined in libraries that include the currently selected sensor. The list is empty and shows the message </span><span class="f_BoldCustom">(no triggers defined)</span><span class="f_ListBulleted"> when you have not set any triggers in libraries that contain the current sensor. You can see the </span><span class="f_BoldCustom">Type</span><span class="f_ListBulleted"> of trigger and the notification </span><span class="f_BoldCustom">Rule</span><span class="f_ListBulleted"> that the sensor executes once this trigger is activated.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click the notification name to directly change its <a href="notifications_settings.htm" class="topiclink">settings</a>. </span>Click a library name in the column <span class="f_BoldCustom">Inherited from</span> to view this library.</p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You cannot turn off trigger usage for the current sensor from a library here. If you do not want to use any notification triggers from a library for this sensor, open the library and remove this sensor from it or refine the triggers on the <span class="f_BoldCustom"><a href="libraries_settings.htm#notifications" class="topiclink">Notification Triggers</a></span> tab.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">You can set up one or more of the following triggers, each with different setting options. Which trigger types are visible depends on the kind of object you edit:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm#state" class="topiclink">Add State Trigger</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm#speed" class="topiclink">Add Speed Trigger</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm#volume" class="topiclink">Add Volume Trigger</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm#threshold" class="topiclink">Add Threshold Trigger</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm#change" class="topiclink">Add Change Trigger</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">You can create all notification triggers by forming sentences in &quot;natural language&quot;. There are different options available for every type.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="state" class="hmanchor"></a><span class="f_InTopicHeading">Add State Trigger</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define a trigger that is activated when a sensor changes its current status. This is the most common reason to send out notifications. Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add State Trigger</span> from the menu to add a new trigger, or click the <span class="f_BoldCustom">Edit</span> button next to an existing trigger to change it. You can also directly edit notification templates via the <span class="f_BoldCustom">Edit Notification Template</span> button next to a notification template. Define the settings as described below. Every trigger provokes one or more <a href="notifications_settings.htm" class="topiclink">notification(s)</a> to be executed.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">State Trigger</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When sensor state is [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the <a href="sensor_states.htm" class="topiclink">status</a> that will trigger the notification. The trigger will be activated when a sensor enters the selected status. Choose from the dropdown menu:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to an </span><span class="f_BoldCustom">Unusual</span><span class="f_ListBulleted"> status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Partial Down</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to a </span><span class="f_BoldCustom">Down (Partial)</span><span class="f_ListBulleted"> status (available in a <a href="clustering.htm" class="topiclink">cluster</a> configuration).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Up</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to an </span><span class="f_BoldCustom">Up</span><span class="f_ListBulleted"> status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Unknown</span><span class="f_ListBulleted">: The trigger is activated if a sensor changes to an </span><span class="f_BoldCustom">Unknown</span><span class="f_ListBulleted"> status.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...for at least [...] seconds,</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how many seconds PRTG waits before it sends out a notification (</span><span class="f_ItalicCustom">latency</span><span class="f_ListBulleted">). This can avoid false alarms if a sensor 'flickers' and, for example, changes to a down status for just a few seconds. If the sensor status persists after the defined time in seconds, the notification is triggered. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Do not define a latency that is shorter than the scanning interval of a sensor that uses this trigger! The notification trigger might not work as expected in this case.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that PRTG sends out if the selected sensor status is true </span><span class="f_ItalicCustom">and </span><span class="f_ListBulleted">the latency</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">time defined has elapsed. Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When sensor state is [...] for at least [...] seconds</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an e</span><span class="f_ListBulleted">scalation latency </span><span class="f_ListBulleted">in seconds. This &quot;escalation&quot; triggers a second notification if the number of seconds you enter here has passed since the sensor status has entered the defined condition. Use this to automatically escalate a notification in case a problem persists for a longer time. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG automatically takes the status from the first trigger condition above.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a (second) notification that PRTG sends out if the selected sensor status is true </span><span class="f_ItalicCustom">and </span><span class="f_ListBulleted">the escalation latency</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">time defined has elapsed. Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Select a notification with another delivery method than above to ensure the delivery in case of technical issues with the first notification.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...and repeat every [...] minutes</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define an interval in minutes in which PRTG sends the escalation notification (defined above) repeatedly. The second (escalation) notification defined will be resent every x minutes that you enter here. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If you enter 0, PRTG will not send repeating escalation notifications.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When sensor leaves [...] state after a notification was triggered, perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that PRTG sends out if the selected sensor status is </span><span class="f_ItalicCustom">not</span><span class="f_ListBulleted"> true anymore because the sensor status changed again. </span><span class="f_ListBulleted">Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG sends notifications about cleared states if the time for the trigger activation elapsed (defined in the first line) and you choose a notification here. If you select </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> above, you will get the notification about the cleared status nevertheless if you define it here. The definition of an &quot;escalation&quot; notification does not influence notifications for cleared conditions. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Save</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted"> to confirm your settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cancel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Cancel</span><span class="f_ListBulleted"> to undo your changes.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="speed" class="hmanchor"></a><span class="f_InTopicHeading">Add Speed Trigger</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define a trigger that is activated when the currently monitored speed in a sensor changes (for example, a traffic sensor). Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Speed Trigger</span> from the menu to add a new trigger, or click the <span class="f_BoldCustom">Edit</span> button next to an existing notification to change it. You can also directly edit notification templates via the <span class="f_BoldCustom">Edit Notification Template</span> button next to a notification template. Define the settings as described below. Every trigger provokes one or more <a href="notifications_settings.htm" class="topiclink">notification(s)</a> to be executed.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Speed Trigger</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When [...] </span><span class="f_BoldCustom">channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">From the dropdown menu, select the channel whose data PRTG considers for speed comparison. Select </span><span class="f_BoldCustom">Primary</span><span class="f_ListBulleted"> to generally use the primary channel of a sensor (you can define this in the <a href="sensor_settings.htm" class="topiclink">sensor settings</a>), or choose a specific channel name from the list (there are different channels for every sensor type). All following settings for this trigger are based on the chosen channel.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...is [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the condition that will trigger the notification. Choose from the dropdown menu:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Above</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel exceeds a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Below</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel falls below a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Equal to</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel is the same as a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not Equal to</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel is different than a defined value.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">[value]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the value to which PRTG compares the channel data. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">[scale]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">From the dropdown menu, select the unit in which you entered the </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted"> above. </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> together define the unit for the given value. If the channel data is shown in a different unit, PRTG will automatically convert values internally. Choose from:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">bit</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">kbit</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Mbit</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Gbit</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Tbit</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Byte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">KByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">MByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">GByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">TByte</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">[time]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the time for the scale (so you create a scale per time unit). Choose from the dropdown menu:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">second</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">minute</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">hour</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">day</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> together define the unit for the given value. If the channel data is shown in a different unit PRTG will automatically convert values internally.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">..for at least [...] seconds,</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how many seconds PRTG waits before it sends out a notification (</span><span class="f_ItalicCustom">latency</span><span class="f_ListBulleted">). This can avoid false alarms if a channel reaches a limit for just a few moments. If the combined channel condition of </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> persists after the defined time span, the notification will be triggered. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Do not define a latency that is shorter than the scanning interval of a sensor that uses this trigger! The notification trigger might not work as expected in this case.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered if the combined channel condition</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">of </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> is true </span><span class="f_ItalicCustom">and </span><span class="f_ListBulleted">the latency</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">time defined has elapsed. Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When condition clears after a notification was triggered, perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered if the combined channel condition</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">of </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> is </span><span class="f_ItalicCustom">not </span><span class="f_ListBulleted">true anymore because the channel value has changed again. </span><span class="f_ListBulleted">Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG sends notifications about cleared conditions if the time for the trigger activation elapsed (defined in the first line) and you choose a notification here. If you select </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> above, you will get the notification about the cleared condition nevertheless if you define it here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Save</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted"> to confirm your settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cancel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Cancel</span><span class="f_ListBulleted"> to undo your changes.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>No escalation notification and no repeat are available for this trigger type.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="volume" class="hmanchor"></a><span class="f_InTopicHeading">Add Volume Trigger</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define a trigger that is activated when a sensor (for example, a traffic sensor) reaches a certain volume limit in a specified time. Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Volume Trigger</span> from the menu to add a new trigger, or click the <span class="f_BoldCustom">Edit</span> button next to an existing notification trigger to change it. You can also directly edit notification templates via the <span class="f_BoldCustom">Edit Notification Template</span> button next to a notification template. Define the settings as described below. Every trigger provokes one or more <a href="notifications_settings.htm" class="topiclink">notification(s)</a> to be executed.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Volume Trigger</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When [...] </span><span class="f_BoldCustom">channel</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">From the dropdown menu, select the channel whose data PRTG considers for this comparison. Select </span><span class="f_BoldCustom">Primary</span><span class="f_ListBulleted"> to generally use the primary channel of a sensor (you can define this in the <a href="sensor_settings.htm" class="topiclink">sensor settings</a>), or choose a specific channel name from the list (there are different channels for every sensor type). All following settings for this trigger are based on the chosen channel.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...has reached [value]</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the value to which PRTG compares the channel data. If the channel data exceeds this value, a notification is triggered. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">[scale]</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">From the dropdown menu, select the unit in which you entered the </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted"> above. </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> together define the unit for the given value. If the channel data is shown in a different unit, PRTG will automatically convert values internally. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Byte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">KByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">MByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">GByte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">TByte</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">per [time],</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the time for the scale (so you create a scale per time designation). Choose from the dropdown menu:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Hour</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Day</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Week</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Month</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> together define the unit for the given value. If the channel data is shown in a different unit, PRTG will automatically convert values internally.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered if the </span><span class="f_BoldCustom">[value]</span><span class="f_ListBulleted"> in the combined unit of </span><span class="f_BoldCustom">[scale]</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">[time]</span><span class="f_ListBulleted"> is exceeded. </span><span class="f_ListBulleted">Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Save</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted"> to confirm your settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cancel</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Cancel</span><span class="f_ListBulleted"> to undo your changes.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>No escalation notification, no repeat, and no notification when condition clears are available for this trigger type.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="threshold" class="hmanchor"></a><span class="f_InTopicHeading">Add Threshold Trigger</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define a trigger that is activated when a sensor reaches specific values. Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Threshold Trigger</span> from the menu to add a new trigger, or click the <span class="f_BoldCustom">Edit</span> button next to an existing notification trigger to change it. You can also directly edit notification templates via the <span class="f_BoldCustom">Edit Notification Template</span> button next to a notification template. Define the settings as described below. Every trigger provokes one or more <a href="notifications_settings.htm" class="topiclink">notification(s)</a> to be executed.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Threshold Trigger</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When [...] </span><span class="f_BoldCustom">channel</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">From the dropdown menu, select the channel whose data PRTG will consider for the comparison. Select </span><span class="f_BoldCustom">Primary</span><span class="f_ListBulleted"> to generally use the primary channel of a sensor. You can define the primary channel in the <a href="sensor_settings.htm" class="topiclink">sensor settings</a>. Choose a specific channel name from the list to apply the trigger to this sensor channel. There are different channels for every sensor type. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All following settings for this trigger are based on the chosen channel.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/><span class="f_ListBulleted">The threshold trigger for a </span><span class="f_BoldCustom">Total</span><span class="f_ListBulleted"> channel defined on device or group level or defined in <a href="libraries.htm" class="topiclink">libraries</a> only applies to the sum channel of traffic sensors. This channel has ID </span><span class="f_BoldCustom">-1</span><span class="f_ListBulleted">. The trigger works with the </span><span class="f_BoldCustom">Total</span><span class="f_ListBulleted"> channel of the following sensors:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Amazon CloudWatch EBS</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">IPFIX</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">IPFIX (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">jFlow V5</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">jFlow V5 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetFlow V5</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetFlow V5 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetFlow V9</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">NetFlow V9 (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Packet Sniffer</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">sFlow</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">sFlow (Custom)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">SMTP&amp;IMAP Round Trip</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">SMTP&amp;POP3 Round Trip</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">SNMP Traffic</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Windows Network Card</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...is [...]</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select the condition that will trigger the notification. Choose from the dropdown menu:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Above</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel exceeds a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Below</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel falls below a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Equal to</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel is the same as a defined value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not Equal to</span><span class="f_ListBulleted">: The trigger is activated if the value of the selected channel is different than a defined value.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">[value]</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the value PRTG will compare the channel data to. Enter values in the smallest possible (base) unit, for example, in </span><span class="f_ItalicCustom">bytes</span><span class="f_ListBulleted">, </span><span class="f_ItalicCustom">milliseconds</span><span class="f_ListBulleted">, or </span><span class="f_ItalicCustom">percent</span><span class="f_ListBulleted">.</span><span class="f_ListBulleted"> Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">..for at least [...] seconds,</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how many seconds PRTG waits before it sends out a notification (</span><span class="f_ItalicCustom">latency</span><span class="f_ListBulleted">). This can avoid false alarms in case a channel reaches a limit for just a few moments. If the defined channel condition persists after the defined time span, the notification is triggered. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Do not define a latency that is shorter than the scanning interval of a sensor that uses this trigger! The notification trigger might not work as expected in this case.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">...perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered if the defined channel condition is true </span><span class="f_ItalicCustom">and </span><span class="f_ListBulleted">the latency</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">time defined has elapsed. Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When condition clears after a notification was triggered, perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered if the defined channel condition</span><span class="f_BoldCustom"> </span><span class="f_ListBulleted">is </span><span class="f_ItalicCustom">not </span><span class="f_ListBulleted">true anymore because the channel value has changed again. </span><span class="f_ListBulleted">Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. You can also choose </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> to only use other conditions for this trigger.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">PRTG sends notifications about cleared conditions if the time for the trigger activation elapsed (defined in the first line) and you choose a notification here. If you select </span><span class="f_BoldCustom">no notification</span><span class="f_ListBulleted"> above, you will get the notification about the cleared condition nevertheless if you define it here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Save</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Save</span><span class="f_ListBulleted"> to confirm your settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:299px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Cancel</span></p>
+</td>
+<td style="vertical-align:top; width:867px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><span class="f_BoldCustom">Cancel </span><span class="f_ListBulleted">to undo your changes.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>No escalation notification and no repeat are available for this trigger type.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="change" class="hmanchor"></a><span class="f_InTopicHeading">Add Change Trigger</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Define a trigger that is activated by an 'on change' trigger. Some sensors offer the option to send such a trigger whenever sensor values have changed. Hover over <img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/> and select <span class="f_BoldCustom">Add Change Trigger</span> from the menu to add a new trigger, or click the <span class="f_BoldCustom">Edit</span> button next to an existing notification trigger to change it. You can also directly edit notification templates via the <span class="f_BoldCustom">Edit Notification Template</span> button next to a notification template. Then define settings as described below. Every trigger will provoke one or more <a href="notifications_settings.htm" class="topiclink">notification(s)</a> to be executed.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:866px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Change Trigger</span></p>
+</th>
+<th style="vertical-align:top; padding:5px; border:none"><br />
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:300px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">When sensor changes, perform [...]</span></p>
+</td>
+<td style="vertical-align:top; width:866px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a notification that is triggered whenever a compatible sensor sends a 'change notification'. You can enable this option in the <a href="sensor_settings.htm" class="topiclink">settings</a> of some sensors. The notification trigger is activated immediately whenever a sensor sends an 'on change' trigger. Choose a notification from the dropdown menu. The menu shows all notifications defined in the </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notification Templates</a></span><span class="f_ListBulleted"> settings. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>There are no other options available for this trigger type.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Object Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more general information about object settings, see section <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Device and Sensor Setup—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_objects_manually.htm" class="topiclink">Create Objects Manually</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="probe_settings.htm" class="topiclink">Probe Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="group_settings.htm" class="topiclink">Group Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="device_settings.htm" class="topiclink">Device Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a>—<a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> &nbsp;</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Change Trigger,Configure,Configure Notification Trigger,Escalation,Latency,Notification,Notification Escalation,Notification Trigger,Off Notification,On Notification,Sensor,Sensor Notification Trigger,Speed Trigger,State Trigger,Threshold Trigger,Trigger,Trigger Change,Trigger Latency,Trigger Speed,Trigger State,Trigger Threshold,Trigger Volume,Volume Trigger</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="sensor_channels_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ajax_gui_advanced.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

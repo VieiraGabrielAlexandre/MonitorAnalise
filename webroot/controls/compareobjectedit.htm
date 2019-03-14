@@ -1,0 +1,31 @@
+﻿<div class="control-group comparison-object">
+	<label for="" class="control-label no_help comparison"><#lang key="common.strings.object" default="Object"> <#compareid></label>
+	<div class="prtg-box">
+		<div class="sensorlookupnew prtg-plugin"
+			data-plugin="comparison"
+			data-selid="<#selid>"
+			data-isinitialized ="<#isinitialized>"
+			data-inputname="id"
+			data-contentload="#comparisonresult<#compareid>"
+			data-required="0"
+			data-rootid="0"
+			data-sensors="1"
+			data-devices="1"
+			data-hidedevices="0"
+			data-groups="0"
+			data-probes="0"
+			data-onlysensors="true"
+			data-allowone="1"
+			data-allowself="1"
+			data-allowroot="0"
+      data-allowreadonly="1">
+		</div>
+	</div>
+</div>
+<div class="control-group comparison-result no-data">
+	<label for="" class="control-label no_help comparison"></label>
+	<div class="prtg-box">
+		<div id="comparisonresult<#compareid>"></div>
+	</div>
+</div>
+<br />

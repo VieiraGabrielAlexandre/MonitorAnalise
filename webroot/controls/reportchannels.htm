@@ -1,0 +1,63 @@
+﻿<#lang key="html.reportchannels.help" default="Selecting Sensors" var="helptitle">
+<#lang key="html.reportchannels.text" default="This page shows a list of all sensors and parent objects that have been selected for this report.
+ You can add groups, devices, and sensors from this list by dragging them from the device tree on the right side to the list on the left side. When adding sensors, select the channels that will be included using the check boxes. To remove objects from the report, use the trash can symbol next to an object in the list." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#inserturlparam parameter="wingui" var="wingui">
+<#lang key="html.sensortree.searchtitle" default="Press Enter to search" var="searchtitle">
+
+<div id="layout" class="loading report panel row-panel selectManually-tab">
+	<div id="dropTarget" class="panel col-panel stretch-panel dropTargetPanel">
+		<div class="paneldHead tablelike">
+			<span>
+				<span><#lang key="html.map.dialog.linktoobject.objects" default="Objects"></span>
+				<span id="nirvana" class="prtg-icon icon-dark icon-trash ui-selected"  title="<#lang key="common.strings.delete" default="Delete">"></span>
+			</span>
+		</div>
+		<div id="reportChannelList">
+			<div class="centeredHint"><#lang key="html.reportchannellist.hint" default="<b>Hint:</b> Please use drag&drop to add monitoring objects from the device tree on the right to your report on the left"></div>
+			<div id="reportChannelListItems"
+				class="slist prtg-plugin"
+				data-plugin="prtg-reportchannellist"
+				data-objectid="<#objectid>"
+				data-multiselect-delete="#nirvana"
+				data-template="channelLisItems">
+          <div style="display: none" id="reportchannels-data-objects">
+            <!--<#table
+              output='json'
+              count='*'
+              tableid='reportchanneltable'
+              content='reportnodes'
+              noraw='1'
+              sortby='reportminussensor'
+              columns='reportminussensor=treejson,objid,basetype,probegroupdevice=htmllong,name=htmllong,reportconfigchannels=treejson,status=textraw'>-->
+          </div>
+			</div>
+		</div>
+	</div>
+	<div id="roottree" class="panel col-panel stretch-panel managelibraryright treeisreadonly treeissmall tree-wrapper report-channels">
+    <div class="treesearchbox">
+		<input tabindex="1" id="treesearch" class="searchstring" title="<#if value='@wingui' is='true' then='ALT&plus;@searchtitle' else='@searchtitle' varexpand='value,then,else'>" type='text' placeholder='<#lang key="html.global.search2" default="Search...">' name="searchtext">
+		<label for="treesearch" ><#lang key="html.devicedata.searchtext" default="Search"/></label>
+	</div>
+		<#include file="\controls\roottree.htm"
+			dataplugin="roottree"
+			rootid="0"
+			nofullsize="true"
+			dndtarget="#layout"
+			dndelements="#reportChannelList,#dropTarget"
+			dndplugin="#reportChannelListItems"
+			dataview="sensortreenormal"
+			displaymode="overview"
+			showtoppanel="true"
+			class="managedSensorTree content"
+      controlsParent="#roottree"
+		>
+	</div>
+</div>
+
+
+
+
+
+

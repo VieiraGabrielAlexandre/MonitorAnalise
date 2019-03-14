@@ -1,0 +1,616 @@
+﻿<!--Sensor Factory Sensor-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="rest_dell_emc_system_health_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sflow_sensor.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Sensor Factory Sensor</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Sensor Factory Sensor</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">The Sensor Factory sensor is a powerful tool that allows you to monitor entire business processes that involve several components.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can define one or more channels that combine monitoring results from other sensors or devices. You can create your own individual sensor with channels based on data from other sensors or devices.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Samples for usage are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Show single channels of one or more sensors in one graph.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Use the data from single channels of one or more sensors to calculate new values (for example, you can subtract, multiply, and divide).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Create graphs with data from other sensor channels and add horizontal lines at specific vertical positions.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The Sensor Factory sensor does not show values in the <span class="f_BoldCustom">Downtime</span> channel because they cannot be calculated for this sensor type.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you want to create only a cumulated sensor status based on specific source sensors, we recommend that you use the <span class="f_BoldCustom"><a href="business_process_sensor.htm" class="topiclink">Business Process Sensor</a></span> instead.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Which channels the sensor actually shows might depend on the monitored device and the sensor setup.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:606px"><a href="sensor_factory.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Sensor Factory Sensor" title="Sensor Factory Sensor" style="width:606px;height:382px;border:none" src="sensor_factory_zoom63.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Sensor Factory Sensor</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="lang" class="hmanchor"></a><span class="f_InTopicHeading">Sensor in Other Languages</span></p>
+<p style="page-break-inside: auto; margin: 0px 0px 13px 0px;">Dutch: <span style="font-weight: bold;">Sensor Fabriek</span>, French: <span style="font-weight: bold;">Capteur combiné</span>, German: <span style="font-weight: bold;">Formelsensor</span>, Japanese: <span style="font-family: 'MS Gothic'; font-weight: bold;">センサーファクトリ</span>, Portuguese: <span class="f_BoldCustom">S</span><span style="font-weight: bold;">ensor de fórmula</span>, Russian: <span style="font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; font-weight: bold;">Фабрика сенсоров</span>, Simplified Chinese: <span style="font-family: 'Microsoft JhengHei'; font-weight: bold;">传感器出厂</span>, Spanish: <span style="font-weight: bold;">Sensor Factory</span></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="remarks" class="hmanchor"></a><span class="f_InTopicHeading">Remarks</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">This sensor <a href="sensor_factory_sensor.htm#limit" class="topiclink">does not support more than 50 channels</a> officially.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Ensure the <a href="sensor_factory_sensor.htm#intervalgroup" class="topiclink">scanning interval</a> of this sensor is equal to or greater than the scanning interval of the source sensor(s) to avoid incorrect sensor behavior. For example, &quot;no data&quot; messages or erratic changes of the sensor status can be a result of an invalid scanning interval. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">Knowledge Base: <a href="http://kb.paessler.com/en/topic/60737" target="_blank" class="weblink">How can I monitor the overall status of the business process &quot;Email&quot;?</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">The Sensor Factory sensor might not work with <a href="flow_monitoring.htm" class="topiclink">flow sensors</a>. Sensor types using </span><span class="f_ItalicCustom">active flow timeout</span><span class="f_Remarks">, this is, <a href="available_sensor_types.htm#bandwidth" class="topiclink">NetFlow and jFlow sensors</a>, are not supported by the Sensor Factory sensor.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks"><a href="historic_data_reports.htm" class="topiclink">Reports</a> cannot show uptime or downtime data for this sensor type.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_Remarks">This sensor type can have a high impact on the performance of your monitoring system. Please use it with care! We recommend that you use no more than 50 sensors of this sensor type per PRTG installation.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="limit" class="hmanchor"></a><span class="f_InTopicHeading">Limited to 50 Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>PRTG does not support more than 50 sensor channels officially. Depending on the data used with this sensor type, you might exceed the maximum number of supported sensor channels. In this case, PRTG will try to display all sensor channels. However, please be aware that you will experience limited usability and performance.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="add" class="hmanchor"></a><span class="f_InTopicHeading">Add Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Add Sensor</span> dialog appears when you <a href="add_a_sensor.htm" class="topiclink">manually</a> add a new sensor to a device. It only shows the setting fields that are required for creating the sensor. Therefore, you will not see all setting fields in this dialog. You can change (nearly) all settings in the sensor's <span class="f_BoldCustom">Settings</span> tab later.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="settings" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On the details page of a sensor, click the <span class="f_BoldCustom">Settings </span>tab to change its settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Usually, a sensor connects to the <span class="f_BoldCustom">IP Address </span>or <span class="f_BoldCustom">DNS Name </span>of the parent device where you created this sensor. See the <span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span> for details. For some sensor types, you can define the monitoring target explicitly in the sensor settings. Please see below for details on available settings.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="basic" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Basic Sensor Settings</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Sensor Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a meaningful name to identify the sensor. By default, PRTG shows this name in the <a href="general_layout.htm#tree" class="topiclink">device tree</a>, as well as in <a href="alarms.htm" class="topiclink">alarms</a>, <a href="logs.htm" class="topiclink">logs</a>, <a href="notifications.htm" class="topiclink">notifications</a>, <a href="reports.htm" class="topiclink">reports</a>, <a href="maps.htm" class="topiclink">maps</a>, <a href="libraries.htm" class="topiclink">libraries</a>, and <a href="tickets.htm" class="topiclink">tickets</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Parent Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Shows </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted"> that this sensor <a href="tags.htm#tags_inherited" class="topiclink">inherits</a> from its <a href="object_hierarchy.htm" class="topiclink">parent device, group, and probe</a>. This setting is shown for your information only and cannot be changed here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter one or more </span><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span><span class="f_ListBulleted">, separated by spaces or commas. You can use tags to group sensors and use tag–filtered views later on. Tags are not case sensitive. We recommend that you use the default value. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can add additional tags to the sensor if you like. Other tags are automatically <a href="tags.htm#tags_inherited" class="topiclink">inherited</a> from objects further up in the device tree. These are visible above as </span><span class="f_BoldCustom">Parent Tags</span><span class="f_ListBulleted">.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>It is not possible to enter tags with a leading plus (<span class="f_BoldCustom">+</span>) or minus (<span class="f_BoldCustom">-</span>) sign, nor tags with round parentheses (<span class="f_BoldCustom">()</span>) or angle brackets (<span class="f_BoldCustom">&lt;&gt;</span>).</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a priority for the sensor. This setting determines where the sensor is placed in sensor lists. Top priority is at the top of a list. Choose from one star (low priority) to five stars (top priority).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><a id="aggregationspecific" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor Factory Specific Settings</span></p>
+</th>
+<th style="vertical-align:top; padding:5px; border:none"><br />
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Channel Definition</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Enter a channel definition for the sensor. Using a specific syntax, you can refer to data from channels of other sensors here. You can also calculate values. Enter one channel definition for each new channel you want to add to this sensor.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information, see section </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#sensor_channels" class="topiclink">Define Sensor Channels</a></span><span class="f_ListBulleted"> below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Error Handling</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the behavior of the sensor if one of the sensors defined above is in an error status. In this case, you can set the sensor factory sensor either to down or to warning status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Factory sensor shows error status when one or more source sensors are in error status</span><span class="f_ListBulleted">: If at least one sensor that you use in a channel definition is in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, the Factory sensor shows a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status as well until all referred sensors leave this status. While the Sensor Factory sensor is </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted">, it will still show data of all available sensor channels.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a <a href="define_lookups.htm" class="topiclink">lookup definition</a> or an <a href="sensor_channels_settings.htm#settings" class="topiclink">error limit</a> triggers the error status of the source sensor, the Sensor Factory will not show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status. This is because the Sensor Factory should only show this status if it cannot calculate values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Factory sensor shows warning status when one or more source sensors are in error status</span><span class="f_ListBulleted">: If at least one sensor that you use in a channel definition is in a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, the factory sensor shows a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status until all referred sensors leave the </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status.</span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a <a href="define_lookups.htm" class="topiclink">lookup definition</a> or an <a href="sensor_channels_settings.htm#settings" class="topiclink">error limit</a> triggers the error status of the source sensor, the Sensor Factory will not show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. This is because the Sensor Factory should only show this status if it cannot calculate values.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use custom formula</span><span class="f_ListBulleted">: Define the status of the Factory sensor by adding a status definition in the field below. </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Status Definition</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you choose </span><span class="f_BoldCustom">Use custom formula</span><span class="f_ListBulleted"> above. </span><span class="f_ListBulleted">Define when the sensor will switch to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status. You can use the </span><span class="f_ItalicCustom">status()</span><span class="f_ListBulleted"> function in combination with Boolean operations. For advanced users it is also possible to calculate a status value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more information,</span><span class="f_ListBulleted"> see section </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#sensor_status" class="topiclink">Define Sensor Status</a></span><span class="f_ListBulleted"> below.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Has No Data</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Choose how this Sensor Factory sensor reacts if a sensor referred to in the channel definition does not provide any data (for example, because it is paused or does not exist). Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Do not calculate factory channels that use the sensor</span><span class="f_ListBulleted">: For defined channels that use one or more sensor(s) that deliver no data, no data is shown.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Calculate the factory channels and use zero as source value</span><span class="f_ListBulleted">: If a sensor that you use in a channel definition does not deliver any data, zero values will be filled in instead. The sensor factory calculates the channel value and shows it using these zero values.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">If a sensor in the channel of a factory sensor has no data, the factory sensor will always show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>, no matter which of the above options you select.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="channelgroup" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Sensor Display</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Primary Channel</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Select a channel from the list to define it as the primary channel. In the device tree, the last value of the primary channel will always be displayed below the sensor's name. The available options depend on what channels are available for this sensor. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_Comment">You can set another primary channel later by clicking the pin symbol of a channel in the sensor's </span><span class="f_BoldCustom">Overview</span><span class="f_Comment"> tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Graph Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define how different channels will be shown for this sensor.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Show channels independently (default)</span><span class="f_ListBulleted">: Show an own graph for each channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Stack channels on top of each other</span><span class="f_ListBulleted">: Stack channels on top of each other to create a multi-channel graph. This will generate an easy-to-read graph that visualizes the different components of your total traffic. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">This option cannot be used in combination with manual </span><span class="f_ItalicCustom">Vertical Axis Scaling</span><span class="f_ListBulleted"> (available in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted"> settings).</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Stack Unit</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This setting is only available if stacked graphs are selected above. Choose a unit from the list. All channels with this unit will be stacked on top of each other. By default, you cannot exclude single channels from stacking if they use the selected unit. However, there is an advanced procedure to do so.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="inherited" class="hmanchor"></a><span class="f_InTopicHeading">Inherited Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">By default, all following settings are inherited from objects higher in the hierarchy and should be changed there, if necessary. Often, best practice is to change them centrally in the <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root</a> </span>group's settings, see section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information. To change a setting only for this object, disable inheritance by clicking the button next to <span class="f_ItalicCustom">inherit from</span> under the corresponding setting name. You will then see the options described below. </p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="intervalgroup" class="hmanchor"></a><a id="scanning" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Scanning Interval</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Scanning Interval</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a scanning interval (seconds, minutes, or hours) from the list. The scanning interval determines the time the sensor waits between two scans. You can change the available intervals in the <a href="monitoring_settings.htm#scanning-intervals" class="topiclink">system administration</a> on PRTG on premises installations.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">If a Sensor Query Fails</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define the number of scanning intervals that a sensor has time to reach and check a device again in case a sensor query fails. The sensor can try to re-reach and check a device several times, depending on the option you select here, before it will be set to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> <a href="sensor_states.htm" class="topiclink">status</a>. This helps you avoid false alarms if the monitored device has only temporary issues. For previous scanning intervals with failed requests, the sensor will show a </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted"> status. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to down immediately</span><span class="f_ListBulleted">: The sensor will show an error immediately after the first failed request.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 1 interval, then set to down (recommended)</span><span class="f_ListBulleted">: After the first failed request, the sensor will show a yellow warning status. If the following request also fails, the sensor will show an error.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 2 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after three consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 3 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after four consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 4 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after five consecutively failed requests.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set sensor to warning for 5 intervals, then set to down</span><span class="f_ListBulleted">: Show an error status only after six consecutively failed requests.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Sensors that monitor via Windows Management Instrumentation (WMI) always wait at least one scanning interval until they show an error. It is not possible to set a WMI sensor to </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> immediately, so the first option will not apply to these sensor types. All other options can apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a sensor has defined error limits for channels, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; option will apply.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">If a channel uses <a href="define_lookups.htm" class="topiclink">lookup</a> values, it will always show a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status immediately, so no &quot;wait&quot; options will apply.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="scheduledependency" class="hmanchor"></a><a id="schedules" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Schedules, Dependencies, and Maintenance Window</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Inheritance for schedules, dependencies, and maintenance windows cannot be interrupted. The corresponding settings from the parent objects will always be active. However, you can define additional settings here. They will be active at the same time as the parent objects' settings.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select a schedule from the list. Schedules can be used to monitor for a certain time span (days, hours) every week. With the period list option it is also possible to pause monitoring for a specific time span. You can create new schedules and edit existing ones in the <a href="notifications_settings.htm" class="topiclink">account settings</a>. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Schedules are generally inherited. New schedules will be added to existing ones, so all schedules are active at the same time.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Window</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_Comment">Specify if you want to set up a one-time maintenance window. During a &quot;maintenance window&quot; period, this object and all child objects will not be monitored. They will be in a paused state instead. Choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Not set (monitor continuously)</span><span class="f_ListBulleted">: No maintenance window will be set and monitoring will always be active.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Set up a one-time maintenance window</span><span class="f_ListBulleted">: Pause monitoring within a maintenance window. You can define a time span for a monitoring pause below and change it even for a currently running maintenance window.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">To terminate a current maintenance window before the defined end date, change the time entry in </span><span class="f_ListBulleted" style="font-weight: bold;">Maintenance Ends</span><span class="f_ListBulleted"> field to a date in the past.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Begins</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the start date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Maintenance Ends </span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if you enabled the maintenance window above. Use the date time picker to enter the end date and time of the maintenance window.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a dependency type. Dependencies can be used to pause monitoring for an object depending on the status of another. You can choose between:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Use parent</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted">: Pause the current sensor if the device, where it is created on, is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Additionally, pause the current sensor if a specific other object in the device tree is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or is paused by another dependency. Select below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">: Make this sensor the master object for its parent device. The sensor will influence the behavior of the device, where it is created on: If the sensor is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, the device will be paused. For example, it is a good idea to make a Ping sensor the master object for its parent device to pause monitoring for all other sensors on the device in case the device cannot even be pinged. Additionally, the sensor will be paused if the parent group of its parent device is in </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status, or if it is paused by another dependency.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">Testing your dependencies is easy! Simply choose </span><span class="f_BoldCustom">Simulate Error Status</span><span class="f_ListBulleted"> from the context menu of an object that other objects depend on. A few seconds later all dependent objects should be paused. You can <a href="show_dependencies.htm" class="topiclink">check all dependencies</a> in your PRTG installation by selecting </span><span class="f_BoldCustom">Devices | Dependencies</span><span class="f_ListBulleted"> from the main menu bar.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">This field is only visible if the </span><span class="f_BoldCustom">Select object</span><span class="f_ListBulleted"> option is enabled above. Click on the reading-glasses and use the <a href="object_selector.htm" class="topiclink">object selector</a> to choose an object on which the current sensor will depend.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Dependency Delay (Sec.)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define a time span in seconds for a dependency delay. After the master object for this dependency goes back to </span><span class="f_BoldCustom">Up </span><span class="f_ListBulleted">status, PRTG will start monitoring the depending objects after this extra delayed. This can help to avoid false alarms, for example, after a server restart, by giving systems more time for all services to start up. Please enter an integer value.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">This setting is not available if you choose this sensor to </span><span class="f_ListBulleted" style="font-weight: bold;">Use parent</span><span class="f_ListBulleted"> or to be the </span><span class="f_BoldCustom">Master object for parent</span><span class="f_ListBulleted">. In this case, please define delays in the parent </span><span class="f_BoldCustom"><a href="device_settings.htm" class="topiclink">Device Settings</a></span><span class="f_ListBulleted"> or in the superior </span><span class="f_BoldCustom"><a href="group_settings.htm" class="topiclink">Group Settings</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a id="accessgroup" class="hmanchor"></a><a id="access" class="hmanchor"></a></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Click </span><img alt="inherited_settings_button" width="18" height="12" style="margin:0;width:18px;height:12px;border:none" src="inherited_settings_button.png"/><span class="f_ListBulleted"> to disrupt the inheritance. See section <a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a> for more information.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group, you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/><span class="f_ListBulleted">For more details on access rights, see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensor_channels" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The channels of a Sensor Factory sensor are controlled by the <span class="f_BoldCustom">Channel Definition</span> text field. Using a special syntax you can refer to other sensor channels, calculate values, and add horizontal lines. You can define factory sensor channels using data from any other sensor's channels on your PRTG server.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You see a definition of two factory sensor channels. Both use the <span class="f_ItalicCustom">channel()</span> function, which simply collects data from the channels of other sensors in your monitoring and displays them:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Local&nbsp;Probe&nbsp;Health</span><br />
+<span class="f_CodeExample">channel(1001,0)</span><br />
+<span class="f_CodeExample">#2:Local&nbsp;Traffic&nbsp;Out[kbit]</span><br />
+<span class="f_CodeExample">channel(1004,1)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The first channel of the factory sensor (<span class="f_ItalicCustom">#1</span>) collects data from the <span class="f_BoldCustom">Health</span> channel (<span class="f_ItalicCustom">ID 0</span>) of the <span class="f_BoldCustom">Probe Health</span> sensor (<span class="f_ItalicCustom">ID 1001</span>) running on the Local Probe device. The second channel (<span class="f_ItalicCustom">#2</span>) collects data from the <span class="f_BoldCustom">Traffic out</span> channel (<span class="f_ItalicCustom">ID 1</span>) of a traffic sensor (<span class="f_ItalicCustom">ID 1004</span>) measuring the system's local network card. Both channels will be shown together in the factory sensor's data tables and graphs.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">The basic syntax for a sensor factory channel definition looks like this:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#&lt;id&gt;:&lt;name&gt;[&lt;unit&gt;]</span><br />
+<span class="f_CodeExample">&lt;formula&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For each channel one section is used. A section begins with the <span class="f_ItalicCustom">#</span> sign. Function names in formulas are not case sensitive.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The parameters are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;id&gt;</span><span class="f_ListBulleted"> is the ID of the factory sensor's channel and must be a unique number that is greater than 0.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;name&gt;</span><span class="f_ListBulleted"> is the name of the factory sensor's channel (displayed in graphs and tables).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[&lt;unit&gt;]</span><span class="f_ListBulleted"> is an optional unit description for the factory sensor's channel (for example, bytes). If you do not provide a unit, the sensor factory selects a suitable unit string automatically (recommended).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;formula&gt;</span><span class="f_ListBulleted"> contains the formula to calculate the factory sensor's channel. For the formula, you can use the following functions: </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#channel" class="topiclink">channel()</a></span><span class="f_ListBulleted">, </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#min_max" class="topiclink">min()</a></span><span class="f_ListBulleted">, </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#min_max" class="topiclink">max()</a></span><span class="f_ListBulleted">, </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#avg" class="topiclink">avg()</a></span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#percent" class="topiclink">percent()</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="formula" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—Formula Calculations</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Within a formula, the following elements are allowed to perform calculations with the values that are returned by one or more functions.</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Basic operations: </span><span class="f_BoldCustom">+</span><span class="f_ListBulleted"> (add), </span><span class="f_BoldCustom">-</span><span class="f_ListBulleted"> (substract), </span><span class="f_BoldCustom">*</span><span class="f_ListBulleted"> (multiply), </span><span class="f_BoldCustom">/</span><span class="f_ListBulleted"> (divide)</span><br />
+<span class="f_ListBulleted">Example: </span><span class="f_ItalicCustom">3 + 5 * 2</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Brackets: </span><span class="f_BoldCustom">( )</span><br />
+<span class="f_ListBulleted">Example: </span><span class="f_ItalicCustom">3 * (2 + 6)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Compare: </span><span class="f_BoldCustom">=</span><span class="f_ListBulleted"> (equal), </span><span class="f_BoldCustom">&lt;&gt;</span><span class="f_ListBulleted"> (not equal), </span><span class="f_BoldCustom">&gt;</span><span class="f_ListBulleted"> (greater), </span><span class="f_BoldCustom">&lt;</span><span class="f_ListBulleted"> (less), </span><span class="f_BoldCustom">&gt;=</span><span class="f_ListBulleted"> (greater or equal), </span><span class="f_BoldCustom">&lt;=</span><span class="f_ListBulleted"> (less or equal)</span><br />
+<span class="f_ListBulleted">If the comparison resolves to true, the value is </span><span class="f_ItalicCustom">10,000</span><span class="f_ListBulleted">; if false, the value is </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted">. For delta sensors the speed is compared.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You see a Sensor Factory channel definition with calculation.</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Traffic&nbsp;Total&nbsp;x&nbsp;Minus&nbsp;Traffic&nbsp;Out&nbsp;y</span><br />
+<span class="f_CodeExample">(&nbsp;channel(2001,-1)&nbsp;-&nbsp;channel(1004,1)&nbsp;)&nbsp;*&nbsp;2</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This full channel definition results in a factory sensor that shows a calculation with values from two channels (channel IDs <span class="f_ItalicCustom">-1</span> and <span class="f_ItalicCustom">1</span>) of two traffic sensors (sensor IDs <span class="f_ItalicCustom">2001</span> and <span class="f_ItalicCustom">1004</span>). The returned values are subtracted and then multiplied by two.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Channels can be gauge values (for example, ping ms) or delta values (for example, traffic kbit/s). Not all combinations are allowed in a formula. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>When performing percentage calculation, please use the <span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#percent" class="topiclink">percent() Function</a></span> to make sure you obtain the expected values!</p>
+<p class="p_Normal" style="page-break-inside: avoid;">There are calculations you <span class="f_ItalicCustom">cannot</span> do:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You cannot add/subtract a delta from a gauge channel (and vice-versa).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You cannot multiply two delta channels.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You cannot compare a delta with a gauge channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">You cannot use a channel of (another) Sensor Factory sensor channel in the formula.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channel" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—channel() Function</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">channel()</span> function allows to read the data from a channel of a different sensor. The syntax is: </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">channel(&lt;sensorId&gt;,&lt;channelId&gt;)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The parameters are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;sensorId&gt;</span><span class="f_ListBulleted"> is the ID of the sensor. It is displayed on the sensor details page in the <a href="general_layout.htm#page" class="topiclink">page header bar</a>.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;channelId&gt;</span><span class="f_ListBulleted"> is the ID of the sensor channel. It is displayed in the respective field of the <a href="sensor_channels_settings.htm#settings" class="topiclink">channel settings</a>.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">channel(2001,2)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This function reads the data from channel ID <span class="f_ItalicCustom">2</span> of the sensor with the ID <span class="f_ItalicCustom">2001</span>.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Sample</span><br />
+<span class="f_CodeExample">channel(2001,2)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This full channel definition reads the data from channel ID <span class="f_ItalicCustom">2</span> of the sensor with the ID <span class="f_ItalicCustom">2001 </span>and displays it in the first factory sensor channel (<span class="f_ItalicCustom">#1</span>), without any additional calculations.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="min_max" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—min() and max() Functions</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">min()</span> and <span class="f_BoldCustom">max()</span> functions return the minimum or maximum of two values. The syntax is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">min(&lt;a&gt;,&lt;b&gt;)</span><br />
+<span class="f_CodeExample">max(&lt;a&gt;,&lt;b&gt;)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Values for <span class="f_BoldCustom">&lt;a&gt;</span> and <span class="f_BoldCustom">&lt;b&gt;</span> are either numbers or <span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#channel" class="topiclink">channel()</a></span> functions. </p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">min(10,5)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This function in the first line returns <span class="f_ItalicCustom">5</span>, because this is the smaller value out of 10 and 5.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">min(&nbsp;channel(2001,1),channel(2002,1)&nbsp;)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This function returns the minimum of the values of channel <span class="f_ItalicCustom">1</span> of the sensor with ID <span class="f_ItalicCustom">2001</span> and channel <span class="f_ItalicCustom">1</span> of the sensor with ID <span class="f_ItalicCustom">2002</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="avg" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—avg() Function</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">avg()</span> function returns the average of the two values. This equals: <span class="f_ItalicCustom">(a+b) / 2</span>. The syntax is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">avg(&lt;a&gt;,&lt;b&gt;)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Values for <span class="f_BoldCustom">&lt;a&gt;</span> and <span class="f_BoldCustom">&lt;b&gt;</span> are either numbers or <span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#channel" class="topiclink">channel()</a></span> functions. </p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">avg(20,10)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This function returns <span class="f_ItalicCustom">15</span>: (20+10) / 2 = 15.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">avg(&nbsp;channel(2001,1),channel(2002,1)&nbsp;)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This function returns the average of channel <span class="f_ItalicCustom">1</span> of the sensor with ID <span class="f_ItalicCustom">2001</span> and channel <span class="f_ItalicCustom">1</span> of the sensor with ID <span class="f_ItalicCustom">2002</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="percent" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—percent() Function</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">percent()</span> function calculates the percent value of two given values, for example, a channel and a fixed value. The syntax is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">percent(&lt;source&gt;,&lt;maximum&gt;[,&lt;unit&gt;])</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The parameters are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;source&gt; </span><span class="f_ListBulleted">is the value the percent is calculated for. This is usually a </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#channel" class="topiclink">channel()</a></span><span class="f_ListBulleted"> function. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;maximum&gt;</span><span class="f_ListBulleted"> is the limit value used for the percent calculation.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[&lt;unit&gt;]</span><span class="f_ListBulleted"> is an optional unit the maximum is provided in. You can use constants with this function (see </span><span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#constants" class="topiclink">Constants</a></span><span class="f_ListBulleted"> section below for a list). This can be used for absolute values (for example, <a href="ping_sensor.htm" class="topiclink">Ping sensors</a>) or calculated delta values (for example, traffic sensors). If no unit is provided, </span><span class="f_ItalicCustom">1</span><span class="f_ItalicCustom" style="color: #000000;"> </span><span class="f_ListBulleted">will be used. </span><br />
+<img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/><span class="f_ListBulleted">The sensor adds the unit string </span><span class="f_ItalicCustom">%</span><span class="f_ListBulleted"> automatically.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG will calculate: <span class="f_ItalicCustom">&lt;source&gt; / &lt;maximum&gt; * &lt;unit&gt; * 100</span></p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Usage&nbsp;Traffic&nbsp;In</span><br />
+<span class="f_CodeExample">percent(channel(2001,0),100,kilobit)</span><br />
+<span class="f_CodeExample">#2:Usage&nbsp;Traffic&nbsp;Out</span><br />
+<span class="f_CodeExample">percent(channel(2001,1),100,kilobit)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This full channel definition results in a factory sensor that shows two channels of a traffic sensor (sensor ID <span class="f_ItalicCustom">2001</span>): Traffic in (channel ID <span class="f_ItalicCustom">0</span>) and traffic out (channel ID <span class="f_ItalicCustom">1</span>). The sensor displays the values % of maximum bandwidth (100 kilobit/second).<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Ping&nbsp;%</span><br />
+<span class="f_CodeExample">percent(channel(2002,0),200)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This full channel definition results in a factory sensor that shows the <span class="f_BoldCustom">Ping Time</span> channel (channel ID <span class="f_ItalicCustom">0</span>) of a Ping sensor (sensor ID <span class="f_ItalicCustom">2002</span>). The sensor displays the values as a percentage of 200 ms.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="horizontal_lines" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—Horizontal Lines</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add lines to the graph using a formula without <span class="f_BoldCustom">channel()</span> function. Use a fixed value instead. The syntax is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#&lt;id&gt;:&lt;name&gt;[&lt;unit&gt;]</span><br />
+<span class="f_CodeExample">&lt;value&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The parameters are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;id&gt;</span><span class="f_ListBulleted"> is the ID of the factory sensor's channel and must be a unique number greater than 1. Although the sensor does not show a horizontal line as a channel, the ID has to be unique.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;name&gt;</span><span class="f_ListBulleted"> is the name of the factory sensor's channel. PRTG does not display this name in graphs and tables, but you can use it as a comment to describe the nature of the line.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">[&lt;unit&gt;]</span><span class="f_ListBulleted"> is an optional unit description (for example, kbit/s). If you do not provide a unit, PRTG applies the line automatically to the scale of the first factory sensor channel. If your factory sensor uses different units, provide a unit to make sure the line is added for the right scale. Enter the unit exactly as shown in your graph's legend. If you enter a unit that does not yet exist in your graph, a new scale will be added automatically.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;value&gt;</span><span class="f_ListBulleted"> contains a number defining where the line will be shown in the graph.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#5:Line&nbsp;at&nbsp;100ms&nbsp;[ms]</span><br />
+<span class="f_CodeExample">100</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This channel definition results in a graph that shows a horizontal line at the value of <span class="f_BoldCustom">100</span> on the <span class="f_BoldCustom">ms</span> scale.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#6:Line&nbsp;at&nbsp;2&nbsp;Mbit/s&nbsp;[kbit/s]</span><br />
+<span class="f_CodeExample">2000</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This channel definition results in a graph that shows a horizontal line at the value of <span class="f_BoldCustom">2000</span> on the <span class="f_BoldCustom">kbit/s</span> scale.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#1:Ping&nbsp;Time</span><br />
+<span class="f_CodeExample">channel(2002,0)</span><br />
+<span class="f_CodeExample">#2:Line&nbsp;at&nbsp;120ms&nbsp;[ms]</span><br />
+<span class="f_CodeExample">120</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This full channel definition results in a factory sensor that shows the <span class="f_BoldCustom">Ping Time</span> channel (channel ID <span class="f_ItalicCustom">0</span>) of a Ping sensor (sensor ID <span class="f_ItalicCustom">2002</span>). Additionally, the sensor graphs will show a horizontal line at <span class="f_BoldCustom">120 ms</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="constants" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Channels—Constants</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following constants are defined and can be used in calculations:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">one</span><span class="f_ListBulleted"> = 1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">kilo</span><span class="f_ListBulleted"> = 1000</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">mega</span><span class="f_ListBulleted"> = 1000 * kilo</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">giga</span><span class="f_ListBulleted"> = 1000 * mega</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">tera</span><span class="f_ListBulleted"> = 1000 * giga</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">byte</span><span class="f_ListBulleted"> = 1</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">kilobyte</span><span class="f_ListBulleted"> = 1024</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">megabyte</span><span class="f_ListBulleted"> = 1024 * kilobyte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">gigabyte</span><span class="f_ListBulleted"> = 1024 * megabyte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">terabyte</span><span class="f_ListBulleted"> = 1024 * gigabyte</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">bit</span><span class="f_ListBulleted"> = 1/8</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">kilobit</span><span class="f_ListBulleted"> = kilo / 8</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">megabit</span><span class="f_ListBulleted"> = mega / 8</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">gigabit</span><span class="f_ListBulleted"> = giga / 8</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">terabit</span><span class="f_ListBulleted"> = tera / 8</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensor_status" class="hmanchor"></a><span class="f_InTopicHeading">Define Sensor Status—status() Function</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can control the status of a Sensor Factory sensor via the <span class="f_BoldCustom">Status Definition</span> text field if you enable the custom formula option in the <span class="f_BoldCustom"><a href="sensor_factory_sensor.htm#settings" class="topiclink">Sensor Settings</a></span>. Using a special syntax, you can define when the factory sensor changes to a <span class="f_BoldCustom">Down</span> status. In all other cases, the sensor will be in an <span class="f_BoldCustom">Up</span> status. The syntax is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">status(sensorID)&nbsp;&lt;boolean&gt;&nbsp;status(sensorID)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The parameters are:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;sensorId&gt;</span><span class="f_ListBulleted"> is the ID of the sensor you want to check the status of. It is displayed on the sensor details page in the <a href="general_layout.htm#page" class="topiclink">page header bar</a>.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">&lt;boolean&gt;</span><span class="f_ListBulleted"> is one of the Boolean operators </span><span class="f_BoldCustom">AND</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">OR</span><span class="f_ListBulleted">, or </span><span class="f_BoldCustom">NOT</span><span class="f_ListBulleted">. If the resulting expression is </span><span class="f_ItalicCustom">true</span><span class="f_ListBulleted">, the factory sensor will change to a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status.</span></li>
+</ul>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">status(2031)&nbsp;AND&nbsp;status(2044)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This changes the factory sensor to a <span class="f_BoldCustom">Down</span> status if both sensors, with IDs <span class="f_ItalicCustom">2031</span> and <span class="f_ItalicCustom">2044</span>, are <span class="f_BoldCustom">Down</span>. Otherwise the factory sensor shows an <span class="f_BoldCustom">Up</span> status.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">status(2031)&nbsp;OR&nbsp;status(2044)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This changes the factory sensor to a <span class="f_BoldCustom">Down</span> status if at least one of the sensors with ID <span class="f_ItalicCustom">2031</span> or ID <span class="f_ItalicCustom">2044</span> is <span class="f_BoldCustom">Down</span>. Otherwise the factory sensor shows an <span class="f_BoldCustom">Up</span> status.<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">status(2031)&nbsp;AND&nbsp;NOT&nbsp;status(2044)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This changes the factory sensor to a <span class="f_BoldCustom">Down</span> status if the sensor with ID <span class="f_ItalicCustom">2031</span> is <span class="f_BoldCustom">Down</span>, but the sensor with ID 2044 is <span class="f_ItalicCustom">not</span> in a <span class="f_BoldCustom">Down</span> status. Otherwise the factory sensor shows an <span class="f_BoldCustom">Up </span>status.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>A status() function with <span class="f_BoldCustom">NOT</span> has to be connected with <span class="f_BoldCustom">AND</span> or <span class="f_BoldCustom">OR</span> if it is combined with other status() functions:<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">status(sensorID)&nbsp;AND&nbsp;NOT&nbsp;status(sensorID)</span><br />
+<span class="f_CodeExample">status(sensorID)&nbsp;OR&nbsp;NOT&nbsp;status(sensorID)</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">(&nbsp;status(2031)&nbsp;AND&nbsp;status(2044)&nbsp;)&nbsp;OR&nbsp;status(2051)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This changes the factory sensor to a <span class="f_BoldCustom">Down</span> status if both the sensor with ID <span class="f_ItalicCustom">2031</span> and the sensor with ID <span class="f_ItalicCustom">2044</span> is <span class="f_BoldCustom">Down</span>, or if the sensor with ID <span class="f_ItalicCustom">2051</span> is <span class="f_BoldCustom">Down</span>. Otherwise the factory sensor shows an <span class="f_BoldCustom">Up</span> status.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Additionally, the following elements are allowed to perform calculations and comparisons with the values that are returned by the status functions:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Basic operations: </span><span class="f_BoldCustom">+</span><span class="f_ListBulleted"> (add), </span><span class="f_BoldCustom">-</span><span class="f_ListBulleted"> (substract), </span><span class="f_BoldCustom">*</span><span class="f_ListBulleted"> (multiply), </span><span class="f_BoldCustom">/</span><span class="f_ListBulleted"> (divide)</span><br />
+<span class="f_ListBulleted">Example: </span><span class="f_ItalicCustom">3 + 5 * 2</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Brackets: </span><span class="f_BoldCustom">( )</span><br />
+<span class="f_ListBulleted">Example: </span><span class="f_ItalicCustom">3 * (2 + 6)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Compare: </span><span class="f_BoldCustom">=</span><span class="f_ListBulleted"> (equal), </span><span class="f_BoldCustom">&lt;&gt;</span><span class="f_ListBulleted"> (not equal), </span><span class="f_BoldCustom">&gt;</span><span class="f_ListBulleted"> (greater), </span><span class="f_BoldCustom">&lt;</span><span class="f_ListBulleted"> (less), </span><span class="f_BoldCustom">&gt;=</span><span class="f_ListBulleted"> (greater or equal), </span><span class="f_BoldCustom">&lt;=</span><span class="f_ListBulleted"> (less or equal)</span><br />
+<span class="f_ListBulleted">If the comparison resolves to true, the value is </span><span class="f_ItalicCustom">10,000</span><span class="f_ListBulleted">; if false, the value is </span><span class="f_ItalicCustom">0</span><span class="f_ListBulleted">. For delta sensors the speed is compared.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Internally, the status() function returns the downtime channel of the sensor in hundreds of percent (10,000 = 100%).</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">true</span><span class="f_ListBulleted"> corresponds to a value of 10,000, which is a </span><span class="f_BoldCustom">Down</span><span class="f_ListBulleted"> status.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">false</span> corresponds to a value of 0, which is an <span class="f_BoldCustom">Up</span> status.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">If you understand this, you are able to use more complex formulas.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Example</span><br />
+<span class="f_BoldCustom">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">(&nbsp;status(1031)&nbsp;+&nbsp;status(1032)&nbsp;+&nbsp;status(1033)&nbsp;+&nbsp;status(1034)&nbsp;)&nbsp;&gt;=&nbsp;20000</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This changes the factory sensor to a <span class="f_BoldCustom">Down</span> status if at least any two of the sensors with IDs <span class="f_ItalicCustom">1031</span>, <span class="f_ItalicCustom">1032</span>, <span class="f_ItalicCustom">1033</span>, or <span class="f_ItalicCustom">1034</span> are <span class="f_BoldCustom">Down</span>. Otherwise the factory sensor shows an <span class="f_BoldCustom">Up</span> status.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>You can also use the status() function in <a href="sensor_factory_sensor.htm#sensor_channels" class="topiclink">channel definitions</a>. Using this functionality, it is possible, for example, to display the numeric status value of sensors in a factory sensor channel.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="cluster" class="hmanchor"></a><span class="f_InTopicHeading">Using Factory Sensors in a Cluster Setup</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you run PRTG in <a href="clustering.htm" class="topiclink">Clustering</a> mode, please note these additional facts:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you add a Sensor Factory sensor underneath the </span><span class="f_BoldCustom">Cluster Probe</span><span class="f_ListBulleted">, and in the Sensor Factory formula you refer to a channel of a sensor running on the </span><span class="f_BoldCustom">Cluster Probe</span><span class="f_ListBulleted"> as well, the Sensor Factory sensor will show the data of all cluster nodes for this sensor channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If you add a Sensor Factory sensor underneath the </span><span class="f_BoldCustom">Local Probe</span><span class="f_ListBulleted">, and in the Sensor Factory formula you refer to a channel of a sensor running on the </span><span class="f_BoldCustom">Cluster Probe</span><span class="f_ListBulleted">, the Sensor Factory sensor will only show data of the primary master node for this sensor channel.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: How to Create a Factory Sensor for the Monitoring of Complex Processes in PRTG</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/factory-sensor" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/factory-sensor</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: How can I monitor the overall status of the business process &quot;Email&quot;?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60737" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60737</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Knowledge Base: What can I do with PRTG's Sensor Factory Sensors?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/583" target="_blank" class="weblink">https://kb.paessler.com/en/topic/583</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Paessler Blog: Monitoring Business Processes—Transformation of Technical Outages to the Real Business Impact</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/blog/2014/06/26/all-about-prtg/monitoring-business-processes" target="_blank" class="weblink">https://www.paessler.com/blog/2014/06/26/all-about-prtg/monitoring-business-processes</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channels" class="hmanchor"></a><span class="f_InTopicHeading">Edit Sensor Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change display settings and limits, switch to the sensor's <span class="f_BoldCustom">Overview</span> tab and click the gear icon of a specific channel.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For detailed information, see the <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="notification" class="hmanchor"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Click the <span class="f_BoldCustom">Notification Triggers</span> tab to change notification triggers. For detailed information, see the <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="others" class="hmanchor"></a><span class="f_InTopicHeading">Others</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For more general information about settings, see the <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Sensor Settings Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For information about sensor settings, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_settings.htm" class="topiclink">Sensor Settings—</a><a href="available_sensor_types.htm" class="topiclink">List of Available Sensor Types</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="additional_sensor_types.htm" class="topiclink">Additional Sensor Types (Custom Sensors)</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notification Triggers Settings</a></span><br />
+&nbsp;</li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="rest_dell_emc_system_health_sensor.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="sflow_sensor.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

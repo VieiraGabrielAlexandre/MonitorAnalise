@@ -1,0 +1,253 @@
+﻿#table_tickettable tr.unread td a[href^="ticket.htm"] {
+  font-weight: bold;
+}
+
+#table_tickettable div.makebuttonset {
+  width: 83px;
+}
+
+#table_tickettable div.makebuttonset a {
+  float: left;
+}
+
+#table_tickettable tr td:last-child input[type="checkbox"] {
+  float: right;
+  margin-right: 4px;
+}
+
+#table_tickettable .newticket a {
+  color: black;
+}
+
+#tickethistory .entry .datetime {
+  float: right;
+}
+
+#tickethistory .entry {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+#tickethistory .modified {
+  padding: 3px;
+  color: #888;
+  border-bottom: 1px solid <#colorcode color="midgray">;
+}
+
+#tickethistory .content {
+  padding: 3px;
+  padding-top: 5px;
+}
+
+#tickethistory span.subjectfrom:before,
+#tickethistory span.subjectto:before {
+  content: open-quote;
+}
+
+#tickethistory span.subjectfrom:after,
+#tickethistory span.subjectto:after {
+  content: close-quote;
+}
+
+#tickethistory a.devicemenu,
+#tickethistory a.sensormenu,
+#tickethistory a.groupmenu ,
+#tickethistory a.probemenu {
+  display: inline-block;
+}
+
+#tickethistory a.actionbutton {
+  margin: 0px 3px 0px 0px;
+}
+
+#ticketheader .buttonbox {
+  margin-top: -25px;
+}
+
+#ticketheader h1.sitecaption>dummy{
+  max-width: 30em;
+}
+
+#ticketheader .subject {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+#ticketheader .label .status {
+  font-weight: bold;
+  font-size: 21px
+}
+
+#ticketheader #objectpriority.ticket-closed{
+  display: none;
+}
+#ticketheader #favstars {
+  margin-left: 1ex;
+  float: right;
+  margin-top: 10px;
+}
+#table_tickettable a.sensormenu,
+#table_tickettable span.sensoricon,
+#tickethistory a.sensormenu,
+#ticketheader span.sensoricon {
+  background-image: url(/icons/led_nostate.png);
+  background-position: 0px 0px;
+}
+
+.ui-icon.icon-ticket-todo {
+  background-image: url(/css/images/todo_14x14.png);
+  /*background-image: url(/icons/todo.svg);*/
+}
+
+.ui-icon.icon-dark.icon-ticket-notofication {
+  background-image: url(/css/images/Glocke_003596_14x14.png);
+  /*background-image: url(/icons/notification.svg);*/
+}
+
+.ui-icon.icon-ticket-user {
+  background-image: url(/css/images/Ticket_leer_003596_14x14.png);
+  /*background-image: url(/icons/ticket_blank.svg);*/
+}
+
+.ui-icon.icon-ticket-opened {
+  background-image: url(/css/images/Ticket_leer_003596_14x14.png);
+  /*background-image: url(/icons/ticket_blank.svg);*/
+}
+
+.ui-icon.icon-ticket-resolved {
+  background-image: url(/css/images/Ticket_resolve_003596_14x14.png);
+  /*background-image: url(/icons/ticket_resolved.svg);*/
+}
+
+.ui-icon.icon-ticket-closed {
+  background-image: url(/css/images/Ticket_close_003596_14x14.png);
+  /*background-image: url(/icons/ticket_closed.svg);*/
+}
+
+.icon-ticket-edit {
+  background-position: -66px -112px;
+}
+
+.actionbutton:hover .ui-icon.icon-ticket-resolve,
+.ui-icon.icon-ticket-resolve {
+  background-image: url(/css/images/resolve_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/haken.svg);*/
+}
+
+.actionbutton:hover  .ui-icon.icon-ticket-close,
+.ui-icon.icon-ticket-close {
+  background-image: url(/css/images/close_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/close.svg)*/
+}
+
+.actionbutton:hover .ui-icon.icon-ticket-assignto,
+.ui-icon.icon-ticket-assignto {
+  background-image: url(/css/images/assign_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/user.svg);*/
+}
+
+.jd_menu .ui-icon.icon-ticket-resolve {
+  background-image: url(/css/images/resolve_222222_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/haken.svg);*/
+}
+
+.jd_menu .ui-icon.icon-ticket-close {
+  background-image: url(/css/images/close_222222_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/close.svg)*/
+}
+
+.jd_menu .ui-icon.icon-ticket-assignto {
+  background-image: url(/css/images/assign_222222_14x14.png);
+  background-position: 0px 2px;
+  /*background-image: url(/icons/user.svg);*/
+}
+
+.icon-ticket-reopen {
+  background-position: -176px -63px;
+  /*background-image: url(images/Ticket_reopen_14x14.png);*/
+ /*background-position: -82px -162px; */
+}
+
+.icon-dark.icon-ticket-new {
+  background-image: url(/css/images/ticket_neu_454545_14x14.png);
+  /*background-position: -66px -114px;*/
+}
+
+div.buttonbox a i.icon-dark.icon-ticket-new{
+  background-image: url(/css/images/ticket_neu_14x14.png)!important;
+}
+.icon-notification,
+div.buttonbox a i.icon-dark.icon-notification{
+  background-image: url(/css/images/Glocke_14x14.png)!important;
+  margin-right: 2px;
+}
+
+.tab-dark:hover i.icon-notification,
+.nav-tabs > .tab-active > a i.icon-notification,
+.icon-dark.icon-notification{
+  background-image: url(/css/images/Glocke_454545_14x14.png)!important;
+  /*background-position: -2px 0px;*/
+}
+
+.bigsensoricon.User.Ticket {
+  background-image: url(/css/images/ticket-user.svg);
+  width: 26px;
+  height: 26px;
+}
+
+.bigsensoricon.Notification.Ticket {
+  background-image: url(/css/images/ticket-notification.svg);
+  width: 26px;
+  height: 26px;
+}
+
+.bigsensoricon.ToDo.Ticket {
+  background-image: url(/css/images/ticket-todo.svg);
+  width: 26px;
+  height: 26px;
+}
+
+table.tickets .logmessage i.icon-dark {
+  float: left;
+  margin-right: 5px;
+  border:none;
+  padding: 2px;
+}
+
+i.icon-notify-done{
+  background-image: url(/css/images/ticket-notification.svg)!important;
+  background-position: center center;
+  background-color: <#colorcode color="statusup">;
+  border-radius: 10px;
+  width: 18px;
+  height: 18px;
+}
+i.icon-notify-fail{
+  background-image: url(/css/images/ticket-notification.svg)!important;
+  background-position: center center;
+  background-color: <#colorcode color="statusdown">;
+  border-radius: 10px;
+  width: 18px;
+  height: 18px;
+}
+i.icon-notify-none{
+  background-image: none!important;
+}
+#addticketbutton{
+  display: <#system type="ticketmode" ticketsystem="inline-block" noticketsystem="none">;
+}
+
+.table.tickets .logmessage,
+.table.tickets .col-name{
+  max-width: 30em;
+}
+.table.tickets .logmessage a{
+  width: calc(100% - 21px);
+}

@@ -1,0 +1,66 @@
+﻿<div class="treeswitches">
+	<div class="sensorstateswitches">
+			<div sensorstateswitch name="downsens" classname="partialdownsens" ="iszeroname="partialdownsens" <#objectsname="partialdownsens" tatus name="downsens" show="htmllink">">
+				<input type="checkbox" name="treecontentr" id="contentdown" value="down" checked="checked">
+				  <label class="first" title="<#lang key="html.global.treeswitch.D" default="Hide/Show Down Sensors">" for="contentdown" aria-pressed="true" role="button" aria-disabled="false">
+						<i class="icon-gray prtg-checkbox"></i>
+				  	<span class="sensr" ><#objectstatus name="downsens" show="htmllink"></span>
+				  </label>
+			</div>
+			<div sensorstateswitch name="partialdownsens" class="iszero<#objectstatus name="partialdownsens" show="htmllink">">
+				<input type="checkbox" name="treecontentr2" id="contentpartialdown" value="partialdown" checked="checked" style='<#clusterdependent showfor="clusterinstallation">'>
+				  <label style='<#clusterdependent showfor="clusterinstallation">' title="<#lang key="html.global.treeswitch.D2" default="Hide/Show Down (Partial) Sensors">" for="contentpartialdown">
+						<i class="icon-gray prtg-checkbox"></i>
+				  	<span class="sensq"><#objectstatus name="partialdownsens" show="htmllink"></span>
+				  </label>
+			</div>
+	
+			<div sensorstateswitch name="downacksens" class="iszero<#objectstatus name="downacksens" show="htmllink">">
+				<input type="checkbox" name="treecontento" id="contentdownack" value="downack" checked="checked">
+				  <label title="<#lang key="html.global.treeswitch.A" default="Hide/Show Down (Acknowledged) Sensors">" for="contentdownack">
+						<i class="icon-gray prtg-checkbox"></i>
+				  	<span class="senso"><#objectstatus name="downacksens" show="htmllink"></span>
+				  </label>
+			</div>
+	
+			<div sensorstateswitch class="iszero<#objectstatus name="warnsens" show="htmllink">">
+				<input type="checkbox" name="treecontenty" id="contentwarn" value="warn" checked="checked">
+				  <label title="<#lang key="html.global.treeswitch.W" default="Hide/Show Warning Sensors">" for="contentwarn">
+						<i class="icon-gray prtg-checkbox"></i>
+				  	<span class="sensy"><#objectstatus name="warnsens" show="htmllink"></span>
+				  </label>
+			</div>
+	
+			<div sensorstateswitch name="upsens" class="iszero<#objectstatus name="upsens" show="htmllink">">
+				<input type="checkbox" name="treecontentg" id="contentup" value="up" checked="checked">
+				  <label title="<#lang key="html.global.treeswitch.G" default="Hide/Show Up Sensors">" for="contentup">
+						<i class="icon-gray prtg-checkbox"></i>
+				  	<span class="sensg"><#objectstatus name="upsens" show="htmllink"></span>
+				  </label>
+			</div>
+	
+			<div sensorstateswitch name="pausedsens" class="iszero<#objectstatus name="pausedsens" show="htmllink">">
+				<input type="checkbox" name="treecontentb" id="contentpaused" value="paused" checked="checked">
+				  <label title="<#lang key="html.global.treeswitch.P" default="Hide/Show Paused Sensors">"  for="contentpaused">
+						<i class="icon-gray prtg-checkbox"></i>
+						<span class="sensb"><#objectstatus name="pausedsens" show="htmllink"></span>
+				  </label>
+			</div>
+	
+			<div sensorstateswitch name="unusualsens" class="iszero<#objectstatus name="unusualsens" show="htmllink">">
+				<input type="checkbox" name="treecontentp" id="contentunusual" value="unusual" checked="checked">
+				  <label title="<#lang key="html.global.treeswitch.N" default="Hide/Show Unusual Sensors">"  for="contentunusual">
+						<i class="icon-gray prtg-checkbox"></i>
+					  <span class="sensp"><#objectstatus name="unusualsens" show="htmllink"></span>
+					</label>
+			</div>
+	
+			<div sensorstateswitch name="undefinedsens" class="iszero<#objectstatus name="undefinedsens" show="htmllink">">
+				<input type="checkbox" name="treecontentx" id="contentundefined" value="undefined" checked="checked">
+				  <label class="last" title="<#lang key="html.global.treeswitch.U" default="Hide/Show Unknown Sensors">" for="contentundefined">
+						<i class="icon-gray prtg-checkbox"></i>
+			  		<span class="sensx"><#objectstatus name="undefinedsens" show="htmllink"></span>
+				  </label>
+			</div>
+	</div>
+</div>

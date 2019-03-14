@@ -1,0 +1,121 @@
+﻿/* _Prtg.Tabs.css */
+.nav-tabs * {
+  <#css user-select="none">
+}
+
+.nav-tabs {
+  list-style: none;
+  display: block;
+  padding: 0;
+  padding-left: 5px;
+  margin: 0 0 0 0;
+  height: 23px;
+  border-bottom: 1px solid #c1c2c3;
+}
+
+.nav-tabs .icon-white,
+.nav-tabs .icon-gray,
+.nav-tabs .icon-dark {
+  vertical-align: text-top;
+}
+
+.nav-tabs > li {
+  display: inline-block;
+  line-height: 18px;
+}
+
+.nav-tabs li img {
+  margin-right: 3px;
+  vertical-align: text-top;
+}
+
+.nav-tabs > li > a {
+  height: 23px;
+  border: 1px solid #c1c2c3;
+  color: #444;
+  display: block;
+  text-decoration: none;
+  padding: 2px 5px 2px 5px;
+  margin: 0 6px 0 0;
+  line-height: 18px;
+  background-position: 0 0;
+  background: #c1c2c3;
+  <#css user-select="none">
+  outline: none;
+  transition: .1s;
+}
+
+.nav-tabs > .tab-active > a,
+.nav-tabs > .tab-active > a:hover {
+  color: #000;
+  font-weight: bold;
+  background: #fff;
+  cursor: default;
+  transition: .1s;
+  border-top: 1px solid #c1c2c3;
+  border-right: 1px solid #c1c2c3;
+  border-left: 1px solid #c1c2c3;
+  border-bottom-color: #fff;
+}
+
+.nav-tabs > .tab-active > a:hover {
+  border-bottom-color: <#colorcode color="graph7">;
+}
+
+.nav-tabs > li.tab-dark:not(.tab-active) > a {
+  background-color: #717273;
+  color: #fff;
+}
+
+.nav-tabs > li.tab-dark:hover > a,
+.nav-tabs > .tab-active:hover > a,
+.nav-tabs > li:hover > a {
+  color: #000;
+  background: <#colorcode color="graph7">;
+  border-top-color: <#colorcode color="graph7">;
+  border-left-color: <#colorcode color="graph7">;
+  border-right-color: <#colorcode color="graph7">;
+  transition: .1s;
+}
+
+.nav-tabs > .tab-active > a i {
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+.tab-active.tab-dark i {
+  background-image: url(images/ui-icons_454545_256x240.png);
+}
+
+.tab-dark:hover i {
+  background-image: url(images/ui-icons_454545_256x240.png);
+}
+
+.tab-spacing {
+  margin-left: 25px;
+}
+
+.tab-container {
+  display: inline-block;
+  min-height: 600px;
+  min-width: 100%;
+  border: none;
+  padding: 3px 4px 1px 4px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.tab-container.loading {
+  background-image: url(/images/ajax-loader-big.gif) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+  cursor: progress;
+}
+
+.prtg-tabs {
+  width: 100%;
+  padding: 0;
+}
+
+.nav-tabs > li.tab-channels {
+  display: none;
+}

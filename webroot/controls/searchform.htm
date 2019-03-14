@@ -1,0 +1,88 @@
+﻿<form id="detailedsearch" action="/searchdetailed.htm" method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+	<fieldset>
+		<legend class="prtg-header"><#lang key="html.search.DetailedSearch" default="Detailed Search"></legend>
+		<div class="control-group search-text">
+			<label class="control-label has_help" for="searchstring2"><#lang key="html.search.Searchfor" default="Search for:"></label>
+			<div class="controls"data-placement="right" title="<#lang key="html.search.wizhelp" default="Please enter a search string">">
+				<input id="searchstring2" class="fieldrequired {required:true}" name="searchtext" type="text" value="<#system type="searchtext">">
+			</div>
+		</div>
+
+		<div class="control-group search-options">
+			<label class="control-label no_help" for=""><#lang key="html.search.Searchin" default="Search in:"></label>
+			<div class="controls search-list">
+				<ul>
+					<li class="list-heading"><#lang key="html.search.Sensortree" default="Device Tree:"></li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="probenode" id="searchprobenode">
+						<label for="searchprobenode" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.probes" default="Probes"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="group" id="searchgroup">
+						<label for="searchgroup" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.groups" default="Groups"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="device" id="searchdevice">
+						<label for="searchdevice" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.devices" default="Devices"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" checked="checked" value="sensor" id="searchsensor">
+						<label for="searchsensor" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.sensors" default="Sensors"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="library" id="searchlibrary">
+						<label for="searchlibrary" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.libraries" default="Libraries"></label>
+					</li>
+				</ul>
+				<ul>
+					<li class="list-heading"><#lang key="html.search.OtherObjects" default="Other Objects:"></li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="report" id="searchreport">
+						<label for="searchreport" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.reports" default="Reports"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="map" id="searchmap">
+						<label for="searchmap" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.maps" default="Maps"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="notification" id="searchnotification">
+						<label for="searchnotification" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.notificationtemplates" default="Notification Templates" var="notifications"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="schedule" id="searchschedule">
+						<label for="searchschedule" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.schedules" default="Schedules"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="ticket" id="searchticket">
+						<label for="searchticket" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.search.tickets" default="Tickets"></label>
+					</li>
+				</ul>
+				<ul>
+					<li class="list-heading"><#lang key="html.search.UserAccounts" default="User Accounts:"></li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="user" id="searchuser">
+						<label for="searchuser" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.userdisplayname" default="User Display Name"></label>
+					</li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="usergroup" id="searchusergroup">
+						<label for="searchusergroup" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.usergroups" default="User Groups"></label>
+					</li>
+				</ul>
+				<ul>
+					<li class="list-heading"><#lang key="html.search.ManualHelp" default="Manual/Help:"></li>
+					<li class="radio-control small">
+						<input class="radio hidden" type="radio" name="searchtype" value="" id="searchhelp">
+						<label for="searchhelp" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#lang key="html.global.help" default="Help"></label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</fieldset>
+	<div class="cancel-action">
+		<a onclick="history.back();return(false)" class="btn cancel" type="reset"> <#lang key="html.global.back" default="Back"></a>
+	</div>
+	<div class="quick-action-wrapper">
+		<button type="submit" class="submit button quick-action-button force-visible" ><#lang key="html.search.start" default="Start Search"></button>
+		<button type="submit" class="ui-icon quick-action-badge quick-continue force-visible"></button>
+	</div>
+</form>

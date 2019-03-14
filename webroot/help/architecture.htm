@@ -1,0 +1,151 @@
+﻿<!--Architecture and User Interfaces-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="understanding_basic_concepts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="clustering.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Architecture and User Interfaces</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Architecture and User Interfaces</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">What is PRTG Network Monitor and how does it work? If you are new to PRTG or simply want to check if you got PRTG right, you are welcome on this page! We are glad to introduce PRTG and its components to you.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can classify the PRTG Network Monitor components in three main categories: System parts, control interfaces, and a basic administration interface.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Type</span></p>
+</th>
+<th style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Part of PRTG</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">System Parts</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="architecture.htm#core" class="topiclink">Core Server</a><br />
+<span class="f_ListBulleted">This is the central part of a PRTG installation and includes data storage, web server, report engine, a notification system, and more. The core server is configured as a Windows service that runs permanently. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="architecture.htm#probe" class="topiclink">Probe(s)</a><br />
+<span class="f_ListBulleted">The part of PRTG that performs the actual monitoring. There are local probes, remote probes, and cluster probes in PRTG on premises, and there are hosted probes and remote probes in PRTG hosted by Paessler. All monitoring data is forwarded to the central core server. Probes are configured as Windows services that run permanently.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">We assume that all computers on which the PRTG core server with its local probe or any remote probes run are secure. It is every administrator's responsibility to make sure that only authorized persons can access these machines. For this reason we highly recommend that you use dedicated machines for your PRTG system parts.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">User Interfaces</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="ajax_gui_basic.htm" class="topiclink">PRTG Web Interface</a><br />
+<span class="f_ListBulleted">The Ajax-based web interface is used for configuration of devices and sensors, as well as for the review of monitoring results. Also system administration and user management are configured here.</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a><br />
+<span class="f_ListBulleted">A native Windows application as alternative to the web interface to manage your monitoring. With the Enterprise Console, you can connect to different independent PRTG core server installations and review their data at a glance!</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a><br />
+<span class="f_ListBulleted">Monitor your network on the go with PRTG and apps for iOS and Android.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">System Administration Program</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> <img alt="icon-prtg-on-premises" width="17" height="17" style="margin:0;width:17px;height:17px;border:none" src="icon-prtg-on-premises.png"/><br />
+<span class="f_ListBulleted">Used to configure basic core server settings in PRTG on premises, such as administrator login, web server IPs and port, probe connection settings, cluster mode, system language, and more. </span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a><br />
+<span class="f_ListBulleted">Used to configure basic probe settings such as name of the probe, IP and server connection settings, and more. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="core" class="hmanchor"></a><span class="f_InTopicHeading">Core Server</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The core server is the heart of your PRTG system and performs the following processes:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Configuration management for monitoring objects (for example, servers, workstations, printers, switches, routers, virtual machines, and many more)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Management and configuration of the connected probes</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Cluster management</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Database for monitoring results</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Notification management including a mail server for email delivery</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Report generator and scheduler</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">User account management</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Data purging (culling data that is older than 365 days, for example)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Web server and API server</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">In a <span class="f_ListBulleted">PRTG on premises</span> <a href="clustering.htm" class="topiclink">cluster</a>, the current master node is responsible for all of these tasks.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The built-in, fast, and secure web server (no additional IIS or Apache is required) supports HTTP as well as secure HTTPS (via SSL). It serves the web interface when you access it via a browser and also answers PRTG Application Programming Interface (API) calls (for example, for user scripts or the Enterprise Console).</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Core server and probe(s) are configured as Windows services that are permanently run by the Windows system without the requirement for a logged-in user.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe" class="hmanchor"></a><span class="f_InTopicHeading">Probe(s)</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On a probe, PRTG performs the actual monitoring via the sensors created on a device (for example, computer, router, server, firewall). The probe <span class="f_ListBulleted">receives its configuration from the core server, runs the monitoring processes, and delivers monitoring results back to the core server. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-premises" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-premises.png"/><span class="f_ListBulleted">On every system running a PRTG on premises core server, there is always a local probe running on the same machine. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>In PRTG hosted by Paessler instances, there is always a hosted probe running on the PRTG core server system that we host for you.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:546px"><a href="probes.png"><img id="TOGGLE0186A1" class="image-toggle" alt="PRTG Core Server and Local Probe Monitoring a Local Area Network" title="PRTG Core Server and Local Probe Monitoring a Local Area Network" style="width:546px;height:231px;border:none" src="probes_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Core Server and Local Probe Monitoring a Local Area Network</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The actual monitoring is performed by PRTG probe processes that run on one or more computers. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Core server and probe(s) are configured as Windows services that are permanently run by the Windows system without the requirement for a logged-in user.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Local Probe in PRTG on premises</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">During installation of PRTG on premises, the system automatically creates the <span class="f_BoldCustom">Local Probe</span>. In a single-probe installation—which is the default setup—the local probe performs all monitoring.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The PRTG on premises core server with the local probe inside the corporate LAN (bottom-right in the figure above) is able to monitor services and servers in the entire Local Area Network (LAN). In PRTG hosted by Paessler you need at least one <a href="install_a_prtg_remote_probe.htm" class="topiclink">remote probe</a> installation in your network for this purpose.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">Hosted Probe in PRTG hosted by Paessler</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">When creating a PRTG hosted by Paessler instance, the system automatically adds the <span class="f_BoldCustom">Hosted Probe</span>. The hosted probe shows monitoring values of the hosted PRTG instance and is able to monitor devices, servers, and services that are publicly accessible in the internet like, for example, websites. To monitor your Local Area Network (LAN), you need at least one <a href="install_a_prtg_remote_probe.htm" class="topiclink">remote probe</a> installation in your network. The local probe is not available in PRTG hosted by Paessler.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Remote Probes</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can create additional <span class="f_BoldCustom">Remote Probes</span> to achieve monitoring of multiple locations, for LAN monitoring with PRTG hosted by Paessler, or for several other scenarios. They use Transport Layer Security (TLS)-secured connections to the core and allow you to securely monitor services and systems inside remote networks that are not openly accessible or are secured by firewalls. For more information, please see <span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Remote Probes and Multiple Probes</a></span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-play" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-play.png"/>For more information, see this video t<span class="f_ListBulleted">utorial on our website: <a href="https://www.paessler.com/support/videos/prtg-basics/distributed_monitoring" target="_blank" class="weblink">Distributed Monitoring with PRTG using Remote Probes</a></span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:720px"><a href="remote_probes_en.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Remote Probes: Monitoring of Several Scenarios" title="Remote Probes: Monitoring of Several Scenarios" style="width:720px;height:397px;border:none" src="remote_probes_en_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Remote Probes: Monitoring of Several Scenarios</span></p></div></div>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Cluster Probes in PRTG on premises</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ListBulleted">In a <a href="clustering.htm" class="topiclink">cluster setup</a>, a cluster probe runs on all nodes. This is the additional </span><span class="f_BoldCustom">Cluster Probe</span>. All devices that you create on it<span class="f_ListBulleted"> are monitored by all nodes in the cluster</span>, so data from different perspectives is available and monitoring for these devices always continues, also if one of the nodes fails.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Mini Probes in PRTG on premises</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG Mini Probes allow you to create small probes on any device (not just on Windows systems). You can implement mini probes to gather monitoring data exactly like you need it and you can create them on any platform. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information, see section <span style="font-weight: bold;"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="health" class="hmanchor"></a><span class="f_InTopicHeading">System Health Monitoring</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG automatically monitors system health of its own core server and of each probe to discover overloading situations that may distort monitoring results. To monitor the system status of the probe computer, PRTG automatically creates a few sensors. These include <span class="f_BoldCustom"><a href="core_health_sensor.htm" class="topiclink">Core Health</a> </span>and<span class="f_BoldCustom"> <a href="probe_health_sensor.htm" class="topiclink">Probe Health</a></span>, <span class="f_BoldCustom"><a href="system_health_sensor.htm" class="topiclink">System Health</a></span>, <span class="f_BoldCustom"><a href="cluster_probe_health_sensor.htm" class="topiclink">Cluster Health</a></span>, <a href="wmi_free_disk_space_multi_drive.htm" class="topiclink">disk free</a>, and <a href="wmi_network_card_sensor.htm" class="topiclink">bandwidth</a> sensors for all installed network cards, as well as a <span style="font-weight: bold;"><a href="common_saas_sensor.htm" class="topiclink">Common SaaS sensor</a></span> that checks the availability of widely used SaaS providers. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">We recommend that you keep these sensors, but you can optionally remove all except the <span class="f_BoldCustom">Health</span> sensors. They measure various internal system parameters of the probe system hardware and the probe's internal processes and computes a resulting value. Frequent or repeated values below 100% should be investigated. Please check the <a href="review_monitoring_data.htm" class="topiclink">channels</a> of a particular sensor for details.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Looking for a comprehensive PRTG training? PRTG e-learning in 9 modules:</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/training/e-learning" target="_blank" class="weblink">https://www.paessler.com/support/training/e-learning</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorials: Learn about the PRTG Network Monitor basics on the Paessler video tutorials page.</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: Distributed Monitoring with PRTG using Remote Probes</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/distributed_monitoring" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/distributed_monitoring</a></span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: What is a sensor?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/what-is-a-sensor" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/what-is-a-sensor</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: PRTG User Interfaces</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/user-interfaces" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/user-interfaces</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Architecture,Architecture Basic Concept</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="understanding_basic_concepts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="clustering.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

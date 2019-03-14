@@ -1,0 +1,37 @@
+﻿<!--Status Icons: Status and audible alert (if alarms > 0)-->
+
+<div class="map_object map_icon <#sensor type="colorclassofstate" prefix="map_iconcolor_" id="<@objectid>">" id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="<#mapobject type="topleftcoordinates" subid="<@subid>" mode="<@editmode>">">
+<#mapobject type="objectgrip" mode="<@editmode>">
+<#mapobject type="htmlbefore" subid="<@subid>">
+  <span>
+    <#objectstatus name="partialdownsens" id="<@objectid>">
+    <#objectstatus name="downacksens"  id="<@objectid>">
+    <#objectstatus name="warnsens" id="<@objectid>">
+    <#objectstatus name="downsens"  id="<@objectid>">
+    <#objectstatus name="upsens" id="<@objectid>">
+    <#objectstatus name="pausedsens" id="<@objectid>">
+    <#objectstatus name="unusualsens" id="<@objectid>">
+    <#objectstatus name="undefinedsens" id="<@objectid>">
+  </span>
+<div id="alarmsound"></div>
+<script type="text/javascript">
+
+  function playalarm() {
+    if($('#audiblealarm').length <= 0) {
+      $("#alarmsound").empty().append('<audio id="audiblealarm"><source src="/sounds/beep.ogg" type="audio/ogg" /><source src="/sounds/beep.mp3" type="audio/mpeg3" /></audio>');
+    }
+    var audiblealarm = document.getElementById("audiblealarm");
+    audiblealarm.load();
+    audiblealarm.play();
+  };
+
+  var errors1="<#objectstatus name="downsens" id="<@objectid>" show="textraw">";
+  var errors2="<#objectstatus name="partialdownsens" id="<@objectid>" show="textraw">";
+  var errors=errors1*1.0+errors2*1.0;
+
+	if (errors > 0) {
+		setTimeout(playalarm, 2000);
+	}
+</script>
+<#mapobject type="htmlafter" subid="<@subid>">
+</div>

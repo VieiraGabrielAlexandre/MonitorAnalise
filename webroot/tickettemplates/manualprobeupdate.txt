@@ -1,0 +1,13 @@
+<#lang key="tickettext.manualprobeupdate.text1" default="Your PRTG server was updated to a new version. All remote probes must update to the same version to be able to reconnect.">
+<#lang key="tickettext.manualprobeupdate.text2" default="We are sorry, but the automatic update of your remote probe <b>%0:s (%1:s)</b> was not successful. It will be disconnected until you update it manually.">
+<br><br>
+<#lang key="tickettext.manualprobeupdate.text3" default="Please follow these steps:">
+<ul>
+<#lang key="tickettext.manualprobeupdate.text4" default="<li>Log in to the computer where your remote probe is installed.</li>">
+<#lang key="tickettext.manualprobeupdate.text5" default="<li>Open the PRTG web interface in a compatible web browser and log in.</li>">
+<#lang key="tickettext.manualprobeupdate.text6" default="<li>Open <b>Setup</b> from the main menu bar and navigate to section <b>Optional Downloads and Tools</b>.</li>">
+<#lang key="tickettext.manualprobeupdate.text7" default="<li>Click <b>Remote Probe Installer</b> and download it from the page that opens.</li>">
+<#lang key="tickettext.manualprobeupdate.text8" default="<li>Execute the installer and follow the instructions.</li>">
+<#lang key="tickettext.manualprobeupdate.text9" default="<li>After the installation, your remote probe will reconnect to your PRTG server.</li>">
+</ul>
+<#lang key="tickettext.manualprobeupdate.text10" default="For more details, please see <b><a href='/help/install_a_prtg_remote_probe.htm' target='_blank'>PRTG Manual: Install a PRTG Remote Probe</a></b>.">

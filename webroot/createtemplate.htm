@@ -1,0 +1,74 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.createtemplate.title" default="Create Device Template" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+    <h1><#lang key="html.createtemplate.page.title" default="Create Device Template for"> <b><#objectproperty name="name"></b></h1>
+    <div id="content" class="limitedcontentwidth">
+		<form action="/api/createtemplate.htm" method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+			<input type="hidden" id="myid" value="<#objectidorzero>">
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.createtemplate.header2" default="Choose Template Name"></legend>
+
+				<div class="control-group">
+					<label class="control-label has_help" for="fname"><#lang key="html.createtemplate.filename2" default="File Name"></label>
+					<div class="controls" data-helptext="<#lang key="html.createtemplate.help1" default="Enter a name for the template file. PRTG stores it in the 'devicetemplate' subfolder of your PRTG installation. You can omit the file name extension, device templates always have the extension .odt automatically.">">
+						<input id="fname" class="text fieldrequired" type="text" autocomplete="off" name="fname" value="">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label has_help" for="clrname"><#lang key="html.createtemplate.templatename" default="Template Name"></label>
+					<div class="controls" data-helptext='<#lang key="html.createtemplate.help2" default="Enter a meaningful name for the device template to identify it later when you want to use this template for auto-discovery.">'>
+						<input id="clrname" class="text fieldrequired" type="text" autocomplete="off" name="clrname" value="">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls fillwidth">
+						<p class="controls-info">
+							<span class="readonlyproperty">
+								<#lang key="html.createtemplate.help3" default="You can exclude sensors from the template by setting the check mark in the list below."><br><br>
+								<#lang key="html.createtemplate.help3b" default="<b>Note:</b> <a href='/help/create_device_template.htm#exceptions' target='_blank'>Sensors that cannot be saved into device templates</a> do not appear in this list."><br><br>
+								<#lang key="html.createtemplate.help3c" default="<b>Note:</b> Sensor types that dynamically scan for available monitoring items when you add the sensor to a device do not appear in this list. PRTG includes these sensors automatically into the template if they support template functionality and you cannot exclude them.">
+							</span>
+						</p>
+					</div>
+            		<label class="control-label has_help" for="excl_sens"><#lang key="html.createtemplate.exludesensors" default="Exclude Sensors"></label>
+            		<div class="controls">
+              			<div>
+							<table id="objlist" class="sensorsselect prtg-plugin table hoverable datatables" data-plugin="sensorlistselect" data-inputname="ignoresensors">
+								<thead>
+									<tr>
+										<th width="30px" class="no_sort"></th>
+										<th><#lang key="html.devicedata.sensors" default="Sensors"></th>
+									</tr>
+								</thead>
+                  				<tbody>
+								    <#listobj mode="children" test="template">
+                  				</tbody>
+						    </table>
+              			</div>
+					</div>
+				</div>
+			</fieldset>
+			<div class="submitbuttonboxanchor">
+				<div class="submitbuttonbox">
+					<input style="<#system type="hideforreadonlyusers">" id="createtemplatesubmit" type="submit" class="submit button" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+					<input onclick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+				</div>
+			</div>
+			<input type="hidden" name="id" value="<#objectid>">
+		</form>
+	</div>
+</div>
+<#lang key="html.createtemplate.help.title" default="Creating Device Templates" var="helptitle">
+<#lang key="html.createtemplate.help.text" default="To create a template that you can use for auto-discovery you have to provide a file name and a clear text name. PRTG uses the clear name in the select box for device templates in the auto-discovery assistant. A template contains an entry for every sensor of the selected device. This entry contains all relevant sensor settings except settings that refer to other objects like schedules, triggers, access rights. These settings will revert to 'inherited' when you create a sensor via a template.
+	<br><br><b>Note:</b> There are sensor types that you cannot save into a device template. For a list of these sensor types, see <a href='/help/create_device_template.htm#exceptions' target='_blank'><b>PRTG Manual: Create Device Template</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

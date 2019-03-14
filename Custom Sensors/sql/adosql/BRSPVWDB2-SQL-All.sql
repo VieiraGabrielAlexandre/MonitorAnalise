@@ -1,0 +1,1 @@
+select * from userid.audit_log ;

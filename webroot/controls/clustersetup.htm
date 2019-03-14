@@ -1,0 +1,15 @@
+﻿<#lang key="html.clustersetup.help.title" default="Cluster" var="helptitle">
+<#lang key="html.clustersetup.help.text" default="Here you can edit the cluster settings, which were already pre-defined during the failover cluster configuration. You can give your cluster nodes unique IDs, change their states, and define IP addresses or DNS names that are used for node-node connections.<br><br><a href='/help/cluster_settings.htm#settings' target='_blank'><b>Help: Cluster Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<form enctype="multipart/form-data" action="/editsettings" method="post" class="prtg-form prtg-plugin formchanged" data-plugin="prtg-form" data-redirect="false" data-ajaxsubmit="true" class="prtg-form">
+  <input type="hidden" name="id" value="810">
+  <input type="hidden" name="checkclustersettings_" value="1">
+  <h2><#lang key="html.clustersetup.wizhead" default="Cluster Node Setup"></h2>
+    <#cluster type="setup">
+
+      <div class="quick-action-wrapper" style='<#system type="hideforreadonlyusers">' >
+        <button style="" type="submit" class="submit btnwhite quick-action-button actionbutton"><#lang key="html.global.save" default="Save"></button>
+        <button style="" type="submit" class="ui-icon quick-action-badge "></button>
+      </div>
+</form>

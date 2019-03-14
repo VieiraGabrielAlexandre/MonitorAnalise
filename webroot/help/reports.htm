@@ -1,0 +1,162 @@
+﻿<!--Reports-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_context_menus.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_step_by_step.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Reports</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Reports</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can use reports to analyze historic monitoring results over a specified time such as one or more days, one month, or an entire year, and for your system configuration. You can create reports for all or only for certain sensors.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="introduction" class="hmanchor"></a><span class="f_InTopicHeading">Introduction</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG includes a powerful reporting engine for the ad-hoc as well as scheduled report generation in HTML, PDF, CSV, and XML format. This means that you can run reports on demand or on a regular basis (for example, once a day or once a month). Furthermore, you can create reports for a single sensor or for a whole range of sensors. It is also possible to <a href="reports.htm#configuration_reports" class="topiclink">create HTML reports of your system configuration</a>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The content and layout of the report is controlled by the report template of your choice and is the same for all sensors in a report. The report time that is shown in data tables and data graph legends depends on the system time of your PRTG core server, not on the <a href="user_accounts_settings.htm#webinterfacesettings1" class="topiclink">timezone settings</a> of the current user account.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:545px"><a href="report_summary.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Report Sample" title="Report Sample" style="width:545px;height:629px;border:none" src="report_summary_zoom65.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Report Sample</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The sample report above shows the report data for devices on a local probe. You can see graphs for the preceding week, plus data tables with numeric results. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="start" class="hmanchor"></a><span class="f_InTopicHeading">Start Reports</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_ItalicCustom">Click</span> <span class="f_BoldCustom">Reports</span> in the <a href="main_menu_structure.htm#maps" class="topiclink">main menu</a> to view or add reports of your monitoring data. Hover over<span class="f_BoldCustom"> Reports</span> to show other menu items. Choose between:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Reports</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">All</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open the </span><span class="f_BoldCustom">Reports</span><span class="f_ListBulleted"> overview page where you can view or add reports of your monitoring data. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Add Report</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an assistant to directly <a href="reports_step_by_step.htm" class="topiclink">add</a> a new report.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Select Report ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Open an existing report. </span>Point to<span class="f_BoldCustom"> Select Report</span><span class="f_ItalicCustom" style="font-weight: bold;"> </span><span class="f_ListBulleted">to show other menu items. Follow the menu path (it is specific to your setup) </span><span class="f_ListBulleted">to select a report.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Configuration Reports ›</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Create reports for maps, reports, users &amp; user groups, and system configuration to document changes to the configuration. Point to </span><span class="f_BoldCustom">Reports | Configuration Reports</span><span class="f_ListBulleted"> to see the <a href="reports.htm#configuration_reports" class="topiclink">available configuration reports</a>.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="overview" class="hmanchor"></a><span class="f_InTopicHeading">Reports Overview</span></p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="reports.png"><img id="TOGGLE0186A2" class="image-toggle" alt="List of Reports" title="List of Reports" style="width:600px;height:209px;border:none" src="reports_zoom42.png"/></a><p style="text-align:center"><span class="f_ImageCaption">List of Reports</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">In the <span class="f_BoldCustom">All</span> view, you see a list of all existing reports for monitoring data. Every section shows information about one report:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Object</span><span class="f_ListBulleted">: Shows the name of the report.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Template</span><span class="f_ListBulleted">: Shows the name of the template that this report uses.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Security Context</span><span class="f_ListBulleted">: Shows the user account that PRTG uses to run the report.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Period</span><span class="f_ListBulleted">: Shows the time span that the report covers.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Schedule</span>: Shows if you set a schedule to regularly execute the report automatically.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Email</span>: If you set a schedule <span class="f_ItalicCustom">and</span> an email address in the report settings, this shows the email address to which PRTG sends <span class="f_ListBulleted">the report automatically.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Status</span><span class="f_ListBulleted">: Shows the current status of the report. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Next Run</span><span class="f_ListBulleted">: </span>If you set a schedule in the report settings, t<span class="f_ListBulleted">his shows when PRTG runs the report the next time.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Last Run</span>: If you set a schedule in the report settings, t<span class="f_ListBulleted">his shows when PRTG ran the report the last time.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Number of Sensors in Last Run</span><span class="f_ListBulleted">: Shows about how many sensors the report includes data. </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">Please also see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span>. Additionally, the multi-edit functionality is available. This enables you to change properties of several objects simultaneously via bulk changes. For more details, see the <span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit Lists</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hover over<span class="f_ListBulleted"> </span><img alt="plus_button" width="15" height="15" style="margin:0;width:15px;height:15px;border:none" src="plus_button.png"/><span class="f_ImageCaption"> </span><span class="f_ListBulleted">and select </span><span class="f_BoldCustom">Add Report</span><span class="f_ListBulleted"> from the menu</span> to add a new report, or click the name of an existing report to view and edit its settings. You can also run a pre-configured report easily by clicking its name and then using the options in the <span class="f_BoldCustom">Run Now</span> tab. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For both options, see the <span class="f_BoldCustom"><a href="reports_step_by_step.htm" class="topiclink">Reports Step By Step</a></span> section.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can only <a href="reports.htm#start" class="topiclink">run configuration reports</a> via the main menu.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="working" class="hmanchor"></a><span class="f_InTopicHeading">Working With Reports</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For detailed information on how to create, edit, and schedule reports, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="reports_step_by_step.htm" class="topiclink">Reports Step By Step</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="reports_view_and_run.htm" class="topiclink">View and Run Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="reports_settings.htm" class="topiclink">Report Settings</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="averaging" class="hmanchor"></a><span class="f_InTopicHeading">Automatic Averaging</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For performance reasons, PRTG automatically averages monitoring data when calculating data for large time spans. Data is then averaged regardless of the selected average interval.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Time Span in Report</span></p>
+</th>
+<th style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Minimum Level of Detail (Average Interval)</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up to 40 days</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Any</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">40 to 500 days</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">60 minutes/1 hour or larger</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Reports for time spans of more than 500 days are not possible. If you enter a longer time span, it will automatically be shortened to 365 days.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>Under certain circumstances, the resulting report may contain a time span that differs from the defined start and end date because of internal averaging processes. When averages are greater than 1 hour and they do not equal 24 hours and they are combined with certain time spans, it might happen that resulting datapoints are asynchronous to the time spans. Please especially consider this behavior when you use <a href="application_programming_interface_api_definition.htm" class="topiclink">API</a> calls to generate reports.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="configuration_reports" class="hmanchor"></a><span class="f_InTopicHeading">Configuration Reports</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Configuration reports are a special type of reports and show the current PRTG configuration. They are available for <span class="f_BoldCustom">Maps</span>, <span class="f_BoldCustom">Reports</span>, <span class="f_BoldCustom">Users &amp; User Groups</span>, and <span class="f_BoldCustom">System Configuration</span>. PRTG generates configuration reports and displays them in a new browser window as an HTML page in the common PRTG report style (like, for example, <span style="font-weight: bold;"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span> of sensors). You can use configuration reports, for example, to file and document changes to the configuration of your PRTG installation. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Configuration reports contain the same information as you can see on the overview pages of <span class="f_BoldCustom"><a href="maps.htm" class="topiclink">Maps</a></span>, <span class="f_BoldCustom"><a href="reports.htm" class="topiclink">Reports</a></span>, as well as on the system administration tabs <span class="f_BoldCustom"><a href="user_accounts_settings.htm" class="topiclink">User Accounts</a></span> and <span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">User Groups</a></span>. The configuration report <span class="f_BoldCustom">System Configuration</span> includes the current system administration settings of the tabs <span class="f_BoldCustom"><a href="system_website_settings.htm" class="topiclink">User Interface</a></span>, <span class="f_BoldCustom"><a href="monitoring_settings.htm" class="topiclink">Monitoring</a></span>, <span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">Notification Delivery</a></span>, <span class="f_BoldCustom"><a href="probes_settings.htm" class="topiclink">Core &amp; Probes</a></span>, and <span class="f_BoldCustom"><a href="cluster_settings.htm" class="topiclink">Cluster</a></span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Configuration reports are interactive so you can click available links to go to the corresponding webpage in the PRTG web interface.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Averaging,Configure,Configure Report,Percentiles,Reports</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_context_menus.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="reports_step_by_step.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+﻿<#lang key="html.editticket.title" default="Edit Ticket" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+
+
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<div id="main" data-title="<#pagetitle>">
+  <wingui-hidden>
+  <h1><#lang key="html.ticket.editticket" default="Edit Ticket"></h1>
+  </wingui-hidden>
+  <div id="content" class="ui-dialog-content">
+    <div class="tabs-container">
+      <form id="editicket" action="/api/editticket.htm" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+        <fieldset>
+          <wingui>
+      			<legend class="prtg-header">Ticket #<#inserturlparam parameter="id"></legend>
+      		</wingui>
+      		<wingui-hidden>
+      			<legend class="prtg-header">Ticket #<#inserturlparam parameter="id"></legend>
+      		</wingui-hidden>
+          <div class="control-group">
+            <#ticket>
+          </div>
+        </fieldset>
+        <div class='quick-action-wrapper <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'>
+            <button class="submit btngrey button quick-action-button" type="submit"><#lang key="html.global.save" default="Save"></button>
+            <button type="submit" class='ui-icon quick-action-badge quick-continue'></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

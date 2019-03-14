@@ -1,0 +1,41 @@
+﻿<#lang key="html.sensors.title" default="Sensors" var="title">
+<#lang key="html.sensors.titlesmall" default="sensors" var="titlesmall">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<#inserturlparam parameter='id' var="urlid">
+<#if value="@urlid" is="" then="@pagetitle" else="(OBJECT)" varexpand="value,then" var="tools">
+<#breadcrumbs trail="(AUTO)" varexpand="this" this="@tools">
+<div id="main" class="sensors-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="table-wrapper">
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+ 	  <div class="prtg-plugin" data-plugin="prtg-table">
+			<#table tableid="sensortable"
+			   content="sensors"
+			   columns="sensor,probegroupdevice,status,lastvalue,message,minigraph,priority,favorite,checkbox"
+			   tools="pause,acknowledge,fave,prio,scan,delete,edit"
+			   sortby="priority"
+			   sortable="true"
+			   refreshable="true"
+		     tabletitle="AUTO"
+		     varexpand="filters"
+		     filters="words!@titlesmall,objects!data-filtername='id'|data-inputname='id'|data-rootid='0'|data-onlysensors='0'|data-sensors='0'|data-hidesensors='true'|data-devices='1'|data-groups='1'|data-required=''|data-probes='1'|data-allownone='1'|data-allowone='1'|data-allowself='1'|data-allowroot='1',tags">
+		</div>
+	</div>
+
+<#system type='showhelp' tct="theater" page="help-sensors" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.sensors.help.title" default="Sensors" var="helptitle">
+<#lang key="html.sensors.help.text" default="This page shows the sensors from the monitoring database. You can navigate the log file entries as well as change the sorting order using the links on the table. Please note that you can choose additional filters from the Sensors menu." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

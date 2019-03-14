@@ -1,0 +1,50 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="group,probenode,device,sensor">
+<#lang key="html.editrights.title" default="View/Edit Access Rights" var="title">
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#system type="usernameshort" var="usernameshort">
+<#lang key="html.editrights.head2" default="Edit Rights" var="edit2">
+<#breadcrumbs this="(OBJECT)" >
+<div id="main" data-title="<#pagetitle>">
+  <h1 style="display:none;"><#lang key="html.editrights.head" default="Edit Rights for <b>@objectname</b>"></h1>
+  <div id="content" class="accessrights">
+    <style>
+      .accessrights #objectdataform label.control-label {display: none;}
+      .accessrights #objectdataform .controls{width: 100%!important;}
+      .accessrights a{max-width: 15em!important;}
+      .accessrights td.col-name,
+      .accessrights td .unitselect{max-width: 25em!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    </style>
+    <form class="prtg-form">
+      <fieldset>
+        <legend class="prtg-header"><#lang key="html.editrights.help.title" default="Edit Access Rights"></legend>
+        <div class="control-group">
+          <div class="controls fillwidth">
+            <p class="controls-info">
+              <span class="readonlyproperty">
+                <#lang key="html.editrights.help.text2" default="Use this page to review and edit access rights for an object.<br><br><a href='/help/user_access_rights.htm' target='_blank'><b>Help: User Access Rights</b></a>">
+              </span>
+            </p>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <#lang key="html.editrights.tablehead2a" default="Current Access Rights" var="title">
+    <#table tableid="rightstable" content="accessrights" tabletitle="@title" varexpand="tabletitle" columns="name,access,comments" infoheader="false" links="false" count="500">
+    <form id="objectdataform" enctype="multipart/form-data" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form" novalidate="novalidate">
+      <#object type="layoutgroup" name="accessgroup" title="fwefwefwefwf">
+      <#hiddenid>
+      <div class="submitbuttonboxanchor">
+        <div class="submitbuttonbox">
+          <input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>"  class="submit btngrey button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">"> <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

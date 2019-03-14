@@ -1,0 +1,75 @@
+﻿<#system type="denyfornonsvs">
+<#lang key="html.activation.title" default="Activation" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<style>
+  .prtg-form fieldset.collapsed fieldset{display:none;}
+  .prtg-checkbox{
+    width: 16px;
+    height: 18px;
+    border: 2px solid #b7b7b7;
+    background-color: #fff;
+    margin: 0 5px 0 0;
+    padding: 0;
+    border-radius: 11px;
+    outline: none;
+  }
+</style>
+
+<div id="login-container" class="license-activation">
+  <div class="header export-header">
+    <img src="images/prtg_network_monitor.png"/>
+  </div>
+  <div class="licenseinfo">
+      <div style='<#hideactivationinfo mode="ok">'>
+        <h1><#lang key="html.activationrequired.title" default="Activate your license"></h1>
+	  </div>
+      <div style='<#hideactivationinfo mode="error">'>
+        <h1><#lang key="html.activationupdate.title" default="Update your license"></h1>
+	  </div>
+
+    </span>
+  </div>
+
+  <div id="content" class="ui-dialog-content">
+    <div class="nagscreen-box" style="<#hideforadmins>">
+      <p class="nagscreen-head">
+        <#lang key="html.activationrequired.head" default="PRTG is currently not available!">
+      </p>
+      <p class="nagscreen-cell">
+        <#lang key="html.activationrequired.cell" default="For further informations please contact your PRTG admin.">
+      </p>
+    </div>
+    <div style="<#hidefornonadmins>">
+      <#include file="controls\activationrequired.htm" skiptagfornonadmins='true'>
+    </div>
+  </div>
+  <footer class="hidebuttons export-footer">
+    <div class="footer">
+      <span class="footer_logo">
+          <a href="https://www.paessler.com" target="_blank"><span id="paesslerlogo" title="Paessler AG - The Network Monitoring Company"></span></a>
+          <span><#system type="version"> <#system type="installedupdatechannel"> <#system type="expiry"></span>
+      </span>
+
+      <span class="servertimebox" title="time" data-placement="top">
+        <i class="glyph-clock"></i>
+        <span class="serverclock"><#system type="date"> <#system type="time"></span>
+        </span>
+      <span>
+      &copy; <#copyrightyear> <a href="https://www.paessler.com" target="_blank" data-placement="top" title="The Network Monitoring Company">Paessler AG</a>
+    </span>
+    </div>
+  </footer>
+</div>
+<script src="/javascript/prtg.js?version=<#system type="version">&language=<#system type="language">"></script>
+<script>
+
+function dataCallback(){
+  return JSON.stringify({
+    'name':$('#licensename').val(),
+    'key':$('#licensekey').val(),
+    'systemid':$('#systemid').val()
+  });
+}
+</script>
+</body>
+</html>

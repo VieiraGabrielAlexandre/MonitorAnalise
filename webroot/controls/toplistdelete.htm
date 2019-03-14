@@ -1,0 +1,17 @@
+﻿<h1><#lang key="html.toplist.title" default="Toplist"></h1>
+<div id="content">
+	<form id="addtoplistform" action="/api/toplistdelete.htm" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+		<fieldset>
+			<legend class="prtg-header"><#lang key="html.deletetoplist.title2" default="Delete toplist?"></legend>
+			<div><b><#objectproperty type="toplistname"></b></div>
+			<input type="hidden" name="id" value="<#objectid>">
+			<input type="hidden" name="subid" value="<#system type="subid">">
+		</fieldset>
+		<div class="submitbuttonboxanchor">
+			<div class="submitbuttonbox">
+				<input id="toplistsubmit" class="submit" style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>"  type="submit" value="<#lang key="common.strings.delete" default="Delete">">
+				<input onclick="window.top.location.href='/sensor.htm?id=<#objectid>&tabid=6'" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">	
+			</div>
+		</div>
+	</form>
+</div>

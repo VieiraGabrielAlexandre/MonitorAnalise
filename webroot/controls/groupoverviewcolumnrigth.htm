@@ -1,0 +1,43 @@
+﻿<div class="tct-box right-column">
+    <#include file="includes/tct/theater/groupoverview.htm">
+</div>
+
+<div class="prtg-plugin tree status-bigScreen" data-plugin="status">
+    <#include file="\controls\groupoverview_statusinfo.htm">
+</div>
+
+<a class='button addSensor-cta status-bigScreen <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href="/addsensor0.htm"><span class="glyph-plus-circled"></span><#lang key="html.global.addsensor" default="Add Sensor"/></a>
+
+<div class="geomap-box">
+    <div class='geomap  <#selectionlist content="geomapprovider" asClass="true">'>
+        <a href="geomap.htm?id=<#objectid>">
+            <div class="graphbox">
+                <div id="geomap_deviceoverview"
+                     class='refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=325&height=130&maxlegenditems=4&domobjectid=geomap_deviceoverview&nolegend=1'>
+                    <#selectionlist content="locationlist" width="365" height="130" maxlegenditems="4" domobjectid="geomap_deviceoverview" nolegend="1">
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div id="overviewgraphs">
+    <div class="graphs">
+      <div class="graphbox">
+      	<a href="/<#objectproperty type='nodename'>.htm?id=<#objectid>&tabid=2">
+        <#group type="graph" forcesvg="true" graphid="1" graphtitle="@@notitle@@"  charttext="@@period@@" width="325" maxwidth="410" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+      	<a href="/<#objectproperty type='nodename'>.htm?id=<#objectid>&tabid=3">
+        <#group type="graph" forcesvg="true" graphid="2" graphtitle="@@notitle@@"  charttext="@@period@@" width="325" maxwidth="410" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox">
+      	<a href="/<#objectproperty type='nodename'>.htm?id=<#objectid>&tabid=4">
+        <#group type="graph" forcesvg="true" graphid="3" graphtitle="@@notitle@@"  charttext="@@period@@" width="325" maxwidth="410" height="130" refreshable="true">
+        </a>
+      </div>
+      <div class="graphbox"><#sensor type="legend" width="276"></div>
+    </div>
+</div>

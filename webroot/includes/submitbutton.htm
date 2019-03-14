@@ -1,0 +1,9 @@
+﻿<#system type="hideforreadonlyusers" allowpwchangeusers="true" var="useraccessPw">
+<#system type="hideforreadonlyusers" var="useraccess">
+<#allowreadonly var="allowreadonly">
+<#if value="@allowreadonly" is="true" then="@useraccessPw" else="@useraccess" varexpand="value,then,else" var="displaystyle">
+
+<div style='<#inserthtml html="@displaystyle" varexpand="html">' class='<#submitbuttontext asClass="true">-action quick-action-wrapper'>
+    <button class="submit actionbutton quick-action-button" type="submit"><#submitbuttontext poddependent="@poddependent" varexpand="poddependent"></button>
+    <button class="quick-action-badge" type="submit"></button>
+</div>

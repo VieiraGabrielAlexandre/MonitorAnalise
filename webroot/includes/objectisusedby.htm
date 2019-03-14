@@ -1,0 +1,26 @@
+﻿<div class="multieditsearchresult">
+﻿    <#lang key="html.objectsused.found4" default="use this object" var="found">
+
+	  <#lang key="html.global.probes" default="Probes" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_probes" refreshable="true" varexpand="tabletitle " tabletitle="@objects @found" searchtype="probenode" maxcount=1000 columns="name" tools="edit,delete,scan,pause"></div>
+	  <#lang key="html.global.groups" default="Groups" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_groups" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="group" maxcount=1000 columns="name,group,probe" tools="edit,delete,scan,pause"></div>
+	  <#lang key="html.global.devices" default="Devices" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_devices" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="device" maxcount=1000 columns="name,group,probe" tools="edit,delete,scan,pause"></div>
+	  <#lang key="html.global.sensors" default="Sensors" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_sensors" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="sensor" maxcount=1000 columns="name,status,lastvalue,message,probegroupdevice" tools="edit,delete,scan,pause"></div>
+	  <#lang key="html.global.reports" default="Reports" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_reports" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="report" maxcount=1000 columns="name"  tools="edit,delete"></div>
+	  <#lang key="html.global.maps" default="Maps" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_maps" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="map" maxcount=1000 columns="name" tools="edit,delete"></div>
+			<#lang key="html.global.notificationtemplates" default="Notification Templates" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_notifications" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="notification" maxcount=1000 columns="name"  tools="edit,delete,pause"></div>
+	  <#lang key="html.global.schedules" default="Schedules" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_schedules" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="schedule" maxcount=1000 columns="name"  tools="edit,delete"></div>
+	  <#lang key="html.global.users" default="Users" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_users" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="user" maxcount=1000 columns="name" tools="edit,delete"></div>
+	  <#lang key="html.global.usergroups" default="User Groups" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_usergroups" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="usergroup" maxcount=1000 columns="name"  tools="edit,delete"></div>
+	  <#lang key="html.global.libraries" default="Libraries" var="objects">
+	  <div class="prtg-plugin" data-plugin="prtg-table"><#search tableid="searchresult_libraries" refreshable="true" varexpand="tabletitle  " tabletitle="@objects @found"  searchtype="library" maxcount=1000 columns="name,library"  tools="edit,delete"></div>
+</div>

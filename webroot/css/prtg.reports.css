@@ -1,0 +1,240 @@
+﻿/* prtg.reports.css */
+#reportbody {
+  overflow: visible;
+}
+
+#reportbody pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+
+span.statehistorybar {
+  display: inline-block;
+  width: 65px;
+  margin-left: 10px;
+}
+
+.managedSensorTree span.treesizeswitches,
+.managedSensorTree span.sensorstateswitches {
+  display: none !important;
+}
+
+#layout.report .slick-viewport {
+  border-radius: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+
+#layout.report div.panel {
+  border: 3px solid <#colorcode color="lightgray">;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#nirvana {
+  float: right;
+  margin-right: 2px;
+  display: none;
+}
+
+#layout.report  .header {
+  background-color: <#colorcode color="menucolor">;
+  color: White;
+  height: 16px;
+  padding: 2px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+#layout.report .header.tablelike {
+  background-color: #E3E4E5;
+  height: 16px;
+  padding: 0;
+  margin-bottom: 0;
+  display: block;
+  color: black;
+}
+
+#layout.report .header.tablelike .column {
+  border-right: 1px solid <#colorcode color="midgray">;
+  color: #000;
+  font-weight: normal;
+  margin: 0;
+  padding: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#layout.report span.sortItems {
+  width: 16px;
+  margin: 0 5px 0 110px;
+  display: block;
+  position: relative;
+  float: left;
+  text-indent: -110px;
+  overflow: visible;
+  border-right: 1px solid #aaa;
+  color: #00235D;
+  cursor: default;
+}
+
+#layout.report span.sortItems:hover {
+  text-decoration: underline;
+  background-color: #E1EDFB;
+}
+
+#reportChannelList {
+  overflow: auto;
+  margin: 1px;
+}
+
+#reportChannelListItems .ui-state-default {
+  background-image: none !important;
+}
+
+#reportChannelListItems .ui-button-text,
+#reportChannelListItems  div.status,
+#reportChannelListItems  .col1 {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header .icon-trash.ui-selected,
+#reportChannelListItems .ui-selected {
+  background-color: #C5F5CC !important;
+}
+
+#reportChannelListItems div.channelItem img.deleteItem {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  margin-top: 20px
+}
+
+#reportChannelListItems div.channelItem span.reorder {
+  position: absolute;
+  right: 3px;
+  background-color: #AAA;
+  width: 20px;
+  height: 20px;
+  right: 1px;
+  margin-top: -6px;
+  border-radius: 0 4px 0 20px;
+  border: 2px solid white;
+  cursor: move;
+  padding: 0 4px;
+}
+
+#reportChannelListItems div.channelItem {
+  position: relative;
+  min-height: 42px;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  background: <#colorcode color="lightgray">;
+  padding: 1ex;
+  display: block;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+#reportChannelListItems div.channelItem:nth-child(2n+1) {
+  background: <#colorcode color="midgray">;
+}
+
+#reportChannelList .col1,
+#reportChannelList .col2 {
+  position: relative;
+  float: left;
+  margin: 0;
+  width: 50%;
+  padding-right: 10px;
+}
+
+#reportChannelList .probegroupdevice {
+  margin-top: 5px;
+  margin-left: 17px;
+}
+
+#reportChannelList .checkbox-control {
+  min-width: 100px;
+  width: 100px;
+  float: left;
+  height: 19px;
+  margin: 2px 0;
+  overflow: hidden;
+}
+
+#reportChannelList label {
+  width: 80px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#reportChannelList label i {
+  margin: 2px 5px 2px 2px;
+}
+
+#reportChannelList .moreicon {
+  display: none;
+}
+
+#reportChannelList .probegroupdevice .groupmenu,
+#reportChannelList .probegroupdevice .probemenu {
+  display: inline-block !important;
+  font-size: 9px;
+  max-width: 70px;
+  opacity: 0.4;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#reportChannelList .probegroupdevice .devicemenu {
+  display: block;
+}
+
+
+/* * ovverrides
+* */
+#buttonbar .reportsensors {
+  width: 100% !important;
+}
+
+#reportChannelList .ui-state-active,
+#reportChannelList .ui-widget-content .ui-state-active,
+#reportChannelList .ui-state-default,
+#reportChannelList .ui-widget-content .ui-state-default,
+#reportChannelList label.ui-button:hover {
+  border: none !important;
+}
+
+#reportChannelList div[status='5'],
+#reportChannelList div[status='13'],
+#reportChannelList div[status='14'] {
+  background-color: #FEE8E9;
+}
+
+#reportChannelList div[status='5']:nth-child(odd),
+#reportChannelList div[status='13']:nth-child(odd),
+#reportChannelList div[status='14']:nth-child(odd) {
+  background-color: #FBC5C8;
+}
+
+.ui-effects-transfer {
+  border: 1px dotted red;
+}
+
+.reportsensorlist .probegroupdeviceitem a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}

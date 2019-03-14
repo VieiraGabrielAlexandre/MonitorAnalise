@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/prtg<#system type='usertheme'>.css?prtgversion=<#system type="version">&language=<#system type="language">">
+    <link rel="stylesheet" type="text/css" href="/css/print.css?version=<#system type="version">" media="print"  />
+    <script src="/javascript/lib/jquery.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/css/css.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/javascript/javascript.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/addon/edit/matchbrackets.js"></script>
+
+    <style>
+      body{
+        font-size: 13px;
+      }
+      tct a{
+        height: auto;
+      }
+      textarea{
+        background-color: #eee;
+        font-family: Arial;
+        font-weight: normal;
+      }
+
+      .reset{
+        width: 100%;
+      }
+
+    </style>
+  </head>
+<body class="tct-overview">
+  <div class="panel row-panel upper-panel">
+    <div class="panel code-panel">
+      <textarea id="input" class="test-panel" rows="14" cols="100" palceholder="Edit you TCT here!"></textarea>
+    </div>
+    <div class="panel selection-panel" style="max-width:10em;outline:none">
+      <br/>
+      <label for="lang" style="vertica-align:middle">Language
+      <select style="width:5em" size="6" id="lang">
+        <option value="default" selected>en</option>
+        <option value="de">de</option>
+        <option value="fr">fr</option>
+        <option value="jp">jp</option>
+        <option value="br">br</option>
+        <option value="sp">sp</option>
+      </select>
+      </label>
+      <br/>
+      <br/>
+      <button type="submit" class="copyHtml">Test it >></button>
+      <br/>
+      <label>As Help <input id="ashelp" type="checkbox"></label>
+    </div>
+    <div class="test-panel panel col-panel">
+    </div>
+  </div>
+
+
+  <div class="panel row-panel tct-list">
+
+    <div class="panel groupoverview">
+      <div id="deviceoverview">
+      <a target="_blank" href="/group.htm?id=0"><h1>Group Overview</h1></a>
+      <button class="reset" data-raw="trial-group">show all on page</button>
+      <h2>- - - - Trial - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="groupoverviewcolumnrigth" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - - Commercial - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="c-groupoverviewcolumnrigth" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      </div>
+    </div>
+    <div class="panel deviceoverview"> <!-- Right part-->
+      <a target="_blank" href="/device.htm?id=40"><h1>Device Overview</h1></a>
+      <button class="reset">show all on page</button>
+      <h2>- - - - Trial - - - -</h2>
+      <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="deviceoverview" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      </div>
+      <h2>- - - - Commercial - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="c-deviceoverview" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        </div>
+    </div>
+    <div class="panel sensoroverview"> <!-- Right part-->
+      <a target="_blank" href="/sensor.htm?id=1002"><h1>Sensor Overview</h1></a>
+      <button class="reset">show all on page</button>
+      <h2>- - - - Trial - - - -</h2>
+      <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="sensoroverview" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      </div>
+      <h2>- - - - Commercial - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="c-sensoroverview" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+        </div>
+    </div>
+    <div id="helpcontainer" class="panel helpoverview" > <!-- Right part-->
+      <h1>Help</h1></a>
+      <button class="reset">show all on page</button>
+      <h2>- - - - Alarms - - - -</h2>
+      <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-alarms" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+      </div>
+      <h2>- - - - Libraries - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-libraries" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - - Maps - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-maps" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - - Reports - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-reports" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - - Sensor - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-sensor" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - - Tickets - - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-tickets" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+      <h2>- - - Add Sensor 4 - - -</h2>
+        <div class="tct-background">
+      <#system type='showhelp' tct="theater" page="help-addsensor4" isreadonly="false" var="tctfile">
+      <#javascriptinclude file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+    </div>
+  </div>
+  <script>
+      var _Prtg = {
+        Options:{
+          version: '<#system type="version">',
+          language: '<#system type="language">',
+          cachebreaker: 'version=<#system type="version">&language=<#system type="language">'
+        },
+        lastStats :{
+          object:{
+            sensortype:'',
+            status: 0
+          }
+        },
+        serverTime: (new Date()),
+        Plugins: {
+          'registerPlugin': function(name, obj) {
+            _Prtg.Plugins[name] = {
+              'init': function(data, parent) {
+                return _Prtg.Plugins[name]['plugin'] = (new obj( this, data, parent ));
+              }
+            };
+          }
+        }
+      };
+
+    (function($,window,document,undefined){
+      var language = (document.location.hash || 'default').replace(/\#/g,'');
+      var tcteditor = CodeMirror.fromTextArea(document.getElementById('input'),
+        {
+          lineNumbers: true,
+          mode: "text/html",
+          matchBrackets: true,
+          indentUnit:2,
+          smartIndent: true,
+          indentWithTabs: true,
+          tabSize: 2,
+          htmlMode: true
+
+        });
+        var cleanHtml = function cleanHtml(txt, lang){
+          var datarole = new RegExp('(<\#role>|@role)', 'im');
+          var languages = new RegExp('<\#langnt *([a-z]*=[\'"].*?[\'"])?>', 'im');
+          var language = new RegExp( (lang && lang!=='default' ? lang : 'default') + '=[\'"](.*?)[\'"]', 'i');
+          var languagedef = new RegExp( 'default=[\'"](.*?)[\'"]', 'i');
+          var m = datarole.exec(txt);
+          var n;
+
+
+          while(m){
+            txt = txt.replace(m[0],'theater');
+            m = datarole.exec(txt)
+          }
+          txt = txt.replace(datarole,'theater');
+
+          m = languages.exec(txt);
+          while(m){
+            n = language.exec(m[1]);
+            if(!n)
+              n = languagedef.exec(m[1]);
+
+            txt = txt.replace(m[0],n[1].trim());
+            m = languages.exec(txt)
+          }
+          return txt;
+        };
+        var copyHtml = function copyHtml($from, $to, lang){
+          var txt = tcteditor.getValue();
+
+          txt = cleanHtml(txt, lang);
+          $to.html(txt);
+          if($('#ashelp').is(':checked'))
+            $('div.test-panel').attr('id','helpcontainer')
+          else
+            $('div.test-panel').attr('id','')
+        };
+
+      $(function(){
+        setTimeout(function(){
+          $('#lang option[value="'+language+'"]').prop('selected',true);
+        },100);
+        $('button.copyHtml').on('click',function(){
+          copyHtml($('textarea'),$('div.test-panel'),$('#lang option:selected').val());
+          return false;
+        });
+
+        $('button.reset').on('click',function(){
+          $(this).parent().find('tct').each(function(){
+            var index = 'theater.'+ $(this).data().page;
+            $.ajax({
+              url: "/api/setshowhelpstatus.htm",
+              data: {
+                "action": 1,
+                "page": index
+              },
+              type: "GET"
+            });
+          });
+        });
+        $('h2')
+        .append('<input style="float:right;margin-right:5px" type="checkbox" checked="checked">')
+        .on('click input', function(){
+          var ret = true;
+          $(this).find('~tct,~h2').filter(function(){
+            ret = ret && (this.nodeName === 'TCT');
+            return ret;
+          }).toggle();
+        });
+      });
+
+      $('tct')
+        .each(function(){
+          var raw = this.innerHTML.replace(/&lt;/gim,'<').replace(/&gt;/gim,'>')
+            , txt = cleanHtml(raw, language)
+            , data = $(this).data();
+          data.raw = this.outerHTML;
+          $(this)
+            .html(txt)
+            .attr('data-role','theater');
+
+        })
+        .append('<button class="copybutton" data-placement="left" title="Copy to Editor"><i class="ui-icon icon-dark icon-pencil"></i></button>')
+        .on('click', function(){
+          tcteditor.setValue($('<textarea />').html($(this).data().raw).text());
+        })
+        .data('check','');
+    })(jQuery, window, document);
+  </script>
+  <script src="/javascript/lib/jquery.placeholder.min.js"></script>
+  <script src="/javascript/_Prtg.Util.js"></script>
+  <script>
+    <#include file="javascript\_Prtg.Api.js">;
+  </script>
+  <script src="/javascript/_Prtg.ObjectTools.js"></script>
+  <script src="/javascript/_Prtg.Dialogs.js"></script>
+  <script>
+    <#include file="javascript\_Prtg.Dialogs.lang.js">;
+  </script>
+</body>

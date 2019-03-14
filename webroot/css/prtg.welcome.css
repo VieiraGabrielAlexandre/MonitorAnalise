@@ -1,0 +1,259 @@
+﻿/*prtg.welcome.css*/
+
+.welcomepage {
+  display: flex !important;
+  justify-content: center;
+}
+
+.welcomepage .welcomepage_container {
+  display: flex;
+  margin: 10px;
+  padding: 0;
+  width: 1024px;
+  background-color: #fff;
+}
+
+.welcomepage .welcome_column {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+
+}
+
+.welcomepage .welcome_column_left {
+  flex: 3 0 60%;
+}
+
+.welcomepage .welcome_column_right {
+  flex: 2 0 40%;
+}
+
+.welcomepage .welcomebox {
+  display: inline-block;
+  margin: 5px;
+  background-color: #F3F2F2;
+  flex: 0 1 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.welcomepage .welcomebox:empty {
+  display: none;
+}
+
+.welcomepage .newsfeedbox {
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+.welcomepage .newsfeedboxadmin {
+  height: 310px;
+  overflow: hidden;
+  position: relative;
+}
+
+.welcomepage .welcomebutton {
+  flex: 1 1 40%;
+  height: 150px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 15px;
+  align-self: stretch;
+}
+
+.welcomepage .welcomebutton p{
+	margin-top:10px;
+}
+
+.welcomepage .welcomebutton:hover {
+  background-color: #B3B3B3;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.welcomepage .welcomebutton1 {
+  background-color: #65C1BE;
+}
+
+.welcomepage .welcomebutton2 {
+  background-color: #082559;
+}
+
+.welcomepage .welcomebutton3 {
+  background-color: #90BCE6;
+}
+
+.welcomepage .welcomebutton4 {
+  background-color: #ED6EA7;
+}
+
+.flexme {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.welcomepage h2 {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.flexme div:not(.donutlabel) {
+  flex: 1 0 50%;
+  position: relative;
+}
+
+.currentalarmsoverview .flexme div:first-child {
+  flex: 0 0 200px;
+}
+
+.donutext {
+  text-anchor: middle;
+  font-size: 38px;
+}
+
+.donutextsmall {
+  text-align: center;
+  text-anchor: middle;
+  font-size: 16px;
+  line-height: 0.9;
+}
+
+.donutlabel {
+  width:100%;
+  word-wrap:break-word;
+  position:absolute;
+  z-index:2;
+  text-align:center;
+  font-size: 16px;
+  line-height: 0.9;
+  top:0px;
+  padding:2px 40px 0px 40px;
+}
+
+.value-name-list div {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.value-name-list .item {
+  margin-left: 15px;
+  height: 26px;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.value-name-list .value {
+  width: 50px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.value-name-list .statusicon {
+  padding-left: 26px;
+  background-size: 26px 26px;
+}
+
+.currentalarmsoverview .value-name-list div {
+  margin-bottom: 15px;
+}
+
+.welcomeautoupdatebox {
+  font-size: 14px;
+}
+
+.welcomeautoupdatebox .versioninfo p:first-child {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.welcomeautoupdatebox .versioninfo p:last-child {
+  margin-top: 5px;
+}
+
+.yesterdaysactivitybox .sensorscansbox p {
+  margin: 0;
+}
+
+.yesterdaysactivitybox .sensorscansbox .scansum {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.yesterdaysactivitybox .sensorscansbox .scantext {
+  font-size: 16px;
+}
+
+.yesterdaysactivitybox .value-name-list {
+  margin-top: 30px;
+}
+
+.yesterdaysactivitybox .value-name-list .value {
+  line-height: 24px;
+}
+
+.welcomepage_container hr {
+  border: 0;
+  height: 1px;
+  background-color: #d5d6d7;
+  margin: 15px 0 15px 0;
+}
+
+.welcomepage_container tct img {
+  float: left;
+  padding-right: 20px;
+}
+
+.welcomepage_container tct {
+  overflow: auto;
+}
+
+.welcomepage_container tct:hover .video-description-playtext {
+  text-decoration: underline;
+}
+
+.welcomepage_container tct:hover .video-description-header {
+  text-decoration: underline;
+}
+
+.welcomepage_container tct a {
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.welcomepage_container .prtg-logo-big {
+  width: 100px;
+}
+
+.welcomepage_container .sparklineextend {
+  background-color: #fff;
+}
+
+.welcome-page .nagscreen-box {
+  width:630px;
+}
+
+.welcomepage .nagscreens {
+  width: 584px;
+  margin: 20px 20px 0px 20px;
+  padding: 0;
+}
+
+.welcomepage .nagscreen-box {
+  width: 100%;
+  margin-left: 0;
+}

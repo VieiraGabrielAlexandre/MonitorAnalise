@@ -1,0 +1,22 @@
+﻿<div>
+    <div class="overlay">
+      <div class="centeredHint"><#langjs key="js.prtg.clicktoedit" default="Click here to select an object!"></div>
+    </div>
+	<table>
+  	<tr class="prtg-plugin" interval="60" data-plugin="prtg-graphs prtg-graphs-scroll" data-id="<#objectid>">
+  		<td>
+  			<div>
+          <div id="chart">
+            <#object type="graph" graphid="1" width="550" height="200" graphstyling="baseFontSize='9'%20showLegend='0'" tooltexts="1"  refreshable="true" hide="all">
+          <div>
+        </div>
+  		</td>
+  		<td>
+  			<div>
+          <#object type="legend" width="270">
+        </div>
+        <div class="selectNewSensor"><a class="button btngrey" href="#">Select New Sensor</a></div>
+  		</td>
+  	</tr>
+	</table>
+</div>

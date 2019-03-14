@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>User Manual | <#system type="sitename"></title>
+  <link rel="stylesheet" href="/css/prtg<#system type='usertheme'>.css?prtgversion=<#system type="version">">
+  <link rel="stylesheet" href="/css/manuals.css?prtgversion=<#system type="version">">
+   <script src="/javascript/lib/jquery.js?prtgversion=<#system type="version">&language=<#system type="language">"></script>
+  <#style> <#comment Style Overrides that may come in via Include Tag>
+  <#base> <#comment Head/Basehref etc. overrides that may come in via Include Tag>
+  <style type="text/css">
+    html, body{
+      height: 100%;
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function loadicons(a,b,c)
+    {return true}
+    function clicked(a,b)
+    {return true}
+    $(function(){
+      var elm = document.location.pathname.split('/');
+      elm = $('#toc').find('a[href="'+elm[elm.length-1]+'"]');
+      $('#toccontainer').find('#main').scrollTop(elm.offset().top - 32);
+      elm.addClass('active');
+      var listElements = $('#toc').find('li');
+        listElements.each(function(i, elem){
+            var $elem = $(elem);
+          if ( $elem.children('ul').length > 0 ){
+              $elem.addClass('manual-glyph-book');
+          }
+          else {
+              $elem.addClass('manual-glyph-page');
+          }
+        });
+    });
+  </script>
+  <#googleanalytics>
+</head>
+<body id="mainbody" class="systemmenu <#bodyclass> language_<#system type="language">">
+  <#include file="includes\htmlheader_custom_v2.htm">
+

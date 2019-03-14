@@ -1,0 +1,31 @@
+﻿<#mailinclude file="/mailtemplates/header.htm">
+    <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style=" @font @fontsize @boxsizing @tablebodywrap " varexpand="style ">">
+        <tbody>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <h1 style="color:#d71920"><#lang key="mail.memoryalert.alert4" default="PRTG Stopped Monitoring And Is In Panic Mode Now!"></h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#lang key="mail.memoryalert.message1" default="The RAM available for PRTG is running dangerously low: only @freememory MB are left.">
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#lang key="mail.memoryalert.message2" default="In consequence all probes will be disconnected from PRTG (continuing to save their data locally).">
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#lang key="mail.memoryalert.message3a" default="Please check the PRTG server computer. After freeing up memory you need to restart the PRTG server service.">
+                </td>
+            </tr>
+            <tr>
+                <td class="content-block" style="<#mailstyle style=" @font @fontsize @boxsizing @tdcontenblock " varexpand="style ">" valign="top">
+                    <#mailinclude file="/mailtemplates/sendfromserver.htm">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<#mailinclude file="/mailtemplates/footer.htm">

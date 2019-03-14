@@ -1,0 +1,17 @@
+﻿
+<!-- Template Stats Loop 100 Up Time.htm-->
+<h2>
+<span style="<#clusterdependent showfor='clusterinstallation'>">
+    <#lang key="html.reporttemplates.clusternode" default="Cluster Node"> <#cluster type="name" clgid="<@clgid>">:
+</span>
+<#lang key="html.reporttemplates.uptimebesttime" default="Best Uptime (Hours)"></h2>
+
+<div><#report type="statstable" filter="filter_uptimetime=@above(0)" columns="sensor,uptime,uptimetime,goodreqper,downtime,downtimetime,maxdowntime,failedreqper,probegroupdevice" count="100" avg="3600" sortby="uptimetime" showposition="true" clgid="<@clgid>"></div>
+
+<h2>
+<span style="<#clusterdependent showfor='clusterinstallation'>">
+    <#lang key="html.reporttemplates.clusternode" default="Cluster Node"> <#cluster type="name" clgid="<@clgid>">:
+</span>
+<#lang key="html.reporttemplates.uptimeworsttime" default="Worst Uptime (Hours)"></h2>
+
+<div><#report type="statstable" filter="filter_downtimetime=@above(0)" columns="sensor,uptime,uptimetime,goodreqper,downtime,downtimetime,maxdowntime,failedreqper,probegroupdevice" count="100" avg="3600" sortby="downtimetime" showposition="true" clgid="<@clgid>"></div>

@@ -1,0 +1,113 @@
+﻿<!--Object Hierarchy-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="clustering.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="inheritance_of_settings.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Object Hierarchy</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Object Hierarchy</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;"><span class="f_Comment">All objects in a PRTG monitoring configuration </span>are arranged in a treelike hierarchy to create an easy to navigate list and to give the user the possibility to arrange them in groups that monitor similar devices, services, or particular locations. This hierarchical order is also used to define common settings for larger groups of objects, for example, settings of the <span class="f_BoldCustom">Root</span> group apply by default to all other objects underneath (see section <span class="f_BoldCustom"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span>).</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="object-hierarchy_en.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Object Hierarchy in PRTG" title="Object Hierarchy in PRTG" style="width:600px;height:268px;border:none" src="object-hierarchy_en_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Object Hierarchy in PRTG</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">The figure shows the object hierarchy in PRTG:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Root</span><span class="f_ListBulleted"> group contains all objects in your setup; all probes are directly under the root node.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A </span><span class="f_BoldCustom">Probe</span><span class="f_ListBulleted"> contains one or several groups.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A </span><span class="f_BoldCustom">Group</span><span class="f_ListBulleted"> contains one or several devices.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A </span><span class="f_BoldCustom">Device</span><span class="f_ListBulleted"> represents a physical or virtual component in your network that is reachable via an IP address. Several sensors are attached to one device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A </span><span class="f_BoldCustom">Sensor</span><span class="f_ListBulleted"> monitors one single aspect of a device and has at least one channel.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A </span><span class="f_BoldCustom">Channel</span><span class="f_ListBulleted"> tracks one specific data stream and displays it as part of a sensor.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="root" class="hmanchor"></a><span class="f_InTopicHeading">Root Group</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The <span class="f_BoldCustom">Root</span> group is the topmost instance in PRTG. It contains all other objects in your setup. Using the <a href="inheritance_of_settings.htm" class="topiclink">inheritance</a> mechanism, we recommend that you <span class="f_ListBulleted"><a href="root_group_settings.htm" class="topiclink">adjust the default settings for the Root group</a></span>. This will make configuration easier later on, because all other objects then inherit these standard settings by default. Thus, you will not have to set up the same configuration for each object anew.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="probe" class="hmanchor"></a><span class="f_InTopicHeading">Probe</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Each group (except the <span class="f_BoldCustom">Root</span> group) is part of a <span class="f_BoldCustom">Probe</span>. This is the platform where the monitoring takes place. All objects configured below a probe will be monitored via that probe. Every PRTG on premises core server installation automatically installs a <span class="f_BoldCustom">Local Probe</span> service, every PRTG hosted by Paessler instance comes with a <span class="f_BoldCustom">Hosted Probe</span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add additional probes and remote probes to your configuration to include remote devices from outside your network into the monitoring (see section <span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Multiple Probes and Remote Probes</a></span>). In a PRTG on premises cluster, there is an additional <span class="f_BoldCustom">Cluster Probe</span> running on all nodes. Devices on the cluster probe are monitored by all nodes of the cluster, so data from a different perspective is available and monitoring for these devices will always continue, even if one of the nodes fails.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="group" class="hmanchor"></a><span class="f_InTopicHeading">Group</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On each probe, there are one or more <span class="f_BoldCustom">Groups</span>, which serve merely structural purposes. Use groups to arrange similar objects so that they inherit the same settings. To a group, you add devices. You can arrange your devices in different nested groups to reflect the structure of your network. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find below a sample configuration: A device tree with local probe, several groups, devices and their sensors.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:600px"><a href="device_tree3.png"><img id="TOGGLE0186A2" class="image-toggle" alt="PRTG Device Tree View" title="PRTG Device Tree View" style="width:600px;height:390px;border:none" src="device_tree3_zoom46.png"/></a><p style="text-align:center"><span class="f_ImageCaption">PRTG Device Tree View</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="device" class="hmanchor"></a><span class="f_InTopicHeading">Device</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add <span class="f_BoldCustom">Devices</span><span class="f_BoldCustom"> </span>that you want to monitor <span class="f_BoldCustom" style="font-weight: normal;">to each probe or group</span>. Each device in your PRTG configuration represents a real hardware or virtual device in your network. These can be, for example:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Web or file server</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Client computer (Windows, Linux, or Mac OS)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Router or network switch</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Almost every device in your network that has its own IP address</span></li>
+</ul>
+<p class="p_ItalicCustom" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Sometimes you may want to add the same device in PRTG several times to receive a better overview when using a large number of sensors for very detailed monitoring, or to use different device settings for different groups of sensors. In PRTG you can simply add multiple devices with the same IP address or DNS name. The sensors on all of these PRTG devices will then query the same real hardware device in your network.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG additionally adds a so called <span class="f_BoldCustom">Probe Device</span> to the local probe. This is an internal system device. It has access to the computer where the probe is running and monitors its health parameters with several sensors running on it.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To get a better and more detailed picture about your devices, PRTG automatically analyzes the devices that you add and recommends appropriate <a href="available_sensor_types.htm" class="topiclink">sensor types</a> on the <a href="review_monitoring_data.htm#overview" class="topiclink">device overview tab</a>. In the <span style="font-weight: bold;">Recommended Sensors</span> table, click the <span style="font-weight: bold;">Add These Sensors</span> button in the corresponding table row to create recommended sensor types with one click.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can turn off the sensor recommendation in <span style="font-weight: bold;"><a href="monitoring_settings.htm#recommended" class="topiclink">System Administration—Monitoring</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="sensor" class="hmanchor"></a><span class="f_InTopicHeading">Sensor</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">On each device you can create a number of <span class="f_BoldCustom">Sensors.</span> Every sensor monitors one single aspect of a device. This can be, for example:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">One network service like SMTP, FTP, HTTP, etc.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">One network switch port's traffic</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">CPU load of a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Memory load of a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Traffic on one network card</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">One NetFlow device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">System health of a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Other content (for example, of databases, mails, HTTP, XML, files, etc.)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">etc.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-play" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-play.png"/>For more information, see this video tutorial: <a href="https://www.paessler.com/support/videos/prtg-basics/what-is-a-sensor" target="_blank" class="weblink">What is a sensor?</a></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channel" class="hmanchor"></a><span class="f_InTopicHeading">Channel</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Every sensor has a number of <span class="f_BoldCustom">Channels</span> through which it receives the different data streams. The available channels depend on the type of sensor. One sensor channel can contain, for example:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Downtime</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">uptime</span><span class="f_ListBulleted"> of a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Traffic in</span><span class="f_ListBulleted"> of a bandwidth device (for example, a router)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Traffic out</span><span class="f_ListBulleted"> of a bandwidth device (for example, a router)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Traffic sum</span><span class="f_ListBulleted"> of a bandwidth device (for example, a router)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">WWW traffic</span><span class="f_ListBulleted"> of a NetFlow device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Mail traffic</span><span class="f_ListBulleted"> of a NetFlow device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Other traffic</span><span class="f_ListBulleted"> of a NetFlow device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">CPU load</span><span class="f_ListBulleted"> of a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Loading time </span><span class="f_ListBulleted">of a web page</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Download bandwidth</span><span class="f_ListBulleted"> of a web page</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Time to first byte</span><span class="f_ListBulleted"> of a web page</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Response time</span><span class="f_ListBulleted"> of a Ping request to a device</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Response time</span><span class="f_ListBulleted"> of a Remote Desktop service</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">etc.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: What is a sensor?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-basics/what-is-a-sensor" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-basics/what-is-a-sensor</a> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Object Hierarchy</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="clustering.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="inheritance_of_settings.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

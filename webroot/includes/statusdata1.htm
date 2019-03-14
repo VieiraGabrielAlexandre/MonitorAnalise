@@ -1,0 +1,59 @@
+﻿ <div class="screenbox">
+     <h2><#lang key="html.systemstatus.svsi" default="Software Version and Server Information"></h2>
+   <ul>
+    <li><span>PRTG Version</span><span><#system type="longversion"></span></li>
+    <li >
+      <span><#lang key="html.systemstatus.latestmessage" default="Auto-Update Status"></span><span><#system type="autoupdate" insert="lastupdatecheckresult" skiptagfornonadmins='true'></span>
+    </li>
+    <li><span><#lang key="html.systemstatus.osversion" default="Operating System"></span><span><#system type="windowsversion"></span></li>
+    <li><span><#lang key="html.systemstatus.systime" default="Server Time"></span><span><#system type="date"> <#system type="time"> (<#system type="timezone">)</span></li>
+
+    <li><span><#lang key="html.systemstatus.sercpuload" default="Server CPU Load"></span><span><#system type="cpuload"></span></li>
+    <li><span><#lang key="html.systemstatus.username" default="Username"></span><span><#system type="username"></span></li>
+    <li><span><#lang key="html.systemstatus.browser" default="Browser"></span><span>
+      <#system type="browserdependent" browsertype="MSIE" aboveversion="1" browsercontent="Microsoft IE">
+      <#system type="browserdependent" browsertype="Firefox/" aboveversion="1" browsercontent="Mozilla Firefox">
+      <#system type="browserdependent" browsertype="Opera/" aboveversion="1" browsercontent="Opera">
+      <#system type="browserdependent" browsertype="Safari/" aboveversion="1" browsercontent="Apple Safari">
+      <#system type="browserdependent" browsertype="Chrome/" aboveversion="1" browsercontent="Google Chrome">
+      <#system type="browserdependent" browsertype="Windows Phone" version="6" browsercontent="Windows Mobile 6.x">
+      <#system type="browserdependent" browsertype="iphone"  browsercontent="iPhone or iPod Touch">
+      <#system type="browserdependent" browsertype="ipad"  browsercontent="iPad">
+      <#system type="browserdependent" browsertype="blackberry"  browsercontent="BlackBerry">
+      <small>(<#system type="browseruseragent">)</small></span>
+    </li>
+  </ul>
+</div>
+
+<div class="screenbox" style='<#hidefornonsvs>'><h2><#lang key="html.systemstatus.licensing" default="Licensing"></h2>
+  <#include file="includes\licenseinfo.htm">
+</div>
+
+  <div class="screenbox" style='<#hidefornonadmins>'><h2><#lang key="html.systemstatus.sslog" default="System Startup Log"></h2>
+   <pre class="status"><#system type="startinfo" skiptagfornonadmins='true'></pre>
+ </div>
+ <div class="screenbox">
+  <h2><#lang key="html.systemstatus.syswarns" default="System Warnings"></h2>
+  <#system type="warnings" skiptagfornonadmins='true'>
+</div>
+
+ <div style="<#clusterdependent showfor='clusterinstallation'>;<#hidefornonadmins>">
+   <div class="screenbox">
+     <h2 ><#lang key="html.systemstatus.cluster" default="Cluster Status"></h2>
+     <#cluster type="netlist" skiptagfornonadmins='true'>
+
+     <#cluster type="serverstate" skiptagfornonadmins='true'>
+
+     <ul><#cluster type="connections" skiptagfornonadmins='true'></ul>
+   </div>
+ </div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.coresysmem" default="Core System Memory"></h2>
+  <#system type="memory" skiptagfornonadmins='true'>
+</div>
+
+<div class="screenbox">
+  <h2><#lang key="html.systemstatus.threadinfo" default="Thread Information"></h2>
+  <#system type="extra" skiptagfornonadmins='true'>
+</div>

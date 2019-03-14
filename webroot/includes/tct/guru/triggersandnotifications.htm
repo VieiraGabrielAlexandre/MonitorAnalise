@@ -1,0 +1,121 @@
+﻿<#page var=page>
+<tct 
+  data-role="<#role>" 
+  data-page="<#page>.contacts"
+  style="position:absolute;left:calc(50% - 25px);top:30vh"
+  class="<#system type='showhelp' tct='guru' page='@page.contacts' class='removeme' varexpand='page'>">
+    <!--
+    var $tct = this;
+    $tct.one('click','.actionbutton', function(event){
+      $('a.noticontactinlinelink')
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.pleaseclick" default="Please click here!">')
+        .tct("mouseMoveEnd",1500)
+        .tct("end", function(){$tct.hide().remove();})
+        .tct("run")
+    });
+    -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <#lang key="tct.guru.notifications.contacts" default="At first you may set up a contact for you notification.">
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div> 
+  </div>
+</tct>
+
+<tct 
+  data-role="<#role>" 
+  data-page="<#page>.notification"
+  style="position:absolute;left:calc(50% - 25px);top:30vh"
+  class="<#system type='showhelp' tct='guru' page='@page.notification' class='removeme' varexpand='page'>">
+    <!--
+    var $tct = this;
+    $tct.one('click','.actionbutton', function(event){
+      $('a.notificationinlinelink')
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.pleaseclick" default="Please click here!">')
+        .tct("mouseMoveEnd",1500)
+        .tct("end", function(){$tct.hide().remove();})
+        .tct("run")
+    });
+    -->
+  <div>
+    <div class="info-box andi4">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <#lang key="tct.guru.notifications.notification" default="Second you may specify the way a notification is sent">
+
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div> 
+  </div>
+</tct>
+
+<tct 
+  data-role="<#role>" 
+  data-page="<#page>.trigger"
+  style="position:absolute;left:calc(50% - 25px);top:30vh"
+  class="<#system type='showhelp' tct='guru' page='@page.trigger' class='removeme' varexpand='page'>">
+    <!--
+    var $tct = this;
+    $tct.one('click','.actionbutton', function(event){
+      $('button[triggertype="state"]')
+        .tct("blinkStart")
+        .tct("mouseMoveStart",event)
+        .tct("mouseMoveTo", 1000, null, function(){var off = this.offset(); off.left+=this.width()/2;off.top+=this.height(); return off;})
+        .tct("blinkEnd")
+        .tct("mouseInfo", '<#langjs key="tct.js.pleaseclick" default="Please click here!">')
+        .tct("mouseMoveEnd",1500)
+        .tct("end", function(){$tct.hide().remove();})
+        .tct("run")
+    });
+    -->
+  <div>
+    <div class="info-box">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <#lang key="tct.guru.notifications.trigger" default="Third you may specify the event that triggers sending of the notification.">
+      <div class="tct-buttonbar">
+      <button class="actionbutton"><#lang key="tct.guru.okshowme" default="OK, show me!"></button>
+      </div>
+      </div>
+    </div> 
+  </div>
+</tct>
+
+<tct 
+  data-role="<#role>" 
+  data-page="<#page>.video"
+  style="position:absolute;left:calc(50% - 25px);top:30vh"
+  class="<#system type='showhelp' tct='guru' page='@page.video' class='removeme' varexpand='page'>">
+    <!--
+    var $tct = this;
+    $tct.one('click','a.play-video', function(event){
+      $tct.hide(2000).remove();
+    });
+    -->
+  <div>
+
+    <div class="info-box ">
+      <img src="/images/tct/Greg100x100.png">
+      <div class="tct-textcontent">
+      <#lang key="tct.guru.notifications.video" default="I can show you a video.">
+      <img src="/images/tct/mqdefault (3).jpg">
+      <a class="play-video" target="_blank" href="http://youtu.be/8d7JDEtVaXw" />
+      </div>
+    </div> 
+  </div>
+</tct>

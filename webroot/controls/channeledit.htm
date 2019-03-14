@@ -1,0 +1,13 @@
+﻿<div>
+  <div class="pseudoform prtg-form prtg-plugin" data-plugin="channels" data-template="channels.htm" data-singleedit="true" data-channelid="<#inserturlparam parameter="channel">" data-objectid="<#objectid>" data-container=".channelsloadingform">
+    <h1 style="display: none">
+      <#lang key="html.channels.edittitle1" default="Edit Channel">
+    </h1>
+    <select name="channel" id="channelsdropdown" style="width: 100%">
+      <#channellist>
+    </select>
+    <div class="channelsloadingform">
+    <#include file="\controls\channels.htm">
+    </div>
+  </div>
+</div>

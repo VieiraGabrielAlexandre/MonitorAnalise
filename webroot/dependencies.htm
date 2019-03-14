@@ -1,0 +1,25 @@
+﻿<#checkobjecttype objecttype="probenode,group">
+<#system type="denyreadonlyusers">
+<#lang key="html.dependencies.title" default="Dependencies" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+ <#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+
+<div id="main" class="dependencies-main-container" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <dummy class="prtg-plugin" data-plugin="status">
+    <#include file="controls\dependenciesheader.htm">
+  </dummy>
+  <div id="content" class=" prtg-plugin <#clusterdependent insertfor="failovernode" insertcontent="hide">" data-plugin="autoupdate">
+        <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+            <ul class="nav-tabs">
+                <li tabid="1" class="tab-active"><a href="/controls/dependenciesoverview.htm?id=<#objectid>"><i class="glyph-gauge"></i><span class="text"><#lang key="html.global.overview" default="Overview"></span></a></li>
+                <li tabid="2"><a href="/controls/dependenciestable.htm?id=<#objectid>&filter_dependency=@above(2)"><i class="glyph-flow-cascade"></i><span class="text"><#lang key="html.dependencies.tableselects" default="Select Dependencies"></span></a></li>
+                <li tabid="3"><a href="/controls/dependenciestable.htm?id=<#objectid>&filter_dependency=2"><i class="glyph-sitemap"></i><span class="text"><#lang key="html.dependencies.tablemasters" default="Master Dependencies"></span></a></li>
+            </ul>
+            <div class="tab-container"></div>
+        </div>
+  		</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

@@ -1,0 +1,25 @@
+﻿<#checkobjecttype objecttype="group,probenode">
+<#groupviewsize var="grpvs">
+<div class="sensorTree prtg-plugin"
+  style="padding-right:5px;"
+	data-plugin="objecttree"
+	data-objectid="<#objectid>"
+	data-view-type="<#system type="groupviewsize" varexpand="overwrite" overwrite="@grpvs">"
+  data-display-mode="<#displaymode>">
+
+  <!--
+    {
+  	 "objects":<#table
+  		output='json'
+  		count='*'
+  		content='sensorxref'
+  		noraw='1'
+  		subcheck='1'
+  		filter_basetype='probe'
+  		filter_basetype='group'
+  		filter_basetype='device'
+  		sortby='probegroupdevice'
+  		columns='objid,name,access=treejson,probegroupdevice=treejson,basetype,icon=treejson,favorite,fold,devicenum=textraw,groupnum=textraw,totalsens=textraw,upsens=textraw,downsens=textraw,partialdownsens=textraw,warnsens=textraw,pausedsens=textraw,unusualsens=textraw,undefinedsens=textraw,downacksens=textraw,condition,status=textraw,message=textraw,info,priority'>
+  	}
+  -->
+</div>

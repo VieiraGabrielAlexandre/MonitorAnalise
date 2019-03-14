@@ -1,0 +1,65 @@
+﻿<#checkobjecttype objecttype="library">
+<#lang key="html.lib.title" default="Library Details" var="title">
+<#objectproperty name="name" var="name">
+<#lang key="html.pagetitel.dummy" default="<dummy>@name</dummy>" comment="do not translate" var="objectname">
+<#setpagetitle pagetitle="@name | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.global.libraries" default="Libraries" var="trail">
+<#lang key="html.global.editlibrary" default="Edit Library" var="this">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1 class="sitecaption"><#lang key="html.lib.head2" default="<i>Library</i> @objectname"></h1>
+		<div class="buttonbox">
+			<#include file="includes\linkpagebutton.htm">
+			<a data-id="<#objectidorzero>" href="#" data-placement="bottom" title="<#lang key="html.global.librarymenu" default="Library Menu">" class="menulink systemmenu menuleft librarymenu nopopup" id="<#objectid>"><i class="icon-dark icon-triangle-1-s"></i></a>
+		</div>
+	<div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+		<ul class="nav-tabs">
+			<li tabid="1">
+				<a href="/controls/liboverview.htm?id=<#objectid>">
+				<i class="glyph-gauge"></i>
+				<span class="text"><#lang key="html.global.overview" default="Overview"/></span>
+				</a>
+			</li>
+			<li tabid="2" class="hideforreadonly" >
+				<a href="/controls/libmanage.htm?id=<#objectid>">
+					<i class="glyph-sliders"></i>
+					<span class="text"><#lang key="html.global.manage" default="Management"/></span>
+				</a>
+			</li>
+			<li tabid="3">
+				<a href="/controls/objectdata.htm?id=<#objectid>&objecttype=library">
+					<i class="glyph-cog"></i>
+					<span class="text"><#lang key="html.global.settings" default="Settings"/></span>
+				</a>
+			</li>
+      		<li tabid="4">
+				<a href="/controls/triggersandnotifications.htm?id=<#objectid>&objecttype=library">
+					<i class="glyph-bell-alt"></i>
+					<span class="text"><#lang key="html.global.notificationtriggers" default="Notification Triggers"/></span>
+				</a>
+			</li>
+			<li tabid="5">
+				<a href="/controls/comments.htm?id=<#objectid>" title='<#lang key="html.global.comments" default="Comments">'>
+				<i class="<#hascomment>"></i>
+				<span class="text"><#lang key="html.global.comments" default="Comments"/></span>
+				</a>
+			</li>
+			<li tabid="6" class="tab-dark" style="<#hidefornonadmins>"  title='<#lang key="html.global.history" default="History">' >
+			<a href="/controls/history.htm?id=<#objectid>">
+				<i class="glyph-document-history"></i>
+				<span class="text"><#lang key="html.global.history" default="History"/></span>
+			</a>
+			</li>
+		</ul>
+		<div class="tab-container"></div>
+	</div>
+<#lang key="html.lib.help.title" default="Library Details" var="helptitle">
+<#lang key="html.lib.help.text" default="Use the tab controls to view various data of this library as well as edit the settings and manage the library content." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

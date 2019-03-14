@@ -1,0 +1,31 @@
+﻿.prtg-plugin[data-plugin='prtg-fileHandler'] {
+  visibility:hidden;
+  height:26px;
+}
+
+label.fileHandlerTextLabel{
+  margin:0px;
+  padding:0px;
+  padding-left: 10px;
+  font-size: 13px;
+  line-height: 23px;
+  display: inline-block;
+}
+
+label.fileHandlerButtonLabel{
+  margin:0px;
+}
+
+.fileHandler-validateerror-field {
+    background-color: #FFEBEB !important;
+}
+
+.fileHandler-validateerror-text {
+  background-color: #fff;
+  color: #d71920;
+  font-weight: bold;
+  padding: 2px;
+  width: 100%;
+  display: inline-block;
+  margin-top: 1px;
+}

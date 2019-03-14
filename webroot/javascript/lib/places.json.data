@@ -1,0 +1,38 @@
+﻿{
+      'Singapore':{
+        name : 'Singapore',
+        point: [1.352083,103.819836]      
+      },
+      'Sydney':{
+        name : 'Sydney',
+        point: [-33.8674869,151.2069902]      
+      },
+      'Tokyo':{
+        name : 'Tokyo',
+        point: [35.6894875,139.6917064]
+      },
+      'Frankfurt':{
+        name:'Frankfurt',
+        point:[50.1109221,8.6821267]
+      },
+      'Ireland':{
+        name: 'Dublin',
+        point: [53.3498053,-6.2603097]
+      },
+      'Sao Paulo':{
+        name: 'Sao Paulo',
+        point: [-23.5505199,-46.6333094]
+      },
+      'N. Virginia':{
+        name: 'Ashburn, Virginia',
+        point: [39.0437567,-77.4874416]
+      },
+      'N. California':{
+        name: 'Palo Alto, California',
+        point: [37.4418834,-122.1430195]
+      },
+      'Oregon':{
+        name: 'Boardman, Oregon',
+        point: [45.839855,-119.7005834]
+      }
+    }

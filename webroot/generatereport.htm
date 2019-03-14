@@ -1,0 +1,17 @@
+﻿<#report type="generate" var="extrapar">
+<#include file="includes\printhead.htm" extraparam="@extrapar" varexpand="extraparam">
+  <div class="loading-box">
+    <div class="loadingbox-left">
+      <div class="loadspinner"></div>
+      <div class="loading-description">
+      <#lang key="html.global.reportisrunning" default="PRTG is now generating your report:"> <b><#objectproperty name="name"></b><br>
+      <#lang key="html.global.reportshowhere" default="The report will be shown here as soon as it's ready."><br><br>
+      </span>
+    </div>
+    </div>
+      <div class="loading-logo">
+        <img width="250" height="150" src="/images/prtg_logo_gray.png">
+      </div>
+</div>
+</body>
+</html>

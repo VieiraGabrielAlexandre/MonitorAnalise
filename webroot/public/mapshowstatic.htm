@@ -1,0 +1,19 @@
+﻿<#inserturlparam parameter="mapid" var="mapid">
+<#objectid var="objid">
+<#system type="serverhttpurl" var="server">
+<#if value="@mapid" is="" then="id=@objid" else="id=@objid&mapid=@mapid" varexpand="value,then,else" var="map">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <#system type="faviconbystate">
+  <title><#pagetitle> | <#system type="sitename"></title>
+  <meta http-equiv="refresh" content="<#inserturlparam parameter="interval" default="60">">
+</head>
+<body>
+  <#system type="screenshot" nofile="true" what="@server/public/mapshow_static.htm?@map" varexpand="what">
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿/*_Prtg.UDPMessages.css*/
+
+.udpmessages-controls {
+  display: block;
+  background-color: #ababab;
+  width: 100%;
+  height: auto;
+}
+
+.udpmessages-controls p {
+  margin: 2px 5px;
+  float: left;
+}
+
+.udpmessages-filterfield {
+  max-width: 80px;
+}
+.udpmessages-controls .udpmessages-applyfilter {
+  margin: 0;
+}
+
+.udpmessages-output {
+  display: block;
+}
+
+.udpmessages-output .loading {
+  height: 211px;
+  margin: 0;
+  padding: 0;
+}
+
+.table.hoverable>tbody .filters:hover td {
+  background-color: #f3f2f2;
+  border-bottom: none;
+  border-top: none;
+  padding-bottom: 1px;
+  padding-top: 0px;
+}
+
+.udpmessages-morefilter {
+  cursor: pointer;
+  min-width: 40px;
+}
+
+.udpmessages-output .messagetable {
+  display: none;
+}
+
+.udpmessages-output .filters td {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1px;
+}
+
+.udpmessages-output .filters select {
+  padding: 0;
+  border: 1px solid white;
+  margin: 0;
+}
+
+.udpmessages-output .filters select:hover {
+  background-color: <#colorcode color="midgray">;
+  border: 1px solid <#colorcode color="midgray">;;
+}
+
+.udpmessages-output .taglist {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.udpmessages-output .taglist:hover input {
+  background-color: <#colorcode color="midgray">;
+  border: 1px solid <#colorcode color="midgray">;;
+}
+
+.udpmessages-output .taglist li {
+  padding: 0;
+  display: block;
+  position: relative;
+}
+
+.udpmessages-output .taglist .taglabel span {
+  padding-right: 15px;
+  display: inline-block;
+}
+
+.udpmessages-output .taglist .closetag {
+  /*position: absolute;*/
+  right: 1px;
+  top: 0;
+}
+
+.udpmessages-output .taglist input {
+  background-color: white;
+  border: 1px solid white;
+  margin: 0;
+  padding: 0;
+}
+
+.udpmessages-filter-dialog, .udpadvancedfilterheader {
+  display: none;
+}
+
+.udpmessages-advanced-filter {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-color: <#colorcode color="lightgray">;
+}
+
+.advancedfilterinputrow {
+  display: none;
+}
+
+.advancedfilterinputcolumn {
+  font-weight: bold;
+}
+
+.udpmessages-output tr:not(.filters) td:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

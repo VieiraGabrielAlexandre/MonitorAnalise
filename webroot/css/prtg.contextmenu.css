@@ -1,0 +1,172 @@
+﻿/* prtg.contextmenu.css */
+.jqContextMenu {
+  list-style: none;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  line-height: 16px;
+  position: absolute;
+  z-index: 100000;
+  display: none
+}
+
+.jqContextMenu li {
+  padding: 1px 16px;
+  position: relative;
+  float: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.jqContextMenu li:hover,
+.jqContextMenu li:active {
+  background: #e0e0e0;
+}
+
+
+/* main level link */
+.jqContextMenu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.jqContextMenu a:hover,
+.jqContextMenu li a:hover,
+.jqContextMenu a:active,
+.jqContextMenu li a:active {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.jqContextMenu ul li a {
+  color: black;
+}
+
+
+/* sub levels link hover */
+.jqContextMenu ul li:hover,
+.jqContextMenu ul li:active {
+  background-color: #E0E0E0;
+}
+
+
+/* dropdown */
+.jqContextMenu.flyoutleft li:hover > ul,
+.jqContextMenu li:hover > ul,
+.jqContextMenu.flyoutleft li:active > ul,
+.jqContextMenu li:active > ul {
+  display: block;
+  z-index: 999;
+}
+
+
+/* level 2 list */
+.jqContextMenu ul {
+  margin: 0;
+  list-style-type: none;
+  list-style-image: none;
+  position: absolute;
+  left: 0;
+  background: #ffffff;
+  padding: 0;
+  box-shadow: 0 0 2px #000;
+}
+
+.jqContextMenu ul {
+  left: 0px;
+  right: auto;
+}
+
+.jqContextMenu ul li {
+  float: none;
+  height: 22px;
+  padding: 2px 28px 0 28px;
+  cursor: default;
+}
+
+.jqContextMenu ul li.disabled {
+  opacity: 0.3;
+}
+
+.jqContextMenu ul li.disabled > ul {
+  display: none !important;
+}
+
+.jqContextMenu ul li.disabled > ul li {
+  opacity: 1.0;
+}
+
+.jqContextMenu i {
+  display: inline-block;
+  position: absolute;
+  text-indent: 0;
+  top: 4px;
+  left: 4px;
+  right: auto;
+}
+
+.jqContextMenu i.icon-carat-1-e {
+  position: absolute;
+  text-indent: 0;
+  right: 0;
+  left: auto;
+}
+
+.jqContextMenu li.multiedit {
+  float: left;
+  width: 20px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* level 3+ list */
+.jqContextMenu ul ul {
+  display: none;
+  left: 90%;
+  top: 0;
+  right: auto;
+}
+
+.jqContextMenu.flyoutleft ul ul {
+  left: auto;
+  top: 0;
+  right: 90%;
+}
+
+.jqContextMenu i.icon-txt {
+  background: #0F3E83;
+  color: white;
+  text-align: center;
+  vertical-align: text-top;
+  line-height: 16px;
+  height: 16px;
+  width: 20px;
+  font-size: 0.9em;
+  overflow: hidden;
+  white-space: normal;
+  top: 1px;
+}
+
+.jqContextMenu i.favstar,
+.jqContextMenu i.star {
+  float: left;
+  position: static;
+}
+
+.jqContextMenu .separator {
+  border-top: 1px dotted #999;
+}
+
+.jqContextMenu .menuhead {
+  cursor: default;
+  background-color: #c1c2c3;
+  border-bottom: 1px solid #888;
+  color: black;
+  height: 20px;
+  text-align: center;
+}

@@ -1,0 +1,15 @@
+﻿<!--Status Icons: QR code-->
+
+<div class="map_object " id="<@itemid>" objectid="<@objectid>" subid="<@subid>" style="min-width:100px;min-height:100px;<#mapobject type="coordinates" subid="<@subid>" mode="<@editmode>">">
+    <#mapobject type="htmlbefore" subid="<@subid>">
+    <div class="onmap prtg-plugin"
+      style="width:100%;height:100%;"
+      data-plugin="prtgqrcode"
+      data-zoom="1"
+      data-name='<#objectproperty name="Name" show="textraw" utfencode="true" id="<@objectid>">'
+      data-url='/<#objectproperty type="nodename" id="<@objectid>">.htm?id=<@objectid>'
+      data-myaccountqr="1"
+      data-host=''>
+    </div>
+    <#mapobject type="htmlafter" subid="<@subid>">
+</div>

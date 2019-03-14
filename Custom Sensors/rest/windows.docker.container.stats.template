@@ -1,0 +1,75 @@
+{
+  "prtg": {
+    "description" : {
+      "device": "docker",
+      "query": "/v1.30/containers/{id}/stats?stream=false",
+      "comment": "Documentation is on https://docs.docker.com/engine/api/v1.30/#"
+    },
+    "result": [
+      {
+        "channel": "CPU Usage" ,
+        "value": ($.cpu_stats.cpu_usage.total_usage - $.precpu_stats.cpu_usage.total_usage) / ((duration($.preread, $.read) / 100 * $.num_procs)) *100,
+        "unit": "Percent",
+        "LimitMode":1,
+        "LimitMaxWarning": 80,
+        "LimitMaxError": 90
+        
+      },
+      {
+        "channel": "Memory",
+        "value": $.memory_stats.privateworkingset,
+        "unit": "BytesMemory"
+      },
+      {
+        "channel": "Traffic total",
+        "mode": "Difference",
+        "value": sum($.networks..["rx_bytes", "tx_bytes"]),
+        "unit": "BytesBandwidth"
+      },
+      {
+        "channel": "Traffic in",
+        "mode": "Difference",
+        "value": $.sum($.networks..rx_bytes),
+        "unit": "BytesBandwidth"
+      },
+      {
+        "channel": "Traffic out",
+        "mode": "Difference",
+        "value": $.sum($.networks..tx_bytes),
+        "unit": "BytesBandwidth"
+      },
+      {
+        "channel": "Packets out",
+        "mode": "Difference",
+        "value": $.sum($.networks..tx_packets)
+      },
+      {
+        "channel": "Packets in",
+        "mode": "Difference",
+        "value": sum($.networks..rx_packets)
+      },
+      {
+        "channel": "Dropped packets out",
+        "mode": "Difference",
+        "value": sum($.networks..tx_droped)
+      },
+      {
+        "channel": "Dropped packets in",
+        "mode": "Difference",
+        "value": sum($.networks..rx_dropped)
+      },
+      {
+        "channel": "I/O read",
+        "mode": "Difference",
+        "value": $.storage_stats.read_size_bytes,
+        "unit": "BytesDisk"
+      },
+      {
+        "channel": "I/O write",
+        "mode": "Difference",
+        "value": $.storage_stats.write_size_bytes,
+        "unit": "BytesDisk"
+      }
+    ]
+  }
+}

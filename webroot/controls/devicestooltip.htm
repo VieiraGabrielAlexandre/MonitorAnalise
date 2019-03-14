@@ -1,0 +1,12 @@
+﻿	<div class="prtg-plugin" data-plugin="prtg-table">
+	<#table tableid="devicetable"
+		content="devices"
+		columns="device,downsens,partialdownsens,downacksens,upsens,warnsens,pausedsens,unusualsens,undefinedsens,checkbox"
+		tools="pause,scan,delete,edit"
+		sortby="-downsens"
+		sortable="true"
+		refreshable="true"
+		tabletitle="@title"
+		varexpand="tabletitle"
+		count="*">
+	</div>

@@ -1,0 +1,25 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="group,probenode">
+<#lang key="html.addgroup.title" default="Add Group" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="groupname">
+<#system type="usernameshort" var="usernameshort">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><#lang key="html.addgroup.head" default="<b>Add Group</b> to Group @groupname"></h1>
+	<div id="content">
+		<#system type='displaydependingonrights' right='write' hideobjectif='false' html="_notallowed" var="extend">
+		<#include varexpand="file" file="controls\addgroup@extend.htm">
+	</div>
+<#lang key="html.addgroupgeneral.help.title" default="Add a New Group" var="helptitle">
+<#lang key="html.addgroupgeneral.help.text" default="In PRTG your network devices are organized into groups. You can define as many groups as you like and you can create multiple levels of sub-groups."  var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#lang key="html.addgroup.help.title" default="Define Group Settings" var="helptitle">
+<#lang key="html.addgroup.help.text" default="Choose a name for the group and—if desired—the Windows, Linux, VMware, and SNMP credential settings. These will be inherited to all devices in this group.<br><br><a href='/help/add_a_group.htm' target='_blank'><b>Help: Add a Group</b></a>"  var="helptext">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

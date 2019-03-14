@@ -1,0 +1,33 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.deleteobject.title" default="Delete Object" var="pagetitle">
+<#include file="includes\htmlheader.htm"   ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" show="link" var="objectname">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.deleteobject.head" default="Delete Object <b>@objectname</b>"></h1>
+  <div id="content">
+    <div class="tabs-container">
+      <#include file="includes\objectisusedby.htm">
+      <#deleteobject targeturl="*parent*" errorurl="/error.htm">
+      <form id="objectdataform" action="/deleteobject.htm">
+        <h2><#lang key="html.deleteobject.pleaseapprove" default="Please Approve"></h2>
+        <p><#lang key="html.deleteobject.yousure" default="Are you sure you want to delete the object @objectname?"></p>
+        <br style="clear:both"/>
+        <div class="submitbuttonboxanchor">
+          <div class="submitbuttonbox">
+            <input style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" class="submit btngrey button" type="submit" name="button2" onclick="window.location='/deleteobject.htm?id=<#objectid>&approve=1';return(false)" value="<#lang key="html.global.deleteit" default="Delete Object">">
+            <input class="cancel btngrey button" type="reset" name="button1" onClick="history.back();return(false)" value="<#lang key="html.global.no2" default="No, I do not want to delete this object">">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <#lang key="html.deleteobject.help.title" default="Delete an object" var="helptitle">
+  <#lang key="html.deleteobject.help.text" default="You have decided to delete an object from the database. On this page PRTG will always show you all other object(s) from the database that may be connected to the object that you want to delete. Please review this list to make sure no other monitoring objects are unintentionally affected.<br><br> <b>Note:</b> Deleting user accounts affects entries on log tables and on <b>History</b> tabs of objects. Deleted users appear as <i>unknown</i> users or objects, so changes to the monitoring configuration cannot be associated with them anymore." var="helptext">
+  <#system type='showhelp' var='showhelp'>
+  <#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

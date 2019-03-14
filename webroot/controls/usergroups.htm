@@ -1,0 +1,42 @@
+﻿<#lang key="html.usergroups.help.title" default="User Groups" var="helptitle">
+<#lang key="html.usergroups.help.text" default="Administrators can edit all user groups.<br><br><a href='/help/user_groups_settings.htm#settings' target='_blank'><b>Help: User Groups</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<#lang key="html.editusergroup.help.title" default="Active Directory Integration" var="helptitle">
+<#lang key="html.editusergroup.help.text2" default="You can integrate PRTG with your Active Directory groups.<br><br><a href='/help/active_directory_integration.htm' target='_blank'><b>Help: AD Integration</b></a>" var="helptext">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+
+<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#lang key="html.global.usergroups" default="User Groups" var="title">
+<div class="inner-wrapper">
+	<div class="inner-aside-left"></div>
+	<div class="inner-content">
+		<div class="add-menu-wrapper">
+			<div class="add-menu add-menu-fixed" style='<#system type="hideforreadonlyusers">'>
+				<a class="actionbutton add-menu-item" href="/edituser.htm?id=new"><#insertadduserlinkpodpop></a>
+				<a class="actionbutton add-menu-item" href="#" onclick="_Prtg.Dialogs.addMultipleUserDialog(); return false;"><#lang key="html.userlist.addnewusers2" default="Add Multiple Users"></a>
+				<a class="actionbutton add-menu-item" href="/editusergroup.htm?id=new"><#lang key="html.editusergroup.add" default="Add User Group"></a>
+			</div>
+		</div>
+		<div class="table-wrapper">
+			<div class="prtg-plugin" data-plugin="prtg-table">
+				<#table tableid="grouptable"
+				content="usergroups"
+				columns="name,type,members,primarygroup,activedirectorygroup,checkbox"
+				tools="delete,edit"
+				count="all"
+				sortby="name"
+				sortable="true"
+				tabletitle="@title"
+				varexpand="tabletitle"
+				links="true"
+				refreshable="true">
+			</div>
+		</div>
+	</div>
+	<div class="inner-aside-right">
+		<div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+	</div>
+</div>

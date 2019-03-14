@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <#checkobjecttype objecttype="device">
+  <link rel="stylesheet" type="text/css" href="/css/prtg<#system type='usertheme'>.css?version=<#system type="version">" media="print,screen,projection" />
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+  <meta http-equiv="refresh" content="2; url=<#system type="action">://<#objectproperty name='host' show='text'>">
+  <title><#lang key="html.openwindow.title1" default="Open new window">&nbsp;|&nbsp;<#system type="sitename"></title>
+</head>
+<body style="min-width:inherit">
+  <p>
+    <center>
+      <#lang key="html.openwindow.redirectto" default="Redirecting to">
+      <a href="<#system type="action">://<#objectproperty name='host' show='text'>">
+        <#system type="action">://<#objectproperty name='host' show='text'>
+      </a>
+      .
+    </center>
+  </p>
+</body>
+</html>

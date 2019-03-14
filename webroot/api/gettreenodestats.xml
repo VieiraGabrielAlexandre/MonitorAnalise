@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<prtg-version><#system type="version"></prtg-version>
+<summary><#graph graphcontent="statusoverview" name="undefinedsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="upsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="warnsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="downsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="downacksens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="unusualsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="pausedsens" show="htmllink" utfencode="true">,<#graph graphcontent="statusoverview" name="partialdownsens" show="htmllink" utfencode="true"></summary>
+<upsens><#graph graphcontent="statusoverview" name="upsens" show="htmllink" utfencode="true"></upsens>
+<downsens><#graph graphcontent="statusoverview" name="downsens" show="htmllink" utfencode="true"></downsens>
+<warnsens><#graph graphcontent="statusoverview" name="warnsens" show="htmllink" utfencode="true"></warnsens>
+<downacksens><#graph graphcontent="statusoverview" name="downacksens" show="htmllink" utfencode="true"></downacksens>
+<partialdownsens><#graph graphcontent="statusoverview" name="partialdownsens" show="htmllink" utfencode="true"></partialdownsens>
+<unusualsens><#graph graphcontent="statusoverview" name="unusualsens" show="htmllink" utfencode="true"></unusualsens>
+<pausedsens><#graph graphcontent="statusoverview" name="pausedsens" show="htmllink" utfencode="true"></pausedsens>
+<undefinedsens><#graph graphcontent="statusoverview" name="undefinedsens" show="htmllink" utfencode="true"></undefinedsens>
+<totalsens><#graph graphcontent="statusoverview" name="totalsens" show="htmllink" utfencode="true"></totalsens>
+<servertime><#system type="date" utfencode="true"> <#system type="time" utfencode="true"></servertime>
+</data>

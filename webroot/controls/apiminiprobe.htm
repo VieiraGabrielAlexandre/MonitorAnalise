@@ -1,0 +1,879 @@
+﻿<div class="box prtg-plugin" data-plugin="content-list">
+    <h1 class="main-headline">PRTG Mini Probes</h1>
+
+    <div class="anchor-box">
+        <ul class="js-contentList"></ul>
+    </div>
+
+    <div class="content-box">
+        <p>PRTG Mini Probes allow PRTG users to create small probes on any device to meet specific needs. In general, probes are that part of PRTG that run monitoring processes and
+            deliver monitoring results back to the PRTG core server.
+            Mini probes help gather monitoring data from platforms where it is not possible or inapplicable to use PRTG's common local and remote probes.
+            They have a less complex implementation than PRTG's standard probes so that you can create them on any platform. The only requirement is HTTPS connectivity to send
+            monitoring data to your PRTG Core Server.</p>
+        <p>Basically, this takes the "Custom Sensors" concept to a higher level; you will have a very broad range of possibilities and can implement amazing functions to get an
+            even better network monitoring experience!</p>
+        <p><b>Note:</b> With the current version of PRTG, you can use the Mini Probe interface with your custom code to implement solutions to special scenarios that you might have
+            in your network.
+            Please note that there are major changes planned to the underlying API in PRTG. Therefore, any code you write now will likely need to be changed later, so it can be
+            used for future versions of PRTG.
+            For example, if the available HTTP push sensors are not sufficient for your needs, you can still use the Mini Probe API. We will provide further news about changing
+            interfaces as soon as there are more detailed plans available.</p>
+
+        <h3>PRTG Mobile Probe for Android</h3>
+        <p>Initially we have released a mobile probe for Android devices to gather local monitoring data with mobile devices. This mobile probe is a subtype of the mini probe.
+            With the PRTG Mobile Probe for Android, you can monitor, for example, wireless LAN (WLAN) coverage, location, battery,
+            HTTP response times, and environmental data such as temperature, pressure, humidity, or light intensity. The available data depends on the available measurement
+            components on the device.</p>
+        <p>PRTG Mobile Probes for Android usually connect via WLAN and monitor your network from the mobile perspective. For details about the PRTG Mobile Probe for Android, please
+            refer
+            to <a class="arrow" href="https://www.paessler.com/blog/2013/11/20/prtg/help-us-beta-test-our-new-mobile-probes" target="_blank">our blog article</a>.</p>
+
+        <h2>Differences between Probe Types</h2>
+        <p>The following table shows technical specifications of the two probe types in PRTG:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Functionality</b></th>
+            <th><b>Local and Remote Probes</b></th>
+            <th><b>PRTG Mini Probe</b></th>
+            </thead>
+            <tr class="odd">
+                <td><b>Connection Protocol from Probe to Core</b></td>
+                <td>PRTG's own protocol</td>
+                <td>HTTPS</td>
+            </tr>
+            <tr class="even">
+                <td><b>Security</b></td>
+                <td>Data is secured with SSL and Access Key.<br>
+                    New probe connections must be approved by the PRTG administrator.<br>
+                    IP and GUID filtering is possible.
+                </td>
+                <td>The same security level as for local and remote probes.</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Estimated Limit for Sensors per Probe</b></td>
+                <td>Several thousand sensors</td>
+                <td>Less than 100 sensors</td>
+            </tr>
+            <tr class="even">
+                <td><b>Estimated Limit for Probes per Installation</b></td>
+                <td>Hundreds of probes</td>
+                <td>Less than 100 probes</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Estimated Minimum Scanning Interval</b></td>
+                <td>Some seconds</td>
+                <td>At least 60 seconds</td>
+            </tr>
+            <tr class="even">
+                <td><b>Estimated Number of Sensor Types</b></td>
+                <td>More than 200</td>
+                <td>A few</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Updates to New PRTG Versions by the Core Server</b></td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td><b>Complexity</b></td>
+                <td>High</td>
+                <td>Very low</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Documented API</b></td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="even">
+                <td><b>Supported Platforms</b></td>
+                <td>Windows 7 or later (32-bit/64-bit)</td>
+                <td>Any platform</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Scheduling of Sensor Requests Performed by</b></td>
+                <td>Probe</td>
+                <td>Core</td>
+            </tr>
+            <tr class="even">
+                <td><b>Code Managed by</b></td>
+                <td>Paessler AG</td>
+                <td>Writer of the probe</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Probe Supports Pre-Scans for Available Measurements</b></td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr class="even">
+                <td><b>Sensors Support "Settings Inheritance"</b></td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr class="odd">
+                <td><b>Limitations by Administrator for Allowed Sensor Types that a PRTG User Can Create</b></td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+        </table>
+
+        <h2>The PRTG Mini Probe Protocol</h2>
+
+        <p>The <b>PRTG Mini Probe Protocol (PMPP)</b> is a simple lightweight protocol that extends PRTG with custom remote probes. It can be implemented in a variety of
+            programming languages and runs on any kind of platform.
+            These include, for example, Linux, Android, macOS, and iOS. PRTG Mini Probes are not intended for high performance monitoring and support only the sensor types that you
+            implement.</p>
+
+        <h3 class="js-contentList_add">1. Communication and Security</h3>
+        <p>The PMPP uses GET and POST requests via HTTPS in order to communicate with the PRTG server. All requests are sent to the defined TCP port for the common PRTG web server
+            (default is 443 for SSL),
+            or you specify an extra port explicitly for Mini Probe connections in the PRTG System Administration.
+            PRTG Mini Probes use the GET method to receive tasks, and the POST method to send information about the probe and the monitoring results to the PRTG Core.</p>
+        <p>The data format of some HTTP fields has to be <b>JSON</b> encoded. Please see section 4. for data definitions that require JSON. All exchanged data is secured with SSL.
+        </p>
+
+        <h3 class="js-contentList_add">2. Authentication</h3>
+        <p>The PMPP uses the same authentication methods as the common PRTG Remote Probes. The authentication includes the following steps:</p>
+        <ul>
+            <li>Allow and deny IPs filter</li>
+            <li>Deny GIDs filter</li>
+            <li>Access key</li>
+            <li>Unique GID that must be approved in PRTG's web interface</li>
+            <li>In addition, <b>Mini Probes must be allowed to connect in PRTG's Probe connection settings!</b> Additionally, you have to provide the Mini Probe's IP in the <b>Allow
+                IPs</b> field (or enter <b>any</b>).
+            </li>
+        </ul>
+        <p>There are no sessions on the server: Every request must contain the required authentication information.</p>
+        <p>For details, please see <a class="arrow" href="/help/probes_settings.htm#settings">PRTG Manual: System Administration—Remote Probes</a>.</p>
+
+        <h3 class="js-contentList_add">3. HTTP Requests</h3>
+        <p>The PMPP includes three different HTTP requests which are sent to PRTG's web server:</p>
+        <ul>
+            <li><b>announce</b>: An announce request is sent once when the probe starts. Afterwards, the task and data commands are run in a scheduled manner.</li>
+            <li><b>tasks</b>: With a tasks request, the probe requests a list of tasks to perform.</li>
+            <li><b>data</b>: The data request sends the monitoring results to the core.</li>
+        </ul>
+        <p>All requests of the Mini Probe to the PRTG server must contain the following HTTP fields:</p>
+        <ul>
+            <li><b>gid</b>: The unique GID of the probe. We recommend a GUID that is generated by the operating system. This identifier must stay the same as long as the probe
+                installation exists. You can use any string.
+                <b>If you clone a probe, you have to update this field to a new value.</b></li>
+            <li><b>key</b>: An access key as defined in the probe settings of the PRTG server. The key has to be encoded in <i>SHA1 hash</i> (for example, <i>key=a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</i>).
+            </li>
+            <li><b>protocol</b>: The version of the protocol you use. Currently, this value is "<b>1</b>"</li>
+        </ul>
+        <p>All requests return common HTTP response codes. See <a class="arrow" href="/api.htm?tabid=2" target="_self">HTTP API</a> documentation.</p>
+
+        <h3 class="js-contentList_add">3.1. Announce Request</h3>
+        <p>The <i>announce request</i> uses the <b>POST</b> method and provides all required information about the capabilities of the mini probe for the PRTG Core. The target URL
+            is <b>https://&lt;yourPRTGserver&gt;/probe/announce</b></p>
+        <p>This HTTP request must be sent at least once to be able to add sensors. We recommend sending this request every time the probe starts. You should <b>NOT</b> send it with
+            every scanning interval!</p>
+        <p>The announce request must contain the following <b>HTTP fields</b>:</p>
+        <ul>
+            <li><b>name</b>: The name of the Mini Probe. PRTG uses this name to create a corresponding node in the device tree.</li>
+            <li><b>version</b>: The version number of the Mini Probe you have implemented. This is a single integer number, e.g., "<b>1</b>".</li>
+            <li><b>baseinterval:</b> The number of seconds between two calls of the task/data requests. We recommend 60 or 300 seconds; depending on the usage, higher or lower
+                values are possible.
+            </li>
+            <li><b>sensors</b>: The definition of supported sensors <b>in JSON format</b>. Please see section 4.1. below for the sensor types definition.</li>
+            <li><b>icon</b> (optional): You can optionally send the file name of a device icon to show it for the mini probe device in PRTG's web interface.
+                For details, see our Knowledge Base article <a class="arrow" href="https://kb.paessler.com/en/topic/7313" target="_blank">How can I add my own device icons for use
+                    in the PRTG
+                    web interface?</a></li>
+        </ul>
+        <p><b>IMPORTANT NOTICE:</b>
+            If you change the definition of a sensor that has been already announced, these changes will be active after the next start of PRTG only. An existing definition never
+            changes while PRTG is running.
+            However, there is one <b>exception</b>: Setting the "<b>deprecated</b>" flag works without any restart. Because of this, you can replace an existing sensor with a new
+            one that uses another definition.</p>
+
+        <h3 class="js-contentList_add">3.2. Tasks Request</h3>
+        <p>The tasks request uses the <b>GET</b> method and is sent from your Mini Probe in the defined scheduler interval to the PRTG Core server (for example, every 5 minutes).
+            The target URL is <b>https://&lt;PRTGserver&gt;/probe/tasks</b></p>
+        <p>This HTTP request returns a list of tasks <b>in JSON format</b> which have to be run by the Mini Probe. Please see section 4.2. below for the tasks definition.</p>
+
+        <h3 class="js-contentList_add">3.3. Data Request</h3>
+        <p>The data request uses the <b>POST</b> method and contains the HTTP field <i>data</i>. This HTTP field contains any number of sensor results <b>in JSON format</b>. Please
+            see below.<br>
+            The target URL is <b>https://&lt;PRTGserver&gt;/probe/data</b></p>
+        <p>You can split the results of one tasks list into several result requests (for example, if some sensors are faster than others). The Mini Probe should combine
+            as many results as possible into one request but keep the time between measurement and reporting of the value at a low level. Please see section 4.3. below for data
+            definition.</p>
+
+        <h3 class="js-contentList_add">4. Data Format: JSON Definitions</h3>
+        <p>All data definitions of sensors, tasks, and result data of PRTG Mini Probes are JSON (JavaScript Object Notation) encoded.
+            JSON is a language-independent data format which is used to transmit data objects consisting of attribute-value pairs between a server and an application.
+            Please refer to the JSON documentation <a class="arrow" href="http://www.json.org/" target="_blank">Introducing JSON</a> for a general overview of this data format.</p>
+
+        <h3 class="js-contentList_add">4.1. Sensor Definition</h3>
+        <p>This section shows how you can define the available sensor types for your Mini Probe. Sensor definitions are given in the <b>HTTP field "sensors"</b> of the announce
+            request.</p>
+
+        <h3>4.1.1. Basic Structure</h3>
+        <p>The sensor types definition is a JSON array where each sensor type is defined in one array element as a JSON object. A JSON object denoting a sensor definition consists
+            of the following JSON name/value pairs:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>kind</td>
+                <td>X</td>
+                <td>Unique identifier for the sensor type in the mini probe. Used in the tasks definition to identify the sensor type.<br><i>Note:</i> Underscore "<b>_</b>" is not
+                    allowed here.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>name</td>
+                <td>X</td>
+                <td>The display name of the sensor.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>deprecated</td>
+                <td>—</td>
+                <td>You can flag the sensor to status deprecated. A flagged sensor can still run but this kind of sensor will not be shown when you add new sensors to the probe.
+                </td>
+                <td>1 (= deprecated)<br>0 (= not deprecated)</td>
+            </tr>
+            <tr class="even">
+                <td>description</td>
+                <td>—</td>
+                <td>A short description of the sensor which is shown in the "Add Sensor" dialog in PRTG's web interface.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>help</td>
+                <td>—</td>
+                <td>A help text which is shown in a popup in the "Add Sensor" dialog in PRTG's web interface.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>tag</td>
+                <td>—</td>
+                <td>A default tag for the sensor which will be added automatically to the sensor.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>default</td>
+                <td>—</td>
+                <td>A sensor of this type will be created automatically with the probe if set to "default".</td>
+                <td>1 (= set to default)<br>0 (= not default)</td>
+            </tr>
+            <tr class="even">
+                <td>groups</td>
+                <td>—</td>
+                <td>In the "groups" array, available settings for this sensor type are defined.</td>
+                <td>An array of grouped settings JSON objects.<br><i>Note:</i> Please see section 4.1.2. below.</td>
+            </tr>
+        </table>
+
+        <h3>4.1.2. Definition of Setting Groups Objects</h3>
+        <p>One settings group definition (i.e., one element of the "groups" array) consists of three elements:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>name</td>
+                <td>X</td>
+                <td>The internal name of the settings group.</td>
+                <td>Any unique string</td>
+            </tr>
+            <tr class="even">
+                <td>caption</td>
+                <td>X</td>
+                <td>The label of the settings group as shown in the web interface.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>fields</td>
+                <td>X</td>
+                <td>The available settings of the settings group.</td>
+                <td>An array of field definition objects.<br><i>Note:</i> Please see section 4.1.3. below.</td>
+            </tr>
+        </table>
+
+        <h3>4.1.3. Parameters for Setting Fields</h3>
+        <p>The following table shows available JSON name/value pairs for setting fields:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Available in Type</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>type</td>
+                <td>X</td>
+                <td>Type of the field. This defines the possible content.</td>
+                <td>All</td>
+                <td>Edit<br>Password<br>Integer<br>Radio<br><i>Note:</i> See section 4.1.4. below.</td>
+            </tr>
+            <tr class="even">
+                <td>name</td>
+                <td>X</td>
+                <td>The internal name of the field. The name has to be <b>unique per sensor</b>. It is sent with the settings of the probe in the task request.</td>
+                <td>All</td>
+                <td>Any unique string</td>
+            </tr>
+            <tr class="odd">
+                <td>caption</td>
+                <td>X</td>
+                <td>The label of the field. It is displayed left to the field.</td>
+                <td>All</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>required</td>
+                <td>—</td>
+                <td>If a field is defined as required, this field has to be set when adding or editing the sensor settings. Default is not required.</td>
+                <td>All</td>
+                <td>0 (= not required),<br>1 (= required)</td>
+            </tr>
+            <tr class="odd">
+                <td>default</td>
+                <td>—</td>
+                <td>The default value of the field.</td>
+                <td>All</td>
+                <td>Any string or integer (depending on the field type)</td>
+            </tr>
+            <tr class="even">
+                <td>help</td>
+                <td>—</td>
+                <td>A help text which is displayed right to the field. <i>Note:</i> You can use limited BBCode: "[b]" and "[/b]" for <b>bold</b>, "[i]" and "[/i]" for
+                    <i>italics</i>, "[br]" for linebreak.
+                </td>
+                <td>All</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>maximum</td>
+                <td>—</td>
+                <td>The maximum value that is allowed for this field.</td>
+                <td>Integer</td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>minimum</td>
+                <td>—</td>
+                <td>The minimum value that is allowed for this field.</td>
+                <td>Integer</td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>options</td>
+                <td>—</td>
+                <td>A JSON array which provides several radio buttons to choose a desired option.</td>
+                <td>Radio</td>
+                <td>"name":"value" pairs (*)</td>
+            </tr>
+        </table>
+        <p>(*) Here is an example for "name":"value" pairs which define radio button options:</p>
+        <pre>
+{
+	"1":"This is option 1",
+	"2":"This is option 2",
+	"XYZ":"Another option"
+}
+</pre>
+
+        <h3>4.1.4. Definition of Setting Fields: Field Types</h3>
+        <p>A sensor type can have any number of setting fields which are organized in groups of settings. One field is one element in the "fields" array of a settings group.
+            Currently, PRTG Mini Probes support four different field types for settings:</p>
+        <ul>
+            <li><b>edit</b>: one line edit field.</li>
+            <li><b>password</b>: an edit field with masked characters.</li>
+            <li><b>integer</b>: a number field with optional minimum/maximum selection.</li>
+            <li><b>radio</b>: a selection of multiple options with radio buttons.</li>
+        </ul>
+
+        <h3>4.1.5. Detailed Example for Sensor Settings</h3>
+        <p>The following example shows the JSON object definition of a sensor type which is used in the HTTP field <i>sensors</i> of the <i>announce request</i>.</p>
+        <p>This sensor type is called "Sample Sensor" and is from the type "Sample". It has a description, a help text, and a default tag.
+            There are two setting groups, "Group" and "group2", with several setting fields (six in the first group, one in the second group).
+            The example also shows how you can use the available JSON name/value pairs in the "fields" array object.</p>
+
+        <pre>
+[
+	{
+	"kind":"Sample",
+	"name":"Sample Sensor",
+	"description":"This is a sample demo sensor",
+	"help":"This is the help text of the demo sensors",
+	"tag":"demosensor",
+	"groups":[
+		{
+		"name":"Group",
+		"caption":"Group",
+		"fields":[
+		   {
+			"type":"edit",
+			"name":"simpleedit",
+			"caption":"Edit Field",
+			},
+		   {
+			"type":"edit",
+			"name":"extendededit",
+			"caption":"Edit Field 2",
+			"required":"yes",
+			"default":"Default Value",
+			"help":"Help text displayed to the right of the field"
+			},
+		   {
+			"type":"integer",
+			"name":"simplenumber",
+			"caption":"Number",
+			},
+		   {
+			"type":"integer",
+			"name":"number2",
+			"caption":"Number 2",
+			"required":"1",
+			"minimum":23,
+			"maximum":99,
+			"help":"Number field with limit 23-99"
+			},
+		   {
+			"type":"password",
+			"name":"password",
+			"caption":"Password",
+			"help":"This is a password field"
+			},
+		   {
+			"type":"radio",
+			"name":"radiotest",
+			"caption":"Radio test",
+			"help":"This is a radio selction field",
+			"options":{
+						"1":"This is option 1",
+						"2":"This is option 2",
+						"3":"This is option 3"
+						},
+			"default":"2"
+			},
+			]
+		},
+		{
+		"name":"group2",
+		"caption":"Group 2",
+		"fields":[
+			   {
+				"name":"testfield2",
+				"caption":"Test2",
+				"type":"edit"
+				}
+				]
+		}
+	  ]
+	}
+]
+</pre>
+
+        <h3 class="js-contentList_add">4.2. Tasks Definition</h3>
+        <p>A tasks definition is a JSON array where each task is one object. Tasks contain all name/value pairs as defined in the sensor settings definition which are filled with
+            the values you have provided.
+            Additionally, the following information is included:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>kind</td>
+                <td>X</td>
+                <td>The type of the sensor.</td>
+                <td>String</td>
+            </tr>
+            <tr class="even">
+                <td>sensorid</td>
+                <td>X</td>
+                <td>The ID of the sensor.</td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>host</td>
+                <td>X</td>
+                <td>The IP address/DNS name of the parent device as specified for this device. For the Probe Device it is 127.0.0.1 by default.</td>
+                <td>IP/DNS name</td>
+            </tr>
+            <tr class="even">
+                <td><i>all defined fields</i></td>
+                <td>X</td>
+                <td>All fields that are defined in the sensor setting group objects are included in the tasks definition as name/value pairs.</td>
+                <td>name/value pairs</td>
+            </tr>
+        </table>
+        <p><i>Note:</i> This data comes from PRTG, so the mandatory JSON objects are included automatically.</p>
+
+        <p>The following example shows a definition of two tasks, the first one is the simplest possible one without any values, and the second one uses the sensor settings objects
+            as defined above:</p>
+        <pre>
+[
+	{
+	"sensorid":"2009",
+	"kind":"ping",
+	"host":"www.google.com"
+	}
+	{
+	"sensorid":"2010",
+	"kind":"sample",
+	"host":"www.paessler.com",
+	"simpleedit":"Test2",
+	"extendededit":"Extended Test",
+	"simplenumber":"3",
+	"number2":"42",
+	"password":"masked text",
+	"radiotest":"1",
+	"testfield2":"This is test 3"
+	}
+]
+</pre>
+
+        <h3 class="js-contentList_add">4.3. Data Definition</h3>
+        <p>A data definition is a JSON array where each result of a task is one object. Every array element contains the following name/value pairs:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>sensorid</td>
+                <td>X</td>
+                <td>The ID of a specific sensor.</td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>time</td>
+                <td>—</td>
+                <td>The time of measurement in UTC/GMT timezone as JSON number in Unix time format (in <b>milliseconds</b> since Unix epoch which is 00:00:00 UTC on January 1,
+                    1970).
+                    Time values must be strictly chronologically, so the Unix time of each measurement must be greater than the one before. The time values should be close to the
+                    current time (which is now) to prevent gray sensors.
+                    If no time value is provided, the current time (now) is used.
+                </td>
+                <td>JSON number defining Unix time</td>
+            </tr>
+            <tr class="odd">
+                <td>message</td>
+                <td>—</td>
+                <td>An optional text message.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>channel</td>
+                <td>X</td>
+                <td>The channel result values.</td>
+                <td>An array of name/value pairs.<br><i>Note:</i> See section 4.3.1. below.</td>
+            </tr>
+        </table>
+
+        <p>The following example shows a data definition object with sensor status <b>OK</b>:</p>
+        <pre>
+[
+   {
+	"sensorid":"2003",
+	"message":"Optional Message",
+	"channel":[
+		{
+		"name":"Time",
+		"mode":"integer",
+		"unit":"TimeResponse",
+		"value":6
+		"showchart":1
+		"showtable":1
+		}
+		{
+		"name":"Pages",
+		"mode":"counter",
+		"unit":"Custom",
+		"customunit":"Pages",
+		"value":99
+		}
+	  ]
+	}
+]
+</pre>
+        <p>The following example shows a data definition object with sensor status <b>error</b>:</p>
+        <pre>
+[
+	{
+	"sensorid":"2003",
+	"error":"Response",
+	"code":10,
+	"message":"Error Message"
+	}
+]
+</pre>
+
+        <h3>4.3.1. Parameters for Data Definitions: Channel Result Values</h3>
+        <p>The following table shows name/value pairs which can be used in the "channel" array objects of data definition objects:</p>
+        <table cellspacing="0" class="table hoverable">
+            <thead class="headersnolink">
+            <th><b>Name</b></th>
+            <th><b>Mandatory</b></th>
+            <th><b>Description</b></th>
+            <th><b>Possible Value</b></th>
+            </thead>
+            <tr class="odd">
+                <td>Name</td>
+                <td>X</td>
+                <td>The name of the channel as displayed in user interfaces.</td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>Value</td>
+                <td>X</td>
+                <td>Any number without quotation marks.</td>
+                <td>An integer, float, or counter value</td>
+            </tr>
+            <tr class="odd">
+                <td>Mode</td>
+                <td>—</td>
+                <td>The type of the value. Please make sure that it matches the provided value, otherwise PRTG will show <b>0</b> values.</td>
+                <td>Integer, float, or counter</td>
+            </tr>
+            <tr class="even">
+                <td>Unit</td>
+                <td>—</td>
+                <td>The unit of the value. Setting the correct unit type instead of custom units helps PRTG display received values in a better way.</td>
+                <td>
+                    BytesBandwidth<br>
+                    BytesMemory<br>
+                    BytesDisk<br>
+                    BytesFile<br>
+                    TimeResponse<br>
+                    TimeSeconds<br>
+                    TimeHours<br>
+                    Temperature<br>
+                    Percent<br>
+                    Count<br>
+                    CPU (*)<br>
+                    Custom (define the name of the unit using the additional field <b>customunit</b>)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>ShowChart</td>
+                <td>—</td>
+                <td>Init value for the <i>Show in Graph</i> option. <i>Note:</i> The values defined with this element will be considered <i>only</i> on the first sensor scan when
+                    the channel is newly created;
+                    they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    <b>0</b> (= do not show graph)<br>
+                    <b>1</b> (= show graph)
+                </td>
+            </tr>
+            <tr class="even">
+                <td>ShowTable</td>
+                <td>—</td>
+                <td>Init value for the <i>Show in Table</i> option. <i>Note:</i> The values defined with this element will be considered <i>only</i> on the first sensor scan when
+                    the channel is newly created;
+                    they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    <b>0</b> (= do not show table)<br>
+                    <b>1</b> (= show table)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>SpeedSize<br>VolumeSize</td>
+                <td>—</td>
+                <td>Size used for the display value. For example, if you have a value of 50000 and use <b>Kilo</b> as size the display is <i>50 kilo #</i>. Default is <b>One</b>
+                    (value used as returned).
+                    For the Bytes and Speed units this is overridden by the setting in the user interface.
+                </td>
+                <td>One<br>
+                    Kilo<br>
+                    Mega<br>
+                    Giga<br>
+                    Tera<br>
+                    Byte<br>
+                    KiloByte<br>
+                    MegaByte<br>
+                    GigaByte<br>
+                    TeraByte<br>
+                    Bit<br>
+                    KiloBit<br>
+                    MegaBit<br>
+                    GigaBit<br>
+                    TeraBit
+                </td>
+            </tr>
+            <tr class="even">
+                <td>SpeedTime</td>
+                <td>—</td>
+                <td>See above, used when displaying the speed. Default is <b>Second</b>.</td>
+                <td>Second<br>
+                    Minute<br>
+                    Hour<br>
+                    Day
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>decimalMode</td>
+                <td>—</td>
+                <td>Init value for the <i>Decimal Places</i> option. If <b>0</b> is used in the <b>float</b> mode (i.e., use integer), the default is <b>Automatic</b>; otherwise
+                    (i.e., for float) default is <b>All</b>.
+                    <i>Note:</i> You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Automatic<br>All<br>Custom</td>
+            </tr>
+            <tr class="even">
+                <td>decimalDigits</td>
+                <td>—</td>
+                <td>If you define <b>Custom</b> as <i>decimalMode</i>, specify the number of digits after the delimiter.</td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>ValueLookup</td>
+                <td>—</td>
+                <td>Define if you want to use a lookup file (e.g., to view integer values as status texts). Please enter the ID of the lookup file you want to use, or omit this
+                    element to not use lookups.
+                    See <a class="arrow" href="/help/define_lookups.htm">PRTG Manual: Define Lookups</a> for more information.
+                    <i>Note:</i> This setting will be considered <i>only</i> on the first sensor scan, when the channel is newly created; it is ignored on all further sensor scans
+                    (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>LimitMaxError</td>
+                <td>—</td>
+                <td>Define an upper error limit for the channel. If enabled, the sensor will be set to a "Down" status if this value is overrun and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.
+                    While a sensor shows a "Down" status triggered by a limit, it will still receive data in its channels. The values defined with this element will be considered
+                    <i>only</i> on the first sensor scan,
+                    when the channel is newly created; they are ignored on all further sensor scans (and may be omitted). You can change this initial setting later in the <i>Channel</i>
+                    settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>LimitMaxWarning</td>
+                <td>—</td>
+                <td>Define an upper warning limit for the channel. If enabled, the sensor will be set to a "Warning" status if this value is overrun and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.
+                    The values defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further
+                    sensor scans (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>LimitMinWarning</td>
+                <td>—</td>
+                <td>Define a lower warning limit for the channel. If enabled, the sensor will be set to a "Warning" status if this value is undercut and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.
+                    The values defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further
+                    sensor scans (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="odd">
+                <td>LimitMinError</td>
+                <td>—</td>
+                <td>Define a lower error limit for the channel. If enabled, the sensor will be set to a "Down" status if this value is undercut and the LimitMode is activated.
+                    <i>Note:</i> Please provide the limit value in the unit of the base data type, just as used in the &lt;Value&gt; element of this section.
+                    While a sensor shows a "Down" status triggered by a limit, it will still receive data in its channels.
+                    The values defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored on all further
+                    sensor scans (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr class="even">
+                <td>LimitErrorMsg</td>
+                <td>—</td>
+                <td>Define an additional message. It will be added to the sensor's message when entering a "Down" status that is triggered by a limit.
+                    <i>Note:</i> The values defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored
+                    on all further sensor scans (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>LimitWarningMsg</td>
+                <td>—</td>
+                <td>Define an additional message. It will be added to the sensor's message when entering a "Warning" status that is triggered by a limit.
+                    <i>Note:</i> The values defined with this element will be considered <i>only</i> on the first sensor scan, when the channel is newly created; they are ignored
+                    on all further sensor scans (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="even">
+                <td>LimitMode</td>
+                <td>—</td>
+                <td>Define if the limit settings defined above will be active. Default is <b>0</b> (no; limits inactive).
+                    If <b>0</b> is used the limits will be written to the sensor channel settings as predefined values, but limits will be disabled.
+                    <i>Note:</i> This setting will be considered <i>only</i> on the first sensor scan, when the channel is newly created; it is ignored on all further sensor scans
+                    (and may be omitted).
+                    You can change this initial setting later in the <i>Channel</i> settings of the sensor.
+                </td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>Warning</td>
+                <td>—</td>
+                <td>If enabled for at least one channel, the entire sensor is set to warning status. Default is <b>0</b> (no).</td>
+                <td>
+                    0 (= no)<br>
+                    1 (= yes)
+                </td>
+            </tr>
+            <tr class="even">
+                <td>Message</td>
+                <td>—</td>
+                <td>Text the sensor returns in the <b>Message</b> field with every scanning interval. There can be one message per sensor, regardless of the number of channels.
+                    Default is <b>OK</b>.
+                </td>
+                <td>Any string</td>
+            </tr>
+            <tr class="odd">
+                <td>Error</td>
+                <td>—</td>
+                <td>The type of error. <i>Note:</i> The type is not necessarily shown in PRTG.</td>
+                <td>
+                    <b>Data</b>: The monitored device returned a value but the sensor could not process it.<br>
+                    <b>Response</b>: The monitored device reported an error. This includes timeouts, HTTP response codes, etc.<br>
+                    <b>Exception</b>: Error in sensor handling.<br>
+                    <b>Socket</b>: Socket error.
+                </td>
+            </tr>
+            <tr class="even">
+                <td>Code</td>
+                <td>—</td>
+                <td>The error code which is stored in the database.</td>
+                <td>Integer</td>
+            </tr>
+        </table>
+        <p>(*) This is a % unit which is accounted to the CPU load in index graphs.</p>
+
+        <h2>More</h2>
+        <p>Because the PRTG Mini Probe requires SSL secured connectivity to the PRTG Core Server, it is not possible by default to connect if SSL is deactivated for PRTG.
+            This is necessary because probably unencrypted passwords will be transferred between probe and core. So it is important to encrypt the connection even on internal
+            routes.
+            If your network setup ensures security in another way (e.g., VPN), you can use a registry key option for disabling SSL in order to get a connection with your Mini
+            Probe.<br>
+            Please see the following article in our Knowledge Base for details: <a class="arrow" href="https://www.paessler.com/en/topic/60356">How can I disable SSL for Mini
+                Probes?</a></p>
+    </div>
+</div>

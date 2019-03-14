@@ -1,0 +1,17 @@
+﻿
+<!-- Template sensorlist dataline.htm-->
+<div class="resultwrapper table-wrapper">
+  <table class="result">
+    <tr class="result_row inline"><td><#lang key="html.reporttemplates.sensor" default="Sensor"/>:</td> <td><b><#objectproperty id="<@objectid>" name="name"></b></td></tr>
+    <tr class="result_row"><td><#lang key="html.reporttemplates.html.reporttemplates.probegroupdevice" default="Probe, Group, Device">:</td> <td><#objectstatus id="<@objectid>" name="probegroupdevice" show="text"></td></tr>
+    <@loop>
+  </table>
+
+  <div class="graph">
+    <#report type="chart" graphid="<@subid>" repsensid="<@objectid>" avg="<@graphaverage>" sdate="<@start>" edate="<@end>" width=510 height=135 graphstyling="baseFontSize='8'%20showLegend='0'%20labelDisplay='STAGGER'" tooltexts="1" refreshable="true">
+    <div style="width:510px">
+      <#report type="legend"  width="510" repnodeid="<@subid>" repsensid="<@objectid>">
+    </div>
+  </div>
+</div>
+

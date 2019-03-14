@@ -1,0 +1,12 @@
+﻿<div class="prtg-plugin table-wrapper" data-plugin="prtg-table">
+	<#table tableid="sensortable"
+		content="treenodes"
+		columns="name,dependency=textraw,status,lastvalue,message,minigraph,checkbox"
+		filter_dependency="@above(-2)"
+		tools="edit,pause,fave,prio,scan,delete"
+		sortby="probegroupdevice"
+		sortable="true"
+		refreshable="true"
+		count="100"
+		tabletitle="AUTO">
+</div>

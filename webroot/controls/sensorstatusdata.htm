@@ -1,0 +1,13 @@
+﻿<#checkobjecttype objecttype="sensor">
+
+<table id="sensorstatusdata" cellspacing=0 class="overview table refreshable" refreshurl="/controls/sensorstatusdata.htm?id=<#objectid>">
+	<tr>
+		<td style="<#clusterdependent hidefor='clustertreeobject'>"><#lang key="html.sensorstatusdata.lastscan" default="Last Scan">:<br> <b><#objectstatus name="lastcheck" show="htmllong"></b></td>
+		<td><#lang key="html.sensorstatusdata.lastup" default="Last Up">:<br> <b><#objectstatus name="lastup" show="htmllong"></b></td>
+		<td><#lang key="html.sensorstatusdata.lastdown" default="Last Down">:<br> <b><#objectstatus name="lastdown" show="htmllong"></b></td>
+		<td><#lang key="html.global.uptime" default="Uptime">:<br> <b><span title="<#objectstatus name="uptimetime">"><#objectstatus name="uptime"></span></b></td>
+		<td><#lang key="html.global.downtime" default="Downtime">:<br> <b><span title="<#objectstatus name="downtimetime">"><#objectstatus name="downtime"></span></b></td>
+		<td><#lang key="html.sensorstatusdata.uptimecoverage" default="Uptime Coverage">:<br><b> 
+		<span title="<#objectstatus name="knowntime" show="htmllong"> of <#objectstatus name="cumsince" show="textshort"> since <#objectstatus name="cumsince" show="htmllong">"><#objectstatus name="knowntime" show="textshort"></span></b></td>
+		</tr>
+</table>

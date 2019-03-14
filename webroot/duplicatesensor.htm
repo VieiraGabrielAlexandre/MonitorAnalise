@@ -1,0 +1,86 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.duplicatesensor.title" default="Clone Sensor" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="name">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><#lang key="html.duplicatesensor.head" default="Clone Sensor <b>@name</b>"></h1>
+	<div id="content">
+		<form id="duplicateobjectform" action="/duplicateobject.htm?id=<#objectid>" method="GET"  class="prtg-form prtg-plugin" data-plugin="prtg-form">
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicatesensor.tobecloned" default="Sensor To Be Cloned"></legend>
+				<div class="control-group">
+					<label class="control-label no_help" for="prope-id"><#lang key="html.duplicatesensor.wiz0a" default="Parent Probe"></label>
+					<div class="controls">
+						<span class="control" id="prope-id"><#objectstatus name="probe" show="link"></span>
+					</div>
+					<label class="control-label no_help" for="group-id"><#lang key="html.duplicatesensor.wiz0b" default="Parent Group"></label>
+					<div class="controls">
+						<span class="control" id="group-id"><#objectproperty name="ParentGroup" show="link"></span>
+					</div>
+					<label class="control-label no_help" for="device-id"><#lang key="html.duplicatesensor.wiz0e" default="Parent Device"></label>
+					<div class="controls">
+						<span class="control" id="device-id"><#objectproperty name="ParentDevice" show="link"></span>
+					</div>
+					<label class="control-label no_help" for="senor-id"><#lang key="html.duplicatesensor.wiz0f" default="Sensor"></label>
+					<div class="controls">
+						<span class="control" id="sensor-id"> <b><#objectproperty name="Name" show="link"></b><#objectproperty name="active" show="nicetext"></span>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicatesensor.wizhead" default="Name for New Sensor"></legend>
+				<div class="control-group">
+					<label class="control-label has_help" for="name-id"><#lang key="html.duplicatesensor.wizhelp" default="New Sensor Name"></label>
+					<div class="controls" title="<#lang key="html.duplicatesensor.wiz2" default="Enter a meaningful name to identify the new sensor.">">
+						<input class="text fieldrequired {required:true}" type="text" autocomplete="off" name="name" id="name-id" value="<#lang key="html.global.cloneof" default="Clone of @name">">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.duplicatesensor.wizhead2" default="Parent Device for New Sensor"></legend>
+				<label class="control-label no_help" for="objectSelectorTree"><#lang key="html.duplicatesensor.wizhelp2" default="Select a device you want to add the sensor clone to."></label>
+        <div class="searchbox">
+          <i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+          <input id="objtreesearch" type="text" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">"  name="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">">
+        </div>
+				<div class="controls">
+					<div class="prtg-plugin objectselector"
+	          id="objectSelectorTree"
+	          data-plugin="objectselector"
+            data-allowone="1"
+	          data-branch="<#objectstatus name="parentid" show="text">">
+              <!--
+              {  
+	    					"tree": <#selectionlist content='groupsanddevices_as_json'
+			            id='0'
+			            groups='0'
+			            devices='1'
+			            probes='0'
+			            allowroot='0'
+		              noclusterpropedevices='1'
+			            altformat='1'>
+							}
+							-->
+	         </div>
+					<input type="hidden" name="targetid" id="targetid" data-validate-related="#objectSelectorTree" class="fieldrequired {required:true} invisible">
+					<input type="hidden" name="id" value="<#objectid>">
+				</div>
+			</fieldset>
+      <wingui>
+      <div class="submitbuttonboxanchor">
+        <input style="<#system type="hideforreadonlyusers">" class="submit btngrey button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+        <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+      </div>
+      </wingui>
+		</form>
+<#lang key="html.duplicatesensor.help.title" default="Duplicating Sensor by Cloning" var="helptitle">
+<#lang key="html.duplicatesensor.help.text" default="To <b>duplicate a sensor</b> by creating a clone of this sensor choose a parent device and a new name for the sensor.<br><br> <b>Note:</b> After creation the new sensor is paused so you can edit its settings before monitoring is actually started." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

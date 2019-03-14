@@ -1,0 +1,31 @@
+{
+   "_comment": "Colors for limits will be written backwards! So 010203 -> 030201",
+   "name":"theme2",
+   "colors":{
+      "background":"#000000",
+      "border":"#dddddd",
+	  "plot1":"#000000",
+	  "plot2":"#000000",
+	  "grid":"#dddddd",	  
+      "text":"#00FF00",
+      "limityellow":"#243336",
+      "limitred":"#242534",
+      "lines":[
+         "#e30613",
+         "#dadada",
+         "#5bc4be",
+         "#ed6fa7",
+		 "#7a7540",
+         "#C48936",
+		 "#00855a",
+		 "#9660A9"
+      ],
+	  "alphaminmax": 128,
+	  "alphaprimary": 225,
+	  "alphatraffic": 240
+   },
+   "font":{
+      "normal":"tahoma.ttf;arial.ttf",
+      "bold":"tahomabd.ttf;arialbd.ttf"
+   }
+}

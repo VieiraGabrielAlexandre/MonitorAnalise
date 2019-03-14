@@ -1,0 +1,86 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.global.addticket" default="Add Ticket" var="pagetitle">
+<#include file="includes\htmlheader.htm"  ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div class="add-ticket-main-container" id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content" class="ui-dialog-content">
+		<form id="addobjectdialogform" action="addticket.htm" method="GET" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+			<h1><b><#lang key="html.global.addticket" default="Add Ticket"></b></h1>
+			<div class="eye-catcher"></div>
+			<div class="cancel-action">
+				<a onClick="history.back();return(false)" class="btn cancel" type="reset"><#lang key="html.global.cancel" default="Cancel"></a>
+			</div>
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.adddevice0.pleaseselectagroupdevicesensorfromlist1" default="Select a Group, Device, or Sensor from the List"></legend>
+				<div class="control-group">
+					<div class="controls fillwidth">
+						<p class="controls-info">
+							<span class="readonlyproperty">
+								<#lang key="html.addticket0.pleaseselectagroupdevicesensorfromlist2" default="Please select a group, device, or sensor from the list! Tip: You can open a new ticket much faster by right clicking an object and choosing &quot;Add Ticket&quot; from the context menu!</b>">
+							</span>
+						</p>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<div class="control-group">
+					<div class="controls fillwidth">
+						<div>
+							<b>1. <#lang key="html.objectselectorform.navigate" default="Navigate Device Tree"></b>
+							<div class="searchbox">
+								<i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+								<input id="objtreesearch" type="text" data-placement="top" class="searchstring" title="<#langjs key="html.jstree.searchtree" default="Search Name in Device Tree">" placeholder="<#lang key="html.global.search2" default="Search...">">
+							</div>
+							<div class="prtg-plugin objectselector"
+								id="objectSelectorTree"
+								data-onlysensors="<#inserturlparam parameter="onlysensors">"
+								data-plugin="objectselector"
+								data-selid="0"
+								data-sensorload="#objectSelectorSensors"
+								data-allowreadonly="1"
+								data-allowone="1"
+								data-parametername="objectid">
+								<!--
+								{
+		    					"tree": <#selectionlist
+											content='groupsanddevices_as_json'
+											id='0'
+											probes='1'
+											groups='1'
+											devices='1'
+											allowone='1'
+											allowself='1'
+											allowreadonly='1'
+											altformat='1'>
+									}
+									-->
+							</div>
+						</div>
+						<div>
+							<b>2. <#lang key="html.objectselectorform.selectorfind" default="Select or Find an Object"></b>
+							<div class="searchbox"><i class="ui-icon ui-icon-search ui-icon-gray searchlogo"></i>
+								<input type="text" tabindex="2" id="objsearch" class="searchstring" title="<#langjs key="html.jstree.findobjects" default="Find Object by Name, Group, Device, or Tag">" placeholder="<#lang key="html.global.find" default="Find...">">
+							</div>
+							<div id="objectSelectorSensors"></div>
+							<input type="hidden" name="targeturl" value="/tickets.htm">
+							<input type="hidden" name="id" value="new">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<div style='<#system type="hideforreadonlyusers">' class='quick-action-wrapper <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">'>
+				<button style='<#system type="hideforreadonlyusers">'  class="submit btngrey button quick-action-button force-visible" type="submit"><#lang key="html.global.continue" default="Continue"></button>
+				<button style='<#system type="hideforreadonlyusers">'  type="submit" class='ui-icon quick-action-badge quick-continue'></button>
+			</div>
+		</form>
+	</div>
+	<#system type='showhelp' var='showhelp'>
+
+	<#lang key="html.global.addticket" default="Add Ticket" var="helptitle">
+	<#lang key="html.addticket0add.helptext" default="Choose an object from the device tree which is the focus of the new ticket.<br><br><a href='/help/tickets.htm' target='_blank'><b>Help: Tickets</b></a>" var="helptext">
+	<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

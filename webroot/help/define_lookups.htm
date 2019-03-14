@@ -1,0 +1,373 @@
+﻿<!--Define Lookups-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="define_ip_ranges.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="regular_expressions.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Define Lookups</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Define Lookups</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">PRTG uses <span class="f_BoldCustom">lookups</span> for some sensor types and for some sensors with custom channels. In general, lookups make data more human friendly because they map status values as returned by a device (usually integers) to more informative expressions in words that show you the status of a monitored device as a clear message. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">Additionally, lookups can also define the <a href="sensor_states.htm" class="topiclink">sensor status </a>that will be shown in correlation with certain status codes, just like <a href="sensor_channels_settings.htm#settings" class="topiclink">sensor channel limits</a> can define a sensor status, too. For example, for a printer, PRTG can show a sensor in a yellow <span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Warning</a></span> status with channel values, provided by lookups, like &quot;Toner Low&quot; instead of simple status codes, like &quot;1&quot;.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can customize lookups individually and define your own texts that a sensor channel can show. See the section <span class="f_BoldCustom"><a href="define_lookups.htm#customizing" class="topiclink">Customizing Lookups</a></span> below.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">If a channel uses lookups, you can individually define how to control the sensor status, either using the lookup definition or using limits for numerical values returned by the device. For details, see <span class="f_BoldCustom"><a href="sensor_channels_settings.htm#settings" class="topiclink">Sensor Channel Settings</a></span>, section <span class="f_BoldCustom">Alerting and Limits</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Lookups do not change data in the PRTG database, but they merely change the way sensor channels are shown. Any change to lookup definition files will apply to historic data as well as to live data.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Some exceptions apply to the <span style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span> that basically does an &quot;inverse lookup&quot;. It does not map an integer to a text message but looks only for matching strings in the lookup definition and shows a status based on this text value.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>Customizing lookups is not possible on PRTG hosted by Paessler.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="req_custom" class="hmanchor"></a><span class="f_InTopicHeading">Requirement: Channel Unit &quot;Custom&quot;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">All sensor channels with enabled <span class="f_BoldCustom">Value Lookup</span> need to use the channel <span class="f_BoldCustom">Unit</span> &quot;<span class="f_ItalicCustom">Custom</span>&quot;. For details, refer to the section <span class="f_BoldCustom"><a href="sensor_channels_settings.htm#settings" class="topiclink">Sensor Channel Settings</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-red.png"/>There are sensors that provide the unit <span style="font-weight: bold;">Value Lookup</span> for channels in their sensor settings. Do <span class="f_ItalicCustom">not</span> use the &quot;custom&quot; unit for channels of these sensors if you want to use lookups! This would result in malfunctioning lookup channels. For the following sensor types, choose the unit <span style="font-weight: bold;">Value Lookup</span> in the sensor settings and select your lookup file directly when adding the sensor:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="google_analytics_v2_sensor.htm" class="topiclink">Google Analytics Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="microsoft_sql_v2_sensor.htm" class="topiclink">Microsoft SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="mysql_v2_sensor.htm" class="topiclink">MySQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="oracle_sql_v2_sensor.htm" class="topiclink">Oracle SQL v2 Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="postgresql_sensor.htm" class="topiclink">PostgreSQL Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_custom_advanced_sensor.htm" class="topiclink">SNMP Custom Advanced Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_custom_table_sensor.htm" class="topiclink">SNMP Custom Table Sensor</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="gauges" class="hmanchor"></a><span class="f_InTopicHeading">Visualization of Lookup Channels</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">PRTG can display gauges or switches for channels that use lookups. We recommend that you stay below 120 lookup values to display informative gauges for primary channels. Non-primary channels have an upper limit of around 40 lookup values for gauges.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The various states displayed in gauges always follow the clockwise order <span class="f_BoldCustom">Up</span> (green) &lt; <span class="f_BoldCustom">Warning</span> (yellow) &lt; <span class="f_BoldCustom">Down</span> (red) &lt; <span class="f_BoldCustom">Unknown</span> (gray / black).</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:226px"><a href="lookups_gauge.png"><img id="TOGGLE0186A1" class="image-toggle" alt="A Gauge Showing the Status of a Lookup Channel" title="A Gauge Showing the Status of a Lookup Channel" style="width:226px;height:161px;border:none" src="lookups_gauge_zoom80.png"/></a><p style="text-align:center"><span class="f_ImageCaption">A Gauge Showing the Status of a Lookup Channel</span></p></div></div>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:153px"><a href="boolean_lookup.png"><img id="TOGGLE0186A2" class="image-toggle" alt="A Switch Showing the Status of a Boolean Lookup Channel" title="A Switch Showing the Status of a Boolean Lookup Channel" style="width:153px;height:65px;border:none" src="boolean_lookup.png"/></a><p style="text-align:center"><span class="f_ImageCaption">A Switch Showing the Status of a Boolean Lookup Channel</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="directory" class="hmanchor"></a><span class="f_InTopicHeading">Lookups Directory and Format</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Lookups are defined in XML format in files ending in <span class="f_BoldCustom">.ovl</span>. PRTG standard lookup files are located in the <a href="data_storage.htm" class="topiclink">PRTG program directory</a> in the <span class="f_BoldCustom">\lookups</span> subfolder. These files are maintained by PRTG itself. In each of the files lookups are defined for one or more sensors. Furthermore, the lookups folder contains the <span class="f_BoldCustom">\custom</span> subfolder to store your customized lookups. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">The files follow a basic principle. For each numeric value you can define:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A message that the sensor will look up and show instead of the numerical value </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The status that the sensor will show</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Use the <span style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span> to map a string into a corresponding status. Please use the <a href="define_lookups.htm#lookuptypes" class="topiclink">lookup type</a> <span style="font-weight: bold;">SingleInt</span> for this purpose.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>You cannot access this directory on PRTG hosted by Paessler instances.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="example" class="hmanchor"></a><span class="f_InTopicHeading">Example</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following code illustrates the lookup definition for the toner status of the <span class="f_BoldCustom"><a href="snmp_hp_laserjet_hardware_sensor.htm" class="topiclink">SNMP HP LaserJet Hardware</a></span> sensor: <br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;?&gt;</span><br />
+<span class="f_CodeExample">&lt;ValueLookup&nbsp;id=&quot;oid.paessler.hplaserjet.tonerstatus&quot;&nbsp;desiredValue=&quot;1&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;PaeValueLookup.xsd&quot;&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;Lookups&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Ok&quot;&nbsp;value=&quot;0&quot;&gt;Toner&nbsp;Okay&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Warning&quot;&nbsp;value=&quot;1&quot;&gt;Toner&nbsp;Low&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Error&quot;&nbsp;value=&quot;2&quot;&gt;No&nbsp;Toner&nbsp;Cartridge&nbsp;Loaded&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;/Lookups&gt;</span><br />
+<span class="f_CodeExample">&lt;/ValueLookup&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The schema in the example provides an insight how lookups are defined: </p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">&lt;?xml&gt; </span><span class="f_ListBulleted">tag in the first line defines the content as XML.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">&lt;ValueLookup&gt;</span><span class="f_ListBulleted"> tag in the second line contains:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">ID </span><span class="f_ListBulleted">that is shown in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom"><a href="define_lookups.htm#desiredvalue" class="topiclink">desiredValue</a> </span><span class="f_ListBulleted">attribute contains the value that is used for the calculation of the &quot;Coverage&quot;</span>. In this example, <span class="f_BoldCustom">1</span> is defined as desired value.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">xsi</span><span class="f_ListBulleted"> attributes refer to the predefined XML schema definitions in PRTG (which allow easy editing of lookup files with supported editors). We recommend that you use the default value.</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Between the tags </span><span class="f_BoldCustom">&lt;Lookups&gt;</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">&lt;/Lookups&gt;</span><span class="f_ListBulleted"> the particular lookups for the sensor data are defined:</span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A lookup entry starts with a tag containing the type of the status value, the </span><span class="f_ItalicCustom">lookup type</span><span class="f_ListBulleted"> (in this example, this is always </span><span class="f_BoldCustom">&lt;SingleInt&gt;</span><span class="f_ListBulleted">).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Separated by whitespace, the </span><span class="f_BoldCustom">state </span><span class="f_ListBulleted">attribute defines the status the sensor will show. Allowed values are: </span><span class="f_BoldCustom">Ok</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Error</span><span class="f_ListBulleted">, and </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> (&quot;None&quot; does not trigger a status change).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">value </span><span class="f_ListBulleted">attribute defines which numeric value will trigger the lookup. This is the value that PRTG will receive from the device.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">The </span><span class="f_BoldCustom">text </span><span class="f_ListBulleted">defines the substitution text that is shown instead of the value. For example, this can be a status message.</span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;">The same way all other possible lookups are defined. The lookup definitions are closed by the tag <span class="f_BoldCustom">&lt;/Lookups&gt;</span>. The file closes with <span class="f_BoldCustom">&lt;/ValueLookup&gt;</span>.</li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">In our example, the lookup file will have the following effect:</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Value as Reported from HP Printer</span></p>
+</td>
+<td style="vertical-align:top; width:275px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Value Shown in PRTG (Sensor Channel)</span></p>
+</td>
+<td colspan="2" style="vertical-align:top; width:370px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Sensor Status Shown by PRTG</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">0</span></p>
+</td>
+<td style="vertical-align:middle; width:275px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Toner Okay</span></p>
+</td>
+<td style="vertical-align:middle; width:1px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_green_big" width="19" height="19" style="margin:0;width:19px;height:19px;border:none" src="led_green_big.png"/></p>
+</td>
+<td style="vertical-align:middle; width:326px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Up</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">1</span></p>
+</td>
+<td style="vertical-align:middle; width:275px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Toner Low</span></p>
+</td>
+<td style="vertical-align:middle; width:1px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_yellow_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_yellow_big.png"/></p>
+</td>
+<td style="vertical-align:middle; width:326px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Warning</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">2</span></p>
+</td>
+<td style="vertical-align:middle; width:275px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">No Toner Cartridge Loaded</span></p>
+</td>
+<td style="vertical-align:middle; width:1px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="led_red_big" width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="led_red_big.png"/></p>
+</td>
+<td style="vertical-align:middle; width:326px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Down</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="schema" class="hmanchor"></a><span class="f_InTopicHeading">The XML Schema</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">An exemplary schema of the XML files containing the lookup definitions can be sketched like this:<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;?&gt;</span><br />
+<span class="f_CodeExample">&lt;ValueLookup&nbsp;id=&quot;...&quot;&nbsp;desiredValue=&quot;...&quot;&nbsp;undefinedState=&quot;...&quot;&nbsp;xmlns=&quot;...&quot;&nbsp;xsi=&quot;...&quot;&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;Lookups&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;...&quot;&nbsp;value=&quot;...&quot;&gt;status&nbsp;text&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;Boolean&nbsp;state=&quot;...&quot;&nbsp;value=&quot;...&quot;&gt;status&nbsp;text&lt;/Boolean&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;BitField&nbsp;state=&quot;...&quot;&nbsp;value=&quot;...&quot;&gt;status&nbsp;text&lt;/BitField&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;Range&nbsp;state=&quot;...&quot;&nbsp;from=&quot;...&quot;&nbsp;to=&quot;...&quot;&gt;status&nbsp;text&lt;/Range&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">[several&nbsp;other&nbsp;lookup&nbsp;definitions]</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;/Lookups&gt;</span><br />
+<span class="f_CodeExample">&lt;/ValueLookup&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Element</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Description</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Attributes, Value Assignment, and Content</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;?xml&gt;</span><br />
+<span class="f_ItalicCustom">content</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">This is the XML declaration. Every XML file begins with it.</p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">version</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">encoding</span><span class="f_ListBulleted"> are &quot;1.0&quot; resp. &quot;UTF-8&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">content</span><span class="f_ListBulleted">: </span><span class="f_BoldCustom">&lt;ValueLookup&gt;</span><span class="f_ItalicCustom">contentValueLookup</span><span class="f_BoldCustom">&lt;/ValueLookup&gt;</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;ValueLookup&gt;</span><br />
+<span class="f_ItalicCustom">contentValueLookup</span><br />
+<span class="f_BoldCustom">&lt;/ValueLookup&gt;</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Defines the <span style="font-weight: bold;">ID</span> of the channel, what <span style="font-weight: bold;">desiredValue</span> is used, the status for undefined values (<span style="font-weight: bold;">undefinedState</span>), and links to the predefined schema definitions in PRTG, which allow editing of lookup files with supported editors.</p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">id</span><span class="f_ListBulleted">: Specifies how the name of the lookup file is shown in the </span><span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span><span class="f_ListBulleted">.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="define_lookups.htm#desiredvalue" class="topiclink">desiredValue</a></span><span class="f_ListBulleted">: Please see below.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted" style="font-weight: bold;">undefinedState</span><span class="f_ListBulleted">: Optionally define a status for values that are not defined in the lookup file. If the target device returns a value that is not included in the lookup definition, the sensor will show this status (</span><span class="f_ListBulleted" style="font-weight: bold;">Ok</span><span class="f_ListBulleted">, </span><span class="f_ListBulleted" style="font-weight: bold;">Warning</span><span class="f_ListBulleted">, </span><span class="f_ListBulleted" style="font-weight: bold;">Error</span><span class="f_ListBulleted">, or </span><span class="f_ListBulleted" style="font-weight: bold;">None</span><span class="f_ListBulleted">) with an according message. Without a definition of &quot;undefinedState&quot;, the sensor will only show the returned value.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">xmlns:xsi/xsi</span><span class="f_ListBulleted">: refers to predefined XML schema definition</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">contentValueLookup</span><span class="f_ListBulleted">: lookup definitions</span><br />
+<span class="f_BoldCustom">&lt;Lookups&gt;</span><span class="f_ItalicCustom">contentLookups</span><span class="f_BoldCustom">&lt;/Lookups&gt;</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;Lookups&gt;</span><br />
+<span class="f_ItalicCustom">contentLookups</span><br />
+<span class="f_BoldCustom">&lt;/Lookups&gt;</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Defines the particular lookups for the sensor data.</p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 10px;"><span class="f_ItalicCustom">contentLookups</span><span class="f_ListBulleted">: one or more lookup entries, see below</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;SingleInt&gt;</span><br />
+<span class="f_ItalicCustom">status text</span><br />
+<span class="f_BoldCustom">&lt;/SingleInt&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;Boolean&gt;</span><br />
+<span class="f_ItalicCustom">status text</span><br />
+<span class="f_BoldCustom">&lt;/Boolean&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;BitField&gt;</span><br />
+<span class="f_ItalicCustom">status text</span><br />
+<span class="f_BoldCustom">&lt;/BitField&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span class="f_BoldCustom">&lt;Range&gt;</span><br />
+<span class="f_ItalicCustom">status text</span><br />
+<span class="f_BoldCustom">&lt;/Range&gt;</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_Normal" style="page-break-inside: avoid;">Each element defines one lookup entry. There can be one or more entries in this format. <span class="f_ItalicCustom">SingleInt</span>, <span class="f_ItalicCustom">Boolean</span>, <span class="f_ItalicCustom">BitField</span>, and <span class="f_ItalicCustom">Range </span>are <a href="define_lookups.htm#lookuptypes" class="topiclink">lookup types</a>.</p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">state</span><span class="f_ListBulleted">: defines the state the sensor will show; allowed values: </span><span class="f_BoldCustom">Ok</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Warning</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Error</span>,<span class="f_ListBulleted"> </span><span class="f_BoldCustom">None</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">value</span><span class="f_ListBulleted">: defines the value that triggers the lookup. Please enter an integer value. </span><br />
+<img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_BoldCustom">Range</span><span class="f_ListBulleted"> needs always both values &quot;from&quot; and &quot;to&quot;.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ItalicCustom">status text</span><span class="f_ListBulleted">: defines a </span><span class="f_BoldCustom">status text</span><span class="f_ListBulleted"> that will be used as substitution text and shown instead the integer value. For example, a status message.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>The <span style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span> maps the status text into one of the given states. Please use <span style="font-weight: bold;">SingleInt</span> for this sensor.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;">Because all the XML files containing lookup definitions are delivered in a pre-given schema as indicated above, you can customize lookups accordingly.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="customizing" class="hmanchor"></a><span class="f_InTopicHeading">Customizing Lookups</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">If you want to change the status definitions of a specific sensor channel, you basically have to do the following:</p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Find out the (file) name of the lookup file in the <a href="sensor_channels_settings.htm" class="topiclink">settings of the sensor channel</a> you want to change the behavior for.</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">From the </span><a href="data_storage.htm" class="topiclink">PRTG program directory</a> <span class="f_ListNumbered">subfolder </span><span class="f_ListNumbered" style="font-weight: bold;">\lookups</span><span class="f_ListNumbered">, copy this file into the </span><span class="f_ListNumbered" style="font-weight: bold;">\lookups\custom</span><span class="f_ListNumbered"> subfolder (ensure you do not change the file name!).</span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">Change the duplicated file as you like. See the example below.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-prtg-on-demand" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-prtg-on-demand.png"/>This feature is not available in PRTG hosted by Paessler.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">All default lookup files are located in the <span class="f_BoldCustom">\lookups</span> subfolder in the <a href="data_storage.htm" class="topiclink">PRTG program directory</a>. To customize existing lookups, copy the desired lookup file from the lookups folder to the <span class="f_BoldCustom">\lookups\custom</span> subfolder or create a new <span class="f_ItalicCustom">.ovl</span> file there. When using the same ID in the <span class="f_ItalicCustom">ValueLookup</span> tag, the files in the <span class="f_BoldCustom">\lookups\custom</span> folder will have a higher priority than the original files in the <span class="f_BoldCustom">\lookups</span> folder. This way, PRTG handles your customizations preferably instead of the original lookup settings. If you want to use custom lookup definitions <span class="f_ItalicCustom">in addition</span> to the existing lookups, define a new ID in the lookup file that is not used by another lookup file. PRTG identifies lookup definitions via this ID, it does <span class="f_ItalicCustom">not</span> use the file name.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Open the file with an XML or text editor and adjust the lookups to your personal preferences. You can define your own messages as well as you can customize sensor states for the particular return values. For example, if you do not want show an &quot;Error&quot; (a sensor <span class="f_BoldCustom">Down</span> status) for the return value &quot;2&quot; but only a warning, then you can replace &quot;Error&quot; with &quot;Warning&quot;. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>The possible states are given in the <span class="f_BoldCustom">LookupState.xsd</span> file in the custom directory. Following the schema of the XML files that are delivered with PRTG enables you to edit the lookups in a safe way.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you <a href="snmp_library_sensor.htm#import" class="topiclink">imported an oidlib file</a> that contains <a href="define_lookups.htm" class="topiclink">lookups</a> (you can see this in section <span style="font-weight: bold;">Lookup</span> in the MIB Importer), you can define your own sensor states for returning values. If you add an <span style="font-weight: bold;"><a href="snmp_library_sensor.htm" class="topiclink">SNMP Library Sensor</a></span> using this oidlib, PRTG will create a lookup definition file using the <span style="font-weight: bold;">lookupname</span> of the chosen library as <span style="font-weight: bold;">id</span> parameter. Override this lookup definition with your own custom lookup as described in this section. This is important because lookups that are added via an oidlib will not contain any state definitions and result in a <span class="f_BoldCustom">Warning</span> <a href="sensor_states.htm" class="topiclink">status</a> of the sensor by default because of the entry <span class="f_ItalicCustom">undefinedState=&quot;Warning&quot;</span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>If you use an <span style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span>, you can create a new custom lookup definition in the <span style="font-weight: bold;">\lookups\custom</span> directory with the expected return values. In this case, use the <span style="font-weight: bold;">lookupname</span> of the chosen library as <span style="font-weight: bold;">id</span> parameter to override the lookups from the oidlib file.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>When you save an edited lookup, make sure that it is saved as an .ovl file. Otherwise, the lookup might accidentally be saved as a .txt file and might not be loaded.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Example for Lookups Customization</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For example (just for illustration purposes), imagine you would like </p>
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 20px;list-style-position:outside; list-style-type:decimal">
+<li value="1" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">to have the status &quot;Warning&quot; for all undefined values that the target device might return,</span></li>
+<li value="2" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">to change the status for the return value &quot;2&quot; from &quot;Down&quot; to &quot;Warning&quot;, </span></li>
+<li value="3" style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListNumbered">and to add the status &quot;None&quot; to the <a href="define_lookups.htm#example" class="topiclink">example</a> above.</span></li>
+</ol>
+<p class="p_Normal" style="page-break-inside: avoid;">Then do the following:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Copy the file </span><span class="f_ItalicCustom">oid.paessler.hplaserjet.tonerstatus</span><span class="f_ListBulleted"> to the </span><span class="f_BoldCustom">\lookups\custom</span><span class="f_ListBulleted"> subfolder of your PRTG installation. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Open this file with an editor.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Leave the ID value unchanged to prioritize the customized lookup to the original file. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Insert the status definition for undefined values into the ValueLookup element: undefinedState=&quot;Warning&quot;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Replace &quot;Error&quot; with &quot;Warning&quot; for value &quot;2&quot;.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Add a &quot;SingleInt&quot; element with status &quot;None&quot; for the (hypothetical) return value &quot;3&quot;.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Save the file and <a href="define_lookups.htm#loading" class="topiclink">reload</a> the custom lookup folder in PRTG.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">The customized lookup file will finally look like this:<br />
+&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;?&gt;</span><br />
+<span class="f_CodeExample">&lt;ValueLookup&nbsp;id=&quot;oid.paessler.hplaserjet.tonerstatus&quot;&nbsp;desiredValue=&quot;1&quot;&nbsp;undefinedState=&quot;Warning&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;PaeValueLookup.xsd&quot;&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;Lookups&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Ok&quot;&nbsp;value=&quot;0&quot;&gt;Toner&nbsp;Okay&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Warning&quot;&nbsp;value=&quot;1&quot;&gt;Toner&nbsp;Low&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;Warning&quot;&nbsp;value=&quot;2&quot;&gt;No&nbsp;Toner&nbsp;Cartridge&nbsp;Loaded&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&lt;SingleInt&nbsp;state=&quot;None&quot;&nbsp;value=&quot;3&quot;&gt;Unknown&nbsp;status&nbsp;of&nbsp;toner&lt;/SingleInt&gt;</span><br />
+<span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;/Lookups&gt;</span><br />
+<span class="f_CodeExample">&lt;/ValueLookup&gt;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;<br />
+<img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 20px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>See also <span style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm#example" class="topiclink">SNMP Custom String Lookup Sensor—Example</a></span> for a lookup definition that maps a string value to a sensor status.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="desiredvalue" class="hmanchor"></a><span class="f_InTopicHeading">desiredValue Attribute</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">It is necessary to define a <span class="f_BoldCustom">desiredValue </span>in the lookup files. The desiredValue corresponds to a status value triggering a lookup. PRTG calculates the percentage of time this specific state has been monitored. The result is displayed for all data tables and graphs that show averaged values.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Considering the example above where the desiredValue is &quot;1&quot;, PRTG will calculate the percentage of time the toner status has been &quot;Warning&quot;. If in a time span of five minutes four of five sensor scans returned a &quot;Warning&quot; status, PRTG would show an average of 80% for this time span, because in 80% of the time the sensor showed a &quot;Warning&quot;.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="lookuptypes" class="hmanchor"></a><span class="f_InTopicHeading">Lookup Types: SingleInt, Boolean, BitField, Range</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Besides the lookup type <span class="f_BoldCustom">SingleInt</span> as seen above, there are three other lookup types: <span class="f_BoldCustom">Boolean</span>, <span class="f_BoldCustom">BitField</span> and <span class="f_BoldCustom">Range</span>. Using these types you can define lookup values beyond simple integers.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Lookup Type</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Description</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Syntax</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">SingleInt</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Uses an </span><span class="f_BoldCustom">integer</span><span class="f_ListBulleted"> to define a lookup for one status value.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">value=&quot;int&quot;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The full 32</span>-bit integer range is supported. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Boolean</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Uses </span><span class="f_BoldCustom">0</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">1</span><span class="f_ListBulleted"> to define a lookup for two different status values.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">value=&quot;0&quot;</span><br />
+<span class="f_ListBulleted">value=&quot;1&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">BitField</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Uses a </span><span class="f_BoldCustom">bitfield</span><span class="f_ListBulleted"> for multiple status values.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Only use it if you have basic knowledge about bitmasks. See the section </span><span class="f_BoldCustom"><a href="define_lookups.htm#more" class="topiclink">More</a></span><span class="f_ListBulleted"> below for a general introduction. </span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Every value has to equal a power of two (for example, 1, 2, 4, 8, 16, 32, 64, etc.).</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span><span class="f_ListBulleted"> does not support BitFields.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:156px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Range</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Uses an inter range </span><span class="f_BoldCustom">from-to</span><span class="f_ListBulleted"> to define a lookup for several status values.</span></p>
+</td>
+<td style="vertical-align:middle; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">from=&quot;int&quot; to=&quot;int&quot;</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">Using ranges, the parameters &quot;from&quot; and &quot;to&quot; always have to be defined. If you want to query only one single value in a range file, this value must be set as parameter for &quot;from&quot; </span><span class="f_BoldCustom">and </span><span class="f_ListBulleted">&quot;to&quot; (for example, from=&quot;2&quot; to=&quot;2&quot;).</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/><span class="f_ListBulleted">The </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_custom_lookup_sensor.htm" class="topiclink">SNMP Custom String Lookup Sensor</a></span><span class="f_ListBulleted"> does not support ranges.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>The full 32-bit integer range is supported.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>You can use only <span class="f_BoldCustom">one</span> kind of lookup type in <span class="f_BoldCustom">one</span> lookup file. This means, only or <span class="f_ItalicCustom">SingleInts</span>, or <span class="f_ItalicCustom">Boolean</span>, or <span class="f_ItalicCustom">BitField</span>, or <span class="f_ItalicCustom">Ranges</span>. Different lookup types in one file are not allowed.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="channel_settings" class="hmanchor"></a><span class="f_InTopicHeading">Define Lookup Files in Sensor Channel Settings</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">For each sensor with a custom channel, you can define a lookup file to use with the option <span style="font-weight: bold;">Value Lookup</span> in the <a href="sensor_channels_settings.htm" class="topiclink">sensor channel settings</a>. This option is visible for many <span class="f_BoldCustom">SNMP sensors</span>, some<span class="f_BoldCustom"> application sensors</span>, and always for the following sensor types:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="exe_script_sensor.htm" class="topiclink">EXE/Script Sensor</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="exe_script_advanced_sensor.htm" class="topiclink">EXE/Script Advanced Sensor</a> </span><span class="f_ListBulleted">(if a </span><span class="f_BoldCustom">Custom </span><span class="f_ListBulleted">unit is defined)</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="snmp_custom_sensor.htm" class="topiclink">SNMP Custom Sensor</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For details, see section <span class="f_BoldCustom"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channel Settings</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="loading" class="hmanchor"></a><span class="f_InTopicHeading">Loading Lookups</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can (re)load the defined lookups in the custom folder by clicking the <span class="f_BoldCustom">Load Lookups</span> button in the PRTG web interface under <span class="f_BoldCustom">Setup | System Administration | <a href="administrative_tools_settings.htm" class="topiclink">Administrative Tools</a></span>. </p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-blue" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-blue.png"/>A sensor whose lookup file you have modified and reloaded will not re-evaluate this lookup before the next sensor scan. For sensors with large scanning intervals, use the <span style="font-weight: bold;">Scan Now</span> option from the <a href="context_menus.htm#sensor" class="topiclink">context menu</a> to immediately apply the new lookup definition and to avoid an incorrect sensor status. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="debugging" class="hmanchor"></a><span class="f_InTopicHeading">Debugging—What will happen if...?</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A return value is defined in the lookups that never will be returned by a device because the value is not assigned: The value will never be triggered, so PRTG simply ignores this entry.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG receives a return value that is not defined for lookups: No substitution message can be found. PRTG will just show the return value. You can optionally define a status for unknown values with a definition of </span><span class="f_BoldCustom">undefinedState</span><span class="f_ListBulleted"> in the </span><span class="f_BoldCustom">ValueLookup</span><span class="f_ListBulleted"> element (see section </span><span class="f_BoldCustom"><a href="define_lookups.htm#schema" class="topiclink">Define Lookups—The XML Schema</a></span><span class="f_ListBulleted"> above). </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Different lookup types are in one lookup file: This is not allowed and PRTG will discard this lookup definition. If you use miscellaneous lookup types in one file, for example, ranges and singleInts together, the PRTG system will create a ticket when loading lookups or restarting the PRTG server with the following error message: </span><span class="f_ItalicCustom">Value lookup file &quot;[...]&quot; could not be loaded (&quot;&quot; is not a valid integer value)&quot;</span><span class="f_ListBulleted">. </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Incorrect XML code: PRTG will create a new ticket when loading lookups or restarting the PRTG server with a corresponding error message and discard this lookups definition.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">A lookup file has a file ending other than .ovl: The file will not be loaded.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Alerting is disabled or based on limits: Error and warning states defined in the lookup will not apply. Please ensure you choose the option </span><span class="f_BoldCustom">Enable alerting based on lookups</span><span class="f_ListBulleted"> in the <a href="sensor_channels_settings.htm" class="topiclink">channel settings</a> if you want to use the lookup definition to control the sensor status.</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Video Tutorial: How to configure lookups in PRTG Network Monitor</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/prtg-lookups" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/prtg-lookups</a> </span></li>
+</ul>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Wikipedia: Masks (computing)</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http://en.wikipedia.org/wiki/Bit_mask" target="_blank" class="weblink">http://en.wikipedia.org/wiki/Bit_mask</a></span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Lookups,SNMP,SNMP Lookups,Value Mapping,Value Mapping Lookups</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="define_ip_ranges.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="regular_expressions.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

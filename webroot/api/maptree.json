@@ -1,0 +1,2 @@
+<#checkobjecttype objecttype="map">
+<#selectionlist content="groupsanddevices_as_json" id="0" allowreadonly="1" showsensor="1" altformat="1">

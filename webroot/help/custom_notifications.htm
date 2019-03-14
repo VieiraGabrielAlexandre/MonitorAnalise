@@ -1,0 +1,80 @@
+﻿<!--Custom Notifications-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="custom_sensors.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="mini_probe_api.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Custom Notifications</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Custom Notifications</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">In addition to the various standard methods for notifications, you can also define your own notifications that can trigger desired actions. The possibilities of these notifications go far beyond just sending out messages, because you can perform almost any action you like whenever the notification is triggered.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following documentation describes these custom notifications. Different notification methods can also be combined in one notification.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more general information about notifications based on email, messaging, and others, see section <span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="http_action" class="hmanchor"></a><span class="f_InTopicHeading">Execute HTTP Action</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">This notification method executes a GET request or sends any POST, PUT, or PATCH data to a custom URL. You can execute specific actions on a web server or control any web service that accepts commands via one-time HTTP requests. Whenever a notification of this kind is triggered, the HTTP action is sent. </p>
+<p class="p_Normal" style="page-break-inside: avoid;">With this method, you can also call any API function of the PRTG web interface. For example, you can set PRTG to automatically pause a sensor, or acknowledge an alarm.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Authentication with username and <a href="my_account_settings.htm#basic" class="topiclink">passhash</a> (or username and password) must always be included in each PRTG API request. See section <span class="f_BoldCustom"><a href="http_api.htm#authentication" class="topiclink">Authentication</a></span> for more information.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid thin #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:213px; background-color:#ffffff; padding:5px; border:none"><p class="p_BoldCustom" style="page-break-inside: avoid;"><img alt="icon-speech" width="17" height="17" style="float:left;margin:0px 10px 0px 0px;width:17px;height:17px;border:none" src="icon-speech.png"/><span class="f_BoldCustom">Examples</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">To automatically pause the sensor that triggers the notification, enter the following HTTP action:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://yourserver/api/pause.htm?id=%sensorid&amp;action=0&amp;username=myuser&amp;password=mypassword</span></p>
+<p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">To use the notification to automatically acknowledge the alarm that triggered it, enter this HTTP action:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">http://yourserver/api/acknowledgealarm.htm?id=%sensorid&amp;ackmsg=Auto-Acknowledged&amp;username=myuser&amp;password=mypassword</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information about authentication within the URL and for other possible actions you can configure, see sections <span class="f_BoldCustom"><a href="http_api.htm" class="topiclink">HTTP API</a></span> and <span class="f_BoldCustom"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="program" class="hmanchor"></a><span class="f_InTopicHeading">Execute Program</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">With this notification method, you can execute a script or a program as an external process. It can be a Windows executable file or a BAT, CMD, or PowerShell file. You can use EXE, COM, BAT, CMD, VBS, or PS1 files.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>You must create the notification as a file and place it in a specific folder on the PRTG core server system (in a cluster, copy the files to every node).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Place executables (.EXE, .COM), batch files (.CMD, .BAT), VBS scripts (.VBS), or PowerShell scripts (.PS1) into the folder:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">\Notifications\EXE</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">As soon as a file is placed into the folder, you can create or edit your own custom execute program notification and select the new file from the list of files. You can also enter start parameters and use PRTG placeholders for this.</p>
+<p class="p_BoldCustom" style="page-break-inside: avoid;"><span class="f_BoldCustom">Notes</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">PRTG will execute the file on the local PRTG core server system using the account configured for the PRTG core server service (&quot;system&quot; is the default).</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If your custom notifications code relies on other files (for example, DLLs, .NET framework, or Windows PowerShell), you must copy/install these files on the PRTG core server machine manually!</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Make sure the return code of the executable is 0 (zero). Otherwise PRTG assumes something went wrong with the notification and will try to send it up to 3 times.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">When running PRTG in a cluster, copy the respective files to every single node to make sure the notification also works when the primary master is not reachable.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">EXE notifications will fail if they attempt to open any graphical user interface windows using the Win32 APIs (this is not allowed for processes that are started by a system service).</span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="placeholder" class="hmanchor"></a><span class="f_InTopicHeading">Placeholders</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information about the placeholders you can use, see the Paessler Knowledge Base <a href="https://kb.paessler.com/en/topic/373" target="_blank" class="weblink">What placeholders can I use with PRTG?</a></p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="script_world" class="hmanchor"></a><span class="f_InTopicHeading">PRTG Script World</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">Find useful scripts for custom notifications in the <a href="https://www.paessler.com/script-world/all/all/all" target="_blank" class="weblink">PRTG Script World</a>, written by dedicated PRTG customers around the world and Paessler!</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="more" class="hmanchor"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-bulb" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-bulb.png"/>For more information about custom notifications, see the Paessler Knowledge Base, tag-set &quot;<a href="https://kb.paessler.com/en/tags/custom-notification/" target="_blank" class="weblink">custom-notification</a>&quot;.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Application Programming Interface (API) Definition—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="http_api.htm" class="topiclink">HTTP API</a> </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_data.htm" class="topiclink">Live Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="live_graphs.htm" class="topiclink">Live Graphs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data.htm" class="topiclink">Historic Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_manipulation.htm" class="topiclink">Object Manipulation</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_sensors.htm" class="topiclink">Custom Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="custom_notifications.htm" class="topiclink">Custom Notifications</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="mini_probe_api.htm" class="topiclink">Mini Probe API</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="custom_sensors.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="mini_probe_api.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

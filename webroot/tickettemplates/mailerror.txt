@@ -1,0 +1,14 @@
+<#lang key="tickettext.mailerror.text2" default="*** Important: There is a problem and you need to take action. ***">
+
+<#lang key="tickettext.mailerror.text3" default="PRTG failed to send you an email. It is very important that PRTG can send you emails to alert you of downtimes of sensors or issues with your PRTG installation via email.">
+
+%s
+
+<#lang key="tickettext.mailerror.text5" default="Please check the following:">
+<ul>
+<#lang key="tickettext.mailerror.text6" default="<li>Is your PRTG administrator email spelled correctly?  [%s]</li>">
+<#lang key="tickettext.mailerror.text7" default="<li>Does the PRTG server have access to a DNS server? Check your Windows DNS settings.</li>">
+<#lang key="tickettext.mailerror.text8" default="<li>Are TCP connections to the target SMTP server allowed in your network and firewall? Some networks deny outgoing traffic on SMTP ports. Check your firewall and proxy settings, as well as your policies for internet access.</li>">
+<#lang key="tickettext.mailerror.text9" default="<li>Are the settings correct? Review the SMTP delivery settings in the PRTG System Administration: <a href='/systemsetup.htm?tabid=3'>SMTP Delivery Settings</a></li>">
+</ul>
+<#lang key="tickettext.mailerror.text10" default="You can activate notification delivery logging to investigate email delivery issues. Please see <a href='https://kb.paessler.com/en/topic/55363' target='_blank'>Notification Delivery Logging</a> and send the log files to our support team if necessary. You can also try using an existing SMTP relay server in your local network. Please provide this server in the SMTP Delivery settings of PRTG.">

@@ -1,0 +1,16 @@
+﻿<#lang key="html.followprtg.title" default="Follow PRTG" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="Welcome" >
+
+<div id="main" class="gradientbg" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+
+<iframe style="border:none" width="1200" height="550" src="/controls/followprtgiframe.htm" seamless="seamless"></iframe>
+
+<p>&nbsp;</p>
+
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

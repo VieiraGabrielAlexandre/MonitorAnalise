@@ -1,0 +1,87 @@
+﻿<#mailinclude file="/mailtemplates/header.htm">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="<#mailstyle style="@font @fontsize @boxsizing @tablebodywrap;width:600px" varexpand="style">" >
+    <tr style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+      <td class="content-block" style="<#mailstyle style="@font @fontsize @boxsizing @tdcontenblock" varexpand="style">" valign="top">
+        <h1>
+
+            <#lang key="mail.ticket.ticket" default="Ticket"> #<#ticket action="data" name="number" id="@ticketid">:
+            <a href="<#ticket action="data" name="url" id="@ticketid">">
+                <#ticket action="data" name="subject" id="@ticketid">
+          </a>
+        </h1>
+      </td>
+    </tr>
+    <tr style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+      <td class="content-block" style="<#mailstyle style="@font @fontsize @boxsizing @tdcontenblock" varexpand="style">" valign="top">
+
+           <#ticket action="data" name="modby" id="@ticketid">
+      </td>
+    </tr>
+    <tr style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+      <td class="content-block" style="<#mailstyle style="@font @fontsize @boxsizing @tdcontenblock" varexpand="style">" valign="top">
+        <h2><#lang key="mail.ticket.comments" default="Latest Comments">:</h2>
+        <#ticket action="data" name="content" id="@ticketid">
+        &nbsp;<br>&nbsp;<br>&nbsp;
+      </td>
+    </tr>
+    <tr style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+      <td class="content-block" style="<#mailstyle style="@font @fontsize @boxsizing @tdcontenblock" varexpand="style">" valign="top">
+
+        <table bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td style="<#mailstyle style=" @actionbuttonback " varexpand="style ">">
+                  &nbsp;&nbsp;
+                    <a href="<#ticket action="data" name="url" id="@ticketid">" style="<#mailstyle style=" @actionbuttonlink " varexpand="style ">">
+                      <#lang key="mail.ticket.viewandedit" default="View and edit this ticket"></a>
+                    </a>
+                  &nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+
+      </td>
+    </tr>
+
+
+    <tr style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+      <td class="content-block" style="<#mailstyle style="@font @fontsize @boxsizing @tdcontenblock" varexpand="style">" valign="top">
+        <table>
+          <tr>
+            <td style="color:#888888;<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#lang key="mail.ticket.tickettype" default="Ticket Type">:
+            </td>
+            <td style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#ticket action="data" name="type" id="@ticketid" >
+            </td>
+          </tr>
+          <tr>
+            <td style="color:#888888;<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#lang key="mail.ticket.assigned" default="Assigned To">:
+            </td>
+            <td style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#ticket action="data" name="assto" id="@ticketid">
+            </td>
+          </tr>
+          <tr>
+            <td style="color:#888888;<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#lang key="mail.ticket.url" default="Ticket URL">:
+            </td>
+            <td style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <a href="<#ticket action="data" name="url" id="@ticketid">"><#ticket action="data" name="url" id="@ticketid"></a>
+            </td>
+          </tr>
+          <tr>
+            <td style="color:#888888;<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#lang key="mail.ticket.related" default="Related To">:
+            </td>
+            <td style="<#mailstyle style="@font @fontsize @boxsizing" varexpand="style">">
+              <#ticket action="data" name="object" id="@ticketid">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<#mailinclude file="/mailtemplates/footer.htm">

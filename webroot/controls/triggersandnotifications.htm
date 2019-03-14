@@ -1,0 +1,330 @@
+﻿<#lang key="html.triggersandnotifications.help.title" default="Triggers and Notifications" var="helptitle">
+    <#lang key="html.triggersandnotifications.help.text2" default="Define triggers that will initiate notifications whenever PRTG discovers a defined state, such as slow or failing sensors, or when thresholds are reached. It is recommended to define triggers for notifications on a group or device level.<br><br> <b>Note:</b> Notifications are defined in your <a href='/myaccount.htm?tabid=2'>Account Settings</a>.<br><br><a href='/help/sensor_notifications_settings.htm' target='_blank'><b>Help: Notification Trigger Settings</b></a>"
+        var="helptext">
+        <#system type='showhelp' var='showhelp'>
+            <#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+                <script type="text/x-jqote-template" id="statetriggertemplate">
+                    <![CDATA[
+						<tr type="state" class="statetrigger" subid="<*= this.subid *>">
+							<td class="typecolumn">
+								<p><*= this.typename *></p>
+							</td>
+							<td class="notificationcolumn ">
+								<form subid="<*= this.subid *>">
+									<p><#lang key="html.triggersandnotifications.statelineonnotinew" default="When sensor state is <*= this.nodest *> for at least <*= this.latency *> seconds, perform <*= this.onnotificationid *>"></p>
+									<p><#lang key="html.triggersandnotifications.statelineexcnotinew1" default="When sensor state is <span class='selected_status'><*= this.nodest_original *></span> for at least <*= this.esclatency *> seconds, perform <*= this.escnotificationid *> and repeat every <*= this.repeatival *> minutes"></p>
+									<p><#lang key="html.triggersandnotifications.lineoffnoti" default="When sensor leaves <span class='selected_status'><*= this.nodest_original *></span> state after a notification was triggered, perform <*= this.offnotificationid *>"></p>
+								</form>
+							</td>
+							<td class="editcolumn">
+								<* if ( this.subid ) { *>
+									<div class="tablebuttonbox">
+										<a href="#" subid="<*= this.subid *>" class="edittriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.edit" default="Edit">'>
+											<span class="buttonicon icon ui-icon ui-icon-pencil"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="savetriggerbutton modificationbutton" triggertype="state" title='<#lang key="html.triggersandnotifications.savebutton" default="Save">'>
+											<span class="buttonicon icon ui-icon ui-icon-check"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="deletetriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.deletebutton" default="Delete">'>
+											<span class="buttonicon icon ui-icon ui-icon-trash"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="canceltriggersavebutton modificationbutton" title='<#lang key="html.triggersandnotifications.cancelbutton" default="Cancel">'>
+											<span class="buttonicon icon ui-icon ui-icon-cancel"></span>
+										</a>
+									</div>
+									<* } else { *>
+									<*= this.objectlink *>
+									<* } *>
+							</td>
+						</tr>
+						]]>
+                </script>
+                <script type="text/x-jqote-template" id="speedtriggertemplate">
+                    <![CDATA[
+						<tr type="speed" class="speedtrigger" subid="<*= this.subid *>">
+							<td class="typecolumn">
+								<p><*= this.typename *></p>
+								</td><td class="notificationcolumn ">
+								<form subid="<*= this.subid *>">
+									<p><#lang key="html.triggersandnotifications.speedlinennoti" default="When <*= this.channel *> <b>channel</b> is <*= this.condition *> <*= this.threshold *> <*= this.unitsize *>/<*= this.unittime *> for at least <*= this.latency *> seconds, perform <*= this.onnotificationid *>"></p>
+									<p><#lang key="html.triggersandnotifications.statelineoffnoti" default="When condition clears after a notification was triggered, perform <*= this.offnotificationid *>"></p>
+								</form>
+								</td><td class="editcolumn">
+								<* if ( this.subid ) { *>
+									<div class="tablebuttonbox">
+										<a href="#" subid="<*= this.subid *>" class="edittriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.edit" default="Edit">'>
+											<span class="buttonicon icon ui-icon ui-icon-pencil"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="savetriggerbutton modificationbutton" triggertype="speed" title='<#lang key="html.triggersandnotifications.savebutton" default="Save">'>
+											<span class="buttonicon icon ui-icon ui-icon-check"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="deletetriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.deletebutton" default="Delete">'>
+											<span class="buttonicon icon ui-icon ui-icon-trash"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="canceltriggersavebutton modificationbutton" title='<#lang key="html.triggersandnotifications.cancelbutton" default="Cancel">'>
+											<span class="buttonicon icon ui-icon ui-icon-cancel"></span>
+										</a>
+									</div>
+								<* } else { *>
+								<*= this.objectlink *>
+								<* } *>
+							</td>
+						</tr>
+						]]>
+                </script>
+                <script type="text/x-jqote-template" id="volumetriggertemplate">
+                    <![CDATA[
+						<tr type="volume" class="volumetrigger" subid="<*= this.subid *>">
+							<td class="typecolumn">
+								<p><*= this.typename *></p>
+								</td><td class="notificationcolumn ">
+								<form subid="<*= this.subid *>">
+									<p><#lang key="html.triggersandnotifications.volumelinennoti" default="When <*= this.channel *> <b>channel</b> has reached <*= this.threshold *> <*= this.unitsize *> per <*= this.period *>, perform <*= this.onnotificationid *>"></p>
+								</form>
+								</td><td class="editcolumn">
+
+								<* if ( this.subid ) { *>
+									<div class="tablebuttonbox">
+										<a href="#" subid="<*= this.subid *>" class="edittriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.edit" default="Edit">'>
+											<span class="buttonicon icon ui-icon ui-icon-pencil"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="savetriggerbutton modificationbutton" triggertype="volume" title='<#lang key="html.triggersandnotifications.savebutton" default="Save">'>
+											<span class="buttonicon icon ui-icon ui-icon-check"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="deletetriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.deletebutton" default="Delete">'>
+											<span class="buttonicon icon ui-icon ui-icon-trash"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="canceltriggersavebutton modificationbutton" title='<#lang key="html.triggersandnotifications.cancelbutton" default="Cancel">'>
+											<span class="buttonicon icon ui-icon ui-icon-cancel"></span>
+										</a>
+									</div>
+									<* } else { *>
+									<*= this.objectlink *>
+									<* } *>
+							</td>
+						</tr>
+						]]>
+                </script>
+                <script type="text/x-jqote-template" id="changetriggertemplate">
+                    <![CDATA[
+						<tr type="change" class="changetrigger" subid="<*= this.subid *>">
+							<td class="typecolumn">
+								<p><*= this.typename *></p>
+								</td><td class="notificationcolumn ">
+								<form subid="<*= this.subid *>">
+									<p><#lang key="html.triggersandnotifications.changelinennoti" default="When sensor changes, perform <*= this.onnotificationid *>"></p>
+								</form>
+								</td><td class="editcolumn">
+								<p>
+								<* if ( this.subid ) { *>
+									<div class="tablebuttonbox">
+										<a href="#" subid="<*= this.subid *>" class="edittriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.edit" default="Edit">'>
+											<span class="buttonicon icon ui-icon ui-icon-pencil"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="savetriggerbutton modificationbutton" triggertype="change" title='<#lang key="html.triggersandnotifications.savebutton" default="Save">'>
+											<span class="buttonicon icon ui-icon ui-icon-check"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="deletetriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.deletebutton" default="Delete">'>
+											<span class="buttonicon icon ui-icon ui-icon-trash"></span>
+										</a>
+										<a href="#" subid="<*= this.subid *>" class="canceltriggersavebutton modificationbutton" title='<#lang key="html.triggersandnotifications.cancelbutton" default="Cancel">'>
+											<span class="buttonicon icon ui-icon ui-icon-cancel"></span>
+										</a>
+									</div>
+									<* } else { *>
+									<*= this.objectlink *>
+									<* } *>
+								</p>
+							</td>
+						</tr>
+						]]>
+                </script>
+                <script type="text/x-jqote-template" id="thresholdtriggertemplate">
+                    <![CDATA[
+						<tr type="threshold" class="thresholdtrigger" subid="<*= this.subid *>">
+							<td class="typecolumn">
+								<p><*= this.typename *></p>
+								</td><td class="notificationcolumn ">
+								<form subid="<*= this.subid *>">
+									<p><#lang key="html.triggersandnotifications.threshlinennoti" default="When <*= this.channel *> <b>channel</b> is <*= this.condition *> <*= this.threshold *> for at least <*= this.latency *> seconds, perform <*= this.onnotificationid *>"></p>
+									<p><#lang key="html.triggersandnotifications.statelineoffnoti" default="When condition clears after a notification was triggered, perform <*= this.offnotificationid *>"></p>
+								</form>
+									<* if ( this.viewContext != "sensor") { *>
+									<p class="triggers_thresholdedithelp">
+										<#lang key="html.triggersandnotifications.thresholdeditinfo" default="<b>Note:</b> Please enter channel values in the smallest possible (base) unit, for example bytes, milliseconds, or percent. The <b>Total</b> channel can have threshold triggers that are defined in libraries or on device or group level. The triggers only apply to specific traffic sensors in this case.">
+									</p>
+									<* } *>
+								</td>
+							<td class="editcolumn">
+								<* if ( this.subid ) { *>
+										<div class="tablebuttonbox">
+											<a href="#" subid="<*= this.subid *>" class="edittriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.edit" default="Edit">'>
+												<span class="buttonicon icon ui-icon ui-icon-pencil"></span>
+											</a>
+											<a href="#" subid="<*= this.subid *>" class="savetriggerbutton modificationbutton" triggertype="threshold" title='<#lang key="html.triggersandnotifications.savebutton" default="Save">'>
+												<span class="buttonicon icon ui-icon ui-icon-check"></span>
+											</a>
+											<a href="#" subid="<*= this.subid *>" class="deletetriggerbutton modificationbutton" title='<#lang key="html.triggersandnotifications.deletebutton" default="Delete">'>
+												<span class="buttonicon icon ui-icon ui-icon-trash"></span>
+											</a>
+											<a href="#" subid="<*= this.subid *>" class="canceltriggersavebutton modificationbutton" title='<#lang key="html.triggersandnotifications.cancelbutton" default="Cancel">'>
+												<span class="buttonicon icon ui-icon ui-icon-cancel"></span>
+											</a>
+										</div>
+									<* } else { *>
+									<*= this.objectlink *>
+									<* } *>
+							</td>
+						</tr>
+						]]>
+                </script>
+
+                <div id="triggergrid" class="prtg-plugin" data-plugin="triggeredit" data-objid='<#objectid>' data-nodetype='<#objectproperty type="nodename">' data-nodename='<#objectproperty name="name">'>
+                    <div style="display: none" id="triggerdataobj">
+                        <!--<#object type="triggers" triggertype="state" json="1">-->
+                    </div>
+                    <div style="display: none" id="triggerinherited">
+                        <!--<#table output="json" columns="content" content="trigger">-->
+                    </div>
+                    <div style="display: none" id="triggerlibinherited">
+                        <!--<#table output="json" columns="content" content="libtrigger">-->
+                    </div>
+
+					<div class="prtg-form triggerediting">
+						<fieldset>
+							<div>
+								<legend class="prtg-header">
+									<#lang key="html.triggersandnotifications.triggercaption" default="Notification Triggers">
+								</legend>
+								<div class="control-group">
+									<table cellspacing="0" class="table trigger" id="triggertable">
+										<thead class="headerswithlinks">
+										<tr>
+											<th sort="typecolumn" class="typecolumn" sortorder="asc">
+												<a href="#">
+													<#lang key="html.triggersandnotifications.type" default="Type">&nbsp;<i class="glyph-sort"></i></a>
+											</th>
+											<th class="notificationcolumn">
+												<#lang key="html.triggersandnotifications.rule" default="Rule">
+											</th>
+											<th class="editcolumn">
+												<#lang key="html.triggersandnotifications.actions" default="Actions">
+											</th>
+										</tr>
+										</thead>
+										<tfoot class="pagenavigation">
+										<tr>
+											<td colspan="4"></td>
+										</tr>
+										</tfoot>
+										<tbody id="triggertabledata">
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div id="addbuttons" class="add-menu-wrapper">
+								<div class="add-menu" style="">
+									<div>
+										<button class="actionbutton triggerbuttons addtriggerbuttons add-menu-item" id="addstatebutton" triggertype="state">
+											<i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.triggersandnotifications.addstatetriggerbutton" default="Add State Trigger" />
+										</button>
+										<button class="actionbutton triggerbuttons addtriggerbuttons add-menu-item" id="addspeedbutton" triggertype="speed">
+											<i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.triggersandnotifications.addspeedtriggerbutton" default="Add Speed Trigger"/>
+										</button>
+										<button class="actionbutton triggerbuttons addtriggerbuttons add-menu-item" id="addvolumebutton" triggertype="volume">
+											<i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.triggersandnotifications.addvolumetriggerbutton" default="Add Volume Trigger"/>
+										</button>
+										<button class="actionbutton triggerbuttons addtriggerbuttons add-menu-item" id="addthresholdbutton" triggertype="threshold">
+											<i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.triggersandnotifications.addthresholdtriggerbutton" default="Add Threshold Trigger"/>
+										</button>
+										<button class="actionbutton triggerbuttons addtriggerbuttons add-menu-item" id="addchangebutton" triggertype="change">
+											<i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.triggersandnotifications.addchangetriggerbutton" default="Add Change Trigger"/>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div id="sensortreelinks" class="sensortree-action">
+								<div class="add-menu-badge js-triggerbutton-trigger" style="display: none"></div>
+							</div>
+						</fieldset>
+					</div>
+
+                    <div class="prtg-form inheritedtriggerediting inheritedtriggertable hideForID0">
+                        <fieldset>
+							<div>
+                            <legend class="prtg-header">
+                                <#lang key="html.triggersandnotifications.inheritedtriggercaption" default="Triggers that can be inherited from parent object(s)">
+                            </legend>
+                            <div class="control-group">
+								<div style="<#system type=" hideforreadonlyusers ">">
+									<#objectproperty name="inherittriggers" show="editfull">
+								</div>
+
+                                <table cellspacing="0" class="table hoverable trigger" id="inheritedtriggertable">
+                                    <thead class="headerswithlinksq">
+                                        <tr>
+                                            <th sort="typecolumn" class="typecolumn" sortorder="asc">
+                                                <a href="#">
+                                                    <#lang key="html.triggersandnotifications.type" default="Type">&nbsp;<i class="glyph-sort"></i></a>
+                                            </th>
+                                            <th class="notificationcolumn">
+                                                <#lang key="html.triggersandnotifications.rule" default="Rule">
+                                            </th>
+                                            <th sort="editcolumn" class="editcolumn" sortorder="asc">
+                                                <#lang key="html.triggersandnotifications.inheritedfrom" default="Inherited from">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot class="pagenavigation">
+                                        <tr>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="inheritedtriggertabledata"></tbody>
+                                </table>
+
+                            </div>
+							</div>
+                        </fieldset>
+                    </div>
+
+                    <div class="prtg-form inheritedtriggerediting inheritedlibtriggertable hideForID0">
+                        <fieldset>
+							<div>
+                            <legend class="prtg-header">
+                                <#lang key="html.triggersandnotifications.inheritedlibtriggercaption" default="Triggers that are defined in Library object(s)">
+                            </legend>
+                            <div class="control-group">
+                                <table cellspacing="0" class="table trigger" id="inheritedlibtriggertable">
+                                    <thead class="headerswithlinksq">
+                                        <tr>
+                                            <th sort="typecolumn" class="typecolumn" sortorder="asc">
+                                                <a href="#">
+                                                    <#lang key="html.triggersandnotifications.type" default="Type">&nbsp;<i class="glyph-sort"></i></a>
+                                            </th>
+                                            <th class="notificationcolumn">
+                                                <#lang key="html.triggersandnotifications.rule" default="Rule">
+                                            </th>
+                                            <th sort="editcolumn" class="editcolumn" sortorder="asc">
+                                                <#lang key="html.triggersandnotifications.inheritedfrom" default="Inherited from">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot class="pagenavigation">
+                                        <tr>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="inheritedlibtriggertabledata"></tbody>
+                                </table>
+                            </div>
+							</div>
+                        </fieldset>
+                    </div>
+
+                </div>
+                <div style="display: none;" id="dialog-del-confirm" title="<#lang key=" html.triggersandnotifications.deletetitle " default="Delete trigger? ">">
+                    <p><span class="ui-icon icon-dark icon-ticket-notofication" style="float:left; margin:0 7px 20px 0;"></span>
+                        <#lang key="html.triggersandnotifications.deletemessage" default="This trigger will be permanently deleted and cannot be recovered. Are you sure?">
+                    </p>
+                </div>

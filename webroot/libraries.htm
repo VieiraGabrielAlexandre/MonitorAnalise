@@ -1,0 +1,51 @@
+﻿<#lang key="html.libs.title" default="Libraries" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" class="maps-main-container inner-wrapper" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div class="inner-aside-left"></div>
+	<div class="inner-content">
+		<div class="add-menu-wrapper">
+			<div class="add-menu add-menu-fixed">
+				<a class='actionbutton add-menu-item <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">' href='/addlibrary.htm?id=new&target=root'><#lang key="html.reports.addlibrary" default="Add Library"></a>
+			</div>
+		</div>
+		<div id="content" class="table-wrapper">
+			<div class="buttonbox normalpage">
+				<a href='objecthistory.htm?tabid=8' data-placement="bottom" title="<#lang key="html.global.History" default="History">" style="<#hidefornonadmins>"><i class="glyph-document-history"></i></a>
+				<#include file="includes\linkpagebutton.htm">
+			</div>
+			<div class="prtg-plugin" data-plugin="prtg-table">
+				<#table tableid="libtable"
+				content="libraries"
+				userid="<#userid>"
+				columns="name,securitycontext,checkbox"
+				count="all"
+				tools="delete,edit"
+				sortby="name"
+				sortable="true"
+				links="true"
+				filter_parentid="-6"
+				tabletitle="@pagetitle"
+				refreshable="true"
+				filters="words!@titlefilter,tags"
+				varexpand="tabletitle,filters">
+			</div>
+		</div>
+	</div>
+	<div class="inner-aside-right">
+		<div class="add-menu-badge add-menu-fixed <#system type="usertype" varexpand="contentreadonly" contentreadonly="hidden">"></div>
+	</div>
+	<#system type='showhelp' tct="theater" page="help-libraries" var="tctfile">
+	<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+	<#lang key="html.libs.help.title" default="Libraries" var="helptitle">
+	<#lang key="html.libs.help.text2" default="Libraries enable you to create customized views on your monitoring objects in the device tree. PRTG updates libraries with the same scanning interval as your device tree so you see the same monitoring data, arranged in the way you want it. If you want to show data in different ways, for example, depending on target groups or use cases, just add your own libraries." var="helptext">
+	<#lang key="html.libs.help.link" default="<a href='/help/libraries.htm' target='_blank'><b>Help: Libraries</b></a>" var="helplink">
+	<#system type='showhelp' var='showhelp'>
+	<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+	<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

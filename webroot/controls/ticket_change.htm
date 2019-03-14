@@ -1,0 +1,43 @@
+﻿<#inserturlparam parameter="ignore" var="ignore">
+<#inserturlparam parameter="action" var="ticketaction">
+<#lang key="html.ticketresolve.dialogtitle" default="Resolve Ticket" var="resolvetitle">
+<#lang key="html.ticketclose.dialogtitle" default="Close Ticket" var="closetitle">
+
+<#if value="@ticketaction" is="resolve" then="@resolvetitle" else="@closetitle" varexpand="value,then,else" var="tickettitle">
+
+<div id="content" class="ui-dialog-content">
+  <div class="tabs-container">
+    <form id="assignicket" action="/api/<#inserturlparam parameter="postaction">.htm" method="post" title="<#inserthtml html="@tickettitle" varexpand="html">" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+      <fieldset>
+        <wingui>
+    		  <legend class="prtg-header">Ticket #<#inserturlparam parameter="id"></legend>
+        </wingui>
+        <wingui-hidden>
+  		    <legend class="prtg-header">Ticket #<#inserturlparam parameter="id"></legend>
+        </wingui-hidden>
+        <div class="control-group">
+          <label class="control-label no_help" for="content"><#lang key="pas.ticket.content" default="Comments"></label>
+          <div class="controls">
+            <textarea class="textarea" id="comment" name="content" maxlength="100000"></textarea>
+          </div>
+        </div>
+        <div class="control-group" style="<#if value="@ignore" is="" then="display:none;" else="" varexpand="value">">
+          <label class="control-label has_help"><#lang key="pas.ticket.ignorelabel" default="Excluded Tickets"></label>
+          <div class="controls">
+            <span style="word-break:break-all;" class="readonlyproperty" title="<#lang key="pas.ticket.ignorehelp" default="Your edit will not effect the ticket numbers shown in this list.">">
+              <#inserturlparam parameter="ignore">
+            </span>
+          </div>
+        </div>
+      </fieldset>
+      <wingui>
+        <input type="hidden" name="id" value="<#inserturlparam parameter="id">">
+        <div class="submitbuttonboxanchor">
+          <div class="submitbuttonbox">
+            <input class="submit btngrey button" type="submit" value="<#lang key="html.global.save" default="Save">">
+            <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">"></div>
+        </div>
+	  </wingui>
+    </form>
+  </div>
+</div>

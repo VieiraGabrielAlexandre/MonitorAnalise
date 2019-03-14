@@ -1,0 +1,145 @@
+﻿<!--User Access Rights-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="alerts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="data_reporting.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>User Access Rights</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: User Access Rights</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">Define which user can access what in your PRTG Network Monitor installation and manage all user rights with the access rights system of PRTG.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The default administrator can be the only user of a PRTG installation, but can also create a nearly unlimited number of other users. Individual users are organized in a nearly unlimited number of user groups. Each user group can separately have <a href="object_hierarchy.htm" class="topiclink">access rights for each individual object</a> in your PRTG device tree (except for sensor channels). Objects can also <a href="inheritance_of_settings.htm" class="topiclink">inherit</a> access rights according to the hierarchic structure of the device tree.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">In addition, every user has specific rights: There are administrator users, read/write users, and read-only users. You can define these settings in <a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a>. Via these tools, you can create an access rights management that allows you to specify exactly what users will be able to see and edit and what they will not be able to access.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:519px"><a href="account_control.png"><img id="TOGGLE0186A1" class="image-toggle" alt="User Rights in User Account Settings" title="User Rights in User Account Settings" style="width:519px;height:307px;border:none" src="account_control_zoom70.png"/></a><p style="text-align:center"><span class="f_ImageCaption">User Rights in User Account Settings</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">Individual user rights, in combination with the access rights of the group(s) they belong to, determine the access rights to certain objects in the device tree. This means that group membership specifically determines what a user is allowed to do and which objects the user will see when logged in.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">The actual access rights for each object in the device tree can be defined in the object's settings. You can define different access rights for all sensors, devices, groups, or probes via the corresponding <a href="context_menus.htm" class="topiclink">Context Menus</a> or in the <a href="object_settings.htm" class="topiclink">Object Settings</a>.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="overview" class="hmanchor"></a><span class="f_InTopicHeading">Access Rights Overview</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The following classes of access rights for objects are available in hierarchical order as they can be given to user groups (lowest rights to highest rights):</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: </span>The object will not be displayed to the users of the group; no logs, no tickets, no alarms regarding this object will appear.</li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: You can only see monitoring results and change your own password if allowed by your administrator.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: You are allowed to review monitoring results and edit settings. In addition, you can add objects to and delete them from the device tree.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Review monitoring results, edit settings, and edit access rights. In addition, you can add objects to and delete them from the device tree.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Admin rights</span><span class="f_ListBulleted">: If a user group has administrator rights, all options are available, including creating users, creating user groups, and deleting objects from the device tree. Users in the administrator user group always have maximum access rights to all objects and will never have access restrictions.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Access rights that are defined locally on an object, for example, on a device, override inherited rights. For a certain object, the highest directly defined access right applies for a user group. If there is no access right set directly on an object, the next higher object level will be checked for access rights. This process is repeated until defined access rights are found to be <a href="inheritance_of_settings.htm" class="topiclink">inherited</a> or there is no higher object level.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:480px"><a href="access_rights_object2.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Different Access Rights Depending on User Groups" title="Different Access Rights Depending on User Groups" style="width:480px;height:539px;border:none" src="access_rights_object2_zoom60.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Different Access Rights Depending on User Groups</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">See the table below for which user rights apply when. Column headings show access rights of user groups for objects in the device tree; line headings show the type of user.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round-red" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round-red.png"/>Users are either members in PRTG user groups or in Active Directory Domain user groups. They cannot be members in both. We recommend that you use only one type of user group (either PRTG or Active Directory) to minimize your administration effort.</p>
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="border:none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td rowspan="2" style="vertical-align:top; background-color:#ffffff; padding:0px;"><br />
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG User Group</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain User Group</span><span class="f_ListBulleted"> &nbsp; </span></li>
+</ul>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG User Group</span><span class="f_ListBulleted"> &nbsp;</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain User Group</span><span class="f_ListBulleted"> </span></li>
+</ul>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG User Group</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain User Group</span><span class="f_ListBulleted"> </span></li>
+</ul>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG System Administrator</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain Administrator</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Read Access</span> </p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Read/Write Access</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_SettingsTableHeader" style="page-break-inside: avoid;"><span class="f_SettingsTableHeader">Full Access</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG User Read Only</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain User Read Only</span><span class="f_ListBulleted"> </span></li>
+</ul>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Read-only rights</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Read-only rights</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Read-only rights</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Admin rights</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">PRTG User Read/Write </span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Domain User Read/Write</span><span class="f_ListBulleted"> </span></li>
+</ul>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Read-only rights</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Read/write rights</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Full access</span></p>
+</td>
+<td style="vertical-align:top; background-color:#ffffff; padding:0px;"><p class="p_ListBulleted" style="page-break-inside: avoid;"><span class="f_ListBulleted">Admin rights</span></p>
+</td>
+</tr>
+</table>
+</div>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Users in an administrator group</span><span class="f_ListBulleted"> always have administrator access rights, no matter what access rights have been defined for an object.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read-only users</span> <span class="f_ListBulleted">just have reading permission, no matter what access rights their group has. Users who are members of an administrator group are an exception. Read-only users can change their own passwords in their <a href="user_accounts_settings.htm" class="topiclink">user account settings</a>, if the administrator has enabled them to do so.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom">Read/write users</span><span class="f_ListBulleted"> in a group with full access to a given object have full access rights to this object only.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">If a user is in </span><span class="f_ListBulleted" style="font-weight: bold;">more than one group</span><span class="f_ListBulleted">, access rights of the user group with the highest rights apply.</span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted">Administrator rights can only be granted by membership in the </span><span class="f_ListBulleted" style="font-weight: bold;">administrator group</span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For more information about defining access rights, see the following sections:</p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-book-arrows" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-book-arrows.png"/>For information about connecting PRTG to an existing Active Directory, see <span class="f_BoldCustom"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span>.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: User Access Rights</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="alerts.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="data_reporting.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+﻿<#checkobjecttype objecttype="sensor">
+
+<span  class="refreshable sensoroverview" refreshurl="/controls/sensoroverviewsmalldata.htm?id=<#objectid>">
+  <#include file="controls/sensoroverviewsmalldata.htm">
+</span>
+
+<div class="clusterselector"><#include file="controls\clusterselector.htm"></div>
+
+<div class="prtg-box">
+	<div class="largegraph prtg-plugin" interval="<#objectstatus name="interval" show="textraw">" data-plugin="prtg-graphs prtg-graphs-scroll" data-id="<#objectid>">
+		<div class="graphzoomicon">
+		<a class="save" data-force="png" data-params='{"width":975,"height":300}' title="<#lang key="html.global.downloadpng" default="Download the graph (PNG)">" target="_blank" href="<#sensor type="graphurl" forcepng="true" graphid="0" width="975" height="300" graphstyling="baseFontSize='10'%20showLegend='1'">">
+			<i class="glyph-download4" ></i>
+		</a>
+		<a class="save" data-force="svg" data-params='{"width":1500,"height":500}' title="<#lang key="html.global.downloadsvg" default="Download the graph (SVG)">" target="_blank" href="<#sensor type="graphurl" forcesvg="true" graphid="0" width="1500" height="500" graphstyling="baseFontSize='10'%20showLegend='1'" >">
+			<i class="glyph-download4"></i>
+		</a>
+        <a class="zoom" title="<#lang key="html.global.zoomgraph" default="Zoom graph in new window">" href="/graphzoom.htm?id=<#objectid>&graphid=<#graphid>&clgid=<#clgid>" target="_blank">
+            <i class="glyph-link-ext-alt"></i>
+        </a>
+		</div>
+		<div id="chart" class="maingraph-image">
+			<#sensor type="graph" graphid="0" graphtitle="@@notitle@@" width="1400" height="300" graphstyling="baseFontSize='10'%20showLegend='0'" tooltexts="1" refreshable="true">
+		</div>
+		<#group type="legend" width="1600">
+	</div>
+</div>
+<div class="scrollabletablecontainer prtg-plugin" data-plugin="prtg-table">
+	<#table tableid="valuetable" content="values" sortby="-datetime" refreshable="true" display="extendedheaders">
+</div>
+
+

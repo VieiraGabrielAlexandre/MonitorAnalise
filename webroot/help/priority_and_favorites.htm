@@ -1,0 +1,89 @@
+﻿<!--Priority and Favorites-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_selector.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="pause.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Priority and Favorites</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Priority and Favorites</h1> 
+      <p class="p_Normal" style="page-break-inside: avoid;">You can set priorities for all your monitoring objects and also categorize devices or sensors as favorites. Both settings affect how your objects are displayed.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Settings for priority and favorites are stored for the entire installation. They are not user specific.</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="priority" class="hmanchor"></a><span class="f_InTopicHeading">Priority for All Objects</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">The priority setting affects the order in which your objects are displayed when you view table lists. PRTG lists objects with a higher priority first, others underneath, depending on their own priority. Furthermore, <a href="review_monitoring_data.htm#overview" class="topiclink">device overview pages display gauges</a> for sensors with a high priority.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">To change priority settings, <span class="f_ItalicCustom">right-click</span> an object to open the <a href="context_menus.htm" class="topiclink">context menu</a> and select <span class="f_BoldCustom">Priority/Favorite</span>. You can choose between 5 stars <span class="f_ItalicCustom">*****</span><span class="f_BoldCustom"> </span>(top priority) and one star <span class="f_ItalicCustom">*</span> (lowest priority). By default, all objects are set to medium priority (3 stars <span class="f_ItalicCustom">***</span>). In the page header bar and in lists, you can set a priority directly with one click on a star, for example, for sensors on a device overview page.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:108px"><a href="probe_context_priority.png"><img id="TOGGLE0186A1" class="image-toggle" alt="Context Menu: Priority" title="Context Menu: Priority" style="width:108px;height:99px;border:none" src="probe_context_priority_zoom90.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Context Menu: Priority</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Select 4 or 5 stars for particular sensors to activate their gauges on device overview pages.</p>
+<p class="p_Normal" style="page-break-inside: avoid;"><img alt="icon-i-round" width="17" height="17" style="float:left;margin:0px 10px 10px 0px;width:17px;height:17px;border:none" src="icon-i-round.png"/>Select 5 stars for a map to show it as an entry in the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a> under <span style="font-weight: bold;">Home</span>. </p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="favorites" class="hmanchor"></a><span class="f_InTopicHeading">Favorites for Devices and Sensors</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">To call a list of all your favorite devices or sensors, select <span class="f_BoldCustom">Devices | Favorite Devices</span> or <span class="f_BoldCustom">Sensors | Favorite Sensors</span> from the main menu. These lists are sorted by priority as well.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can mark any device or sensor as favorite to add it to the favorite list. Right-click it to open the <a href="context_menus.htm" class="topiclink">context menu</a>. Select <span class="f_BoldCustom">Priority/Favorite | Add to Favorites</span>. A small black flag symbol will be added next to the object's name.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:135px"><a href="add_to_favs.png"><img id="TOGGLE0186A2" class="image-toggle" alt="Context Menu: Priority/Favorites (Add)" title="Context Menu: Priority/Favorites (Add)" style="width:135px;height:119px;border:none" src="add_to_favs_zoom90.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Context Menu: Priority/Favorites (Add)</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">To remove an object from the favorites list, select <span class="f_BoldCustom">Priority/Favorite | Remove from Favorites</span> from the <a href="context_menus.htm" class="topiclink">context menu</a>.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:171px"><a href="remove_from_favs.png"><img id="TOGGLE0186A3" class="image-toggle" alt="Context Menu: Priority/Favorites (Remove)" title="Context Menu: Priority/Favorites (Remove)" style="width:171px;height:119px;border:none" src="remove_from_favs_zoom90.png"/></a><p style="text-align:center"><span class="f_ImageCaption">Context Menu: Priority/Favorites (Remove)</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">There is also the option to add a device or sensor to favorites with one click in the device tree. Just click the small flag symbol to the right of the respective object name. If the flag is black, the specific object is already a favorite; clicking the flag again will remove it from favorites and the flag will turn gray again.</p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:493px"><a href="favorites_devicetreeadding.png"><img id="TOGGLE0186A4" class="image-toggle" alt="One-Click Adding to Favorites in the Device Tree" title="One-Click Adding to Favorites in the Device Tree" style="width:493px;height:265px;border:none" src="favorites_devicetreeadding_zoom75.png"/></a><p style="text-align:center"><span class="f_ImageCaption">One-Click Adding to Favorites in the Device Tree</span></p></div></div>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="prios_and_favs" class="hmanchor"></a><span class="f_InTopicHeading">Priority and Favorites in the Page Header Bar</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;">You can add any device or sensor to favorites on its details page by clicking the small flag symbol in the <a href="general_layout.htm#page" class="topiclink">page header bar</a>. If the flag is blue, the selected object is already a favorite. Clicking the flag again will remove it from favorites and the flag will turn gray again. It is also possible to set the priority of the object by clicking one of the five stars in the page header; five stars <span class="f_ItalicCustom">*****</span> means top priority, one star <span class="f_ItalicCustom">*</span> is the lowest priority. </p>
+<div class="p_ImageCaption" style="page-break-inside: avoid;"><div style="margin:0;width:251px"><a href="priority_oneclick.png"><img id="TOGGLE0186A5" class="image-toggle" alt="One-Click Favorite and Priority in the Page Header Bar" title="One-Click Favorite and Priority in the Page Header Bar" style="width:251px;height:33px;border:none" src="priority_oneclick_zoom95.png"/></a><p style="text-align:center"><span class="f_ImageCaption">One-Click Favorite and Priority in the Page Header Bar</span></p></div></div>
+<p class="p_Normal" style="page-break-inside: avoid;">&nbsp;</p>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><a id="topics" class="hmanchor"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:disc">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a> </span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 13px;list-style-position:outside; list-style-type:square">
+<li style="text-align: left; page-break-inside: avoid; padding: 0px 0px 0px 0px; margin-top: 5px; margin-right: 0px; margin-bottom: 5px;"><span class="f_ListBulleted"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_selector.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="pause.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>

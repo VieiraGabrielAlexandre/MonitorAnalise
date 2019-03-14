@@ -1,0 +1,247 @@
+﻿/*prtg.toplist.css*/
+#main.toplist .buttonbox{
+  top:96px;
+}
+#toplist {
+  table-layout: fixed;
+}
+
+#toplist .selected {
+  background-color: transparent;
+}
+
+#toplist .prtg-box {
+  display: block;
+  background-color: <#colorcode color="lightgray">;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#toplist .toplistperiodslist {
+  min-width: 175px;
+}
+
+#toplist .toplistcontent {
+  display: table;
+}
+
+#toplist .content {
+  display: table-row;
+}
+
+#toplist .toplistperiodslist ,
+#toplist .data {
+  display: table-cell;
+  vertical-align: top;
+}
+
+#toplist .data {
+  width: 100%;
+}
+
+#toplist .toplistcontainer {
+}
+
+#toplist .button {
+  float: right;
+  margin-top: 5px;
+}
+
+#toplist table.table {
+  max-width: none;
+  width: auto;
+}
+
+#toplist .floatleft {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 2px;
+}
+
+#toplist .toplisttitle {
+  position: absolute;
+}
+
+#toplist .toplistgraph {
+  display: inline-block;
+  width: 600px;
+  height: 600px;
+}
+#datatable .ui-datepicker-trigger{
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+#datatable.toplistperiodslist ul li{
+  padding: 0 0 0 0px;
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+  background-color: white;
+  font-size: 11px;
+}
+#datatable.toplistperiodslist ul li:first-child{
+  padding-top: 2px;
+}
+#datatable.toplistperiodslist ul li:hover{
+  background-color: <#colorcode color="midgray">;
+  transition: .1s;
+}
+#datatable.toplistperiodslist ul li.selected{
+  background-color: <#colorcode color="actioncolor">;
+  color: #fff;
+}
+
+#datatable.toplistperiodslist ul{
+  list-style-type: none;
+  padding: 3px;
+  margin: 0;
+  font-weight: bold;
+  cursor: default;
+  font-size: 12px;
+   /*background-color: <#colorcode color="midgray">*/
+}
+#datatable.toplistperiodslist [data-plugin="toplistperiods"]{
+  border:1px solid <#colorcode color="midgray">;
+}
+.toplist-chordgraph {
+  min-width: 600px;
+  min-height: 600px;
+  margin: auto;
+}
+.toplist-chordgraph span {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.toplist-chordgraph.zoomable .zoom {
+  display: inline-block;
+  position: relative;
+  left: 5px;
+  top: -30px;
+}
+
+.graphtoolbar {
+  float: right;
+  position: absolute;
+  z-index: 1;
+}
+
+.toplist-chordgraph .outline {
+  outline: 1px solid #00235D;
+}
+.toplist-chordgraph path.chord {
+  opacity: .33;
+}
+
+.toplist-chordgraph text {
+  font-size: 9px;
+}
+#toplistspreviews{
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  margin:10px 5px;
+  position: relative;
+}
+#toplistspreviews .scroll{
+  height:45px;
+  margin: 0 5px 5px 0;
+  background-color: <#colorcode color="lightgray">;
+  font-size: 38px;
+  line-height: 34px;
+  color: <#colorcode color="midgray">;
+  cursor: pointer;
+  display: none;
+}
+#toplistspreviews .scroll.left{
+  float:left;
+}
+#toplistspreviews .scroll.right{
+  float:right;
+}
+#toplistspreviews .scroll-content{
+}
+#toplistspreviews .sensoroverviewtoplist,
+.sensoroverviewtoplistspreviews .sensoroverviewtoplist {
+  float: left;
+  background-color: <#colorcode color="lightgray">;
+  display: block;
+  width: 180px;
+  height: 210px;
+  padding: 2px;
+  border-right: 5px solid #fff;
+  border-bottom:5px solid #fff;
+  position: relative;
+}
+
+.sensoroverviewtoplistspreviews .sensoroverviewtoplist div.name {
+  font-size: 18px;
+  position: relative;
+  left: 5px;
+  right: 5px;
+  height: 25px;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#toplistspreviews .sensoroverviewtoplist{
+  width:150px;
+  height:50px;
+  padding:0;
+  margin: 0;
+  display:inline-block;
+  float: none;
+}
+
+.sensoroverviewtoplistspreviews .toplistgraph,
+.sensoroverviewtoplistspreviews .toplist-chordgraph {
+  margin: 3px 0 0 0;
+  width: 170px;
+  height: 170px;
+  min-width: 170px;
+  min-height: 170px;
+}
+
+
+.sensoroverviewtoplistspreviews .toplist-chordgraph .zoom,
+.toplist-chordgraph .zoom {
+  display: none;
+}
+
+
+#toplistspreviews .toplistgraph,
+#toplistspreviews .toplist-chordgraph{
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+#toplistspreviews .toplistcontainer {
+  float:right;
+  width: 40px;
+  height: 40px;
+  margin: -28px 4px;
+}
+#toplistspreviews .sensoroverviewtoplist div.name{
+  float: left;
+  margin-top: 15px;
+  margin-left: 3px;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#toplistspreviews .toplistsettings{
+  display: none;
+}
+
+#toplistspreviews svg text{
+  display: none;
+}
